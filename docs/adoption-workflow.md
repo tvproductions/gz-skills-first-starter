@@ -1,17 +1,12 @@
----
-name: adopt-skills-stack
-description: Configure or assess a project's Superpowers, Superpowers Backplane, and gz-skills bundle from a reviewed gz-skills-first-starter checkout, preserving existing project authorities and installations.
----
-
 # Adopt the skills stack
 
-This skill guides adoption; it does not replace the three upstream workflows.
-Read [the adoption guide](../../docs/adoption.md) for native host loading,
+This document guides adoption; it does not replace the three upstream workflows.
+Read [the adoption guide](adoption.md) for native host loading,
 compatibility checks, updates, and rollback. The helper is
-[starter.py](../../starter.py); use its CLI help for current options.
+[starter.py](../starter.py); use its CLI help for current options.
 
 For structural adoption in an existing project, read
-[backport guidance](../../docs/backport.md). Run the read-only assessment, map
+[backport guidance](backport.md). Run the read-only assessment, map
 existing sources to proposed targets, and implement only useful, authorized
 changes with project verification. Configuration adoption does not move code.
 
@@ -27,17 +22,17 @@ enabling it while readiness and explicit adoption remain pending.
 Generic maintenance routes to gz-skills `gzs-update-dependencies` for authorized
 updates and `gzs-dependency-risk-audit` for risk assessments. Keep the starter's
 role to policy and adoption bindings; do not add a competing local maintenance
-skill. The pinned gz-skills v0.6.0 maintenance skill also supports freshness-only
+skill. The pinned gz-skills v0.7.0 maintenance skill also supports freshness-only
 reviews and starter/plugin inventory without changing pins or environments.
 Preserve approved starter Python policy over upstream profile defaults; choosing
 a profile remains explicit and separate from bundle adoption.
 
 Establish the exact target project and a reviewed published starter revision.
-Read the starter's [versioning contract](../../docs/versioning.md). Record its
+Read the starter's [versioning contract](versioning.md). Record its
 declared template version and exact SHA independently of the app version;
 confirm published release/tag identity separately. Legacy unversioned locks
 require reviewed reconciliation, never an inferred label or silent rewrite.
-Read the [project configuration contract](../../docs/project-configuration.md);
+Read the [project configuration contract](project-configuration.md);
 inventory app dependencies, locks and settings, preserve additions and reviewed
 overrides, and report freshness/adoption gaps. The helper leaves these files
 untouched and does not resolve packages or load application settings.

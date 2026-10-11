@@ -1,5 +1,10 @@
 # Architecture and ownership
 
+The starter authors and distributes zero agent skills. It owns opinionated
+project policy, deterministic adoption tooling, configuration and provenance;
+upstream plugins and adopting projects own their skills. See the
+[structure contract](structure.md) and [migration guide](migration-0.3.md).
+
 One bundle catalog tracks three independently maintained plugins. SP and
 gz-skills are enabled by default; Backplane is an expected addition to the target
 stack, pinned but deferred pending readiness and explicit adoption. Its two
@@ -8,7 +13,7 @@ contain authored copies of those skill trees.
 
 ```text
 Project AGENTS and domain authorities
-  -> starter front door -> SP (feature work) + gz-skills (engineering)
+  -> direct workflow references -> SP (feature work) + gz-skills (engineering)
   -> existing backlog/handoff practice; SP-BP deferred
   -> project-owned operational skills
   -> project-owned deterministic code and adapters
@@ -53,16 +58,18 @@ Project-specific constraints stay behind project seams. Public catalog and
 starter changes must not carry real operational records, credentials, machine
 paths, or sensitive source data. Examples and tests use invented fixtures only.
 
-The starter owns the small `skills-first-start` routing skill copied into an
-adopter's project discovery tree. Upstream skill trees are never copied. The
+The starter writes an instructions fragment with direct workflow references.
+Configure creates no skill discovery tree; legacy starter copies require reviewed
+reconciliation. Upstream skill trees are never copied. The
 read-only `backport` assessment supports an agent-led source mapping and verified
 refactoring; it does not relocate app files or impose heavy-profile governance.
 
-The starter owns the [Python engineering binding](../skills/python-engineering/SKILL.md):
+The starter owns the [Python engineering binding](engineering/python.md):
 required runtime, idiom, tool, architecture and on-demand hygiene standards for
-its non-gzkit projects. gz-skills retains portable discipline ownership. The new
-skill can be read from the reviewed checkout; automatic copying/loading and
-shared-versus-local utility ownership have not been established. Existing-project
+its non-gzkit projects. gz-skills retains portable discipline ownership. The policy is ordinary versioned documentation in `docs/engineering/`;
+on-demand analysis utilities live in `tools/engineering/`. Read it from a reviewed
+checkout or reconcile it into project-owned documentation with provenance.
+Shared-versus-local utility ownership has not been established. Existing-project
 adoption remains a preservation-first design task, not an automatic rewrite.
 
 Strong Python and tool preferences are starter-owned: Ruff + complexipy +
@@ -77,7 +84,7 @@ to `gzs-update-dependencies`, and dependency-risk assessments route to
 `gzs-dependency-risk-audit`. This starter supplies release-family policy, project
 bindings, bundle/catalog consistency and preservation requirements. It does not
 add a parallel maintenance skill or generic freshness reporter. The pinned
-gz-skills v0.6.0 supplies freshness-only assessment and template/plugin inventory
+gz-skills v0.7.0 supplies freshness-only assessment and template/plugin inventory
 through its maintenance skill. Starter bindings preserve approved Python policy
 over upstream profile defaults; no setup invocation or profile selection follows
 from changing the bundle pin.

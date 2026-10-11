@@ -5,7 +5,7 @@ Treat this as a translation of useful responsibilities, not a wholesale rewrite
 or an imposed framework. FDAU is the primary precedent; its domain and numeric
 quality gates are not defaults for other projects.
 
-Run `uv run --python 3.14 starter.py backport --project /path/to/project`. This assessment reads
+Run `uv run --python 3.14.8 starter.py backport --project /path/to/project`. This assessment reads
 only bounded top-level names, does not follow symlinks, and writes nothing. It
 suggests responsibilities, not a complete migration plan. The agent must read
 the target's governing instructions and relevant source before recommending moves.
@@ -31,7 +31,7 @@ move. Verify behavior at the project's real seams before proceeding. Shared
 plugins remain separately pinned; never copy their trees into project skills.
 
 `configure` independently previews/applies the bundle configuration and the
-starter-owned front-door skill. It does not perform structural moves. Existing
+adopter instructions fragment. It creates no skill discovery tree. It does not perform structural moves. Existing
 managed files from an earlier starter revision require a reviewed update diff;
 there is no force overwrite. A structural pilot and fresh-session discovery
 remain necessary before claiming adoption is verified.

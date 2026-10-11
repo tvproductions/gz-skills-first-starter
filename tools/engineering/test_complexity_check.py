@@ -21,7 +21,7 @@ class CountingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             for name, source in sources.items():
-                (root / name).write_text(source)
+                (root / name).write_text(source, encoding="utf-8")
             if symlink:
                 (root / "link.py").symlink_to(root / "a.py")
             output = root / "receipt.json"

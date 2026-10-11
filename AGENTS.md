@@ -1,12 +1,17 @@
 # GZ skills-first starter
 
 For adoption into another project, start at
-`skills/adopt-skills-stack/SKILL.md` and preserve that project's instructions.
+`docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
 `docs/handoffs/2026-10-09-starter-continuation.md`; recheck live state before work.
 
 This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.
+The starter authors and distributes zero agent skills. Keep workflow skills
+upstream- or project-owned; read `docs/structure.md` for the ownership contract.
+`docs/baseline-policy.md` owns adopter version-range and selection policy;
+checkout pins record tested execution choices. Distinguish policy changes from
+pin refreshes in release notes and adopter reviews.
 This is a public scaffold; use invented fixtures and preserve upstream ownership.
 
 Version the template independently of its upstream components and adopter apps.
@@ -23,7 +28,7 @@ and handoff authority. Do not vendor upstream skills, introduce a gzkit lifecycl
 or infer app domain rules from another adopting project. App operational skills and
 supporting domain code remain project-owned.
 
-For Python work, read `skills/python-engineering/SKILL.md`. Non-gzkit projects
+For Python work, read `docs/engineering/python.md`. Non-gzkit projects
 started from this starter require uv-managed, pinned Python 3.14, current clear
 Python idioms and suitable stdlib APIs. Consult versioned official documentation
 for behavior changes, deprecations and removals; configuration alone does not
@@ -33,17 +38,21 @@ its supported version and explains the difference.
 
 Baseline Python tooling must use the latest stable release within each explicitly
 selected release family, verified at setup/adoption and scoped maintenance. Python's
-family is 3.14.x; pin the verified patch exactly in `.python-version` and CI.
+family is 3.14.x normally and 3.12.x for XPPython3-bound projects; record the
+verified patch exactly in `.python-version` and CI, refreshing it during authorized
+maintenance. The starter's exact patch is not a permanent adopter requirement.
+Inspect/test XPPython3's embedded runtime separately; host limitations require
+evidence and a revisit condition rather than an independent runtime replacement.
 An installed interpreter satisfying `3.14` is not evidence of freshness. Keep
 exact tool pins/locks after verification; family changes require separate review.
 Record compatibility exceptions with evidence and a revisit condition. Pass this
-rule to adopters through the instructions fragment and Python engineering skill.
+rule to adopters through the instructions fragment and Python engineering policy.
 
 Generic dependency maintenance belongs in gz-skills. Route authorized updates to
 `gzs-update-dependencies` and dependency-risk reviews to
 `gzs-dependency-risk-audit`; keep this starter's material as policy and binding
 guidance. Do not add a competing local maintenance skill or generic freshness
-reporter. The pinned gz-skills v0.6.0 supplies freshness-only review and
+reporter. The pinned gz-skills v0.7.0 supplies freshness-only review and
 starter/template/plugin inventory through `gzs-update-dependencies`; review mode
 leaves pins and environments unchanged. Preserve this starter's approved Python
 family and retired-tool decisions over upstream profile defaults.
@@ -56,9 +65,9 @@ coverage through unittest, Cosmic Ray mutation testing, deptry, pip-audit and
 Import Linter; none belongs in hooks or CI gates. Keep the approved routine
 pre-commit set limited to Ruff check/format, ty and unittest. C901 is enabled only
 in explicit hygiene commands, not routine Ruff selection. The new complexity
-policy retires Xenon and Radon. The on-demand `skills/python-engineering/scripts/complexity_check.py` implements
+policy retires Xenon and Radon. The on-demand `tools/engineering/complexity_check.py` implements
 function/module/overall ceilings of 20 under the reviewed `lizard-functions-v1`
-contract. Read the skill reference; this is an explicit rebaseline, not exact
+contract. Read `docs/engineering/ccc-contract.md`; this is an explicit rebaseline, not exact
 Radon equivalence. Syntax/discovery errors fail closed.
 Record legacy baselines that may only shrink. Cosmic Ray is
 selected but its Python 3.14 compatibility remains unverified. The exact expanded
@@ -84,10 +93,10 @@ propagate these choices into upstream plugins. Review dependency freshness
 periodically on demand (at adoption, tool upgrades, and quarterly maintenance),
 including runtime/dev tools, the adopted starter revision and pinned SP, SP-BP
 and gz-skills releases; distinguish release age
-from abandonment. See the Python skill. Do not add review hooks or automatic
+from abandonment. See the Python policy. Do not add review hooks or automatic
 schedules, or upgrade dependencies without a scoped request.
 
 When designing features or reviewing dependencies, assess concrete Python 3.14
-gains over 3.13 using the Python skill's versioned opportunity guide. Record
+gains over 3.13 using the Python policy's versioned opportunity guide. Record
 benefits, compatibility risks and adopt/defer decisions; do not treat a runtime
 pin as sufficient guidance or add machinery without a project need.

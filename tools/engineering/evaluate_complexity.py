@@ -221,7 +221,7 @@ def evaluate(root):
             for path in (
                 "starter.py",
                 "tests/test_starter.py",
-                "skills/python-engineering/scripts/evaluate_complexity.py",
+                "tools/engineering/evaluate_complexity.py",
             )
         ],
         "limitations": [
@@ -238,7 +238,7 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     assert shutil.which("ruff") and shutil.which("complexipy"), "Use the hygiene group."
-    receipt = evaluate(Path(__file__).resolve().parents[3])
+    receipt = evaluate(Path(__file__).resolve().parents[2])
     scores = [item["cyclomatic"] for source in receipt["source"] for item in source["lizard"]]
     receipt["lizard_aggregate"] = {
         "population": "reported functions across the explicit source scope",

@@ -1,0 +1,118 @@
+# Adopter baseline policy
+
+This is the adopter-facing authority for version selection. Read it at the
+reviewed starter version/SHA recorded in `.skills-first/bundle.lock.json`, then
+compare it with later published releases during maintenance. A copied exact pin
+is evidence of one tested environment; it is not the template's permanent
+requirement for every adopter.
+
+## Allowed Python families
+
+| Project scope | Allowed range | Selection rule | Reason |
+| --- | --- | --- | --- |
+| Ordinary Python project | `>=3.14,<3.15` | Latest verified stable 3.14 patch | Starter's selected engineering baseline |
+| XPPython3-bound code | `>=3.12,<3.13` | Latest verified stable host-compatible 3.12 patch; record the actual embedded patch separately | Host compatibility, not a general preference for an older Python |
+
+These ranges select one minor family per scope, not permission to resolve any
+Python version above a minimum. Match project metadata, Ruff/ty targets, local
+execution and CI to the selected family. Split standalone and host-bound scopes
+only when the project has a real boundary and separate verification; do not infer
+that all dependencies or shared code support both families.
+
+XPPython3's current [installation guidance](https://xppython3.readthedocs.io/en/latest/usage/installation_plugin.html)
+shows Python 3.12 and its [development guidance](https://xppython3.readthedocs.io/en/latest/development/index.html)
+describes an integrated interpreter, checked October 11, 2026. The host owns that
+runtime. Check the installed host/version and actual Python patch, review stable
+host updates and test in the host. Updating a standalone uv interpreter does not
+update the embedded interpreter. If the host restricts a patch or family, record
+the supported selection, official evidence, reason and revisit condition. Do not
+independently replace the embedded runtime to satisfy a freshness target.
+
+## Tool and dependency selection
+
+Use uv for standalone Python, project environments, dependency resolution and
+locks; use Astral Ruff for lint/format and ty for type checking. Use unittest and
+pre-commit for the approved routine checks. Keep deeper analysis outside hooks
+and CI. [Python engineering policy](engineering/python.md) defines those checks
+and the required engineering practices; missing enforcement remains a reported gap.
+
+For each baseline tool, explicitly select its allowed release family/range using
+its own compatibility scheme, then use the latest verified stable release in
+that family. This starter does not yet establish universal allowed families for
+every selected tool. Existing exact tool pins are tested reproducibility anchors,
+not evidence of a minimum supported version or a settled compatibility range.
+Record unsettled ranges as a policy gap; do not invent support from a pin or
+silently replace it with an unbounded `>=` constraint.
+
+Application dependencies and their compatibility bounds remain project-owned.
+SP, SP-BP and gz-skills remain independently versioned with full-SHA source pins.
+Select updates independently under reviewed compatibility decisions; SP-BP stays
+disabled until readiness and explicit adoption. An upstream default does not
+override this baseline or the project's existing authorities.
+
+## Code must follow its Python version
+
+gz-skills owns runtime discovery for Python workflows. Require it to honor the
+project's adopted allowed ranges, supported runtime and engineering policy, report
+conflicting or missing evidence, and verify host compatibility where applicable.
+The starter does not duplicate its discovery algorithm or supply a parser/helper.
+Source coverage and unreleased upstream work are recorded in the
+[Python workflow mapping](gz-skills-python.md).
+
+A current interpreter is not sufficient. At adoption, runtime-family changes,
+feature design, code review and scoped maintenance, assess the relevant code
+against the selected Python family's current idioms, supported APIs, deprecations
+and standard-library improvements. Preserve required public behavior while
+replacing outdated patterns where there is a demonstrated benefit. Do not leave
+an older approach solely because the runtime still accepts it.
+
+Use versioned official documentation and record the affected scope, candidate,
+benefit, compatibility risk, adopt/defer/not-applicable decision and verification.
+Use the [3.14 opportunity guide](engineering/python314-opportunities.md) for 3.14
+code; assess XPPython3-bound code against 3.12 and the actual host. Retained older
+patterns need a reason where a concrete improvement was identified. Review code
+through bounded changes rather than treating a runtime update as permission for
+an application-wide rewrite or adopting every new feature.
+
+Use the [verified gz-skills Python mapping](gz-skills-python.md) to select
+pattern detection/application, cross-platform review or scoped debt/change review.
+gz-skills owns reusable engineering review/refactoring workflows; SP supports
+feature design and implementation. Use discovered, version-appropriate gz-skills
+workflows to assess and implement authorized changes while applying this project's
+runtime policy. The pinned Pythonic-pattern detect/apply skills cover concrete
+pattern simplification; they do not establish a complete Python-version idiom or
+stdlib audit. If the installed release lacks a needed workflow, report the gap
+and assess the scoped code against the linked versioned documentation. Do not
+claim upstream capability or add a competing starter skill.
+
+This is an explicit dependency on separately versioned gz-skills capabilities,
+not permission to put starter-specific Python preferences into upstream plugins.
+Record the workflow release and its scope when relying on it; review a future
+upstream capability before changing the project's routing or claiming coverage.
+
+## Reproducible execution and maintenance
+
+Check official release information at adoption, scoped upgrades and quarterly
+on-demand maintenance. Verify the newest stable release in the allowed family
+against relevant project checks, then record the exact selected Python patch in
+`.python-version` and CI and exact dependency/tool resolutions in the appropriate
+lock/configuration. Keep that environment stable between authorized updates;
+do not resolve a moving latest version on every run. A freshness-only review
+reports gaps without changing pins or environments.
+
+An installed interpreter, an allowed range or a passing lock validation does not
+establish freshness. Record the checked date, selected/latest versions, official
+evidence, compatibility findings and adopt/defer decision. A demonstrated
+compatibility exception requires a reason and revisit condition. A new family
+requires separate review; a newer template does not silently change project policy.
+
+The starter itself also needs an exact interpreter/tool set to verify its helper.
+Its `.python-version`, CI, `pyproject.toml` and `uv.lock` describe that checkout's
+execution baseline. They are separate from the allowed-range policy above.
+
+Template release notes must distinguish **policy changes** (allowed families,
+required tools, compatibility exceptions or verification obligations) from
+**pin refreshes** within existing policy. Review both, reconcile affected project
+guidance/configuration, and preserve project additions and rollback evidence.
+Follow [stack maintenance](adoption.md#maintaining-the-adopted-stack) through
+gz-skills; this policy adds no maintenance skill, scheduler or automatic updater.

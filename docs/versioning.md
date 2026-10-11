@@ -1,6 +1,7 @@
 # Template versioning
 
-The current template version is **0.2.0**; the initial release was **0.1.0**.
+The template version is **0.3.0**; the initial release was **0.1.0**. The 0.3
+adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
 The current version is recorded in
 `bundle.json` as `template_version`, independently of SP, SP-BP and gz-skills
 versions and the adopter's application version. `pyproject.toml` mirrors the
@@ -16,9 +17,9 @@ The initial release is
 [v0.1.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.1.0),
 dated October 11, 2026. Its annotated tag identifies the verified release commit.
 Earlier development commits were untagged; do not label them as a released
-v0.1.0 retroactively. The current release is
-[v0.2.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.2.0),
-which adopts gz-skills v0.6.0. Future publication remains a separately authorized operation.
+v0.1.0 retroactively. The latest documented published release is
+[v0.3.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.3.0),
+which removes starter-authored skills and adopts gz-skills v0.7.0. Future publication remains a separately authorized operation.
 
 ## Version contract
 
@@ -31,6 +32,10 @@ fixes and clarifications. Release 1.0.0 only when the intended public contract
 and its compatibility guarantees are established. After 1.0, incompatible
 contract changes require a major bump, compatible additions a minor bump and
 compatible fixes a patch bump. Explain adopter impact even for small changes.
+
+Release notes distinguish changes to [adopter range/selection policy](baseline-policy.md)
+from refreshes of tested exact pins within that policy. Adopters review constraints
+and their reasons rather than treating every checkout pin as a permanent requirement.
 
 The current manifest accepts numeric `MAJOR.MINOR.PATCH` versions. Development
 snapshots carry the next intended version plus their exact commit SHA; they are

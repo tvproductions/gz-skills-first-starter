@@ -6,7 +6,8 @@
 - Codex and Claude native marketplace catalogs.
 - Preview/apply/status Codex project configuration for empty and existing projects.
 - Preservation/conflict/symlink/duplicate/gzkit checks and unittest coverage.
-- Agent adoption entry and a starter-owned front-door routing skill.
+- Zero starter-authored skills; documented adoption workflow and direct workflow
+  routing in adopter instructions. Analysis utilities live in ordinary tooling.
 - Default SP + gz-skills activation with SP-BP pinned but disabled.
 - Read-only structural assessment and guidance for incremental backporting.
 - Documented native loading/verification boundaries.
@@ -16,7 +17,7 @@
 ## Next adoption proofs
 
 1. Fresh Codex session: install from the published marketplace, verify project
-   enablement scope, exact loaded revisions, SP, gz-skills and the project front-door entry identities. Backplane
+   enablement scope, exact loaded revisions, SP and gz-skills entry identities. Backplane
    participation waits for its upstream readiness and explicit adoption.
 2. An authorized adopting repository pilot (FDAU is the primary candidate).
    Map existing configuration and adapters; do not replace project authorities.
@@ -28,7 +29,7 @@
 
 - Reviewed update/rollback automation that preserves existing native installs.
 - Generic maintenance remains owned by gz-skills; no local maintenance skill or
-  generic freshness reporter is planned. The pinned gz-skills v0.6.0 now supplies
+  generic freshness reporter is planned. The pinned gz-skills v0.7.0 now supplies
   freshness-only assessment and template/plugin source inventory through its
   existing maintenance skill. The starter retains policy, catalog consistency and
   preservation bindings; current tests prove preservation, not dependency
@@ -45,13 +46,20 @@ not a duplicate lifecycle in this starter.
 
 ## Python engineering policy follow-up
 
-The required Python 3.14 guidance and reusable engineering skill now name the
+Reusable Python-version idiom/stdlib review belongs upstream in gz-skills.
+The starter's [baseline policy](docs/baseline-policy.md) requires assessing code
+currency, but the pinned Pythonic-pattern skills are not a complete version audit.
+Record that coverage gap and review a future released workflow before routing
+to it. gz-skills v0.7.0 reinforces runtime discovery and scoped version-aware practices
+in its existing Python workflows; a comprehensive version audit remains a gap.
+
+The required Python 3.14 engineering policy documents the
 routine standards and on-demand hygiene selections, including Cosmic Ray,
 deptry, pip-audit and Import Linter. The approved routine pre-commit selection
 remains Ruff check/format, ty and unittest.
 Still pending: project-locked ty and routine pre-commit checks; agreement on
 expanded strict Ruff rules; shared/local utility ownership and existing-project
-adoption; native discovery of the Python skill; a pinned Cosmic Ray Python 3.14
+policy adoption; a pinned Cosmic Ray Python 3.14
 synthetic unittest compatibility proof; pinned Python 3.14 verification of the
 selected deeper analyzers. Deeper analyzers remain outside hooks
 and CI gates. SP-BP remains an expected addition, deferred pending readiness.
@@ -74,8 +82,7 @@ Lizard checker implements `lizard-functions-v1`: function/module/overall
 ceilings 20/20/20, nested functions counted independently, no synthetic class
 scores, native assertion semantics, undefined empty means, and fail-closed
 syntax/discovery errors. Use native Lizard measurements without syntax adapters; unsupported inline
-suites fail discovery instead of disappearing from the measurement. Read the Python skill's ccc-contract
-reference and run its CLI explicitly. Ruff and complexipy remain independent
+suites fail discovery instead of disappearing from the measurement. Read `docs/engineering/ccc-contract.md` and run its CLI explicitly. Ruff and complexipy remain independent
 checks; routine pre-commit and CI selection are unchanged. SP-BP remains expected,
 deferred and disabled. No cob_reports tool configuration or app code changed.
 The source-only cob_reports receipt reports 649 functions, maximum 100, overall

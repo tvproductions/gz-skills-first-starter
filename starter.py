@@ -159,9 +159,10 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
             raise AdoptionError(f"inspect existing discovery link {surface} before adoption")
         if folder.is_dir():
             for child in folder.iterdir():
-                if child.name == "skills-first-start" and surface != ".agents/skills":
+                if child.name in ("skills-first-start", "adopt-skills-stack", "python-engineering"):
                     raise AdoptionError(
-                        f"existing starter front door at {surface}; reconcile discovery first"
+                        f"legacy starter skill at {surface}/{child.name}; "
+                        "reconcile with docs/migration-0.3.md before adoption; no files changed"
                     )
                 if child.name.startswith("gzs-") or child.name in (
                     "superpowers",
@@ -179,7 +180,6 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
             ".skills-first/bundle.lock.json",
             ".gz-skills/settings.json",
             "AGENTS.skills-first.md",
-            ".agents/skills/skills-first-start/SKILL.md",
             "AGENTS.md",
         )
     }
@@ -199,9 +199,6 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
         ".codex/config.toml": project_config(old_config, ref),
         ".skills-first/bundle.lock.json": json.dumps(lock, indent=2) + "\n",
         "AGENTS.skills-first.md": fragment,
-        ".agents/skills/skills-first-start/SKILL.md": (
-            HERE / "skills/skills-first-start/SKILL.md"
-        ).read_text(encoding="utf-8"),
     }
     if not paths["AGENTS.md"].exists():
         candidates["AGENTS.md"] = (

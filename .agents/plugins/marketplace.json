@@ -35,7 +35,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/tvproductions/gz-skills.git",
-        "ref": "e722e808647481c4c9d2feab61f1843aa8e0b19a"
+        "ref": "6ebf803e4a2775d3742c84984a03548275b7c926"
       },
       "policy": {
         "installation": "AVAILABLE",

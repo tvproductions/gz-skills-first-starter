@@ -1,12 +1,30 @@
 # GZ skills-first starter
 
-A reusable, project-scoped starting point for **Superpowers + gz-skills**,
+A reusable, project-scoped starting point for **Superpowers + Superpowers Backplane + gz-skills**,
 with room for each application's own operational skills and supporting code. Built for work and personal projects under `tvproductions`.
 
-This repository is the bundle catalog, adoption tool, and guidance home. It is
+This repository is the bundle catalog, adoption tool, and guidance home.
+**It authors and distributes zero agent skills.** Upstream plugins supply skills;
+the starter supplies opinionated policy, deterministic configuration and provenance.
+Adopters own update review and project operational skills. See the
+[repository structure and ownership contract](docs/structure.md). It is
 not another development lifecycle or an application framework. Existing projects
 can adopt it without replacing their architecture. **xplane-fdau is the primary
 reference implementation**, not a template whose domain rules should be copied.
+
+The starter reinforces and highlights the behaviors supplied by gz-skills so
+adopters understand the emphasis: keep runtime/dependency choices current through
+`gzs-update-dependencies`, use Python-specific workflows for idiomatic code and
+portability, and apply them under the project's adopted engineering policy.
+
+The [adopter baseline policy](docs/baseline-policy.md) states allowed version
+ranges and tool-selection rules. This checkout's exact pins describe a verified
+execution environment; adopters maintain their own current verified selections
+within policy. Review policy changes separately from pin refreshes.
+Code must also follow relevant idioms and advances of its selected Python family;
+a current runtime alone does not satisfy the baseline. Apply the policy through
+SP/gz-skills workflows using the [verified Python skill mapping](docs/gz-skills-python.md)
+and report gaps in their version-specific review coverage.
 
 **SP-BP is an expected addition to the target SP + SP-BP + gz-skills stack,
 but is not ready for normal adoption.** It remains cataloged and pinned for
@@ -35,12 +53,12 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The current baseline is [v0.2.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.2.0).
-Verify its published tag and exact commit before adoption; a metadata value
+The template baseline is [v0.3.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.3.0).
+Verify a published tag and exact commit before adoption; a metadata value
 alone is not proof of a release.
 
 Read the target project's `AGENTS.md` and linked authorities, then read
-[the adoption skill](skills/adopt-skills-stack/SKILL.md). Identify which path the
+[the adoption workflow](docs/adoption-workflow.md). Identify which path the
 user requested before changing files:
 
 | User's goal | Entry |
@@ -50,10 +68,10 @@ user requested before changing files:
 | Start a new project | [Use this template](https://github.com/tvproductions/gz-skills-first-starter/generate), then adapt the copied starter material to the product |
 | Use an already adopted project | Project operational skills first; `gzs-router` for engineering skill selection; SP for feature design and implementation |
 
-`skills-first-start` is a small bootstrap pointer, not a competing engineering
-catalog. Prefer the discovered `gzs-router` for gz-skills selection. Broader
-cross-stack routing in gz-skills is a future upstream change, not an implemented
-capability of the pinned release.
+The adopter instructions route project operations to project-owned skills,
+feature work to SP and engineering selection to gz-skills `gzs-router`. These
+are references to independently maintained workflows; the starter installs no
+routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
 [the current handoff](docs/handoffs/2026-10-09-starter-continuation.md).
@@ -64,10 +82,12 @@ Requires uv, Python 3.14, Git, and Codex with plugin support. GitHub CLI is usef
 for checking upstream releases; Backplane's GitHub workflows remain deferred. No Python dependencies are needed for this tool.
 
 Baseline Python tools use the latest stable release within their selected family,
-with exact pins after verification. Python stays in 3.14.x; the current patch is
-3.14.8 (checked October 11, 2026). Recheck at setup/adoption and scoped maintenance;
+with exact pins after verification. Adopters stay current within Python 3.14.x,
+or host-compatible 3.12.x for XPPython3-bound code. This starter's execution pin
+is 3.14.8 (checked October 11, 2026), not a permanent adopter patch requirement.
+Recheck at setup/adoption and scoped maintenance;
 an installed older patch is not a freshness check. See the
-[baseline rule](skills/python-engineering/SKILL.md#latest-stable-within-the-selected-family).
+[baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
 gh repo clone tvproductions/gz-skills-first-starter
@@ -78,8 +98,8 @@ uv run --python 3.14.8 starter.py configure --project /path/to/your-project --ap
 ```
 
 The first configure command previews paths without writing. The second writes
-project Codex settings, a pinned bundle record, an instructions fragment, and a starter-owned
-`skills-first-start` front-door skill in `.agents/skills`. SP and gz-skills are
+project Codex settings, a pinned bundle record and an instructions fragment.
+It creates no skills or skill discovery directories. SP and gz-skills are
 enabled; SP-BP is explicitly disabled.
 Existing `AGENTS.md` is preserved; new projects get an entry pointing to the
 fragment. Existing configuration is extended only when it is compatible.
@@ -95,7 +115,7 @@ The native managers own their caches; upstream skills are never copied here.
 uv run --python 3.14.8 starter.py status --project /path/to/your-project
 ```
 
-For agent-guided adoption, read [the adoption skill](skills/adopt-skills-stack/SKILL.md).
+For agent-guided adoption, read [the adoption workflow](docs/adoption-workflow.md).
 You can also [use this repository as a GitHub template](https://github.com/tvproductions/gz-skills-first-starter/generate),
 then configure your new checkout from a separate, reviewed starter checkout.
 A generated repository inherits the starter files; simplify it for your product
@@ -115,12 +135,11 @@ It does not move code or read operational record contents. Use
 changes in small verified steps. Preserve current backlog practice while SP-BP
 is deferred.
 
-The [skills-first-start entry](skills/skills-first-start/SKILL.md) routes across
-project operations, SP feature work, gz-skills engineering and adoption. It is
-copied as a starter-owned project skill, independently of the upstream plugins;
-fresh-session discovery remains to be verified. gz-skills already supplies
-`gzs-router` for its own catalog, including the released Pythonic pattern
-review/apply pair. Profile setup remains a separate explicit adopter choice.
+The [adopter instructions](templates/AGENTS.skills-first.md) provide direct
+workflow routing and maintenance obligations. gz-skills supplies `gzs-router`
+for its own catalog, including the released Pythonic pattern review/apply pair.
+Profile setup remains a separate explicit adopter choice. Existing adopters
+reconcile retired starter skill copies using the [migration guide](docs/migration-0.3.md).
 
 ## The initial bundle
 
@@ -131,7 +150,7 @@ those exact full commit SHAs, not moving branches.
 |---|---|---|
 | [Superpowers](https://github.com/obra/superpowers) | v6.4.1 | Feature design, plans, implementation, review |
 | [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | Deferred; disabled by default | GitHub-backed backlog and handoff continuity |
-| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.6.0 | Portable engineering disciplines |
+| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.7.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
 Superpowers v6.4.2 exists, but this starter initially selects v6.4.1 because
@@ -150,7 +169,7 @@ over upstream profile defaults, including Python 3.14 and retired-tool choices.
 ## Current scope
 
 - Implemented: immutable bundle catalogs, Codex project configuration, preview,
-  idempotent adoption, conflict preservation, status, a front-door skill,
+  idempotent adoption, conflict preservation, status, project instructions,
   read-only backport assessment, and automated tests.
 - Claude Code: native bundle marketplace supplied; project install guidance
   documented. End-to-end installation is not verified by this starter yet.
@@ -175,8 +194,8 @@ uvx --python 3.14.8 ruff==0.15.18 format --check .
 The tool uses Python's standard library. Non-gzkit projects started from this
 starter carry its required Python engineering standards: uv-managed, pinned
 Python 3.14; Ruff check/format, ty, unittest and pre-commit; current idioms;
-stdlib-first code and explicit domain/adapter boundaries. See the reusable
-[Python engineering skill](skills/python-engineering/SKILL.md), including the
+stdlib-first code and explicit domain/adapter boundaries. See the versioned
+[Python engineering policy](docs/engineering/python.md), including the
 XPPython3 version exception and on-demand hygiene selections: Ruff C901 plus
 complexipy and Lizard (retiring Xenon and Radon),
 Interrogate, Vulture, Bandit, Coverage.py, Cosmic Ray, deptry, pip-audit and
@@ -184,9 +203,10 @@ Import Linter. These deeper checks stay outside hooks and CI.
 
 This records policy, not completed tool installation or enforcement. ty,
 pre-commit, expanded Ruff rules and Cosmic Ray's Python 3.14 compatibility proof
-remain outstanding in the starter. The configuration helper currently copies
-only the front-door skill; read the Python skill from a reviewed starter checkout
-when it is not discoverable. Existing-project adoption and shared/local utility
+remain outstanding in the starter. The configuration helper writes an instructions fragment;
+read the full Python policy from a reviewed starter checkout or reconcile it into
+project-owned documentation with provenance. Supporting analysis utilities live
+in `tools/engineering/`. Existing-project policy adoption and shared/local utility
 ownership still require design decisions. Preserve app-specific public contracts
 and numeric thresholds; do not transplant another project's gates.
 

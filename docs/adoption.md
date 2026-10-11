@@ -1,5 +1,10 @@
 # Adoption and native loading
 
+The starter supplies zero authored skills. Start with the
+[adoption workflow](adoption-workflow.md) and [structure contract](structure.md).
+Project instructions reference upstream and project-owned workflows directly.
+For an existing starter adoption, first read the [migration guide](migration-0.3.md).
+
 ## Establish the project boundary
 
 Use a separate reviewed checkout of `tvproductions/gz-skills-first-starter`. Record
@@ -23,9 +28,9 @@ older unversioned locks require reviewed reconciliation. See
 Review existing `AGENTS.md`, skill discovery surfaces, plugin configuration,
 and gzkit ownership. Existing project authorities remain in place. A conflict
 is a request for reconciliation, not permission to remove an existing install.
-The starter does not select a gz-skills profile. At the pinned release,
-`gzs-project-setup` is not available; reconsider setup only after reviewing and
-updating the bundle to a version that actually supplies it.
+The starter does not select a gz-skills profile. The pinned gz-skills v0.7.0
+supplies `gzs-project-setup`; invoking it and choosing lite/heavy remain separate
+explicit adopter decisions. Preserve starter Python policy over profile defaults.
 
 ## Project dependencies and settings
 
@@ -41,8 +46,9 @@ adopters automatically.
 After configure preview/apply, `.codex/config.toml` registers the shared Git
 marketplace at your reviewed starter SHA and enables SP and gz-skills for that
 project. SP-BP remains pinned and
-explicitly disabled. The starter-owned front-door skill is placed in
-`.agents/skills/skills-first-start/`; confirm its discovery in a fresh session.
+explicitly disabled. Configure writes `AGENTS.skills-first.md` for direct workflow
+routing and maintenance obligations; it installs no starter skills. Verify the
+upstream plugins in a fresh session after native installation.
 Commit this project configuration after review;
 installation caches remain native-harness state.
 
@@ -133,7 +139,7 @@ when those upstream contracts and negative cases have been demonstrated.
 Check upstream at adoption time rather than assuming this template's baseline
 is newest. SP's latest published release was **v6.4.2** as checked October 9,
 2026; gz-skills' latest is **v0.6.0** as checked October 11. The starter pins
-SP v6.4.1 and gz-skills v0.6.0. These observations expire as releases change.
+SP v6.4.1 and gz-skills v0.7.0. These observations expire as releases change.
 
 From a shell with authenticated GitHub CLI, obtain each latest published release
 and resolve its tag to a full commit SHA:
@@ -156,7 +162,7 @@ Latest published release and latest development commit are different choices.
 For an explicitly requested development version, resolve `commits/HEAD` through
 the same repository API, review its changes, and record its full SHA with release
 set to null and status identifying an unreleased development snapshot. Never put
-`main`, `HEAD`, or a moving tag in the catalog's revision field. gz-skills v0.6.0
+`main`, `HEAD`, or a moving tag in the catalog's revision field. gz-skills v0.7.0
 ships project setup; inspect the selected version's profile contract and retain
 an explicit user profile choice. Preserve approved starter Python policy over
 upstream defaults. Proposals are not shipped
@@ -200,7 +206,7 @@ Route authorized dependency/tool updates through gz-skills'
 `gzs-update-dependencies` and dependency-risk reviews through
 `gzs-dependency-risk-audit`, subject to project scope and authorities. The source
 inventory and native adoption requirements below are the starter's binding to
-those portable workflows. The pinned gz-skills v0.6.0 maintenance skill supplies
+those portable workflows. The pinned gz-skills v0.7.0 maintenance skill supplies
 freshness-only reporting and template/plugin inventory. Review mode leaves pins
 and environments unchanged. This starter adds no competing command and does not
 select a lite/heavy profile or invoke setup as part of a bundle update.
@@ -226,8 +232,9 @@ select a lite/heavy profile or invoke setup as part of a bundle update.
    and revisit condition for a retained older revision. Template maintenance may
    adopt useful guidance without wholesale copying of newer scaffold files.
 4. For an authorized update, preview the concrete diff from a separate reviewed
-   newer starter checkout. Reconcile instructions, managed lock/configuration and
-   starter-owned skills together; preserve app dependencies, settings, overrides,
+   newer starter checkout. Review changelog changes to baseline policy as well as
+   dependency versions. Reconcile instructions, managed lock/configuration and
+   project policy references together; preserve app dependencies, settings, overrides,
    profile choices and native manager state. The helper refuses differing managed
    files: there is no force overwrite or automatic template migration. Run project
    checks, use the host's supported update operation and verify fresh-session

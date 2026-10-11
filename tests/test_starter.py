@@ -177,14 +177,39 @@ class AdoptionTests(unittest.TestCase):
         self.assertEqual(p.read_text(), original)
         self.assertFalse((self.root / ".skills-first").exists())
 
-    def test_frontdoor_is_present_and_modified_skill_is_preserved(self):
+    def test_adoption_writes_guidance_without_creating_skill_surfaces(self):
+        result = self.configure(True)
+        self.assertEqual(
+            set(result["writes"]),
+            {
+                ".codex/config.toml",
+                ".skills-first/bundle.lock.json",
+                "AGENTS.skills-first.md",
+                "AGENTS.md",
+            },
+        )
+        self.assertFalse((self.root / ".agents").exists())
+        self.assertEqual(list(self.root.rglob("SKILL.md")), [])
+        self.assertEqual(starter.status(self.root)["status"], "configured")
+
+    def test_modified_project_guidance_is_preserved(self):
         self.configure(True)
-        skill = self.root / ".agents/skills/skills-first-start/SKILL.md"
-        self.assertTrue(skill.is_file())
-        skill.write_text("Project-specific routing")
+        guidance = self.root / "AGENTS.skills-first.md"
+        guidance.write_text("Project-specific routing")
         with self.assertRaises(starter.AdoptionError):
             self.configure(True)
-        self.assertEqual(skill.read_text(), "Project-specific routing")
+        self.assertEqual(guidance.read_text(), "Project-specific routing")
+
+    def test_project_owned_skills_are_preserved(self):
+        skill = self.root / ".agents/skills/fixture-operation/SKILL.md"
+        skill.parent.mkdir(parents=True)
+        original = b"Project-owned operational instructions.\n"
+        skill.write_bytes(original)
+        for apply in (False, True, True):
+            with self.subTest(apply=apply):
+                self.configure(apply)
+                self.assertEqual(skill.read_bytes(), original)
+                self.assertEqual(list(self.root.rglob("SKILL.md")), [skill])
 
     def test_backport_assessment_preserves_records_and_does_not_follow_links(self):
         (self.root / "records").mkdir()
@@ -203,11 +228,48 @@ class AdoptionTests(unittest.TestCase):
             next(e for e in result["inventory"] if e["path"] == "alias")["kind"], "symlink"
         )
 
-    def test_other_frontdoor_discovery_is_not_duplicated(self):
-        (self.root / ".codex/skills/skills-first-start").mkdir(parents=True)
-        with self.assertRaises(starter.AdoptionError):
-            self.configure(True)
-        self.assertFalse((self.root / ".agents").exists())
+    def test_legacy_starter_skills_require_review_before_any_writes(self):
+        for surface in (".agents/skills", ".codex/skills", ".claude/skills", ".github/skills"):
+            for name in ("skills-first-start", "adopt-skills-stack", "python-engineering"):
+                with (
+                    self.subTest(surface=surface, name=name),
+                    tempfile.TemporaryDirectory() as directory,
+                ):
+                    root = Path(directory)
+                    skill = root / surface / name / "SKILL.md"
+                    skill.parent.mkdir(parents=True)
+                    original = b"Retained starter skill with project edits.\n"
+                    skill.write_bytes(original)
+                    for apply in (False, True):
+                        with self.assertRaisesRegex(starter.AdoptionError, "migration-0.3"):
+                            starter.configure(root, REF, apply=apply)
+                        self.assertEqual(skill.read_bytes(), original)
+                        self.assertEqual([p for p in root.rglob("*") if p.is_file()], [skill])
+
+    def test_template_contains_no_authored_skills(self):
+        self.assertFalse((MODULE.parent / "skills").exists())
+        tracked = starter.subprocess.run(
+            [
+                "git",
+                "-C",
+                str(MODULE.parent),
+                "ls-files",
+                "--cached",
+                "--others",
+                "--exclude-standard",
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.splitlines()
+        self.assertEqual(
+            [
+                name
+                for name in tracked
+                if Path(name).name == "SKILL.md" and (MODULE.parent / name).exists()
+            ],
+            [],
+        )
 
     def test_backport_inventory_is_bounded(self):
         for n in range(205):

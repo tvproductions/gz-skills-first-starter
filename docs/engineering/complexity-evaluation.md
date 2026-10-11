@@ -1,12 +1,12 @@
 # Complexity evaluation: Python 3.14
 
-Run the adjacent `scripts/evaluate_complexity.py` explicitly after a reviewed
+Run the `tools/engineering/evaluate_complexity.py` explicitly after a reviewed
 tool upgrade, from the starter root using its `hygiene` group. This is a
 compatibility probe, not a hook, CI gate or application refactor command.
 Provide an output path in a task-specific temporary directory:
 
 ```bash
-uv run --managed-python --python 3.14.8 --group hygiene python skills/python-engineering/scripts/evaluate_complexity.py --output REPORT_DIR/evaluation.json
+uv run --managed-python --python 3.14.8 --group hygiene python tools/engineering/evaluate_complexity.py --output REPORT_DIR/evaluation.json
 ```
 
 The probe checks generic functions and type aliases, template strings and match;
@@ -36,7 +36,7 @@ Radon maintainability/raw metrics. See [Lizard](https://github.com/terryyin/liza
 
 ## cob_reports comparison corpus
 
-The [October 9 source-only comparison](../../../docs/evidence/2026-10-09-cob-reports-complexity-parity.json)
+The [October 9 source-only comparison](../evidence/2026-10-09-cob-reports-complexity-parity.json)
 uses 88 tracked source files with current local edits. All 621 legacy
 function/method locations matched Lizard; 585 scores matched exactly. One
 individual 20-boundary verdict changed, but cognitive 15 caught that function.
@@ -48,6 +48,6 @@ aggregation plus independent Ruff/complexipy checks; it does not establish
 universal equivalence or install a final gate. Settle the counting contract and
 invented-fixture proof before adopting or relaxing any thresholds.
 
-The [settled contract](ccc-contract.md) and `scripts/complexity_check.py` now
+The [settled contract](ccc-contract.md) and `tools/engineering/complexity_check.py` now
 implement the three-part gate. Earlier pending statements above describe the
 comparison stage. Use the checker for enforcement, the probe for compatibility.

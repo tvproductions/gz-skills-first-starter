@@ -89,11 +89,14 @@ as described in [adoption](adoption.md#getting-current-sp-and-gz-skills).
 
 ## Keep the baseline current
 
+Use the [adopter baseline policy](baseline-policy.md) for allowed version ranges
+and selection rules, independently of the reviewed checkout's exact execution pins.
+
 Generic maintenance workflows belong in gz-skills. Use its discovered
 `gzs-update-dependencies` for authorized dependency/tool updates and
 `gzs-dependency-risk-audit` for risk assessments. This document supplies project
 policy and source locations. The starter supplies no competing maintenance skill
-or generic freshness-report command. The pinned gz-skills v0.6.0 maintenance
+or generic freshness-report command. The pinned gz-skills v0.7.0 maintenance
 skill supports freshness-only review and template/plugin source inventory.
 Review mode leaves pins and environments unchanged; updates require scoped
 authorization. Apply the guidance below as this project's binding, preserving
@@ -101,14 +104,18 @@ its approved Python family, retired tools and explicit profile choices over
 upstream defaults.
 
 The required baseline rule is **latest stable within the explicitly selected
-release family**. Python's family is 3.14.x. At setup/adoption and scoped
+release family**. Python's family is 3.14.x normally and 3.12.x for XPPython3-bound
+projects. Exact patches record verified execution choices; adopters must refresh
+them rather than retain the starter's patch indefinitely. The embedded XPPython3
+runtime remains host-controlled; document limitations and validate it separately.
+At setup/adoption and scoped
 maintenance, verify the latest patch from official sources, test it, and record
 an exact runtime pin shared by local execution and CI. For other baseline Python
 tools, explicitly declare the approved family according to the tool's versioning
 scheme and select its newest stable release. An installed version, minor-only
 selector or old lock does not establish freshness. Family changes require
 separate review; compatibility exceptions need evidence and a revisit condition.
-See the [Python baseline rule](../skills/python-engineering/SKILL.md#latest-stable-within-the-selected-family).
+See the [Python baseline rule](engineering/python.md#latest-stable-within-the-selected-family).
 
 The current Python pin is 3.14.8, checked October 11, 2026 against the
 [official release](https://www.python.org/downloads/release/python-3148/).
@@ -139,7 +146,7 @@ At adoption, scoped tool upgrades and quarterly on-demand maintenance:
    Record host discovery separately from configuration validation.
 
 This is maintenance guidance, not an automatic updater, scheduled review or
-dependency upgrade. The Python skill's [freshness procedure](../skills/python-engineering/SKILL.md#periodic-dependency-freshness-review)
+dependency upgrade. The Python policy's [freshness procedure](engineering/python.md#periodic-dependency-freshness-review)
 supplies the detailed assessment. No fresh package-release inventory is claimed
 by this documentation change. Python 3.14's new concurrency, compression and
 template APIs are not needed for this preservation contract; retain the existing

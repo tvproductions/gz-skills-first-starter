@@ -203,3 +203,64 @@ skills. No setup invocation, lite/heavy selection, plugin installation or adopte
 migration is implied. Starter Python 3.14 and retired-tool decisions take
 precedence over upstream defaults. SP/SP-BP pins and SP-BP deferral are unchanged.
 Preserve v0.1.0 and historical evidence; verify the new release tag and CI live.
+
+## Zero starter-authored skills — October 11, 2026
+
+This supersedes earlier skill ownership, copying and discovery plans. The user
+selected zero authored/distributed skills for the starter. Read `docs/structure.md`,
+`docs/adoption-workflow.md`, `docs/engineering/python.md` and `docs/migration-0.3.md`.
+SP + SP-BP + gz-skills remains the intended stack; SP-BP stays deferred/disabled.
+Python 3.14, Astral tooling, exact verified pins and routine/on-demand boundaries
+remain binding. No upstream policy, dependency pins or profile choices change.
+
+The `skills/` tree is removed. Documentation owns adoption and Python policy;
+`tools/engineering/` owns the relocated static analysis utilities and CLI tests.
+Configure writes configuration, provenance and an instructions fragment with
+direct workflow routing; it creates no skill discovery tree. Legacy starter
+skill names block preview/apply before writes on all four inspected surfaces;
+preserve their content and follow reviewed migration rather than deleting them
+automatically. Project-owned operational skills remain supported and preserved.
+
+The working template is 0.3.0, unreleased; metadata and uv lock agree. Current
+checks: 28 routine unittest tests, bundle/both-catalog validation, Ruff check and
+format, and ten relocated analyzer CLI tests on Python 3.14.8. Historical receipts
+retain original paths, hashes and failures. New APIs are unnecessary for this
+relocation. Fresh-session host loading and existing enforcement gaps remain
+unverified/pending. No plugin installation, schedule, tag or release publication
+is implied. Recheck live worktree and publication state before continuation.
+
+`docs/baseline-policy.md` now owns adopter allowed ranges and selection rules,
+separately from checkout execution pins: stay current within 3.14.x normally or
+host-compatible 3.12.x for XPPython3-bound code. Inspect/test the embedded runtime
+separately. Code must observe relevant family-specific idioms, stdlib advances
+and deprecations through bounded review, not merely a runtime bump. SP/gz-skills
+supply reusable workflows; current Pythonic-pattern skills provide partial
+coverage, not a complete version audit. Preserve that capability gap. Release
+notes distinguish policy changes from pin refreshes. The relocated analyzer
+fixtures now write source explicitly as UTF-8 for Windows portability.
+
+Runtime discovery is owned by gz-skills; do not repeat its three-location
+procedure in starter/adopter instructions. The user authorized neighboring
+source changes: gz-skills pending 0.7.0 reinforces discovery and scoped current
+idiom/stdlib/deprecation assessment in five existing Python workflows, preserving
+project-policy precedence and upstream portability. It is unreleased; this
+starter remains pinned to v0.6.0 and has not migrated installed consumers.
+Read `docs/gz-skills-python.md` for coverage and status. Seven inspected installed
+v0.6.0 instruction bodies matched the pinned release's Git blob hashes after
+checkout newline normalization; that does not establish fresh-session loading.
+
+## Authorized 0.3.0 / gz-skills 0.7.0 release — October 11, 2026
+
+The user authorized publication of both releases. gz-skills v0.7.0 is published
+at `6ebf803e4a2775d3742c84984a03548275b7c926` with immutable tag, wheel/sdist and SHA-256 checksums. Its five
+Python workflows own runtime discovery and scoped version-aware practices.
+Tagged installs passed in disposable Codex/Claude configuration and uvx snapshots;
+see `docs/evidence/2026-10-11-gz-skills-0.7.0.json` for limits and channel status.
+The starter selects that exact commit in its bundle and both catalogs. Earlier
+pending-release and v0.6.0-current statements above are historical.
+
+Starter 0.3.0 releases the zero-skill structure and explicit baseline policy.
+Recheck the published tag, release commit and GitHub CI before continuation.
+Adopters must reconcile legacy skill copies/managed records; no automatic app
+migration, profile selection or SP-BP activation occurs. Fresh-session combined
+stack loading and existing enforcement gaps remain separate from publication.

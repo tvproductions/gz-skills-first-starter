@@ -1,24 +1,27 @@
----
-name: python-engineering
-description: Apply the skills-first starter's Python 3.14 engineering standards when developing, reviewing, or modernizing its non-gzkit projects; run deeper hygiene or mutation analysis only when requested.
----
-
 # Python engineering
 
-This skill binds the starter's Python standards to project engineering work.
+The [adopter baseline policy](../baseline-policy.md) owns allowed version ranges
+and selection rules. This document supplies their engineering application;
+checkout-specific execution pins do not replace that policy.
+Runtime discovery belongs in gz-skills. Require its workflows to obey the
+project's adopted runtime/engineering policy and report conflicting evidence;
+the starter does not duplicate the discovery procedure.
+
+This policy binds the starter's Python standards to project engineering work.
 These standards are required for projects started from this starter, not an
 optional profile. gzkit is a separate ecosystem. Read the project's AGENTS.md,
 configuration and current evidence; preserve unrelated work and operational
 contracts. In an existing project, report gaps before proposing a bounded
-adoption change. This skill does not authorize a broad application refactor.
+adoption change. This policy does not authorize a broad application refactor.
 
 ## Runtime and version-aware decisions
 
 ### Latest stable within the selected family
 
 Baseline Python tooling must use the latest stable release within each explicitly
-selected release family. For Python, this kit selects **3.14.x**, not 3.15 or a
-prerelease. Check official release information at new-project setup, adoption,
+selected release family. The allowed Python families are **3.14.x for ordinary
+projects** and **3.12.x for XPPython3-bound projects**. Check official release
+information at new-project setup, adoption,
 scoped tool upgrades and quarterly on-demand maintenance. Do not use an older
 patch merely because it is installed or satisfies a minor-only selector.
 
@@ -46,12 +49,58 @@ As checked October 11, 2026, Python's current baseline patch is
 [3.14.8](https://www.python.org/downloads/release/python-3148/). Recheck at the next
 setup or maintenance event; this date is not an evergreen latest-version claim.
 
-Use uv-managed, pinned Python 3.14. Confirm the actual interpreter through
+Use uv-managed Python in the selected family. Confirm the actual interpreter through
 `uv run --managed-python python --version` (honoring the project's exact pin).
 Keep `requires-python`,
 `.python-version`, Ruff's `py314` target, ty's Python target, hooks and CI aligned.
-The documented exception is an X-Plane tool whose XPPython3 host requires another
-Python version: pin the supported version, explain why and align tool targets.
+Use the same workflow with Python 3.12 for XPPython3-bound code, aligning metadata
+and Ruff/ty targets to 3.12. The family is the policy; the exact patch is the
+project's verified execution selection, refreshed during authorized maintenance.
+The starter's 3.14.8 pin is not a permanent patch requirement for adopters.
+
+XPPython3 embeds its interpreter: its current
+[installation documentation](https://xppython3.readthedocs.io/en/latest/usage/installation_plugin.html)
+shows Python 3.12, and its
+[development documentation](https://xppython3.readthedocs.io/en/latest/development/index.html)
+describes the integrated runtime (checked October 11, 2026). Select the latest
+stable host-compatible 3.12 patch for standalone development and tests. Inspect
+the installed host's actual Python patch and validate plugin behavior there;
+a uv environment upgrade does not upgrade XPPython3's embedded interpreter.
+If that interpreter trails the latest upstream patch, record the host limitation,
+evidence and revisit condition rather than replacing its runtime independently.
+Review host updates separately. Historical XPPython3 releases can require another
+family; record such a compatibility exception rather than assuming 3.12 works.
+
+## Toolchain ownership
+
+| Concern | Required choice |
+| --- | --- |
+| Standalone Python installation, environments, dependency resolution and locks | uv-managed Python, `pyproject.toml` and project-owned `uv.lock` |
+| Lint and format | Astral Ruff, reviewed selection and verified exact tool version |
+| Type checking | Astral ty, with the selected Python family reflected in its target |
+| Routine tests | Standard-library unittest |
+| Routine hooks | Pre-commit running only Ruff check/format, ty and unittest |
+| Deeper analysis | Separately pinned on-demand tools; outside hooks and CI gates |
+
+Use Astral tooling for the responsibilities above and keep declarations, locks,
+commands and CI aligned. Additional app dependencies remain project-owned and
+require a concrete purpose. A host-controlled runtime or tool compatibility
+exception needs evidence and a revisit condition. Report required tools that
+are not installed/enforced; do not silently substitute another toolchain or
+interpret an upstream profile as permission to change project policy.
+
+## Version-aware design
+
+Observe the [code currency requirement](../baseline-policy.md#code-must-follow-its-python-version)
+at adoption, runtime-family changes, feature design, code review and scoped
+maintenance. Use gz-skills for reusable review/refactoring and SP for feature
+work; this document binds their work to the selected Python family. Identify
+relevant older patterns and review useful replacements, including stdlib options,
+while preserving behavior. Record reasons for deferring concrete improvements.
+The [verified Python workflow mapping](../gz-skills-python.md) covers pattern
+detection/application, portability, setup, maintenance and debt/change review.
+These have narrower scopes than a complete version/idiom audit; report gaps in
+the installed workflows explicitly.
 
 Prefer clear current Python idioms and suitable standard-library APIs. Runtime
 metadata constrains tools; it does not establish which APIs or idioms are
@@ -64,11 +113,14 @@ Do not mechanically remove `from __future__ import annotations` or substitute
 new syntax without checking its effect on consumers and dependencies. Validate
 changed behavior on the pinned runtime; keep modernization within task scope.
 
-For design and dependency review, read the [3.14 opportunity guide](references/python314-opportunities.md)
+For 3.14 design and dependency review, read the [3.14 opportunity guide](python314-opportunities.md)
 and assess concrete gains over 3.13: annotation introspection, bounded executor
 submission, appropriate stdlib file/compression APIs and structured templates.
 Choose adopt/defer/not-applicable with evidence; a successful migration is not
 proof that new capabilities were evaluated. Keep this binding starter-owned.
+For XPPython3-bound code, consult versioned 3.12 documentation and mark 3.14-only
+opportunities unavailable in the host; assess separately scoped standalone code
+only against its own declared runtime. A 3.12 pin cannot validate 3.14 syntax/APIs.
 
 ## Routine engineering
 
@@ -84,7 +136,7 @@ at a public seam, describe observable outcomes and model domain meanings. Favor
 hexagonal architecture: the domain core performs no I/O, defines ports, and
 adapters own external effects. Skills orchestrate commands and hold no domain
 logic. Use the available SP and gz-skills workflows for their portable design
-and engineering disciplines; this skill supplies the Python-specific binding.
+and engineering disciplines; this policy supplies the Python-specific binding.
 
 Prefer the standard library, including `sqlite3` for SQLite. Pydantic is allowed.
 Record any other dependency's purpose and resource cost, and keep it at an
@@ -147,7 +199,7 @@ per-function measurements to recover the three-part approach: maximum function
 score, each module's mean, and the overall function-weighted mean. Starting
 cyclomatic ceilings are 20/20/20, under the reviewed function-based contract for classes, nested functions,
 assertions, exclusions and empty modules. These ceilings are implemented by the explicit Lizard checker; see the
-[counting contract](references/ccc-contract.md) before running or adopting it.
+[counting contract](ccc-contract.md) before running or adopting it.
 When all three use the same population and ceiling, the maximum already bounds
 the averages; retain averages for visibility and future stricter policies.
 Lizard's counting differs from Radon and Ruff. Compare changed scores and
@@ -161,18 +213,18 @@ application runtime dependencies or service calls. Run from the reviewed starter
 task-specific temporary directory created first:
 
 ```bash
-uv run --managed-python --group hygiene ruff check --select C901 --ignore-noqa starter.py tests skills/python-engineering/scripts
-uv run --managed-python --group hygiene complexipy starter.py tests skills/python-engineering/scripts --cache-dir REPORT_DIR/cache --output-format json --output REPORT_DIR/cognitive.json
+uv run --managed-python --group hygiene ruff check --select C901 --ignore-noqa starter.py tests tools/engineering
+uv run --managed-python --group hygiene complexipy starter.py tests tools/engineering --cache-dir REPORT_DIR/cache --output-format json --output REPORT_DIR/cognitive.json
 ```
 
 Run all three even when one reports findings. Use the evaluation probe for
-Lizard compatibility scores. Run `scripts/complexity_check.py` explicitly for
+Lizard compatibility scores. Run `tools/engineering/complexity_check.py` explicitly for
 the C/C/C gate using the contract command and source scope. In an adopting project, select
 its explicit source and invented-test paths and use its reviewed tool pins.
 Do not add C901 to routine Ruff selection, complexipy to hooks, or complexity
 checks to CI. No routine pre-commit selection changes are implied.
 
-The [historical two-tool baseline](../../docs/evidence/2026-10-09-complexity-evaluation.json)
+The [historical two-tool baseline](../evidence/2026-10-09-complexity-evaluation.json)
 contains source hashes and scores: `configure` is cyclomatic 21/cognitive 57;
 `project_config` is cyclomatic 10/cognitive 28. These remain failures against the
 ceilings, not waived passes. New code meets both ceilings; existing over-limit
@@ -182,10 +234,10 @@ a snapshot to hide regressions, suppress findings or raise limits. Refactoring
 is separately scoped and verified. Routine checks passing does not establish
 that the on-demand complexity checks are clean.
 
-The [three-tool receipt](../../docs/evidence/2026-10-09-three-tool-complexity-evaluation.json)
+The [three-tool receipt](../evidence/2026-10-09-three-tool-complexity-evaluation.json)
 records current source hashes, Lizard measurements and aggregates.
 
-See [the evaluation procedure](references/complexity-evaluation.md) to reproduce
+See [the evaluation procedure](complexity-evaluation.md) to reproduce
 the compatibility checks and interpret the evidence. Full Python grammar support
 is not established by the synthetic cases.
 
@@ -210,17 +262,17 @@ this starter yet.
 
 Generic maintenance belongs to gz-skills. Route authorized dependency/tool
 updates to `gzs-update-dependencies` and dependency-risk assessments to
-`gzs-dependency-risk-audit`, preserving project scope and authorities. This skill
+`gzs-dependency-risk-audit`, preserving project scope and authorities. This policy
 binds those workflows to the selected Python family, tool choices and verification
 requirements; it does not duplicate their inventory, resolution or audit process.
-The pinned gz-skills v0.6.0 maintenance skill supports freshness-only review and
+The pinned gz-skills v0.7.0 maintenance skill supports freshness-only review and
 template/plugin inventory. Review mode leaves pins and environments unchanged.
 Preserve this starter's Python 3.14 family and retired Xenon/Radon decisions over
 upstream profile defaults; the pin update does not select a lite/heavy profile.
 
 At adoption, reviewed tool upgrades and quarterly on-demand maintenance, apply
-the [configuration and baseline contract](../../docs/project-configuration.md)
-and [stack maintenance binding](../../docs/adoption.md#maintaining-the-adopted-stack).
+the [configuration and baseline contract](../project-configuration.md)
+and [stack maintenance binding](../adoption.md#maintaining-the-adopted-stack).
 Include the adopted starter revision, SP, SP-BP and gz-skills alongside runtime
 and development tools. Record date, selected/latest versions, official evidence
 and adopt/defer decisions; keep support floors distinct from tested pins. Preserve
@@ -247,4 +299,4 @@ Report actual checks, unresolved failures and unverified capabilities. Current
 SP and gz-skills remain independently owned. SP-BP is an expected addition to
 the target stack, deferred until readiness and explicit adoption are established;
 existing backlog and handoff authority remains in place. Never infer plugin
-installation, a profile choice or publication permission from this skill.
+installation, a profile choice or publication permission from this policy.

@@ -1,5 +1,62 @@
 # Changelog
 
+## 0.3.0 — 2026-10-11
+
+- Establish the zero-skill ownership contract: this template authors and
+  distributes no agent skills. SP + SP-BP + gz-skills remains the intended stack,
+  with SP and gz-skills active and SP-BP deferred/disabled pending readiness and
+  explicit adoption. Project operational skills remain project-owned.
+- Move adoption instructions into `docs/adoption-workflow.md`, Python policy and
+  references into `docs/engineering/`, and on-demand analysis utilities and their
+  CLI tests into `tools/engineering/`. Preserve the existing Python/tool policy
+  and analyzer semantics. Remove all starter `SKILL.md` packages.
+- Configure now writes host configuration, provenance and project instructions
+  without installing a front-door skill or creating skill discovery directories.
+  Instructions route directly to upstream/project workflows and require review
+  of template releases, dependency updates and baseline-policy changes.
+- Add the structure/ownership contract, supporting design precedents and an
+  explicit migration guide. Correct stale copied guidance about gz-skills v0.6.0
+  maintenance and setup capabilities without invoking setup or selecting a profile.
+- Clarify that adopters stay current within Python 3.14.x, or host-compatible
+  3.12.x for XPPython3-bound projects. Exact execution pins are refreshed verified
+  selections rather than permanent adopter patch requirements. XPPython3's
+  embedded runtime remains host-controlled and requires separate validation.
+- Add `docs/baseline-policy.md` as the adopter version-range/selection authority,
+  separate from checkout-specific execution pins. Release guidance distinguishes
+  policy changes from pin refreshes; unsettled tool families remain explicit gaps.
+- Require relevant code to observe the selected Python family's idioms, stdlib
+  advances and deprecations through bounded evidence-backed review. Delegate
+  reusable workflows to SP/gz-skills while keeping runtime policy starter-owned;
+  the pinned Pythonic-pattern skills do not prove complete version-audit coverage.
+- Inspect seven relevant gz-skills instruction bodies and verify their Git blob
+  hashes against the pinned release; document Python pattern, portability,
+  environment/maintenance and debt/change-review coverage and its limits.
+- Reinforce upstream runtime/engineering-policy obedience while leaving runtime
+  discovery in gz-skills. Record the separately authorized neighboring-source
+  reinforcement as released v0.7.0 at `6ebf803e4a2775d3742c84984a03548275b7c926`,
+  selected consistently by the bundle and both native catalogs. Tagged installs
+  passed in disposable Codex/Claude configuration and the uvx snapshot installer.
+- Correct the relocated analyzer test fixture to write Python source as UTF-8;
+  Windows' legacy locale encoding otherwise invalidates its Unicode cases.
+
+Adopter impact: reconcile older managed records and project instructions; retire
+legacy starter skills only after reviewing and preserving project edits. Configure
+blocks legacy starter skill names in all four inspected discovery surfaces before
+any writes and preserves their contents. It never performs an automatic migration.
+Keep prior pins/configuration for rollback and preserve application skills,
+dependencies, overrides, profiles and native manager state.
+
+Verification: 28 routine unittest tests, bundle/both-catalog validation and pinned
+Ruff lint/format checks on Python 3.14.8, plus the relocated analyzer's ten public
+CLI tests. Template metadata/lock changes select 0.3.0; SP/SP-BP and runtime/tool
+pins are retained. The independent gz-skills update is recorded above.
+The relocation requires no new Python 3.14 APIs; concurrency, annotation,
+compression and template-string opportunities are deferred as unnecessary here.
+Historical evidence retains its original paths/hashes and failures. Fresh-session
+host loading, ty/pre-commit enforcement and the other documented gaps remain
+unverified or pending. The GitHub release identifies the full verified template
+commit and CI outcome; native loading evidence remains separate.
+
 ## 0.2.0 — 2026-10-11
 
 - Adopt gz-skills v0.6.0 at exact commit

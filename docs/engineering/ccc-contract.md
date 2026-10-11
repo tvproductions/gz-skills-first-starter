@@ -42,8 +42,8 @@ already bounds the means; retain all three independently reported checks.
 From a reviewed starter checkout, use an unused temporary REPORT_DIR:
 
 ```bash
-uv run --managed-python --python 3.14.8 --group hygiene python skills/python-engineering/scripts/complexity_check.py --root PROJECT_ROOT --paths src --output REPORT_DIR/ccc.json
-uv run --managed-python --python 3.14.8 --group hygiene python -m unittest discover -s skills/python-engineering/scripts -p 'test_*.py' -v
+uv run --managed-python --python 3.14.8 --group hygiene python tools/engineering/complexity_check.py --root PROJECT_ROOT --paths src --output REPORT_DIR/ccc.json
+uv run --managed-python --python 3.14.8 --group hygiene python -m unittest discover -s tools/engineering -p 'test_*.py' -v
 ```
 
 The checker does not run Ruff/complexipy or import application code. Run those
