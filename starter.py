@@ -45,11 +45,11 @@ def validate_bundle() -> None:
         raise AdoptionError("every component needs an immutable full commit SHA")
     if any(type(p.get("enabled_by_default")) is not bool for p in parts):
         raise AdoptionError("every component needs an explicit boolean default activation")
-    codex = json.loads((HERE / ".agents/plugins/marketplace.json").read_text())
+    codex = json.loads((HERE / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
     actual = {p["name"]: (p["source"]["url"], p["source"]["ref"]) for p in codex["plugins"]}
     if actual != expected or codex["name"] != MARKETPLACE:
         raise AdoptionError("Codex marketplace does not match bundle pins")
-    claude = json.loads((HERE / ".claude-plugin/marketplace.json").read_text())
+    claude = json.loads((HERE / ".claude-plugin/marketplace.json").read_text(encoding="utf-8"))
     # Claude Code reads "ref" as a branch or tag; a commit pin must use "sha".
     actual = {p["name"]: (p["source"]["url"], p["source"].get("sha")) for p in claude["plugins"]}
     if actual != expected or claude["name"] != MARKETPLACE:
@@ -73,7 +73,7 @@ def check_path(root: Path, relative: str) -> Path:
 def profile_check(path: Path) -> None:
     if not path.exists():
         return
-    data = json.loads(path.read_text())
+    data = json.loads(path.read_text(encoding="utf-8"))
     if (
         not isinstance(data, dict)
         or set(data) != {"schema_version", "profile"}
@@ -174,9 +174,11 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
     }
     profile_check(paths[".gz-skills/settings.json"])
     old_config = (
-        paths[".codex/config.toml"].read_text() if paths[".codex/config.toml"].exists() else ""
+        paths[".codex/config.toml"].read_text(encoding="utf-8", newline="")
+        if paths[".codex/config.toml"].exists()
+        else ""
     )
-    fragment = (HERE / "templates/AGENTS.skills-first.md").read_text()
+    fragment = (HERE / "templates/AGENTS.skills-first.md").read_text(encoding="utf-8")
     lock = {
         "schema_version": 1,
         "starter": {"repository": ORIGIN, "revision": ref},
@@ -188,7 +190,7 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
         "AGENTS.skills-first.md": fragment,
         ".agents/skills/skills-first-start/SKILL.md": (
             HERE / "skills/skills-first-start/SKILL.md"
-        ).read_text(),
+        ).read_text(encoding="utf-8"),
     }
     if not paths["AGENTS.md"].exists():
         candidates["AGENTS.md"] = (
@@ -255,7 +257,7 @@ def status(project: Path) -> dict:
     path = check_path(root, ".skills-first/bundle.lock.json")
     if not path.exists():
         return {"status": "not configured", "runtime_readiness": "unverified"}
-    lock = json.loads(path.read_text())
+    lock = json.loads(path.read_text(encoding="utf-8"))
     expected = configure(root, lock["starter"]["revision"])
     return {
         "status": "configured" if not expected["writes"] else "incomplete",

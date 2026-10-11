@@ -14,8 +14,41 @@ adoption change. This skill does not authorize a broad application refactor.
 
 ## Runtime and version-aware decisions
 
+### Latest stable within the selected family
+
+Baseline Python tooling must use the latest stable release within each explicitly
+selected release family. For Python, this kit selects **3.14.x**, not 3.15 or a
+prerelease. Check official release information at new-project setup, adoption,
+scoped tool upgrades and quarterly on-demand maintenance. Do not use an older
+patch merely because it is installed or satisfies a minor-only selector.
+
+Declare each other baseline tool's approved family in project configuration or
+decisions using that tool's actual release/compatibility scheme; do not assume all
+tools follow Python's versioning. Apply this rule to uv, Ruff, ty, pre-commit and
+the selected on-demand analyzers. Tools not yet installed or verified remain
+adoption gaps. Family changes require a separate compatibility decision.
+
+Verify the newest stable release in the approved family, run the relevant checks,
+then record exact runtime/tool pins and locks. Use the exact Python patch in
+`.python-version` and CI; commands must honor it rather than override it with
+`--python 3.14`. Verify the executing interpreter, including existing virtual
+environments. A pin makes runs reproducible; it does not prove ongoing freshness.
+Refresh during authorized setup/maintenance rather than resolving “latest” on
+every invocation. A check-only request reports a stale pin without upgrading it.
+
+If the newest release has a demonstrated compatibility problem or a host imposes
+another version, record the selected version, evidence, reason, checked date and
+revisit condition. Report that as an exception, not a current baseline claim.
+Preserve adopter dependencies and explicit overrides. Keep these preferences
+starter-owned; no upstream plugin policy, hooks or schedules follow from them.
+
+As checked October 11, 2026, Python's current baseline patch is
+[3.14.8](https://www.python.org/downloads/release/python-3148/). Recheck at the next
+setup or maintenance event; this date is not an evergreen latest-version claim.
+
 Use uv-managed, pinned Python 3.14. Confirm the actual interpreter through
-`uv run --managed-python --python 3.14 python --version`. Keep `requires-python`,
+`uv run --managed-python python --version` (honoring the project's exact pin).
+Keep `requires-python`,
 `.python-version`, Ruff's `py314` target, ty's Python target, hooks and CI aligned.
 The documented exception is an X-Plane tool whose XPPython3 host requires another
 Python version: pin the supported version, explain why and align tool targets.
@@ -128,8 +161,8 @@ application runtime dependencies or service calls. Run from the reviewed starter
 task-specific temporary directory created first:
 
 ```bash
-uv run --managed-python --python 3.14 --group hygiene ruff check --select C901 --ignore-noqa starter.py tests skills/python-engineering/scripts
-uv run --managed-python --python 3.14 --group hygiene complexipy starter.py tests skills/python-engineering/scripts --cache-dir REPORT_DIR/cache --output-format json --output REPORT_DIR/cognitive.json
+uv run --managed-python --group hygiene ruff check --select C901 --ignore-noqa starter.py tests skills/python-engineering/scripts
+uv run --managed-python --group hygiene complexipy starter.py tests skills/python-engineering/scripts --cache-dir REPORT_DIR/cache --output-format json --output REPORT_DIR/cognitive.json
 ```
 
 Run all three even when one reports findings. Use the evaluation probe for
@@ -175,27 +208,27 @@ this starter yet.
 
 ## Periodic dependency freshness review
 
-During adoption, reviewed tool upgrades and quarterly maintenance, explicitly
-review runtime dependencies, development/hygiene tools and pinned SP/gz-skills/
-SP-BP releases. This is an on-demand maintenance workflow, not a scheduled job,
-hook, CI gate or automatic consequence of ordinary code changes. Keep deferred
-SP-BP disabled.
+Generic maintenance belongs to gz-skills. Route authorized dependency/tool
+updates to `gzs-update-dependencies` and dependency-risk assessments to
+`gzs-dependency-risk-audit`, preserving project scope and authorities. This skill
+binds those workflows to the selected Python family, tool choices and verification
+requirements; it does not duplicate their inventory, resolution or audit process.
+Freshness-only reporting and generalized template/plugin inventory are upstream
+enhancement proposals, not capabilities established in the pinned release.
 
-Inspect declarations and the current uv lock. Where supported, use
-`uv tree --outdated` to identify newer package releases without changing the
-lock. Check official release history, meaningful source/test activity, supported
-Python versions, unresolved compatibility issues and vulnerability advisories.
-Treat a year without releases as a review signal, not proof of abandonment;
-recent cosmetic commits are not proof of analyzer maintenance. Record the
-checked date, pinned/latest versions, evidence links, risks and recommendation.
-Separate freshness, compatibility and vulnerability findings. Propose bounded
-upgrades or replacements; do not refresh every pin or change upstream plugin
-policy merely to make the list current. Verify changed tools on pinned Python
-3.14 before adoption and retain comparable complexity evidence.
+At adoption, reviewed tool upgrades and quarterly on-demand maintenance, apply
+the [configuration and baseline contract](../../docs/project-configuration.md)
+and [stack maintenance binding](../../docs/adoption.md#maintaining-the-adopted-stack).
+Include the adopted starter revision, SP, SP-BP and gz-skills alongside runtime
+and development tools. Record date, selected/latest versions, official evidence
+and adopt/defer decisions; keep support floors distinct from tested pins. Preserve
+app additions and overrides, and report missing evidence without claiming currency.
+Release age alone does not prove abandonment. Verify changed tools on the pinned
+Python patch and retain comparable complexity evidence.
 
-Strong tool preferences belong to this starter binding. gz-skills and SP remain
-agnostic, and SP-BP should be agnostic too; no upstream edits are authorized by
-this skill. Readiness and explicit adoption still govern SP-BP participation.
+No automatic upgrades, schedules, hooks or extra CI gates follow from this rule.
+Keep these tool preferences starter-owned and upstream plugins agnostic. SP-BP
+remains disabled until readiness and explicit adoption are established.
 
 ## Ownership and evidence
 

@@ -20,6 +20,15 @@ The starter does not select a gz-skills profile. At the pinned release,
 `gzs-project-setup` is not available; reconsider setup only after reviewing and
 updating the bundle to a version that actually supplies it.
 
+## Project dependencies and settings
+
+Inventory the project's dependencies, lock and application settings before
+adoption. Use the [configuration and baseline contract](project-configuration.md)
+to preserve additions, extensions and reviewed overrides. The configure helper
+does not rewrite these files or resolve Python packages. Review baseline
+freshness at adoption; changing a shared baseline does not migrate existing
+adopters automatically.
+
 ## Codex
 
 After configure preview/apply, `.codex/config.toml` registers the shared Git
@@ -170,6 +179,57 @@ marketplace, or silently update unrelated projects. To use a project-specific
 version ahead of the shared baseline, record it in a separately reviewed catalog
 and reconcile the existing discovery source explicitly. Do not leave the shared
 bundle lock claiming one revision while another is installed.
+
+## Maintaining the adopted stack
+
+Adopters maintain four independent sources: this starter template, SP, SP-BP and
+gz-skills. A copied template, pinned bundle or installed plugin does not establish
+freshness. Review them at adoption, scoped upgrades and quarterly on-demand
+maintenance alongside the [Python baseline](project-configuration.md#keep-the-baseline-current).
+This is an adopter responsibility, not a scheduler or an automatic updater.
+
+Route authorized dependency/tool updates through gz-skills'
+`gzs-update-dependencies` and dependency-risk reviews through
+`gzs-dependency-risk-audit`, subject to project scope and authorities. The source
+inventory and native adoption requirements below are the starter's binding to
+those portable workflows. Freshness-only reporting and generalized template/plugin
+inventory are proposed upstream enhancements, not a shipped starter command or
+a claim about the pinned gz-skills release.
+
+1. Read `.skills-first/bundle.lock.json`, project configuration and native manager
+   inventory. Record the adopted starter SHA, component SHAs, selected versions
+   and actual loaded sources. A generated template also carries copied files;
+   inventory project changes before comparing them with newer starter material.
+2. Check official upstream sources independently:
+   [starter](https://github.com/tvproductions/gz-skills-first-starter),
+   [SP releases](https://github.com/obra/superpowers/releases),
+   [SP-BP releases](https://github.com/tvproductions/superpowers-backplane/releases)
+   and [gz-skills releases](https://github.com/tvproductions/gz-skills/releases).
+   Prefer the latest stable release within a project's explicitly selected
+   compatibility family; review family changes separately. For sources with no
+   published release, record that fact and a reviewed full published commit SHA;
+   label it as an unreleased snapshot. A successful query with no release is
+   different from an authentication/network failure. Never record moving branches
+   or tags as immutable revisions.
+3. Keep a project maintenance receipt in the existing decision/handoff authority:
+   checked date, selected/latest release or SHA, evidence links, compatibility
+   findings and independent adopt/defer decisions for all four. Record a reason
+   and revisit condition for a retained older revision. Template maintenance may
+   adopt useful guidance without wholesale copying of newer scaffold files.
+4. For an authorized update, preview the concrete diff from a separate reviewed
+   newer starter checkout. Reconcile instructions, managed lock/configuration and
+   starter-owned skills together; preserve app dependencies, settings, overrides,
+   profile choices and native manager state. The helper refuses differing managed
+   files: there is no force overwrite or automatic template migration. Run project
+   checks, use the host's supported update operation and verify fresh-session
+   discovery. Retain the earlier configuration and source pins for rollback.
+
+Review SP and gz-skills without waiting for SP-BP. Track Backplane's updates and
+readiness even while disabled; a newer revision or first release alone does not
+authorize activation or prove compatibility. Its pre-release host acceptance
+limitations remain until independently verified and adoption is explicit.
+Python/tool-family preferences stay in the starter/project binding; do not edit
+the upstream plugins to impose them.
 
 ## Updates and rollback
 

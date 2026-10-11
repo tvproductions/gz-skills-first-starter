@@ -25,6 +25,14 @@
 ## Later extensions
 
 - Reviewed update/rollback automation that preserves existing native installs.
+- Generic maintenance remains owned by gz-skills; no local maintenance skill or
+  generic freshness reporter is planned. Propose a freshness-only assessment and
+  generalized template/plugin source inventory as enhancements to existing
+  upstream maintenance skills. No upstream issue has been filed or implementation
+  verified by this decision. The starter retains policy, catalog consistency and
+  preservation bindings; current tests prove preservation, not dependency
+  resolution or settings loading. See the
+  [configuration contract](docs/project-configuration.md).
 - New-project product templates selected by the adopter, not a mandatory framework.
 - Optional app-owned plugin registration alongside the three engineering plugins.
 - Synchronize bundle compatibility evidence as SP-BP completes its release and

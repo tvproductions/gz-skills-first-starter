@@ -6,7 +6,7 @@ compatibility probe, not a hook, CI gate or application refactor command.
 Provide an output path in a task-specific temporary directory:
 
 ```bash
-uv run --managed-python --python 3.14 --group hygiene python skills/python-engineering/scripts/evaluate_complexity.py --output REPORT_DIR/evaluation.json
+uv run --managed-python --python 3.14.8 --group hygiene python skills/python-engineering/scripts/evaluate_complexity.py --output REPORT_DIR/evaluation.json
 ```
 
 The probe checks generic functions and type aliases, template strings and match;

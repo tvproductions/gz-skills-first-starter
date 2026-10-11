@@ -36,7 +36,7 @@ reviewed checkout when it is not exposed through native discovery.
 
 The maintained guidance lives at https://github.com/tvproductions/gz-skills-first-starter.
 Use the revision recorded in `.skills-first/bundle.lock.json` when present.
-From that reviewed checkout, `uv run --python 3.14 starter.py backport --project <root>` gives
+From that reviewed checkout, `uv run --python 3.14.8 starter.py backport --project <root>` gives
 a read-only starting assessment. Build a source-to-target mapping before changes;
 retain project authorities, domain rules, records, and working verification.
 
@@ -50,3 +50,14 @@ versioned, and never install their skills through duplicate discovery paths.
 For current SP/gz-skills releases or development snapshots, follow the reviewed
 starter's `docs/adoption.md` update procedure. Query upstream before saying
 “latest”; preserve exact source pins and verify actual loading after an update.
+The same maintenance review includes the starter template itself and deferred
+SP-BP. Check all four independently at adoption and scoped maintenance; record
+dates, upstream evidence and adopt/defer decisions. A newer SP-BP revision does
+not authorize enabling it. Preserve project additions, overrides and rollback
+pins when reconciling changes from a newer reviewed starter.
+
+Route authorized dependency/tool updates to gz-skills `gzs-update-dependencies`
+and dependency-risk assessments to `gzs-dependency-risk-audit`. The starter's
+Python skill supplies policy, not a parallel generic maintenance workflow.
+Freshness-only reporting and expanded template/plugin inventory remain upstream
+enhancement proposals; do not invent a local skill or claim they have shipped.

@@ -24,6 +24,21 @@ supply engineering policy. Keep metadata and tool targets aligned and validate
 on the actual pinned interpreter. The documented XPPython3 host exception pins
 its supported version and explains the difference.
 
+Baseline Python tooling must use the latest stable release within each explicitly
+selected release family, verified at setup/adoption and scoped maintenance. Python's
+family is 3.14.x; pin the verified patch exactly in `.python-version` and CI.
+An installed interpreter satisfying `3.14` is not evidence of freshness. Keep
+exact tool pins/locks after verification; family changes require separate review.
+Record compatibility exceptions with evidence and a revisit condition. Pass this
+rule to adopters through the instructions fragment and Python engineering skill.
+
+Generic dependency maintenance belongs in gz-skills. Route authorized updates to
+`gzs-update-dependencies` and dependency-risk reviews to
+`gzs-dependency-risk-audit`; keep this starter's material as policy and binding
+guidance. Do not add a competing local maintenance skill or generic freshness
+reporter. A freshness-only mode and broader template/plugin inventory are upstream
+enhancement proposals, not shipped capabilities or filed issues.
+
 The routine standard is Ruff check/format, ty, unittest (never pytest), and
 pre-commit running those checks. Favor strict, reviewed lint rules. On-demand
 hygiene selects Ruff C901 (cyclomatic ceiling 20), complexipy (cognitive ceiling
@@ -49,8 +64,8 @@ project files, explicit profile choices, and native manager state. A config file
 or successful manifest validation cannot prove fresh-session skill discovery.
 Report unverified host behavior and Backplane pre-release limitations explicitly.
 
-Checks: `uv run --python 3.14 -m unittest discover -s tests -v`, `uv run --python 3.14 starter.py validate`,
-`uvx --python 3.14 ruff==0.15.18 check .`, and `uvx --python 3.14 ruff==0.15.18 format --check .`.
+Checks: `uv run --python 3.14.8 -m unittest discover -s tests -v`, `uv run --python 3.14.8 starter.py validate`,
+`uvx --python 3.14.8 ruff==0.15.18 check .`, and `uvx --python 3.14.8 ruff==0.15.18 format --check .`.
 No plugin installation, GitHub issue mutation, tag, or release publication is
 implied by editing this repository. Follow the user's actual authorization.
 
@@ -58,7 +73,8 @@ Strong Python/tool preferences belong to this starter and its project binding.
 Keep gz-skills and SP agnostic; SP-BP should remain agnostic as well. Do not
 propagate these choices into upstream plugins. Review dependency freshness
 periodically on demand (at adoption, tool upgrades, and quarterly maintenance),
-including runtime/dev tools and pinned plugin releases; distinguish release age
+including runtime/dev tools, the adopted starter revision and pinned SP, SP-BP
+and gz-skills releases; distinguish release age
 from abandonment. See the Python skill. Do not add review hooks or automatic
 schedules, or upgrade dependencies without a scoped request.
 

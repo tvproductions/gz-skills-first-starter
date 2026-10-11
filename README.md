@@ -18,6 +18,17 @@ For current SP and gz-skills versions, follow
 [checking and adopting upstream updates](docs/adoption.md#getting-current-sp-and-gz-skills).
 The bundled pins are a reproducible baseline, not a promise to track latest.
 
+Adopters can add dependencies, extend configuration and select reviewed overrides.
+Use `pyproject.toml` or a project-owned `settings.json` for application settings;
+Python dependencies still belong in `pyproject.toml` with a project-owned lock.
+See [configuration and baseline maintenance](docs/project-configuration.md) for
+ownership, freshness review and the helper's current preservation limits.
+Adopters maintain the template, SP, SP-BP and gz-skills independently using
+[stack maintenance](docs/adoption.md#maintaining-the-adopted-stack), including
+tracking SP-BP readiness while it remains disabled.
+Generic maintenance workflows belong to gz-skills; the starter supplies policy
+and adoption bindings rather than another maintenance skill or freshness tool.
+
 ## Agent: start here
 
 Read the target project's `AGENTS.md` and linked authorities, then read
@@ -44,12 +55,18 @@ For starter development or a fresh-chat continuation, read
 Requires uv, Python 3.14, Git, and Codex with plugin support. GitHub CLI is useful
 for checking upstream releases; Backplane's GitHub workflows remain deferred. No Python dependencies are needed for this tool.
 
+Baseline Python tools use the latest stable release within their selected family,
+with exact pins after verification. Python stays in 3.14.x; the current patch is
+3.14.8 (checked October 11, 2026). Recheck at setup/adoption and scoped maintenance;
+an installed older patch is not a freshness check. See the
+[baseline rule](skills/python-engineering/SKILL.md#latest-stable-within-the-selected-family).
+
 ```bash
 gh repo clone tvproductions/gz-skills-first-starter
 cd gz-skills-first-starter
-uv run --python 3.14 starter.py validate
-uv run --python 3.14 starter.py configure --project /path/to/your-project
-uv run --python 3.14 starter.py configure --project /path/to/your-project --apply
+uv run --python 3.14.8 starter.py validate
+uv run --python 3.14.8 starter.py configure --project /path/to/your-project
+uv run --python 3.14.8 starter.py configure --project /path/to/your-project --apply
 ```
 
 The first configure command previews paths without writing. The second writes
@@ -67,7 +84,7 @@ files does **not** install plugins, authenticate GitHub, or prove skill discover
 The native managers own their caches; upstream skills are never copied here.
 
 ```bash
-uv run --python 3.14 starter.py status --project /path/to/your-project
+uv run --python 3.14.8 starter.py status --project /path/to/your-project
 ```
 
 For agent-guided adoption, read [the adoption skill](skills/adopt-skills-stack/SKILL.md).
@@ -81,7 +98,7 @@ the default refuses to mistake an adopting repo commit for a starter revision.
 ## Backporting an existing project
 
 ```bash
-uv run --python 3.14 starter.py backport --project /path/to/your-project
+uv run --python 3.14.8 starter.py backport --project /path/to/your-project
 ```
 
 This read-only assessment suggests responsibilities to map onto existing material.
@@ -139,10 +156,10 @@ See [architecture](docs/architecture.md), [adoption](docs/adoption.md), and
 ## Checks
 
 ```bash
-uv run --python 3.14 -m unittest discover -s tests -v
-uv run --python 3.14 starter.py validate
-uvx --python 3.14 ruff==0.15.18 check .
-uvx --python 3.14 ruff==0.15.18 format --check .
+uv run --python 3.14.8 -m unittest discover -s tests -v
+uv run --python 3.14.8 starter.py validate
+uvx --python 3.14.8 ruff==0.15.18 check .
+uvx --python 3.14.8 ruff==0.15.18 format --check .
 ```
 
 The tool uses Python's standard library. Non-gzkit projects started from this

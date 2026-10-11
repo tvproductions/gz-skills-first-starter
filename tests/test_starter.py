@@ -4,6 +4,7 @@ import tempfile
 import tomllib
 import unittest
 from pathlib import Path
+from unittest import mock
 
 MODULE = Path(__file__).parents[1] / "starter.py"
 spec = importlib.util.spec_from_file_location("starter", MODULE)
@@ -48,6 +49,56 @@ class AdoptionTests(unittest.TestCase):
         self.assertEqual((self.root / "AGENTS.md").read_text(), "Existing project authority.\n")
         self.assertTrue(config.read_text().startswith('model = "example"\n# Keep this comment.\n'))
         self.assertIn("AGENTS.skills-first.md", starter.configure(self.root, REF)["present"])
+
+    def test_preserves_extended_project_dependencies_and_settings(self):
+        dependencies = ",\n".join(f'  "fixture-adapter-{n}>=1,<3"' for n in range(60))
+        project = (
+            '# Project-owned metadata and comments.\n[project]\nname = "fixture-app"\n'
+            f'version = "0.1.0"\ndependencies = [\n{dependencies}\n]\n'
+            '[project.optional-dependencies]\nexport = ["fixture-export>=2"]\n'
+            '[dependency-groups]\ndev = ["fixture-tool==3.0"]\n'
+            '[tool.uv]\noverride-dependencies = ["fixture-shared==2.0"]\n'
+            '[tool.uv.sources]\nfixture-export = { path = "adapters/export" }\n'
+            '[tool.fixture_app]\noutput_directory = "products"\n'
+        )
+        settings = {
+            "schema_version": 1,
+            "extensions": {"enabled": ["summary_export"]},
+            "overrides": {"output_directory": "custom_products"},
+        }
+        fixtures = {
+            "pyproject.toml": project.encode(),
+            "settings.json": (json.dumps(settings, indent=2) + "\n").encode(),
+            # Preservation-only fixture; not a claim to be a resolved uv lock.
+            "uv.lock": b"# Existing project lock fixture.\nversion = 1\n",
+        }
+        for name, payload in fixtures.items():
+            (self.root / name).write_bytes(payload)
+        self.assertEqual(len(tomllib.loads(project)["project"]["dependencies"]), 60)
+        for apply in (False, True, True):
+            with self.subTest(apply=apply):
+                result = self.configure(apply)
+                self.assertFalse(set(fixtures) & set(result["writes"]))
+                for name, payload in fixtures.items():
+                    self.assertEqual((self.root / name).read_bytes(), payload)
+
+    def test_adoption_uses_utf8_and_preserves_host_config_bytes(self):
+        (self.root / ".codex").mkdir()
+        config = self.root / ".codex/config.toml"
+        original = '# Project: café, “示例”\r\nmodel = "example"\r\n'.encode("utf-8")
+        config.write_bytes(original)
+        read_text = Path.read_text
+
+        def legacy_locale_read(path, *args, **kwargs):
+            kwargs.setdefault("encoding", "cp1252")
+            return read_text(path, *args, **kwargs)
+
+        with mock.patch.object(Path, "read_text", autospec=True, side_effect=legacy_locale_read):
+            self.configure(True)
+            after = config.read_bytes()
+            self.assertTrue(after.startswith(original))
+            self.assertEqual(self.configure(True)["writes"], [])
+            self.assertEqual(config.read_bytes(), after)
 
     def test_conflict_blocks_all_writes(self):
         (self.root / ".codex").mkdir()

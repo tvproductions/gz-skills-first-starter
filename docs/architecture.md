@@ -22,6 +22,12 @@ copies, and never invokes a native install, remote model, or GitHub mutation.
 Existing projects retain their app layout. Empty projects get the same minimal
 configuration and entrypoint, rather than a speculative web or database stack.
 
+Application dependency declarations, locks and settings remain project-owned.
+The [configuration contract](project-configuration.md) permits additions,
+extensions and reviewed overrides and separates shared baseline maintenance from
+adopter updates. The helper preserves those files; it supplies no application
+settings loader or automatic dependency merge.
+
 `bundle.json` is desired composition. `.skills-first/bundle.lock.json` in an
 adopter records selected sources. Neither is a runtime readiness receipt. Actual
 loaded skills, native scope, trust, and conformance require a fresh host session.
@@ -59,3 +65,11 @@ remain portable and agnostic; SP-BP should be agnostic too. Backplane is still
 expected and deferred. No upstream plugin policy or pin changes follow from
 this preference. Each adopting project binds the portable workflows to its
 reviewed tool choices and measurements.
+
+Generic dependency maintenance is owned by gz-skills: authorized updates route
+to `gzs-update-dependencies`, and dependency-risk assessments route to
+`gzs-dependency-risk-audit`. This starter supplies release-family policy, project
+bindings, bundle/catalog consistency and preservation requirements. It does not
+add a parallel maintenance skill or generic freshness reporter. Proposed
+freshness-only assessment and template/plugin inventory enhancements belong
+upstream; their implementation and issue filing are not established here.

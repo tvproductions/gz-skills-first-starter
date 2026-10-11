@@ -134,3 +134,30 @@ Neither issue implies gzkit implemented starter's checker or changed support.
 ## Repository rename — October 10, 2026
 
 The operator renamed the public GitHub template to tvproductions/gz-skills-first-starter. Canonical URL: https://github.com/tvproductions/gz-skills-first-starter. Existing local development checkout remains /Users/jbabb/Documents/Devel/skills-first-starter; the Git origin is updated to the new URL. The skills-first-starter marketplace identifier, Python project name and adoption identities remain unchanged for compatibility. SP-BP remains expected and deferred; no upstream pins or installation behavior changed.
+
+## Baseline maintenance policy — October 11, 2026
+
+The Python runtime family remains 3.14.x; `.python-version`, CI and current
+starter commands now select exact patch 3.14.8. This supersedes the minor-only
+runtime pin described above. Baseline Python tools must use the latest stable
+release within each explicitly selected family, checked at setup/adoption and
+scoped on-demand maintenance, then pinned after relevant verification. Record
+evidence and revisit conditions for compatibility exceptions; an installed
+interpreter does not establish freshness. Other tool/plugin pins are unchanged.
+
+The adopter instructions fragment and front-door skill now pass along maintenance
+guidance for the starter template, SP, SP-BP and gz-skills independently. Read
+docs/project-configuration.md and docs/adoption.md's stack maintenance procedure.
+Preserve app additions, settings and overrides; reconcile managed-file changes
+with preview and rollback. No automatic migration, native install, scheduling or
+upstream policy change is supplied. SP-BP remains expected, deferred and disabled
+until readiness and explicit adoption. Existing adopters must review the changed
+fragment/skill; configure refuses to overwrite different managed copies.
+
+Generic maintenance ownership is now explicitly assigned to gz-skills. Route
+authorized updates to `gzs-update-dependencies` and dependency-risk assessments
+to `gzs-dependency-risk-audit`. The starter retains policy and adoption bindings;
+do not implement a duplicate local maintenance skill or generic freshness
+reporter. Freshness-only reporting and generalized template/plugin inventory are
+upstream enhancement proposals, not verified release capabilities. No upstream
+issue filing or plugin change has occurred as part of this decision.
