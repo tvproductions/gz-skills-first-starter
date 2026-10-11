@@ -22,6 +22,7 @@ do not replace uv's dependency metadata.
 | Exact resolved Python environment | Project-owned `uv.lock` |
 | Application settings | A project namespace under `tool` in TOML, or project-owned `settings.json` |
 | Plugin sources | Reviewed bundle and native marketplace configuration |
+| Adopted template identity | Starter version and exact SHA in `.skills-first/bundle.lock.json` |
 | gz-skills profile | Its version-specific `.gz-skills/settings.json` contract |
 
 See uv's official [dependency field guide](https://docs.astral.sh/uv/concepts/projects/dependencies/).
@@ -144,6 +145,9 @@ stdlib implementation rather than adding loader or resolver machinery.
 Adopters also follow [stack maintenance](adoption.md#maintaining-the-adopted-stack)
 for the template and all three independently owned plugins, including deferred
 SP-BP.
+Use the template's [versioning contract](versioning.md) and changelog when
+reviewing a release; keep its version distinct from the adopter app's version
+and retain the exact starter SHA.
 
 ## What is resilient today
 

@@ -47,3 +47,10 @@ policy and stack-specific binding guidance. Do not create a duplicate local
 maintenance skill or generic freshness reporter. Freshness-only reporting and
 expanded template/plugin inventory are upstream proposals; verify release support
 before claiming those capabilities exist.
+
+Track the adopted starter's own version and exact SHA in its bundle lock,
+independently of app and upstream plugin versions. Compare reviewed template
+releases and their changelog using the starter's `docs/versioning.md` policy.
+A version label is not publication or readiness proof. Reconcile older
+unversioned records without inventing historical provenance or overwriting
+project changes.

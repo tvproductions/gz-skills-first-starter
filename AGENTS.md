@@ -9,6 +9,13 @@ This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.
 This is a public scaffold; use invented fixtures and preserve upstream ownership.
 
+Version the template independently of its upstream components and adopter apps.
+Read `docs/versioning.md`; `bundle.json` owns `template_version`, mirrored by
+the starter's `pyproject.toml`. New adoption records version plus exact SHA.
+Keep `CHANGELOG.md` current for release preparation, preserve historical evidence
+and never move published tags. Template edits or ordinary Git sync do not imply
+tag or release publication.
+
 SP, SP-BP, and gz-skills are independent components. FDAU is the primary design
 precedent. SP-BP is an expected addition to the target stack, currently deferred
 until readiness and explicit adoption are established. Keep existing backlog

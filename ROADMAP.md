@@ -10,6 +10,8 @@
 - Default SP + gz-skills activation with SP-BP pinned but disabled.
 - Read-only structural assessment and guidance for incremental backporting.
 - Documented native loading/verification boundaries.
+- Independent template version metadata and CLI reporting, version/SHA adopter
+  provenance, changelog and release policy. Initial 0.1.0 publication is pending.
 
 ## Next adoption proofs
 

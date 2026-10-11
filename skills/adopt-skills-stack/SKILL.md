@@ -30,6 +30,10 @@ role to policy and adoption bindings; do not add a competing local maintenance
 skill or claim proposed upstream freshness-only reporting is implemented.
 
 Establish the exact target project and a reviewed published starter revision.
+Read the starter's [versioning contract](../../docs/versioning.md). Record its
+declared template version and exact SHA independently of the app version;
+confirm published release/tag identity separately. Legacy unversioned locks
+require reviewed reconciliation, never an inferred label or silent rewrite.
 Read the [project configuration contract](../../docs/project-configuration.md);
 inventory app dependencies, locks and settings, preserve additions and reviewed
 overrides, and report freshness/adoption gaps. The helper leaves these files

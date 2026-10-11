@@ -231,6 +231,55 @@ class AdoptionTests(unittest.TestCase):
             {p["name"]: p["revision"] for p in starter.bundle()["components"]},
         )
 
+    def test_adoption_records_template_version_and_exact_revision(self):
+        metadata = tomllib.loads((MODULE.parent / "pyproject.toml").read_text(encoding="utf-8"))
+        app_metadata = b'[project]\nname = "fixture-app"\nversion = "7.3.2"\n'
+        (self.root / "pyproject.toml").write_bytes(app_metadata)
+        result = self.configure(True)
+        lock = json.loads((self.root / ".skills-first/bundle.lock.json").read_bytes())
+        self.assertEqual(lock["starter"]["version"], starter.bundle()["template_version"])
+        self.assertEqual(lock["starter"]["version"], metadata["project"]["version"])
+        self.assertEqual(lock["starter"]["revision"], REF)
+        self.assertEqual(result["starter"], lock["starter"])
+        self.assertEqual(starter.status(self.root)["starter"], lock["starter"])
+        self.assertEqual(self.configure(True)["writes"], [])
+        self.assertEqual((self.root / "pyproject.toml").read_bytes(), app_metadata)
+
+    def test_invalid_template_version_blocks_adoption_before_writes(self):
+        for version in (None, "latest", "v0.1.0", "01.1.0", 1):
+            with self.subTest(version=version):
+                data = starter.bundle()
+                data["template_version"] = version
+                with mock.patch.object(starter, "bundle", return_value=data):
+                    with self.assertRaises(starter.AdoptionError):
+                        self.configure(True)
+                self.assertEqual(list(self.root.iterdir()), [])
+
+    def test_legacy_unversioned_lock_requires_review_and_is_preserved(self):
+        self.configure(True)
+        path = self.root / ".skills-first/bundle.lock.json"
+        lock = json.loads(path.read_bytes())
+        del lock["starter"]["version"]
+        original = (json.dumps(lock, indent=2) + "\n").encode("utf-8")
+        path.write_bytes(original)
+        for action in (
+            self.configure,
+            lambda: self.configure(True),
+            lambda: starter.status(self.root),
+        ):
+            with self.subTest(action=action):
+                with self.assertRaises(starter.AdoptionError):
+                    action()
+                self.assertEqual(path.read_bytes(), original)
+
+    def test_version_command_reports_manifest_version(self):
+        with mock.patch("builtins.print") as output:
+            self.assertEqual(starter.main(["version"]), 0)
+        self.assertEqual(
+            json.loads(output.call_args.args[0]),
+            {"template_version": starter.bundle()["template_version"]},
+        )
+
     def test_moving_starter_ref_is_rejected(self):
         with self.assertRaises(starter.AdoptionError):
             starter.configure(self.root, "main", apply=True)

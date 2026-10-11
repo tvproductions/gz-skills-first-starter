@@ -161,3 +161,15 @@ do not implement a duplicate local maintenance skill or generic freshness
 reporter. Freshness-only reporting and generalized template/plugin inventory are
 upstream enhancement proposals, not verified release capabilities. No upstream
 issue filing or plugin change has occurred as part of this decision.
+
+## Template versioning — October 11, 2026
+
+The template now declares independent version 0.1.0 in `bundle.json`, matching
+the existing starter package metadata. Read docs/versioning.md and CHANGELOG.md.
+No prior tags or GitHub releases were found; the initial baseline is unreleased.
+`starter.py version` reports the checkout's label. New configure records include
+starter repository, version and full SHA; configure/status/validate output exposes
+the version. The label is not proof of release publication or host readiness.
+Legacy unversioned locks are preserved and require reviewed reconciliation.
+This is additive metadata under schema 1, not automatic migration. Tags/releases
+remain a separate authorized operation; no upstream pins or skill ownership changed.

@@ -31,7 +31,18 @@ def bundle() -> dict:
     return json.loads((HERE / "bundle.json").read_text(encoding="utf-8"))
 
 
+def template_version() -> str:
+    """Read the starter-owned version independently of adopter app metadata."""
+    version = bundle().get("template_version")
+    if not isinstance(version, str) or not re.fullmatch(
+        r"(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)", version
+    ):
+        raise AdoptionError("template_version must be a numeric MAJOR.MINOR.PATCH version")
+    return version
+
+
 def validate_bundle() -> None:
+    template_version()
     data = bundle()
     if data.get("schema_version") != 1:
         raise AdoptionError("unsupported bundle schema")
@@ -181,7 +192,7 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
     fragment = (HERE / "templates/AGENTS.skills-first.md").read_text(encoding="utf-8")
     lock = {
         "schema_version": 1,
-        "starter": {"repository": ORIGIN, "revision": ref},
+        "starter": {"repository": ORIGIN, "version": template_version(), "revision": ref},
         "components": bundle()["components"],
     }
     candidates = {
@@ -244,6 +255,7 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
         "writes": list(writes),
         "present": present,
         "runtime_readiness": "unverified",
+        "starter": lock["starter"],
         "next": [
             "Review the project instructions fragment; link it from existing AGENTS.md if needed.",
             "Profile selection belongs to canonical gz-skills setup; no profile is inferred or created.",
@@ -263,6 +275,7 @@ def status(project: Path) -> dict:
         "status": "configured" if not expected["writes"] else "incomplete",
         "runtime_readiness": "unverified",
         "pending_files": expected["writes"],
+        "starter": lock["starter"],
         "components": lock["components"],
     }
 
@@ -369,6 +382,7 @@ def main(argv: list[str] | None = None) -> int:
     backport_parser = sub.add_parser("backport", help="read-only preferred-structure assessment")
     backport_parser.add_argument("--project", type=Path, required=True)
     sub.add_parser("validate", help="validate the three bundle pins and both native catalogs")
+    sub.add_parser("version", help="show this checkout's template version; not a release receipt")
     args = parser.parse_args(argv)
     try:
         if args.command == "configure":
@@ -379,9 +393,15 @@ def main(argv: list[str] | None = None) -> int:
             result = backport(args.project)
         elif args.command == "status":
             result = status(args.project)
+        elif args.command == "version":
+            result = {"template_version": template_version()}
         else:
             validate_bundle()
-            result = {"status": "valid", "components": bundle()["components"]}
+            result = {
+                "status": "valid",
+                "template_version": template_version(),
+                "components": bundle()["components"],
+            }
         print(json.dumps(result, indent=2))
         return 0
     except (AdoptionError, OSError, ValueError, subprocess.SubprocessError, KeyError) as error:

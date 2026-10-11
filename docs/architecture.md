@@ -32,6 +32,12 @@ settings loader or automatic dependency merge.
 adopter records selected sources. Neither is a runtime readiness receipt. Actual
 loaded skills, native scope, trust, and conformance require a fresh host session.
 
+`bundle.json` also owns the template's independent `template_version`. New
+adopter records carry that label alongside the exact starter SHA; neither proves
+a published release. The starter's package metadata mirrors its version without
+binding an adopter's app version. See [versioning](versioning.md) for compatibility,
+immutable release tags and preservation of legacy unversioned records.
+
 FDAU supplies the primary precedent: portable disciplines, separate upstream
 Superpowers, project adapters, domain rules, and independently inspectable
 verification. Its older checkout/discovery surfaces are evidence, not instructions

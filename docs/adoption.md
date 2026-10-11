@@ -13,6 +13,13 @@ git rev-parse HEAD
 gh api repos/tvproductions/gz-skills-first-starter/commits/FULL_STARTER_SHA --jq .sha
 ```
 
+Also read the checkout's declared template version with
+`uv run --python 3.14.8 starter.py version`. For a published release, resolve its
+`vMAJOR.MINOR.PATCH` tag to the same full SHA and review its changelog. The label
+alone does not prove publication. New locks record version and SHA separately;
+older unversioned locks require reviewed reconciliation. See
+[template versioning](versioning.md). Preserve the adopter app's own version.
+
 Review existing `AGENTS.md`, skill discovery surfaces, plugin configuration,
 and gzkit ownership. Existing project authorities remain in place. A conflict
 is a request for reconciliation, not permission to remove an existing install.
