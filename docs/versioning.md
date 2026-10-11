@@ -11,9 +11,11 @@ uv run --python 3.14.8 starter.py version
 ```
 
 This reports the checkout's declared version, not proof of a published release.
-As checked October 11, 2026, no starter tags or GitHub releases existed. The
-initial version is prepared for release; publication is a separate authorized
-operation. Do not label historical commits as a released v0.1.0 retroactively.
+The initial release is
+[v0.1.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.1.0),
+dated October 11, 2026. Its annotated tag identifies the verified release commit.
+Earlier development commits were untagged; do not label them as a released
+v0.1.0 retroactively. Future publication remains a separately authorized operation.
 
 ## Version contract
 

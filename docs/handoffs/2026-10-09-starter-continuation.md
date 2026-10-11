@@ -173,3 +173,18 @@ the version. The label is not proof of release publication or host readiness.
 Legacy unversioned locks are preserved and require reviewed reconciliation.
 This is additive metadata under schema 1, not automatic migration. Tags/releases
 remain a separate authorized operation; no upstream pins or skill ownership changed.
+
+## Initial template release — October 11, 2026
+
+The operator authorized local and GitHub release publication. The initial
+template release is v0.1.0; its annotated tag and GitHub release identify the
+exact release commit. Recheck the live remote tag and release before continuation.
+The release candidate passed 25 unittest tests, bundle/both-catalog validation
+and Ruff 0.15.18 lint/format checks on uv-managed Python 3.14.8. GitHub CI must
+also be checked on that final commit.
+
+gz-skills main has newer changes, but v0.5.0 remains its latest published release
+as checked today. Independent upstream pins remain unchanged. Native host
+discovery, ty/pre-commit enforcement and SP-BP readiness remain outstanding;
+publication does not certify those capabilities. The historical unreleased
+versioning note above describes the state before this publication.

@@ -35,8 +35,9 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The initial 0.1.0 baseline is currently unreleased; a metadata value alone is not
-a published tag or release.
+The initial baseline is [v0.1.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.1.0).
+Verify its published tag and exact commit before adoption; a metadata value
+alone is not proof of a release.
 
 Read the target project's `AGENTS.md` and linked authorities, then read
 [the adoption skill](skills/adopt-skills-stack/SKILL.md). Identify which path the
