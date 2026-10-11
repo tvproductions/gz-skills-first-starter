@@ -188,3 +188,18 @@ as checked today. Independent upstream pins remain unchanged. Native host
 discovery, ty/pre-commit enforcement and SP-BP readiness remain outstanding;
 publication does not certify those capabilities. The historical unreleased
 versioning note above describes the state before this publication.
+
+## gz-skills v0.6.0 baseline — October 11, 2026
+
+This supersedes earlier current-pin and proposal statements. gz-skills v0.6.0
+was published after the initial starter release and is now selected at exact
+commit e722e808647481c4c9d2feab61f1843aa8e0b19a in the bundle and both catalogs.
+The starter version is 0.2.0, reflecting new adopted skill capabilities.
+Read docs/evidence/2026-10-11-gz-skills-0.6.0.md and its changelog entry.
+
+Freshness-only review and template/plugin inventory are shipped upstream now.
+Project setup and Pythonic pattern review/apply bring the catalog to nineteen
+skills. No setup invocation, lite/heavy selection, plugin installation or adopter
+migration is implied. Starter Python 3.14 and retired-tool decisions take
+precedence over upstream defaults. SP/SP-BP pins and SP-BP deferral are unchanged.
+Preserve v0.1.0 and historical evidence; verify the new release tag and CI live.

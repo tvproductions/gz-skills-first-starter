@@ -76,6 +76,8 @@ Generic dependency maintenance is owned by gz-skills: authorized updates route
 to `gzs-update-dependencies`, and dependency-risk assessments route to
 `gzs-dependency-risk-audit`. This starter supplies release-family policy, project
 bindings, bundle/catalog consistency and preservation requirements. It does not
-add a parallel maintenance skill or generic freshness reporter. Proposed
-freshness-only assessment and template/plugin inventory enhancements belong
-upstream; their implementation and issue filing are not established here.
+add a parallel maintenance skill or generic freshness reporter. The pinned
+gz-skills v0.6.0 supplies freshness-only assessment and template/plugin inventory
+through its maintenance skill. Starter bindings preserve approved Python policy
+over upstream profile defaults; no setup invocation or profile selection follows
+from changing the bundle pin.

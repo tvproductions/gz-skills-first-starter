@@ -131,9 +131,9 @@ when those upstream contracts and negative cases have been demonstrated.
 ## Getting current SP and gz-skills
 
 Check upstream at adoption time rather than assuming this template's baseline
-is newest. As checked October 9, 2026, the latest published releases are SP
-**v6.4.2** and gz-skills **v0.5.0**; the starter currently pins SP v6.4.1 and
-gz-skills v0.5.0. These observations expire as upstream releases change.
+is newest. SP's latest published release was **v6.4.2** as checked October 9,
+2026; gz-skills' latest is **v0.6.0** as checked October 11. The starter pins
+SP v6.4.1 and gz-skills v0.6.0. These observations expire as releases change.
 
 From a shell with authenticated GitHub CLI, obtain each latest published release
 and resolve its tag to a full commit SHA:
@@ -156,9 +156,10 @@ Latest published release and latest development commit are different choices.
 For an explicitly requested development version, resolve `commits/HEAD` through
 the same repository API, review its changes, and record its full SHA with release
 set to null and status identifying an unreleased development snapshot. Never put
-`main`, `HEAD`, or a moving tag in the catalog's revision field. gz-skills main
-may contain setup behavior absent from v0.5.0; inspect that version's profile
-contract and retain an explicit user profile choice. Proposals are not shipped
+`main`, `HEAD`, or a moving tag in the catalog's revision field. gz-skills v0.6.0
+ships project setup; inspect the selected version's profile contract and retain
+an explicit user profile choice. Preserve approved starter Python policy over
+upstream defaults. Proposals are not shipped
 capabilities just because they appear on main.
 
 To adopt newer versions in the shared starter:
@@ -199,9 +200,10 @@ Route authorized dependency/tool updates through gz-skills'
 `gzs-update-dependencies` and dependency-risk reviews through
 `gzs-dependency-risk-audit`, subject to project scope and authorities. The source
 inventory and native adoption requirements below are the starter's binding to
-those portable workflows. Freshness-only reporting and generalized template/plugin
-inventory are proposed upstream enhancements, not a shipped starter command or
-a claim about the pinned gz-skills release.
+those portable workflows. The pinned gz-skills v0.6.0 maintenance skill supplies
+freshness-only reporting and template/plugin inventory. Review mode leaves pins
+and environments unchanged. This starter adds no competing command and does not
+select a lite/heavy profile or invoke setup as part of a bundle update.
 
 1. Read `.skills-first/bundle.lock.json`, project configuration and native manager
    inventory. Record the adopted starter SHA, component SHAs, selected versions

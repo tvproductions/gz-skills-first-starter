@@ -93,10 +93,12 @@ Generic maintenance workflows belong in gz-skills. Use its discovered
 `gzs-update-dependencies` for authorized dependency/tool updates and
 `gzs-dependency-risk-audit` for risk assessments. This document supplies project
 policy and source locations. The starter supplies no competing maintenance skill
-or generic freshness-report command. A freshness-only mode and expanded inventory
-of template/plugin sources are upstream enhancement proposals; do not claim they
-are available in the pinned release. Until then, use the guidance below for
-explicit freshness-only reviews without changing pins.
+or generic freshness-report command. The pinned gz-skills v0.6.0 maintenance
+skill supports freshness-only review and template/plugin source inventory.
+Review mode leaves pins and environments unchanged; updates require scoped
+authorization. Apply the guidance below as this project's binding, preserving
+its approved Python family, retired tools and explicit profile choices over
+upstream defaults.
 
 The required baseline rule is **latest stable within the explicitly selected
 release family**. Python's family is 3.14.x. At setup/adoption and scoped

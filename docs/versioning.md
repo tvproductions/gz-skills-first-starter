@@ -1,6 +1,7 @@
 # Template versioning
 
-The initial template version is **0.1.0**. It is recorded in
+The current template version is **0.2.0**; the initial release was **0.1.0**.
+The current version is recorded in
 `bundle.json` as `template_version`, independently of SP, SP-BP and gz-skills
 versions and the adopter's application version. `pyproject.toml` mirrors the
 version for this starter's helper project; the repository tests check agreement.
@@ -15,7 +16,9 @@ The initial release is
 [v0.1.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.1.0),
 dated October 11, 2026. Its annotated tag identifies the verified release commit.
 Earlier development commits were untagged; do not label them as a released
-v0.1.0 retroactively. Future publication remains a separately authorized operation.
+v0.1.0 retroactively. The current release is
+[v0.2.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.2.0),
+which adopts gz-skills v0.6.0. Future publication remains a separately authorized operation.
 
 ## Version contract
 

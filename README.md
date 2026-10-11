@@ -35,7 +35,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The initial baseline is [v0.1.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.1.0).
+The current baseline is [v0.2.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.2.0).
 Verify its published tag and exact commit before adoption; a metadata value
 alone is not proof of a release.
 
@@ -119,8 +119,8 @@ The [skills-first-start entry](skills/skills-first-start/SKILL.md) routes across
 project operations, SP feature work, gz-skills engineering and adoption. It is
 copied as a starter-owned project skill, independently of the upstream plugins;
 fresh-session discovery remains to be verified. gz-skills already supplies
-`gzs-router` for its own catalog. Its candidate Matt Pocock adaptations are not
-shipped in this pinned release.
+`gzs-router` for its own catalog, including the released Pythonic pattern
+review/apply pair. Profile setup remains a separate explicit adopter choice.
 
 ## The initial bundle
 
@@ -131,7 +131,7 @@ those exact full commit SHAs, not moving branches.
 |---|---|---|
 | [Superpowers](https://github.com/obra/superpowers) | v6.4.1 | Feature design, plans, implementation, review |
 | [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | Deferred; disabled by default | GitHub-backed backlog and handoff continuity |
-| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.5.0 | Portable engineering disciplines |
+| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.6.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
 Superpowers v6.4.2 exists, but this starter initially selects v6.4.1 because
@@ -141,9 +141,11 @@ version: review and adopt SP updates independently using the update guide.
 This is a reviewed
 starting set, **not a blanket compatibility certification**. Backplane has no
 published release; its remaining host acceptance and external pilot are tracked
-upstream. The pinned gz-skills release contains sixteen skills and predates the
-newer project-setup skill on upstream main. We do not silently adopt unreleased
-setup behavior or select its lite/heavy profile.
+upstream. The pinned gz-skills release contains nineteen skills, including
+project setup, Pythonic pattern review/apply and freshness-only maintenance
+review with template/plugin inventory. The starter does not invoke setup or
+select a lite/heavy profile. Approved starter Python policy takes precedence
+over upstream profile defaults, including Python 3.14 and retired-tool choices.
 
 ## Current scope
 

@@ -59,5 +59,7 @@ pins when reconciling changes from a newer reviewed starter.
 Route authorized dependency/tool updates to gz-skills `gzs-update-dependencies`
 and dependency-risk assessments to `gzs-dependency-risk-audit`. The starter's
 Python skill supplies policy, not a parallel generic maintenance workflow.
-Freshness-only reporting and expanded template/plugin inventory remain upstream
-enhancement proposals; do not invent a local skill or claim they have shipped.
+The pinned gz-skills v0.6.0 maintenance skill supports freshness-only review and
+starter/template/plugin inventory. Review mode leaves pins and environments
+unchanged. Preserve the approved starter Python family and retired-tool choices
+over upstream profile defaults; no setup invocation or profile choice is implied.

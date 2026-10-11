@@ -213,8 +213,10 @@ updates to `gzs-update-dependencies` and dependency-risk assessments to
 `gzs-dependency-risk-audit`, preserving project scope and authorities. This skill
 binds those workflows to the selected Python family, tool choices and verification
 requirements; it does not duplicate their inventory, resolution or audit process.
-Freshness-only reporting and generalized template/plugin inventory are upstream
-enhancement proposals, not capabilities established in the pinned release.
+The pinned gz-skills v0.6.0 maintenance skill supports freshness-only review and
+template/plugin inventory. Review mode leaves pins and environments unchanged.
+Preserve this starter's Python 3.14 family and retired Xenon/Radon decisions over
+upstream profile defaults; the pin update does not select a lite/heavy profile.
 
 At adoption, reviewed tool upgrades and quarterly on-demand maintenance, apply
 the [configuration and baseline contract](../../docs/project-configuration.md)

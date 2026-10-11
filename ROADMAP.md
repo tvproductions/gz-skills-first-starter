@@ -11,7 +11,7 @@
 - Read-only structural assessment and guidance for incremental backporting.
 - Documented native loading/verification boundaries.
 - Independent template version metadata and CLI reporting, version/SHA adopter
-  provenance, changelog and release policy. Initial 0.1.0 publication is pending.
+  provenance, changelog and release policy. Initial v0.1.0 is published.
 
 ## Next adoption proofs
 
@@ -28,10 +28,9 @@
 
 - Reviewed update/rollback automation that preserves existing native installs.
 - Generic maintenance remains owned by gz-skills; no local maintenance skill or
-  generic freshness reporter is planned. Propose a freshness-only assessment and
-  generalized template/plugin source inventory as enhancements to existing
-  upstream maintenance skills. No upstream issue has been filed or implementation
-  verified by this decision. The starter retains policy, catalog consistency and
+  generic freshness reporter is planned. The pinned gz-skills v0.6.0 now supplies
+  freshness-only assessment and template/plugin source inventory through its
+  existing maintenance skill. The starter retains policy, catalog consistency and
   preservation bindings; current tests prove preservation, not dependency
   resolution or settings loading. See the
   [configuration contract](docs/project-configuration.md).
