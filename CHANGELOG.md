@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.3.1 — Unreleased
+
+- Policy change: require cohesion in the adopter minimum on-demand Python tool
+  standard. Clarify that downstream tool requirements are independent of the
+  starter helper's own needs; adopters own tool pins, runtime verification and
+  interpretation of class scores. Pass the requirement through the generated
+  instructions fragment and linked baseline/engineering guidance.
+- Prepare patch version 0.3.1 as explicitly requested by the user for this
+  requirement clarification. Runtime, analyzer and upstream component pins are
+  retained; no cohesion dependency is added to the starter environment.
+
+Adopter impact: reconcile project instructions and the selected development tools
+against the reviewed policy. Verify cohesion on the selected runtime with invented
+class fixtures, preserve project thresholds and record inapplicable scopes or
+compatibility gaps. Keep the tool outside hooks and CI gates. Selection does not
+establish installation or Python 3.14 compatibility; this starter has no cohesion
+compatibility receipt. Existing adopters are not automatically migrated.
+
+Verification: 28 unittest tests, bundle/both-catalog validation and Ruff 0.15.18
+check/format passed on Python 3.14.8. The offline uv lock refresh changed only
+the starter's version metadata. This policy/documentation change requires no
+Python 3.14 API changes; no cohesion execution or compatibility claim is made.
+
 ## 0.3.0 — 2026-10-11
 
 - Establish the zero-skill ownership contract: this template authors and

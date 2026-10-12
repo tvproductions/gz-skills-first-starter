@@ -199,7 +199,10 @@ stdlib-first code and explicit domain/adapter boundaries. See the versioned
 XPPython3 version exception and on-demand hygiene selections: Ruff C901 plus
 complexipy and Lizard (retiring Xenon and Radon),
 Interrogate, Vulture, Bandit, Coverage.py, Cosmic Ray, deptry, pip-audit and
-Import Linter. These deeper checks stay outside hooks and CI.
+Import Linter, plus cohesion for adopter class cohesion analysis. These selections
+form an adopter minimum standard, independent of the starter helper's own needs.
+Adopters own cohesion pins and runtime verification. These deeper checks stay
+outside hooks and CI.
 
 This records policy, not completed tool installation or enforcement. ty,
 pre-commit, expanded Ruff rules and Cosmic Ray's Python 3.14 compatibility proof

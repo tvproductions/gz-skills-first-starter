@@ -62,7 +62,11 @@ pre-commit running those checks. Favor strict, reviewed lint rules. On-demand
 hygiene selects Ruff C901 (cyclomatic ceiling 20), complexipy (cognitive ceiling
 15), Lizard (cyclomatic scores and aggregates), Interrogate, Vulture, Bandit, branch/statement
 coverage through unittest, Cosmic Ray mutation testing, deptry, pip-audit and
-Import Linter; none belongs in hooks or CI gates. Keep the approved routine
+Import Linter, plus cohesion as a downstream class-analysis requirement. The
+selected on-demand tools form an adopter minimum independent of the helper's
+needs; cohesion pins and runtime verification remain adopter-owned. No starter
+installation or cohesion compatibility proof is implied. None belongs in hooks
+or CI gates. Keep the approved routine
 pre-commit set limited to Ruff check/format, ty and unittest. C901 is enabled only
 in explicit hygiene commands, not routine Ruff selection. The new complexity
 policy retires Xenon and Radon. The on-demand `tools/engineering/complexity_check.py` implements

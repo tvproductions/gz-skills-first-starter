@@ -47,6 +47,15 @@ through uv and pre-commit; select deeper hygiene only on demand. Report missing
 tool installation or enforcement as a gap. This rule does not authorize automatic
 upgrades or schedules.
 
+The reviewed Python policy's on-demand tools form the adopter minimum standard,
+independent of the starter helper's needs. Include project-pinned `cohesion` for
+class cohesion analysis; verify its standalone CLI on the selected runtime and
+representative invented classes. Record scopes, scores and reviewed findings;
+record not-applicable scopes with reasons and report missing installation or
+compatibility evidence as gaps. Preserve project-specific thresholds and keep
+cohesion outside hooks and CI gates. See the reviewed starter's
+`docs/engineering/python.md` for the full selected tool set and interpretation.
+
 Keep code current with its selected Python family, not just its interpreter pin.
 gz-skills owns runtime discovery; require its workflows to honor this project's
 adopted version-range and engineering policy, report missing/conflicting evidence

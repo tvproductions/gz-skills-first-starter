@@ -36,6 +36,13 @@ pre-commit for the approved routine checks. Keep deeper analysis outside hooks
 and CI. [Python engineering policy](engineering/python.md) defines those checks
 and the required engineering practices; missing enforcement remains a reported gap.
 
+The engineering policy's selected on-demand tools are a minimum standard for
+adopters, independent of the starter helper's own tooling needs. This includes
+`cohesion` for class cohesion analysis, with adopter-owned version selection,
+pins and runtime verification. Record inapplicable scopes and compatibility gaps
+explicitly; keep these checks outside hooks and CI gates. Adopters may add
+project-specific tools without weakening the adopted minimum.
+
 For each baseline tool, explicitly select its allowed release family/range using
 its own compatibility scheme, then use the latest verified stable release in
 that family. This starter does not yet establish universal allowed families for

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "name": "skills-first-starter",
-  "template_version": "0.3.0",
+  "template_version": "0.3.1",
   "components": [
     {
       "name": "superpowers",

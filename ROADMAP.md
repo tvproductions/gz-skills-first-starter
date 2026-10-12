@@ -55,7 +55,10 @@ in its existing Python workflows; a comprehensive version audit remains a gap.
 
 The required Python 3.14 engineering policy documents the
 routine standards and on-demand hygiene selections, including Cosmic Ray,
-deptry, pip-audit and Import Linter. The approved routine pre-commit selection
+deptry, pip-audit, Import Linter and adopter class cohesion analysis through
+cohesion. This minimum adopter standard is independent of the helper's needs;
+cohesion version selection and runtime verification remain adopter-owned.
+The approved routine pre-commit selection
 remains Ruff check/format, ty and unittest.
 Still pending: project-locked ty and routine pre-commit checks; agreement on
 expanded strict Ruff rules; shared/local utility ownership and existing-project

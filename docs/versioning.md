@@ -1,6 +1,7 @@
 # Template versioning
 
-The template version is **0.3.0**; the initial release was **0.1.0**. The 0.3
+The development template version is **0.3.1**, unreleased; the initial release
+was **0.1.0**. The 0.3
 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
 The current version is recorded in
 `bundle.json` as `template_version`, independently of SP, SP-BP and gz-skills
@@ -32,6 +33,10 @@ fixes and clarifications. Release 1.0.0 only when the intended public contract
 and its compatibility guarantees are established. After 1.0, incompatible
 contract changes require a major bump, compatible additions a minor bump and
 compatible fixes a patch bump. Explain adopter impact even for small changes.
+
+The user explicitly selected patch version 0.3.1 for the adopter cohesion
+requirement clarification. Its changelog identifies the policy change separately
+from execution pins; this scoped choice does not change the general rule above.
 
 Release notes distinguish changes to [adopter range/selection policy](baseline-policy.md)
 from refreshes of tested exact pins within that policy. Adopters review constraints

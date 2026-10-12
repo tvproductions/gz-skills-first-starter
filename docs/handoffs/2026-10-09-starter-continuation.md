@@ -264,3 +264,18 @@ Recheck the published tag, release commit and GitHub CI before continuation.
 Adopters must reconcile legacy skill copies/managed records; no automatic app
 migration, profile selection or SP-BP activation occurs. Fresh-session combined
 stack loading and existing enforcement gaps remain separate from publication.
+
+## Adopter cohesion minimum — October 11, 2026
+
+The user clarified that the selected Python tools establish an adopter minimum,
+independent of the starter helper's own needs, and selected patch version 0.3.1
+for this change. Cohesion is required for downstream on-demand class analysis.
+The baseline policy, Python policy and generated instructions fragment carry
+the requirement. Adopters own version selection, pins, runtime verification,
+class-score interpretation and recorded inapplicable scopes; no universal
+threshold or compatibility proof is supplied by the starter.
+
+The development metadata selects 0.3.1, unreleased. No cohesion dependency is
+added to the starter environment. Existing runtime/tool/plugin pins and routine
+hook/CI choices are retained. Recheck live state and verification before release;
+publication and migration of other projects remain separately authorized work.

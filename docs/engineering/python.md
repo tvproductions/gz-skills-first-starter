@@ -156,6 +156,7 @@ source/test scopes and invented fixtures; exclude operational data and records.
 | Ruff C901 | On-demand cyclomatic ceiling 20 per function; never raise the threshold to pass |
 | complexipy | On-demand cognitive ceiling 15 per function/module-level script; exposes nesting/readability costs |
 | Lizard | Per-function cyclomatic measurements and module/project aggregates for a reviewed C/C/C approximation; do not claim Radon-equivalent scores |
+| cohesion | Required adopter on-demand class cohesion analysis; review attribute-sharing scores against class responsibilities and project context |
 | Interrogate | Measure docstring presence; review usefulness and correctness separately |
 | Vulture | Investigate dead-code candidates and external consumers before deletion |
 | Bandit | Review severity, confidence and code context; no blanket suppressions |
@@ -165,7 +166,38 @@ source/test scopes and invented fixtures; exclude operational data and records.
 | pip-audit | Audit exact resolved dependencies for known vulnerabilities; record scope, skipped packages and advisory results |
 | Import Linter | Verify project-specific forbidden imports and layers, including indirect violations of domain/adapter boundaries |
 
-These three additions are selected on-demand tools, not extra pre-commit checks.
+These selections form the minimum on-demand analysis standard for adopters;
+they are not determined by which tools the starter's helper needs. Adopters may
+extend this standard with project-specific checks. Required selection does not
+prove installation, compatibility or clean results.
+
+### Adopter class cohesion requirement
+
+Use [cohesion](https://github.com/mschwager/cohesion) as a project-owned,
+pinned development tool for on-demand analysis of Python classes. Its documented
+metric measures class and instance attribute usage across methods. Review low
+scores against actual responsibilities; the score alone does not establish a
+design defect. Record the source scope, tool version, class scores and reviewed
+findings. For a scope without applicable classes, record not-applicable with a
+reason rather than reporting a passing measurement. Do not introduce classes
+solely to obtain a score or transplant another project's numeric threshold.
+
+At adoption, select and verify the tool's release family and exact stable version
+under the baseline policy, then retain the project-owned pin/lock. Verify its
+standalone CLI on the project's selected Python runtime and representative,
+invented class fixtures before claiming compatibility. Existing use in another
+project is useful evidence, but does not verify a different runtime or scope.
+Missing installation or verification remains an adopter gap; compatibility
+exceptions require evidence and a revisit condition.
+
+This is a downstream minimum requirement. The starter does not need cohesion
+installed to validate its helper and supplies no universal cohesion version,
+threshold or Python 3.14 compatibility receipt. Keep it outside hooks and CI
+gates, using its standalone CLI without adding Flake8 to the routine toolchain.
+
+### Dependency and import analysis
+
+deptry, pip-audit and Import Linter are selected on-demand tools, not extra pre-commit checks.
 Use [deptry's rules](https://deptry.com/rules-violations/) against the actual
 project metadata; distinguish runtime dependencies, development tools and
 plugin-discovered imports. Findings do not authorize package removal.
