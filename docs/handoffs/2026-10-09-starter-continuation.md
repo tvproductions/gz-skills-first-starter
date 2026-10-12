@@ -279,3 +279,15 @@ The development metadata selects 0.3.1, unreleased. No cohesion dependency is
 added to the starter environment. Existing runtime/tool/plugin pins and routine
 hook/CI choices are retained. Recheck live state and verification before release;
 publication and migration of other projects remain separately authorized work.
+
+## Independent SP update — October 11, 2026
+
+The user authorized updating SP to latest stable and selected another patch.
+The 0.3.2 development template selects SP v7.0.0 at
+`bb92a77741419a4ab5f06e711a283343f1ada0c3` in the bundle and both catalogs.
+Read `docs/evidence/2026-10-11-superpowers-7.0.0.md` for the official release and
+manifest review. Earlier v6.4.1-current statements above are historical.
+Backplane is independently pinned and remains disabled; its old compatibility
+baseline does not constrain active SP. Before future enablement, review its
+readiness and SP 7 compatibility. No installed plugins or other projects are
+updated. Recheck live publication and host verification state before continuation.

@@ -148,15 +148,18 @@ those exact full commit SHAs, not moving branches.
 
 | Component | Initial baseline | Owns |
 |---|---|---|
-| [Superpowers](https://github.com/obra/superpowers) | v6.4.1 | Feature design, plans, implementation, review |
+| [Superpowers](https://github.com/obra/superpowers) | v7.0.0 | Feature design, plans, implementation, review |
 | [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | Deferred; disabled by default | GitHub-backed backlog and handoff continuity |
 | [gz-skills](https://github.com/tvproductions/gz-skills) | v0.7.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-Superpowers v6.4.2 exists, but this starter initially selects v6.4.1 because
-Backplane's recorded compatibility proof used that version when the baseline
-was chosen. Backplane's deferral does not require keeping SP on that older
-version: review and adopt SP updates independently using the update guide.
+The development template is 0.3.2, unreleased. It selects Superpowers
+[v7.0.0](https://github.com/obra/superpowers/releases/tag/v7.0.0), the latest stable
+release checked October 11, 2026. The old v6.4.1 selection came from Backplane's
+recorded compatibility proof; deferred Backplane does not constrain active SP
+updates. Review SP independently using the update guide. See the
+[update assessment](docs/evidence/2026-10-11-superpowers-7.0.0.md) for scope and
+verification limits.
 This is a reviewed
 starting set, **not a blanket compatibility certification**. Backplane has no
 published release; its remaining host acceptance and external pilot are tracked

@@ -137,9 +137,13 @@ when those upstream contracts and negative cases have been demonstrated.
 ## Getting current SP and gz-skills
 
 Check upstream at adoption time rather than assuming this template's baseline
-is newest. SP's latest published release was **v6.4.2** as checked October 9,
-2026; gz-skills' latest is **v0.6.0** as checked October 11. The starter pins
-SP v6.4.1 and gz-skills v0.7.0. These observations expire as releases change.
+is newest. SP's latest stable release is **v7.0.0**, checked October 11, 2026,
+and selected at full SHA `bb92a77741419a4ab5f06e711a283343f1ada0c3` in the
+0.3.2 development template. The starter also pins gz-skills v0.7.0; its freshness
+was not reassessed during this SP-only update. These observations expire as
+releases change. Read the [SP update assessment](evidence/2026-10-11-superpowers-7.0.0.md).
+Backplane remains disabled and does not constrain active SP version selection;
+review its readiness and compatibility before any future enablement.
 
 From a shell with authenticated GitHub CLI, obtain each latest published release
 and resolve its tag to a full commit SHA:

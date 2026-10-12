@@ -1,6 +1,6 @@
 [project]
 name = "skills-first-starter"
-version = "0.3.1"
+version = "0.3.2"
 description = "Project-scoped SP + SP-BP + gz-skills adoption scaffold"
 requires-python = ">=3.14,<3.15"
 license = "MIT"
