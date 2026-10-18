@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.0 — Unreleased
+## 0.4.0 — October 18, 2026
 
 - Complete the next code backlog item: refactor adoption validation, configuration
   rendering, write planning and rollback into bounded functions. Preserve public
@@ -9,8 +9,8 @@
   plugin sources. Simplify the analyzer's scope validation without changing its
   fail-closed contract. All source/tests/utilities pass the existing on-demand
   cyclomatic/cognitive checks. See [before/after evidence](docs/evidence/2026-10-18-complexity-remediation.md).
-  The candidate remains 0.4.0, unreleased; no pins, thresholds, hooks or CI gates
-  change for this refactor. Latest verification is 35 routine adoption tests and
+  No pins, thresholds, hooks or CI gates change for this refactor.
+  Latest verification is 35 routine adoption tests and
   twelve explicitly run analyzer tests, plus the routine and artifact checks.
 
 - Policy change: require maximal documented Astral alignment for Python project
@@ -39,12 +39,12 @@
   release or the next scoped maintenance. Python remains 3.14.8. Other analyzer
   and plugin pins, profile choices and Backplane deferral remain unchanged.
 
-Adopter impact: this minor development version changes the baseline adoption
+Adopter impact: this minor release changes the baseline adoption
 contract and supersedes the unpublished 0.3.1/0.3.2 candidates. Reconcile generated
 instructions and provenance explicitly; migrate packaging/imports, tool config,
 hooks and CI with rollback evidence. Configuration-only helper use still
-preserves project files and reports remaining adoption work. No release or
-package-registry publication is implied. See the
+preserves project files and reports remaining adoption work. No package-registry
+publication is included. See the
 [alignment contract](docs/engineering/astral-alignment.md) and
 [migration receipt](docs/evidence/2026-10-18-astral-alignment.md).
 
@@ -55,6 +55,12 @@ New packaging utilities meet existing complexity ceilings; the refreshed
 Ruff/complexipy/Lizard probe passes without waiving CLI legacy debt. Static
 portability checks pass; on-demand uv audit reports zero known vulnerabilities
 in 17 third-party packages. Remote CI and native loading remain unobserved.
+
+Release verification supersedes those earlier candidate limits: the final
+implementation commit passed the Ubuntu routine/artifact CI gate. The release
+metadata commit is verified with the same locked local gate before tagging.
+Native skill loading, macOS execution, Cosmic Ray compatibility and other
+deeper-tool proofs remain unverified; SP-BP stays deferred and disabled.
 
 ## 0.3.2 — Unreleased
 

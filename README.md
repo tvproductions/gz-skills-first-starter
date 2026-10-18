@@ -58,7 +58,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The template baseline is [v0.3.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.3.0).
+The template baseline is [v0.4.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.4.0).
 Verify a published tag and exact commit before adoption; a metadata value
 alone is not proof of a release.
 
@@ -158,7 +158,7 @@ those exact full commit SHAs, not moving branches.
 | [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-The development template is 0.4.0, unreleased. It selects Superpowers
+The released template is 0.4.0. It selects Superpowers
 [v7.0.0](https://github.com/obra/superpowers/releases/tag/v7.0.0), the latest stable
 release checked October 11, 2026. The old v6.4.1 selection came from Backplane's
 recorded compatibility proof; deferred Backplane does not constrain active SP
