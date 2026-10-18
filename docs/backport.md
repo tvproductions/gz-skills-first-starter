@@ -5,7 +5,14 @@ Treat this as a translation of useful responsibilities, not a wholesale rewrite
 or an imposed framework. FDAU is the primary precedent; its domain and numeric
 quality gates are not defaults for other projects.
 
-Run `uv run --python 3.14.8 starter.py backport --project /path/to/project`. This assessment reads
+Python baseline adoption requires [Astral alignment](engineering/astral-alignment.md),
+including `src/` packaging and centralized Python configuration. Adopters should
+expect necessary refactoring. Preserve public behavior and project authorities;
+record evidenced compatibility exceptions with an owner and revisit condition.
+The helper's preservation behavior protects files during configuration and does
+not waive required reconciliation.
+
+Run `uv run --locked skills-first-starter backport --project /path/to/project`. This assessment reads
 only bounded top-level names, does not follow symlinks, and writes nothing. It
 suggests responsibilities, not a complete migration plan. The agent must read
 the target's governing instructions and relevant source before recommending moves.

@@ -17,14 +17,17 @@ code), Astral's Ruff and ty,
 unittest and the approved pre-commit checks. Exact verified pins, selected
 release families, lockfiles and aligned local/CI targets make dependency choices
 reproducible. See [Python policy](engineering/python.md) and the
-[configuration contract](project-configuration.md). ty/pre-commit enforcement,
-expanded Ruff rules and other recorded verification gaps remain outstanding;
-documented requirements are not proof of installation or enforcement.
+[configuration contract](project-configuration.md). The required
+[Astral contract](engineering/astral-alignment.md) adds `src/` packaging,
+centralized Python configuration and necessary adopter refactoring. Pinned ty,
+pre-commit and stricter reviewed Ruff rules are configured in this starter;
+each adopter must establish its own enforcement and artifact verification.
 
 | Location | Responsibility |
 | --- | --- |
 | `bundle.json` and native marketplace catalogs | Independent upstream identities, immutable component pins and default activation |
-| `starter.py` | Deterministic preview/apply/status, provenance and preservation checks |
+| `src/skills_first_starter/` | Installed helper package, CLI and generated wheel resources |
+| `starter.py` | Compatibility launcher for the installed helper |
 | `templates/AGENTS.skills-first.md` | Adopter instructions: workflow routing, baseline policy and maintenance obligations |
 | `docs/adoption-workflow.md` and `docs/adoption.md` | Adoption procedure and host verification |
 | `docs/baseline-policy.md` | Adopter allowed ranges, selection rules and documented constraint reasons |

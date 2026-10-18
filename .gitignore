@@ -4,3 +4,5 @@ __pycache__/
 .ruff_cache/
 .DS_Store
 .complexipy_cache/
+dist/
+.pre-commit-cache/

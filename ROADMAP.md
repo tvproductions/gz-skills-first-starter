@@ -29,7 +29,7 @@
 
 - Reviewed update/rollback automation that preserves existing native installs.
 - Generic maintenance remains owned by gz-skills; no local maintenance skill or
-  generic freshness reporter is planned. The pinned gz-skills v0.7.0 now supplies
+  generic freshness reporter is planned. The pinned gz-skills v0.8.0 supplies
   freshness-only assessment and template/plugin source inventory through its
   existing maintenance skill. The starter retains policy, catalog consistency and
   preservation bindings; current tests prove preservation, not dependency
@@ -60,23 +60,24 @@ cohesion. This minimum adopter standard is independent of the helper's needs;
 cohesion version selection and runtime verification remain adopter-owned.
 The approved routine pre-commit selection
 remains Ruff check/format, ty and unittest.
-Still pending: project-locked ty and routine pre-commit checks; agreement on
-expanded strict Ruff rules; shared/local utility ownership and existing-project
-policy adoption; a pinned Cosmic Ray Python 3.14
+Implemented for 0.4.0: `src/` packaging with uv_build, project-locked ty and
+pre-commit, reviewed strict Ruff rules and locked local/hook/CI commands. The
+[Astral contract](docs/engineering/astral-alignment.md) requires adopter
+refactoring with evidenced exceptions. Still pending: shared/local utility
+ownership; a pinned Cosmic Ray Python 3.14
 synthetic unittest compatibility proof; pinned Python 3.14 verification of the
 selected deeper analyzers. Deeper analyzers remain outside hooks
 and CI gates. SP-BP remains an expected addition, deferred pending readiness.
 
-Complexity evaluation completed: Ruff 0.15.18 C901 (20) plus complexipy 8.0.1
-cognitive complexity (15) replaces Xenon in the starter's on-demand policy.
-Python 3.14.8 synthetic compatibility and threshold checks passed. Two existing
-functions exceed cognitive limits; configure also exceeds cyclomatic 20. Keep
-those findings visible and ratchet down in separately scoped source changes.
-The routine pre-commit selection and CI remain unchanged; C901 is not enabled
-in ordinary Ruff lint selection. The latest user decision adds Lizard 1.24.1 and retires Radon too. Recover
-individual/module/overall aggregation with Lizard; counting policy, corpus
-comparison and final C/C/C approximation enforcement remain pending. Keep
-periodic dependency freshness review on demand, and tool preferences starter-owned.
+Complexity remediation completed for the 0.4.0 candidate on October 18:
+`configure` and `project_config` now separate validation, planning and write/
+rollback responsibilities. The checker's scope resolver also meets the cognitive
+ceiling. Ruff C901 (20), complexipy cognitive complexity (15), and the settled
+Lizard function/module/overall contract all pass across `src`, `tests` and `tools`.
+Maximum Lizard score is 16 and maximum cognitive score is 14. Preserve historical
+failing receipts; see the [before/after assessment](docs/evidence/2026-10-18-complexity-remediation.md).
+No thresholds, analyzer pins or measurement semantics changed. These checks
+remain on demand, outside hooks/CI; C901 remains absent from routine selection.
 
 ## Settled C/C/C implementation — October 9, 2026
 

@@ -8,12 +8,28 @@ import re
 import shutil
 import subprocess
 import tempfile
+import tokenize
 from datetime import date
 from importlib.metadata import version
 from pathlib import Path
+from typing import TypedDict
 
 import lizard
 from complexipy import code_complexity, file_complexity
+
+
+class FunctionScore(TypedDict):
+    name: str
+    line: int
+    cognitive: int
+    cyclomatic: int | None
+
+
+def executable(name: str) -> str:
+    path = shutil.which(name)
+    if path is None:
+        raise FileNotFoundError(f"Required analyzer is not installed: {name}")
+    return path
 
 
 def nested(depth):
@@ -57,7 +73,7 @@ def classify(value: int) -> int:
 
 def ruff_check(path, limit):
     command = [
-        shutil.which("ruff"),
+        executable("ruff"),
         "check",
         "--isolated",
         "--target-version",
@@ -70,14 +86,17 @@ def ruff_check(path, limit):
         "json",
         str(path),
     ]
-    run = subprocess.run(command, capture_output=True, text=True, timeout=30)
+    run = subprocess.run(
+        command, capture_output=True, text=True, encoding="utf-8", errors="strict", timeout=30
+    )
     assert run.returncode in (0, 1), run.stderr
     return run.returncode, json.loads(run.stdout)
 
 
 def lizard_scores(path):
     """Measure compiled source through Lizard's public Python API."""
-    compile(path.read_text(), str(path), "exec")
+    with tokenize.open(path) as source:
+        compile(source.read(), str(path), "exec")
     analysis = lizard.analyze_file(str(path))
     return [
         {"name": item.name, "line": item.start_line, "cyclomatic": item.cyclomatic_complexity}
@@ -89,7 +108,7 @@ def observe_case(name, code, directory):
     """Compare independent branching and nesting measures for valid Python."""
     compile(code, f"{name}.py", "exec")
     path = directory / f"{name}.py"
-    path.write_text(code)
+    path.write_text(code, encoding="utf-8")
     _, diagnostics = ruff_check(path, 0)
     cyclomatic = {
         diagnostic["message"].split("`")[1]: diagnostic_score(diagnostic)
@@ -98,7 +117,7 @@ def observe_case(name, code, directory):
     ruff_exit, _ = ruff_check(path, 20)
     run = subprocess.run(
         [
-            shutil.which("complexipy"),
+            executable("complexipy"),
             str(path),
             "--max-complexity-allowed",
             "15",
@@ -110,6 +129,8 @@ def observe_case(name, code, directory):
         ],
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="strict",
         timeout=30,
     )
     assert run.returncode in (0, 1), (run.stdout, run.stderr)
@@ -126,7 +147,10 @@ def observe_case(name, code, directory):
 
 def diagnostic_score(diagnostic):
     """Extract the measured score from pinned Ruff's C901 diagnostic."""
-    return int(re.search(r"\((\d+) >", diagnostic["message"]).group(1))
+    match = re.search(r"\((\d+) >", diagnostic["message"])
+    if match is None:
+        raise ValueError(f"Unrecognized C901 diagnostic: {diagnostic['message']}")
+    return int(match.group(1))
 
 
 def verify_cases(observations, directory):
@@ -147,10 +171,10 @@ def verify_cases(observations, directory):
         "classify",
     }, observations
     invalid = directory / "invalid.py"
-    invalid.write_text("def broken(:\n")
+    invalid.write_text("def broken(:\n", encoding="utf-8")
     run = subprocess.run(
         [
-            shutil.which("complexipy"),
+            executable("complexipy"),
             str(invalid),
             "--cache-dir",
             str(directory / "cache"),
@@ -158,6 +182,8 @@ def verify_cases(observations, directory):
         ],
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="strict",
         timeout=30,
     )
     assert run.returncode != 0, (run.stdout, run.stderr)
@@ -169,7 +195,7 @@ def inspect_source(root, relative):
     result = file_complexity(str(path), no_ignore=True, check_script=True)
     _, diagnostics = ruff_check(path, 0)
     cyclomatic = {item["location"]["row"]: diagnostic_score(item) for item in diagnostics}
-    functions = [
+    functions: list[FunctionScore] = [
         {
             "name": function.name,
             "line": function.line_start,
@@ -219,14 +245,14 @@ def evaluate(root):
         "source": [
             inspect_source(root, path)
             for path in (
-                "starter.py",
+                "src/skills_first_starter/cli.py",
                 "tests/test_starter.py",
                 "tools/engineering/evaluate_complexity.py",
             )
         ],
         "limitations": [
             "Focused syntax and threshold checks, not complete Python grammar proof.",
-            "Lizard averages approximate the three-part policy; final gate and legacy parity are pending.",
+            "Exploratory Lizard observations; use complexity_check.py for authoritative lizard-functions-v1 enforcement.",
             "Source violations remain visible; no refactoring or automatic baseline suppression.",
         ],
     }
@@ -245,9 +271,9 @@ def main():
         "functions": len(scores),
         "maximum": max(scores) if scores else None,
         "overall_function_weighted_mean": sum(scores) / len(scores) if scores else None,
-        "enforcement": "pending reviewed counting contract and corpus comparison",
+        "enforcement": "observational; authoritative gate is complexity_check.py (lizard-functions-v1)",
     }
-    args.output.write_text(json.dumps(receipt, indent=2) + "\n")
+    args.output.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
     print(
         json.dumps(
             {

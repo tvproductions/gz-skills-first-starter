@@ -30,6 +30,12 @@ independently replace the embedded runtime to satisfy a freshness target.
 
 ## Tool and dependency selection
 
+Maximal [Astral alignment](engineering/astral-alignment.md) is required for
+project structure, Python configuration, packaging and execution. Adopters must
+refactor nonconforming code/configuration as part of baseline adoption, or record
+an evidenced compatibility exception with an owner and revisit condition.
+Preservation during configuration is not permanent exemption from the baseline.
+
 Use uv for standalone Python, project environments, dependency resolution and
 locks; use Astral Ruff for lint/format and ty for type checking. Use unittest and
 pre-commit for the approved routine checks. Keep deeper analysis outside hooks

@@ -1,5 +1,5 @@
-import importlib.util
 import json
+import os
 import subprocess
 import tempfile
 import tomllib
@@ -7,10 +7,9 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
+from skills_first_starter import cli as starter
+
 MODULE = Path(__file__).parents[1] / "starter.py"
-spec = importlib.util.spec_from_file_location("starter", MODULE)
-starter = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(starter)
 REF = "a" * 40
 
 
@@ -28,6 +27,21 @@ class AdoptionTests(unittest.TestCase):
         self.assertEqual(list(self.root.iterdir()), [])
         self.assertEqual(result["status"], "preview")
         self.assertIn(".codex/config.toml", result["writes"])
+
+    def test_wheel_resources_match_authoritative_checkout(self):
+        result = subprocess.run(
+            [
+                str(Path(starter.sys.executable)),
+                str(MODULE.parent / "tools/package_resources.py"),
+                "--check",
+            ],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="strict",
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_second_adoption_is_noop(self):
         self.configure(True)
@@ -86,7 +100,7 @@ class AdoptionTests(unittest.TestCase):
     def test_adoption_uses_utf8_and_preserves_host_config_bytes(self):
         (self.root / ".codex").mkdir()
         config = self.root / ".codex/config.toml"
-        original = '# Project: café, “示例”\r\nmodel = "example"\r\n'.encode("utf-8")
+        original = '# Project: café, “示例”\r\nmodel = "example"\r\n'.encode()
         config.write_bytes(original)
         read_text = Path.read_text
 
@@ -110,6 +124,79 @@ class AdoptionTests(unittest.TestCase):
         self.assertFalse((self.root / ".skills-first").exists())
         self.assertFalse((self.root / "AGENTS.md").exists())
         self.assertIn("false", p.read_text())
+
+    def test_failed_replacement_preserves_existing_config_and_cleans_temporary_file(self):
+        folder = self.root / ".codex"
+        folder.mkdir()
+        config = folder / "config.toml"
+        original = b'model = "fixture"\r\n'
+        config.write_bytes(original)
+        with (
+            mock.patch.object(starter.os, "replace", side_effect=OSError("fixture failure")),
+            self.assertRaisesRegex(OSError, "fixture failure"),
+        ):
+            self.configure(True)
+        self.assertEqual(config.read_bytes(), original)
+        self.assertEqual(list(folder.iterdir()), [config])
+        self.assertFalse((self.root / ".skills-first").exists())
+
+    def test_later_write_failure_rolls_back_created_and_replaced_files(self):
+        for existing in (False, True):
+            with self.subTest(existing=existing), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                config = root / ".codex/config.toml"
+                original = b'model = "fixture"\r\n'
+                if existing:
+                    config.parent.mkdir()
+                    config.write_bytes(original)
+                open_path = Path.open
+
+                def fail_lock(path, *args, root=root, open_path=open_path, **kwargs):
+                    if path == root / ".skills-first/bundle.lock.json" and args == ("xb",):
+                        raise OSError("fixture lock failure")
+                    return open_path(path, *args, **kwargs)
+
+                with (
+                    mock.patch.object(Path, "open", autospec=True, side_effect=fail_lock),
+                    self.assertRaisesRegex(OSError, "fixture lock failure"),
+                ):
+                    starter.configure(root, REF, apply=True)
+                files = [path for path in root.rglob("*") if path.is_file()]
+                self.assertEqual(files, [config] if existing else [])
+                if existing:
+                    self.assertEqual(config.read_bytes(), original)
+
+    def test_concurrent_later_file_is_preserved_while_prior_write_rolls_back(self):
+        config = self.root / ".codex/config.toml"
+        config.parent.mkdir()
+        original = b'model = "fixture"\r\n'
+        config.write_bytes(original)
+        lock = self.root / ".skills-first/bundle.lock.json"
+        concurrent = b"Concurrent fixture record.\n"
+        replace_file = os.replace
+
+        def replace_with_concurrent_writer(source, destination):
+            lock.parent.mkdir()
+            lock.write_bytes(concurrent)
+            replace_file(source, destination)
+
+        with (
+            mock.patch.object(starter.os, "replace", side_effect=replace_with_concurrent_writer),
+            self.assertRaisesRegex(starter.AdoptionError, "changed during preview"),
+        ):
+            self.configure(True)
+        self.assertEqual(config.read_bytes(), original)
+        self.assertEqual(lock.read_bytes(), concurrent)
+        self.assertFalse((self.root / "AGENTS.skills-first.md").exists())
+
+    def test_disabled_alternative_plugin_source_is_preserved(self):
+        config = self.root / ".codex/config.toml"
+        config.parent.mkdir()
+        original = b'[plugins."superpowers@fixture-other"]\nenabled = false\n'
+        config.write_bytes(original)
+        self.configure(True)
+        self.assertTrue(config.read_bytes().startswith(original))
+        self.assertEqual(self.configure(True)["writes"], [])
 
     def test_gzkit_is_not_reconfigured(self):
         (self.root / ".gzkit").mkdir()
@@ -262,6 +349,8 @@ class AdoptionTests(unittest.TestCase):
             check=True,
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="strict",
         ).stdout.splitlines()
         self.assertEqual(
             [
@@ -310,21 +399,23 @@ class AdoptionTests(unittest.TestCase):
                     ("rev-parse", "HEAD"): REF,
                 }
 
-                def run_git(args, **kwargs):
+                def run_git(args, outputs=outputs, **kwargs):
                     return subprocess.CompletedProcess(args, 0, stdout=outputs[tuple(args[3:])])
 
-                with mock.patch.object(starter, "HERE", self.root):
-                    with mock.patch.object(starter.subprocess, "run", side_effect=run_git):
-                        try:
-                            revision = starter.source_revision()
-                        except starter.AdoptionError as error:
-                            self.fail(f"recognized starter origin was rejected: {error}")
-                        self.assertEqual(revision, REF)
-                        outputs[("remote", "get-url", "origin")] = (
-                            "https://github.com/example/fixture-adopter.git"
-                        )
-                        with self.assertRaisesRegex(starter.AdoptionError, "adopting repo"):
-                            starter.source_revision()
+                with (
+                    mock.patch.object(starter, "HERE", self.root),
+                    mock.patch.object(starter.subprocess, "run", side_effect=run_git),
+                ):
+                    try:
+                        revision = starter.source_revision()
+                    except starter.AdoptionError as error:
+                        self.fail(f"recognized starter origin was rejected: {error}")
+                    self.assertEqual(revision, REF)
+                    outputs[("remote", "get-url", "origin")] = (
+                        "https://github.com/example/fixture-adopter.git"
+                    )
+                    with self.assertRaisesRegex(starter.AdoptionError, "adopting repo"):
+                        starter.source_revision()
 
     def test_adoption_records_canonical_starter_repository(self):
         self.configure(True)
@@ -353,9 +444,11 @@ class AdoptionTests(unittest.TestCase):
             with self.subTest(version=version):
                 data = starter.bundle()
                 data["template_version"] = version
-                with mock.patch.object(starter, "bundle", return_value=data):
-                    with self.assertRaises(starter.AdoptionError):
-                        self.configure(True)
+                with (
+                    mock.patch.object(starter, "bundle", return_value=data),
+                    self.assertRaises(starter.AdoptionError),
+                ):
+                    self.configure(True)
                 self.assertEqual(list(self.root.iterdir()), [])
 
     def test_legacy_unversioned_lock_requires_review_and_is_preserved(self):

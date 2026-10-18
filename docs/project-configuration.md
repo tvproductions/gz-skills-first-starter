@@ -8,6 +8,12 @@ The helper itself uses the standard library and requires no runtime packages.
 
 ## Choose the configuration home
 
+Python project metadata, builds, dependencies and supported uv/Ruff/ty settings
+belong in `pyproject.toml` under the required
+[Astral alignment contract](engineering/astral-alignment.md). Separate native
+hook/CI/host files retain their own contracts. Existing projects must reconcile
+nonconforming configuration and structure as part of full baseline adoption.
+
 Use either `pyproject.toml` or a project-owned `settings.json` for application
 settings, following the project's existing convention. Link the chosen file and
 its loader from project instructions. Python dependency declarations still belong
@@ -19,6 +25,7 @@ do not replace uv's dependency metadata.
 | Runtime packages | `project.dependencies` in `pyproject.toml` |
 | Optional application features | `project.optional-dependencies` |
 | Development and on-demand tools | Separate `dependency-groups` |
+| Workspace membership and local member dependencies | Root `tool.uv.workspace`, member dependencies and `tool.uv.sources` |
 | Exact resolved Python environment | Project-owned `uv.lock` |
 | Application settings | A project namespace under `tool` in TOML, or project-owned `settings.json` |
 | Plugin sources | Reviewed bundle and native marketplace configuration |
@@ -172,5 +179,6 @@ the regression test also simulates a legacy Windows default encoding.
 There is no automatic baseline merge, app settings loader, dependency resolver
 integration or adopter migration command. Changed starter-managed files require
 reviewed reconciliation; fresh-session skill discovery remains unverified by file
-checks. Routine ty/pre-commit enforcement and the other gaps listed in the
-[roadmap](../ROADMAP.md#python-engineering-policy-follow-up) remain outstanding.
+checks. The starter now configures pinned ty and the approved pre-commit checks;
+adopters must configure and verify their own enforcement. Other gaps remain in
+the [roadmap](../ROADMAP.md#python-engineering-policy-follow-up).

@@ -291,3 +291,65 @@ Backplane is independently pinned and remains disabled; its old compatibility
 baseline does not constrain active SP. Before future enablement, review its
 readiness and SP 7 compatibility. No installed plugins or other projects are
 updated. Recheck live publication and host verification state before continuation.
+
+## Astral alignment and starter remediation — October 18, 2026
+
+The user requires maximal Astral alignment, including necessary adopter
+refactoring and remediation of the starter itself. Read
+`docs/engineering/astral-alignment.md` and
+`docs/evidence/2026-10-18-astral-alignment.md`. Preservation during helper
+configuration does not exempt an adopter from the required baseline. Full
+adoption includes bounded verified reconciliation; constrained exceptions need
+evidence, an owner and revisit condition. Existing authorities and public
+behavior remain binding. Cargo-style workspaces apply to compatible connected
+packages, with explicit dependency edges, not every repository.
+
+Development version is now 0.4.0, unreleased. Helper code is an installed
+`src/skills_first_starter` package with uv_build and a console command; the root
+script is a compatibility launcher. Root bundle/catalog/template files remain
+authoritative; regenerate checked wheel resources with
+`uv run --locked python tools/package_resources.py` after changes. Installed
+wheels need explicit published `--starter-ref` provenance. No skills are authored
+or redistributed, and no profile was selected. Current gz-skills pin is 0.8.0,
+superseding earlier current-pin statements; SP and deferred Backplane are unchanged.
+
+Routine ty/pre-commit enforcement and reviewed stricter Ruff selection are now
+implemented, superseding earlier gap statements. Local hooks are installed.
+Read current AGENTS.md/README checks. Observed local Windows verification:
+31 adoption tests, eleven explicit analyzer tests, bundle/both catalogs,
+Ruff check/format, ty, pre-commit, locked sync/lock check, wheel built from sdist
+and isolated installed CLI verification. The Windows legacy-locale probe failure
+was fixed with Python source-encoding detection and a regression test. Static
+portability checks pass. On-demand audit reports no known vulnerabilities in
+17 third-party packages, with experimental uv audit limitations recorded.
+
+Python stays 3.14.8. uv/uv_build are 0.13.1, Ruff 0.15.22 (retaining 0.15.x),
+ty 0.0.89 (beta exception), pre-commit 4.7.0; complexipy/Lizard unchanged. CI
+uses reviewed immutable checkout/setup-uv selections and exact tool/runtime pins.
+Actual remote CI and fresh-session native skill loading remain unverified on
+this candidate. Existing complexity debt, other on-demand tool proofs and
+shared/local utility ownership remain open. No commit, push, tag, release,
+installed-plugin change or adopter migration is implied by this work.
+
+## Complexity backlog item completed — October 18, 2026
+
+The user requested continuing with the next backlog item. The repository-local
+complexity remediation is complete in the existing unreleased 0.4.0 candidate;
+all preceding alignment work is retained. Read
+`docs/evidence/2026-10-18-complexity-remediation.md` and its before/after receipts.
+Adoption validation/rendering/planning/writing are decomposed without changing
+public behavior. The checker scope resolver is also decomposed; native scoring,
+fail-closed discovery and `lizard-functions-v1` are unchanged.
+
+Ruff C901, complexipy and Lizard all pass over `src tests tools` at the existing
+ceilings. Lizard maximum drops 30 to 16, cognitive maximum is 14; the measured
+population increases 81 to 98 through extraction and new tests. Historical failing
+receipts remain intact. Latest verification: 35 routine adoption tests, twelve
+explicit analyzer tests, approved pre-commit checks, ty/Ruff, catalogs, lock,
+build and isolated installed CLI checks. This supersedes the prior current-state
+statement about existing starter complexity debt. No complexity hook/CI gate,
+dependency refresh, tag, release or adopter mutation was introduced.
+
+Remaining work includes fresh-session host/adopter proofs, shared/local utility
+ownership and selected deeper-analyzer verification, especially Cosmic Ray's
+Python 3.14 unittest proof. Do not claim those from passing local package checks.

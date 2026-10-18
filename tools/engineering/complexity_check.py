@@ -26,23 +26,28 @@ BLOCKED = {
 }
 
 
+def scope_path(root: Path, relative: str) -> Path:
+    """Validate one explicit source scope before discovery visits it."""
+    path = root / relative
+    if Path(relative).is_absolute() or ".." in Path(relative).parts:
+        raise ValueError("Scopes must be relative paths inside root")
+    if any(part in BLOCKED for part in Path(relative).parts):
+        raise ValueError(f"Excluded scope: {relative}")
+    for parent in (path, *path.parents):
+        if parent == root:
+            break
+        if parent.is_symlink():
+            raise ValueError(f"Symlink scope: {relative}")
+    if not path.exists():
+        raise ValueError(f"Missing scope: {relative}")
+    return path
+
+
 def source_files(root, paths):
     """Resolve explicit scopes without following links or visiting excluded trees."""
     found = set()
     for relative in paths:
-        path = root / relative
-        if Path(relative).is_absolute() or ".." in Path(relative).parts:
-            raise ValueError("Scopes must be relative paths inside root")
-        if any(part in BLOCKED for part in Path(relative).parts):
-            raise ValueError(f"Excluded scope: {relative}")
-        for parent in (path, *path.parents):
-            if parent == root:
-                break
-            if parent.is_symlink():
-                raise ValueError(f"Symlink scope: {relative}")
-        if not path.exists():
-            raise ValueError(f"Missing scope: {relative}")
-        visit(path, found)
+        visit(scope_path(root, relative), found)
     if not found:
         raise ValueError("Scope contains no Python files")
     return sorted(found)

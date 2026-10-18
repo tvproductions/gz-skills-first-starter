@@ -73,6 +73,12 @@ family; record such a compatibility exception rather than assuming 3.12 works.
 
 ## Toolchain ownership
 
+Apply the required [Astral alignment contract](astral-alignment.md): `src/`
+packages, declared builds and entry points, centralized Python configuration,
+uv-managed locked execution, installed-artifact verification and reviewed
+workspace boundaries. Existing adopters must reconcile gaps through refactoring;
+preserve behavior and authorities throughout the migration.
+
 | Concern | Required choice |
 | --- | --- |
 | Standalone Python installation, environments, dependency resolution and locks | uv-managed Python, `pyproject.toml` and project-owned `uv.lock` |
@@ -238,15 +244,15 @@ Lizard's counting differs from Radon and Ruff. Compare changed scores and
 verdicts explicitly; complexipy's script score is not a module average. This changes only the starter's policy;
 do not rewrite other projects' complexity contracts without authorization.
 
-The starter pins all three tools in the explicit `hygiene` dependency group. Their
+The starter pins Ruff in `dev` and complexipy/Lizard in `hygiene`. Their
 purpose is static development analysis. Ruff/complexipy add native wheels;
 Lizard adds a Python analyzer. All use uv storage/download resources, with no
 application runtime dependencies or service calls. Run from the reviewed starter root, replacing REPORT_DIR with an unused
 task-specific temporary directory created first:
 
 ```bash
-uv run --managed-python --group hygiene ruff check --select C901 --ignore-noqa starter.py tests tools/engineering
-uv run --managed-python --group hygiene complexipy starter.py tests tools/engineering --cache-dir REPORT_DIR/cache --output-format json --output REPORT_DIR/cognitive.json
+uv run --locked --group hygiene ruff check --select C901 --ignore-noqa src tests tools/engineering
+uv run --locked --group hygiene complexipy src tests tools/engineering --cache-dir REPORT_DIR/cache --output-format json --output REPORT_DIR/cognitive.json
 ```
 
 Run all three even when one reports findings. Use the evaluation probe for
@@ -258,16 +264,18 @@ checks to CI. No routine pre-commit selection changes are implied.
 
 The [historical two-tool baseline](../evidence/2026-10-09-complexity-evaluation.json)
 contains source hashes and scores: `configure` is cyclomatic 21/cognitive 57;
-`project_config` is cyclomatic 10/cognitive 28. These remain failures against the
-ceilings, not waived passes. New code meets both ceilings; existing over-limit
+`project_config` is cyclomatic 10/cognitive 28. Those historical measurements
+remain failing evidence. The [October 18 remediation](../evidence/2026-10-18-complexity-remediation.md)
+records the current passing source separately with before/after hashes, public
+behavior checks and unchanged ceilings. New code meets both ceilings; existing over-limit
 functions may only improve, with no new over-limit functions. Compare stable
 file/function identities and scores, not only failure counts. Do not regenerate
 a snapshot to hide regressions, suppress findings or raise limits. Refactoring
 is separately scoped and verified. Routine checks passing does not establish
 that the on-demand complexity checks are clean.
 
-The [three-tool receipt](../evidence/2026-10-09-three-tool-complexity-evaluation.json)
-records current source hashes, Lizard measurements and aggregates.
+The [historical three-tool receipt](../evidence/2026-10-09-three-tool-complexity-evaluation.json)
+records the earlier source hashes, Lizard measurements and aggregates.
 
 See [the evaluation procedure](complexity-evaluation.md) to reproduce
 the compatibility checks and interpret the evidence. Full Python grammar support

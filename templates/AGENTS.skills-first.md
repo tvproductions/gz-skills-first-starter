@@ -1,5 +1,22 @@
 # Skills-first development stack
 
+Maximal Astral alignment is required for Python projects under this baseline.
+Read `docs/engineering/astral-alignment.md` in the reviewed starter checkout.
+Use `src/<package>/`, a declared build backend (uv_build for pure Python),
+installed-package imports, application entry points and py.typed for typed
+libraries. Centralize Python metadata and uv/Ruff/ty configuration in
+pyproject.toml; use standard dependency-groups, a committed uv.lock and exact
+.python-version, ignored .venv, and locked uv execution shared by hooks and CI.
+Use Cargo-style uv workspaces for compatible interconnected packages: one root
+lock/environment, explicit member dependencies and editable workspace sources.
+Root run/sync selects the root; select members or all packages explicitly.
+Verify artifacts outside
+the checkout. Adopters must refactor nonconforming layout/configuration during
+full baseline adoption. Preserve behavior, data and authorities while migrating;
+configuration preservation is not a permanent exemption. Record constrained
+exceptions with evidence, an owner and revisit condition. Configuration-only
+requests report remaining refactoring instead of silently performing it.
+
 Read project AGENTS.md and linked authorities first. This project records sources
 in `.skills-first/bundle.lock.json`. The starter authors and distributes zero
 agent skills; it supplies stack configuration, provenance and project policy.

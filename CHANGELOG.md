@@ -1,5 +1,61 @@
 # Changelog
 
+## 0.4.0 — Unreleased
+
+- Complete the next code backlog item: refactor adoption validation, configuration
+  rendering, write planning and rollback into bounded functions. Preserve public
+  behavior and error messages; add public-helper checks for failed replacement,
+  later-write rollback, concurrent-file preservation and disabled alternate
+  plugin sources. Simplify the analyzer's scope validation without changing its
+  fail-closed contract. All source/tests/utilities pass the existing on-demand
+  cyclomatic/cognitive checks. See [before/after evidence](docs/evidence/2026-10-18-complexity-remediation.md).
+  The candidate remains 0.4.0, unreleased; no pins, thresholds, hooks or CI gates
+  change for this refactor. Latest verification is 35 routine adoption tests and
+  twelve explicitly run analyzer tests, plus the routine and artifact checks.
+
+- Policy change: require maximal documented Astral alignment for Python project
+  layout, packaging, configuration, environments and verification. Full adopters
+  must refactor nonconforming structure/configuration; preservation during helper
+  configuration does not waive the baseline. Compatibility exceptions require
+  evidence, an owner and revisit condition. Preserve behavior, data and existing
+  authorities during migration. Pass the requirement through adopter instructions.
+- Migrate the starter implementation to `src/skills_first_starter`, uv_build and
+  an installed console command. Retain `starter.py` as a compatibility launcher.
+  Include checked generated bundle/catalog/instruction resources in wheels and
+  exercise installed behavior outside the checkout with explicit SHA provenance.
+- Establish project-locked Ruff/ty/pre-commit and the four approved routine hooks,
+  shared with CI. Add reviewed UP/B/SIM/RUF lint families; fix their findings and
+  type-check all Python source/tests/utilities. Deeper analyzers remain on demand.
+- Document Cargo-style workspace membership, shared locks and environments,
+  explicit editable dependency edges and member command selection. Keep this
+  single-package starter a standard uv project. Align CI with Astral's reviewed
+  immutable checkout/setup-uv action examples and explicit tool/runtime pins.
+- Fix the compatibility probe's Windows legacy-locale source decoding, cover it
+  with an explicit regression, add LF normalization and explicit subprocess
+  decoding. Preserve historical receipts and visible existing complexity debt.
+- Pin refresh within Ruff's selected 0.15 family: 0.15.18 to 0.15.22. Select uv
+  and uv_build 0.13.1, pre-commit 4.7.0 and required ty 0.0.89. ty is beta with no
+  stable release; record this compatibility exception and revisit on stable
+  release or the next scoped maintenance. Python remains 3.14.8. Other analyzer
+  and plugin pins, profile choices and Backplane deferral remain unchanged.
+
+Adopter impact: this minor development version changes the baseline adoption
+contract and supersedes the unpublished 0.3.1/0.3.2 candidates. Reconcile generated
+instructions and provenance explicitly; migrate packaging/imports, tool config,
+hooks and CI with rollback evidence. Configuration-only helper use still
+preserves project files and reports remaining adoption work. No release or
+package-registry publication is implied. See the
+[alignment contract](docs/engineering/astral-alignment.md) and
+[migration receipt](docs/evidence/2026-10-18-astral-alignment.md).
+
+Verification on managed Python 3.14.8 / Windows: 31 adoption tests, eleven
+explicit analyzer tests, four approved pre-commit hooks, Ruff/ty, bundle and both
+catalogs, lock consistency, source/wheel builds and isolated installed CLI checks.
+New packaging utilities meet existing complexity ceilings; the refreshed
+Ruff/complexipy/Lizard probe passes without waiving CLI legacy debt. Static
+portability checks pass; on-demand uv audit reports zero known vulnerabilities
+in 17 third-party packages. Remote CI and native loading remain unobserved.
+
 ## 0.3.2 — Unreleased
 
 - Fix generated provenance and Codex marketplace sources to use the canonical

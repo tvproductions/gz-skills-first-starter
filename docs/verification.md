@@ -164,3 +164,23 @@ lint/format, and the nineteen adoption tests pass. Final receipts are
 `docs/evidence/2026-10-09-starter-ccc-v1.json`; both retain absolute complexity
 failures without tool errors. The final approach was shared in gzkit issue #1183.
 Changes remain local/uncommitted; no hooks, CI complexity gates or SP-BP changes.
+
+## October 18 Astral alignment migration
+
+See [the scoped migration receipt](evidence/2026-10-18-astral-alignment.md) for
+the 0.4.0 package/tool/policy migration, 31 routine adoption tests, eleven
+explicit analyzer tests, four passing local hooks, type/lint/format checks,
+bundle/catalog validation and isolated installed-artifact verification on
+managed Python 3.14.8 / Windows. This supersedes historical current-state
+statements above about absent ty/pre-commit enforcement. GitHub-hosted CI and
+fresh-session native loading remain separate unobserved proofs.
+
+## October 18 complexity remediation
+
+See [the before/after assessment](evidence/2026-10-18-complexity-remediation.md).
+All three on-demand complexity checks now pass across `src tests tools` under
+unchanged limits and scoring contracts: Lizard maximum 16 and overall mean
+3.306122448979592 across 98 functions, zero violations/tool errors; cognitive
+maximum 14. Latest routine verification has 35 adoption tests; explicit analyzer
+verification has twelve tests. Historical failures and the earlier alignment
+receipt remain intact. Fresh-session host proofs and remote CI remain open.

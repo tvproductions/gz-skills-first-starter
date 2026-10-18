@@ -4,6 +4,11 @@ A reusable, project-scoped starting point for **Superpowers + Superpowers Backpl
 with room for each application's own operational skills and supporting code. Built for work and personal projects under `tvproductions`.
 
 This repository is the bundle catalog, adoption tool, and guidance home.
+
+Python projects must meet the [Astral alignment contract](docs/engineering/astral-alignment.md):
+`src/` packaging, uv-managed locked execution, centralized Python configuration,
+installed-artifact verification and aligned local/hook/CI checks. Adopters should
+expect to refactor nonconforming projects; existing layout alone is not an exemption.
 **It authors and distributes zero agent skills.** Upstream plugins supply skills;
 the starter supplies opinionated policy, deterministic configuration and provenance.
 Adopters own update review and project operational skills. See the
@@ -74,7 +79,7 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current handoff](docs/handoffs/2026-10-09-starter-continuation.md).
+[the current handoff](docs/handoffs/2026-10-18-starter-continuation.md).
 
 ## Quick start: an existing or empty project
 
@@ -92,9 +97,9 @@ an installed older patch is not a freshness check. See the
 ```bash
 gh repo clone tvproductions/gz-skills-first-starter
 cd gz-skills-first-starter
-uv run --python 3.14.8 starter.py validate
-uv run --python 3.14.8 starter.py configure --project /path/to/your-project
-uv run --python 3.14.8 starter.py configure --project /path/to/your-project --apply
+uv run --locked skills-first-starter validate
+uv run --locked skills-first-starter configure --project /path/to/your-project
+uv run --locked skills-first-starter configure --project /path/to/your-project --apply
 ```
 
 The first configure command previews paths without writing. The second writes
@@ -112,7 +117,7 @@ files does **not** install plugins, authenticate GitHub, or prove skill discover
 The native managers own their caches; upstream skills are never copied here.
 
 ```bash
-uv run --python 3.14.8 starter.py status --project /path/to/your-project
+uv run --locked skills-first-starter status --project /path/to/your-project
 ```
 
 For agent-guided adoption, read [the adoption workflow](docs/adoption-workflow.md).
@@ -126,7 +131,7 @@ the default refuses to mistake an adopting repo commit for a starter revision.
 ## Backporting an existing project
 
 ```bash
-uv run --python 3.14.8 starter.py backport --project /path/to/your-project
+uv run --locked skills-first-starter backport --project /path/to/your-project
 ```
 
 This read-only assessment suggests responsibilities to map onto existing material.
@@ -153,7 +158,7 @@ those exact full commit SHAs, not moving branches.
 | [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-The development template is 0.3.2, unreleased. It selects Superpowers
+The development template is 0.4.0, unreleased. It selects Superpowers
 [v7.0.0](https://github.com/obra/superpowers/releases/tag/v7.0.0), the latest stable
 release checked October 11, 2026. The old v6.4.1 selection came from Backplane's
 recorded compatibility proof; deferred Backplane does not constrain active SP
@@ -188,10 +193,11 @@ See [architecture](docs/architecture.md), [adoption](docs/adoption.md), and
 ## Checks
 
 ```bash
-uv run --python 3.14.8 -m unittest discover -s tests -v
-uv run --python 3.14.8 starter.py validate
-uvx --python 3.14.8 ruff==0.15.18 check .
-uvx --python 3.14.8 ruff==0.15.18 format --check .
+uv sync --locked --all-groups
+uv run --locked pre-commit run --all-files
+uv run --locked skills-first-starter validate
+uv build
+uv run --locked python tools/verify_distribution.py
 ```
 
 The tool uses Python's standard library. Non-gzkit projects started from this
@@ -207,13 +213,23 @@ form an adopter minimum standard, independent of the starter helper's own needs.
 Adopters own cohesion pins and runtime verification. These deeper checks stay
 outside hooks and CI.
 
-This records policy, not completed tool installation or enforcement. ty,
-pre-commit, expanded Ruff rules and Cosmic Ray's Python 3.14 compatibility proof
-remain outstanding in the starter. The configuration helper writes an instructions fragment;
+The starter packages its helper under `src/skills_first_starter/`, uses uv_build,
+and pins Ruff, ty and pre-commit in its dev group. The approved four routine hooks
+run the same locked commands locally and in CI. Install them in a development
+checkout with `uv run --locked pre-commit install`. The old `uv run starter.py`
+launcher remains available; prefer `uv run --locked skills-first-starter`.
+Regenerate wheel resources with `uv run --locked python tools/package_resources.py`
+after changing the bundle, either catalog or the instructions template; tests
+check their agreement. Wheels require explicit published `--starter-ref` for
+configuration because an installed environment has no starter Git provenance.
+
+Cosmic Ray's Python 3.14 compatibility proof and other deeper-tool gaps remain
+outstanding. The configuration helper writes an instructions fragment;
 read the full Python policy from a reviewed starter checkout or reconcile it into
 project-owned documentation with provenance. Supporting analysis utilities live
-in `tools/engineering/`. Existing-project policy adoption and shared/local utility
-ownership still require design decisions. Preserve app-specific public contracts
+in `tools/engineering/`. Shared/local utility ownership still requires a design
+decision. Existing Python adopters must reconcile the Astral baseline through
+reviewed refactoring or evidenced compatibility exceptions. Preserve public contracts
 and numeric thresholds; do not transplant another project's gates.
 
 ## Attribution and license

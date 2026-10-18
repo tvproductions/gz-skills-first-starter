@@ -24,7 +24,9 @@ The adoption helper is standard-library Python. It previews before writing,
 checks all intended files before changing any, preserves unrelated TOML bytes
 and existing AGENTS content, refuses conflicting managed files and discovery
 copies, and never invokes a native install, remote model, or GitHub mutation.
-Existing projects retain their app layout. Empty projects get the same minimal
+Existing projects preserve their app layout during configuration, then reconcile
+it with the required [Astral baseline](engineering/astral-alignment.md) through
+reviewed refactoring or evidenced compatibility exceptions. Empty projects get the same minimal
 configuration and entrypoint, rather than a speculative web or database stack.
 
 Application dependency declarations, locks and settings remain project-owned.

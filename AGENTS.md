@@ -3,7 +3,7 @@
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-10-09-starter-continuation.md`; recheck live state before work.
+`docs/handoffs/2026-10-18-starter-continuation.md`; recheck live state before work.
 
 This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.
@@ -29,7 +29,13 @@ or infer app domain rules from another adopting project. App operational skills 
 supporting domain code remain project-owned.
 
 For Python work, read `docs/engineering/python.md`. Non-gzkit projects
-started from this starter require uv-managed, pinned Python 3.14, current clear
+must follow `docs/engineering/astral-alignment.md`: maximal Astral conformance,
+`src/` packaging, uv_build for pure Python, centralized pyproject configuration,
+locked uv execution and installed-artifact verification. Adopters must refactor
+nonconforming structure/configuration; preservation during configuration is not
+an exemption. Keep behavior and authorities intact. Compatibility exceptions
+need evidence, an owner and revisit condition. Apply this to the starter itself.
+Projects started from this starter require uv-managed, pinned Python 3.14, current clear
 Python idioms and suitable stdlib APIs. Consult versioned official documentation
 for behavior changes, deprecations and removals; configuration alone does not
 supply engineering policy. Keep metadata and tool targets aligned and validate
@@ -74,11 +80,11 @@ function/module/overall ceilings of 20 under the reviewed `lizard-functions-v1`
 contract. Read `docs/engineering/ccc-contract.md`; this is an explicit rebaseline, not exact
 Radon equivalence. Syntax/discovery errors fail closed.
 Record legacy baselines that may only shrink. Cosmic Ray is
-selected but its Python 3.14 compatibility remains unverified. The exact expanded
-Ruff rules, utility ownership and existing-project adoption mechanism remain
-unsettled. Current starter tooling lacks ty and pre-commit; do not describe this
-guidance as completed enforcement. Preserve existing project authorities while
-reporting adoption gaps. No broad application refactoring is implied.
+selected but its Python 3.14 compatibility remains unverified. The reviewed
+routine Ruff selection is E4/E7/E9/F/I/UP/B/SIM/RUF. Ruff, ty and pre-commit are
+pinned in dev; complexipy/Lizard remain in hygiene. Utility ownership and
+remaining deeper-tool verification remain open. Preserve existing project
+authorities while completing required Astral reconciliation.
 
 Validate pins and both catalogs after a bundle change. Use unittest, not pytest.
 Test consequential adoption behavior at the public helper seam. Preserve existing
@@ -86,8 +92,13 @@ project files, explicit profile choices, and native manager state. A config file
 or successful manifest validation cannot prove fresh-session skill discovery.
 Report unverified host behavior and Backplane pre-release limitations explicitly.
 
-Checks: `uv run --python 3.14.8 -m unittest discover -s tests -v`, `uv run --python 3.14.8 starter.py validate`,
-`uvx --python 3.14.8 ruff==0.15.18 check .`, and `uvx --python 3.14.8 ruff==0.15.18 format --check .`.
+Checks: `uv sync --locked --all-groups`, `uv run --locked pre-commit run --all-files`,
+`uv run --locked skills-first-starter validate`, `uv build`, and
+`uv run --locked python tools/verify_distribution.py`. The routine hooks run only
+Ruff check/format, ty and unittest. Run the checker CLI tests explicitly after
+analyzer changes: `uv run --locked --group hygiene python -m unittest discover -s tools/engineering -p "test_*.py" -v` (eleven contract tests plus the portability regression).
+Refresh wheel resource copies with `uv run --locked python tools/package_resources.py`
+after changing their four authoritative inputs; unittest detects drift.
 No plugin installation, GitHub issue mutation, tag, or release publication is
 implied by editing this repository. Follow the user's actual authorization.
 

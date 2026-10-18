@@ -1,6 +1,6 @@
 # Template versioning
 
-The development template version is **0.3.2**, unreleased; the initial release
+The development template version is **0.4.0**, unreleased; the initial release
 was **0.1.0**. The 0.3
 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
 The current version is recorded in
@@ -10,7 +10,7 @@ version for this starter's helper project; the repository tests check agreement.
 An adopter may change its app metadata without changing the starter's identity.
 
 ```bash
-uv run --python 3.14.8 starter.py version
+uv run --locked skills-first-starter version
 ```
 
 This reports the checkout's declared version, not proof of a published release.

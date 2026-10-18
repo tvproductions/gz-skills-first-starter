@@ -10,6 +10,14 @@ For structural adoption in an existing project, read
 existing sources to proposed targets, and implement only useful, authorized
 changes with project verification. Configuration adoption does not move code.
 
+Full Python baseline adoption requires the
+[Astral alignment contract](engineering/astral-alignment.md). Inventory layout,
+packaging, configuration and enforcement gaps, then implement necessary
+refactoring within the authorized project scope. Preserve public behavior and
+project authorities. Existing layout is not automatically exempt; compatibility
+exceptions require evidence, an owner and revisit condition. Configuration-only
+work reports the remaining migration explicitly.
+
 Before choosing versions, use the adoption guide's “Getting current SP and
 gz-skills” procedure. Check latest published releases, distinguish development
 main from a release, and record reviewed full SHAs. The starter pins are a
@@ -40,7 +48,7 @@ Inspect project instructions, existing plugins and skill discovery, and gzkit
 ownership. Keep app rules and existing user changes. Do not make a copy of an
 upstream skill tree or install the same skill through two discovery contracts.
 
-Run `uv run --python 3.14.8 starter.py configure --project <root>` from this starter checkout.
+Run `uv run --locked skills-first-starter configure --project <root>` from this starter checkout.
 Inspect its preview, then apply the already-authorized adoption with `--apply`.
 A conflict requires reconciliation of the specific source or file; do not remove
 other installations or use a force overwrite to make it pass. Existing AGENTS

@@ -35,7 +35,14 @@ class CountingTests(unittest.TestCase):
                 "--output",
                 str(output),
             ]
-            run = subprocess.run(command, capture_output=True, text=True, timeout=15)
+            run = subprocess.run(
+                command,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="strict",
+                timeout=15,
+            )
             self.assertTrue(output.exists(), run.stderr)
             return run.returncode, json.loads(output.read_text())
 
@@ -91,6 +98,21 @@ class CountingTests(unittest.TestCase):
         self.assertEqual(code, 2)
         code, _ = self.run_check({"a.py": "pass\n"}, symlink=True)
         self.assertEqual(code, 2)
+        code, report = self.run_check({"a.py": "pass\n"}, ["link.py"], symlink=True)
+        self.assertEqual(code, 2)
+        self.assertIn("Symlink scope", report["errors"][0]["message"])
+
+    def test_escaping_absolute_and_excluded_scopes_fail_before_discovery(self):
+        for scope, message in (
+            ("../outside", "relative paths inside root"),
+            (str(Path(__file__).resolve()), "relative paths inside root"),
+            (".git", "Excluded scope"),
+        ):
+            with self.subTest(scope=scope):
+                code, report = self.run_check({"a.py": "pass\n"}, [scope])
+                self.assertEqual((code, report["status"]), (2, "error"))
+                self.assertEqual(report["modules"], [])
+                self.assertIn(message, report["errors"][0]["message"])
 
     def test_inline_suite_reports_unsupported_measurement(self):
         code, report = self.run_check({"a.py": "def café(x): assert x; return x\n"})

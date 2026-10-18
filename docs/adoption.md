@@ -19,7 +19,7 @@ gh api repos/tvproductions/gz-skills-first-starter/commits/FULL_STARTER_SHA --jq
 ```
 
 Also read the checkout's declared template version with
-`uv run --python 3.14.8 starter.py version`. For a published release, resolve its
+`uv run --locked skills-first-starter version`. For a published release, resolve its
 `vMAJOR.MINOR.PATCH` tag to the same full SHA and review its changelog. The label
 alone does not prove publication. New locks record version and SHA separately;
 older unversioned locks require reviewed reconciliation. See
