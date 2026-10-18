@@ -79,7 +79,7 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current handoff](docs/handoffs/2026-10-18-starter-continuation.md).
+[the current handoff](docs/handoffs/2026-10-18-cosmic-ray-continuation.md).
 
 ## Quick start: an existing or empty project
 
@@ -158,7 +158,8 @@ those exact full commit SHAs, not moving branches.
 | [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-The released template is 0.4.0. It selects Superpowers
+The latest published template is 0.4.0; development continues as 0.4.1, unreleased.
+It selects Superpowers
 [v7.0.0](https://github.com/obra/superpowers/releases/tag/v7.0.0), the latest stable
 release checked October 11, 2026. The old v6.4.1 selection came from Backplane's
 recorded compatibility proof; deferred Backplane does not constrain active SP
@@ -182,8 +183,10 @@ over upstream profile defaults, including Python 3.14 and retired-tool choices.
 - Claude Code: native bundle marketplace supplied; project install guidance
   documented. End-to-end installation is not verified by this starter yet.
 - OpenCode: deferred until Backplane's adapter and variant verification exist.
-- Fresh-session skill discovery and Backplane conformance remain operator-run
-  checks; configuration or a manifest version is never treated as proof.
+- Fresh-session Windows Codex CLI discovery has a [v0.4.0 acceptance receipt](docs/evidence/2026-10-18-codex-discovery-verified.md),
+  including pinned skill bytes and an outside-project control. Desktop UI,
+  other harnesses and Backplane conformance remain separate operator-run checks;
+  configuration or a manifest version is never treated as proof.
 - No GitHub issue mutation, app migration, global installation, scheduling,
   autonomous jobs, or release publication occurs through `starter.py`.
 
@@ -223,8 +226,11 @@ after changing the bundle, either catalog or the instructions template; tests
 check their agreement. Wheels require explicit published `--starter-ref` for
 configuration because an installed environment has no starter Git provenance.
 
-Cosmic Ray's Python 3.14 compatibility proof and other deeper-tool gaps remain
-outstanding. The configuration helper writes an instructions fragment;
+Cosmic Ray 8.7.0 now has a bounded Windows/Python 3.14.8 synthetic unittest
+proof, with killed/surviving mutants and explicit failed-baseline, timeout and
+launch-error controls. Its baseline CLI can return zero for a launch error;
+inspect structured outcomes as described in [the compatibility evidence](docs/evidence/2026-10-18-cosmic-ray.md).
+Other deeper-tool gaps remain outstanding. The configuration helper writes an instructions fragment;
 read the full Python policy from a reviewed starter checkout or reconcile it into
 project-owned documentation with provenance. Supporting analysis utilities live
 in `tools/engineering/`. Shared/local utility ownership still requires a design

@@ -295,8 +295,26 @@ baseline or broken tool execution is not a successful mutation assessment.
 Its [official tutorial](https://cosmic-ray.readthedocs.io/en/latest/tutorials/intro/index.html)
 documents a configurable unittest command. Selection does not prove Python 3.14
 compatibility: verify a pinned release with a small synthetic unittest fixture
-before adopting it. No Cosmic Ray compatibility or installation proof exists in
-this starter yet.
+before adopting it. The starter now pins Cosmic Ray 8.7.0 in `hygiene`, selected
+from the 8.x release family. Its [Windows/Python 3.14.8 proof](../evidence/2026-10-18-cosmic-ray.md)
+uses invented standalone fixtures, not application code or a mutation-score gate.
+This verifies that bounded workflow, not full Python 3.14 grammar, every platform
+or adopter compatibility. The baseline CLI returns zero for a test-command launch
+error; require a normal worker and a survived test result for an unmutated
+baseline. Classify `incompetent`, missing/pending and abnormal worker outcomes as
+tool errors; classify output `timeout` separately from genuine kills. Neither
+`exec` nor `cr-report` exit zero proves all mutants completed correctly.
+
+To reproduce explicitly, choose a new output path outside source/operational
+records and run from the reviewed checkout:
+
+```bash
+uv run --locked --group hygiene python tools/engineering/evaluate_cosmic_ray.py --output REPORT.json
+```
+
+The probe uses disposable source, a 120-second subprocess budget, five-second
+test timeouts and a deliberate 0.1-second timeout control. Existing receipt paths
+are refused. Mutation execution and the synthetic proof stay outside hooks/CI.
 
 ## Periodic dependency freshness review
 

@@ -16,14 +16,21 @@
 
 ## Next adoption proofs
 
-1. Fresh Codex session: install from the published marketplace, verify project
-   enablement scope, exact loaded revisions, SP and gz-skills entry identities. Backplane
-   participation waits for its upstream readiness and explicit adoption.
-2. An authorized adopting repository pilot (FDAU is the primary candidate).
+1. An authorized adopting repository pilot (FDAU is the primary candidate).
    Map existing configuration and adapters; do not replace project authorities.
+2. Codex desktop UI acceptance, separate from the completed CLI proof below.
 3. Claude project-scope installation, lifecycle, and combined-stack conformance
    after upstream Backplane Claude acceptance.
 4. OpenCode support after upstream Backplane V1/V2 adapter and verification.
+
+Completed October 18: [fresh-session Codex CLI acceptance](docs/evidence/2026-10-18-codex-discovery-verified.md)
+on Windows/0.163.0 using published v0.4.0. After explicit user approval of only
+the disposable project's native trust entry, fresh model sessions load SP and
+gz-skills from the intended source; all 35 discovered skill files match pinned
+Git blobs. An outside-project control preserves existing defaults and loads
+zero starter-source skills. The initial UNKNOWN/trust-rejection receipt remains
+historical evidence. Backplane remains disabled; combined-stack readiness and
+other harnesses are not established by this CLI result.
 
 ## Later extensions
 
@@ -64,10 +71,18 @@ Implemented for 0.4.0: `src/` packaging with uv_build, project-locked ty and
 pre-commit, reviewed strict Ruff rules and locked local/hook/CI commands. The
 [Astral contract](docs/engineering/astral-alignment.md) requires adopter
 refactoring with evidenced exceptions. Still pending: shared/local utility
-ownership; a pinned Cosmic Ray Python 3.14
-synthetic unittest compatibility proof; pinned Python 3.14 verification of the
+ownership; pinned Python 3.14 verification of the remaining
 selected deeper analyzers. Deeper analyzers remain outside hooks
 and CI gates. SP-BP remains an expected addition, deferred pending readiness.
+
+Completed after the v0.4.0 release: Cosmic Ray 8.7.0 is pinned in `hygiene`
+under a selected 8.x family and has a Windows/Python 3.14.8 standalone unittest
+proof. Four mutants complete: two killed, two intentionally surviving. Failed
+baseline, timeout and launch-error controls distinguish broken runs; the
+baseline CLI's zero exit on launch failure requires structured-result inspection.
+See [the assessment](docs/evidence/2026-10-18-cosmic-ray.md). No mutation score
+gate, app-code mutation, hook or CI step is added. Codex CLI discovery using
+published v0.4.0 is now verified; the next adoption milestone is an authorized pilot.
 
 Complexity remediation completed for the 0.4.0 candidate on October 18:
 `configure` and `project_config` now separate validation, planning and write/

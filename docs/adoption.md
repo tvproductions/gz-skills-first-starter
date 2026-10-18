@@ -86,8 +86,25 @@ record that limitation rather than claiming project-only activation.
 Start a fresh session. Confirm the actual discovered identities:
 
 - `superpowers:using-superpowers`
-- `skills-first-start` (starter-owned project skill)
 - `gz-skills:gzs-router`
+
+The starter supplies no skill entry of its own. Verify each identity's owning
+plugin and installed source revision; a same-named skill from another marketplace
+does not establish this bundle's discovery. Reconcile duplicate sources only in
+the adopting project's scope, preserving unrelated installations and user defaults.
+
+Project trust is a prerequisite. The October 18 Windows/CLI 0.163.0 check first
+reported the disposable project's layer as disabled for lack of trust. After
+the user explicitly approved its native trust entry, a new session loaded the
+pair from the published v0.4.0 revision; an outside-project control retained user
+defaults and loaded neither starter source. See [verified CLI acceptance](evidence/2026-10-18-codex-discovery-verified.md)
+and the preserved [initial UNKNOWN attempt](evidence/2026-10-18-codex-discovery.md).
+Review the native project trust decision; never compensate for a skipped project
+layer by registering or enabling the bundle globally. Native refresh may cache
+configured disabled plugins too; cache presence is not activation or readiness.
+Check the actual marketplace checkout SHA and discovered skill source bytes,
+not just the configured ref. This CLI proof does not establish desktop UI or
+other-harness behavior.
 
 Backplane installation and conformance checks below apply only to a future,
 explicitly authorized adoption after readiness review. They are not part of

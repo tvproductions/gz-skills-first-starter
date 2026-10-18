@@ -3,7 +3,7 @@
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-10-18-starter-continuation.md`; recheck live state before work.
+`docs/handoffs/2026-10-18-cosmic-ray-continuation.md`; recheck live state before work.
 
 This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.
@@ -79,10 +79,12 @@ policy retires Xenon and Radon. The on-demand `tools/engineering/complexity_chec
 function/module/overall ceilings of 20 under the reviewed `lizard-functions-v1`
 contract. Read `docs/engineering/ccc-contract.md`; this is an explicit rebaseline, not exact
 Radon equivalence. Syntax/discovery errors fail closed.
-Record legacy baselines that may only shrink. Cosmic Ray is
-selected but its Python 3.14 compatibility remains unverified. The reviewed
+Record legacy baselines that may only shrink. Cosmic Ray 8.7.0 has a bounded
+Windows/Python 3.14.8 unittest proof; read
+`docs/evidence/2026-10-18-cosmic-ray.md` for its baseline exit-code limitation.
+Inspect structured worker/test outcomes; exit zero alone is insufficient. The reviewed
 routine Ruff selection is E4/E7/E9/F/I/UP/B/SIM/RUF. Ruff, ty and pre-commit are
-pinned in dev; complexipy/Lizard remain in hygiene. Utility ownership and
+pinned in dev; complexipy/Lizard/Cosmic Ray remain in hygiene. Utility ownership and
 remaining deeper-tool verification remain open. Preserve existing project
 authorities while completing required Astral reconciliation.
 

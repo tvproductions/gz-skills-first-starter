@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.4.1 — Unreleased
+
+- Verify disposable v0.4.0 Codex CLI discovery on Windows/0.163.0. Preserve
+  the initial UNKNOWN/trust-rejection receipt; after explicit user approval of
+  only that project's native trust entry, fresh model sessions load the intended
+  SP/gz-skills pair, all 35 discovered skill files match pinned Git blobs and an
+  outside-project control preserves defaults. Native installed/cache state can
+  include disabled Backplane; it remains disabled and absent from discovery.
+  Desktop UI, other harnesses and Backplane readiness remain separate proofs.
+  Correct the stale acceptance instruction expecting a
+  starter-authored `skills-first-start` skill; verify only upstream identities
+  and their exact owning sources.
+- Verify the next selected on-demand tool: pin Cosmic Ray 8.7.0 from its 8.x
+  family in `hygiene`, with uv-generated transitive resolutions. No baseline
+  selection or routine gate changes; this completes a bounded compatibility
+  proof for an already-selected tool.
+- Add an explicit disposable-source/unittest probe for Windows/Python 3.14.8:
+  two killed and two intentionally surviving mutants, source restoration and
+  passing post-run tests. Failed-baseline, timeout and launch-error controls
+  expose the baseline CLI's zero exit for an incompetent launch. Inspect stored
+  worker/test outcomes rather than trusting exit zero or the report's kill count.
+  No score gate, application mutations or new hooks/CI steps are introduced.
+- Preserve the published v0.4.0 tag and historical receipts. An authorized
+  adopter pilot is the next adoption milestone; other analyzer/platform proofs and
+  analysis-utility ownership remain open. See [compatibility evidence](docs/evidence/2026-10-18-cosmic-ray.md).
+
 ## 0.4.0 — October 18, 2026
 
 - Complete the next code backlog item: refactor adoption validation, configuration
