@@ -2,6 +2,12 @@
 
 ## 0.3.2 — Unreleased
 
+- Fix generated provenance and Codex marketplace sources to use the canonical
+  renamed `tvproductions/gz-skills-first-starter` repository. An end-to-end
+  configure regression first reproduced the old alias in the generated files.
+  Existing adopters keep their files until explicitly reviewed reconciliation;
+  no force overwrite or automatic migration is introduced.
+
 - October 18 follow-up pin refresh: advance gz-skills from v0.7.0 to the latest
   published v0.8.0 at `75bcd11ee9371ecff1a7b3432d2af29d4bdbb788` in the bundle
   and both native catalogs. Refresh current guidance; preserve the historical

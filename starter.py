@@ -19,7 +19,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 MARKETPLACE = "skills-first-starter"
-ORIGIN = "https://github.com/tvproductions/skills-first-starter.git"
+ORIGIN = "https://github.com/tvproductions/gz-skills-first-starter.git"
 SHA = re.compile(r"[0-9a-f]{40}\Z")
 
 
@@ -350,8 +350,8 @@ def source_revision() -> str:
         ORIGIN.removesuffix(".git"),
         "git@github.com:tvproductions/skills-first-starter.git",
         "git@github.com:tvproductions/skills-first-starter",
-        "https://github.com/tvproductions/gz-skills-first-starter.git",
-        "https://github.com/tvproductions/gz-skills-first-starter",
+        "https://github.com/tvproductions/skills-first-starter.git",
+        "https://github.com/tvproductions/skills-first-starter",
         "git@github.com:tvproductions/gz-skills-first-starter.git",
         "git@github.com:tvproductions/gz-skills-first-starter",
     ):

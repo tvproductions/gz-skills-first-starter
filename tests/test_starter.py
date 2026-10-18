@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import subprocess
 import tempfile
 import tomllib
 import unittest
@@ -292,6 +293,46 @@ class AdoptionTests(unittest.TestCase):
             {p["name"]: p["source"]["sha"] for p in claude["plugins"]},
             {p["name"]: p["revision"] for p in starter.bundle()["components"]},
         )
+
+    def test_source_revision_recognizes_legacy_and_canonical_starter_origins(self):
+        origins = (
+            "https://github.com/tvproductions/skills-first-starter.git",
+            "https://github.com/tvproductions/skills-first-starter",
+            "https://github.com/tvproductions/gz-skills-first-starter.git",
+            "https://github.com/tvproductions/gz-skills-first-starter",
+        )
+        for origin in origins:
+            with self.subTest(origin=origin):
+                outputs = {
+                    ("rev-parse", "--show-toplevel"): str(self.root),
+                    ("remote", "get-url", "origin"): origin,
+                    ("status", "--porcelain"): "",
+                    ("rev-parse", "HEAD"): REF,
+                }
+
+                def run_git(args, **kwargs):
+                    return subprocess.CompletedProcess(args, 0, stdout=outputs[tuple(args[3:])])
+
+                with mock.patch.object(starter, "HERE", self.root):
+                    with mock.patch.object(starter.subprocess, "run", side_effect=run_git):
+                        try:
+                            revision = starter.source_revision()
+                        except starter.AdoptionError as error:
+                            self.fail(f"recognized starter origin was rejected: {error}")
+                        self.assertEqual(revision, REF)
+                        outputs[("remote", "get-url", "origin")] = (
+                            "https://github.com/example/fixture-adopter.git"
+                        )
+                        with self.assertRaisesRegex(starter.AdoptionError, "adopting repo"):
+                            starter.source_revision()
+
+    def test_adoption_records_canonical_starter_repository(self):
+        self.configure(True)
+        config = tomllib.loads((self.root / ".codex/config.toml").read_text())
+        lock = json.loads((self.root / ".skills-first/bundle.lock.json").read_bytes())
+        canonical = "https://github.com/tvproductions/gz-skills-first-starter.git"
+        self.assertEqual(config["marketplaces"]["skills-first-starter"]["source"], canonical)
+        self.assertEqual(lock["starter"]["repository"], canonical)
 
     def test_adoption_records_template_version_and_exact_revision(self):
         metadata = tomllib.loads((MODULE.parent / "pyproject.toml").read_text(encoding="utf-8"))
