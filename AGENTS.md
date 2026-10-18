@@ -3,7 +3,7 @@
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-10-18-cosmic-ray-continuation.md`; recheck live state before work.
+`docs/handoffs/2026-10-18-0.4.1-release-continuation.md`; recheck live state before work.
 
 This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.

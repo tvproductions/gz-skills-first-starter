@@ -1,7 +1,6 @@
 # Template versioning
 
-The development template version is **0.4.1**, unreleased; the latest published
-release is **0.4.0** and the initial release
+The current released template version is **0.4.1**; the initial release
 was **0.1.0**. The 0.3
 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
 The current version is recorded in
@@ -20,9 +19,10 @@ The initial release is
 dated October 11, 2026. Its annotated tag identifies the verified release commit.
 Earlier development commits were untagged; do not label them as a released
 v0.1.0 retroactively. The latest documented published release is
-[v0.4.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.4.0),
-which requires Astral alignment, packages the helper under `src/` and includes
-the independent SP 7.0.0/gz-skills 0.8.0 selections. Future publication remains
+[v0.4.1](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.4.1),
+which adds bounded Cosmic Ray compatibility evidence and Codex CLI acceptance
+for the existing adoption contract. It retains 0.4.0's required Astral alignment,
+`src/` packaging and independent SP 7.0.0/gz-skills 0.8.0 selections. Future publication remains
 a separately authorized operation.
 
 ## Version contract

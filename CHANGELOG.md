@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.4.1 — Unreleased
+## 0.4.1 — October 18, 2026
 
 - Verify disposable v0.4.0 Codex CLI discovery on Windows/0.163.0. Preserve
   the initial UNKNOWN/trust-rejection receipt; after explicit user approval of
@@ -25,6 +25,21 @@
 - Preserve the published v0.4.0 tag and historical receipts. An authorized
   adopter pilot is the next adoption milestone; other analyzer/platform proofs and
   analysis-utility ownership remain open. See [compatibility evidence](docs/evidence/2026-10-18-cosmic-ray.md).
+
+Adopter impact: compatible verification and guidance corrections for existing
+baseline commitments; no new required tool selection, routine gate, managed-file
+schema or helper behavior. Cosmic Ray is now pinned in the on-demand hygiene
+group after its Windows/Python 3.14.8 proof. Its baseline CLI can return zero on
+a launch error, so inspect structured outcomes. No adopter migration or plugin
+update is performed by this release.
+
+Verification: 35 routine adoption tests, twelve explicit analyzer tests, the four
+approved hooks, bundle/both catalogs, locked sync/lock check, source/wheel build
+and isolated installed CLI checks. The implementation commit passed Ubuntu CI;
+release metadata is verified before tagging. Codex CLI discovery evidence uses
+published v0.4.0 and unchanged component pins; it does not establish fresh-session
+acceptance of every later starter revision. Desktop UI, other harnesses,
+Backplane readiness and remaining deeper-tool proofs stay open.
 
 ## 0.4.0 — October 18, 2026
 
