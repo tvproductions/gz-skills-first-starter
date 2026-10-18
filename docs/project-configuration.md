@@ -13,6 +13,10 @@ belong in `pyproject.toml` under the required
 [Astral alignment contract](engineering/astral-alignment.md). Separate native
 hook/CI/host files retain their own contracts. Existing projects must reconcile
 nonconforming configuration and structure as part of full baseline adoption.
+Verify the resulting effective configuration and execution through the
+[Astral acceptance contract](engineering/astral-acceptance.md), including uv's
+own configuration/override precedence, selected environment and tool provenance.
+Centralized declarations alone do not prove that the tools used them.
 
 Use either `pyproject.toml` or a project-owned `settings.json` for application
 settings, following the project's existing convention. Link the chosen file and

@@ -134,8 +134,11 @@ Use project-locked Ruff check, Ruff format, ty and unittest through uv; never
 pytest. Pre-commit runs the routine checks. Inspect available configuration
 before giving executable commands; report missing tooling rather than claiming
 it is installed. Favor strict linting with a pinned Ruff release and reasoned
-exceptions. The exact expanded rule set remains to be agreed; do not silently
-select ALL, suppress findings or loosen thresholds to pass.
+exceptions. The reviewed routine selection is E4/E7/E9/F/I/UP/B/SIM/RUF, as
+specified by the [alignment contract](astral-alignment.md); do not silently
+select ALL, suppress findings or loosen thresholds to pass. Complete the
+[Astral acceptance record](astral-acceptance.md), including effective configuration,
+exact environment selection, tool provenance and installed-artifact evidence.
 
 Combine TDD, BDD and DDD for consequential behavior: first demonstrate a failure
 at a public seam, describe observable outcomes and model domain meanings. Favor

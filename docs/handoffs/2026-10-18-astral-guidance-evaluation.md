@@ -1,5 +1,46 @@
 # Astral guidance evaluation handoff — October 18, 2026
 
+## Current continuation: authorized findings addressed
+
+The user's subsequent instruction to address the findings authorized the bounded
+implementation. Read [Astral acceptance](../engineering/astral-acceptance.md),
+the [worked migrations](../engineering/astral-migrations.md),
+[implementation plan/audit](../engineering/astral-implementation-plan.md) and
+[starter acceptance record](../evidence/2026-10-18-astral-acceptance.md).
+Application, typed-library and workspace examples were executed on Windows with
+the pinned Python/tools, including installed behavior and typing negative control.
+uv/Ruff/ty effective configuration, root/member semantics, source-independent
+builds, namespace/coordinator cases and reviewed Ruff prose are reconciled.
+The adopter fragment and wheel resource are updated; helper behavior, pins,
+routine hooks and CI contract remain intact.
+
+At the pre-sync save point the implementation is unreleased and uncommitted;
+the user subsequently invoked `gzs-git-sync`, authorizing ordinary commit/push
+of this completed unit. Read live history for the resulting SHA and CI rather
+than treating this pre-sync state as current after publication of the save point.
+The final local check receipt retains its observed scope. New acceptance
+obligations belong in a future bundled minor, with no version selected here.
+Existing real-adopter pilot, other hosts, freshness/deeper-tool verification and
+utility ownership remain separately scoped work. Preserve the original analysis
+and receipts below as historical evidence.
+
+## Prior evaluation continuation (historical)
+
+Latest continuation: read the [uv documentation deep dive](../engineering/uv-deep-dive.md)
+before revising the proposal. The user requested especially careful treatment of
+Projects and maximum Astral compliance. Two disposable Windows/uv 0.13.1 proof
+receipts distinguish locked/exact execution, source/metadata and root/member
+selection; unqualified root-selection wording needs reconciliation. Review the
+findings and revise the implementation proposal next. No baseline implementation
+or adopter pilot has been performed.
+
+Continuation update: the [follow-up evaluation and bounded proposal](../engineering/astral-guidance-evaluation.md)
+now traces requirements, evaluates all five gaps and separates applicable cases.
+It rechecked synchronized commit `1c10764` and successful CI. Next review the
+proposal before selecting implementation; the preserved analysis below remains
+historical. No acceptance guide, worked migration or conformance checker has
+been implemented by the evaluation.
+
 Resume point: further evaluate the assessment preserved below before selecting
 implementation work. First recheck live Git/CI, read AGENTS.md, README.md,
 docs/architecture.md and the linked policy/code, then evaluate the five gaps

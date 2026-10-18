@@ -53,11 +53,15 @@ not a duplicate lifecycle in this starter.
 
 ## Python engineering policy follow-up
 
-Current evaluation focus: the [preserved Astral guidance assessment](docs/handoffs/2026-10-18-astral-guidance-evaluation.md)
-identifies gaps in a consolidated adopter acceptance contract, worked migrations,
-effective configuration verification, advanced build/deployment applicability
-and documentation consistency. Further evaluation is pending before selecting
-implementation changes; the existing alignment requirements remain binding.
+Implemented after the [uv documentation deep dive](docs/engineering/uv-deep-dive.md):
+the [Astral acceptance contract](docs/engineering/astral-acceptance.md),
+[executed application/library/workspace migrations](docs/engineering/astral-migrations.md)
+and [starter acceptance record](docs/evidence/2026-10-18-astral-acceptance.md).
+Effective configuration, exact environment/provenance, root/member selection,
+source-independent builds and installed dependency/typing/resource proof are
+explicit. Maximum applicable Astral alignment remains the user-directed standard.
+The preserved assessment and proposal remain historical; broader adopter, CI,
+freshness and deeper-tool gaps stay separately visible in the acceptance record.
 
 Reusable Python-version idiom/stdlib review belongs upstream in gz-skills.
 The starter's [baseline policy](docs/baseline-policy.md) requires assessing code

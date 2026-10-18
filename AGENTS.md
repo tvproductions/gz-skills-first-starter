@@ -40,6 +40,11 @@ locked uv execution and installed-artifact verification. Adopters must refactor
 nonconforming structure/configuration; preservation during configuration is not
 an exemption. Keep behavior and authorities intact. Compatibility exceptions
 need evidence, an owner and revisit condition. Apply this to the starter itself.
+Complete `docs/engineering/astral-acceptance.md`, using the worked migrations.
+Verify effective configuration, runtime/tool provenance, selected exact environments,
+source-independent release builds and clean installed behavior. Track configuration,
+Python acceptance and native discovery separately; adopt applicable Astral
+recommendations and record evidenced departures. Preserve the routine hook set.
 Projects started from this starter require uv-managed, pinned Python 3.14, current clear
 Python idioms and suitable stdlib APIs. Consult versioned official documentation
 for behavior changes, deprecations and removals; configuration alone does not

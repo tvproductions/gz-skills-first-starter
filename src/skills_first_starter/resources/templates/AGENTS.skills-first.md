@@ -2,6 +2,13 @@
 
 Maximal Astral alignment is required for Python projects under this baseline.
 Read `docs/engineering/astral-alignment.md` in the reviewed starter checkout.
+Complete `docs/engineering/astral-acceptance.md` there, using its worked migrations.
+Adopt every applicable Astral recommendation; record evidenced departures with
+an owner and revisit condition. Verify effective uv/Ruff/ty configuration,
+interpreter/tool provenance, selected exact environments, published dependency
+metadata and source-independent builds (`uv build --no-sources`). Locked runs
+alone do not prove exact contents or executable origin. Verify clean installed
+behavior and keep configuration/Python acceptance/native discovery results separate.
 Use `src/<package>/`, a declared build backend (uv_build for pure Python),
 installed-package imports, application entry points and py.typed for typed
 libraries. Centralize Python metadata and uv/Ruff/ty configuration in
@@ -9,7 +16,8 @@ pyproject.toml; use standard dependency-groups, a committed uv.lock and exact
 .python-version, ignored .venv, and locked uv execution shared by hooks and CI.
 Use Cargo-style uv workspaces for compatible interconnected packages: one root
 lock/environment, explicit member dependencies and editable workspace sources.
-Root run/sync selects the root; select members or all packages explicitly.
+Record project-root versus non-project coordinator semantics; select members or
+all packages explicitly, and independently verify built members' dependencies.
 Verify artifacts outside
 the checkout. Adopters must refactor nonconforming layout/configuration during
 full baseline adoption. Preserve behavior, data and authorities while migrating;

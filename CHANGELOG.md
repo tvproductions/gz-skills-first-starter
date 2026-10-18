@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+- Implement maximum applicable Astral acceptance guidance following a Projects-
+  focused uv documentation review. Bind requirement/evidence records, effective
+  uv/Ruff/ty configuration, exact selected environments, executable provenance,
+  source-independent builds and clean installed behavior to adoption guidance.
+  Reconcile workspace root/member semantics, namespace/coordinator applicability
+  and the approved Ruff selection. Pass the contract through adopter instructions
+  and regenerate the wheel resource. These expanded adoption obligations require
+  reconciliation for a future bundled minor; no version is selected here.
+- Execute invented flat-application, typed-library and workspace migrations on
+  Windows with pinned Python 3.14.8/uv 0.13.1. Retain 64 command records, typing
+  positive/negative controls, separate member installations and eight matching
+  artifact inventories from four source-independent builds. Record the starter's
+  effective configuration and bounded acceptance, preserving wider unknowns.
+  Helper behavior, dependency pins, the four hooks and CI contract are unchanged.
+
 - Clarify the user-directed release-planning policy for this starter and
   adopting projects, passing it through baseline policy and adopter instructions:
   every major release, including 1.0.0, always requires a newly written PRD;
@@ -9,11 +24,9 @@
   related changes, with SP-BP intended to assist once ready and explicitly
   adopted; patches remain compatible fixes and clarifications. Preserve the
   existing 0.x compatibility rules and published release identities.
-- Preserve the Astral guidance assessment in a dedicated evaluation handoff,
-  retaining its wording with portable links. Further evaluation of adopter
-  acceptance evidence, migration examples, effective configuration and advanced
-  build/deployment coverage remains pending; this adds no conformance checker
-  or new routine gate.
+- Preserve the original Astral assessment, follow-up evaluation and uv review as
+  historical evidence, with current implementation and continuation links. Add
+  no generic conformance checker, maintenance skill, lifecycle or routine gate.
 
 ## 0.4.1 — October 18, 2026
 

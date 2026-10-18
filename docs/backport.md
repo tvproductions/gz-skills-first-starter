@@ -12,6 +12,12 @@ record evidenced compatibility exceptions with an owner and revisit condition.
 The helper's preservation behavior protects files during configuration and does
 not waive required reconciliation.
 
+Record the migration against [Astral acceptance](engineering/astral-acceptance.md),
+using the [worked application/library/workspace examples](engineering/astral-migrations.md).
+Preserve public behavior and original dependency/source intent. Exact development
+sync, source-independent builds and clean installed checks prove different parts
+of the result; complete all applicable rows rather than stopping at file moves.
+
 Run `uv run --locked skills-first-starter backport --project /path/to/project`. This assessment reads
 only bounded top-level names, does not follow symlinks, and writes nothing. It
 suggests responsibilities, not a complete migration plan. The agent must read

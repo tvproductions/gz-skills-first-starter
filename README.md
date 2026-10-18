@@ -9,6 +9,9 @@ Python projects must meet the [Astral alignment contract](docs/engineering/astra
 `src/` packaging, uv-managed locked execution, centralized Python configuration,
 installed-artifact verification and aligned local/hook/CI checks. Adopters should
 expect to refactor nonconforming projects; existing layout alone is not an exemption.
+Use the [Astral acceptance record](docs/engineering/astral-acceptance.md) and
+[worked application/library/workspace migrations](docs/engineering/astral-migrations.md)
+to prove the result, including effective configuration and clean installed behavior.
 **It authors and distributes zero agent skills.** Upstream plugins supply skills;
 the starter supplies opinionated policy, deterministic configuration and provenance.
 Adopters own update review and project operational skills. See the

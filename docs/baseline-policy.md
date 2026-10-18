@@ -1,5 +1,11 @@
 # Adopter baseline policy
 
+Prove Python baseline adoption through the
+[Astral acceptance contract](engineering/astral-acceptance.md), retaining actual
+evidence, applicability and owned exceptions in project authorities. Applicable
+Astral recommendations are the default to adopt and verify; configuration-only
+helper success does not establish full baseline or native-host acceptance.
+
 This is the adopter-facing authority for version selection. Read it at the
 reviewed starter version/SHA recorded in `.skills-first/bundle.lock.json`, then
 compare it with later published releases during maintenance. A copied exact pin

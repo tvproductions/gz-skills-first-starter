@@ -8,9 +8,17 @@ unittest choice, release authority or domain architecture; those remain governed
 by the project's existing authorities. Recheck the official sources during scoped
 maintenance and record changes in project decisions.
 
+Adopt and verify every applicable documented Astral recommendation. Departures
+need a concrete constraint, evidence, an owner and a revisit condition; supported
+alternatives and preview features require an explicit applicability/decision
+record. Complete the [acceptance contract](astral-acceptance.md), using the
+[worked migrations](astral-migrations.md). File configuration alone is not
+acceptance. Record results in existing project authorities, without adding a
+parallel lifecycle or automatically enabling more tools/features.
+
 ## Package structure
 
-New applications and libraries use `src/<import_package>/`, `__init__.py`, a
+New applications and libraries use `src/<import_package>/`, ordinary-package `__init__.py`, a
 declared build backend and a separate `tests/` directory. CLI applications expose
 commands in `[project.scripts]`. Typed libraries include `py.typed` and verify
 that the built wheel contains it. Use `uv init --app` or `uv init --lib` with the
@@ -18,6 +26,11 @@ project's verified Python selection. Check the installed uv version's generated
 files: defaults can change. Current uv documentation describes packaged `src/`
 applications by default since uv 0.12; earlier application defaults differ.
 See [creating projects](https://docs.astral.sh/uv/concepts/projects/init/).
+
+Intentional namespace parents and stub-only distributions follow uv_build's
+documented namespace/stub layout, verified in built artifacts and installed
+consumers. Do not add namespace-parent `__init__.py` files that alter discovery.
+Document non-project workspace coordinators separately from runtime packages.
 
 ```text
 example-project/
@@ -40,6 +53,15 @@ import the installed package without `sys.path` insertion or ad hoc source-file
 loading. Test built artifacts outside the checkout as well as editable installs.
 See [uv's build backend](https://docs.astral.sh/uv/concepts/build-backend/).
 
+Before release/artifact acceptance, use `uv build --no-sources` to verify
+independence from development build sources, preserving the default sdist-to-wheel
+path. Inspect published dependency metadata and provide declared runtime
+distributions separately; building does not resolve/test their consumer delivery.
+Record build inputs independently of the runtime lock. Retain isolated builds;
+prefer evidenced package-specific build-dependency augmentation over disabling
+isolation. Alternative/dynamic/native builds need their own input/ABI evidence.
+See [publishing guidance](https://docs.astral.sh/uv/guides/package/).
+
 ## Configuration and environments
 
 `pyproject.toml` is the authority for Python metadata, supported Python range,
@@ -61,6 +83,19 @@ silently rewriting the lock. `--frozen` skips freshness validation and cannot
 replace that check. A universal lock records resolutions; supported platforms
 still require execution evidence. See [project files](https://docs.astral.sh/uv/concepts/projects/layout/)
 and [locking and syncing](https://docs.astral.sh/uv/concepts/projects/sync/).
+
+Verify effective uv/Ruff/ty configuration and actual executable/interpreter
+provenance using the acceptance guide. Competing uv.toml/ruff.toml/ty.toml,
+user/system settings, environment and CLI overrides can change the effective
+contract. Inspect packaging/environment redirection and bypass flags. Do not
+discard reviewed project configuration through blanket isolation/no-config flags.
+
+Locked execution proves lock consistency, not exact environment contents or
+executable origin. Exact sync establishes the selected environment; locked runs
+normally retain extra packages. Avoid ad hoc `--with` overlays and external PATH
+fallbacks in baseline proof. PEP 723 scripts and uv tool environments have separate
+selection/locking contracts. Clean installed runtime tests remain necessary even
+after exact development sync. Keep runtime, extras and dev/hygiene groups distinct.
 
 The [baseline policy](../baseline-policy.md) still selects Python 3.14.x, with
 the evidenced XPPython3 host exception. Align the actual interpreter, exact pin,
@@ -106,8 +141,9 @@ separate evidence. No new backlog system, scheduler or upstream skill is added.
 ## Workspaces
 
 Use uv workspaces when interconnected packages in one repository can share a
-resolution and environment. Each member owns its `pyproject.toml` and `src/`
-package; the root declares `[tool.uv.workspace]` membership and owns the shared
+resolution and environment. Each runtime member owns its `pyproject.toml` and `src/`
+package; a coordinator without `[project]` need not invent a runtime package.
+The root declares `[tool.uv.workspace]` membership and owns the shared
 lock. Declare member dependencies explicitly, using workspace sources where
 appropriate. Verify members independently as installed artifacts as well as
 together: a shared environment can hide undeclared dependencies.
@@ -137,9 +173,17 @@ The shared member's project name is `example-shared-utils`. Membership alone
 does not declare dependency edges. Local member dependencies are editable by
 default. A shared lock exposes incompatible requirements during resolution;
 it cannot make conflicting requirements compatible. Root commands lock the
-workspace together, but `uv sync`/`uv run` select the root by default; use
+workspace together. For a project root, `uv sync`/`uv run` select that project
+and its dependencies by default; the pinned Windows proof observes all members
+selected for a root without `[project]`. Record root kind and use explicit
 `--all-packages` to sync all members or `--package example-api` to select one.
 Use ordinary single-project uv management when there is only one package.
+
+Shared installed dependencies can conceal missing declarations. Verify each
+built member with only its declared runtime distributions, then the combined
+system. Selected-member exact execution is a useful additional control; a broad
+all-member run alone is insufficient. Root uv settings and member source metadata
+have distinct precedence; inspect actual selection and wheel Requires-Dist.
 
 Workspaces are unsuitable when packages require incompatible dependencies,
 separate environments or disjoint Python families. Document independent projects

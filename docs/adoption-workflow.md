@@ -18,6 +18,14 @@ project authorities. Existing layout is not automatically exempt; compatibility
 exceptions require evidence, an owner and revisit condition. Configuration-only
 work reports the remaining migration explicitly.
 
+Use the [Astral acceptance contract](engineering/astral-acceptance.md) to record
+each requirement, actual evidence, applicability and owned exceptions in the
+project's existing authority. Follow the [worked migrations](engineering/astral-migrations.md)
+for application, typed-library and workspace paths. Reconcile effective uv/Ruff/ty
+configuration, exact selected environments, executable provenance and clean
+installed behavior before claiming full Python acceptance. File configuration
+and fresh-session native discovery remain separate results.
+
 Before choosing versions, use the adoption guide's “Getting current SP and
 gz-skills” procedure. Check latest published releases, distinguish development
 main from a release, and record reviewed full SHAs. The starter pins are a
