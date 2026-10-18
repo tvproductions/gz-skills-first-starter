@@ -96,7 +96,7 @@ Generic maintenance workflows belong in gz-skills. Use its discovered
 `gzs-update-dependencies` for authorized dependency/tool updates and
 `gzs-dependency-risk-audit` for risk assessments. This document supplies project
 policy and source locations. The starter supplies no competing maintenance skill
-or generic freshness-report command. The pinned gz-skills v0.7.0 maintenance
+or generic freshness-report command. The pinned gz-skills v0.8.0 maintenance
 skill supports freshness-only review and template/plugin source inventory.
 Review mode leaves pins and environments unchanged; updates require scoped
 authorization. Apply the guidance below as this project's binding, preserving

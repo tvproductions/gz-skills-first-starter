@@ -28,7 +28,7 @@ older unversioned locks require reviewed reconciliation. See
 Review existing `AGENTS.md`, skill discovery surfaces, plugin configuration,
 and gzkit ownership. Existing project authorities remain in place. A conflict
 is a request for reconciliation, not permission to remove an existing install.
-The starter does not select a gz-skills profile. The pinned gz-skills v0.7.0
+The starter does not select a gz-skills profile. The pinned gz-skills v0.8.0
 supplies `gzs-project-setup`; invoking it and choosing lite/heavy remain separate
 explicit adopter decisions. Preserve starter Python policy over profile defaults.
 
@@ -139,8 +139,9 @@ when those upstream contracts and negative cases have been demonstrated.
 Check upstream at adoption time rather than assuming this template's baseline
 is newest. SP's latest stable release is **v7.0.0**, checked October 11, 2026,
 and selected at full SHA `bb92a77741419a4ab5f06e711a283343f1ada0c3` in the
-0.3.2 development template. The starter also pins gz-skills v0.7.0; its freshness
-was not reassessed during this SP-only update. These observations expire as
+0.3.2 development template. The starter also pins gz-skills v0.8.0, checked against the latest official
+release on October 18, 2026. It adds explicit-only release support; adopting
+it does not authorize release publication. These observations expire as
 releases change. Read the [SP update assessment](evidence/2026-10-11-superpowers-7.0.0.md).
 Backplane remains disabled and does not constrain active SP version selection;
 review its readiness and compatibility before any future enablement.
@@ -166,7 +167,7 @@ Latest published release and latest development commit are different choices.
 For an explicitly requested development version, resolve `commits/HEAD` through
 the same repository API, review its changes, and record its full SHA with release
 set to null and status identifying an unreleased development snapshot. Never put
-`main`, `HEAD`, or a moving tag in the catalog's revision field. gz-skills v0.7.0
+`main`, `HEAD`, or a moving tag in the catalog's revision field. gz-skills v0.8.0
 ships project setup; inspect the selected version's profile contract and retain
 an explicit user profile choice. Preserve approved starter Python policy over
 upstream defaults. Proposals are not shipped
@@ -210,7 +211,7 @@ Route authorized dependency/tool updates through gz-skills'
 `gzs-update-dependencies` and dependency-risk reviews through
 `gzs-dependency-risk-audit`, subject to project scope and authorities. The source
 inventory and native adoption requirements below are the starter's binding to
-those portable workflows. The pinned gz-skills v0.7.0 maintenance skill supplies
+those portable workflows. The pinned gz-skills v0.8.0 maintenance skill supplies
 freshness-only reporting and template/plugin inventory. Review mode leaves pins
 and environments unchanged. This starter adds no competing command and does not
 select a lite/heavy profile or invoke setup as part of a bundle update.

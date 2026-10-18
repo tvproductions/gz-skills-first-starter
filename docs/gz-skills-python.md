@@ -7,6 +7,16 @@ fits the task, confirm discovery, and preserve project scope and authorities.
 This guide reinforces and highlights those upstream behaviors for adopters;
 it is not another skill or an implementation of their discovery/workflow logic.
 
+## Current selection: v0.8.0
+
+The bundle and both catalogs now select released gz-skills v0.8.0 at
+`75bcd11ee9371ecff1a7b3432d2af29d4bdbb788`, checked October 18, 2026.
+Compared with v0.7.0, it adds the explicit-only `gzs-release` primitive and release
+routing; the Python workflows described below are unchanged. Release invocation
+does not grant publication authority. The earlier installation receipt below
+belongs to v0.7.0 and is not v0.8.0 host-acceptance evidence. Verify native loading
+and actual discovery separately in each adopter.
+
 ## Verified coverage in v0.7.0
 
 | Need | Existing skill | Actual scope |
@@ -63,7 +73,7 @@ runtime discovery and scoped version-aware idiom, stdlib and deprecation
 assessment. Project policy takes precedence over defaults; no starter-specific
 Python family or tool assortment is introduced upstream.
 
-The starter bundle and both catalogs select this exact release commit. Tagged
+This was the starter's previous selected release. Tagged
 installs passed in disposable Codex and Claude configuration, and the uvx snapshot
 installer; changed instruction bodies matched the release source. See the
 [installation evidence](evidence/2026-10-11-gz-skills-0.7.0.json). Installation
@@ -71,7 +81,7 @@ is distinct from fresh-session workflow execution and combined stack readiness.
 The release adds no comprehensive version-audit skill and preserves existing
 workflow scope and authorization boundaries. Adopter updates remain explicit.
 
-Authoritative current [Python workflow instructions](https://github.com/tvproductions/gz-skills/tree/6ebf803e4a2775d3742c84984a03548275b7c926/skills)
+Authoritative current [Python workflow instructions](https://github.com/tvproductions/gz-skills/tree/75bcd11ee9371ecff1a7b3432d2af29d4bdbb788/skills)
 remain upstream-owned; this template supplies emphasis and policy bindings.
 
 ## Historical v0.6.0 inspection evidence

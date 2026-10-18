@@ -2,6 +2,14 @@
 
 ## 0.3.2 — Unreleased
 
+- October 18 follow-up pin refresh: advance gz-skills from v0.7.0 to the latest
+  published v0.8.0 at `75bcd11ee9371ecff1a7b3432d2af29d4bdbb788` in the bundle
+  and both native catalogs. Refresh current guidance; preserve the historical
+  0.7.0 installation evidence. This adds upstream explicit-only release support,
+  without granting publication authority or enabling Backplane. The existing
+  0.3.2 development version remains unreleased; no published version is changed.
+  See [the scoped update receipt](docs/evidence/2026-10-18-gz-skills-0.8.0.md).
+
 - Pin refresh: update Superpowers from v6.4.1 to the latest stable v7.0.0,
   published October 10, 2026, at full SHA
   `bb92a77741419a4ab5f06e711a283343f1ada0c3`. Align the bundle and both native

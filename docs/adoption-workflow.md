@@ -22,7 +22,7 @@ enabling it while readiness and explicit adoption remain pending.
 Generic maintenance routes to gz-skills `gzs-update-dependencies` for authorized
 updates and `gzs-dependency-risk-audit` for risk assessments. Keep the starter's
 role to policy and adoption bindings; do not add a competing local maintenance
-skill. The pinned gz-skills v0.7.0 maintenance skill also supports freshness-only
+skill. The pinned gz-skills v0.8.0 maintenance skill also supports freshness-only
 reviews and starter/plugin inventory without changing pins or environments.
 Preserve approved starter Python policy over upstream profile defaults; choosing
 a profile remains explicit and separate from bundle adoption.

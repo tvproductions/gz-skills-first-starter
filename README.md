@@ -150,7 +150,7 @@ those exact full commit SHAs, not moving branches.
 |---|---|---|
 | [Superpowers](https://github.com/obra/superpowers) | v7.0.0 | Feature design, plans, implementation, review |
 | [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | Deferred; disabled by default | GitHub-backed backlog and handoff continuity |
-| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.7.0 | Portable engineering disciplines |
+| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
 The development template is 0.3.2, unreleased. It selects Superpowers
@@ -163,7 +163,7 @@ verification limits.
 This is a reviewed
 starting set, **not a blanket compatibility certification**. Backplane has no
 published release; its remaining host acceptance and external pilot are tracked
-upstream. The pinned gz-skills release contains nineteen skills, including
+upstream. The pinned gz-skills release contains twenty skills, including
 project setup, Pythonic pattern review/apply and freshness-only maintenance
 review with template/plugin inventory. The starter does not invoke setup or
 select a lite/heavy profile. Approved starter Python policy takes precedence

@@ -52,7 +52,7 @@ Generic dependency maintenance belongs in gz-skills. Route authorized updates to
 `gzs-update-dependencies` and dependency-risk reviews to
 `gzs-dependency-risk-audit`; keep this starter's material as policy and binding
 guidance. Do not add a competing local maintenance skill or generic freshness
-reporter. The pinned gz-skills v0.7.0 supplies freshness-only review and
+reporter. The pinned gz-skills v0.8.0 supplies freshness-only review and
 starter/template/plugin inventory through `gzs-update-dependencies`; review mode
 leaves pins and environments unchanged. Preserve this starter's approved Python
 family and retired-tool decisions over upstream profile defaults.
