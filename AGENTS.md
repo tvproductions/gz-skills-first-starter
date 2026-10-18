@@ -3,7 +3,7 @@
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-10-18-0.4.1-release-continuation.md`; recheck live state before work.
+`docs/handoffs/2026-10-18-astral-guidance-evaluation.md`; recheck live state before work.
 
 This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.
@@ -17,6 +17,11 @@ This is a public scaffold; use invented fixtures and preserve upstream ownership
 Version the template independently of its upstream components and adopter apps.
 Read `docs/versioning.md`; `bundle.json` owns `template_version`, mirrored by
 the starter's `pyproject.toml`. New adoption records version plus exact SHA.
+For this starter and adopters, every major release, including 1.0.0, requires a
+newly written PRD. Bundle related changes into minor releases using existing
+backlog authority; SP-BP is intended
+to assist after readiness and explicit adoption. Patches remain compatible fixes
+and clarifications. See the versioning policy for the 0.x compatibility rules.
 Keep `CHANGELOG.md` current for release preparation, preserve historical evidence
 and never move published tags. Template edits or ordinary Git sync do not imply
 tag or release publication.

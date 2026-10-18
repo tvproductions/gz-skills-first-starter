@@ -53,6 +53,12 @@ not a duplicate lifecycle in this starter.
 
 ## Python engineering policy follow-up
 
+Current evaluation focus: the [preserved Astral guidance assessment](docs/handoffs/2026-10-18-astral-guidance-evaluation.md)
+identifies gaps in a consolidated adopter acceptance contract, worked migrations,
+effective configuration verification, advanced build/deployment applicability
+and documentation consistency. Further evaluation is pending before selecting
+implementation changes; the existing alignment requirements remain binding.
+
 Reusable Python-version idiom/stdlib review belongs upstream in gz-skills.
 The starter's [baseline policy](docs/baseline-policy.md) requires assessing code
 currency, but the pinned Pythonic-pattern skills are not a complete version audit.

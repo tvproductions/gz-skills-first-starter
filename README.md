@@ -79,7 +79,7 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current handoff](docs/handoffs/2026-10-18-0.4.1-release-continuation.md).
+[the current handoff](docs/handoffs/2026-10-18-astral-guidance-evaluation.md).
 
 ## Quick start: an existing or empty project
 

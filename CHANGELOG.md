@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased
+
+- Clarify the user-directed release-planning policy for this starter and
+  adopting projects, passing it through baseline policy and adopter instructions:
+  every major release, including 1.0.0, always requires a newly written PRD;
+  minor releases bundle
+  related changes, with SP-BP intended to assist once ready and explicitly
+  adopted; patches remain compatible fixes and clarifications. Preserve the
+  existing 0.x compatibility rules and published release identities.
+- Preserve the Astral guidance assessment in a dedicated evaluation handoff,
+  retaining its wording with portable links. Further evaluation of adopter
+  acceptance evidence, migration examples, effective configuration and advanced
+  build/deployment coverage remains pending; this adds no conformance checker
+  or new routine gate.
+
 ## 0.4.1 — October 18, 2026
 
 - Verify disposable v0.4.0 Codex CLI discovery on Windows/0.163.0. Preserve

@@ -37,6 +37,28 @@ and its compatibility guarantees are established. After 1.0, incompatible
 contract changes require a major bump, compatible additions a minor bump and
 compatible fixes a patch bump. Explain adopter impact even for small changes.
 
+The following release-planning rules bind this starter and each adopting
+project's own releases. App, template and upstream component versions remain
+independent; an adopter's PRD describes its own product and major release.
+
+Every major release, including 1.0.0, **always requires a newly written PRD**
+for that major release. Reference that PRD in release preparation and evidence;
+reusing an earlier major's PRD or changing the version number alone does not
+satisfy this requirement. Compatibility impact still determines when a major
+bump is needed; the new PRD is a mandatory part of preparing that release.
+
+Minor releases bundle a coherent selected set of related changes. A completed
+feature does not automatically trigger its own minor release; record the bundle
+in the project's existing backlog and handoff authorities. SP-BP is intended to
+help coordinate this bundling when ready and explicitly adopted. While it is
+deferred, use the existing authorities without inventing a replacement lifecycle.
+The compatibility rules above still bound what belongs in a minor release.
+
+Patch releases remain compatible fixes and clarifications, including bounded
+verification of existing commitments; they do not introduce new baseline
+obligations. These release-planning rules supplement the version classification
+above and do not retroactively relabel published releases.
+
 The user explicitly selected patch versions 0.3.1 for the adopter cohesion
 requirement clarification and 0.3.2 for the independent SP update. Their changelog
 entries distinguish policy from pin changes; these scoped choices do not change
@@ -86,7 +108,10 @@ repository or prove fresh-session skill discovery.
 
 ## Preparing and publishing a release
 
-1. Select the next version according to the adoption contract. Update
+1. Select the next version according to the adoption contract. For every major,
+   including 1.0.0, write a new PRD and reference it in the release evidence.
+   For a minor, identify the coherent change bundle in the existing backlog;
+   SP-BP may assist only after readiness and explicit adoption. Update
    `bundle.json` and the starter's `pyproject.toml` together, then refresh `uv.lock`
    with uv if its project metadata changed. Preserve independent plugin pins
    unless their upgrade was explicitly scoped.

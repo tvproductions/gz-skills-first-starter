@@ -6,6 +6,22 @@ compare it with later published releases during maintenance. A copied exact pin
 is evidence of one tested environment; it is not the template's permanent
 requirement for every adopter.
 
+## Release planning
+
+The starter and adopting projects follow the same release-planning rule for
+their independently versioned products: **every major release, including 1.0.0,
+always requires a newly written PRD** for that major. Reference it in release
+preparation and evidence; a reused PRD or version-number change alone is
+insufficient. Each adopter keeps its PRD in its project-owned authority.
+
+Minor releases bundle a coherent selected set of related changes using the
+project's existing backlog and handoff practices. SP-BP is intended to help
+coordinate bundles after readiness and explicit adoption; while deferred, keep
+the existing authorities. Patch releases remain compatible fixes and
+clarifications. Preserve compatibility classification as well as release scope;
+see [versioning](versioning.md#version-contract) for the starter's 0.x/stable
+rules. These obligations do not authorize publication or adopter-file rewrites.
+
 ## Allowed Python families
 
 | Project scope | Allowed range | Selection rule | Reason |

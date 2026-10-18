@@ -30,6 +30,16 @@ portable engineering disciplines. Superpowers Backplane remains pinned for
 future adoption but is disabled by default because readiness is incomplete.
 Use existing project backlog and handoff practices in the meantime.
 
+Release planning applies to this adopting project's own versions as well as
+the starter: every major release, including 1.0.0, always requires a newly
+written PRD for that major. Keep and reference it in project-owned release
+authorities. Minor releases bundle related changes through the existing backlog;
+SP-BP is intended to assist once ready and explicitly adopted. Patch releases
+remain compatible fixes and clarifications. Preserve compatibility rules and
+independent app/template/plugin versions. Read the reviewed starter's
+`docs/baseline-policy.md` and `docs/versioning.md`; this rule does not authorize
+publication or enable deferred Backplane.
+
 Project AGENTS.md, domain authorities and verification commands remain binding.
 Keep project-owned operational skills, supporting domain code, and records
 separate. Confirm actual discovery before invoking upstream entry skills;
