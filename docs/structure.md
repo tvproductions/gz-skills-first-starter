@@ -39,7 +39,10 @@ each adopter must establish its own enforcement and artifact verification.
 There is no starter `skills/` tree or `SKILL.md` package. Configure writes host
 configuration, a provenance lock and instructions; it creates no skill discovery
 tree. Native managers install upstream skills separately. Existing app skills
-and instructions are preserved, and no lite/heavy profile is inferred.
+and instructions are preserved, and no lite/heavy profile is inferred. Explicit
+selection is required before completed adoption. See the
+[greenfield/brownfield runbook](adoption-0.5.md); policy acceptance remains a
+project-owned review obligation rather than a helper readiness claim.
 
 Project instructions route feature work to SP and engineering selection to
 gz-skills. Generic maintenance stays in gz-skills `gzs-update-dependencies`;

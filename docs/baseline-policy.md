@@ -1,5 +1,31 @@
 # Adopter baseline policy
 
+The current template is Python-only in both lite and full/heavy adoption lanes.
+Other languages, likely including Go, require a future designed and released
+baseline; the portability of upstream skills does not establish template support.
+
+## Required adoption lane and completion
+
+Every adopter explicitly selects `lite` or `heavy` through the pinned
+gz-skills setup workflow. Full/heavy names the heavy lane. Neither a missing
+settings file nor `profile: null` is a completed third lane. Both lanes meet
+the same applicable Python/Astral foundation, SemVer/PRD release discipline and
+required adoption/release analysis. Lite reduces workflow tooling and governance
+overhead; it does not reduce engineering conformance.
+
+The heavy target remains SP + SP-BP + gz-skills. Backplane is under development
+and stays disabled until readiness and explicit activation. Record intended
+heavy selection separately from current component readiness; do not certify the
+whole heavy stack while Backplane is deferred. Preserve existing backlog/release
+authorities in the meantime. Starter-mandated release evidence applies to lite
+as well; upstream lite's omission of project-wide management tools does not waive it.
+
+Follow the [greenfield and brownfield runbook](adoption-0.5.md). Track lane,
+configuration, Python conformance, required analysis and native readiness
+separately. Required FAIL/UNKNOWN/stale evidence blocks strict acceptance.
+Evidenced exceptions remain visibly conditional, never 100% conformance.
+The helper does not enforce these acceptance decisions automatically.
+
 Prove Python baseline adoption through the
 [Astral acceptance contract](engineering/astral-acceptance.md), retaining actual
 evidence, applicability and owned exceptions in project authorities. Applicable
@@ -13,6 +39,13 @@ is evidence of one tested environment; it is not the template's permanent
 requirement for every adopter.
 
 ## Release planning
+
+Adopters version their own public product contract using `MAJOR.MINOR.PATCH`:
+after 1.0, incompatible changes require major, compatible additions minor, and
+compatible fixes patch. During 0.x, additions and changes requiring reconciliation
+increment minor; compatible fixes increment patch. Define the project's public
+contract and explain compatibility impact in release notes. See the full
+[version contract](versioning.md#version-contract), including deprecations.
 
 The starter and adopting projects follow the same release-planning rule for
 their independently versioned products: **every major release, including 1.0.0,
@@ -61,7 +94,9 @@ Preservation during configuration is not permanent exemption from the baseline.
 Use uv for standalone Python, project environments, dependency resolution and
 locks; use Astral Ruff for lint/format and ty for type checking. Use unittest and
 pre-commit for the approved routine checks. Keep deeper analysis outside hooks
-and CI. [Python engineering policy](engineering/python.md) defines those checks
+and routine CI. Execute applicable deeper analysis at adoption and release
+acceptance, plus on demand; a tool inventory alone is insufficient.
+[Python engineering policy](engineering/python.md) defines those checks
 and the required engineering practices; missing enforcement remains a reported gap.
 
 The engineering policy's selected on-demand tools are a minimum standard for

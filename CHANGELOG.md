@@ -1,6 +1,13 @@
 # Changelog
 
-## Unreleased
+## 0.5.0 — October 24, 2026
+
+- Clarify Python-only scope for both adoption lanes; other languages, likely
+  including Go, remain future work. Make adopter MAJOR.MINOR.PATCH rules explicit,
+  including public contract/deprecations, 0.x classification and independent
+  product versions. Pass the clarification through packaged adopter instructions.
+  Record the maintainer's personal consistency purpose and future guidance by
+  language, environment and CLI/TUI/web/desktop application type.
 
 - Implement maximum applicable Astral acceptance guidance following a Projects-
   focused uv documentation review. Bind requirement/evidence records, effective
@@ -8,8 +15,8 @@
   source-independent builds and clean installed behavior to adoption guidance.
   Reconcile workspace root/member semantics, namespace/coordinator applicability
   and the approved Ruff selection. Pass the contract through adopter instructions
-  and regenerate the wheel resource. These expanded adoption obligations require
-  reconciliation for a future bundled minor; no version is selected here.
+  and regenerate the wheel resource. This minor release delivers the expanded
+  adoption obligations; existing adopters require reviewed reconciliation.
 - Execute invented flat-application, typed-library and workspace migrations on
   Windows with pinned Python 3.14.8/uv 0.13.1. Retain 64 command records, typing
   positive/negative controls, separate member installations and eight matching
@@ -27,6 +34,40 @@
 - Preserve the original Astral assessment, follow-up evaluation and uv review as
   historical evidence, with current implementation and continuation links. Add
   no generic conformance checker, maintenance skill, lifecycle or routine gate.
+
+- Require explicit lite/heavy selection before completed adoption, with the same
+  applicable Python foundation in both lanes. Preserve heavy's intended Backplane
+  composition and report its current deferred readiness separately.
+- Require applicable deeper analysis at adoption and release acceptance, plus
+  on demand. Keep the four routine hooks and routine CI unchanged. Missing,
+  failing or stale required evidence blocks strict acceptance; exceptions remain
+  conditional, never 100% conformance.
+- Add a single greenfield/brownfield runbook covering first adoption, old-starter
+  upgrades, disposable target candidates, three-way managed-file reconciliation,
+  preserved local edits/provenance, rollback and explicit completion records.
+- Resolve temporary test-fixture roots before comparing with the helper's
+  canonicalized paths. This fixes six macOS subtest failures without changing
+  helper behavior, file schemas, runtime/tool pins or plugin pins.
+
+Adopter impact: this is a policy/adoption minor. Reconcile instructions and
+provenance together using [the 0.5 runbook](docs/adoption-0.5.md); do not merely
+change the version string or expect configure to overwrite old records. Existing
+products keep their own versions and public behavior. New adopters must select a
+lane and establish the Python baseline; generated host files alone are insufficient.
+Both lanes follow SemVer and require a new PRD for every major including 1.0.0.
+
+Verification and limits: the [release receipt](docs/evidence/2026-10-24-0.5.0-release.md)
+records locked sync, four routine
+hooks/35 adoption tests on macOS without a TMPDIR workaround, twelve analyzer
+contract tests, bundle/both catalogs, normal and source-independent builds,
+isolated installed CLI checks, complexity checks, bounded macOS Cosmic Ray
+compatibility and disposable first-adoption/upgrade scenarios.
+The GitHub release identifies the exact commit and remote CI result. Required
+broader analyzer compatibility/freshness, real-adopter migration and fresh-session
+host acceptance remain separately scoped; no unqualified baseline conformance
+is certified. Automatic lane/evidence/PRD validation and three-way upgrade merging
+remain design work. Backplane is still disabled; there is no dependency refresh,
+package-registry upload or downstream-project mutation in this release.
 
 ## 0.4.1 — October 18, 2026
 

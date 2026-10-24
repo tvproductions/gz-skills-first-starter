@@ -3,7 +3,8 @@
 The starter supplies zero authored skills. Start with the
 [adoption workflow](adoption-workflow.md) and [structure contract](structure.md).
 Project instructions reference upstream and project-owned workflows directly.
-For an existing starter adoption, first read the [migration guide](migration-0.3.md).
+Use the [greenfield/brownfield runbook](adoption-0.5.md) for 0.5 adoption and
+upgrades. Pre-0.3 skill copies additionally require the [legacy migration](migration-0.3.md).
 
 ## Establish the project boundary
 
@@ -30,7 +31,9 @@ and gzkit ownership. Existing project authorities remain in place. A conflict
 is a request for reconciliation, not permission to remove an existing install.
 The starter does not select a gz-skills profile. The pinned gz-skills v0.8.0
 supplies `gzs-project-setup`; invoking it and choosing lite/heavy remain separate
-explicit adopter decisions. Preserve starter Python policy over profile defaults.
+explicit adopter decisions required before completed adoption. Neither absent
+nor null selection is a completed lane. Preserve starter Python policy over
+profile defaults; both lanes require applicable adoption/release analysis.
 
 ## Project dependencies and settings
 

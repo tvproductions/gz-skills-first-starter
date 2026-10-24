@@ -1,5 +1,10 @@
 # Adopt the skills stack
 
+For the required greenfield, brownfield first-adoption and existing-adopter
+upgrade paths, start with [the 0.5 runbook](adoption-0.5.md). Explicit lane selection
+and applicable adoption/release analysis are required in both lanes. The helper
+still configures files only; it does not automatically enforce acceptance.
+
 This document guides adoption; it does not replace the three upstream workflows.
 Read [the adoption guide](adoption.md) for native host loading,
 compatibility checks, updates, and rollback. The helper is
@@ -41,7 +46,8 @@ role to policy and adoption bindings; do not add a competing local maintenance
 skill. The pinned gz-skills v0.8.0 maintenance skill also supports freshness-only
 reviews and starter/plugin inventory without changing pins or environments.
 Preserve approved starter Python policy over upstream profile defaults; choosing
-a profile remains explicit and separate from bundle adoption.
+a profile remains explicit and separate from helper configuration, but is
+required before adoption can be called complete.
 
 Establish the exact target project and a reviewed published starter revision.
 Read the starter's [versioning contract](versioning.md). Record its

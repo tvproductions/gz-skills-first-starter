@@ -153,10 +153,17 @@ adapter boundary outside the domain core. A skill-local script serves only its
 own skill and imports no other skill's scripts. Shared code or a system of
 record belongs in a package behind one CLI.
 
-## On-demand hygiene and mutation testing
+## Adoption/release analysis and on-demand hygiene
 
-Run deeper tools when requested, never as hooks, manual hooks, CI gates or an
-automatic consequence of routine changes. Resolve and pin development tools
+Run applicable deeper tools at adoption and before release acceptance, as well
+as when requested. Keep them outside the four routine hooks and routine CI;
+run an explicit acceptance preflight rather than adding them to every change.
+Record actual tool versions, source scope, results, reviewed findings and
+applicability. Missing compatibility/installation or unperformed required checks
+remain UNKNOWN and block strict acceptance. Legacy failures remain failures;
+an accepted exception is conditional, never a clean measurement. A package's
+release can distribute policy or record gaps without claiming full baseline
+acceptance; release notes must disclose that distinction. Resolve and pin development tools
 through uv after their Python 3.14 compatibility is established. Use explicit
 source/test scopes and invented fixtures; exclude operational data and records.
 
@@ -175,7 +182,7 @@ source/test scopes and invented fixtures; exclude operational data and records.
 | pip-audit | Audit exact resolved dependencies for known vulnerabilities; record scope, skipped packages and advisory results |
 | Import Linter | Verify project-specific forbidden imports and layers, including indirect violations of domain/adapter boundaries |
 
-These selections form the minimum on-demand analysis standard for adopters;
+These selections form the minimum adoption/release and on-demand analysis standard for adopters;
 they are not determined by which tools the starter's helper needs. Adopters may
 extend this standard with project-specific checks. Required selection does not
 prove installation, compatibility or clean results.

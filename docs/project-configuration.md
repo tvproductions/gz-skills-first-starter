@@ -5,6 +5,8 @@ It does not supply a closed application dependency list. Projects may have many
 runtime packages, optional features, development groups and local adapters.
 Keep those declarations and their ownership when adopting or updating the stack.
 The helper itself uses the standard library and requires no runtime packages.
+Use the [0.5 adoption/migration runbook](adoption-0.5.md) for mandatory lanes,
+existing managed-file reconciliation and required acceptance evidence.
 
 ## Choose the configuration home
 

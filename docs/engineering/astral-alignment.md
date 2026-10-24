@@ -125,7 +125,8 @@ review each added family and fix findings rather than selecting every rule or
 adding blanket ignores. The starter selects errors/imports, modern Python,
 bugbear, simplification and Ruff-specific rules (`E4`, `E7`, `E9`, `F`, `I`,
 `UP`, `B`, `SIM`, `RUF`). The formatter controls formatting. C901 and deeper
-analysis stay explicitly on demand under the Python policy. These selections
+analysis run at adoption/release acceptance and on demand under the Python
+policy, outside the four routine hooks and routine CI. These selections
 are our reviewed baseline; Astral does not mandate this exact set. See
 [Ruff rule selection](https://docs.astral.sh/ruff/linter/#rule-selection).
 

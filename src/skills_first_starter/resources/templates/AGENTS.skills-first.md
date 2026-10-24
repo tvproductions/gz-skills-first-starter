@@ -1,5 +1,10 @@
 # Skills-first development stack
 
+This adopted template currently supports Python projects only, in both lite and
+full/heavy lanes. Other languages, likely including Go, are future work requiring
+their own reviewed and released baseline; upstream skill portability is not
+evidence of template support for another language.
+
 Maximal Astral alignment is required for Python projects under this baseline.
 Read `docs/engineering/astral-alignment.md` in the reviewed starter checkout.
 Complete `docs/engineering/astral-acceptance.md` there, using its worked migrations.
@@ -39,7 +44,12 @@ future adoption but is disabled by default because readiness is incomplete.
 Use existing project backlog and handoff practices in the meantime.
 
 Release planning applies to this adopting project's own versions as well as
-the starter: every major release, including 1.0.0, always requires a newly
+the starter. Use MAJOR.MINOR.PATCH for the project's public contract: after 1.0,
+incompatible changes require major, compatible additions or public deprecations
+minor, and compatible fixes patch. During 0.x, additions and changes requiring
+reconciliation increment minor; compatible fixes increment patch. Define the
+public API/CLI/data/configuration surface and document compatibility impact.
+Every major release, including 1.0.0, always requires a newly
 written PRD for that major. Keep and reference it in project-owned release
 authorities. Minor releases bundle related changes through the existing backlog;
 SP-BP is intended to assist once ready and explicitly adopted. Patch releases
@@ -54,8 +64,15 @@ separate. Confirm actual discovery before invoking upstream entry skills;
 configuration does not prove loading. Preserve independently versioned upstream
 sources and avoid duplicate plugin/copied-skill discovery.
 
-No lite/heavy profile or gzkit lifecycle is selected by the starter. For adoption,
-structural backporting, updates and verification, use the reviewed starter at
+Explicitly select lite or heavy through the pinned gz-skills setup workflow;
+missing/null selection means adoption is incomplete. Both lanes require the
+same applicable Python baseline, SemVer/major-release PRDs and adoption/release
+analysis. Heavy retains SP + Backplane + gz-skills as its intended design;
+report deferred Backplane readiness separately and keep it disabled until ready
+and explicitly activated. The helper never selects a profile or certifies
+conformance. Follow `docs/adoption-0.5.md` in the reviewed starter for greenfield
+adoption and brownfield first-adoption/upgrade paths. No gzkit lifecycle is
+introduced. For structural backporting, updates and verification, use the reviewed starter at
 https://github.com/tvproductions/gz-skills-first-starter. Existing project instructions
 and app architecture are preserved until specific changes are authorized.
 
@@ -78,7 +95,11 @@ including the documented XPPython3 host exception. Preserve project dependencies
 and authorities, report adoption gaps, and follow the reviewed starter's Python
 engineering policy at `docs/engineering/python.md` in the reviewed starter
 checkout. Keep Ruff check/format, ty and unittest (never pytest) as routine checks
-through uv and pre-commit; select deeper hygiene only on demand. Report missing
+through uv and pre-commit; execute applicable deeper analysis at adoption and
+release acceptance, plus on demand, outside routine hooks and routine CI.
+Retain evidence and reviewed findings; required FAIL/UNKNOWN/stale results block
+strict acceptance. Accepted exceptions are conditional, never 100% conformance.
+Report missing
 tool installation or enforcement as a gap. This rule does not authorize automatic
 upgrades or schedules.
 

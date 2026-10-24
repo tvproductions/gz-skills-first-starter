@@ -1,5 +1,8 @@
 # Backporting structure into existing projects
 
+Follow the [brownfield first-adoption/upgrade runbook](adoption-0.5.md) for
+concrete steps, target candidates, three-way review, rollback and acceptance.
+
 The starter can help an existing project adopt the preferred skills-first shape.
 Treat this as a translation of useful responsibilities, not a wholesale rewrite
 or an imposed framework. FDAU is the primary precedent; its domain and numeric

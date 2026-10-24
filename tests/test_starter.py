@@ -16,7 +16,7 @@ REF = "a" * 40
 class AdoptionTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
         self.addCleanup(self.temp.cleanup)
 
     def configure(self, apply=False):
@@ -143,7 +143,7 @@ class AdoptionTests(unittest.TestCase):
     def test_later_write_failure_rolls_back_created_and_replaced_files(self):
         for existing in (False, True):
             with self.subTest(existing=existing), tempfile.TemporaryDirectory() as directory:
-                root = Path(directory)
+                root = Path(directory).resolve()
                 config = root / ".codex/config.toml"
                 original = b'model = "fixture"\r\n'
                 if existing:

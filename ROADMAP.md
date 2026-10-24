@@ -1,5 +1,19 @@
 # Roadmap
 
+## 0.5 policy delivery and remaining enforcement
+
+Version 0.5.0 bundles expanded Astral acceptance, mandatory lite/heavy selection,
+required adoption/release analysis, explicit adopter SemVer/major PRDs, and the
+[greenfield/brownfield runbook](docs/adoption-0.5.md). These are binding review
+obligations; the helper remains configuration-only. Keep both lanes equally strict
+on the Python foundation and preserve heavy's intended Backplane composition.
+
+The [design record](docs/engineering/strict-adoption-design.md) separates those
+delivered policies from remaining automatic lane/evidence/PRD validation and
+reviewed upgrade tooling. Real-adopter pilots, remaining analyzer verification
+and native-host proofs remain open. Future language/environment and CLI/TUI/web/
+desktop matrices require their own designs; current scope is Python-only.
+
 ## Implemented initial scaffold
 
 - Immutable SP + SP-BP + gz-skills bundle with independent sources.
@@ -102,7 +116,8 @@ Lizard function/module/overall contract all pass across `src`, `tests` and `tool
 Maximum Lizard score is 16 and maximum cognitive score is 14. Preserve historical
 failing receipts; see the [before/after assessment](docs/evidence/2026-10-18-complexity-remediation.md).
 No thresholds, analyzer pins or measurement semantics changed. These checks
-remain on demand, outside hooks/CI; C901 remains absent from routine selection.
+are required at adoption/release acceptance and available on demand, outside
+routine hooks/CI; C901 remains absent from routine selection.
 
 ## Settled C/C/C implementation — October 9, 2026
 

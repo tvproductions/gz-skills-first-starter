@@ -3,7 +3,21 @@
 A reusable, project-scoped starting point for **Superpowers + Superpowers Backplane + gz-skills**,
 with room for each application's own operational skills and supporting code. Built for work and personal projects under `tvproductions`.
 
+Its primary purpose is consistent engineering across the maintainer's own
+projects. It deliberately records personal, strict design and tooling choices;
+usefulness to other adopters is welcome, rather than a reason to dilute them.
+
 This repository is the bundle catalog, adoption tool, and guidance home.
+
+**This is currently a Python-only template**, for both lite and full/heavy
+adoption. Other language baselines, likely including Go, are future work and
+are not supported adoption targets yet. Python's policies do not implicitly
+define requirements for a future language baseline.
+
+Future guidance will distinguish language, execution/deployment environment and
+application type: CLIs, TUIs, web apps and desktop apps. Each supported target
+will need explicit requirements and verification extending the shared foundation.
+Current CLI guidance does not certify all of those future combinations.
 
 Python projects must meet the [Astral alignment contract](docs/engineering/astral-alignment.md):
 `src/` packaging, uv-managed locked execution, centralized Python configuration,
@@ -61,7 +75,9 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The template baseline is [v0.4.1](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.4.1).
+The template baseline is [v0.5.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.5.0).
+Start with the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
+existing-adopter upgrades and explicit acceptance/release requirements.
 Verify a published tag and exact commit before adoption; a metadata value
 alone is not proof of a release.
 
@@ -82,7 +98,7 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current handoff](docs/handoffs/2026-10-18-astral-guidance-evaluation.md).
+[the current handoff](docs/handoffs/2026-10-24-0.5.0-release.md).
 
 ## Quick start: an existing or empty project
 
@@ -98,7 +114,7 @@ an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
-gh repo clone tvproductions/gz-skills-first-starter
+git clone --branch v0.5.0 https://github.com/tvproductions/gz-skills-first-starter.git
 cd gz-skills-first-starter
 uv run --locked skills-first-starter validate
 uv run --locked skills-first-starter configure --project /path/to/your-project
@@ -118,6 +134,9 @@ no-op. Review the configuration before trusting it in Codex.
 Then follow [native installation and verification](docs/adoption.md). Configuring
 files does **not** install plugins, authenticate GitHub, or prove skill discovery.
 The native managers own their caches; upstream skills are never copied here.
+Complete the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
+explicit lite/heavy selection and required adoption/release analysis. Configure
+and status do not certify Python conformance or complete an existing migration.
 
 ```bash
 uv run --locked skills-first-starter status --project /path/to/your-project
@@ -161,7 +180,7 @@ those exact full commit SHAs, not moving branches.
 | [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-The latest published template is 0.4.1.
+The latest template release is 0.5.0.
 It selects Superpowers
 [v7.0.0](https://github.com/obra/superpowers/releases/tag/v7.0.0), the latest stable
 release checked October 11, 2026. The old v6.4.1 selection came from Backplane's
@@ -175,7 +194,10 @@ published release; its remaining host acceptance and external pilot are tracked
 upstream. The pinned gz-skills release contains twenty skills, including
 project setup, Pythonic pattern review/apply and freshness-only maintenance
 review with template/plugin inventory. The starter does not invoke setup or
-select a lite/heavy profile. Approved starter Python policy takes precedence
+select a lite/heavy profile. Explicit selection is required before adoption is
+complete; both lanes meet the same Python foundation and required adoption/release
+analysis. Heavy retains deferred Backplane in its intended stack.
+Approved starter Python policy takes precedence
 over upstream profile defaults, including Python 3.14 and retired-tool choices.
 
 ## Current scope

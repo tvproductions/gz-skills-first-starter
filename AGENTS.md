@@ -1,9 +1,16 @@
 # GZ skills-first starter
 
+This template currently supports Python projects only, in both lite and
+full/heavy lanes. Other languages, likely including Go, are future scope;
+do not claim their support or invent their baseline from Python policy.
+This is the maintainer's opinionated consistency standard. Future CLI, TUI,
+web-app and desktop-app guidance must identify language/environment applicability
+and verification; do not generalize one target's proof to all product types.
+
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-10-18-astral-guidance-evaluation.md`; recheck live state before work.
+`docs/handoffs/2026-10-24-0.5.0-release.md`; recheck live state before work.
 
 This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.
@@ -81,8 +88,10 @@ coverage through unittest, Cosmic Ray mutation testing, deptry, pip-audit and
 Import Linter, plus cohesion as a downstream class-analysis requirement. The
 selected on-demand tools form an adopter minimum independent of the helper's
 needs; cohesion pins and runtime verification remain adopter-owned. No starter
-installation or cohesion compatibility proof is implied. None belongs in hooks
-or CI gates. Keep the approved routine
+installation or cohesion compatibility proof is implied. Run applicable deeper
+analysis at adoption/release acceptance and on demand, outside routine hooks
+and routine CI. Record gaps as UNKNOWN; do not claim strict acceptance with
+required missing/failed/stale evidence. Keep the approved routine
 pre-commit set limited to Ruff check/format, ty and unittest. C901 is enabled only
 in explicit hygiene commands, not routine Ruff selection. The new complexity
 policy retires Xenon and Radon. The on-demand `tools/engineering/complexity_check.py` implements
