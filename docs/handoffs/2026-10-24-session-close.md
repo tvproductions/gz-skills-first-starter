@@ -7,16 +7,36 @@ Recheck Git and remote CI before continuing; this is a dated checkpoint.
 
 ## Current state
 
-At preparation, main and origin/main were aligned at
-`d752e37865684d444029731a36c0d844746950f7`, with a clean worktree.
-[Exact-commit Ubuntu CI passed](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40135547065).
-This handoff and its entry-point links are the subsequent documentation change;
-verify their containing commit with Git and its own CI rather than assuming
-the preceding run covers it.
+At the latest session recheck, a fresh origin fetch confirmed main and
+origin/main aligned at `731495876ef131c1a0795d38ad69116b77a594ca`, with a clean
+worktree and no divergence.
+[Exact-commit Ubuntu CI passed](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40137030752).
+This handoff refresh is a subsequent documentation change; verify its containing
+commit with Git and its own CI rather than assuming the preceding run covers it.
 
 Latest published release: **v0.6.0**. Development version: **0.7.0, unreleased**.
 The work is pushed, but strict release acceptance is incomplete. No new tag,
 release, adopter migration or upstream-project change was performed.
+
+## Published-release verification
+
+An adopter reported that 0.6.0 was unpublished. Live GitHub CLI and remote-tag
+queries on October 24 confirmed that
+[v0.6.0 is published](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.6.0):
+`publishedAt` is `2026-10-24T15:35:45Z`, with both draft and prerelease false.
+The annotated remote tag object is
+`1e33e51cd696eafd90db52d14b89b2f079160336`; its release commit is
+`c0a6945b2170e1cf5bee3e80738916f5b62d13a5`. The wheel, source distribution,
+portable update-skill ZIP and checksum assets are present. The report conflicts
+with the observed canonical release state; the adopter's cause was not diagnosed
+and no adopter files were changed. No republication or tag change was needed.
+
+The user then requested handoff and Git synchronization. Scope is this existing
+handoff's verification update only; reuse the passing checks for unchanged
+code/tool/catalog inputs, run the normal commit hooks with required uv 0.13.5,
+push main normally and observe CI for the final SHA. Report that result after
+the push without creating another CI-receipt-only commit. Version 0.7.0 remains
+unreleased, with the acceptance work below still open.
 
 ## Decisions to preserve
 
