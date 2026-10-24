@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.6.0 — October 24, 2026
+
+- Add the single template-owned `update-gz-template` skill as the canonical
+  entry for adopter update review and migration. This scoped ownership exception
+  replaces zero authored skills; generic dependency maintenance stays in gz-skills.
+- Configure previews/seeds the project `.agents/skills/update-gz-template/SKILL.md`,
+  compares its content, preserves local edits, rejects symlink/duplicate destinations
+  and rolls back prior writes on skill creation failure. Package the source skill
+  with checked wheel resources and verify installed behavior outside the checkout.
+- Add canonical update/first-bootstrap guidance for pre-skill adopters. Existing
+  adopters must reconcile the new managed skill alongside fragment/lock/host files;
+  adding a skill alone does not upgrade provenance or establish conformance.
+
+This is an adoption-capability minor, not a compatible-fix patch. No runtime/tool/
+plugin pin or file schema changes. Published v0.5.0 remains immutable.
+
+Verification: 39 adoption tests, the four routine checks, skill validation,
+bundle/both catalogs, source-independent build and isolated installed seeding,
+complexity checks, and a twelve-command disposable 0.5-to-0.6 upgrade proof.
+See the [release receipt](docs/evidence/2026-10-24-0.6.0-release.md). Fresh-session
+host discovery and broader conformance automation remain separately unverified.
+The GitHub release records exact-commit CI and supplies a portable skill ZIP
+for existing adopters alongside the source/wheel assets.
+
 ## 0.5.0 — October 24, 2026
 
 - Clarify Python-only scope for both adoption lanes; other languages, likely

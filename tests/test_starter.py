@@ -265,7 +265,7 @@ class AdoptionTests(unittest.TestCase):
         self.assertEqual(p.read_text(), original)
         self.assertFalse((self.root / ".skills-first").exists())
 
-    def test_adoption_writes_guidance_without_creating_skill_surfaces(self):
+    def test_adoption_seeds_only_the_canonical_template_update_skill(self):
         result = self.configure(True)
         self.assertEqual(
             set(result["writes"]),
@@ -274,11 +274,64 @@ class AdoptionTests(unittest.TestCase):
                 ".skills-first/bundle.lock.json",
                 "AGENTS.skills-first.md",
                 "AGENTS.md",
+                starter.UPDATE_SKILL_DESTINATION,
             },
         )
-        self.assertFalse((self.root / ".agents").exists())
-        self.assertEqual(list(self.root.rglob("SKILL.md")), [])
+        skill = self.root / starter.UPDATE_SKILL_DESTINATION
+        self.assertEqual(list(self.root.rglob("SKILL.md")), [skill])
+        self.assertEqual(
+            skill.read_bytes(), (MODULE.parent / starter.UPDATE_SKILL_SOURCE).read_bytes()
+        )
         self.assertEqual(starter.status(self.root)["status"], "configured")
+
+    def test_modified_update_skill_blocks_all_writes_and_is_preserved(self):
+        skill = self.root / starter.UPDATE_SKILL_DESTINATION
+        skill.parent.mkdir(parents=True)
+        original = b"Project-edited update guidance.\n"
+        skill.write_bytes(original)
+        for apply in (False, True):
+            with self.subTest(apply=apply), self.assertRaises(starter.AdoptionError):
+                self.configure(apply)
+            self.assertEqual(skill.read_bytes(), original)
+            self.assertEqual([p for p in self.root.rglob("*") if p.is_file()], [skill])
+
+    def test_update_skill_symlink_cannot_write_outside_project(self):
+        with tempfile.TemporaryDirectory() as directory:
+            external = Path(directory).resolve()
+            target = self.root / starter.UPDATE_SKILL_DESTINATION
+            target.parent.mkdir(parents=True)
+            target.symlink_to(external / "SKILL.md")
+            with self.assertRaises(starter.AdoptionError):
+                self.configure(True)
+            self.assertEqual(list(external.iterdir()), [])
+        self.assertFalse((self.root / ".codex").exists())
+
+    def test_alternate_surface_update_skill_requires_reconciliation(self):
+        for surface in (".codex/skills", ".claude/skills", ".github/skills"):
+            with self.subTest(surface=surface), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory).resolve()
+                skill = root / surface / starter.UPDATE_SKILL / "SKILL.md"
+                skill.parent.mkdir(parents=True)
+                skill.write_text("Existing alternative installation.\n")
+                with self.assertRaises(starter.AdoptionError):
+                    starter.configure(root, REF, apply=True)
+                self.assertEqual([p for p in root.rglob("*") if p.is_file()], [skill])
+
+    def test_update_skill_write_failure_rolls_back_prior_managed_outputs(self):
+        target = self.root / starter.UPDATE_SKILL_DESTINATION
+        open_path = Path.open
+
+        def fail_skill(path, *args, **kwargs):
+            if path == target and args == ("xb",):
+                raise OSError("fixture skill failure")
+            return open_path(path, *args, **kwargs)
+
+        with (
+            mock.patch.object(Path, "open", autospec=True, side_effect=fail_skill),
+            self.assertRaisesRegex(OSError, "fixture skill failure"),
+        ):
+            self.configure(True)
+        self.assertEqual([p for p in self.root.rglob("*") if p.is_file()], [])
 
     def test_modified_project_guidance_is_preserved(self):
         self.configure(True)
@@ -293,11 +346,14 @@ class AdoptionTests(unittest.TestCase):
         skill.parent.mkdir(parents=True)
         original = b"Project-owned operational instructions.\n"
         skill.write_bytes(original)
+        expected = {skill}
         for apply in (False, True, True):
             with self.subTest(apply=apply):
                 self.configure(apply)
+                if apply:
+                    expected.add(self.root / starter.UPDATE_SKILL_DESTINATION)
                 self.assertEqual(skill.read_bytes(), original)
-                self.assertEqual(list(self.root.rglob("SKILL.md")), [skill])
+                self.assertEqual(set(self.root.rglob("SKILL.md")), expected)
 
     def test_backport_assessment_preserves_records_and_does_not_follow_links(self):
         (self.root / "records").mkdir()
@@ -334,7 +390,7 @@ class AdoptionTests(unittest.TestCase):
                         self.assertEqual(skill.read_bytes(), original)
                         self.assertEqual([p for p in root.rglob("*") if p.is_file()], [skill])
 
-    def test_template_contains_no_authored_skills(self):
+    def test_template_contains_only_the_approved_update_skill_and_wheel_copy(self):
         self.assertFalse((MODULE.parent / "skills").exists())
         tracked = starter.subprocess.run(
             [
@@ -353,12 +409,15 @@ class AdoptionTests(unittest.TestCase):
             errors="strict",
         ).stdout.splitlines()
         self.assertEqual(
-            [
+            {
                 name
                 for name in tracked
                 if Path(name).name == "SKILL.md" and (MODULE.parent / name).exists()
-            ],
-            [],
+            },
+            {
+                starter.UPDATE_SKILL_SOURCE,
+                f"src/skills_first_starter/resources/{starter.UPDATE_SKILL_SOURCE}",
+            },
         )
 
     def test_backport_inventory_is_bounded(self):

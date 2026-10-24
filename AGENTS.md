@@ -10,12 +10,15 @@ and verification; do not generalize one target's proof to all product types.
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-10-24-0.5.0-release.md`; recheck live state before work.
+`docs/handoffs/2026-10-24-0.6.0-release.md`; recheck live state before work.
 
 This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.
-The starter authors and distributes zero agent skills. Keep workflow skills
-upstream- or project-owned; read `docs/structure.md` for the ownership contract.
+The starter owns one narrowly scoped skill, `update-gz-template`, for canonical
+template updates. This user-directed exception replaces the zero-authored-skills
+rule; generic engineering and dependency maintenance remain upstream-owned.
+Keep all other workflow skills upstream- or project-owned; read
+`docs/structure.md` and `docs/updating.md` for the ownership/update contract.
 `docs/baseline-policy.md` owns adopter version-range and selection policy;
 checkout pins record tested execution choices. Distinguish policy changes from
 pin refreshes in release notes and adopter reviews.
@@ -119,7 +122,8 @@ Checks: `uv sync --locked --all-groups`, `uv run --locked pre-commit run --all-f
 Ruff check/format, ty and unittest. Run the checker CLI tests explicitly after
 analyzer changes: `uv run --locked --group hygiene python -m unittest discover -s tools/engineering -p "test_*.py" -v` (eleven contract tests plus the portability regression).
 Refresh wheel resource copies with `uv run --locked python tools/package_resources.py`
-after changing their four authoritative inputs; unittest detects drift.
+after changing their five authoritative inputs, including the update skill;
+unittest detects drift.
 No plugin installation, GitHub issue mutation, tag, or release publication is
 implied by editing this repository. Follow the user's actual authorization.
 

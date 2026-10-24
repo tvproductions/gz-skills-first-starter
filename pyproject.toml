@@ -1,6 +1,6 @@
 [project]
 name = "skills-first-starter"
-version = "0.5.0"
+version = "0.6.0"
 description = "Project-scoped SP + SP-BP + gz-skills adoption scaffold"
 readme = "README.md"
 requires-python = ">=3.14,<3.15"

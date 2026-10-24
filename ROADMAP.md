@@ -1,5 +1,13 @@
 # Roadmap
 
+## 0.6: one canonical template-update skill
+
+The user requested a template-native update entry. The starter owns only
+`update-gz-template`, seeds it through configure, packages/verifies its bytes and
+preserves local edits. [Canonical updating](docs/updating.md) includes bootstrap
+for 0.5 and older adopters. Generic maintenance remains upstream. Fresh-session
+discovery remains a separate operator-run proof.
+
 ## 0.5 policy delivery and remaining enforcement
 
 Version 0.5.0 bundles expanded Astral acceptance, mandatory lite/heavy selection,
@@ -20,7 +28,8 @@ desktop matrices require their own designs; current scope is Python-only.
 - Codex and Claude native marketplace catalogs.
 - Preview/apply/status Codex project configuration for empty and existing projects.
 - Preservation/conflict/symlink/duplicate/gzkit checks and unittest coverage.
-- Zero starter-authored skills; documented adoption workflow and direct workflow
+- Originally zero starter-authored skills; 0.6 adds only the
+  canonical template-update entry. Documented adoption workflow and direct workflow
   routing in adopter instructions. Analysis utilities live in ordinary tooling.
 - Default SP + gz-skills activation with SP-BP pinned but disabled.
 - Read-only structural assessment and guidance for incremental backporting.

@@ -25,20 +25,22 @@ def run(*command: str, cwd: Path) -> subprocess.CompletedProcess[str]:
     )
 
 
-def main() -> None:
-    metadata = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    version = metadata["project"]["version"]
-    wheel = ROOT / "dist" / f"skills_first_starter-{version}-py3-none-any.whl"
-    sdist = ROOT / "dist" / f"skills_first_starter-{version}.tar.gz"
+def verify_archives(wheel: Path, sdist: Path) -> None:
+    """Allow only the owned update skill and verify every packaged resource."""
     with zipfile.ZipFile(wheel) as archive:
         names = archive.namelist()
-        if any("SKILL.md" in name or name.startswith(("tests/", "tools/")) for name in names):
+        skill = "templates/skills/update-gz-template/SKILL.md"
+        allowed = f"skills_first_starter/resources/{skill}"
+        if {name for name in names if name.endswith("/SKILL.md")} != {allowed}:
+            raise ValueError("Wheel must contain exactly the template-owned update skill")
+        if any(name.startswith(("tests/", "tools/")) for name in names):
             raise ValueError("Unexpected development files or skills in wheel")
         for relative in (
             "bundle.json",
             ".agents/plugins/marketplace.json",
             ".claude-plugin/marketplace.json",
             "templates/AGENTS.skills-first.md",
+            skill,
         ):
             content = archive.read(f"skills_first_starter/resources/{relative}")
             if content != (ROOT / relative).read_bytes():
@@ -47,6 +49,14 @@ def main() -> None:
         names = archive.getnames()
         if not any(name.endswith("/tests/test_starter.py") for name in names):
             raise ValueError("Source distribution is missing adoption tests")
+
+
+def main() -> None:
+    metadata = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+    version = metadata["project"]["version"]
+    wheel = ROOT / "dist" / f"skills_first_starter-{version}-py3-none-any.whl"
+    sdist = ROOT / "dist" / f"skills_first_starter-{version}.tar.gz"
+    verify_archives(wheel, sdist)
     with tempfile.TemporaryDirectory(prefix="starter-wheel-") as temporary:
         directory = Path(temporary)
         environment = directory / "env"
@@ -78,6 +88,10 @@ def main() -> None:
         if list(target.iterdir()):
             raise ValueError("Installed preview wrote project files")
         run(*args, "--apply", cwd=directory)
+        if (target / ".agents/skills/update-gz-template/SKILL.md").read_bytes() != (
+            ROOT / "templates/skills/update-gz-template/SKILL.md"
+        ).read_bytes():
+            raise ValueError("Installed helper did not seed the canonical update skill")
         repeated = json.loads(run(*args, "--apply", cwd=directory).stdout)
         if repeated["writes"]:
             raise ValueError("Installed repeated adoption was not a no-op")

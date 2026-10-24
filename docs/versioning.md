@@ -1,6 +1,6 @@
 # Template versioning
 
-The current template release is **0.5.0**; the initial release
+The current template release is **0.6.0**; the initial release
 was **0.1.0**. The 0.3
 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
 The current version is recorded in
@@ -19,10 +19,11 @@ The initial release is
 dated October 11, 2026. Its annotated tag identifies the verified release commit.
 Earlier development commits were untagged; do not label them as a released
 v0.1.0 retroactively. The latest documented published release is
-[v0.5.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.5.0),
-which delivers expanded Astral acceptance, required lane/analysis policy, explicit
-adopter SemVer and major-release PRDs, and a
-[greenfield/brownfield migration runbook](adoption-0.5.md). It retains the runtime,
+[v0.6.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.6.0),
+which adds the single template-native update skill and
+[canonical update/bootstrap method](updating.md). It retains 0.5's expanded
+Astral acceptance, lane/analysis policy, adopter SemVer and major-release PRDs,
+and [greenfield/brownfield migration runbook](adoption-0.5.md). It retains the runtime,
 tool and independent SP 7.0.0/gz-skills 0.8.0 pins. Automatic conformance/PRD
 validation remains unimplemented; release notes disclose acceptance gaps.
 Future publication remains a separately authorized operation.
@@ -38,6 +39,12 @@ fixes and clarifications. Release 1.0.0 only when the intended public contract
 and its compatibility guarantees are established. After 1.0, incompatible
 contract changes require a major bump, compatible additions a minor bump and
 compatible fixes a patch bump. Explain adopter impact even for small changes.
+
+Version 0.6.0 adds a native template-update skill and a managed adopter
+file, changing the supported adoption capability and ownership contract. It
+therefore increments minor from 0.5.0. A compatible correction to an existing
+capability would increment patch (for example 0.5.1) and get its own new tag;
+neither case moves or reuses v0.5.0.
 
 The following release-planning rules bind this starter and each adopting
 project's own releases. App, template and upstream component versions remain

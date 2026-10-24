@@ -9,6 +9,10 @@ usefulness to other adopters is welcome, rather than a reason to dilute them.
 
 This repository is the bundle catalog, adoption tool, and guidance home.
 
+Version **0.6.0** includes the single template-owned `update-gz-template` skill.
+See [canonical template updates](docs/updating.md), including bootstrap for
+0.5.0 and earlier adopters.
+
 **This is currently a Python-only template**, for both lite and full/heavy
 adoption. Other language baselines, likely including Go, are future work and
 are not supported adoption targets yet. Python's policies do not implicitly
@@ -26,7 +30,8 @@ expect to refactor nonconforming projects; existing layout alone is not an exemp
 Use the [Astral acceptance record](docs/engineering/astral-acceptance.md) and
 [worked application/library/workspace migrations](docs/engineering/astral-migrations.md)
 to prove the result, including effective configuration and clean installed behavior.
-**It authors and distributes zero agent skills.** Upstream plugins supply skills;
+**The starter owns one template-update skill.** Upstream plugins supply
+the other engineering skills;
 the starter supplies opinionated policy, deterministic configuration and provenance.
 Adopters own update review and project operational skills. See the
 [repository structure and ownership contract](docs/structure.md). It is
@@ -75,7 +80,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The template baseline is [v0.5.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.5.0).
+The template baseline is [v0.6.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.6.0).
 Start with the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
 existing-adopter upgrades and explicit acceptance/release requirements.
 Verify a published tag and exact commit before adoption; a metadata value
@@ -98,7 +103,7 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current handoff](docs/handoffs/2026-10-24-0.5.0-release.md).
+[the current handoff](docs/handoffs/2026-10-24-0.6.0-release.md).
 
 ## Quick start: an existing or empty project
 
@@ -114,7 +119,7 @@ an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
-git clone --branch v0.5.0 https://github.com/tvproductions/gz-skills-first-starter.git
+git clone --branch v0.6.0 https://github.com/tvproductions/gz-skills-first-starter.git
 cd gz-skills-first-starter
 uv run --locked skills-first-starter validate
 uv run --locked skills-first-starter configure --project /path/to/your-project
@@ -123,7 +128,8 @@ uv run --locked skills-first-starter configure --project /path/to/your-project -
 
 The first configure command previews paths without writing. The second writes
 project Codex settings, a pinned bundle record and an instructions fragment.
-It creates no skills or skill discovery directories. SP and gz-skills are
+Configure also seeds the single project-scoped
+`.agents/skills/update-gz-template/SKILL.md`; published 0.5.0 does not. SP and gz-skills are
 enabled; SP-BP is explicitly disabled.
 Existing `AGENTS.md` is preserved; new projects get an entry pointing to the
 fragment. Existing configuration is extended only when it is compatible.
@@ -180,7 +186,7 @@ those exact full commit SHAs, not moving branches.
 | [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-The latest template release is 0.5.0.
+The latest template release is 0.6.0.
 It selects Superpowers
 [v7.0.0](https://github.com/obra/superpowers/releases/tag/v7.0.0), the latest stable
 release checked October 11, 2026. The old v6.4.1 selection came from Backplane's

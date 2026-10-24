@@ -28,6 +28,9 @@ HERE = (
 MARKETPLACE = "skills-first-starter"
 ORIGIN = "https://github.com/tvproductions/gz-skills-first-starter.git"
 SHA = re.compile(r"[0-9a-f]{40}\Z")
+UPDATE_SKILL = "update-gz-template"
+UPDATE_SKILL_SOURCE = f"templates/skills/{UPDATE_SKILL}/SKILL.md"
+UPDATE_SKILL_DESTINATION = f".agents/skills/{UPDATE_SKILL}/SKILL.md"
 
 
 class AdoptionError(Exception):
@@ -172,6 +175,8 @@ def _adoption_root(project: Path) -> Path:
 
 def _check_discovery_entry(surface: str, child: Path) -> None:
     """Preserve legacy and shared skill copies for explicit reconciliation."""
+    if child.name == UPDATE_SKILL and surface != ".agents/skills":
+        raise AdoptionError(f"duplicate template update skill at {surface}; reconcile first")
     if child.name in ("skills-first-start", "adopt-skills-stack", "python-engineering"):
         raise AdoptionError(
             f"legacy starter skill at {surface}/{child.name}; "
@@ -216,6 +221,7 @@ def _configuration_candidates(paths: dict[str, Path], ref: str) -> tuple[dict[st
         ".codex/config.toml": project_config(old_config, ref),
         ".skills-first/bundle.lock.json": json.dumps(lock, indent=2) + "\n",
         "AGENTS.skills-first.md": fragment,
+        UPDATE_SKILL_DESTINATION: (HERE / UPDATE_SKILL_SOURCE).read_text(encoding="utf-8"),
     }
     if not paths["AGENTS.md"].exists():
         candidates["AGENTS.md"] = (
@@ -303,6 +309,7 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
             ".gz-skills/settings.json",
             "AGENTS.skills-first.md",
             "AGENTS.md",
+            UPDATE_SKILL_DESTINATION,
         )
     }
     profile_check(paths[".gz-skills/settings.json"])
@@ -321,6 +328,7 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
             "Review the project instructions fragment; link it from existing AGENTS.md if needed.",
             "Profile selection belongs to canonical gz-skills setup; no profile is inferred or created.",
             "Follow docs/adoption.md for native installation and a fresh-session discovery check.",
+            "Use the project update-gz-template skill for released template updates; verify discovery separately.",
         ],
     }
 

@@ -1,10 +1,16 @@
-# Adopt or migrate to the Python 0.5 baseline
+# Adopt or migrate to the Python baseline (0.5 and later)
 
 This is the operational entry for new projects, existing Python projects and
 earlier starter adopters. Version 0.5.0 delivers policy and verified migration
 examples. It does not add an automatic conformance checker or force-upgrade
 command. The helper's `configured` result means its file contract passed, not
 that adoption is complete.
+
+For recurring updates, see [the canonical update method](updating.md). The
+0.6 release extends the managed set with
+`.agents/skills/update-gz-template/SKILL.md`. Include that candidate in three-way
+upgrade review and rollback when adopting a released version that supplies it.
+Published 0.5.0 itself is unchanged and has no native update skill.
 
 | Starting point | Path | What must survive |
 | --- | --- | --- |
@@ -44,12 +50,12 @@ conformance. Do not use existing structure as an exception by itself.
 Use a separate checkout. These commands are run from its parent directory:
 
 ```bash
-git clone --branch v0.5.0 https://github.com/tvproductions/gz-skills-first-starter.git reviewed-starter-0.5
-cd reviewed-starter-0.5
+git clone --branch v0.6.0 https://github.com/tvproductions/gz-skills-first-starter.git reviewed-starter-0.6
+cd reviewed-starter-0.6
 git rev-parse HEAD
-git rev-parse 'v0.5.0^{commit}'
+git rev-parse 'v0.6.0^{commit}'
 git status --short
-gh release view v0.5.0 --repo tvproductions/gz-skills-first-starter
+gh release view v0.6.0 --repo tvproductions/gz-skills-first-starter
 uv --version
 uv sync --locked --all-groups
 uv run --locked skills-first-starter version
@@ -58,7 +64,7 @@ uv run --locked skills-first-starter validate
 
 The two SHAs must match and the checkout must be clean. Review the GitHub release,
 changelog and [versioning contract](versioning.md). The version command must
-report 0.5.0; keep the full SHA as well. Use the checkout's required uv version,
+report 0.6.0; keep the full SHA as well. Use the checkout's required uv version,
 currently 0.13.1. A machine with another uv version can run a command through
 `uv tool run --from uv==0.13.1 uv ...` without replacing its global installation.
 
@@ -148,14 +154,14 @@ when invoked from a newer starter. This is a preservation boundary, not migratio
    with app metadata/lock and the original Git rollback reference. Read the old
    starter version/SHA; unknown/legacy provenance stays unknown until investigated.
    Retain local additions and review their original rationale.
-2. Compare old and target published starters. For v0.4.1 to v0.5.0, the policy
-   delta is stronger Astral evidence; mandatory explicit lane; required deeper
+2. Compare old and target published starters. For v0.4.1 to v0.6.0, the policy
+   delta includes the native update skill plus stronger Astral evidence; mandatory explicit lane; required deeper
    analysis at adoption/release; explicit adopter SemVer/major PRDs; and
    Python-only scope. The plugin/runtime/tool pins and managed-file schema remain
    unchanged. Earlier adopters also review intervening changelogs; pre-0.3 skill
    copies follow [their dedicated migration](migration-0.3.md).
 3. Generate target candidates in an empty disposable directory, from the clean
-   v0.5.0 checkout. This writes candidates only, not the product:
+   v0.6.0 checkout. This writes candidates only, not the product:
 
    ```bash
    candidate_dir=$(mktemp -d)
@@ -173,7 +179,7 @@ when invoked from a newer starter. This is a preservation boundary, not migratio
    pending selection must be completed through upstream setup. Inspect the
    complete product diff before saving it as a reviewed migration commit.
 5. Keep the old provenance in the rollback history; do not relabel the old SHA as
-   v0.5.0. The new lock records the real target version and full SHA only after
+   v0.6.0. The new lock records the real target version and full SHA only after
    its managed content is reconciled. If intentional fragment edits remain,
    document them: the helper will continue reporting a managed-content conflict,
    rather than certifying the edited fragment. Do not erase edits merely to get

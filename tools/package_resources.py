@@ -9,6 +9,7 @@ RESOURCE_PATHS = (
     ".agents/plugins/marketplace.json",
     ".claude-plugin/marketplace.json",
     "templates/AGENTS.skills-first.md",
+    "templates/skills/update-gz-template/SKILL.md",
 )
 
 

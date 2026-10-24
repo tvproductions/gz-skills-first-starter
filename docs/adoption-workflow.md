@@ -1,5 +1,9 @@
 # Adopt the skills stack
 
+For recurring template updates and pre-skill adopter bootstrap, use
+[canonical template updates](updating.md). Version 0.6 adds one native
+update skill; 0.5 and earlier adopters can bootstrap it from the published release.
+
 For the required greenfield, brownfield first-adoption and existing-adopter
 upgrade paths, start with [the 0.5 runbook](adoption-0.5.md). Explicit lane selection
 and applicable adoption/release analysis are required in both lanes. The helper

@@ -1,6 +1,10 @@
-# A template with zero authored skills
+# Skill ownership and template maintenance
 
-This starter authors and distributes **zero agent skills**. It selects and binds
+Version 0.6 authors and distributes **one narrow template-update skill**,
+`update-gz-template`, as the canonical adopter entry. This is the user-directed
+exception to the former zero-skills rule. Published 0.5.0 remains skill-free.
+Generic engineering, dependency maintenance and project operations remain
+upstream- or project-owned. The starter selects and binds
 the SP + SP-BP + gz-skills stack through versioned configuration, project
 instructions and documentation. SP-BP remains expected, deferred and disabled
 until readiness and explicit adoption. Project operational skills remain
@@ -11,7 +15,7 @@ which practices matter here. gz-skills supplies the reusable skills; this templa
 makes freshness, version-appropriate Python code, portability and project-policy
 precedence visible in its instructions and guidance. It adds no parallel workflow.
 
-Zero skills describes ownership, not a neutral or unconfigured template. The
+The narrow ownership boundary does not make this a neutral template. The
 starter deliberately selects uv-managed Python 3.14 (3.12 for XPPython3-bound
 code), Astral's Ruff and ty,
 unittest and the approved pre-commit checks. Exact verified pins, selected
@@ -36,9 +40,11 @@ each adopter must establish its own enforcement and artifact verification.
 | `tools/engineering/` | Explicit on-demand analysis utilities and their CLI tests |
 | `docs/versioning.md` and `CHANGELOG.md` | Template compatibility, release identity and adopter impact |
 
-There is no starter `skills/` tree or `SKILL.md` package. Configure writes host
-configuration, a provenance lock and instructions; it creates no skill discovery
-tree. Native managers install upstream skills separately. Existing app skills
+The approved source is `templates/skills/update-gz-template/SKILL.md`, with a
+checked wheel-resource copy. Configure writes host configuration, provenance,
+instructions and `.agents/skills/update-gz-template/SKILL.md`. It never overwrites
+a differing update skill; reconcile local edits explicitly. Native managers
+install upstream skills separately. Existing app skills
 and instructions are preserved, and no lite/heavy profile is inferred. Explicit
 selection is required before completed adoption. See the
 [greenfield/brownfield runbook](adoption-0.5.md); policy acceptance remains a
@@ -90,6 +96,6 @@ consumer-managed updates; they do not explicitly prescribe zero agent skills.
   Copier or Cruft. Its [update guidance](https://pages.nist.gov/cookiecutter-nist-python/ci.html)
   describes update PRs in the consuming repository.
 
-Our application of those precedents is zero starter-authored skills with explicit
+Our application of those precedents is one template-specific update entry with explicit
 policy and adopter-owned review. Their tool choices and scheduling mechanisms
 are not adopted here. Existing adopters use the [0.3 migration guide](migration-0.3.md).

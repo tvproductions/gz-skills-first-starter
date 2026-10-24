@@ -1,6 +1,8 @@
 # Adoption and native loading
 
-The starter supplies zero authored skills. Start with the
+Version 0.6 supplies one owned template-update skill; published 0.5.0
+supplies none. Use [canonical template updates](updating.md) for bootstrap and
+maintenance. Start with the
 [adoption workflow](adoption-workflow.md) and [structure contract](structure.md).
 Project instructions reference upstream and project-owned workflows directly.
 Use the [greenfield/brownfield runbook](adoption-0.5.md) for 0.5 adoption and
@@ -50,7 +52,8 @@ After configure preview/apply, `.codex/config.toml` registers the shared Git
 marketplace at your reviewed starter SHA and enables SP and gz-skills for that
 project. SP-BP remains pinned and
 explicitly disabled. Configure writes `AGENTS.skills-first.md` for direct workflow
-routing and maintenance obligations; it installs no starter skills. Verify the
+routing and maintenance obligations. Version 0.6 additionally seeds the
+project update skill; it does not install upstream skill copies. Verify the
 upstream plugins in a fresh session after native installation.
 Commit this project configuration after review;
 installation caches remain native-harness state.
@@ -91,7 +94,9 @@ Start a fresh session. Confirm the actual discovered identities:
 - `superpowers:using-superpowers`
 - `gz-skills:gzs-router`
 
-The starter supplies no skill entry of its own. Verify each identity's owning
+For version 0.6, also verify the project-scoped `update-gz-template`
+separately from upstream plugin discovery; published 0.5.0 has no such entry.
+Verify each identity's owning
 plugin and installed source revision; a same-named skill from another marketplace
 does not establish this bundle's discovery. Reconcile duplicate sources only in
 the adopting project's scope, preserving unrelated installations and user defaults.

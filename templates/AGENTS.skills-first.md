@@ -31,8 +31,11 @@ exceptions with evidence, an owner and revisit condition. Configuration-only
 requests report remaining refactoring instead of silently performing it.
 
 Read project AGENTS.md and linked authorities first. This project records sources
-in `.skills-first/bundle.lock.json`. The starter authors and distributes zero
-agent skills; it supplies stack configuration, provenance and project policy.
+in `.skills-first/bundle.lock.json`. The starter owns only the narrow
+`update-gz-template` skill; it supplies stack configuration, provenance and project
+policy. Use that project skill, or `docs/updating.md` in the reviewed starter,
+for canonical template-update review and migration. Generic maintenance remains
+with gz-skills; this is not a second dependency updater.
 Its guidance highlights the emphasis when using gz-skills: dependency freshness,
 current Python practices, portability and obedience to adopted project policy.
 For project operations, use project-owned skills. For feature work, use the

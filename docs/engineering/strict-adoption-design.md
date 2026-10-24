@@ -206,7 +206,8 @@ template and plugin identities:
 
 These are starter-specific binding/provenance checks. Generic dependency
 maintenance and release execution should compose the upstream workflows;
-the starter still authors zero agent skills and does not vendor their logic.
+generic engineering remains upstream-owned. Version 0.6's sole
+owned skill is the canonical template-update entry; it does not vendor upstream logic.
 
 ## Other opinionated choices to settle
 
@@ -223,7 +224,7 @@ the starter still authors zero agent skills and does not vendor their logic.
 | Hexagonal domain/adapter boundaries; TDD/BDD/DDD for consequential behavior | Python engineering | Clarify applicability in small lite projects, libraries and simple scripts. |
 | Review current Python idioms and advances, with documented adopt/defer decisions | baseline-policy; 3.14 opportunity guide | Define bounded evidence so current syntax alone cannot be mistaken for completion. |
 | SP feature work, gz-skills engineering/maintenance; Backplane deferred | architecture; adoption | Confirmed: retain intended heavy composition including Backplane; expose current readiness separately. Lite activation mapping remains to settle. |
-| Zero starter skills, no vendoring, no gzkit adoption | structure; architecture | Retain ownership boundary while adding deterministic policy validation. |
+| One native template-update skill; other skills upstream/project-owned; no vendoring or gzkit adoption | structure; architecture | Version 0.6 is the narrow user-directed exception to the previous zero-skills rule. |
 | Conflict preservation; no forced upgrades or automatic app refactor | helper; configuration | Add a supported reviewed reconciliation path rather than treating refusal as migration support. |
 | Independent versions, immutable full-SHA pins, no automatic publication | versioning | Enforce release identity and delivery status in normal adoption paths. |
 | Quarterly on-demand freshness; no automatic schedule | baseline-policy | Decide whether freshness must be current at every release or only affected maintenance scope. |

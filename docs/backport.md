@@ -47,7 +47,8 @@ move. Verify behavior at the project's real seams before proceeding. Shared
 plugins remain separately pinned; never copy their trees into project skills.
 
 `configure` independently previews/applies the bundle configuration and the
-adopter instructions fragment. It creates no skill discovery tree. It does not perform structural moves. Existing
+adopter instructions fragment. Version 0.6 also seeds the single native
+template-update skill; it does not copy upstream skills or perform structural moves. Existing
 managed files from an earlier starter revision require a reviewed update diff;
 there is no force overwrite. A structural pilot and fresh-session discovery
 remain necessary before claiming adoption is verified.

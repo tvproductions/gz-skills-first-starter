@@ -1,6 +1,7 @@
 # Architecture and ownership
 
-The starter authors and distributes zero agent skills. It owns opinionated
+The starter owns one narrow `update-gz-template` skill, introduced in 0.6 as the canonical entry for adopter template updates. Generic
+engineering and dependency-update skills remain upstream-owned. It owns opinionated
 project policy, deterministic adoption tooling, configuration and provenance;
 upstream plugins and adopting projects own their skills. See the
 [structure contract](structure.md) and [migration guide](migration-0.3.md).
@@ -61,8 +62,8 @@ starter changes must not carry real operational records, credentials, machine
 paths, or sensitive source data. Examples and tests use invented fixtures only.
 
 The starter writes an instructions fragment with direct workflow references.
-Configure creates no skill discovery tree; legacy starter copies require reviewed
-reconciliation. Upstream skill trees are never copied. The
+Configure seeds only `.agents/skills/update-gz-template/SKILL.md`; legacy starter
+copies still require reviewed reconciliation. Upstream skill trees are never copied. The
 read-only `backport` assessment supports an agent-led source mapping and verified
 refactoring; it does not relocate app files or impose heavy-profile governance.
 
