@@ -7,6 +7,7 @@ import platform
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import tokenize
 from datetime import date
@@ -226,12 +227,32 @@ def evaluate(root):
         "flat_exceeds": flat(20),
         "nested_boundary": nested(5),
         "nested_exceeds": nested(6),
+        "conditional_tuple": (
+            "def choose(x):\n    return ("
+            + ", ".join(f"{i} if x[{i}] else 0" for i in range(9))
+            + ")\n"
+        ),
+        "conditional_keywords": (
+            "def choose(x):\n    return dict("
+            + ", ".join(f"k{i}={i} if x[{i}] else 0" for i in range(9))
+            + ")\n"
+        ),
     }
     with tempfile.TemporaryDirectory(prefix="starter-complexity-") as temporary:
         directory = Path(temporary)
         observations = {name: observe_case(name, code, directory) for name, code in cases.items()}
         verify_cases(observations, directory)
+    failures = [
+        {"case": name, "expected": 9, "observed": observations[name]["cognitive"].get("choose")}
+        for name in ("conditional_tuple", "conditional_keywords")
+        if observations[name]["cognitive"].get("choose") != 9
+    ]
     return {
+        "compatibility": "failed" if failures else "passed",
+        "cognitive_canary_failures": failures,
+        "qualification_fixtures": {
+            name: cases[name] for name in ("conditional_tuple", "conditional_keywords")
+        },
         "date": date.today().isoformat(),
         "python": platform.python_version(),
         "versions": {
@@ -277,7 +298,8 @@ def main():
     print(
         json.dumps(
             {
-                "compatibility": "passed",
+                "compatibility": receipt["compatibility"],
+                "cognitive_canary_failures": receipt["cognitive_canary_failures"],
                 "python": receipt["python"],
                 "versions": receipt["versions"],
                 "violating_sources": [
@@ -288,7 +310,8 @@ def main():
             }
         )
     )
+    return 1 if receipt["compatibility"] == "failed" else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

@@ -18,20 +18,27 @@ adoption change. This policy does not authorize a broad application refactor.
 
 ### Latest stable within the selected family
 
-Baseline Python tooling must use the latest stable release within each explicitly
-selected release family. The allowed Python families are **3.14.x for ordinary
-projects** and **3.12.x for XPPython3-bound projects**. Check official release
+Baseline tooling must use its latest stable release across tool families. An old
+family restriction is not a freshness exemption; review new stable families and
+verify compatibility before selecting exact pins. The allowed Python families are **3.14.x for ordinary
+projects** and **3.12.x for XPPython3-bound projects**. Ordinary GZ code
+deliberately stays one stable minor behind (N-1); this keeps 3.14 while 3.15
+is latest. Use the newest verified patch in that family and review a coordinated
+family migration when N-1 changes. Tooling still follows latest stable releases. Check official release
 information at new-project setup, adoption,
-scoped tool upgrades and quarterly on-demand maintenance. Do not use an older
+scoped tool upgrades, before every release and quarterly on-demand maintenance. Do not use an older
 patch merely because it is installed or satisfies a minor-only selector.
 
 Declare each other baseline tool's approved family in project configuration or
 decisions using that tool's actual release/compatibility scheme; do not assume all
 tools follow Python's versioning. Apply this rule to uv, Ruff, ty, pre-commit and
 the selected on-demand analyzers. Tools not yet installed or verified remain
-adoption gaps. Family changes require a separate compatibility decision.
+adoption gaps. Tool family changes require compatibility review; retaining an
+older family requires an explicit evidenced, owned and dated exception. Such a
+selection is conditional/noncurrent, not strict freshness acceptance.
 
-Verify the newest stable release in the approved family, run the relevant checks,
+Verify the latest stable tooling and the latest patch in the approved Python
+family, run the relevant checks,
 then record exact runtime/tool pins and locks. Use the exact Python patch in
 `.python-version` and CI; commands must honor it rather than override it with
 `--python 3.14`. Verify the executing interpreter, including existing virtual
@@ -45,8 +52,8 @@ revisit condition. Report that as an exception, not a current baseline claim.
 Preserve adopter dependencies and explicit overrides. Keep these preferences
 starter-owned; no upstream plugin policy, hooks or schedules follow from them.
 
-As checked October 11, 2026, Python's current baseline patch is
-[3.14.8](https://www.python.org/downloads/release/python-3148/). Recheck at the next
+As checked October 24, 2026, Python's current 3.14 baseline patch is
+[3.14.9](https://www.python.org/downloads/release/python-3149/). Recheck at the next
 setup or maintenance event; this date is not an evergreen latest-version claim.
 
 Use uv-managed Python in the selected family. Confirm the actual interpreter through
@@ -56,7 +63,7 @@ Keep `requires-python`,
 Use the same workflow with Python 3.12 for XPPython3-bound code, aligning metadata
 and Ruff/ty targets to 3.12. The family is the policy; the exact patch is the
 project's verified execution selection, refreshed during authorized maintenance.
-The starter's 3.14.8 pin is not a permanent patch requirement for adopters.
+The starter's 3.14.9 pin is not a permanent patch requirement for adopters.
 
 XPPython3 embeds its interpreter: its current
 [installation documentation](https://xppython3.readthedocs.io/en/latest/usage/installation_plugin.html)
@@ -161,16 +168,17 @@ run an explicit acceptance preflight rather than adding them to every change.
 Record actual tool versions, source scope, results, reviewed findings and
 applicability. Missing compatibility/installation or unperformed required checks
 remain UNKNOWN and block strict acceptance. Legacy failures remain failures;
-an accepted exception is conditional, never a clean measurement. A package's
-release can distribute policy or record gaps without claiming full baseline
-acceptance; release notes must disclose that distinction. Resolve and pin development tools
+an accepted exception is conditional, never a clean measurement. Required stale
+or unknown freshness and a known incorrect analyzer block strict release/adoption
+acceptance; a passing routine gate or maintenance-skill summary cannot override
+that result. Resolve and pin development tools
 through uv after their Python 3.14 compatibility is established. Use explicit
 source/test scopes and invented fixtures; exclude operational data and records.
 
 | Tool | Required interpretation |
 | --- | --- |
 | Ruff C901 | On-demand cyclomatic ceiling 20 per function; never raise the threshold to pass |
-| complexipy | On-demand cognitive ceiling 15 per function/module-level script; exposes nesting/readability costs |
+| Cognitive scoring | Required ceiling 15; use the selected gzkit-derived CPython AST approach after qualification. Complexipy is retained locally only for defect reproduction, not acceptance authority. |
 | Lizard | Per-function cyclomatic measurements and module/project aggregates for a reviewed C/C/C approximation; do not claim Radon-equivalent scores |
 | cohesion | Required adopter on-demand class cohesion analysis; review attribute-sharing scores against class responsibilities and project context |
 | Interrogate | Measure docstring presence; review usefulness and correctness separately |
@@ -186,6 +194,24 @@ These selections form the minimum adoption/release and on-demand analysis standa
 they are not determined by which tools the starter's helper needs. Adopters may
 extend this standard with project-specific checks. Required selection does not
 prove installation, compatibility or clean results.
+
+### Cognitive analyzer qualification
+
+The user selected gzkit's CPython AST approach as the replacement direction.
+Prefer one shared, separately versioned engine used by gzkit and this starter;
+do not import the whole gzkit lifecycle or create an unrelated scoring model.
+The extraction review must resolve discovery coverage and preserve a documented
+metric contract before replacing the acceptance tool.
+
+Complexipy 8.1.0 is installed for evaluation but is not qualified as sole evidence
+for cognitive acceptance. The October 24 probe reproduces a blind spot: nine
+conditional expressions in keyword argument values score zero, while equivalent
+tuple expressions score nine. The compatibility probe now records the failed
+canary and exits nonzero. A successful complexipy CLI run cannot override that
+failure. Keep the cognitive ceiling of 15; require qualified replacement or
+independent evidence before claiming that requirement passes. Historical passing
+receipts retain their narrower observed scope, not an evergreen qualification.
+See [the defect assessment](../evidence/2026-10-24-complexipy-assessment.md).
 
 ### Adopter class cohesion requirement
 
@@ -235,8 +261,8 @@ no known advisories is not proof of absence of vulnerabilities. Do not run
 
 ### Complexity policy: Ruff, complexipy and Lizard
 
-Ruff 0.15.18 and complexipy 8.0.1 passed the starter's focused Python 3.14.8
-syntax, threshold-boundary and invalid-syntax checks. The selected toolchain now adds Lizard 1.24.1 and retires both Xenon and
+Historically, Ruff 0.15.18 and complexipy 8.0.1 passed focused Python 3.14.8
+syntax, threshold-boundary and invalid-syntax checks. The current cyclomatic toolchain selects Lizard 1.24.3 and retires both Xenon and
 Radon. The saved two-tool receipt is historical; use the new three-tool receipt
 for Lizard evidence. Ruff measures cyclomatic branching;
 complexipy adds cognitive costs such as nesting. Use cyclomatic 20 and cognitive
@@ -338,7 +364,8 @@ template/plugin inventory. Review mode leaves pins and environments unchanged.
 Preserve this starter's Python 3.14 family and retired Xenon/Radon decisions over
 upstream profile defaults; the pin update does not select a lite/heavy profile.
 
-At adoption, reviewed tool upgrades and quarterly on-demand maintenance, apply
+At setup/adoption, before every release, reviewed tool upgrades and quarterly
+on-demand maintenance, apply
 the [configuration and baseline contract](../project-configuration.md)
 and [stack maintenance binding](../adoption.md#maintaining-the-adopted-stack).
 Include the adopted starter revision, SP, SP-BP and gz-skills alongside runtime

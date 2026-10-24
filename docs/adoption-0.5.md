@@ -21,6 +21,13 @@ Published 0.5.0 itself is unchanged and has no native update skill.
 
 ## Shared requirements in both lanes
 
+The 0.7 development policy requires latest stable baseline tooling across
+families and a fresh official-source review at adoption and before release.
+Older ranges are not freshness exemptions. Keep exact pins after verification;
+required stale/unknown evidence blocks acceptance. Explicit Python/host family
+policy and evidenced conditional exceptions remain visible. The current
+complexipy qualification defect cannot be treated as a passing cognitive check.
+
 Explicitly choose `lite` or `heavy` with the pinned `gzs-project-setup` workflow.
 Keep its two-field `.gz-skills/settings.json` schema; do not add starter policy
 fields there. Missing settings or `profile: null` means lane selection is pending.
@@ -64,9 +71,11 @@ uv run --locked skills-first-starter validate
 
 The two SHAs must match and the checkout must be clean. Review the GitHub release,
 changelog and [versioning contract](versioning.md). The version command must
-report 0.6.0; keep the full SHA as well. Use the checkout's required uv version,
-currently 0.13.1. A machine with another uv version can run a command through
+report 0.6.0; keep the full SHA as well. These published-release examples require
+uv 0.13.1. A machine with another uv version can use
 `uv tool run --from uv==0.13.1 uv ...` without replacing its global installation.
+The unreleased 0.7 development checkout instead requires uv 0.13.5; use
+`uv tool run --from uv==0.13.5 uv ...` only when working with that checkout.
 
 This starter's Python/tool pins are its tested execution environment, not an
 evergreen freshness certificate for a new adopter. Verify latest stable patches
@@ -79,10 +88,13 @@ merely to configure the stack. Use the scoped upstream maintenance workflow.
 1. Establish the product root, purpose, application/library/workspace kind,
    supported environments and public API/CLI/data/configuration contract. Choose
    lite or heavy explicitly; keep its selection separate from installed readiness.
-2. Initialize with the verified uv/Python selection. Prefer `uv init --app` or
-   `uv init --lib`; inspect the generated `src/` layout, build backend, entry
-   points and typing marker. Workspace/native/namespace variants follow their
-   actual documented triggers, not an invented one-size-fits-all layout.
+2. If no `pyproject.toml` exists, initialize with the verified uv/Python selection:
+   use `uv init --app --package --build-backend uv` or
+   `uv init --lib --build-backend uv`. Inspect generated `src/`, backend, entry
+   points and typing data. If a reviewed template already supplied pyproject,
+   reconcile that metadata and product identity directly; do not delete it just
+   to run init. Inspect parent workspace discovery before initialization.
+   Workspace/native/namespace variants follow their actual documented triggers.
 3. Reconcile the [Python engineering policy](engineering/python.md): exact Python
    pin, supported family, uv_build for pure Python, centralized configuration,
    dependency groups and uv-generated lock, strict Ruff/ty, unittest and the four
@@ -112,6 +124,16 @@ merely to configure the stack. Use the scoped upstream maintenance workflow.
    installed behavior; generated files alone do not establish acceptance.
 
 ## Brownfield: first adoption into a working product
+
+| Existing state | Initialization decision |
+| --- | --- |
+| Code/requirements files, no pyproject | Init can create metadata/scaffolding after inventory; migrate existing code/dependencies explicitly afterward |
+| Existing pyproject, including tool-only configuration | Skip init; preserve and reconcile metadata, layout and dependencies directly |
+| Existing uv-managed project | Skip init; assess/reconcile the actual baseline and acceptance evidence |
+
+uv init is an initializer, not a code/dependency migration command. It refuses an
+existing pyproject; do not remove that authority to make initialization succeed.
+The same required target baseline and acceptance apply to all three cases.
 
 1. Inspect the target's instructions, Git revision/dirty state, public behavior,
    data boundaries, existing runtime/tooling/CI, dependencies and source overrides,

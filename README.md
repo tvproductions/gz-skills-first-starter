@@ -9,6 +9,10 @@ usefulness to other adopters is welcome, rather than a reason to dilute them.
 
 This repository is the bundle catalog, adoption tool, and guidance home.
 
+Development: **0.7.0 is unreleased**. It tightens latest-tooling ownership for
+the starter and adopters, refreshes the toolchain and records the complexipy
+qualification defect. The latest published template remains **0.6.0**.
+
 Version **0.6.0** includes the single template-owned `update-gz-template` skill.
 See [canonical template updates](docs/updating.md), including bootstrap for
 0.5.0 and earlier adopters.
@@ -103,17 +107,18 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current handoff](docs/handoffs/2026-10-24-0.6.0-release.md).
+[the current handoff](docs/handoffs/2026-10-24-0.7-latest-tooling.md).
 
 ## Quick start: an existing or empty project
 
 Requires uv, Python 3.14, Git, and Codex with plugin support. GitHub CLI is useful
 for checking upstream releases; Backplane's GitHub workflows remain deferred. No Python dependencies are needed for this tool.
 
-Baseline Python tools use the latest stable release within their selected family,
-with exact pins after verification. Adopters stay current within Python 3.14.x,
+Baseline tools use their latest stable release across tool families, with exact
+pins after verification. Explicit Python/host runtime families remain distinct;
+an older tool family is not a freshness exemption. Adopters stay current within Python 3.14.x,
 or host-compatible 3.12.x for XPPython3-bound code. This starter's execution pin
-is 3.14.8 (checked October 11, 2026), not a permanent adopter patch requirement.
+is 3.14.9 (checked October 24, 2026), not a permanent adopter patch requirement.
 Recheck at setup/adoption and scoped maintenance;
 an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
@@ -174,22 +179,22 @@ for its own catalog, including the released Pythonic pattern review/apply pair.
 Profile setup remains a separate explicit adopter choice. Existing adopters
 reconcile retired starter skill copies using the [migration guide](docs/migration-0.3.md).
 
-## The initial bundle
+## This checkout's bundle
 
 The canonical pins are in [bundle.json](bundle.json). Both native catalogs use
 those exact full commit SHAs, not moving branches.
 
 | Component | Initial baseline | Owns |
 |---|---|---|
-| [Superpowers](https://github.com/obra/superpowers) | v7.0.0 | Feature design, plans, implementation, review |
+| [Superpowers](https://github.com/obra/superpowers) | v7.0.1 | Feature design, plans, implementation, review |
 | [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | Deferred; disabled by default | GitHub-backed backlog and handoff continuity |
 | [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-The latest template release is 0.6.0.
-It selects Superpowers
-[v7.0.0](https://github.com/obra/superpowers/releases/tag/v7.0.0), the latest stable
-release checked October 11, 2026. The old v6.4.1 selection came from Backplane's
+The latest published template, 0.6.0, retains its original SP 7.0.0 selection.
+This unreleased 0.7 checkout selects Superpowers
+[v7.0.1](https://github.com/obra/superpowers/releases/tag/v7.0.1), the latest stable
+release checked October 24, 2026. The old v6.4.1 selection came from Backplane's
 recorded compatibility proof; deferred Backplane does not constrain active SP
 updates. Review SP independently using the update guide. See the
 [update assessment](docs/evidence/2026-10-11-superpowers-7.0.0.md) for scope and
@@ -230,7 +235,7 @@ See [architecture](docs/architecture.md), [adoption](docs/adoption.md), and
 uv sync --locked --all-groups
 uv run --locked pre-commit run --all-files
 uv run --locked skills-first-starter validate
-uv build
+uv build --no-sources
 uv run --locked python tools/verify_distribution.py
 ```
 
@@ -240,12 +245,15 @@ Python 3.14; Ruff check/format, ty, unittest and pre-commit; current idioms;
 stdlib-first code and explicit domain/adapter boundaries. See the versioned
 [Python engineering policy](docs/engineering/python.md), including the
 XPPython3 version exception and on-demand hygiene selections: Ruff C901 plus
-complexipy and Lizard (retiring Xenon and Radon),
+cognitive scoring at ceiling 15 and Lizard (retiring Xenon and Radon),
 Interrogate, Vulture, Bandit, Coverage.py, Cosmic Ray, deptry, pip-audit and
 Import Linter, plus cohesion for adopter class cohesion analysis. These selections
 form an adopter minimum standard, independent of the starter helper's own needs.
 Adopters own cohesion pins and runtime verification. These deeper checks stay
-outside hooks and CI.
+outside routine hooks and routine CI. Complexipy is retained only to reproduce
+its qualification defect; the selected gzkit-derived shared scorer is deferred
+and not installed. Cognitive acceptance remains blocked. See the
+[assessment](docs/evidence/2026-10-24-gzkit-cognitive-extraction.md).
 
 The starter packages its helper under `src/skills_first_starter/`, uses uv_build,
 and pins Ruff, ty and pre-commit in its dev group. The approved four routine hooks

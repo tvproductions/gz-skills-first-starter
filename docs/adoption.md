@@ -250,8 +250,9 @@ select a lite/heavy profile or invoke setup as part of a bundle update.
    [SP releases](https://github.com/obra/superpowers/releases),
    [SP-BP releases](https://github.com/tvproductions/superpowers-backplane/releases)
    and [gz-skills releases](https://github.com/tvproductions/gz-skills/releases).
-   Prefer the latest stable release within a project's explicitly selected
-   compatibility family; review family changes separately. For sources with no
+   Assess the latest stable release, including new families, against project
+   compatibility policy. Review family changes and record any retained older
+   release as an explicit exception; an old range is not proof of freshness. For sources with no
    published release, record that fact and a reviewed full published commit SHA;
    label it as an unreleased snapshot. A successful query with no release is
    different from an authentication/network failure. Never record moving branches

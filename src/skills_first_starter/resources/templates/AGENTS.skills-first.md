@@ -83,9 +83,16 @@ For projects adopting the starter's Python baseline, use the latest stable
 release allowed by `docs/baseline-policy.md` at the recorded starter revision;
 compare newer published policy during maintenance. It defines allowed ranges
 and exception reasons separately from this checkout's tested execution pins.
-Select the latest stable
-release within each explicitly selected Python/tool release family. Python's
-family is 3.14.x normally and 3.12.x for XPPython3-bound code: verify the latest
+Require the latest stable baseline tools across tool families. Review new stable
+families and verify compatibility; an old range or exact pin is not a freshness
+exemption. Required stale/unknown freshness blocks adoption and release acceptance.
+The adopter owns that decision even when gz-skills performs the review. Retained
+older tools need an explicit evidenced exception, owner and dated revisit and
+remain conditional/noncurrent. Check official releases at setup/adoption, before
+each release and scoped maintenance; pin the verified selections afterward. Python's
+family follows the user-directed N-1 rule: one stable minor behind, currently
+3.14.x for ordinary projects. XPPython3-bound code retains its supported 3.12.x
+host exception. This runtime policy does not exempt old tool families. Verify the latest
 stable host-compatible patch from official sources at setup/adoption
 and scoped maintenance, then pin that exact patch for local execution and CI.
 An already-installed version or a `3.14` selector does not prove freshness.
@@ -112,7 +119,13 @@ class cohesion analysis; verify its standalone CLI on the selected runtime and
 representative invented classes. Record scopes, scores and reviewed findings;
 record not-applicable scopes with reasons and report missing installation or
 compatibility evidence as gaps. Preserve project-specific thresholds and keep
-cohesion outside hooks and CI gates. See the reviewed starter's
+cohesion outside routine hooks and routine CI. Complexipy is under qualification
+review: known keyword-conditional under-counting means a clean score alone cannot
+pass cognitive acceptance. Read the current qualification evidence before relying
+on that analyzer. The selected replacement direction is gzkit's CPython AST
+scoring approach, preferably through one shared package; qualification and
+distribution must be verified before claiming it is installed or authoritative.
+See the reviewed starter's
 `docs/engineering/python.md` for the full selected tool set and interpretation.
 
 Keep code current with its selected Python family, not just its interpreter pin.
@@ -132,7 +145,8 @@ verified mapping; those workflows do not establish a complete version audit.
 Report missing workflow coverage rather than inventing a starter skill or claiming
 that a current runtime proves current code.
 
-At adoption, scoped upgrades and quarterly on-demand maintenance, check this starter template, Superpowers,
+At setup/adoption, before each release, scoped upgrades and quarterly on-demand
+maintenance, check this starter template, Superpowers,
 Superpowers Backplane and gz-skills independently for upstream updates. Compare
 the recorded starter/component SHAs with official published releases; where no
 release exists, distinguish a reviewed published commit from a stable release.

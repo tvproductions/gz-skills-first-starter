@@ -63,9 +63,17 @@ rules. These obligations do not authorize publication or adopter-file rewrites.
 
 ## Allowed Python families
 
+Ordinary GZ projects deliberately stay **one stable Python minor release behind**
+(N-1). Python 3.15 is currently the latest stable minor, so the selected family
+is 3.14, always at its latest verified patch. This is an explicit runtime policy,
+not permission to keep old tool families. Review the N-1 selection when Python
+adds a stable minor and migrate deliberately; do not silently change interpreter
+families during dependency resolution. Host-bound code follows its supported
+runtime exception instead.
+
 | Project scope | Allowed range | Selection rule | Reason |
 | --- | --- | --- | --- |
-| Ordinary Python project | `>=3.14,<3.15` | Latest verified stable 3.14 patch | Starter's selected engineering baseline |
+| Ordinary Python project | `>=3.14,<3.15` | Latest verified stable 3.14 patch | User-directed N-1 runtime policy |
 | XPPython3-bound code | `>=3.12,<3.13` | Latest verified stable host-compatible 3.12 patch; record the actual embedded patch separately | Host compatibility, not a general preference for an older Python |
 
 These ranges select one minor family per scope, not permission to resolve any
@@ -106,13 +114,21 @@ pins and runtime verification. Record inapplicable scopes and compatibility gaps
 explicitly; keep these checks outside hooks and CI gates. Adopters may add
 project-specific tools without weakening the adopted minimum.
 
-For each baseline tool, explicitly select its allowed release family/range using
-its own compatibility scheme, then use the latest verified stable release in
-that family. This starter does not yet establish universal allowed families for
-every selected tool. Existing exact tool pins are tested reproducibility anchors,
-not evidence of a minimum supported version or a settled compatibility range.
-Record unsettled ranges as a policy gap; do not invent support from a pin or
-silently replace it with an unbounded `>=` constraint.
+Use the latest stable release of every selected baseline tool, verified against
+official live sources. This binds the starter itself and both adopter lanes.
+Compare newer stable families as well as patches: an old allowed range or exact
+pin cannot be used to declare a stale tool current. Review release changes and
+compatibility, adopt the newest stable selection, then retain exact pins/locks.
+The explicit Python/embedded-host families above remain separate runtime policy.
+
+An older tool is permitted only as an explicit compatibility exception with
+evidence, an owner, accepted-by authority and a dated revisit. It remains
+noncurrent/conditional; do not claim strict freshness acceptance. Missing latest
+release evidence, untested compatibility or a known incorrect analyzer is not a
+passing result. Do not widen application support claims or override dependency
+constraints merely to obtain a newer resolution. Application dependency intent
+remains project-owned; assess its latest stable compatible selections and record
+why an older constraint is retained.
 
 Application dependencies and their compatibility bounds remain project-owned.
 SP, SP-BP and gz-skills remain independently versioned with full-SHA source pins.
@@ -162,9 +178,10 @@ upstream capability before changing the project's routing or claiming coverage.
 
 ## Reproducible execution and maintenance
 
-Check official release information at adoption, scoped upgrades and quarterly
-on-demand maintenance. Verify the newest stable release in the allowed family
-against relevant project checks, then record the exact selected Python patch in
+Check official release information at setup/adoption, before each release, scoped
+upgrades and quarterly on-demand maintenance. Verify the latest stable tooling
+and latest patch in the explicitly approved Python family against relevant
+project checks, then record the exact selected Python patch in
 `.python-version` and CI and exact dependency/tool resolutions in the appropriate
 lock/configuration. Keep that environment stable between authorized updates;
 do not resolve a moving latest version on every run. A freshness-only review
@@ -174,7 +191,12 @@ An installed interpreter, an allowed range or a passing lock validation does not
 establish freshness. Record the checked date, selected/latest versions, official
 evidence, compatibility findings and adopt/defer decision. A demonstrated
 compatibility exception requires a reason and revisit condition. A new family
-requires separate review; a newer template does not silently change project policy.
+requires compatibility review, not automatic indefinite deferral; a newer
+template does not silently change project policy. The starter maintainer and each
+adopter own release/adoption eligibility: required stale, unknown or unverified
+freshness evidence blocks acceptance. gz-skills supplies the maintenance workflow;
+it does not replace this responsibility. Retain dated evidence for the actual
+candidate inputs and recheck live releases for each release preparation.
 
 The starter itself also needs an exact interpreter/tool set to verify its helper.
 Its `.python-version`, CI, `pyproject.toml` and `uv.lock` describe that checkout's

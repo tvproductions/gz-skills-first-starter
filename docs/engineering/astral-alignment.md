@@ -27,6 +27,17 @@ files: defaults can change. Current uv documentation describes packaged `src/`
 applications by default since uv 0.12; earlier application defaults differ.
 See [creating projects](https://docs.astral.sh/uv/concepts/projects/init/).
 
+Initialization depends on existing metadata, not whether the product is called
+greenfield or brownfield. When creating a new ordinary Python project without
+`pyproject.toml`, use `uv init --app --package --build-backend uv` or
+`uv init --lib --build-backend uv`, with the verified exact Python selection.
+Inspect workspace discovery before running init; do not accidentally enroll a
+standalone project in a parent workspace. Existing code without pyproject may
+use init after inventory, but generated scaffolding does not migrate that code.
+If pyproject already exists, including a tool-only file or one copied from this
+template, preserve and reconcile it directly. Do not delete it to rerun init.
+uv refuses init in that case. Creation commands do not replace acceptance proof.
+
 Intentional namespace parents and stub-only distributions follow uv_build's
 documented namespace/stub layout, verified in built artifacts and installed
 consumers. Do not add namespace-parent `__init__.py` files that alter discovery.
@@ -103,9 +114,10 @@ the evidenced XPPython3 host exception. Align the actual interpreter, exact pin,
 resolution; document allowed tool families and verify freshness within them.
 Do not adopt preview features solely to maximize the number of enabled options.
 
-This checkout selects uv/uv_build 0.13.x, Ruff 0.15.x, pre-commit 4.x,
+This checkout selects uv/uv_build 0.13.x, Ruff 0.17.x, pre-commit 4.x,
 complexipy 8.x and Lizard 1.24.x. Exact tested selections live in configuration
-and locks. Required ty uses its current 0.0.x beta family because no stable
+and locks. These execution selections do not exempt newer stable tool families
+from review under the latest-tooling requirement. Required ty uses its current 0.0.x beta family because no stable
 release exists; the starter maintainer owns this exception and must revisit it
 at stable release or the next scoped maintenance. See the
 [migration receipt](../evidence/2026-10-18-astral-alignment.md).

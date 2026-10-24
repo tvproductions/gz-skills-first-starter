@@ -136,8 +136,8 @@ def assess(root, paths):
         import lizard
 
         receipt["lizard_version"] = version("lizard")
-        if receipt["lizard_version"] != "1.24.1":
-            raise ValueError("Contract requires reviewed Lizard 1.24.1; revalidate before upgrades")
+        if receipt["lizard_version"] != "1.24.3":
+            raise ValueError("Contract requires reviewed Lizard 1.24.3; revalidate before upgrades")
         files = source_files(root, paths)
     except (ImportError, ValueError, OSError) as error:
         receipt["errors"].append({"message": str(error)})

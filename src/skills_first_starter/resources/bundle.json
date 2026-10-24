@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "name": "skills-first-starter",
-  "template_version": "0.6.0",
+  "template_version": "0.7.0",
   "components": [
     {
       "name": "superpowers",
       "repository": "https://github.com/obra/superpowers",
-      "release": "v7.0.0",
-      "revision": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "release": "v7.0.1",
+      "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
       "status": "released; selected independently of deferred Backplane",
       "enabled_by_default": true
     },

@@ -53,7 +53,11 @@ When present at the target, `docs/updating.md` owns the canonical update and
 older-adopter bootstrap method. Reconcile this project skill along with the
 other managed content; adding it alone does not upgrade the adopted baseline.
 
-Compare policy changes as well as pins. Explain what applies to this product,
+Compare policy changes as well as pins. Enforce the target's latest-tooling
+requirement: an old allowed tool family is not proof of currency. Required stale
+or unknown freshness blocks strict acceptance; record any explicit owned
+compatibility exception as conditional/noncurrent. The adopter retains this
+responsibility when composing an upstream maintenance skill. Explain what applies to this product,
 what needs reconciliation and what is deferred. If `gzs-update-dependencies`
 is actually discovered, compose its template-inventory/review or scoped-update
 mode under project policy. Its absence does not prevent reading the release and

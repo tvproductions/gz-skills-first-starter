@@ -1,5 +1,47 @@
 # Changelog
 
+## 0.7.0 — Unreleased
+
+- Confirm the user-directed Python N-1 policy for ordinary GZ projects: stay
+  one stable minor behind (currently 3.14), with the latest verified patch.
+  Latest-tooling requirements and the host-controlled runtime exception remain
+  distinct. Assess gzkit's scorer as a candidate for a tiny shared package.
+
+The [latest-toolchain receipt](docs/evidence/2026-10-24-latest-toolchain.md) records
+actual updates and checks. Strict cognitive acceptance remains blocked.
+
+- Require latest stable baseline tooling across tool families for this starter
+  and both adopter lanes. Older family ranges/pins are not freshness exemptions;
+  stale or unknown required evidence blocks acceptance. Keep the explicit Python
+  runtime-family policy and evidenced compatibility exceptions visible.
+- Refresh execution to Python 3.14.9, uv/uv_build 0.13.5, Ruff 0.17.2, ty 0.0.91,
+  complexipy 8.1.0 and Lizard 1.24.3, with setup-uv v10.3.2. Resolve transitive
+  locks through uv; pre-commit/Cosmic Ray and the routine hook set are retained.
+  Update SP to released v7.0.1 at its exact tag commit in both catalogs; retain
+  current gz-skills and explicitly deferred Backplane.
+- Enforce source-independent builds in the existing CI artifact check with
+  `uv build --no-sources`, matching local acceptance guidance.
+- Add a cognitive qualification canary: complexipy 8.1.0 scores nine keyword
+  conditional expressions zero. The compatibility probe must fail rather than
+  certify that analyzer. Independent cognitive qualification/replacement remains
+  open; this candidate is not eligible for an unqualified strict release.
+
+- Record a read-only [tooling freshness review](docs/evidence/2026-10-24-tooling-freshness.md):
+  the released Python/uv/build/ty/complexipy/Lizard selections have newer
+  same-family releases. Report newer Ruff/CI-action families and SP independently;
+  no upgrades or compatibility claims are made by this review.
+
+- Clarify uv initialization by existing metadata: use init for new ordinary
+  projects without pyproject, preserve/reconcile existing or template-generated
+  metadata, and explicitly migrate brownfield code/dependencies. Replace weak
+  greenfield “prefer” wording with the canonical packaged initialization path.
+
+- Make this repository's tooling-maintenance routine explicit in AGENTS.md:
+  read-only freshness review before starter release preparation, inventory of
+  execution/CI/plugin pins, dated evidence and explicit retain/update decisions.
+  Keep upgrades scoped and verified; no pins, environments, hooks or schedules
+  change as part of this instruction update.
+
 ## 0.6.0 — October 24, 2026
 
 - Add the single template-owned `update-gz-template` skill as the canonical

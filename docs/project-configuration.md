@@ -116,22 +116,22 @@ authorization. Apply the guidance below as this project's binding, preserving
 its approved Python family, retired tools and explicit profile choices over
 upstream defaults.
 
-The required baseline rule is **latest stable within the explicitly selected
-release family**. Python's family is 3.14.x normally and 3.12.x for XPPython3-bound
+The required baseline rule is **latest stable tooling**, including review of
+new stable tool families. An older family is not a freshness exemption. Python's family is 3.14.x normally and 3.12.x for XPPython3-bound
 projects. Exact patches record verified execution choices; adopters must refresh
 them rather than retain the starter's patch indefinitely. The embedded XPPython3
 runtime remains host-controlled; document limitations and validate it separately.
 At setup/adoption and scoped
 maintenance, verify the latest patch from official sources, test it, and record
 an exact runtime pin shared by local execution and CI. For other baseline Python
-tools, explicitly declare the approved family according to the tool's versioning
-scheme and select its newest stable release. An installed version, minor-only
+tools, assess the latest stable upstream release across families under the tool's
+versioning scheme; an old range requires an evidenced exception, not a current claim. An installed version, minor-only
 selector or old lock does not establish freshness. Family changes require
 separate review; compatibility exceptions need evidence and a revisit condition.
 See the [Python baseline rule](engineering/python.md#latest-stable-within-the-selected-family).
 
-The current Python pin is 3.14.8, checked October 11, 2026 against the
-[official release](https://www.python.org/downloads/release/python-3148/).
+The current Python pin is 3.14.9, checked October 24, 2026 against the
+[official release](https://www.python.org/downloads/release/python-3149/).
 `requires-python` describes the allowed 3.14 family; `.python-version` selects
 the exact execution patch. Other tool pins have not been refreshed in this change.
 
@@ -142,7 +142,8 @@ Do not turn them into unbounded `>=` requirements without testing the intended
 support range. Adopters may add bounded requirements and retain exact resolutions
 in their own lock; shared baseline changes do not automatically migrate them.
 
-At adoption, scoped tool upgrades and quarterly on-demand maintenance:
+At setup/adoption, before each release, scoped tool upgrades and quarterly
+on-demand maintenance:
 
 1. Inventory Python, uv, runtime/dev/hygiene packages, CI/hook tool versions, the
    adopted starter revision and pinned SP/SP-BP/gz-skills releases. Check current official release and compatibility

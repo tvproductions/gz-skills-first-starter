@@ -1,6 +1,7 @@
 # Template versioning
 
-The current template release is **0.6.0**; the initial release
+The development template version is **0.7.0 (unreleased)**. The latest published
+release remains **0.6.0**; the initial release
 was **0.1.0**. The 0.3
 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
 The current version is recorded in
