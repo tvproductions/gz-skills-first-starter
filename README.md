@@ -107,7 +107,7 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current handoff](docs/handoffs/2026-10-24-0.7-latest-tooling.md).
+[the current handoff](docs/handoffs/2026-10-24-session-close.md).
 
 ## Quick start: an existing or empty project
 

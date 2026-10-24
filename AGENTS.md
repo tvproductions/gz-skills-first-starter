@@ -10,7 +10,7 @@ and verification; do not generalize one target's proof to all product types.
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-10-24-0.7-latest-tooling.md`; recheck live state before work.
+`docs/handoffs/2026-10-24-session-close.md`; recheck live state before work.
 
 This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.
