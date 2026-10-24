@@ -5,7 +5,7 @@
   "strict_acceptance": "BLOCKED",
   "blockers": [
     "Complexipy keyword qualification fails; selected gzkit shared candidate has loop/match discovery gaps and is not integrated or qualified",
-    "Full remote CI/native-host and remaining wider baseline proofs are not claimed"
+    "Remaining wider baseline/deeper-analysis and native-host proofs are not claimed; routine Ubuntu CI has passed"
   ],
   "python": {
     "selected": "3.14.9",
@@ -114,7 +114,7 @@
   },
   "ci_actions": {
     "checkout": "v7.0.1 current; full SHA retained",
-    "setup-uv": "v10.3.2 latest; tag SHA verified; new CI execution remains unobserved"
+    "setup-uv": "v10.3.2 latest observed; tag SHA verified; exact-commit Ubuntu CI succeeded"
   },
   "qualification": {
     "compatibility": "failed",
@@ -139,5 +139,11 @@
     "tools/engineering/evaluate_complexity.py": "af74cee11e0943fea598a604d2c32aa74d5e60345e0e09bfb3b2e26da30ea3f3",
     "templates/AGENTS.skills-first.md": "905890079f9f1ba348803a52aeea1257e8e0fa5692c398fc24cfd499120b82ee",
     "tools/engineering/test_evaluate_complexity.py": "d39e02195d21d0c3dbde594887a102bbc39292512ed9ab89fb092724579101d7"
+  },
+  "remote_ci": {
+    "commit": "010a4620fd7af9f12e469bae080db4121075ae63",
+    "conclusion": "success",
+    "url": "https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40131519562",
+    "scope": "Routine checks, bundle validation, source-independent build and installed artifact checks; no deeper hygiene/native discovery proof"
   }
 }
