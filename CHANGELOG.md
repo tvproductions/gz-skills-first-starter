@@ -2,6 +2,9 @@
 
 ## 0.7.0 — Unreleased
 
+- Define this repository's Git sync ritual in AGENTS.md, independent of installed
+  skills: scoped review, checks, hooked commit, normal push, exact-commit CI and
+  explicit separation of sync completion from release acceptance.
 - Confirm the user-directed Python N-1 policy for ordinary GZ projects: stay
   one stable minor behind (currently 3.14), with the latest verified patch.
   Latest-tooling requirements and the host-controlled runtime exception remain

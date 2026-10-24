@@ -139,6 +139,45 @@ Strong Python/tool preferences belong to this starter and its project binding.
 Keep gz-skills and SP agnostic; SP-BP should remain agnostic as well. Do not
 propagate these choices into upstream plugins.
 
+## Git synchronization ritual
+
+When the user requests Git sync, follow this repository-owned procedure whether
+or not gz-skills is installed or discoverable. An available upstream workflow
+may assist; its absence does not excuse skipping these steps. Follow the user's
+requested branch/PR scope. A local commit alone is not a completed sync.
+
+1. Read project instructions and the current handoff. Inspect branch, worktree,
+   staged/unstaged changes and upstream. Fetch the intended remote and inspect
+   divergence before integrating changes. Preserve unrelated work; resolve
+   relevant conflicts without destructive resets or force pushes.
+2. Review the complete intended diff, including new files. Reconcile metadata,
+   locks, catalogs and packaged copies when affected. Update changelog/handoff
+   for meaningful behavior, policy, verification results and unfinished work.
+   Stage only the reviewed scope; do not sweep unrelated files into the commit.
+3. Use the checkout's required uv version and managed Python. If machine uv
+   differs, use `uv tool run --from uv==<required-version> uv ...`; nested hooks
+   must resolve the same uv. Run the documented repository gate above and
+   applicable changed-tool/analyzer checks. Keep the four routine hooks intact;
+   do not bypass failing checks. For documentation-only changes, reuse checks
+   already passed on the same relevant inputs rather than inventing tests.
+4. Commit the reviewed changes with the normal hooks enabled. Push the intended
+   branch using an ordinary push. If the remote advanced, fetch, reconcile and
+   rerun affected checks before retrying; never overwrite remote work.
+5. Verify remote branch SHA equals the intended local commit and observe CI for
+   that exact SHA through completion. A prior commit's green run is insufficient.
+   Fix failures within scope and repeat affected verification. If observation is
+   unavailable, report CI as unverified rather than calling the sync fully
+   verified. Recheck the final SHA after any evidence follow-up commit.
+6. Confirm local/remote alignment and inspect the remaining worktree. Report
+   branch/commit, push status, exact-commit CI link/result and any remaining
+   changes or blockers. Preserve material results in the existing handoff or
+   evidence record; do not create an endless chain of CI-receipt-only commits.
+
+Report Git synchronization, release acceptance and publication separately.
+Sync neither runs every deeper release analysis nor waives missing required
+evidence. Known deferred work stays explicit. Do not tag, publish, install
+plugins, or modify dependent repositories as an incidental sync action.
+
 ## Starter tooling maintenance
 
 Maintain this repository's own execution environment, not only adopter guidance.
