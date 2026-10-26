@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.1 — Planned
+
+- Book the deferred cognitive qualification correction as
+  [issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1),
+  after verified 0.7.0 publication. No correction is implemented or released;
+  ceiling 15 and the existing ownership/qualification requirements remain.
+
 ## 0.7.0 — October 26, 2026
 
 Published at the maintainer's explicit direction with cognitive qualification

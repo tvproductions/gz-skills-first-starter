@@ -17,7 +17,8 @@ The template refers to those workflows; it does not implement them.
 
 Release **0.7.0** maintains separate standard and X-Plane tool baselines,
 configures Dependabot scans, refreshes tooling and strengthens shared policy.
-The maintainer explicitly deferred cognitive qualification to planned **0.7.1**;
+The maintainer explicitly deferred cognitive qualification to planned
+[0.7.1, issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1);
 this release does not claim strict cognitive acceptance. See the
 [release evidence and limits](docs/evidence/2026-10-26-0.7.0-release.md).
 

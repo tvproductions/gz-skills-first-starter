@@ -48,6 +48,23 @@ does not authorize a tag or release, or complete the deferred acceptance work.
 
 ## Current state
 
+Published **v0.7.0** on October 26 at
+`a02635dad451f8f89c7801c2cbc02e2ec453d369`; remote annotated tag object
+`b13299760c3ccdd33696fcbf13fff6f749397ee0` dereferences to that commit.
+[Both exact-commit Linux CI jobs passed](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40409167397).
+GitHub reports a published stable release with all four asset digests matching;
+the downloaded wheel installs separately, reports 0.7.0 and validates catalogs.
+The user-directed cognitive exception remains explicit in the release notes.
+
+After publication, cognitive qualification was booked as
+[issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1) in
+[milestone 0.7.1](https://github.com/tvproductions/gz-skills-first-starter/milestone/1).
+The follow-up documentation commit records that booking/publication proof; it
+does not implement cognitive scoring, publish 0.7.1, change code-version metadata
+or move the release tag. Observe CI for the final documentation SHA as part of
+sync; do not create another receipt-only follow-up. See the release receipt's
+publication confirmation for final source/asset identities.
+
 The maintainer subsequently authorized publishing 0.7.0 without waiting for the
 cognitive qualification correction, then booking that correction as 0.7.1.
 Read `docs/evidence/2026-10-26-0.7.0-release.md` and its JSON companion for the
@@ -98,9 +115,9 @@ worktree and no divergence.
 This handoff refresh is a subsequent documentation change; verify its containing
 commit with Git and its own CI rather than assuming the preceding run covers it.
 
-Latest published release: **v0.6.0**. Development version: **0.7.0, unreleased**.
-The work is pushed, but strict release acceptance is incomplete. No new tag,
-release, adopter migration or upstream-project change was performed.
+Latest published release: **v0.7.0**, with the explicit cognitive exception and
+retained component/host limitations. Planned patch: **0.7.1**, not implemented.
+No adopter migration or upstream-project change was performed.
 
 ## Published-release verification
 

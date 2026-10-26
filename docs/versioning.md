@@ -3,6 +3,10 @@
 The current template release is **0.7.0**; the initial release
 was **0.1.0**. The 0.3
 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
+The cognitive qualification correction is booked for **0.7.1** in
+[issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1);
+it is planned, not implemented or published. Execution metadata remains 0.7.0
+until implementation preparation begins.
 The current version is recorded in
 `bundle.json` as `template_version`, independently of SP, SP-BP and gz-skills
 versions and the adopter's application version. `pyproject.toml` mirrors the

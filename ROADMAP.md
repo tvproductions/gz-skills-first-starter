@@ -2,6 +2,10 @@
 
 ## Planned 0.7.1: cognitive qualification correction
 
+Booked after 0.7.0 publication as
+[issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1) in
+[milestone 0.7.1](https://github.com/tvproductions/gz-skills-first-starter/milestone/1).
+
 The maintainer explicitly authorized releasing 0.7.0 without waiting for the
 cognitive fix, then booking the correction for 0.7.1. Qualify the selected
 CPython AST approach at ceiling 15, including keyword conditionals and functions
