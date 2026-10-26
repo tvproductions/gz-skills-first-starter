@@ -57,6 +57,12 @@ other harnesses are not established by this CLI result.
 
 ## Later extensions
 
+- Observe hosted Dependabot scans and real update PRs for both independent
+  standard and X-Plane/XPPython3 projects and GitHub Actions. Local configuration,
+  separate X-Plane tool declarations/lock and bounded standalone verification
+  now exist; actual hosted operation and embedded-host verification remain UNKNOWN.
+  See [coverage and limits](docs/engineering/dependabot.md). Adopter update
+  sources and timing remain adopter-owned.
 - Reviewed update/rollback automation that preserves existing native installs.
 - Generic maintenance remains owned by gz-skills; no local maintenance skill or
   generic freshness reporter is planned. The pinned gz-skills v0.8.0 supplies

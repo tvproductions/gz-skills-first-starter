@@ -230,7 +230,11 @@ Adopters maintain four independent sources: this starter template, SP, SP-BP and
 gz-skills. A copied template, pinned bundle or installed plugin does not establish
 freshness. Review them at adoption, scoped upgrades and quarterly on-demand
 maintenance alongside the [Python baseline](project-configuration.md#keep-the-baseline-current).
-This is an adopter responsibility, not a scheduler or an automatic updater.
+Adopters choose whether to reconcile updates from this starter, maintain their
+dependencies directly from upstream, or combine both approaches. They own update
+timing and project compatibility verification. The starter maintains a reviewed
+baseline; its [scheduled scanning policy](baseline-policy.md#scheduled-dependency-scanning)
+covers standard and X-Plane cases independently and imposes no adopter schedule.
 
 Route authorized dependency/tool updates through gz-skills'
 `gzs-update-dependencies` and dependency-risk reviews through

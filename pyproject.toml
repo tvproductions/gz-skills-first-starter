@@ -25,7 +25,9 @@ source-include = [
     ".claude-plugin/marketplace.json", "starter.py", "tests/**", "tools/**",
     "docs/**", "AGENTS.md", "ROADMAP.md", "CHANGELOG.md", ".python-version",
     "uv.lock", ".pre-commit-config.yaml", ".github/workflows/**",
-    ".gitattributes", ".gitignore",
+    ".gitattributes", ".gitignore", ".github/dependabot.yml",
+    "baselines/xplane/pyproject.toml", "baselines/xplane/uv.lock",
+    "baselines/xplane/.python-version", "baselines/xplane/README.md",
 ]
 
 [tool.ruff]

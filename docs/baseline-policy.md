@@ -207,4 +207,47 @@ required tools, compatibility exceptions or verification obligations) from
 **pin refreshes** within existing policy. Review both, reconcile affected project
 guidance/configuration, and preserve project additions and rollback evidence.
 Follow [stack maintenance](adoption.md#maintaining-the-adopted-stack) through
-gz-skills; this policy adds no maintenance skill, scheduler or automatic updater.
+gz-skills. Scheduled scans and update PRs are permitted as described below;
+this policy adds no competing maintenance skill or generic freshness reporter.
+
+## Scheduled dependency scanning
+
+This repository maintains a reviewed dependency baseline for adopters to consult.
+Adopters choose starter updates, independent upstream updates or both, and own
+their update timing, compatibility decisions and project verification. Consulting
+this baseline does not require adopting its scanning service or schedule.
+
+Scheduled scanning and dependency-update PRs must cover both cases independently:
+
+| Baseline | Required inputs | Verification boundary |
+| --- | --- | --- |
+| Standard Python | Python 3.14.x project declarations, exact interpreter/tool pins and uv lock | Checks on the selected managed interpreter and installed artifacts |
+| X-Plane/XPPython3 | Host-compatible Python 3.12.x project declarations, exact interpreter/tool pins and separate uv lock | Standalone checks plus separate evidence from the actual embedded host |
+
+Keep Python dependencies and supported tool configuration in each baseline's
+`pyproject.toml`, with uv-generated locks and exact `.python-version` files.
+Use independent projects/environments for these incompatible runtime families,
+not one shared workspace resolution. Do not duplicate app-specific X-Plane
+dependencies from another adopter; application dependencies remain project-owned.
+Track Python and uv execution pins and GitHub Actions revisions in their native
+files as part of coverage. Plugin/catalog inventory remains separately required;
+a package scan does not establish plugin freshness or native discovery.
+
+Propose current stable tooling independently for each runtime; any retained
+incompatible version needs the existing evidenced exception and revisit condition.
+Keep Python-family changes under explicit review and preserve exact pins between
+updates. Regenerate affected locks and packaged resources through their owning
+tools, and run applicable repository and changed-tool checks before merge.
+Do not automatically merge, publish releases, activate Backplane or update native
+plugin installations. Scans and passing CI do not replace release-specific
+freshness receipts, compatibility review or embedded-host verification.
+
+This checkout configures weekly Dependabot jobs for the standard helper's Python
+3.14 project, the independent Python 3.12 tool project in `baselines/xplane/`,
+and GitHub Actions. See [coverage and limits](engineering/dependabot.md).
+The X-Plane project is a dependency-only standalone reference, not a simulator
+plugin or host certification. Hosted scans and actual update PRs remain UNKNOWN
+until observed after the configuration reaches the default branch. Python/uv
+execution pins, plugin catalogs and missing deeper tools still require the
+existing maintenance review. Missing inputs, failed queries and unverified host
+behavior must remain explicit gaps; local configuration is not operational proof.

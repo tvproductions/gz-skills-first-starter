@@ -1,0 +1,39 @@
+version: 2
+updates:
+  # Independent resolutions: never combine the 3.14 and host-bound 3.12 projects.
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: America/Chicago
+    open-pull-requests-limit: 5
+    allow:
+      - dependency-type: all
+    commit-message:
+      prefix: 'deps(standard)'
+
+  - package-ecosystem: uv
+    directory: /baselines/xplane
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: America/Chicago
+    open-pull-requests-limit: 5
+    allow:
+      - dependency-type: all
+    commit-message:
+      prefix: 'deps(xplane)'
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: America/Chicago
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'deps(actions)'

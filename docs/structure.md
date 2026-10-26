@@ -71,6 +71,12 @@ runtime/tool versions and baseline-policy changes at adoption, scoped upgrades
 and quarterly on-demand maintenance. Record evidence, adopt/defer decisions,
 exceptions and revisit conditions in the project's existing authority.
 
+Adopters choose starter updates, independent upstream updates or both, and their
+own update timing. The starter permits scheduled scans and reviewed update PRs
+for both standard and X-Plane dependency baselines under the
+[scanning contract](baseline-policy.md#scheduled-dependency-scanning). This does
+not install a scanning service or impose a schedule in adopting projects.
+
 Checking is distinct from updating. Preserve exact pins after verification;
 Python stays current within the approved 3.14.x or host-bound 3.12.x family;
 family changes require separate review. An exact patch records a verified run,

@@ -48,7 +48,29 @@ does not authorize a tag or release, or complete the deferred acceptance work.
 
 ## Current state
 
-At the latest session recheck, a fresh origin fetch confirmed main and
+Follow-up: the operator selected Dependabot exploration/implementation. Weekly
+uv jobs now target `/` and `/baselines/xplane`, with a GitHub Actions job.
+The separate dependency-only X-Plane project selects Python 3.12.16 and its own
+uv lock; a CI job runs bounded standalone tool probes. No simulator package or
+embedded runtime was installed. See `docs/engineering/dependabot.md` and the
+dated `docs/evidence/2026-10-26-dependabot.md` receipt for current results.
+The operator permits scheduled scans and reviewed update PRs here; adopters
+choose starter updates, direct upstream updates or both, and their own timing.
+The blanket schedule ban was corrected in AGENTS/current policy; historical
+evidence is unchanged. Embedded-host compatibility remains separate from
+standalone tests. Auto-merge, publication, plugin installation and dependent-repo
+edits remain outside this work.
+
+The operator then invoked `gz-skills:gzs-git-sync` for this complete change.
+Pre-sync origin fetch: main and origin/main aligned at
+`35ac057`, with only this session's policy, Dependabot and X-Plane baseline work
+pending. Required uv 0.13.5 gates and the separate managed Python 3.12.16 probes
+pass; the receipt records details. Commit/push this reviewed unit with hooks,
+then observe both CI jobs for its exact SHA. Final sync/CI results are reported
+after push without creating a CI-receipt-only commit. Hosted Dependabot scan and
+real update-PR behavior remain separate proof, not established by CI alone.
+
+At the earlier October 24 session recheck, a fresh origin fetch confirmed main and
 origin/main aligned at `731495876ef131c1a0795d38ad69116b77a594ca`, with a clean
 worktree and no divergence.
 [Exact-commit Ubuntu CI passed](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40137030752).

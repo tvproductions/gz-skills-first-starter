@@ -84,6 +84,13 @@ tracking SP-BP readiness while it remains disabled.
 Generic maintenance workflows belong to gz-skills; the starter supplies policy
 and adoption bindings rather than another maintenance skill or freshness tool.
 
+This checkout configures weekly Dependabot update PRs for its standard Python
+project, a separately locked [X-Plane/XPPython3 tool baseline](baselines/xplane/),
+and GitHub Actions. See [coverage and remaining manual review](docs/engineering/dependabot.md).
+Hosted scans require observation after merge; local configuration does not prove
+operation or embedded-host compatibility. Adopters choose starter updates,
+independent upstream updates or both, and their own update timing.
+
 ## Agent: start here
 
 The template has its own version, independent of its plugins and adopter apps.

@@ -101,3 +101,10 @@ gz-skills v0.8.0 supplies freshness-only assessment and template/plugin inventor
 through its maintenance skill. Starter bindings preserve approved Python policy
 over upstream profile defaults; no setup invocation or profile selection follows
 from changing the bundle pin.
+
+Scheduled dependency scans and update PRs are permitted for this repository's
+standard and X-Plane baselines under the
+[scanning contract](baseline-policy.md#scheduled-dependency-scanning). They do
+not replace compatibility review or gz-skills' maintenance workflows. Adopters
+choose their own update sources and timing; no scanning service is installed by
+the adoption helper.

@@ -116,8 +116,13 @@ release acceptance, plus on demand, outside routine hooks and routine CI.
 Retain evidence and reviewed findings; required FAIL/UNKNOWN/stale results block
 strict acceptance. Accepted exceptions are conditional, never 100% conformance.
 Report missing
-tool installation or enforcement as a gap. This rule does not authorize automatic
-upgrades or schedules.
+tool installation or enforcement as a gap. Adopters choose starter updates,
+independent upstream updates or both, and own update timing and verification.
+The starter permits scheduled scans and reviewed update PRs covering standard
+and X-Plane/XPPython3 baselines separately; see
+`docs/baseline-policy.md#scheduled-dependency-scanning` in the reviewed starter
+checkout. No adopter scanning service or schedule is imposed. Automatic merge,
+release publication and native plugin installation require separate authority.
 
 The reviewed Python policy's on-demand tools form the adopter minimum standard,
 independent of the starter helper's needs. Include project-pinned `cohesion` for

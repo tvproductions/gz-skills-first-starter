@@ -2,6 +2,16 @@
 
 ## 0.7.0 — Unreleased
 
+- Permit scheduled dependency scans and reviewed update PRs for independent
+  standard Python and X-Plane/XPPython3 baselines. Adopters choose starter and/or
+  upstream updates and their own timing. This is a maintenance-policy correction,
+  not a release-wide pin refresh or automatic adoption of updates.
+- Configure weekly Dependabot jobs for standard Python, the independently locked
+  X-Plane/XPPython3 tool baseline and GitHub Actions. Add Python 3.12.16 standalone
+  tool probes and CI coverage without changing the four routine hooks. Hosted bot
+  operation, root build-only update PRs and embedded-host compatibility remain
+  unverified; Python/uv execution pins and plugin catalogs need separate review.
+  See [scope and evidence](docs/engineering/dependabot.md).
 - Establish this template as the shared policy alignment source for gz-skills
   and Backplane, with source consistency checks and prospective major-release
   PRDs for independently versioned components. Delegate lite/heavy definitions,

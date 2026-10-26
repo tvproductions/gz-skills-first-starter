@@ -375,7 +375,12 @@ app additions and overrides, and report missing evidence without claiming curren
 Release age alone does not prove abandonment. Verify changed tools on the pinned
 Python patch and retain comparable complexity evidence.
 
-No automatic upgrades, schedules, hooks or extra CI gates follow from this rule.
+Scheduled scans and update PRs may supplement these reviews under the
+[two-baseline scanning contract](../baseline-policy.md#scheduled-dependency-scanning).
+Cover standard and X-Plane/XPPython3 environments independently; absent declarations
+or locks are coverage gaps. Updates require review and applicable verification
+before merge. No automatic merge, publication, maintenance hook or extra deeper
+analysis CI gate follows. Adopters choose their update sources and timing.
 Keep these tool preferences starter-owned and upstream plugins agnostic. SP-BP
 remains disabled until readiness and explicit adoption are established.
 

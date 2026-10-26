@@ -49,6 +49,17 @@ def verify_archives(wheel: Path, sdist: Path) -> None:
         names = archive.getnames()
         if not any(name.endswith("/tests/test_starter.py") for name in names):
             raise ValueError("Source distribution is missing adoption tests")
+        for relative in (
+            ".github/dependabot.yml",
+            "baselines/xplane/pyproject.toml",
+            "baselines/xplane/uv.lock",
+            "baselines/xplane/.python-version",
+            "baselines/xplane/README.md",
+        ):
+            if not any(name.endswith(f"/{relative}") for name in names):
+                raise ValueError(f"Source distribution is missing baseline input: {relative}")
+        if any("/.venv/" in name for name in names):
+            raise ValueError("Source distribution contains a development environment")
 
 
 def main() -> None:

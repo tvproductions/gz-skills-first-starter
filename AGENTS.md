@@ -216,9 +216,16 @@ pins and guidance together through the owning tools. Plugin changes also update
 both catalogs; regenerate changed wheel resources. Run the documented repository
 gate and changed-tool compatibility checks on the actual pinned interpreter.
 Preserve rollback and record results before claiming the update is verified.
-Keep exact pins between scoped updates. Add no maintenance hook, automatic
-schedule or competing updater; native plugin/cache updates remain separately
-scoped. Publication follows the user's actual release authorization.
+Keep exact pins between scoped updates. Scheduled dependency scans and update
+PRs are permitted for this repository's standard and X-Plane/XPPython3 baselines;
+keep their Python families, dependency declarations, locks and verification
+separate. Missing baseline inputs are coverage gaps, not successful scans.
+Require review and applicable checks before merge; do not automatically merge,
+publish releases or update native plugin/cache installations. Add no maintenance
+hook or competing maintenance skill/reporter. Adopters choose whether to use
+starter updates, independent upstream updates or both; no adopter schedule is
+imposed. See `docs/baseline-policy.md#scheduled-dependency-scanning`.
+Publication follows the user's actual release authorization.
 
 When designing features or reviewing dependencies, assess concrete Python 3.14
 gains over 3.13 using the Python policy's versioned opportunity guide. Record
