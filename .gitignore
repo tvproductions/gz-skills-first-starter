@@ -6,3 +6,5 @@ __pycache__/
 .complexipy_cache/
 dist/
 .pre-commit-cache/
+.coverage
+.import_linter_cache/

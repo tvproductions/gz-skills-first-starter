@@ -1,6 +1,21 @@
 # Changelog
 
-## 0.7.0 — Unreleased
+## 0.7.0 — October 26, 2026
+
+Published at the maintainer's explicit direction with cognitive qualification
+deferred to planned 0.7.1. The cognitive ceiling remains 15; neither complexipy
+nor the proposed shared engine is certified. This exception permits this release,
+not a strict-acceptance claim or automatic adopter waiver. See the
+[candidate freshness and acceptance receipt](docs/evidence/2026-10-26-0.7.0-release.md).
+
+- Refresh root ty to 0.0.92. Pin the already-required Interrogate, Vulture,
+  Bandit, Coverage.py, deptry, pip-audit and Import Linter in both hygiene groups.
+  Keep all deeper analysis outside the four routine hooks and routine CI.
+  Add the real CLI-to-execution-wrapper import boundary and clarify production
+  docstrings; retain and review analyzer findings instead of suppressing them.
+- Refresh the standard interpreter to Python 3.14.10, verified against the
+  October 25 security release. Both baselines use the pinned official Astral
+  download metadata while retaining required uv 0.13.5 and separate Python families.
 
 - Permit scheduled dependency scans and reviewed update PRs for independent
   standard Python and X-Plane/XPPython3 baselines. Adopters choose starter and/or

@@ -130,10 +130,11 @@ selector or old lock does not establish freshness. Family changes require
 separate review; compatibility exceptions need evidence and a revisit condition.
 See the [Python baseline rule](engineering/python.md#latest-stable-within-the-selected-family).
 
-The current Python pin is 3.14.9, checked October 24, 2026 against the
-[official release](https://www.python.org/downloads/release/python-3149/).
+The current Python pin is 3.14.10, checked October 26, 2026 against the
+[official release](https://www.python.org/downloads/release/python-31410/).
 `requires-python` describes the allowed 3.14 family; `.python-version` selects
-the exact execution patch. Other tool pins have not been refreshed in this change.
+the exact execution patch. The [0.7.0 release receipt](evidence/2026-10-26-0.7.0-release.md)
+records the candidate's tool refreshes, retained selections and exceptions.
 
 A minimum supported version, a tested exact pin and the latest available release
 are different facts. The current exact tool pins are reproducibility anchors;

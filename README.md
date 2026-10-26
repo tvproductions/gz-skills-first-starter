@@ -15,9 +15,11 @@ for the maintainer's gz-skills and Backplane repositories. Backplane owns
 requirements tracking, labeling, backlog/release monitoring and handoffs.
 The template refers to those workflows; it does not implement them.
 
-Development: **0.7.0 is unreleased**. It tightens latest-tooling ownership for
-the starter and adopters, refreshes the toolchain and records the complexipy
-qualification defect. The latest published template remains **0.6.0**.
+Release **0.7.0** maintains separate standard and X-Plane tool baselines,
+configures Dependabot scans, refreshes tooling and strengthens shared policy.
+The maintainer explicitly deferred cognitive qualification to planned **0.7.1**;
+this release does not claim strict cognitive acceptance. See the
+[release evidence and limits](docs/evidence/2026-10-26-0.7.0-release.md).
 
 Version **0.6.0** includes the single template-owned `update-gz-template` skill.
 See [canonical template updates](docs/updating.md), including bootstrap for
@@ -97,7 +99,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The template baseline is [v0.6.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.6.0).
+The template baseline is [v0.7.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.7.0).
 Start with the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
 existing-adopter upgrades and explicit acceptance/release requirements.
 Verify a published tag and exact commit before adoption; a metadata value
@@ -131,13 +133,13 @@ Baseline tools use their latest stable release across tool families, with exact
 pins after verification. Explicit Python/host runtime families remain distinct;
 an older tool family is not a freshness exemption. Adopters stay current within Python 3.14.x,
 or host-compatible 3.12.x for XPPython3-bound code. This starter's execution pin
-is 3.14.9 (checked October 24, 2026), not a permanent adopter patch requirement.
+is 3.14.10 (checked October 26, 2026), not a permanent adopter patch requirement.
 Recheck at setup/adoption and scoped maintenance;
 an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
-git clone --branch v0.6.0 https://github.com/tvproductions/gz-skills-first-starter.git
+git clone --branch v0.7.0 https://github.com/tvproductions/gz-skills-first-starter.git
 cd gz-skills-first-starter
 uv run --locked skills-first-starter validate
 uv run --locked skills-first-starter configure --project /path/to/your-project
@@ -204,8 +206,8 @@ those exact full commit SHAs, not moving branches.
 | [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-The latest published template, 0.6.0, retains its original SP 7.0.0 selection.
-This unreleased 0.7 checkout selects Superpowers
+Published template 0.6.0 retains its original SP 7.0.0 selection.
+Template 0.7.0 selects Superpowers
 [v7.0.1](https://github.com/obra/superpowers/releases/tag/v7.0.1), the latest stable
 release checked October 24, 2026. The old v6.4.1 selection came from Backplane's
 recorded compatibility proof; deferred Backplane does not constrain active SP

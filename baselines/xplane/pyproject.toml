@@ -17,10 +17,17 @@ python-downloads-json-url = "https://raw.githubusercontent.com/astral-sh/uv/6867
 [dependency-groups]
 dev = ["ruff==0.17.2", "ty==0.0.92", "pre-commit==4.7.0", "uv_build==0.13.5"]
 hygiene = [
+    "bandit==1.9.4",
     # Defect reproducer only; not qualified cognitive acceptance authority.
     "complexipy==8.2.0",
     "cosmic-ray==8.7.0",
+    "coverage==7.17.0",
+    "deptry==0.25.1",
+    "import-linter==2.15",
+    "interrogate==1.7.0",
     "lizard==1.24.3",
+    "pip-audit==2.10.1",
+    "vulture==2.16",
 ]
 
 [tool.ruff]

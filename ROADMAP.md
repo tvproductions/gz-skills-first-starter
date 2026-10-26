@@ -1,5 +1,16 @@
 # Roadmap
 
+## Planned 0.7.1: cognitive qualification correction
+
+The maintainer explicitly authorized releasing 0.7.0 without waiting for the
+cognitive fix, then booking the correction for 0.7.1. Qualify the selected
+CPython AST approach at ceiling 15, including keyword conditionals and functions
+under module-level loops/match. Preserve historical failing evidence, public
+contracts, thresholds and upstream ownership. Leave gzkit untouched; no extraction
+project, private scoring fork or plugin installation follows from this booking.
+The existing [extraction assessment](docs/evidence/2026-10-24-gzkit-cognitive-extraction.md)
+owns the demonstrated gaps. 0.7.1 is planned work, not a delivered fix.
+
 ## 0.6: one canonical template-update skill
 
 The user requested a template-native update entry. The starter owns only

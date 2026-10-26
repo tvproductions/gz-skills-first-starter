@@ -14,6 +14,7 @@ RESOURCE_PATHS = (
 
 
 def main() -> int:
+    """Refresh generated resources or report drift without writing."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()

@@ -20,6 +20,8 @@ from complexipy import code_complexity, file_complexity
 
 
 class FunctionScore(TypedDict):
+    """Retain source identity and the two independent complexity measurements."""
+
     name: str
     line: int
     cognitive: int
@@ -27,6 +29,7 @@ class FunctionScore(TypedDict):
 
 
 def executable(name: str) -> str:
+    """Locate a required analyzer in the selected environment."""
     path = shutil.which(name)
     if path is None:
         raise FileNotFoundError(f"Required analyzer is not installed: {name}")
@@ -34,6 +37,7 @@ def executable(name: str) -> str:
 
 
 def nested(depth):
+    """Generate a nested conditional fixture with a controlled depth."""
     lines = ["def nested(value):"]
     for i in range(depth):
         lines.append("    " * (i + 1) + f"if value > {i}:")
@@ -43,6 +47,7 @@ def nested(depth):
 
 
 def flat(count):
+    """Generate independent branches for the cyclomatic boundary probe."""
     return (
         "def flat(value):\n"
         + "".join(f"    if value == {i}:\n        return {i}\n" for i in range(count))

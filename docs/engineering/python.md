@@ -52,8 +52,8 @@ revisit condition. Report that as an exception, not a current baseline claim.
 Preserve adopter dependencies and explicit overrides. Keep these preferences
 starter-owned; no upstream plugin policy, hooks or schedules follow from them.
 
-As checked October 24, 2026, Python's current 3.14 baseline patch is
-[3.14.9](https://www.python.org/downloads/release/python-3149/). Recheck at the next
+As checked October 26, 2026, Python's current 3.14 baseline patch is
+[3.14.10](https://www.python.org/downloads/release/python-31410/). Recheck at the next
 setup or maintenance event; this date is not an evergreen latest-version claim.
 
 Use uv-managed Python in the selected family. Confirm the actual interpreter through
@@ -63,7 +63,7 @@ Keep `requires-python`,
 Use the same workflow with Python 3.12 for XPPython3-bound code, aligning metadata
 and Ruff/ty targets to 3.12. The family is the policy; the exact patch is the
 project's verified execution selection, refreshed during authorized maintenance.
-The starter's 3.14.9 pin is not a permanent patch requirement for adopters.
+The starter's 3.14.10 pin is not a permanent patch requirement for adopters.
 
 XPPython3 embeds its interpreter: its current
 [installation documentation](https://xppython3.readthedocs.io/en/latest/usage/installation_plugin.html)

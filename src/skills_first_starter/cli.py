@@ -38,6 +38,7 @@ class AdoptionError(Exception):
 
 
 def bundle() -> dict:
+    """Read the authoritative bundle or its installed resource copy."""
     return json.loads((HERE / "bundle.json").read_text(encoding="utf-8"))
 
 
@@ -52,6 +53,7 @@ def template_version() -> str:
 
 
 def validate_bundle() -> None:
+    """Require matching immutable component pins in both native catalogs."""
     template_version()
     data = bundle()
     if data.get("schema_version") != 1:
@@ -78,6 +80,7 @@ def validate_bundle() -> None:
 
 
 def check_path(root: Path, relative: str) -> Path:
+    """Resolve a managed destination while rejecting symlinked parents."""
     path = root / relative
     for item in (path, *path.parents):
         if item == root:
@@ -92,6 +95,7 @@ def check_path(root: Path, relative: str) -> Path:
 
 
 def profile_check(path: Path) -> None:
+    """Preserve an existing explicit profile and reject incompatible state."""
     if not path.exists():
         return
     data = json.loads(path.read_text(encoding="utf-8"))
@@ -146,6 +150,7 @@ def _missing_config_tables(data: dict, ref: str, parts: list[dict]) -> list[str]
 
 
 def project_config(existing: str, ref: str) -> str:
+    """Extend compatible Codex configuration without replacing project settings."""
     data = tomllib.loads(existing)
     parts = bundle()["components"]
     _check_plugin_activation(data.get("plugins", {}), parts)
@@ -294,6 +299,7 @@ def _apply_writes(
 
 
 def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
+    """Preview or apply the reviewed adoption plan with conflict preservation."""
     validate_bundle()
     if not SHA.fullmatch(ref):
         raise AdoptionError(
@@ -334,6 +340,7 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
 
 
 def status(project: Path) -> dict:
+    """Compare managed project files with this starter's expected content."""
     root = project.resolve(strict=True)
     path = check_path(root, ".skills-first/bundle.lock.json")
     if not path.exists():
@@ -442,6 +449,7 @@ def source_revision() -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """Dispatch the public CLI and render structured outcomes and failures."""
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     configure_parser = sub.add_parser(

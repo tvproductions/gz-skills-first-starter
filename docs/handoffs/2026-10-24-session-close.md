@@ -48,6 +48,18 @@ does not authorize a tag or release, or complete the deferred acceptance work.
 
 ## Current state
 
+The maintainer subsequently authorized publishing 0.7.0 without waiting for the
+cognitive qualification correction, then booking that correction as 0.7.1.
+Read `docs/evidence/2026-10-26-0.7.0-release.md` and its JSON companion for the
+candidate-specific freshness/acceptance review. Python 3.14.10 and ty 0.0.92 are
+now selected; both hygiene groups declare the previously required deeper tools.
+Actual deeper checks, reviewed low-severity/static findings and bounded
+actual-package mutation samples are recorded without weakening thresholds.
+Cognitive acceptance remains explicitly deferred, not passed; gz-skills 0.8.0
+is a retained noncurrent selection with owned revisit. Require final exact-SHA
+CI, annotated tag, asset digests and published GitHub status before reporting
+release completion. Do not publish 0.7.1 or start the cognitive implementation.
+
 Follow-up: the operator selected Dependabot exploration/implementation. Weekly
 uv jobs now target `/` and `/baselines/xplane`, with a GitHub Actions job.
 The separate dependency-only X-Plane project selects Python 3.12.16 and its own

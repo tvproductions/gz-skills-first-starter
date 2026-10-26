@@ -1,7 +1,6 @@
 # Template versioning
 
-The development template version is **0.7.0 (unreleased)**. The latest published
-release remains **0.6.0**; the initial release
+The current template release is **0.7.0**; the initial release
 was **0.1.0**. The 0.3
 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
 The current version is recorded in
@@ -19,9 +18,14 @@ The initial release is
 [v0.1.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.1.0),
 dated October 11, 2026. Its annotated tag identifies the verified release commit.
 Earlier development commits were untagged; do not label them as a released
-v0.1.0 retroactively. The latest documented published release is
-[v0.6.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.6.0),
-which adds the single template-native update skill and
+v0.1.0 retroactively. Release
+[v0.7.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.7.0)
+adds independently locked X-Plane tooling, Dependabot scans, current execution
+tooling and shared policy alignment. The maintainer explicitly authorized its
+publication with cognitive qualification deferred to planned 0.7.1; this is a
+release-specific exception, not a passing cognitive result or an adopter waiver.
+See [release evidence](evidence/2026-10-26-0.7.0-release.md).
+Release 0.6.0 added the single template-native update skill and
 [canonical update/bootstrap method](updating.md). It retains 0.5's expanded
 Astral acceptance, lane/analysis policy, adopter SemVer and major-release PRDs,
 and [greenfield/brownfield migration runbook](adoption-0.5.md). It retains the runtime,

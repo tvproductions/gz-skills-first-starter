@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def run(*command: str, cwd: Path) -> subprocess.CompletedProcess[str]:
+    """Run a verification command and retain decoded failure diagnostics."""
     return subprocess.run(
         command,
         cwd=cwd,
@@ -63,6 +64,7 @@ def verify_archives(wheel: Path, sdist: Path) -> None:
 
 
 def main() -> None:
+    """Inspect archives and exercise the installed helper outside the checkout."""
     metadata = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     version = metadata["project"]["version"]
     wheel = ROOT / "dist" / f"skills_first_starter-{version}-py3-none-any.whl"
