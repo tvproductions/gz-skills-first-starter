@@ -2,6 +2,11 @@
 
 ## 0.7.0 — Unreleased
 
+- Establish this template as the shared policy alignment source for gz-skills
+  and Backplane, with source consistency checks and prospective major-release
+  PRDs for independently versioned components. Delegate lite/heavy definitions,
+  requirements tracking, labeling, backlog/release monitoring and handoffs to
+  Backplane; retain independent versions, consumer policies and readiness gaps.
 - Define this repository's Git sync ritual in AGENTS.md, independent of installed
   skills: scoped review, checks, hooked commit, normal push, exact-commit CI and
   explicit separation of sync completion from release acceptance.

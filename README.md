@@ -9,6 +9,12 @@ usefulness to other adopters is welcome, rather than a reason to dilute them.
 
 This repository is the bundle catalog, adoption tool, and guidance home.
 
+It is also the [policy alignment source](docs/versioning.md#ecosystem-policy-authority-and-consistency)
+for the maintainer's gz-skills and Backplane repositories. Backplane owns
+[lite/heavy modes](https://github.com/tvproductions/superpowers-backplane/blob/main/docs/superpowers-backplane/modes.md),
+requirements tracking, labeling, backlog/release monitoring and handoffs.
+The template refers to those workflows; it does not implement them.
+
 Development: **0.7.0 is unreleased**. It tightens latest-tooling ownership for
 the starter and adopters, refreshes the toolchain and records the complexipy
 qualification defect. The latest published template remains **0.6.0**.

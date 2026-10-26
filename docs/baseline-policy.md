@@ -6,19 +6,19 @@ baseline; the portability of upstream skills does not establish template support
 
 ## Required adoption lane and completion
 
-Every adopter explicitly selects `lite` or `heavy` through the pinned
-gz-skills setup workflow. Full/heavy names the heavy lane. Neither a missing
-settings file nor `profile: null` is a completed third lane. Both lanes meet
-the same applicable Python/Astral foundation, SemVer/PRD release discipline and
-required adoption/release analysis. Lite reduces workflow tooling and governance
-overhead; it does not reduce engineering conformance.
+[Backplane owns the lite/heavy mode definitions](https://github.com/tvproductions/superpowers-backplane/blob/main/docs/superpowers-backplane/modes.md)
+and the requirements, labeling, backlog/release monitoring and handoff workflows.
+This template references that authority; it supplies no alternative mode lifecycle.
+Every adopter explicitly records `lite` or `heavy` through the pinned gz-skills
+setup workflow. Keep its existing settings schema and choices; a missing file or
+`profile: null` is pending selection. The stored value records intent, not proof
+that the selected Backplane capabilities are installed or ready.
 
-The heavy target remains SP + SP-BP + gz-skills. Backplane is under development
-and stays disabled until readiness and explicit activation. Record intended
-heavy selection separately from current component readiness; do not certify the
-whole heavy stack while Backplane is deferred. Preserve existing backlog/release
-authorities in the meantime. Starter-mandated release evidence applies to lite
-as well; upstream lite's omission of project-wide management tools does not waive it.
+Both modes meet this template's same applicable Python/Astral foundation,
+SemVer/PRD policy and required adoption/release analysis. Backplane remains under
+development and disabled until readiness and explicit activation. Preserve
+existing project authorities meanwhile; do not implement the missing management
+workflows here or certify whole-stack readiness from a profile selection.
 
 Follow the [greenfield and brownfield runbook](adoption-0.5.md). Track lane,
 configuration, Python conformance, required analysis and native readiness

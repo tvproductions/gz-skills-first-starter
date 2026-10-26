@@ -5,6 +5,47 @@ Read this entry first, then the
 [acceptance/synchronization record](../evidence/2026-10-24-git-sync.md).
 Recheck Git and remote CI before continuing; this is a dated checkpoint.
 
+## October 26 policy alignment
+
+The operator designated this template as the authoritative shared policy
+alignment source for gz-skills and Backplane. The source contract is
+`docs/versioning.md#ecosystem-policy-authority-and-consistency`. Both companion
+repositories now have local `docs/release-policy.md` bindings and AGENTS pointers:
+check this source before release preparation, at scoped policy/tooling maintenance
+and when notified of relevant changes; record source identity, applicability,
+decisions and approved exceptions. SemVer and the newly written major-release PRD
+rule apply prospectively, including independently versioned skill majors.
+
+Backplane owns requirements tracking, labels, backlog/release monitoring,
+handoffs and lite/heavy mode definitions. Its local
+`docs/superpowers-backplane/modes.md` records this authority and separates intended
+scope from implemented readiness. The template references it and retains shared
+engineering/release policy, configuration and provenance; it supplies no competing
+lifecycle. Keep existing profile values and the setup schema. Companion policy
+alignment does not require circular template adoption, synchronized versions or
+imposing starter requirements on unrelated consumers.
+
+Reviewed clean starting commits: starter `eef2e858bba709988eb859b17739d2989d8825ab`,
+gz-skills `dca86e61bed3aa610555ef30a9ecccf4bd380f2a`, and Backplane
+`15b04adbdd01033087d31d8ade6ab98504669e8c`. The source bindings record the starter
+base SHA plus hashes of the edited working-tree policy inputs. Reconcile final
+committed revisions before claiming published alignment; the new cross-repository
+links have been verified against local files, not published remote content.
+
+Validation on Windows with required uv 0.13.5 and managed Python 3.14.9: locked
+all-group sync, regenerated wheel-resource instructions, all four routine hooks,
+bundle/catalog validation, source-independent build and isolated installed
+distribution checks pass. Cross-repository link targets, source hash receipts
+and whitespace checks pass. Companion changes are repository documentation only;
+no shipped skill tree, runtime pin, plugin installation or native issue changed.
+This task does not close the prior deeper-analysis or Backplane readiness gaps.
+The operator subsequently requested Git synchronization of all three repositories.
+Publish this reviewed source first, then bind the companions to its exact commit
+and push their reviewed documentation. Reuse the passing checks for unchanged
+inputs and retain normal commit hooks. Verify final remote identities and any
+configured CI; report final results without another receipt-only commit. This
+does not authorize a tag or release, or complete the deferred acceptance work.
+
 ## Current state
 
 At the latest session recheck, a fresh origin fetch confirmed main and

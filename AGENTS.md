@@ -25,6 +25,13 @@ pin refreshes in release notes and adopter reviews.
 This is a public scaffold; use invented fixtures and preserve upstream ownership.
 
 Version the template independently of its upstream components and adopter apps.
+This repository is the authoritative policy alignment source for gz-skills and
+SP-BP as well as template adopters. Follow the consistency check and prospective
+release rules in `docs/versioning.md#ecosystem-policy-authority-and-consistency`.
+Backplane owns requirements tracking, labeling, backlog/release monitoring,
+handoffs and lite/heavy mode definitions; reference its authority rather than
+implementing those lifecycles here. Companion repository bindings do not imply
+circular template adoption or impose policy on unrelated workflow consumers.
 Read `docs/versioning.md`; `bundle.json` owns `template_version`, mirrored by
 the starter's `pyproject.toml`. New adoption records version plus exact SHA.
 For this starter and adopters, every major release, including 1.0.0, requires a

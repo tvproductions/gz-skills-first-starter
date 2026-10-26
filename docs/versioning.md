@@ -29,6 +29,54 @@ tool and independent SP 7.0.0/gz-skills 0.8.0 pins. Automatic conformance/PRD
 validation remains unimplemented; release notes disclose acceptance gaps.
 Future publication remains a separately authorized operation.
 
+## Ecosystem policy authority and consistency
+
+This repository is the authoritative alignment source for the maintainer's
+shared engineering and release policy. This document owns the SemVer and
+release-planning rules for this template, its adopters, and the maintainer's
+`gz-skills` and `superpowers-backplane` repositories. The companion repositories
+bind these rules in their own instructions and release documents; they do not
+formally adopt this template or bootstrap its bundle into themselves.
+
+Policy flows from this template to those repository bindings. Workflow ownership
+is separate: [Backplane](https://github.com/tvproductions/superpowers-backplane)
+owns requirements tracking, issue classification/lifecycle labels, backlog and
+release monitoring, handoffs, and the definitions of lite and heavy modes.
+Refer to its [mode authority](https://github.com/tvproductions/superpowers-backplane/blob/main/docs/superpowers-backplane/modes.md)
+and governance instead of defining a second lifecycle here. gz-skills supplies
+portable procedures such as `gzs-release`; Superpowers owns feature development.
+Upstream Superpowers is independently owned and is not bound by this policy.
+
+The companion repositories must check this source before release preparation,
+during scoped policy/tooling maintenance, and when notified of a relevant source
+change. Read this document, the changelog, and applicable baseline/engineering
+guidance from the canonical repository. Compare with the last reviewed source;
+record the date, full source SHA, paths, applicability, differences, and the
+adopted decisions in the companion's existing release or handoff authority.
+Record development guidance as unreleased; for authorized working-tree review,
+also record content hashes and do not present the base SHA as the edited source.
+Recheck the final source revision before claiming published alignment.
+
+An unavailable source or unresolved applicable difference is an explicit gap,
+not evidence of consistency. A departure needs evidence, the maintainer's
+approval, an owner and a dated revisit condition. A local binding may specify
+project details but must not silently redefine this shared policy. No automatic
+schedule, plugin update, runtime upgrade or synchronized release is implied.
+
+The major-release PRD rule below also applies prospectively to independently
+versioned gz-skills skills, including their first 1.0.0. Each affected major
+needs newly written requirements identifying that component and major; a new
+coordinated PRD may cover several explicitly identified majors. Published
+releases and historical acceptance evidence are not retroactively relabeled.
+
+Repository governance is distinct from shipped workflow policy. gz-skills and
+Backplane must continue to respect each consumer's own adopted policy; this
+alignment does not impose starter tooling or PRDs on unrelated consumers.
+Backplane's unfinished capabilities remain unfinished, and both mode intent
+and policy alignment remain separate from installed readiness or full starter
+conformance. Keep existing project authorities until the relevant Backplane
+workflow is ready and explicitly adopted.
+
 ## Version contract
 
 Use [Semantic Versioning](https://semver.org/spec/v2.0.0.html) for the template's

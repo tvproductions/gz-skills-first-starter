@@ -35,10 +35,11 @@ The starter helper preserves a valid explicit choice and does not make it for yo
 
 Both lanes require the same applicable Python/Astral foundation and analysis.
 Both version their own public contract using SemVer and require a newly written
-PRD for every major, including 1.0.0. Lite omits heavy management tooling, not
-these release obligations. Do not silently promote a lite adopter. The starter
-currently enables SP and gz-skills in either lane; that installation is not a
-requirement to use heavy management workflows in lite.
+PRD for every major, including 1.0.0. Refer to
+[Backplane's mode definitions](https://github.com/tvproductions/superpowers-backplane/blob/main/docs/superpowers-backplane/modes.md)
+for the lite/heavy workflow distinction; the template owns policy, not those
+lifecycles. Do not silently promote a lite adopter. The starter currently
+enables SP and gz-skills in either lane; installed components do not select a mode.
 
 Heavy's intended stack remains SP + Backplane + gz-skills. Backplane is under
 development, pinned and disabled. Preserve existing project planning/release

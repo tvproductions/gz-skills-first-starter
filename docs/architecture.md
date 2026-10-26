@@ -6,6 +6,16 @@ project policy, deterministic adoption tooling, configuration and provenance;
 upstream plugins and adopting projects own their skills. See the
 [structure contract](structure.md) and [migration guide](migration-0.3.md).
 
+This repository is the shared policy alignment source for gz-skills and
+Backplane; see [the consistency contract](versioning.md#ecosystem-policy-authority-and-consistency).
+Those repositories retain local release execution and independent versions.
+Backplane owns requirements tracking, labeling, backlog/release monitoring,
+handoffs and [lite/heavy definitions](https://github.com/tvproductions/superpowers-backplane/blob/main/docs/superpowers-backplane/modes.md).
+The template refers to those workflows without implementing a competing
+lifecycle. Its own release records and session handoffs are ordinary project
+records, not a generic lifecycle supplied to adopters. Neither companion must
+install this template's bundle to consult its policy.
+
 One bundle catalog tracks three independently maintained plugins. SP and
 gz-skills are enabled by default; Backplane is an expected addition to the target
 stack, pinned but deferred pending readiness and explicit adoption. Its two

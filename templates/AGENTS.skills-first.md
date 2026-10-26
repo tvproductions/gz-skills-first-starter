@@ -67,6 +67,12 @@ separate. Confirm actual discovery before invoking upstream entry skills;
 configuration does not prove loading. Preserve independently versioned upstream
 sources and avoid duplicate plugin/copied-skill discovery.
 
+Backplane owns requirements tracking, labeling, backlog/release monitoring,
+handoffs and lite/heavy mode definitions. Read its mode authority at
+https://github.com/tvproductions/superpowers-backplane/blob/main/docs/superpowers-backplane/modes.md;
+do not define a replacement lifecycle in this template or its helper. The
+starter remains the shared engineering and release policy alignment source;
+see `docs/versioning.md#ecosystem-policy-authority-and-consistency` there.
 Explicitly select lite or heavy through the pinned gz-skills setup workflow;
 missing/null selection means adoption is incomplete. Both lanes require the
 same applicable Python baseline, SemVer/major-release PRDs and adoption/release
