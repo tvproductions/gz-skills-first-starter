@@ -14,6 +14,11 @@ Applications and libraries created by adopters still need `src/` packaging,
 their own build-system declaration and installed-artifact verification. Do not
 copy the root helper's Python 3.14 package into a host-bound environment.
 
+The centralized uv settings pin an official Astral interpreter download manifest
+because uv 0.13.5's embedded list predates Python 3.12.16. This preserves exact
+managed-runtime selection on a clean Linux runner; review the manifest alongside
+Python/uv pins during maintenance. It does not change the embedded simulator.
+
 From this directory:
 
 ```powershell

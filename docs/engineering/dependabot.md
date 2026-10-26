@@ -10,7 +10,10 @@ at 09:00 America/Chicago. It has three independent jobs:
 | GitHub Actions | `.github/workflows/` | Action references, including tagged full-SHA pins and their version comments |
 
 Each job permits up to five open version-update PRs. Package jobs include direct
-and transitive dependencies. Major tool updates are proposed for review rather
+and transitive dependencies, excluding each local project's own version, which
+is not an upstream package to upgrade. GitHub's default three-day version-update
+cooldown remains in effect; a newly published release may not immediately yield
+a PR. Major tool updates are proposed for review rather
 than silently excluded; Python support remains constrained by each project's
 metadata. There is no automerge configuration. A PR must pass applicable checks
 and maintainer compatibility review; a resolver result alone is insufficient.
@@ -36,8 +39,9 @@ the full Astral acceptance proof and host-specific testing.
 
 Build-only dependencies are supported by the current upstream uv updater source,
 but published GitHub documentation still lists uv 0.11 while this checkout pins
-0.13.5. Upstream's current updater Dockerfile already selects 0.13.5. This is
-promising source evidence, not proof of the hosted deployment. Preserve required
+0.13.5. Upstream's current updater Dockerfile already selects 0.13.5. The initial
+hosted jobs successfully scanned both uv directories and Actions; actual
+update-PR generation and lock changes remain unverified. Preserve required
 uv pins and inspect the actual job logs for both directories. Do not weaken
 locked execution, downgrade uv or change Python families to conceal a bot failure.
 
@@ -54,7 +58,18 @@ repository/organization Dependabot settings. This local change does not push or
 enable a remote service through an API. After merge, inspect GitHub's dependency
 update logs for both uv jobs and the Actions job. Verify their manifest paths,
 actual updater versions, preserved runtime constraints, generated locks and CI
-results on a real update PR. Until observed, hosted scanning is UNKNOWN.
+results on a real update PR. The initial hosted scans completed successfully;
+that does not establish the unobserved PR/update paths.
+
+The first Linux CI attempt could not provision 3.12.16 because uv 0.13.5's
+embedded download list predates that patch. The X-Plane project's centralized uv
+configuration therefore pins Astral's official download manifest at full commit
+`68677f5439c027db17b4db7821882a9881d376f6`, including archive checksums.
+This documented uv setting permits the selected managed interpreter without
+changing uv or the Python patch. The maintainer should revisit the manifest pin
+at the next Python/uv refresh and remove the override once the selected uv's
+embedded metadata supplies the runtime. This pin requires manual review alongside
+execution pins; Dependabot does not update it.
 
 The [October 26 receipt](../evidence/2026-10-26-dependabot.md) records the initial
 inputs, official sources, local checks and remaining UNKNOWNs. This receipt is

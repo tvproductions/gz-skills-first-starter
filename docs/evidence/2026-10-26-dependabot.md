@@ -121,8 +121,44 @@ the existing deeper-tool acceptance gaps. No new compatibility waiver is created
   through `uv tool run --from uv==0.13.5 uv ...` passed, including nested uv
   commands. No machine-wide uv replacement or relaxed version requirement was used.
 
-Hosted Dependabot runs and update PRs, Linux execution of the new CI job,
-embedded-host behavior, absent deeper tools and unperformed deeper analyses
+At implementation time hosted scans, update PRs and Linux execution were
+UNKNOWN; the sync observations below supersede the initial hosted-scan status.
+Embedded-host behavior, absent deeper tools and unperformed deeper analyses
 remain UNKNOWN. These gaps prohibit a blanket current/fully verified claim.
 Rollback is removal of the new scanner/baseline/CI changes; previous root pins
 and lock are preserved. No other repository or global plugin state was modified.
+
+## Hosted sync observations and provisioning correction
+
+Commit `a53a5db7ad5adb8e26e5ea1c8267a0a6471ecfc3` was pushed normally to main,
+with local/remote equality and a clean tree verified. The
+[initial CI run](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40404771993)
+passed the standard job but failed X-Plane's initial sync: uv 0.13.5 could not
+find a managed 3.12.16 interpreter on the clean Linux runner. Existing local
+Windows installation had concealed this provisioning gap.
+
+Astral's official manifest at commit
+`68677f5439c027db17b4db7821882a9881d376f6` lists the Linux x86_64 GNU 3.12.16
+archive from its 20261026 python-build-standalone release, with SHA-256
+`ce4f6d0a6cfdb3bed6e44c2f9affd85943c76a42e25ad3a259002f31d6fb8a20`.
+The correction pins that manifest in `[tool.uv].python-downloads-json-url`;
+uv 0.13.5 successfully lists the Linux download through that project setting,
+and the existing lock remains unchanged. This uses the documented
+[metadata override](https://docs.astral.sh/uv/configuration/environment/#uv_python_downloads_json_url),
+without downgrading the interpreter or relaxing managed/locked execution.
+Maintainer owns revisiting/removing the override at the next uv/Python refresh.
+
+Hosted initial scans completed successfully for
+[standard uv](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40404789938),
+[X-Plane uv](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40404789751),
+and [Actions](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40404789852).
+Logs enumerate the resolved packages; no actual update PR was present when
+checked. Root ty/complexipy being newer upstream does not imply immediate PRs:
+GitHub's default three-day version-update cooldown is retained. Logs also tried
+to find the local project identities on PyPI; explicit ignores now exclude only
+those two identities, preserving direct/transitive dependency coverage. No PR
+generation, root build-only update or post-update lock/CI proof is claimed.
+
+The corrective commit must pass the repository gate and exact-SHA CI, including
+clean Linux provisioning, before sync is called verified. Final CI/alignment is
+reported after push without an additional receipt-only commit.

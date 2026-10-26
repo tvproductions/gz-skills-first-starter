@@ -11,6 +11,8 @@ updates:
     open-pull-requests-limit: 5
     allow:
       - dependency-type: all
+    ignore:
+      - dependency-name: skills-first-starter
     commit-message:
       prefix: 'deps(standard)'
 
@@ -24,6 +26,8 @@ updates:
     open-pull-requests-limit: 5
     allow:
       - dependency-type: all
+    ignore:
+      - dependency-name: skills-first-xplane-baseline
     commit-message:
       prefix: 'deps(xplane)'
 

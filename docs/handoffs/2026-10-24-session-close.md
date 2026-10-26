@@ -70,6 +70,15 @@ then observe both CI jobs for its exact SHA. Final sync/CI results are reported
 after push without creating a CI-receipt-only commit. Hosted Dependabot scan and
 real update-PR behavior remain separate proof, not established by CI alone.
 
+Initial save point `a53a5db` reached origin/main. Standard CI passed; X-Plane
+failed before sync because required uv 0.13.5's embedded download metadata did
+not supply 3.12.16 on the clean Linux runner. The correction pins Astral's newer
+official metadata in the X-Plane project's uv settings, preserving exact Python
+and uv requirements. All three initial hosted scans completed successfully;
+actual update PRs remain unobserved. The receipt records run links, the source
+manifest SHA/checksum and the local-project lookup exclusions. Push the corrective
+commit normally and verify its own CI; no earlier green job covers that SHA.
+
 At the earlier October 24 session recheck, a fresh origin fetch confirmed main and
 origin/main aligned at `731495876ef131c1a0795d38ad69116b77a594ca`, with a clean
 worktree and no divergence.

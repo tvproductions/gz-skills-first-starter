@@ -12,6 +12,11 @@
   operation, root build-only update PRs and embedded-host compatibility remain
   unverified; Python/uv execution pins and plugin catalogs need separate review.
   See [scope and evidence](docs/engineering/dependabot.md).
+- Fix clean Linux provisioning of X-Plane's Python 3.12.16 by pinning Astral's
+  newer interpreter download metadata in that project's uv configuration;
+  retain uv 0.13.5 and exact runtime requirements. Exclude local project identities
+  from bot package lookups. Initial hosted scans completed successfully; actual
+  update-PR generation and simulator compatibility remain unverified.
 - Establish this template as the shared policy alignment source for gz-skills
   and Backplane, with source consistency checks and prospective major-release
   PRDs for independently versioned components. Delegate lite/heavy definitions,
