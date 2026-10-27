@@ -48,6 +48,21 @@ does not authorize a tag or release, or complete the deferred acceptance work.
 
 ## Current state
 
+Published **v0.7.1** at `27594dbaec853e6bde037b0aaf3f0427a3f053f9` without
+waiting for the upstream engine, as explicitly directed. Remote annotated tag
+`0562a205f918007aaee53b3dce49d24e30bd3c6f` peels to that commit.
+[Both exact-commit CI jobs passed](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/40428666883).
+The stable release has four verified asset digests; its downloaded wheel installs
+separately, reports 0.7.1 and validates catalogs. The release receipt records
+publication details. Earlier preparation/hold statuses below are historical.
+
+Issue #1 is open as **Integrate and qualify the gzkit cognitive engine when
+available**, with its milestone cleared and no promised date. Milestone 0.7.1
+is closed for the delivered consumer preparation/Ruff patch. Do not reintroduce
+an upstream delivery-date hold or claim actual engine qualification. The
+following documentation commit records publication/backlog state; verify its
+own CI when syncing, without moving the release tag or adding receipt-only loops.
+
 Latest direction supersedes the engine release hold: the maintainer cannot
 promise when the gzkit-owned engine will arrive and explicitly directed release
 of 0.7.1 without waiting. Ship the prepared consumer checks and Ruff 0.17.3 patch;
@@ -143,8 +158,8 @@ worktree and no divergence.
 This handoff refresh is a subsequent documentation change; verify its containing
 commit with Git and its own CI rather than assuming the preceding run covers it.
 
-Latest published release: **v0.7.0**, with the explicit cognitive exception and
-retained component/host limitations. Planned patch: **0.7.1**, not implemented.
+Latest published release: **v0.7.1**, with the explicit cognitive exception and
+retained component/host limitations. Engine integration is open and unscheduled.
 No adopter migration or upstream-project change was performed.
 
 ## Published-release verification

@@ -5,6 +5,9 @@
 Tracked as [issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1).
 The initial 0.7.1 target is superseded: the maintainer directed releasing the
 consumer preparation without waiting for an engine with an unknown delivery date.
+After verified 0.7.1 publication, issue #1's milestone was cleared and milestone
+0.7.1 closed for the delivered consumer preparation/Ruff patch. No later release
+target is assigned to engine integration.
 
 The maintainer explicitly authorized releasing 0.7.0 without waiting for the
 cognitive fix, then booking the correction for 0.7.1. Qualify the selected
