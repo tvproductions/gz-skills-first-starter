@@ -213,6 +213,14 @@ independent evidence before claiming that requirement passes. Historical passing
 receipts retain their narrower observed scope, not an evergreen qualification.
 See [the defect assessment](../evidence/2026-10-24-complexipy-assessment.md).
 
+The maintainer confirmed that the shared engine is coming from gzkit. The
+starter's [consumer qualification boundary](cognitive-integration.md) prepares
+fixtures, independent corpus inventory and ceiling enforcement; it supplies no
+scoring implementation. The engine remains unselected/uninstalled, so these
+tools and their passing regression tests do not establish cognitive acceptance.
+Keep the cognitive exception covering 0.7.0 and 0.7.1 until the actual upstream candidate is pinned,
+qualified and measured. Do not create a private scorer or an extraction project.
+
 ### Adopter class cohesion requirement
 
 Use [cohesion](https://github.com/mschwager/cohesion) as a project-owned,

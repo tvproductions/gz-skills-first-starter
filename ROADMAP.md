@@ -1,10 +1,10 @@
 # Roadmap
 
-## Planned 0.7.1: cognitive qualification correction
+## Unscheduled: upstream cognitive engine integration
 
-Booked after 0.7.0 publication as
-[issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1) in
-[milestone 0.7.1](https://github.com/tvproductions/gz-skills-first-starter/milestone/1).
+Tracked as [issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1).
+The initial 0.7.1 target is superseded: the maintainer directed releasing the
+consumer preparation without waiting for an engine with an unknown delivery date.
 
 The maintainer explicitly authorized releasing 0.7.0 without waiting for the
 cognitive fix, then booking the correction for 0.7.1. Qualify the selected
@@ -13,7 +13,15 @@ under module-level loops/match. Preserve historical failing evidence, public
 contracts, thresholds and upstream ownership. Leave gzkit untouched; no extraction
 project, private scoring fork or plugin installation follows from this booking.
 The existing [extraction assessment](docs/evidence/2026-10-24-gzkit-cognitive-extraction.md)
-owns the demonstrated gaps. 0.7.1 is planned work, not a delivered fix.
+owns the demonstrated gaps. Release 0.7.1 does not deliver the engine or fix its
+scoring defects; those remain this unscheduled follow-up.
+
+Consumer-side preparation now supplies 42 qualification cases, independent
+inventory and ceiling checks, and fault-rejection regressions. The maintainer
+confirmed that gzkit will supply the engine without a promised date; no private engine or new
+extraction project is being created. See the
+[integration boundary](docs/engineering/cognitive-integration.md). Actual engine
+selection, qualification and corpus proof remain pending; issue #1 stays open.
 
 ## 0.6: one canonical template-update skill
 

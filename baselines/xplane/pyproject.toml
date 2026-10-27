@@ -15,7 +15,12 @@ python-preference = "only-managed"
 python-downloads-json-url = "https://raw.githubusercontent.com/astral-sh/uv/68677f5439c027db17b4db7821882a9881d376f6/crates/uv-python-managed/download-metadata.json"
 
 [dependency-groups]
-dev = ["ruff==0.17.2", "ty==0.0.92", "pre-commit==4.7.0", "uv_build==0.13.5"]
+dev = [
+    "ruff==0.17.3",
+    "ty==0.0.92",
+    "pre-commit==4.7.0",
+    "uv_build==0.13.5",
+]
 hygiene = [
     "bandit==1.9.4",
     # Defect reproducer only; not qualified cognitive acceptance authority.

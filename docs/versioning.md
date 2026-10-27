@@ -1,12 +1,16 @@
 # Template versioning
 
-The current template release is **0.7.0**; the initial release
+The current template release is **0.7.1**; the initial release
 was **0.1.0**. The 0.3
 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
-The cognitive qualification correction is booked for **0.7.1** in
-[issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1);
-it is planned, not implemented or published. Execution metadata remains 0.7.0
-until implementation preparation begins.
+Release 0.7.1 ships the consumer-side preparation and a compatible Ruff patch.
+The maintainer explicitly directed publication without waiting for the engine.
+Actual cognitive integration remains open and unscheduled in
+[issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1).
+The incoming gzkit-owned engine must still be selected, qualified and measured
+before the cognitive exception can be removed. This release retains that
+exception and does not claim the cognitive defect is fixed; see the
+[release receipt](evidence/2026-10-26-0.7.1-release.md).
 The current version is recorded in
 `bundle.json` as `template_version`, independently of SP, SP-BP and gz-skills
 versions and the adopter's application version. `pyproject.toml` mirrors the

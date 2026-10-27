@@ -48,6 +48,34 @@ does not authorize a tag or release, or complete the deferred acceptance work.
 
 ## Current state
 
+Latest direction supersedes the engine release hold: the maintainer cannot
+promise when the gzkit-owned engine will arrive and explicitly directed release
+of 0.7.1 without waiting. Ship the prepared consumer checks and Ruff 0.17.3 patch;
+retain the cognitive exception. Issue #1 stays open as unscheduled engine
+integration, outside the 0.7.1 deadline. No private engine, extraction project,
+gzkit mutation or plugin installation is authorized. The candidate-specific
+receipt is `docs/evidence/2026-10-26-0.7.1-release.md`; require exact-commit CI,
+immutable annotated tag, published stable status and verified assets.
+Local release checks pass with managed Python 3.14.10 / 3.12.16, required uv
+0.13.5 and Ruff 0.17.3: four routine hooks, 39 adoption tests, all 29 analyzer
+regressions, X-Plane probes, C901/Lizard, exact-lock audits and runtime dependency/
+import checks. The receipt records limits; real engine scoring remains unperformed.
+
+The operator resumed issue #1, then clarified that the shared cognitive engine
+will come from gzkit soon. Consumer preparation for unreleased 0.7.1 now includes
+42 fixtures, installed-engine qualification/provenance, independent corpus
+inventory and ceiling enforcement. It contains no scorer, private fork or
+extraction project. Read `docs/engineering/cognitive-integration.md` and
+`docs/evidence/2026-10-26-cognitive-consumer-preparation.md` before continuing.
+No engine is installed or qualified; actual corpus scores and eventual
+exact-commit CI remain pending. Keep issue #1 open and the 0.7.0 exception in
+place until the real upstream candidate is pinned, qualified and measured.
+Local preparation passes the complete routine/artifact gate and all 29 explicit
+analyzer regressions on managed Python 3.14.10 / uv 0.13.5. The project .venv is
+3.14.10; the uv package-manager pin is not a Python 3.13 selector. The lock only
+changes the starter version to 0.7.1; dependency pins are preserved. No commit,
+push, issue closure, plugin installation or release occurred in this preparation.
+
 Published **v0.7.0** on October 26 at
 `a02635dad451f8f89c7801c2cbc02e2ec453d369`; remote annotated tag object
 `b13299760c3ccdd33696fcbf13fff6f749397ee0` dereferences to that commit.

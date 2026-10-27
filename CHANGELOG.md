@@ -1,6 +1,22 @@
 # Changelog
 
-## 0.7.1 — Planned
+## 0.7.1 — October 26, 2026
+
+The maintainer explicitly directed release without waiting for the gzkit-owned
+engine, whose arrival has no promised date. Consumer preparation ships now;
+actual engine integration/qualification remains open and unscheduled in issue #1.
+The cognitive exception continues at ceiling 15, without a strict-acceptance claim.
+See the [release receipt](docs/evidence/2026-10-26-0.7.1-release.md).
+
+- Refresh Ruff 0.17.2 to 0.17.3 in both independent uv baselines after official
+  release review; keep the selected rule families and four routine hooks intact.
+
+- Prepare the consumer boundary for the cognitive engine the maintainer says is
+  coming from gzkit: 42 independently specified fixtures, fail-closed source
+  inventory/ceiling checks and installed-engine provenance. This is not a private
+  scorer or a completed cognitive fix. Engine selection, qualification, corpus
+  measurements and removal of the release exception await a separately reviewed
+  upstream candidate, without holding this patch release.
 
 - Book the deferred cognitive qualification correction as
   [issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1),

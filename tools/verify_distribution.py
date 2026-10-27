@@ -56,6 +56,9 @@ def verify_archives(wheel: Path, sdist: Path) -> None:
             "baselines/xplane/uv.lock",
             "baselines/xplane/.python-version",
             "baselines/xplane/README.md",
+            "tools/engineering/cognitive_qualification.py",
+            "tools/engineering/cognitive_check.py",
+            "tools/engineering/fixtures/cognitive-v1.json",
         ):
             if not any(name.endswith(f"/{relative}") for name in names):
                 raise ValueError(f"Source distribution is missing baseline input: {relative}")

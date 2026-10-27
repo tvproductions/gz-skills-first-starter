@@ -135,7 +135,7 @@ Checks: `uv sync --locked --all-groups`, `uv run --locked pre-commit run --all-f
 `uv run --locked skills-first-starter validate`, `uv build --no-sources`, and
 `uv run --locked python tools/verify_distribution.py`. The routine hooks run only
 Ruff check/format, ty and unittest. Run the checker CLI tests explicitly after
-analyzer changes: `uv run --locked --group hygiene python -m unittest discover -s tools/engineering -p "test_*.py" -v` (eleven counting-contract tests plus portability and cognitive-qualification regressions).
+analyzer changes: `uv run --locked --group hygiene python -m unittest discover -s tools/engineering -p "test_*.py" -v` (counting-contract, portability, cognitive-qualification and consumer-gate regressions).
 Refresh wheel resource copies with `uv run --locked python tools/package_resources.py`
 after changing their five authoritative inputs, including the update skill;
 unittest detects drift.
