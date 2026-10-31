@@ -14,6 +14,12 @@ configuration and current evidence; preserve unrelated work and operational
 contracts. In an existing project, report gaps before proposing a bounded
 adoption change. This policy does not authorize a broad application refactor.
 
+Use direct `gh` commands for GitHub operations and direct `git` commands for
+repository operations. Do not wrap routine CLI calls in Python. Use Python when
+substantive processing is actually needed, through the prescribed uv-managed
+environment. Run that Python with `uv run --locked python`, honoring the project's
+exact interpreter pin and required uv version.
+
 ## Runtime and version-aware decisions
 
 ### Latest stable within the selected family

@@ -5,6 +5,12 @@ full/heavy lanes. Other languages, likely including Go, are future work requirin
 their own reviewed and released baseline; upstream skill portability is not
 evidence of template support for another language.
 
+Use direct `gh` commands for GitHub operations and direct `git` commands for
+repository operations. Do not wrap routine CLI calls in Python. Use Python when
+substantive processing is actually needed, through the prescribed uv-managed
+environment. Run that Python with `uv run --locked python`, honoring the project's
+exact interpreter pin and required uv version.
+
 Maximal Astral alignment is required for Python projects under this baseline.
 Read `docs/engineering/astral-alignment.md` in the reviewed starter checkout.
 Complete `docs/engineering/astral-acceptance.md` there, using its worked migrations.

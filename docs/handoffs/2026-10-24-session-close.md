@@ -5,6 +5,31 @@ Read this entry first, then the
 [acceptance/synchronization record](../evidence/2026-10-24-git-sync.md).
 Recheck Git and remote CI before continuing; this is a dated checkpoint.
 
+## October 31 direct CLI guidance (unreleased)
+
+The maintainer requires direct `gh` commands for GitHub operations and direct
+`git` commands for repository operations, both internally and in adopter
+instructions. Routine CLI calls must not be wrapped in Python. Reserve Python
+for substantive processing through the prescribed locked, uv-managed environment,
+honoring the exact interpreter pin and required uv version. Updated starter
+AGENTS.md, the adopter fragment, Python policy and generated wheel-resource copy;
+the changelog records this as unreleased guidance.
+
+Verification with uv 0.13.5 and managed Python 3.14.10: locked all-group sync,
+all four routine hooks, bundle/catalog validation, source-independent build and
+isolated installed-distribution checks passed. No analyzer behavior changed.
+Native skill discovery remains separate; this session does not expose SP or
+gz-skills, and no plugin configuration or installation was changed.
+
+The operator requested Git synchronization of this guidance. A fresh origin
+fetch confirmed `main` and `origin/main` aligned at
+`ec0d3c43d4d70445adbb58d03c06adbf076004a2` before committing the six reviewed
+files. The required local gate passed again with uv 0.13.5 and managed Python
+3.14.10; nested hooks resolve the same uv. Push normally and observe CI for the
+final commit, reporting the remote identity and result without another
+receipt-only commit. Existing cognitive and host-readiness limitations remain;
+this sync does not prepare or publish a release.
+
 ## October 26 policy alignment
 
 The operator designated this template as the authoritative shared policy

@@ -1,5 +1,11 @@
 # GZ skills-first starter
 
+Use direct `gh` commands for GitHub operations and direct `git` commands for
+repository operations. Do not wrap routine CLI calls in Python. Use Python when
+substantive processing is actually needed, through the prescribed uv-managed
+environment. Run that Python with `uv run --locked python`, honoring the project's
+exact interpreter pin and required uv version.
+
 This template currently supports Python projects only, in both lite and
 full/heavy lanes. Other languages, likely including Go, are future scope;
 do not claim their support or invent their baseline from Python policy.

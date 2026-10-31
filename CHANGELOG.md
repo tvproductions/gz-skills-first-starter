@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Require direct `gh` commands for GitHub operations and direct `git` commands
+  for repository operations in the adopter instructions, starter AGENTS.md and
+  Python policy.
+  Prohibit Python wrappers for routine CLI calls; reserve Python for substantive
+  processing in the prescribed locked, uv-managed environment. Regenerate the
+  packaged adopter instructions; runtime, tool and plugin pins are unchanged.
+
 ## 0.7.1 — October 26, 2026
 
 The maintainer explicitly directed release without waiting for the gzkit-owned
