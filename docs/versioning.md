@@ -3,6 +3,10 @@
 The current template release is **0.7.1**; the initial release
 was **0.1.0**. The 0.3
 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
+The current development candidate is **0.8.0 (unreleased)**: a coherent minor
+bundle of three-host repository configuration, brownfield scope repair and
+mandatory adopter discipline. This version label does not establish publication
+or release acceptance; component/runtime/tool pins remain independent.
 Release 0.7.1 ships the consumer-side preparation and a compatible Ruff patch.
 The maintainer explicitly directed publication without waiting for the engine.
 Actual cognitive integration remains open and unscheduled in
@@ -42,6 +46,31 @@ validation remains unimplemented; release notes disclose acceptance gaps.
 Future publication remains a separately authorized operation.
 
 ## Ecosystem policy authority and consistency
+
+### Initial adopter project version
+
+The first substantive release is the first versioned commitment to the project's
+public contract. Declare that contract and issue the release as **0.1.0**.
+This establishes a versioned baseline; the contract may evolve under the required
+0.x compatibility rules. It does not assert the stability required for 1.0.0.
+
+Permit `0.0.0` only as an unpublished placeholder for a bare scaffold. As soon
+as any original implementation, tests, documentation or configuration is added,
+set the initial adopter project version to **0.1.0**. Do not release project-owned
+work as `0.0.0`. Align package metadata, runtime version output and release
+records, and verify agreement before accepting adoption. Correct an unpublished
+`0.0.0` project containing original work to `0.1.0`; preserve published versions
+and immutable tags, and
+advance an existing released project from its actual current version. Never
+reset a released project to `0.1.0` or rewrite a published `0.0.0` release.
+
+This is a mandatory starter policy. SemVer permits zero-valued components, but
+its [initial-development guidance](https://semver.org/spec/v2.0.0.html#how-should-i-deal-with-revisions-in-the-0yz-initial-development-phase)
+recommends starting at `0.1.0`. Do not mistake syntax validity for acceptance
+under this template. The adopter's initial version is independent of the
+starter and upstream plugin versions.
+
+### Shared authority
 
 This repository is the authoritative alignment source for the maintainer's
 shared engineering and release policy. This document owns the SemVer and

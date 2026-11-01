@@ -1,5 +1,10 @@
 # GZ skills-first starter
 
+Adopter instructions are mandatory engineering requirements. Use imperative
+language, explicit completion conditions and required evidence. Agents MUST NOT
+substitute convenient defaults, bypass failed checks or claim acceptance from
+configuration alone. Keep missing requirements and evidenced exceptions explicit.
+
 Use direct `gh` commands for GitHub operations and direct `git` commands for
 repository operations. Do not wrap routine CLI calls in Python. Use Python when
 substantive processing is actually needed, through the prescribed uv-managed
@@ -18,6 +23,34 @@ For adoption into another project, start at
 For continuation of starter development, read
 `docs/handoffs/2026-10-24-session-close.md`; recheck live state before work.
 
+Use this checkout's native development skills through `.codex/config.toml`:
+SP for feature work and gz-skills for engineering workflows. The project-scoped
+`update-gz-template` links to its canonical template source for adopter work;
+do not run template adoption or template upgrades against this starter itself.
+See `docs/structure.md#native-development-skills` for discovery and verification.
+
+Install and enable this stack at repository/project scope. Do not install or
+register its plugins or marketplace globally or at user scope. Use project-owned
+native configuration and explicit project-scope installation where supported;
+do not run unscoped install commands that change user defaults. Shared native
+download caches do not authorize user-wide activation. Report unsupported
+repository scope instead of falling back to a global/user installation.
+Existing global/user installations may remain. The repository MUST own plugin
+versions, activation and command behavior. Repair brownfield activation through
+`skills-first-starter localize --project <root> --host <host> --starter-ref <SHA>`:
+preview, review and apply the project-only overrides. Preserve user installs and
+settings; suppress inherited duplicate sources in project configuration. This
+does not update adoption provenance or grant activation scope outside the repo.
+Keep plugin installation, version updates and enablement separate. Preserve
+project activation, user defaults and duplicate-source overrides during updates.
+Codex CLI 0.166.0 `plugin add` unconditionally enables the plugin user-wide even
+from a project with a local marketplace; do not use it as a project update or
+reinstall command. Verify installed revisions and enablement scope separately.
+OpenCode 2.2.0 has an inherited duplicate-ID precedence failure. Use
+`uv run --locked skills-first-starter run-opencode --project <root> -- <args>`
+for project commands. It reconciles user preferences with repo-owned config and
+starts a private native server without editing user settings or OpenCode code.
+
 This repository owns the bundle catalog, adoption helper, native marketplace
 adapters, and guidance. Read README.md and docs/architecture.md before changes.
 The starter owns one narrowly scoped skill, `update-gz-template`, for canonical
@@ -31,6 +64,10 @@ pin refreshes in release notes and adopter reviews.
 This is a public scaffold; use invented fixtures and preserve upstream ownership.
 
 Version the template independently of its upstream components and adopter apps.
+For adopters, permit `0.0.0` only as an unpublished bare-scaffold placeholder.
+As soon as original implementation, tests, documentation or configuration is
+added, set the initial project version to `0.1.0`. Do not release project-owned
+work as `0.0.0`. Preserve already-published versions and immutable tags.
 This repository is the authoritative policy alignment source for gz-skills and
 SP-BP as well as template adopters. Follow the consistency check and prospective
 release rules in `docs/versioning.md#ecosystem-policy-authority-and-consistency`.
@@ -95,10 +132,15 @@ Generic dependency maintenance belongs in gz-skills. Route authorized updates to
 `gzs-update-dependencies` and dependency-risk reviews to
 `gzs-dependency-risk-audit`; keep this starter's material as policy and binding
 guidance. Do not add a competing local maintenance skill or generic freshness
-reporter. The pinned gz-skills v0.8.0 supplies freshness-only review and
+reporter. The pinned gz-skills v0.8.3 supplies freshness-only review and
 starter/template/plugin inventory through `gzs-update-dependencies`; review mode
 leaves pins and environments unchanged. Preserve this starter's approved Python
 family and retired-tool decisions over upstream profile defaults.
+End freshness reviews with a concrete recommended upgrade batch and an explicit
+offer to apply it. Strongly recommend supported policy-compliant updates; name
+targets, benefits, compatibility risks and required checks. An inventory alone
+is incomplete. Perform already-authorized updates without asking again. Explain
+evidenced deferrals, and state when no upgrade is needed.
 
 The routine standard is Ruff check/format, ty, unittest (never pytest), and
 pre-commit running those checks. Favor strict, reviewed lint rules. On-demand

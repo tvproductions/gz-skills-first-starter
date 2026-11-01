@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "-superpowers",
+    "-superpowers-backplane",
+    "-gz-skills",
+    "git+https://github.com/obra/superpowers.git#2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+    "git+https://github.com/tvproductions/gz-skills.git#d6acc26e28ca1c4f43e5bb46d8973021d7d006c3"
+  ]
+}

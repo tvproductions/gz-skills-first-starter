@@ -1,5 +1,13 @@
 # Skills-first development stack
 
+These instructions are mandatory adoption requirements. Agents MUST execute the
+prescribed workflow and checks, preserve project authorities, and record evidence
+before claiming completion. Agents MUST NOT replace requirements with convenient
+defaults, skip failed checks, invent acceptance evidence, or treat configuration
+as proof of installation. An unmet requirement remains explicitly incomplete.
+Record an evidenced, owned exception where policy permits one; do not grant
+yourself an exemption. Use the starter's commands and native host procedure.
+
 This adopted template currently supports Python projects only, in both lite and
 full/heavy lanes. Other languages, likely including Go, are future work requiring
 their own reviewed and released baseline; upstream skill portability is not
@@ -10,6 +18,35 @@ repository operations. Do not wrap routine CLI calls in Python. Use Python when
 substantive processing is actually needed, through the prescribed uv-managed
 environment. Run that Python with `uv run --locked python`, honoring the project's
 exact interpreter pin and required uv version.
+
+Install and enable this stack at repository/project scope. Do not install or
+register its plugins or marketplace globally or at user scope. Use project-owned
+native configuration and explicit project-scope installation where supported;
+do not run unscoped install commands that change user defaults. Native clients
+may store downloaded files in a shared user cache; cache location does not grant
+user-wide activation. If the host cannot preserve repository scope, report the
+limitation instead of falling back to a global/user installation.
+Existing global/user installations MAY remain. The project MUST own the selected
+versions, activation and command behavior through repository configuration.
+Project overrides MUST suppress duplicate inherited sources locally; do not
+uninstall global copies or rewrite user settings to make the project work.
+For brownfield repair, preview and apply the reviewed starter's
+`skills-first-starter localize --project <root> --host <codex|claude|opencode>
+--starter-ref <FULL_STARTER_SHA>` with `uv run --locked`; add `--apply` after
+review. The command repairs project activation without changing adoption records
+or global installations. Use `configure --host` for full adoption, not scope repair.
+Keep plugin installation, version updates and enablement separate. Record and
+preserve project enablement and user defaults during updates. In Codex CLI
+0.166.0, `plugin add` unconditionally enables the plugin user-wide, even from
+a project with a local marketplace. Do not use it as a project install, update
+or reinstall command. Verify actual installed revisions and unchanged activation
+scope after native resolution; report unsupported updates as pending.
+On OpenCode 2.2.0, agents MUST use the reviewed starter's
+`skills-first-starter run-opencode --project <root> -- <native arguments>` through
+its locked uv environment. The scoped launcher reconciles configuration and uses
+a private server; plain native startup can let an inherited duplicate ID beat
+the project pin. Global copies remain installed. Do not bypass the launcher and
+claim local precedence without fresh native evidence on the actual host version.
 
 Maximal Astral alignment is required for Python projects under this baseline.
 Read `docs/engineering/astral-alignment.md` in the reviewed starter checkout.
@@ -53,7 +90,17 @@ future adoption but is disabled by default because readiness is incomplete.
 Use existing project backlog and handoff practices in the meantime.
 
 Release planning applies to this adopting project's own versions as well as
-the starter. Use MAJOR.MINOR.PATCH for the project's public contract: after 1.0,
+the starter. A bare scaffold may retain `0.0.0` only as an unpublished placeholder.
+As soon as any original implementation, tests, documentation or configuration
+is added, set the initial project version to **0.1.0**. Do not release
+project-owned work as `0.0.0`. Align package metadata, runtime version output
+and release records before accepting adoption. Correct an unpublished `0.0.0`
+project that already contains original work to `0.1.0`.
+The first substantive release is the first versioned commitment to the project's
+public contract. Declare that contract and release it as `0.1.0`; it may evolve
+under the required 0.x rules without claiming 1.0 stability.
+Preserve existing published versions and tags; never reset or rewrite release
+history. Use MAJOR.MINOR.PATCH for the project's public contract: after 1.0,
 incompatible changes require major, compatible additions or public deprecations
 minor, and compatible fixes patch. During 0.x, additions and changes requiring
 reconciliation increment minor; compatible fixes increment patch. Define the
@@ -180,9 +227,15 @@ Generic maintenance belongs in gz-skills: use its discovered
 `gzs-update-dependencies` for authorized dependency/tool updates and
 `gzs-dependency-risk-audit` for risk assessments. The starter supplies baseline
 policy and stack-specific binding guidance. Do not create a duplicate local
-maintenance skill or generic freshness reporter. The pinned gz-skills v0.8.0
+maintenance skill or generic freshness reporter. The pinned gz-skills v0.8.3
 supplies freshness-only review and template/plugin inventory. Review mode leaves
 pins and environments unchanged; preserve project policy and profile choices.
+End a freshness review with a concrete recommended upgrade batch and an explicit
+offer to apply it. Strongly recommend supported updates that satisfy project
+policy; state targets, benefits, compatibility risks and required checks. Do not
+stop at an inventory or adopt/defer table. If updates are already authorized,
+perform and verify them without asking again. State evidenced deferrals; if
+everything is current, say so instead of inventing an upgrade.
 
 Track the adopted starter's own version and exact SHA in its bundle lock,
 independently of app and upstream plugin versions. Compare reviewed template

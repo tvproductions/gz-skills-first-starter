@@ -29,6 +29,15 @@ not authorize an upgrade, plugin activation, publication, or notifications.
 Generic dependency work remains with `gzs-update-dependencies`; template updates
 do not implicitly refresh the whole runtime/tool/plugin stack.
 
+Keep native installation, version updates and enablement separate. For any
+authorized plugin update, record and preserve project enablement, user defaults
+and duplicate-source overrides. Codex CLI 0.166.0 `plugin add` unconditionally
+enables the plugin in user-wide configuration even from a project with a local
+marketplace. Do not use it as a project update/reinstall shortcut. Follow the
+[scope-preserving update procedure](adoption.md#updates-and-rollback), verify
+actual installed revisions and activation separately, and report unsupported
+updates as pending instead of changing scope.
+
 ## Canonical sequence
 
 1. Read project authorities and `.skills-first/bundle.lock.json`. Record current
@@ -63,6 +72,11 @@ and refuses conflicting content or symlinked destinations. Wheels carry the
 same checked source. Existing app skills are preserved; no upstream skill trees
 are copied. This path is the project discovery contract used by the Codex
 helper; other hosts' discovery must be verified using their native facilities.
+The 0.8.0 helper additionally supports `--host claude` with
+`.claude/skills/update-gz-template/SKILL.md` and `--host opencode` with the shared
+`.agents/skills` path. `localize --host` repairs activation without changing the
+adoption record or installing another update-skill copy. Preserve global copies;
+make the project source authoritative through repo-owned overrides.
 
 For 0.5.0 and earlier adopters, either reconcile the complete upgrade or bootstrap
 just the skill. The [v0.7.1 release](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.7.1)

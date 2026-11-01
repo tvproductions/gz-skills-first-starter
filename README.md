@@ -9,6 +9,11 @@ usefulness to other adopters is welcome, rather than a reason to dilute them.
 
 This repository is the bundle catalog, adoption tool, and guidance home.
 
+Development **0.8.0 (unreleased)** adds repository-owned Codex, Claude Code and
+OpenCode v2 configuration plus brownfield activation repair. The latest published
+release remains 0.7.1. Adoption requirements are mandatory; agents must execute
+the prescribed checks and present evidence before claiming completion.
+
 It is also the [policy alignment source](docs/versioning.md#ecosystem-policy-authority-and-consistency)
 for the maintainer's gz-skills and Backplane repositories. Backplane owns
 [lite/heavy modes](https://github.com/tvproductions/superpowers-backplane/blob/main/docs/superpowers-backplane/modes.md),
@@ -126,6 +131,10 @@ routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
 [the current handoff](docs/handoffs/2026-10-24-session-close.md).
+This checkout enables native SP and gz-skills development workflows and exposes
+its own update skill for adopter work. See
+[native development skills](docs/structure.md#native-development-skills) for
+setup, invocation and the boundary against self-adoption.
 
 ## Quick start: an existing or empty project
 
@@ -149,6 +158,25 @@ uv run --locked skills-first-starter configure --project /path/to/your-project
 uv run --locked skills-first-starter configure --project /path/to/your-project --apply
 ```
 
+Select the native host explicitly with `--host codex`, `--host claude` or
+`--host opencode` on both configure commands; omitted `--host` retains Codex
+compatibility. The helper writes only the selected host's repository settings.
+For an already configured brownfield project, repair activation independently:
+
+```bash
+uv run --locked skills-first-starter localize --project /path/to/your-project --host codex --starter-ref FULL_STARTER_SHA
+uv run --locked skills-first-starter localize --project /path/to/your-project --host codex --starter-ref FULL_STARTER_SHA --apply
+```
+
+Use the corresponding Claude/OpenCode host value when repairing those clients.
+Existing global/user copies may remain: the project owns selection and behavior,
+and the repair writes only project overrides. It preserves adoption records and
+uses adopted component pins when present. See the
+[three-host procedure](docs/adoption.md#repository-owned-installation-and-brownfield-repair).
+For OpenCode 2.2.0, use `uv run --locked skills-first-starter run-opencode
+--project /path/to/project -- <native arguments>` from the starter environment.
+This avoids its inherited duplicate-ID failure without modifying OpenCode.
+
 The first configure command previews paths without writing. The second writes
 project Codex settings, a pinned bundle record and an instructions fragment.
 Configure also seeds the single project-scoped
@@ -162,6 +190,9 @@ no-op. Review the configuration before trusting it in Codex.
 
 Then follow [native installation and verification](docs/adoption.md). Configuring
 files does **not** install plugins, authenticate GitHub, or prove skill discovery.
+Require repository/project-scoped installation, registration and activation;
+do not install this stack globally or at user scope. Shared native download
+caches are storage, not permission for user-wide activation.
 The native managers own their caches; upstream skills are never copied here.
 Complete the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
 explicit lite/heavy selection and required adoption/release analysis. Configure
@@ -206,7 +237,7 @@ those exact full commit SHAs, not moving branches.
 |---|---|---|
 | [Superpowers](https://github.com/obra/superpowers) | v7.0.1 | Feature design, plans, implementation, review |
 | [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | Deferred; disabled by default | GitHub-backed backlog and handoff continuity |
-| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.0 | Portable engineering disciplines |
+| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.3 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
 Published template 0.6.0 retains its original SP 7.0.0 selection.
@@ -231,12 +262,13 @@ over upstream profile defaults, including Python 3.14 and retired-tool choices.
 
 ## Current scope
 
-- Implemented: immutable bundle catalogs, Codex project configuration, preview,
+- Implemented: immutable bundle catalogs, Codex/Claude/OpenCode v2 project configuration, preview,
   idempotent adoption, conflict preservation, status, project instructions,
   read-only backport assessment, and automated tests.
-- Claude Code: native bundle marketplace supplied; project install guidance
-  documented. End-to-end installation is not verified by this starter yet.
-- OpenCode: deferred until Backplane's adapter and variant verification exist.
+- Claude Code: explicit project installation and inside/outside activation checks
+  pass on CLI 2.1.316; desktop invocation remains separate acceptance work.
+- OpenCode v2: pinned SP/gz-skills package adapters load from project configuration
+  on 2.2.0. Backplane remains disabled/deferred; no combined-stack claim follows.
 - Fresh-session Windows Codex CLI discovery has a [v0.4.0 acceptance receipt](docs/evidence/2026-10-18-codex-discovery-verified.md),
   including pinned skill bytes and an outside-project control. Desktop UI,
   other harnesses and Backplane conformance remain separate operator-run checks;

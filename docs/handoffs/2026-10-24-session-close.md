@@ -5,6 +5,126 @@ Read this entry first, then the
 [acceptance/synchronization record](../evidence/2026-10-24-git-sync.md).
 Recheck Git and remote CI before continuing; this is a dated checkpoint.
 
+## Three-host local ownership and brownfield repair — October 31 (unreleased 0.8.0)
+
+The final inherited-source test exposed OpenCode 2.2.0's duplicate-ID failure:
+its earlier source wins despite a later project pin. Added `run-opencode`, a
+scoped native launcher using versioned native environment options, not a host
+rewrite. It reconciles ordinary preferences in memory, excludes inherited plugin
+declarations/ancestor config, preserves explicit repo skill paths and starts a
+private server. It blocks global add/remove and shared-server attachment. The
+same fixture now reports the correct project targets active. Use this required
+route on 2.2.0; clean-project success alone did not establish brownfield behavior.
+User settings and installations remain unchanged. See the receipt's correction.
+Final change verification passes: locked all-group sync, four routine hooks with
+59 unittests, bundle/both catalogs, source-independent build, installed-wheel
+host/repair checks and explicit Ruff C901. uv 0.13.5 and managed Python 3.14.10
+were used. Temporary native test servers are stopped. No tag/release or Git
+synchronization was performed; the 0.8.0 candidate remains in the worktree.
+
+Latest operator direction: all three target hosts must obey repository-owned
+selection, activation and commands. Existing global/user copies may remain;
+do not uninstall them or rewrite user defaults to repair a project. The starter
+is an emphatic engineering standard: mandatory steps, prescribed commands and
+actual evidence; no convenient substitute or configuration-only acceptance.
+
+Implemented `configure --host codex|claude|opencode` with matching native project
+settings and update-skill discovery; default remains Codex for compatibility.
+Non-Codex adoption records carry additive `host`; old records retain Codex.
+Implemented `localize --host` as independent preview/apply scope repair. It reads
+inherited Codex/Claude identities, suppresses duplicate sources in repo settings,
+repairs Claude's local override layer, and places OpenCode ID exclusions before
+its full-SHA package targets. It preserves adoption records, existing project
+marketplace selections, adopted component pins and unrelated settings. JSONC
+updates preserve comments and source bytes outside changed native fields.
+Simultaneous JSON/JSONC files and OpenCode v1 adapter migration need explicit
+reconciliation. No native installer is called by the helper.
+
+Template/pyproject/uv lock now identify development 0.8.0, a coherent minor for
+this capability/policy bundle. No component/tool/runtime pins were refreshed and
+no release/tag is published. Existing earlier policy edits remain in the worktree.
+The update skill and wheel resources are reconciled. Starter development now has
+Codex, Claude and OpenCode project settings; both repo skill links resolve to the
+single canonical update skill. No starter self-adoption lock/profile is created.
+
+Native macOS checks: Codex 0.166.0 discovers 36 starter entries in a trusted
+fixture and none outside. Claude 2.1.316 native installs succeed at project scope
+for fixtures and this starter; inventory reports enabled inside/disabled outside.
+OpenCode 2.2.0's persistent server loads both upstream v2 adapters at exact SHAs,
+discovers 15 SP + 20 gz-skills + update skill and none outside. Initial short-lived
+OpenCode queries can finish before background package installation; wait for real
+server state. User settings snapshots remain unchanged. See the
+[three-host receipt](../evidence/2026-10-31-three-host-repo-scope.md).
+
+Codex's gz-skills cache still contains 0.8.3 despite the requested 0.8.0 ref.
+Scope proof does not close exact-pin acceptance; that failure remains explicit.
+Desktop selectors/model invocation and other operating systems remain UNKNOWN.
+The upstream dependency-skill candidate described below remains uncommitted and
+unpublished in its separate source checkout. No cache surgery or global install
+was used. Full release acceptance, cognitive qualification and Backplane readiness
+remain separate from this change's repository/native-scope verification.
+
+## October 31 native development skills and repository scope (unreleased)
+
+The operator clarified the 0.1.0 rationale: the first substantive release is
+the first versioned public-contract commitment, without claiming 1.0 stability.
+They also supplied a specific Codex CLI 0.166.0 observation: `plugin add`
+unconditionally enables a plugin user-wide even from a project with a local
+marketplace. Native install/update guidance now prohibits that shortcut and
+separates installation, version changes and enablement. Preserve project
+activation, user defaults and duplicate-source overrides, and verify actual
+revisions and outside-project scope. This clarification uses the operator's
+observation; no user-wide install was run to reproduce it here.
+
+Subsequent operator direction makes freshness review completion actionable:
+strongly recommend a concrete supported upgrade batch and explicitly offer to
+apply it; carry out already-authorized updates without repeating permission.
+The internal/adopter instructions, Python policy and maintenance guide bind this
+behavior now. The upstream skill correction is prepared in the clean checkout
+`/tmp/gz-skills-maintenance-20261031` (base
+`9a7970208207d68cc4a04eff7c3d39bcea664463`), with pending skill 0.3.1/bundle
+0.8.4 and synchronized metadata/uv lock. Its 28 unittests and source/wheel
+builds pass. It is uncommitted/unpublished and is not installed or selected by
+this starter's unchanged gz-skills 0.8.0 pin.
+
+The versioning policy and adopter workflow now allow `0.0.0` only as an
+unpublished bare-scaffold placeholder. Once original implementation, tests,
+documentation or configuration is added, use initial project version `0.1.0`;
+do not release that original work as `0.0.0`. Preserve published history.
+Claude Code 2.1.316 help confirms `--scope project` for both marketplace-add
+and plugin-install; the native guide now gives those exact commands.
+
+Live cache state subsequently changed: the gz-skills installation under the
+starter marketplace now resolves to 0.8.3 / Git HEAD
+`d6acc26e28ca1c4f43e5bb46d8973021d7d006c3` despite native inventory declaring
+the requested 0.8.0 source ref. A scoped native marketplace upgrade reports
+already current and does not repair this mismatch. Treat final exact-pin
+discovery as UNKNOWN; retain the earlier passing observation as historical.
+Do not patch/delete native caches to force agreement. Desktop Computer Use
+inspection is blocked by the tool's app-access restriction. User config hash
+remains unchanged. See the updated discovery receipt for limits.
+
+The operator explicitly requested native skill use in this starter and requires
+repo/project-scoped installation, registration and activation for adopters too.
+Do not use global/user-level installation or unscoped install/marketplace-add
+commands as a fallback. Shared native download caches are storage, not user-wide
+activation. The adopter fragment, native installation guides and starter AGENTS
+now make that rule explicit; generated wheel instructions must stay in sync.
+
+Development `.codex/config.toml` selects the published v0.7.1 Git catalog, enables
+SP/gz-skills here, suppresses the duplicate gz-skills source and keeps Backplane
+disabled. A relative repository skill symlink exposes canonical
+`update-gz-template` for explicitly identified adopter work. No self-adoption
+lock/profile is created. A fresh macOS CLI 0.166.0 app-server discovers 15 SP,
+20 gz-skills and the update skill from both root and `src/`, with no discovery
+errors. An independent `/tmp` runtime discovers none of these. User config
+remains byte-identical. See the
+[native receipt](../evidence/2026-10-31-native-development-skills.md).
+Desktop picker/model invocation, Windows symlink checkout and other hosts remain
+UNKNOWN; refresh the desktop client and start a fresh project chat to inspect
+its native selector. Repository checks and final results are recorded in the
+receipt; this work does not publish a release or synchronize Git.
+
 ## October 31 direct CLI guidance (unreleased)
 
 The maintainer requires direct `gh` commands for GitHub operations and direct

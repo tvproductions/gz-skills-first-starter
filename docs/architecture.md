@@ -31,7 +31,11 @@ Project AGENTS and domain authorities
   -> versioned operational records and generated products
 ```
 
-The adoption helper is standard-library Python. It previews before writing,
+The adoption helper is standard-library Python. `configure --host` selects
+Codex, Claude Code or OpenCode v2 project settings. `localize --host` repairs
+brownfield activation independently of adoption/version migration; it reads
+inherited Codex/Claude plugin identities and writes only project overrides.
+Existing global installations remain untouched. It previews before writing,
 checks all intended files before changing any, preserves unrelated TOML bytes
 and existing AGENTS content, refuses conflicting managed files and discovery
 copies, and never invokes a native install, remote model, or GitHub mutation.
@@ -72,7 +76,9 @@ starter changes must not carry real operational records, credentials, machine
 paths, or sensitive source data. Examples and tests use invented fixtures only.
 
 The starter writes an instructions fragment with direct workflow references.
-Configure seeds only `.agents/skills/update-gz-template/SKILL.md`; legacy starter
+Configure seeds only the owned update skill: `.claude/skills/update-gz-template/SKILL.md`
+for Claude and `.agents/skills/update-gz-template/SKILL.md` for Codex/OpenCode.
+Legacy starter
 copies still require reviewed reconciliation. Upstream skill trees are never copied. The
 read-only `backport` assessment supports an agent-led source mapping and verified
 refactoring; it does not relocate app files or impose heavy-profile governance.

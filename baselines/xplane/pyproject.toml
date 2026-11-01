@@ -9,17 +9,15 @@ dependencies = []
 # Adopter runtime packages still require src/ layout and a declared build backend.
 [tool.uv]
 package = false
-required-version = "==0.13.5"
+required-version = "==0.13.6"
 python-preference = "only-managed"
-# uv 0.13.5 predates the latest 3.12 patch's download metadata.
-python-downloads-json-url = "https://raw.githubusercontent.com/astral-sh/uv/68677f5439c027db17b4db7821882a9881d376f6/crates/uv-python-managed/download-metadata.json"
 
 [dependency-groups]
 dev = [
     "ruff==0.17.3",
-    "ty==0.0.92",
+    "ty==0.0.95",
     "pre-commit==4.7.0",
-    "uv_build==0.13.5",
+    "uv_build==0.13.6",
 ]
 hygiene = [
     "bandit==1.9.4",

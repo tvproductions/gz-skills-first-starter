@@ -66,6 +66,50 @@ def verify_archives(wheel: Path, sdist: Path) -> None:
             raise ValueError("Source distribution contains a development environment")
 
 
+def verify_native_hosts(command: Path, directory: Path) -> None:
+    """Exercise new host configuration and repair from the installed artifact."""
+    for host, config, surface in (
+        ("claude", ".claude/settings.json", ".claude"),
+        ("opencode", "opencode.json", ".agents"),
+    ):
+        target = directory / host
+        target.mkdir()
+        args = (
+            str(command),
+            "configure",
+            "--project",
+            str(target),
+            "--host",
+            host,
+            "--starter-ref",
+            "a" * 40,
+        )
+        run(*args, "--apply", cwd=directory)
+        if not (target / config).is_file():
+            raise ValueError(f"Installed helper omitted {host} configuration")
+        if (target / surface / "skills/update-gz-template/SKILL.md").read_bytes() != (
+            ROOT / "templates/skills/update-gz-template/SKILL.md"
+        ).read_bytes():
+            raise ValueError(f"Installed helper omitted {host} update skill")
+        if json.loads(run(*args, "--apply", cwd=directory).stdout)["writes"]:
+            raise ValueError(f"Installed {host} configuration is not idempotent")
+        lock = (target / ".skills-first/bundle.lock.json").read_bytes()
+        run(
+            str(command),
+            "localize",
+            "--project",
+            str(target),
+            "--host",
+            host,
+            "--starter-ref",
+            "a" * 40,
+            "--apply",
+            cwd=directory,
+        )
+        if (target / ".skills-first/bundle.lock.json").read_bytes() != lock:
+            raise ValueError(f"Installed {host} scope repair changed adoption provenance")
+
+
 def main() -> None:
     """Inspect archives and exercise the installed helper outside the checkout."""
     metadata = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
@@ -116,6 +160,7 @@ def main() -> None:
         )
         if status["runtime_readiness"] != "unverified":
             raise ValueError("Installed helper falsely claimed runtime readiness")
+        verify_native_hosts(command, directory)
         refused = subprocess.run(
             [str(command), "configure", "--project", str(target)],
             cwd=directory,

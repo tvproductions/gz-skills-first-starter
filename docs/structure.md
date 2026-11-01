@@ -63,6 +63,58 @@ assessment requirement. That dependency is explicit and versioned. The pinned
 Pythonic-pattern skills provide partial coverage, not a complete version audit;
 missing capability stays visible rather than becoming another starter skill.
 
+## Native development skills
+
+This starter dogfoods the upstream development workflows through its checked-in
+`.codex/config.toml`, `.claude/settings.json` and `opencode.json`. It enables
+`superpowers@skills-first-starter` and
+`gz-skills@skills-first-starter` only in this trusted project, disables the
+alternative `gz-skills@gz-skills` source here to avoid duplicates, and keeps
+Backplane disabled. User defaults and unrelated projects retain their settings.
+
+The development configuration uses the published v0.7.1 Git marketplace at
+`27594dbaec853e6bde037b0aaf3f0427a3f053f9`. Its catalog matches this checkout's
+catalog and selects SP 7.0.1 and gz-skills 0.8.0. Reconcile this development
+marketplace ref when reviewing future catalog changes; do not assume a local
+catalog edit updates the pinned development source. A relative local marketplace
+source of `.` failed when launching the CLI from `src/` on the verified host;
+the pinned Git source works from both locations without machine-specific paths.
+
+`.agents/skills/update-gz-template` is a relative symlink to
+`templates/skills/update-gz-template`, exposing the one canonical source without
+another editable copy. Git must materialize that symlink as a directory link;
+discovery on hosts that check it out as a plain file is unverified. Use this
+skill with an explicitly identified adopter project. It does not update this
+starter's own source. No `.skills-first/bundle.lock.json`, self-adoption record,
+or inferred lite/heavy selection is needed for development discovery.
+
+In a trusted checkout, inspect native state:
+
+```bash
+codex plugin marketplace list --json
+codex plugin list --json
+```
+
+Native runtime resolution can materialize the configured plugins in its shared
+download cache while registration and activation stay project-owned. Follow
+[adoption guidance](adoption.md#codex); do not run unscoped install/marketplace-add
+commands that change user defaults. If project-scoped resolution fails, report
+discovery as pending instead of installing globally or at user scope.
+
+Start a fresh project session, then use the native skill selector or name the
+skill in your request, for example `Use $gz-skills:gzs-quality-gate` or
+`Use $update-gz-template to review the adopter at /path/to/project; apply no updates`.
+Codex CLI/IDE supports `/skills` and `$`; ChatGPT's skill selector uses `@`.
+Restart the client if the list remains stale. See
+[official skill discovery and invocation](https://learn.chatgpt.com/docs/build-skills).
+Verify actual names, source paths and enablement; a config file alone is not
+proof. The [October 31 receipt](evidence/2026-10-31-native-development-skills.md)
+records native macOS CLI discovery; desktop picker behavior remains unverified.
+The [three-host receipt](evidence/2026-10-31-three-host-repo-scope.md) records
+the later Claude/OpenCode installations and brownfield repair. Existing global
+copies remain installed; project configuration owns effective selection and
+activation. Use `localize --host` for scope repair, not a global uninstall.
+
 ## Maintenance ownership
 
 The starter maintainer publishes reviewed baseline changes and describes their

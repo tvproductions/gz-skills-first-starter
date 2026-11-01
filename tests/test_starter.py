@@ -18,6 +18,9 @@ class AdoptionTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name).resolve()
         self.addCleanup(self.temp.cleanup)
+        inherited = mock.patch.object(starter, "_inherited_plugins", return_value={})
+        inherited.start()
+        self.addCleanup(inherited.stop)
 
     def configure(self, apply=False):
         return starter.configure(self.root, REF, apply=apply)

@@ -1,0 +1,18 @@
+{
+  "enabledPlugins": {
+    "superpowers@skills-first-starter": true,
+    "gz-skills@skills-first-starter": true,
+    "gz-skills@gz-skills": false,
+    "superpowers-backplane@skills-first-starter": false
+  },
+  "extraKnownMarketplaces": {
+    "skills-first-starter": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/tvproductions/gz-skills-first-starter.git",
+        "ref": "27594dbaec853e6bde037b0aaf3f0427a3f053f9"
+      },
+      "autoUpdate": false
+    }
+  }
+}

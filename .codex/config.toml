@@ -1,0 +1,18 @@
+# Development skills for this checkout; this is not template self-adoption.
+# Use the released catalog so discovery also works from nested directories.
+[marketplaces.skills-first-starter]
+source_type = "git"
+source = "https://github.com/tvproductions/gz-skills-first-starter.git"
+ref = "27594dbaec853e6bde037b0aaf3f0427a3f053f9"
+
+[plugins."superpowers@skills-first-starter"]
+enabled = true
+
+[plugins."gz-skills@skills-first-starter"]
+enabled = true
+
+[plugins."gz-skills@gz-skills"]
+enabled = false
+
+[plugins."superpowers-backplane@skills-first-starter"]
+enabled = false

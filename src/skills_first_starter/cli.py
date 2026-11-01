@@ -17,6 +17,15 @@ import tempfile
 import tomllib
 from pathlib import Path
 
+from skills_first_starter.native import (
+    HOST_PATHS,
+    configuration_path,
+    project_json,
+    update_skill_path,
+)
+from skills_first_starter.native_launch import launch as launch_opencode
+from skills_first_starter.native_scope import claude_scope, codex_scope, opencode_scope
+
 _SOURCE = Path(__file__).resolve()
 _CHECKOUT = _SOURCE.parents[2]
 # Editable installs use authoritative checkout files. Wheels carry checked copies.
@@ -178,9 +187,11 @@ def _adoption_root(project: Path) -> Path:
     return root
 
 
-def _check_discovery_entry(surface: str, child: Path) -> None:
+def _check_discovery_entry(
+    surface: str, child: Path, owned_surface: str = ".agents/skills"
+) -> None:
     """Preserve legacy and shared skill copies for explicit reconciliation."""
-    if child.name == UPDATE_SKILL and surface != ".agents/skills":
+    if child.name == UPDATE_SKILL and surface != owned_surface:
         raise AdoptionError(f"duplicate template update skill at {surface}; reconcile first")
     if child.name in ("skills-first-start", "adopt-skills-stack", "python-engineering"):
         raise AdoptionError(
@@ -198,22 +209,32 @@ def _check_discovery_entry(surface: str, child: Path) -> None:
         )
 
 
-def _check_discovery(root: Path) -> None:
+def _check_discovery(root: Path, host: str = "codex") -> None:
     """Inspect all supported discovery surfaces without mutating their contents."""
-    for surface in (".agents/skills", ".codex/skills", ".claude/skills", ".github/skills"):
+    owned_surface = str(Path(update_skill_path(host)).parent.parent)
+    for surface in (
+        ".agents/skills",
+        ".codex/skills",
+        ".claude/skills",
+        ".github/skills",
+        ".opencode/skills",
+    ):
         folder = root / surface
         if folder.is_symlink():
             raise AdoptionError(f"inspect existing discovery link {surface} before adoption")
         if folder.is_dir():
             for child in folder.iterdir():
-                _check_discovery_entry(surface, child)
+                _check_discovery_entry(surface, child, owned_surface)
 
 
-def _configuration_candidates(paths: dict[str, Path], ref: str) -> tuple[dict[str, str], dict]:
+def _configuration_candidates(
+    paths: dict[str, Path], ref: str, host: str = "codex"
+) -> tuple[dict[str, str], dict]:
     """Prepare managed payloads without writing or changing existing authorities."""
+    config_path = "opencode.jsonc" if "opencode.jsonc" in paths else HOST_PATHS[host]
     old_config = (
-        paths[".codex/config.toml"].read_text(encoding="utf-8", newline="")
-        if paths[".codex/config.toml"].exists()
+        paths[config_path].read_text(encoding="utf-8", newline="")
+        if paths[config_path].exists()
         else ""
     )
     fragment = (HERE / "templates/AGENTS.skills-first.md").read_text(encoding="utf-8")
@@ -222,11 +243,19 @@ def _configuration_candidates(paths: dict[str, Path], ref: str) -> tuple[dict[st
         "starter": {"repository": ORIGIN, "version": template_version(), "revision": ref},
         "components": bundle()["components"],
     }
+    if host != "codex":
+        lock["host"] = host
+    config = (
+        project_config(old_config, ref)
+        if host == "codex"
+        else project_json(old_config, host, ref, bundle()["components"])
+    )
+    config = _scoped_config(config, host, ref, bundle()["components"])
     candidates = {
-        ".codex/config.toml": project_config(old_config, ref),
+        config_path: config,
         ".skills-first/bundle.lock.json": json.dumps(lock, indent=2) + "\n",
         "AGENTS.skills-first.md": fragment,
-        UPDATE_SKILL_DESTINATION: (HERE / UPDATE_SKILL_SOURCE).read_text(encoding="utf-8"),
+        update_skill_path(host): (HERE / UPDATE_SKILL_SOURCE).read_text(encoding="utf-8"),
     }
     if not paths["AGENTS.md"].exists():
         candidates["AGENTS.md"] = (
@@ -246,7 +275,7 @@ def _plan_writes(
         before[name] = current
         if current == payload.encode():
             present.append(name)
-        elif current is not None and name != ".codex/config.toml":
+        elif current is not None and name not in (*HOST_PATHS.values(), "opencode.jsonc"):
             raise AdoptionError(
                 f"{name} differs from the reviewed template; reconcile without overwriting"
             )
@@ -298,28 +327,34 @@ def _apply_writes(
         raise
 
 
-def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
+def configure(project: Path, ref: str, *, apply: bool = False, host: str = "codex") -> dict:
     """Preview or apply the reviewed adoption plan with conflict preservation."""
     validate_bundle()
+    if host not in HOST_PATHS:
+        raise AdoptionError(f"unsupported native host: {host}")
     if not SHA.fullmatch(ref):
         raise AdoptionError(
             "use a reviewed, published full starter commit SHA; moving branches are not pins"
         )
     root = _adoption_root(project)
-    _check_discovery(root)
+    _check_discovery(root, host)
+    if host == "claude":
+        local = check_path(root, ".claude/settings.local.json")
+        if local.exists():
+            project_json(local.read_text(encoding="utf-8"), host, ref, bundle()["components"])
     paths = {
         name: check_path(root, name)
         for name in (
-            ".codex/config.toml",
+            configuration_path(root, host),
             ".skills-first/bundle.lock.json",
             ".gz-skills/settings.json",
             "AGENTS.skills-first.md",
             "AGENTS.md",
-            UPDATE_SKILL_DESTINATION,
+            update_skill_path(host),
         )
     }
     profile_check(paths[".gz-skills/settings.json"])
-    candidates, lock = _configuration_candidates(paths, ref)
+    candidates, lock = _configuration_candidates(paths, ref, host)
     writes, before, present = _plan_writes(paths, candidates)
     if apply:
         _apply_writes(root, paths, writes, before)
@@ -329,6 +364,7 @@ def configure(project: Path, ref: str, *, apply: bool = False) -> dict:
         "writes": list(writes),
         "present": present,
         "runtime_readiness": "unverified",
+        "host": host,
         "starter": lock["starter"],
         "next": [
             "Review the project instructions fragment; link it from existing AGENTS.md if needed.",
@@ -346,13 +382,73 @@ def status(project: Path) -> dict:
     if not path.exists():
         return {"status": "not configured", "runtime_readiness": "unverified"}
     lock = json.loads(path.read_text(encoding="utf-8"))
-    expected = configure(root, lock["starter"]["revision"])
+    expected = configure(root, lock["starter"]["revision"], host=lock.get("host", "codex"))
     return {
         "status": "configured" if not expected["writes"] else "incomplete",
         "runtime_readiness": "unverified",
         "pending_files": expected["writes"],
         "starter": lock["starter"],
         "components": lock["components"],
+    }
+
+
+def _inherited_plugins(host: str) -> dict:
+    """Read user activation for project overrides; never edit user settings."""
+    home = Path.home()
+    if host == "codex":
+        path = Path(os.environ.get("CODEX_HOME", str(home / ".codex"))) / "config.toml"
+        return tomllib.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    if host == "claude":
+        path = Path(os.environ.get("CLAUDE_CONFIG_DIR", str(home / ".claude"))) / "settings.json"
+        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    return {}
+
+
+def _scoped_config(existing: str, host: str, ref: str, parts: list[dict]) -> str:
+    """Apply native project precedence without invoking an installation command."""
+    inherited = _inherited_plugins(host)
+    if host == "codex":
+        return codex_scope(existing, inherited, ref, parts)
+    if host == "claude":
+        return claude_scope(existing, inherited, ref, parts)
+    return opencode_scope(existing, parts)
+
+
+def localize(project: Path, ref: str, *, host: str, apply: bool = False) -> dict:
+    """Repair only project activation, preserving global installs and adoption records."""
+    validate_bundle()
+    if host not in HOST_PATHS or not SHA.fullmatch(ref):
+        raise AdoptionError("select a supported host and a full reviewed starter SHA")
+    root = _adoption_root(project)
+    parts = bundle()["components"]
+    lock = check_path(root, ".skills-first/bundle.lock.json")
+    if lock.exists():
+        parts = json.loads(lock.read_text(encoding="utf-8"))["components"]
+        if {p["name"] for p in parts} != {p["name"] for p in bundle()["components"]}:
+            raise AdoptionError("existing adoption components need explicit reconciliation")
+        if any(not SHA.fullmatch(p["revision"]) for p in parts):
+            raise AdoptionError("existing adoption component pins must be full SHAs")
+    names = [configuration_path(root, host)]
+    if host == "claude" and (root / ".claude/settings.local.json").exists():
+        names.append(".claude/settings.local.json")
+    paths = {name: check_path(root, name) for name in names}
+    writes, before = {}, {}
+    for name, path in paths.items():
+        before[name] = path.read_bytes() if path.exists() else None
+        existing = before[name].decode("utf-8") if before[name] is not None else ""
+        payload = _scoped_config(existing, host, ref, parts)
+        if before[name] != payload.encode("utf-8"):
+            writes[name] = payload
+    if apply:
+        _apply_writes(root, paths, writes, before)
+    return {
+        "status": "localized" if apply else "preview",
+        "project": str(root),
+        "host": host,
+        "writes": list(writes),
+        "runtime_readiness": "unverified",
+        "user_settings": "read only; global installations preserved",
+        "adoption_record": "unchanged",
     }
 
 
@@ -460,6 +556,20 @@ def main(argv: list[str] | None = None) -> int:
         "--starter-ref", help="full published starter SHA; defaults to this checkout HEAD"
     )
     configure_parser.add_argument("--apply", action="store_true")
+    configure_parser.add_argument("--host", choices=tuple(HOST_PATHS), default="codex")
+    localize_parser = sub.add_parser(
+        "localize",
+        help="preview repo activation repair; preserve user installs and adoption records",
+    )
+    localize_parser.add_argument("--project", type=Path, required=True)
+    localize_parser.add_argument("--host", choices=tuple(HOST_PATHS), required=True)
+    localize_parser.add_argument("--starter-ref", required=True)
+    localize_parser.add_argument("--apply", action="store_true")
+    launch_parser = sub.add_parser(
+        "run-opencode", help="run a private OpenCode server with project-only plugin selection"
+    )
+    launch_parser.add_argument("--project", type=Path, required=True)
+    launch_parser.add_argument("arguments", nargs=argparse.REMAINDER)
     status_parser = sub.add_parser(
         "status", help="inspect configuration without claiming runtime installation"
     )
@@ -470,10 +580,19 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("version", help="show this checkout's template version; not a release receipt")
     args = parser.parse_args(argv)
     try:
+        if args.command == "run-opencode":
+            root = _adoption_root(args.project)
+            arguments = args.arguments[1:] if args.arguments[:1] == ["--"] else args.arguments
+            return launch_opencode(root, arguments)
         if args.command == "configure":
             result = configure(
-                args.project, args.starter_ref or source_revision(), apply=args.apply
+                args.project,
+                args.starter_ref or source_revision(),
+                apply=args.apply,
+                host=args.host,
             )
+        elif args.command == "localize":
+            result = localize(args.project, args.starter_ref, host=args.host, apply=args.apply)
         elif args.command == "backport":
             result = backport(args.project)
         elif args.command == "status":

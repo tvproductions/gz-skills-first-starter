@@ -2,6 +2,56 @@
 
 ## Unreleased
 
+- Release-specific freshness review adopts uv/uv_build 0.13.6, ty 0.0.95 in
+  both independent environments, setup-uv v10.3.3 at its full SHA, and gz-skills
+  v0.8.3 in both catalogs. Remove the old interpreter-metadata override because
+  uv 0.13.6 embeds both selected patches. Python families, exact patches, Ruff,
+  four hooks and deferred Backplane are unchanged. These are reviewed pin
+  refreshes, separate from the adoption policy and native-helper changes below.
+
+- Prepare template 0.8.0 as a coherent minor: three-host project configuration,
+  brownfield activation repair and mandatory adopter discipline. Add
+  `configure --host codex|claude|opencode` and project-only `localize` preview/apply.
+  Preserve global installations, user settings, adoption records and adopted
+  component pins during scope repair. Preserve OpenCode JSONC comments; repair
+  Claude local overrides and suppress inherited duplicate sources locally.
+  Keep Backplane disabled. This is an additive helper/adapter capability and
+  policy bundle; reviewed pin refreshes are listed separately above.
+  Add `run-opencode` for 2.2.0's demonstrated duplicate-ID precedence failure:
+  reconcile preferences in memory and run a private native server with repo-owned
+  configuration. Plain startup fails the inherited-source fixture; the scoped
+  route loads the project pin without editing user settings or OpenCode itself.
+
+- Explain 0.1.0 as the first substantive release's versioned public-contract
+  commitment. Separate plugin installation, version updates and enablement;
+  prohibit Codex CLI 0.166.0 `plugin add` as a project update/reinstall shortcut
+  because it unconditionally enables the plugin in user-wide configuration.
+  Require preserved activation scope and separate actual-revision verification.
+
+- Permit 0.0.0 only as an unpublished bare-scaffold placeholder; require 0.1.0
+  as soon as original work is added and prohibit releasing that work as 0.0.0.
+  Check metadata/runtime/release agreement during adoption. Preserve
+  published history. Require freshness reviews to end with a concrete upgrade
+  recommendation and offer, and execute already-authorized updates. These are
+  adopter policy clarifications, not tool/plugin pin refreshes.
+- Replace the incomplete Claude registration guidance with checked CLI commands
+  using explicit `--scope project` for marketplace and plugin installation.
+  Native macOS project installation and inside/outside discovery pass; other hosts remain unverified.
+
+- Require repository/project-scoped plugin installation, marketplace registration
+  and activation for adopters and starter development. Remove unscoped Codex
+  install commands from the default path; use project configuration and native
+  resolution. Report unsupported scope instead of falling back to global/user
+  installation; distinguish shared download storage from activation scope.
+
+- Enable native SP/gz-skills development discovery for this trusted checkout
+  through project Codex configuration and the pinned published v0.7.1 catalog.
+  Expose the canonical `update-gz-template` source through a repository skill
+  symlink for adopter work. Keep user defaults, deferred Backplane and template
+  self-adoption separate. Native macOS CLI discovery passes; desktop picker and
+  Windows symlink checkout behavior remain unverified. See the
+  [receipt](docs/evidence/2026-10-31-native-development-skills.md).
+
 - Require direct `gh` commands for GitHub operations and direct `git` commands
   for repository operations in the adopter instructions, starter AGENTS.md and
   Python policy.
