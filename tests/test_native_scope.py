@@ -134,7 +134,7 @@ class NativeScopeTests(unittest.TestCase):
                 ):
                     starter.localize(root, REF, host=host, apply=True)
                     commands.assert_not_called()
-                files = [str(p.relative_to(root)) for p in root.rglob("*") if p.is_file()]
+                files = [p.relative_to(root).as_posix() for p in root.rglob("*") if p.is_file()]
                 self.assertEqual(files, [HOST_PATHS[host]])
 
     def test_jsonc_scope_repair_keeps_comments_strings_and_nested_fields(self):

@@ -3,7 +3,7 @@
 import json
 import tempfile
 import unittest
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from unittest import mock
 
 from skills_first_starter import cli as starter
@@ -20,6 +20,14 @@ class NativeHostTests(unittest.TestCase):
         inherited = mock.patch.object(starter, "_inherited_plugins", return_value={})
         inherited.start()
         self.addCleanup(inherited.stop)
+
+    def test_owned_discovery_surface_uses_portable_identifiers(self):
+        for host in HOST_PATHS:
+            with self.subTest(host=host), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory).resolve()
+                starter.configure(root, REF, host=host, apply=True)
+                with mock.patch.object(starter, "Path", PureWindowsPath):
+                    self.assertEqual(starter.configure(root, REF, host=host)["writes"], [])
 
     def test_each_host_previews_then_applies_only_project_files_without_native_commands(self):
         for host, config in HOST_PATHS.items():

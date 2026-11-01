@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Fix repeated native-host configuration on Windows: compare discovery surfaces
+  using slash-separated identifiers. Cover Windows path semantics for all three
+  hosts and normalize the scope-repair test's relative paths.
+
 ## 0.8.0 — October 31, 2026
 
 See the [release receipt](docs/evidence/2026-10-31-0.8.0-release.md) for current

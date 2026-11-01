@@ -211,7 +211,7 @@ def _check_discovery_entry(
 
 def _check_discovery(root: Path, host: str = "codex") -> None:
     """Inspect all supported discovery surfaces without mutating their contents."""
-    owned_surface = str(Path(update_skill_path(host)).parent.parent)
+    owned_surface = Path(update_skill_path(host)).parent.parent.as_posix()
     for surface in (
         ".agents/skills",
         ".codex/skills",

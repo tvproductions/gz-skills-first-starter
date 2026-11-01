@@ -5,6 +5,29 @@ Read this entry first, then the
 [acceptance/synchronization record](../evidence/2026-10-24-git-sync.md).
 Recheck Git and remote CI before continuing; this is a dated checkpoint.
 
+## Git synchronization and Windows correction — November 1
+
+Fast-forwarded main from `ec0d3c4` to published 0.8.0 commit `e0b752f`.
+Its Linux CI passed, but the local Windows gate found discovery identifiers
+compared against native backslash paths: repeated configuration rejected its
+own update skill for all three hosts. Normalize that identifier to POSIX form
+and normalize relative paths in the scope-repair test. A regression exercises
+the public configure preview with Windows path semantics on every platform;
+it fails before the correction and passes afterwards.
+
+Verification uses uv 0.13.6 and managed Python 3.14.10: locked all-group sync,
+all four routine hooks (60 helper tests), bundle/catalog validation,
+source-independent build and isolated installed-distribution checks pass.
+The unchanged analyzer suite passes all 29 tests. The independent X-Plane
+baseline sync and verifier pass on managed Python 3.12.16. The portability
+audit reports no findings in the helper and test directories.
+
+This is an unreleased compatible fix; published tags remain unchanged. Native
+fresh-session discovery on this Windows checkout remains unverified:
+`core.symlinks=false` produces placeholder files for the repository skill links.
+Git synchronization and exact-commit CI are verified separately during the push;
+no new release acceptance or publication is implied.
+
 ## 0.8.0 authorized release — October 31
 
 The maintainer explicitly directed publication; no additional approval is needed.
