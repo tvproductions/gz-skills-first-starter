@@ -9,10 +9,9 @@ usefulness to other adopters is welcome, rather than a reason to dilute them.
 
 This repository is the bundle catalog, adoption tool, and guidance home.
 
-Development **0.8.0 (unreleased)** adds repository-owned Codex, Claude Code and
-OpenCode v2 configuration plus brownfield activation repair. The latest published
-release remains 0.7.1. Adoption requirements are mandatory; agents must execute
-the prescribed checks and present evidence before claiming completion.
+Release **0.8.0** adds repository-owned Codex, Claude Code and
+OpenCode v2 configuration plus brownfield activation repair. Adoption requirements
+are mandatory; agents must execute the prescribed checks and present evidence before claiming completion.
 
 It is also the [policy alignment source](docs/versioning.md#ecosystem-policy-authority-and-consistency)
 for the maintainer's gz-skills and Backplane repositories. Backplane owns
@@ -20,13 +19,13 @@ for the maintainer's gz-skills and Backplane repositories. Backplane owns
 requirements tracking, labeling, backlog/release monitoring and handoffs.
 The template refers to those workflows; it does not implement them.
 
-Release **0.7.1** prepares independent qualification and consumer checks for
-the future gzkit-owned cognitive engine and refreshes Ruff to 0.17.3 in both
+Release **0.7.1** introduced independent qualification and consumer checks for
+the future gzkit-owned cognitive engine and refreshed Ruff to 0.17.3 in both
 Python baselines. No engine is installed or certified. Cognitive integration is
 an open, unscheduled [follow-up, issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1),
-and does not block this release. The maintainer explicitly retains the cognitive
-exception; this release does not claim strict cognitive acceptance. See the
-[release evidence](docs/evidence/2026-10-26-0.7.1-release.md) and
+with a standing maintainer-approved exception. Release 0.8.0 retains that exception
+and does not claim strict cognitive acceptance. See the
+[current release evidence](docs/evidence/2026-10-31-0.8.0-release.md) and
 [integration boundary](docs/engineering/cognitive-integration.md).
 
 Version **0.6.0** includes the single template-owned `update-gz-template` skill.
@@ -107,7 +106,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The template baseline is [v0.7.1](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.7.1).
+The template baseline is [v0.8.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.8.0).
 Start with the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
 existing-adopter upgrades and explicit acceptance/release requirements.
 Verify a published tag and exact commit before adoption; a metadata value
@@ -151,7 +150,7 @@ an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
-git clone --branch v0.7.1 https://github.com/tvproductions/gz-skills-first-starter.git
+git clone --branch v0.8.0 https://github.com/tvproductions/gz-skills-first-starter.git
 cd gz-skills-first-starter
 uv run --locked skills-first-starter validate
 uv run --locked skills-first-starter configure --project /path/to/your-project

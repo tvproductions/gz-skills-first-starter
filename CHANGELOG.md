@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased
+## 0.8.0 — October 31, 2026
+
+See the [release receipt](docs/evidence/2026-10-31-0.8.0-release.md) for current
+inputs, deeper checks, native scope evidence and explicit retained limitations.
+The standing cognitive-engine exception continues; no strict acceptance is claimed.
 
 - Release-specific freshness review adopts uv/uv_build 0.13.6, ty 0.0.95 in
   both independent environments, setup-uv v10.3.3 at its full SHA, and gz-skills
@@ -9,7 +13,7 @@
   four hooks and deferred Backplane are unchanged. These are reviewed pin
   refreshes, separate from the adoption policy and native-helper changes below.
 
-- Prepare template 0.8.0 as a coherent minor: three-host project configuration,
+- Release template 0.8.0 as a coherent minor: three-host project configuration,
   brownfield activation repair and mandatory adopter discipline. Add
   `configure --host codex|claude|opencode` and project-only `localize` preview/apply.
   Preserve global installations, user settings, adoption records and adopted
@@ -45,7 +49,7 @@
   installation; distinguish shared download storage from activation scope.
 
 - Enable native SP/gz-skills development discovery for this trusted checkout
-  through project Codex configuration and the pinned published v0.7.1 catalog.
+  through project native configuration and the immutable 0.8.0 preparation catalog.
   Expose the canonical `update-gz-template` source through a repository skill
   symlink for adopter work. Keep user defaults, deferred Backplane and template
   self-adoption separate. Native macOS CLI discovery passes; desktop picker and

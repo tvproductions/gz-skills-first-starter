@@ -1,12 +1,10 @@
 # Template versioning
 
-The current template release is **0.7.1**; the initial release
-was **0.1.0**. The 0.3
-adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
-The current development candidate is **0.8.0 (unreleased)**: a coherent minor
-bundle of three-host repository configuration, brownfield scope repair and
-mandatory adopter discipline. This version label does not establish publication
-or release acceptance; component/runtime/tool pins remain independent.
+The current template release is **0.8.0**; the initial release was **0.1.0**.
+The 0.3 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
+Release 0.8.0 bundles three-host repository configuration, brownfield scope repair
+and mandatory adopter discipline. Its [release receipt](evidence/2026-10-31-0.8.0-release.md)
+records independent execution-pin refreshes and retained acceptance limitations.
 Release 0.7.1 ships the consumer-side preparation and a compatible Ruff patch.
 The maintainer explicitly directed publication without waiting for the engine.
 Actual cognitive integration remains open and unscheduled in

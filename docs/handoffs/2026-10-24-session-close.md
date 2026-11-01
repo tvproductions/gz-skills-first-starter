@@ -5,6 +5,30 @@ Read this entry first, then the
 [acceptance/synchronization record](../evidence/2026-10-24-git-sync.md).
 Recheck Git and remote CI before continuing; this is a dated checkpoint.
 
+## 0.8.0 authorized release — October 31
+
+The maintainer explicitly directed publication; no additional approval is needed.
+The reviewed preparation commit is `f176c5e29e61fad0b792d9cd6012f3ab8d95f5c5`,
+pushed to main with green CI run 41256392928. Final release metadata and native
+development bindings follow in the release commit. The immutable v0.8.0 tag and
+GitHub release identify the final SHA; verify them live before further work.
+
+The [release receipt](../evidence/2026-10-31-0.8.0-release.md) supersedes earlier
+same-day input observations: uv/uv_build 0.13.6, ty 0.0.95, setup-uv v10.3.3,
+gz-skills v0.8.3 in both catalogs, existing Python patches retained. Both locked
+baselines, 59 helper tests, 29 analyzer tests, distribution verification,
+complexity, dependency audits and documented deeper checks pass within their
+stated limits. Cognitive qualification remains under the standing maintainer
+exception; complexipy is historical reproduction only. Backplane stays disabled.
+
+Fresh native discovery and canonical skill bytes match the new selections.
+Codex's earlier requested-0.8.0/cache-0.8.3 mismatch is resolved by explicitly
+selecting published 0.8.3; this does not relabel the earlier failure. Claude's
+project-only update resolves 0.8.3. OpenCode uses the required scoped launcher.
+User settings/global installations remain unchanged. Desktop picker and other
+native-host/embedded-runtime limitations remain explicit. The separate upstream
+dependency-skill candidate remains unpublished; no dependent release is implied.
+
 ## Three-host local ownership and brownfield repair — October 31 (unreleased 0.8.0)
 
 The final inherited-source test exposed OpenCode 2.2.0's duplicate-ID failure:

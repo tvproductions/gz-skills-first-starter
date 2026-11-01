@@ -79,8 +79,8 @@ adoption record or installing another update-skill copy. Preserve global copies;
 make the project source authoritative through repo-owned overrides.
 
 For 0.5.0 and earlier adopters, either reconcile the complete upgrade or bootstrap
-just the skill. The [v0.7.1 release](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.7.1)
-provides `update-gz-template-0.7.1.zip` and SHA256 checksums. Download and verify
+just the skill. The [v0.8.0 release](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.8.0)
+provides `update-gz-template-0.8.0.zip` and SHA256 checksums. Download and verify
 those assets, then unpack the ZIP into a disposable review directory. It contains
 only `update-gz-template/SKILL.md`. This bootstrap needs no project environment
 changes. Alternatively, obtain and verify the release in a separate checkout

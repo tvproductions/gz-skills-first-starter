@@ -72,9 +72,9 @@ This starter dogfoods the upstream development workflows through its checked-in
 alternative `gz-skills@gz-skills` source here to avoid duplicates, and keeps
 Backplane disabled. User defaults and unrelated projects retain their settings.
 
-The development configuration uses the published v0.7.1 Git marketplace at
-`27594dbaec853e6bde037b0aaf3f0427a3f053f9`. Its catalog matches this checkout's
-catalog and selects SP 7.0.1 and gz-skills 0.8.0. Reconcile this development
+The development configuration uses the published 0.8.0 preparation Git marketplace at
+`f176c5e29e61fad0b792d9cd6012f3ab8d95f5c5`. Its catalog matches this checkout's
+catalog and selects SP 7.0.1 and gz-skills 0.8.3. Reconcile this development
 marketplace ref when reviewing future catalog changes; do not assume a local
 catalog edit updates the pinned development source. A relative local marketplace
 source of `.` failed when launching the CLI from `src/` on the verified host;
