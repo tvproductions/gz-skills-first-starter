@@ -59,13 +59,27 @@ and remaining coverage, and reconsider a future upstream skill only after its
 released instructions are reviewed. The current release reinforcement is
 described below and is selected by the starter pin.
 
-The setup/update skills' ordinary Python default is 3.13.x where no project
-policy has been adopted. They explicitly preserve a different approved family.
-Our binding chooses 3.14.x normally and host-compatible 3.12.x for XPPython3 code.
-Their default assortment also includes Radon/Xenon; our retired-tool decision and
-routine/on-demand boundaries take precedence. Keep these differences in project
-guidance; do not propagate them into upstream plugins or infer a heavy profile
-from the stack.
+Published 0.8.3 still contains an older ordinary-Python fallback and shared tool
+assortment, despite deferring to adopted policy. This is a known competing
+baseline, not the authority for starter-governed projects. Our current rule is
+3.14.x unless X-Plane/XPPython3-bound, then supported 3.12.x. The retired-tool
+and routine/on-demand decisions also come from this starter.
+
+The maintainer-authorized gz-skills 0.9.0 candidate removes those fallback
+runtime/tool/package prescriptions from setup/update and the active guide.
+It resolves each consuming project's governing source, preserves its choices
+and reports missing/unavailable policy as UNKNOWN. Unrelated consumers retain
+their own policy; the correction does not hardcode starter choices into portable
+skills. Source changes are unpublished and the selected 0.8.3 installation is
+unchanged. Release verification and an explicit consumer update must precede any
+claim that this corrected workflow is installed.
+
+The companion repositories independently bind their own ordinary Python tooling
+to 3.14: SP-BP already selected managed 3.14.10; gz-skills' candidate reconciles
+its development pin and package support to the 3.14 family. These project-local
+bindings do not bootstrap the starter into its own dependencies or impose a
+Python runtime on unrelated consumers. See the
+[alignment receipt](evidence/2026-11-07-python-policy-alignment.md).
 
 ## Released upstream reinforcement
 

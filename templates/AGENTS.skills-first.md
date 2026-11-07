@@ -207,6 +207,9 @@ gz-skills owns runtime discovery; require its workflows to honor this project's
 adopted version-range and engineering policy, report missing/conflicting evidence
 and validate host-bound behavior separately. This template supplies policy, not
 an upstream discovery procedure.
+gz-skills supplies no competing family/tool/package standard for this project.
+Read the recorded adopted authority; if it is unavailable, keep dependent
+decisions unresolved instead of treating a stored pin or workflow default as policy.
 At adoption, runtime-family changes, feature design, code review and scoped
 maintenance, assess relevant idioms, stdlib advances and deprecations using
 versioned official documentation. Record benefits, risks and adopt/defer decisions;

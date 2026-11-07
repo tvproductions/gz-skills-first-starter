@@ -5,6 +5,44 @@ Read this entry first, then the
 [acceptance/synchronization record](../evidence/2026-10-24-git-sync.md).
 Recheck Git and remote CI before continuing; this is a dated checkpoint.
 
+## Python policy authority aligned in source — November 7
+
+The maintainer subsequently requested Git synchronization of this correction.
+Fetch confirms all three local main branches align with their remotes before
+committing. Publish the reviewed starter authority first, then reconcile the
+companions to its exact committed source. Stage only the narrow SP-BP authority
+paragraph/binding/receipt; preserve its separate strict-Astral and release-scope
+work. Keep hooks and project gates intact. Observe final exact-commit CI where
+configured, report absent project CI explicitly and avoid receipt-only loops.
+This authorizes ordinary commits/pushes, not release or installed propagation.
+
+The maintainer explicitly directed fixing all three repositories and reaffirmed:
+current ordinary projects use Python 3.14; X-Plane/XPPython3-bound code uses
+supported 3.12. The starter already declares those ranges. Updated workflow
+mapping, shared ownership guidance and generated adopter instructions to prevent
+a supporting skill's fallback from becoming a competing standard.
+
+A new standalone `../gz-skills` canonical checkout starts at `9a79702`.
+Its candidate 0.9.0 reconciles its own ordinary runtime/support to 3.14 and managed
+3.14.10, and setup/update 0.4.0 remove the old fallback runtime/tool/package
+assortment. They consume the governing project/adopted source and keep unavailable
+authority UNKNOWN. Five bounded baseline/green cases and all 28 tests pass;
+Ruff/format/ty, all 20 skill validations and source-independent/installed artifact
+proof pass. Source/sdist/wheel preserve all 44 canonical skill resources.
+
+SP-BP independently already selected 3.14.10. Preserve its concurrent strict-
+Astral and release-doctrine work; only a narrow runtime-authority paragraph,
+appended binding and scoped receipt belong to this correction. Its current
+locked hooks and nine adapter tests pass. No wider acceptance gap is waived.
+
+The [cross-repository receipt](../evidence/2026-11-07-python-policy-alignment.md)
+records source identities and limitations. The starter still selects released
+gz-skills 0.8.3; the corrected source is unpublished/uninstalled. No native cache
+or consumer copy was edited, and no plugin install, commit, push or publication
+occurred. Per-repository independent review found no concrete correction defect.
+Run a separately authorized release/update path before claiming installed skill
+alignment. Full engineering migrations remain independently scoped.
+
 ## Hosted Dependabot recovery verified — November 7
 
 The authorized policy/roadmap commit `f0f5428` reached main with both exact-commit

@@ -116,6 +116,15 @@ and policy alignment remain separate from installed readiness or full starter
 conformance. Keep existing project authorities until the relevant Backplane
 workflow is ready and explicitly adopted.
 
+Each companion owns the explicit binding for its own development environment.
+The maintainer's current Python rule is 3.14 for ordinary projects and supported
+3.12 for X-Plane/XPPython3-bound code; the starter owns that rule for its adopters.
+gz-skills workflows consume the governing project's policy instead of maintaining
+a competing family/tool/package baseline. Publisher-side choices do not become
+blanket constraints for unrelated skill or Backplane consumers. A corrected
+source candidate must still be released and explicitly selected before installed
+alignment can be claimed; source bindings are not native installation evidence.
+
 ## Version contract
 
 Use [Semantic Versioning](https://semver.org/spec/v2.0.0.html) for the template's

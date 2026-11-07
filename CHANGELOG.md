@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Clarify Python policy ownership across the starter and its companions: current
+  ordinary projects use 3.14, X-Plane/XPPython3-bound code uses supported 3.12,
+  and portable gz-skills workflows consume the project's governing standard.
+  Record the corrected unpublished gz-skills candidate separately from selected
+  0.8.3; keep SP-BP's independent tooling binding and unrelated consumers intact.
+  No plugin pin/update, release or complete cross-repository acceptance follows.
+
 - Adopt maintainer-approved minimum-only uv compatibility: both baselines require
   `>=0.13.5` without an upper bound, while CI retains tested 0.13.6. Stop forcing
   supported callers to match CI's exact uv. Reconcile internal/adopter guidance
