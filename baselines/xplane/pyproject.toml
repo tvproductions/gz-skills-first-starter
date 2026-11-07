@@ -24,7 +24,7 @@ hygiene = [
     # Defect reproducer only; not qualified cognitive acceptance authority.
     "complexipy==8.2.0",
     "cosmic-ray==8.7.0",
-    "coverage==7.17.0",
+    "coverage==7.17.1",
     "deptry==0.25.1",
     "import-linter==2.15",
     "interrogate==1.7.0",
