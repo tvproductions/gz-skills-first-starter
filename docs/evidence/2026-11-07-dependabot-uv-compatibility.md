@@ -138,3 +138,27 @@ Python pins and CI/scan configuration are verified with Git diff.
 
 Do not call hosted scanning repaired until observing fresh jobs on the final
 default-branch inputs. No push or scan-service replacement is implied.
+
+## Authorized synchronization and hosted scan request
+
+The maintainer subsequently authorized commit/push, exact-commit CI, fresh
+Dependabot checks and review of generated PRs. Commit
+`f0f5428c3f9146c4caaab209822b1f5d5fd57daa` reached origin/main with a clean,
+aligned worktree. Both [exact-commit CI jobs passed](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/42391923946).
+Normal commit hooks and the complete local gate passed using uv 0.13.6.
+
+Hosted scan requests cannot use retry of the old runs. Public GraphQL mutation
+discovery exposes no Dependabot update trigger. Browser access is unavailable;
+native Chrome and Safari control each timed out. No fresh scan was established
+by those attempts.
+
+Add the actual uv minimum/CI distinction as a comment in `.github/dependabot.yml`
+and push that configuration-file update to request processing through Git.
+Preserve the parsed configuration, weekly schedules, independent projects and
+PR limits. GitHub documents checks on configuration-file check-in in its
+[version-update guide](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-version-updates),
+and a configuration update as a trigger in its
+[server release notes](https://docs.github.com/en/enterprise-server%403.21/admin/release-notes).
+This is a bounded fallback attempt, not proof of a new hosted job. Observe new
+job identities and actual manifests/results before accepting the fix; do not
+keep making configuration edits if it does not enqueue jobs.
