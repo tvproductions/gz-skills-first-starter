@@ -124,7 +124,14 @@ maintenance. The starter's exact patch is not a permanent adopter requirement.
 Inspect/test XPPython3's embedded runtime separately; host limitations require
 evidence and a revisit condition rather than an independent runtime replacement.
 An installed interpreter satisfying `3.14` is not evidence of freshness. Keep
-exact tool pins/locks after verification; family changes require separate review.
+exact package pins/locks after verification; family changes require separate review.
+For the uv executable, declare a minimum supported version without an upper
+bound instead of an exact requirement. This checkout accepts uv >=0.13.5;
+CI's 0.13.6 is a tested reference, not an exclusive caller requirement. Permit
+newer uv releases without a version-only blocker, record actual provenance and
+verify affected behavior. Keep locked execution, Python pins and package/backend
+locks separate from uv executable compatibility. A supported older uv is not a
+claim of freshness; report limitations without requiring a per-run exception.
 Record compatibility exceptions with evidence and a revisit condition. Pass this
 rule to adopters through the instructions fragment and Python engineering policy.
 
@@ -209,9 +216,11 @@ requested branch/PR scope. A local commit alone is not a completed sync.
    locks, catalogs and packaged copies when affected. Update changelog/handoff
    for meaningful behavior, policy, verification results and unfinished work.
    Stage only the reviewed scope; do not sweep unrelated files into the commit.
-3. Use the checkout's required uv version and managed Python. If machine uv
-   differs, use `uv tool run --from uv==<required-version> uv ...`; nested hooks
-   must resolve the same uv. Run the documented repository gate above and
+3. Use uv satisfying the checkout's minimum and the managed pinned Python.
+   Do not replace a supported uv merely because it differs from CI's tested
+   selection. If machine uv is below the floor, use a supported version through
+   `uv tool run --from uv==<supported-version> uv ...`; record the actual version
+   and ensure nested hooks resolve that selection. Run the repository gate and
    applicable changed-tool/analyzer checks. Keep the four routine hooks intact;
    do not bypass failing checks. For documentation-only changes, reuse checks
    already passed on the same relevant inputs rather than inventing tests.

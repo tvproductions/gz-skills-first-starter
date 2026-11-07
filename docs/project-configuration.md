@@ -143,6 +143,14 @@ Do not turn them into unbounded `>=` requirements without testing the intended
 support range. Adopters may add bounded requirements and retain exact resolutions
 in their own lock; shared baseline changes do not automatically migrate them.
 
+The uv executable is explicitly different: use a minimum-only compatibility
+requirement, currently `>=0.13.5` here, with CI's tested 0.13.6 recorded separately.
+Do not force supported local or hosted uv to match CI. The minimum and tested
+patches have compatibility evidence; admission of newer versions is a policy
+choice, not a claim that every future release was tested. See the
+[uv policy](baseline-policy.md#uv-executable-compatibility). Exact Python and
+package/build-backend locks remain unchanged.
+
 At setup/adoption, before each release, scoped tool upgrades and quarterly
 on-demand maintenance:
 

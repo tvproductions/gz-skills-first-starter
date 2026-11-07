@@ -5,6 +5,92 @@ Read this entry first, then the
 [acceptance/synchronization record](../evidence/2026-10-24-git-sync.md).
 Recheck Git and remote CI before continuing; this is a dated checkpoint.
 
+## Minimum-only uv compatibility — November 7
+
+The maintainer subsequently authorized committing/pushing this reviewed unit,
+exact-commit CI verification, fresh Dependabot checks for both Python projects
+and inspection of generated PRs. Pre-sync fetch finds main/origin aligned at
+`8d090f88bf45b9a755808a62c1445beeb005daff`, with only the reviewed roadmap,
+minimum-only uv policy/configuration, generated instructions and evidence edits.
+Keep normal hooks enabled. Report final remote/CI/scan identities after push
+without a chain of receipt-only commits. Release publication remains separate.
+
+The maintainer identified repeated exact-pin impediments and explicitly approved
+minimum-only uv compatibility. This supersedes the exact-execution constraint
+and pending updater choice in the initial diagnosis below. Both projects now
+declare `required-version = ">=0.13.5"` without an upper bound. CI 0.13.6 remains
+the tested reference, not the only permitted executable. No replacement bot is
+needed for the demonstrated version rejection.
+
+AGENTS, adopter instructions, baseline/Python/configuration guidance, the
+Dependabot guide and generated wheel instructions distinguish compatibility
+from tested selections and freshness. Supported uv versions need not be replaced
+solely to match CI. Exact managed Python patches, package locks and uv_build pins
+remain unchanged. Future uv admission is a policy choice, not blanket proof;
+record actual provenance and investigate behavioral failures. Older uv may need
+the exact managed Python already available or reviewed download metadata.
+
+The [diagnosis/resolution receipt](../evidence/2026-11-07-dependabot-uv-compatibility.md)
+preserves failing controls and the accepted alternatives. The change remains
+unreleased and needs the next minor policy release under the 0.x contract; no
+tag, release, push, plugin installation or dependent-repository change follows.
+Fresh hosted scans need final default-branch inputs; real update PRs remain
+UNKNOWN. Earlier roadmap edits remain in this worktree.
+
+Verification: actual uv 0.13.5 and 0.13.6 each pass the complete repository gate
+with managed Python 3.14.10; lock checks pass in both projects under 0.13.5,
+0.13.6 and 0.13.7. All-group sync and standalone X-Plane probes also pass under
+0.13.5 and 0.13.7 on managed 3.12.16. uv 0.13.4 is rejected below the floor.
+Nested uv provenance is recorded; locks, CI pins and interpreter pins are
+unchanged. Managed interpreters were already provisioned; no cold-download or
+embedded-host acceptance is inferred. Generated resource copies agree.
+
+## Dependabot compatibility diagnosis — November 7 (superseded constraint)
+
+The operator next requested resolving both uv scan failures. The
+[dated diagnosis](../evidence/2026-11-07-dependabot-uv-compatibility.md) proves
+the causal boundary: each project requires exactly uv 0.13.6, hosted November 2
+jobs ran 0.13.5, and current upstream Dockerfile source selects 0.13.7. Both
+nonmatching versions fail read-only lock checks in both projects; 0.13.6 passes.
+The Dockerfile does not establish GitHub's currently deployed image. CLI retries
+of both jobs were rejected as not retryable; no new hosted run exists.
+
+The guide now corrects obsolete pin/metadata descriptions and links the evidence.
+Pins, locks, project environments and scan configuration remain unchanged. No
+policy-compliant hosted uv-version override was found. A maintainer choice is
+pending between designing a controlled updater that honors exact pins and
+retaining the explicit upstream blocker. Do not claim hosted scanning repaired
+or silently replace the service, relax pins, install tools or publish changes.
+The earlier roadmap edits remain in the same uncommitted worktree.
+
+## Roadmap reconciliation — November 7
+
+The operator authorized the next recommended step: reconcile ROADMAP.md, not
+implement its proposed features or create GitHub issues. The roadmap now
+separates delivered 0.8.0 three-host support and the unreleased Windows fix
+from open work, updates the selected gz-skills version to 0.8.3 and replaces
+blanket deeper-analysis UNKNOWNs with the bounded 0.8.0 receipt results.
+Historical evidence remains intact; cognitive qualification, production mutation
+score, desktop/other-platform proofs and embedded-host acceptance remain open.
+
+Live GitHub inspection confirms that November 2 Actions scanning passed but
+both uv jobs failed with required 0.13.6 versus updater-supported 0.13.5.
+The roadmap links those runs and prioritizes resolving or explicitly tracking
+the limitation, then an authorized adopter pilot, acceptance reporting, reviewed
+upgrade/rollback tooling and remaining platform proofs. Each entry defines
+completion evidence. The dependency guide's older pin/metadata descriptions
+remain for reconciliation during the scan repair; no tool pin was weakened.
+The November 7 upstream exception/readiness revisits remain due, not renewed.
+
+This is documentation reconciliation only. No runtime, catalogs, resources,
+adopter repository, native installation, issue, commit, push or release changed.
+Verification with required uv 0.13.6 and managed Python 3.14.10 passed: locked
+all-group sync, four routine hooks, bundle/catalog validation, source-independent
+build and isolated installed-distribution checks. All 37 local Markdown link
+targets across the three changed files exist; whitespace checks pass. No analyzer
+implementation or authoritative wheel-resource input changed, so analyzer
+regressions and resource regeneration are inapplicable to this documentation edit.
+
 ## Git synchronization and Windows correction — November 1
 
 Fast-forwarded main from `ec0d3c4` to published 0.8.0 commit `e0b752f`.

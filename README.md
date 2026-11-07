@@ -137,8 +137,12 @@ setup, invocation and the boundary against self-adoption.
 
 ## Quick start: an existing or empty project
 
-Requires uv, Python 3.14, Git, and Codex with plugin support. GitHub CLI is useful
+Requires uv >=0.13.5, Python 3.14, Git, and Codex with plugin support. GitHub CLI is useful
 for checking upstream releases; Backplane's GitHub workflows remain deferred. No Python dependencies are needed for this tool.
+
+uv uses a minimum-only compatibility requirement; local and hosted versions
+need not match CI's tested 0.13.6. See the
+[uv policy](docs/baseline-policy.md#uv-executable-compatibility).
 
 Baseline tools use their latest stable release across tool families, with exact
 pins after verification. Explicit Python/host runtime families remain distinct;

@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+- Adopt maintainer-approved minimum-only uv compatibility: both baselines require
+  `>=0.13.5` without an upper bound, while CI retains tested 0.13.6. Stop forcing
+  supported callers to match CI's exact uv. Reconcile internal/adopter guidance
+  and packaged instructions; preserve Python pins, package locks and uv_build.
+  This is an adopter policy change, separate from a tool-pin refresh; reconcile
+  it in the next minor release under the existing 0.x contract. No release is
+  published by this change. Record the prior Dependabot failures and rejected
+  retries; fresh hosted scans and real update PRs still need verification.
+
+- Reconcile the roadmap with delivered 0.8.0 three-host support and current
+  component selections. Order remaining adoption/upgrade/platform work, define
+  completion evidence, and record observed Dependabot uv failures separately
+  from unverified update-PR behavior. Preserve deferred upstream ownership and
+  existing release exceptions; no runtime or policy requirements change.
+
 - Fix repeated native-host configuration on Windows: compare discovery surfaces
   using slash-separated identifiers. Cover Windows path semantics for all three
   hosts and normalize the scope-repair test's relative paths.
