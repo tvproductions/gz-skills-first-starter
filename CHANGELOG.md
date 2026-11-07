@@ -9,7 +9,9 @@
   This is an adopter policy change, separate from a tool-pin refresh; reconcile
   it in the next minor release under the existing 0.x contract. No release is
   published by this change. Record the prior Dependabot failures and rejected
-  retries; fresh hosted scans and real update PRs still need verification.
+  retries. Fresh hosted scans now pass for both Python baselines and Actions
+  on e918dbb using updater uv 0.13.7. Ten real PRs have inspected scope and green
+  CI; none are merged. Compatibility/analyzer acceptance remains per update.
 
 - Reconcile the roadmap with delivered 0.8.0 three-host support and current
   component selections. Order remaining adoption/upgrade/platform work, define

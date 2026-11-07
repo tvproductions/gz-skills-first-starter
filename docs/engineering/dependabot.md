@@ -52,8 +52,11 @@ baselines now accept `>=0.13.5` without an upper bound; CI remains on tested
 Dependabot or changing package locks. Keep executable provenance, locked execution
 and separate Python families. Newer uv admission does not prove every future
 release compatible; investigate actual behavioral failures on their merits.
-Verify fresh hosted scans after this change reaches the default branch; real
-update-PR generation and lock changes remain UNKNOWN. See the
+Fresh scans on `e918dbb` now pass for both Python projects and Actions. Both
+Python logs report actual uv 0.13.7, and ten real PRs show the expected manifest/
+lock updates with green CI. Their scopes were inspected; no upgrade was merged.
+The receipt records exact PR heads, CI links and remaining compatibility review.
+The root build-only uv_build PR path remains unverified. See the
 [uv compatibility policy](../baseline-policy.md#uv-executable-compatibility).
 
 An update to root `uv_build` may need an additional X-Plane PR, and vice versa.
@@ -70,8 +73,9 @@ enable a remote service through an API. After merge, inspect GitHub's dependency
 update logs for both uv jobs and the Actions job. Verify their manifest paths,
 actual updater versions, preserved runtime constraints, generated locks and CI
 results on a real update PR. The initial hosted scans completed successfully;
-the later uv failures above supersede that observation for current reliability.
-Neither observation establishes the unverified PR/update paths.
+the later uv failures and November 7 recovery above supersede that observation
+for current reliability. Actual PR generation and CI are now observed; merging
+still requires applicable compatibility checks.
 
 Historically, the first Linux CI attempt could not provision 3.12.16 because uv
 0.13.5's embedded download list predated that patch. The X-Plane project used an

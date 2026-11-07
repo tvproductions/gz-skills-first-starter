@@ -39,7 +39,7 @@ universal acceptance.
 
 ## Next work, in recommended order
 
-### 1. Restore reliable dependency scans
+### 1. Dependency scans restored; review update candidates
 
 Weekly standard Python, independent X-Plane/XPPython3 and Actions jobs exist.
 Initial hosted scans succeeded, but the November 2 uv scans failed:
@@ -55,13 +55,15 @@ records the old exact-pin rejection and the maintainer's minimum-only decision.
 Both projects now accept uv `>=0.13.5` without an upper bound; CI retains tested
 0.13.6. The maintenance guide is reconciled; no replacement updater is needed for
 this version-only mismatch. Preserve locked execution and both Python families.
-Hosted verification remains pending the default-branch change; rejected CLI
-retries did not produce fresh runs.
-
-Completion requires successful hosted scans for both exact baseline inputs and
-Actions, plus a reviewed real update PR demonstrating expected manifest/lock
-changes and applicable CI. If no update is available, keep the real-PR path
-UNKNOWN separately. See [coverage and limits](docs/engineering/dependabot.md).
+The configuration-note update at `e918dbb` triggered fresh scans: both Python
+jobs and Actions succeeded, and both Python logs report actual uv 0.13.7.
+Ten real PRs demonstrate expected separate-baseline manifest/lock updates; their
+scope and green CI were inspected. This closes the version-rejection and real-PR
+generation proof gaps. No dependency upgrade was merged. Complete applicable
+compatibility/analyzer review before accepting those updates; root build-only
+uv_build PR behavior and embedded-host proof remain separate gaps. See the
+[completed receipt](docs/evidence/2026-11-07-dependabot-uv-compatibility.md#hosted-verification-completed--november-7)
+and [coverage and limits](docs/engineering/dependabot.md).
 Adopter scan schedules and update sources remain adopter-owned.
 
 ### 2. Complete an authorized real-adopter pilot

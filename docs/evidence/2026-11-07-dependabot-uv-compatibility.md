@@ -162,3 +162,55 @@ and a configuration update as a trigger in its
 This is a bounded fallback attempt, not proof of a new hosted job. Observe new
 job identities and actual manifests/results before accepting the fix; do not
 keep making configuration edits if it does not enqueue jobs.
+
+## Hosted verification completed — November 7
+
+The configuration-comment update at
+`e918dbbd02353258b697de5f63739a2431d65327` triggered all three fresh jobs.
+Both [repository CI jobs](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/42392131270)
+passed for that exact SHA. The parsed Dependabot configuration, schedules and
+limits are unchanged; the update adds only the actual uv compatibility note.
+
+| Scan | Result | Hosted evidence |
+| --- | --- | --- |
+| Standard Python | SUCCESS | [run 42392138777](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/42392138777) |
+| X-Plane/XPPython3 | SUCCESS | [run 42392138808](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/42392138808) |
+| GitHub Actions | SUCCESS | [run 42392138759](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/42392138759) |
+
+Both Python logs report actual uv 0.13.7 on Linux and complete without
+`tool_version_not_supported`. Their structured results report dependency-update
+requests; the actual open PR inventory is ten PRs, five per Python job. Do not
+confuse all update requests in the logs with accepted/open GitHub PRs.
+
+Inspected all ten PRs' changed-file scopes and package/version diffs. At the
+recorded head SHAs, all reported `checks` and `xplane-baseline` CI checks passed.
+The [PR inventory](2026-11-07-dependabot-prs.json) preserves exact heads, file
+lists and CI links. Baseline Python/uv requirements and activation scope remain
+intact; changes are confined to each project's own manifest/lock.
+
+| PR | Baseline | Proposed update |
+| --- | --- | --- |
+| [#2](https://github.com/tvproductions/gz-skills-first-starter/pull/2) | Standard | complexipy 8.1.0 → 8.3.0 |
+| [#3](https://github.com/tvproductions/gz-skills-first-starter/pull/3) | X-Plane | virtualenv 21.14.13 → 21.15.5 |
+| [#4](https://github.com/tvproductions/gz-skills-first-starter/pull/4) | Standard | pip 26.2.2 → 26.3 |
+| [#5](https://github.com/tvproductions/gz-skills-first-starter/pull/5) | X-Plane | coverage 7.17.0 → 7.17.1 |
+| [#6](https://github.com/tvproductions/gz-skills-first-starter/pull/6) | X-Plane | complexipy 8.2.0 → 8.3.0 |
+| [#7](https://github.com/tvproductions/gz-skills-first-starter/pull/7) | Standard | python-discovery 1.6.4 → 1.9.4 |
+| [#8](https://github.com/tvproductions/gz-skills-first-starter/pull/8) | Standard | Lizard 1.24.3 → 1.25.0 |
+| [#9](https://github.com/tvproductions/gz-skills-first-starter/pull/9) | X-Plane | SQLAlchemy 2.1.6 → 2.1.8 |
+| [#10](https://github.com/tvproductions/gz-skills-first-starter/pull/10) | Standard | virtualenv 21.14.13 → 21.15.5 |
+| [#11](https://github.com/tvproductions/gz-skills-first-starter/pull/11) | X-Plane | nodeenv 1.11.0 → 1.12.0 |
+
+This is scan recovery and PR scope/CI review, not permission to merge upgrades.
+In particular, complexipy remains a historical defect reproducer; changing its
+selection needs explicit consideration of that purpose, not routine green CI.
+Lizard needs the counting-contract/analyzer regression gate before acceptance.
+Other updates still require applicable compatibility review. No PR is approved,
+merged or closed by this work; no release or native plugin is published/installed.
+The root build-only uv_build update path and embedded-host behavior remain
+unverified by these actual PRs. Future hosted images remain subject to checks.
+
+The following documentation-only evidence commit preserves this completed
+verification. Its CI must be observed separately; scan inputs and configuration
+are unchanged from e918dbb. Report its final SHA/CI without another receipt-only
+follow-up commit.

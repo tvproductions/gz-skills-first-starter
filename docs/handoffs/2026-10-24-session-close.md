@@ -5,6 +5,31 @@ Read this entry first, then the
 [acceptance/synchronization record](../evidence/2026-10-24-git-sync.md).
 Recheck Git and remote CI before continuing; this is a dated checkpoint.
 
+## Hosted Dependabot recovery verified — November 7
+
+The authorized policy/roadmap commit `f0f5428` reached main with both exact-commit
+CI jobs passing. A comment documenting the uv minimum in `.github/dependabot.yml`
+at `e918dbb` triggered fresh hosted jobs, preserving parsed settings/schedules.
+Both Python scans and Actions passed; actual Python updater uv is 0.13.7 and
+the old version-rejection error is absent. Both repository CI jobs pass on
+e918dbb too. CLI retry and browser-control attempts had failed; the Git-based
+configuration update supplied the successful trigger.
+
+Inspected all ten generated PRs (#2–#11): five per Python baseline, limited to
+their own manifests/locks, with green reported CI. Exact heads/files/check links
+are in the [PR inventory](../evidence/2026-11-07-dependabot-prs.json); the
+[completed receipt](../evidence/2026-11-07-dependabot-uv-compatibility.md#hosted-verification-completed--november-7)
+records scan links and scope. No PR was merged or approved. Complexipy updates
+need review of historical-reproducer intent; Lizard needs its analyzer/contract
+checks. Routine CI does not establish those deeper results. Root build-only
+uv_build PR behavior and embedded-host acceptance remain unverified.
+
+This final documentation update closes stale pending-scan statements in the
+roadmap/guide and preserves material verification. Observe its own exact-commit
+CI after normal hooked commit/push; make no further receipt-only commit just to
+record that result. Scan inputs remain unchanged from e918dbb. No tag/release,
+plugin installation or dependent-repository change is authorized by this sync.
+
 ## Minimum-only uv compatibility — November 7
 
 The maintainer subsequently authorized committing/pushing this reviewed unit,
