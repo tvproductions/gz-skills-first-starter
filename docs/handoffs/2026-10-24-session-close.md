@@ -1,5 +1,8 @@
 # Session handoff — October 24, 2026
 
+Current resume entry: [November 8 ADR-practice save point](2026-11-08-adr-practice-save-point.md).
+It supersedes the historical draft, branch and uncommitted checkpoints below.
+
 ## November 8 branch preference — commit directly on main
 
 The maintainer directed: “please don't create feature branches, just commit to
