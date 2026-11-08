@@ -1,175 +1,194 @@
 # Roadmap
 
-## Unscheduled: upstream cognitive engine integration
+Reconciled November 7, 2026 against the 0.8.0 release evidence, current bundle,
+November 1 Windows correction and hosted scan results. This is the starter's
+project roadmap, not a replacement for Backplane's backlog/lifecycle authority.
+Only cognitive integration currently has a GitHub issue; the other open items
+below are roadmap entries, not newly created issues or release commitments.
 
-Tracked as [issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1).
-The initial 0.7.1 target is superseded: the maintainer directed releasing the
-consumer preparation without waiting for an engine with an unknown delivery date.
-After verified 0.7.1 publication, issue #1's milestone was cleared and milestone
-0.7.1 closed for the delivered consumer preparation/Ruff patch. No later release
-target is assigned to engine integration.
+## Delivered baseline
 
-The maintainer explicitly authorized releasing 0.7.0 without waiting for the
-cognitive fix, then booking the correction for 0.7.1. Qualify the selected
-CPython AST approach at ceiling 15, including keyword conditionals and functions
-under module-level loops/match. Preserve historical failing evidence, public
-contracts, thresholds and upstream ownership. Leave gzkit untouched; no extraction
-project, private scoring fork or plugin installation follows from this booking.
-The existing [extraction assessment](docs/evidence/2026-10-24-gzkit-cognitive-extraction.md)
-owns the demonstrated gaps. Release 0.7.1 does not deliver the engine or fix its
-scoring defects; those remain this unscheduled follow-up.
+- Immutable bundle, two native marketplace catalogs, independent template
+  versioning and exact-SHA adopter provenance. Current selections are SP 7.0.1
+  and gz-skills 0.8.3; Backplane stays pinned and disabled. `bundle.json` owns
+  those selections; exact pins do not establish upstream freshness.
+- Preview/apply/status configuration, preservation/conflict/symlink/duplicate/gzkit
+  checks, unittest coverage and read-only structural backport assessment.
+- Python-only lite/full adoption policy, expanded Astral acceptance, explicit
+  lane selection, adopter SemVer and new-major PRD rules. These are binding
+  review requirements; the helper does not certify conformance.
+- One starter-owned `update-gz-template` skill, introduced in 0.6, with canonical
+  packaged bytes and protection for adopter edits. Generic engineering and
+  maintenance skills remain upstream-owned.
+- **0.8.0:** `configure --host codex|claude|opencode`, project-only `localize`
+  activation repair, and `run-opencode` for OpenCode 2.2.0's inherited duplicate-ID
+  failure. Scope repair preserves adoption records; it is not a version migration.
+- macOS CLI/native runtime scope proofs for Codex 0.166.0, Claude Code 2.1.316
+  and OpenCode 2.2.0, including inside/outside controls and preserved user
+  settings. Claude project installation and OpenCode v2 support are delivered;
+  combined-stack Backplane acceptance remains separate and deferred.
+- **Unreleased Windows correction:** normalize discovery identifiers and scope-test
+  paths. Public-helper regressions cover all three hosts using Windows path
+  semantics; this does not prove fresh-session native discovery on Windows.
 
-Consumer-side preparation now supplies 42 qualification cases, independent
-inventory and ceiling checks, and fault-rejection regressions. The maintainer
-confirmed that gzkit will supply the engine without a promised date; no private engine or new
-extraction project is being created. See the
-[integration boundary](docs/engineering/cognitive-integration.md). Actual engine
-selection, qualification and corpus proof remain pending; issue #1 stays open.
+See the [0.8.0 release receipt](docs/evidence/2026-10-31-0.8.0-release.md),
+[three-host receipt](docs/evidence/2026-10-31-three-host-repo-scope.md),
+[changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-10-24-session-close.md).
+Historical receipts establish their stated inputs and scope, not current
+universal acceptance.
 
-## 0.6: one canonical template-update skill
+## Next work, in recommended order
 
-The user requested a template-native update entry. The starter owns only
-`update-gz-template`, seeds it through configure, packages/verifies its bytes and
-preserves local edits. [Canonical updating](docs/updating.md) includes bootstrap
-for 0.5 and older adopters. Generic maintenance remains upstream. Fresh-session
-discovery remains a separate operator-run proof.
+### 1. Dependency scans restored; review update candidates
 
-## 0.5 policy delivery and remaining enforcement
+Weekly standard Python, independent X-Plane/XPPython3 and Actions jobs exist.
+Initial hosted scans succeeded, but the November 2 uv scans failed:
+[standard baseline](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/41469195255)
+and [X-Plane baseline](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/41469179882).
+Both report required uv `==0.13.6` unsupported by an updater supporting 0.13.5.
+The [Actions scan succeeded](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/41469217136).
+Hosted operation is observed, with a concrete uv compatibility failure; it is
+not wholly UNKNOWN or currently reliable.
 
-Version 0.5.0 bundles expanded Astral acceptance, mandatory lite/heavy selection,
-required adoption/release analysis, explicit adopter SemVer/major PRDs, and the
-[greenfield/brownfield runbook](docs/adoption-0.5.md). These are binding review
-obligations; the helper remains configuration-only. Keep both lanes equally strict
-on the Python foundation and preserve heavy's intended Backplane composition.
+The [November 7 diagnosis and resolution](docs/evidence/2026-11-07-dependabot-uv-compatibility.md)
+records the old exact-pin rejection and the maintainer's minimum-only decision.
+Both projects now accept uv `>=0.13.5` without an upper bound; CI retains tested
+0.13.6. The maintenance guide is reconciled; no replacement updater is needed for
+this version-only mismatch. Preserve locked execution and both Python families.
+The configuration-note update at `e918dbb` triggered fresh scans: both Python
+jobs and Actions succeeded, and both Python logs report actual uv 0.13.7.
+Ten real PRs demonstrate expected separate-baseline manifest/lock updates; their
+scope and green CI were inspected. This closes the version-rejection and real-PR
+generation proof gaps. No dependency upgrade was merged. Complete applicable
+compatibility/analyzer review before accepting those updates; root build-only
+uv_build PR behavior and embedded-host proof remain separate gaps. See the
+[completed receipt](docs/evidence/2026-11-07-dependabot-uv-compatibility.md#hosted-verification-completed--november-7)
+and [coverage and limits](docs/engineering/dependabot.md).
+Adopter scan schedules and update sources remain adopter-owned.
 
-The [design record](docs/engineering/strict-adoption-design.md) separates those
-delivered policies from remaining automatic lane/evidence/PRD validation and
-reviewed upgrade tooling. Real-adopter pilots, remaining analyzer verification
-and native-host proofs remain open. Future language/environment and CLI/TUI/web/
-desktop matrices require their own designs; current scope is Python-only.
+### 2. Complete an authorized real-adopter pilot
 
-## Implemented initial scaffold
+FDAU remains the primary candidate, subject to authorization in that repository.
+Exercise adoption and a subsequent template upgrade against real project edits.
+Preserve domain code, existing authorities, explicit lane, settings and native
+activation scope. Record reviewed source and target versions/SHAs.
 
-- Immutable SP + SP-BP + gz-skills bundle with independent sources.
-- Codex and Claude native marketplace catalogs.
-- Preview/apply/status Codex project configuration for empty and existing projects.
-- Preservation/conflict/symlink/duplicate/gzkit checks and unittest coverage.
-- Originally zero starter-authored skills; 0.6 adds only the
-  canonical template-update entry. Documented adoption workflow and direct workflow
-  routing in adopter instructions. Analysis utilities live in ordinary tooling.
-- Default SP + gz-skills activation with SP-BP pinned but disabled.
-- Read-only structural assessment and guidance for incremental backporting.
-- Documented native loading/verification boundaries.
-- Independent template version metadata and CLI reporting, version/SHA adopter
-  provenance, changelog and release policy. Initial v0.1.0 is published.
+Completion requires observed configuration, applicable Python/Astral acceptance,
+fresh native discovery, preservation and rollback evidence. Report unresolved
+requirements explicitly; successful configuration is insufficient. Feed concrete
+pilot findings into the reporting and upgrade proposals below.
 
-## Next adoption proofs
+### 3. Make adoption acceptance independently inspectable
 
-1. An authorized adopting repository pilot (FDAU is the primary candidate).
-   Map existing configuration and adapters; do not replace project authorities.
-2. Codex desktop UI acceptance, separate from the completed CLI proof below.
-3. Claude project-scope installation, lifecycle, and combined-stack conformance
-   after upstream Backplane Claude acceptance.
-4. OpenCode support after upstream Backplane V1/V2 adapter and verification.
+The [strict-adoption design](docs/engineering/strict-adoption-design.md) already
+identifies automatic lane/evidence/PRD validation as proposed, not implemented.
+Design reporting that distinguishes declared lane, managed configuration,
+Python conformance, native discovery and release eligibility. Preserve the
+upstream profile schema and existing planning/lifecycle authorities.
 
-Completed October 18: [fresh-session Codex CLI acceptance](docs/evidence/2026-10-18-codex-discovery-verified.md)
-on Windows/0.163.0 using published v0.4.0. After explicit user approval of only
-the disposable project's native trust entry, fresh model sessions load SP and
-gz-skills from the intended source; all 35 discovered skill files match pinned
-Git blobs. An outside-project control preserves existing defaults and loads
-zero starter-source skills. The initial UNKNOWN/trust-rejection receipt remains
-historical evidence. Backplane remains disabled; combined-stack readiness and
-other harnesses are not established by this CLI result.
+Completion requires public-helper positive and negative controls for missing,
+failed, stale and inapplicable evidence, explicit exceptions with owner/revisit,
+and absence of a lane. Do not infer acceptance from configuration, a profile
+string or an installed plugin. Validate major-release PRD requirements without
+implementing a competing requirements-tracking system.
 
-## Later extensions
+### 4. Provide reviewed template upgrade and rollback tooling
 
-- Observe hosted Dependabot scans and real update PRs for both independent
-  standard and X-Plane/XPPython3 projects and GitHub Actions. Local configuration,
-  separate X-Plane tool declarations/lock and bounded standalone verification
-  now exist; actual hosted operation and embedded-host verification remain UNKNOWN.
-  See [coverage and limits](docs/engineering/dependabot.md). Adopter update
-  sources and timing remain adopter-owned.
-- Reviewed update/rollback automation that preserves existing native installs.
-- Generic maintenance remains owned by gz-skills; no local maintenance skill or
-  generic freshness reporter is planned. The pinned gz-skills v0.8.0 supplies
-  freshness-only assessment and template/plugin source inventory through its
-  existing maintenance skill. The starter retains policy, catalog consistency and
-  preservation bindings; current tests prove preservation, not dependency
-  resolution or settings loading. See the
-  [configuration contract](docs/project-configuration.md).
-- New-project product templates selected by the adopter, not a mandatory framework.
-- Optional app-owned plugin registration alongside the three engineering plugins.
-- Synchronize bundle compatibility evidence as SP-BP completes its release and
-  broader proposed capabilities mature.
+The [canonical update workflow](docs/updating.md) exists; deterministic three-way
+reconciliation remains proposed. `localize` repairs activation but does not
+upgrade adoption provenance or merge changed managed files.
 
-No milestone above implies a release, current installed stack, or a completed
-upstream capability. Requirements/traceability expansion belongs to Backplane,
-not a duplicate lifecycle in this starter.
+Completion requires original/local/target previews, explicit conflict handling,
+coherent reconciliation of managed records/guidance/host settings/update skill,
+preserved adopter edits and plugin enablement, and tested rollback. Exercise
+public helper seams with invented fixtures and a separately authorized pilot.
+Do not install plugins or overwrite user defaults as a migration shortcut.
 
-## Python engineering policy follow-up
+### 5. Close remaining native/platform proof gaps
 
-Implemented after the [uv documentation deep dive](docs/engineering/uv-deep-dive.md):
-the [Astral acceptance contract](docs/engineering/astral-acceptance.md),
-[executed application/library/workspace migrations](docs/engineering/astral-migrations.md)
-and [starter acceptance record](docs/evidence/2026-10-18-astral-acceptance.md).
-Effective configuration, exact environment/provenance, root/member selection,
-source-independent builds and installed dependency/typing/resource proof are
-explicit. Maximum applicable Astral alignment remains the user-directed standard.
-The preserved assessment and proposal remain historical; broader adopter, CI,
-freshness and deeper-tool gaps stay separately visible in the acceptance record.
+Keep completed CLI/runtime scope proofs separate from these open checks:
 
-Reusable Python-version idiom/stdlib review belongs upstream in gz-skills.
-The starter's [baseline policy](docs/baseline-policy.md) requires assessing code
-currency, but the pinned Pythonic-pattern skills are not a complete version audit.
-Record that coverage gap and review a future released workflow before routing
-to it. gz-skills v0.7.0 reinforces runtime discovery and scoped version-aware practices
-in its existing Python workflows; a comprehensive version audit remains a gap.
+- Codex desktop picker and model-visible invocation in a fresh project session.
+- Windows repository skill-link materialization and fresh native discovery;
+  `core.symlinks=false` produced placeholders in the November 1 checkout.
+- Other host operating systems and model invocation paths not covered by the
+  macOS CLI receipts.
 
-The required Python 3.14 engineering policy documents the
-routine standards and on-demand hygiene selections, including Cosmic Ray,
-deptry, pip-audit, Import Linter and adopter class cohesion analysis through
-cohesion. This minimum adopter standard is independent of the helper's needs;
-cohesion version selection and runtime verification remain adopter-owned.
-The approved routine pre-commit selection
-remains Ruff check/format, ty and unittest.
-Implemented for 0.4.0: `src/` packaging with uv_build, project-locked ty and
-pre-commit, reviewed strict Ruff rules and locked local/hook/CI commands. The
-[Astral contract](docs/engineering/astral-alignment.md) requires adopter
-refactoring with evidenced exceptions. Still pending: shared/local utility
-ownership; pinned Python 3.14 verification of the remaining
-selected deeper analyzers. Deeper analyzers remain outside hooks
-and CI gates. SP-BP remains an expected addition, deferred pending readiness.
+Completion requires exact host/version/source identities, actual invocation or
+discovery results, inside/outside controls and preserved user settings for each
+claimed target. The [October 18 Windows Codex CLI receipt](docs/evidence/2026-10-18-codex-discovery-verified.md)
+proves its published 0.4.0 fixture, not universal current-host readiness.
+Test the actual embedded XPPython3 host separately; standalone 3.12 tool probes
+do not establish simulator/plugin compatibility.
 
-Completed after the v0.4.0 release: Cosmic Ray 8.7.0 is pinned in `hygiene`
-under a selected 8.x family and has a Windows/Python 3.14.8 standalone unittest
-proof. Four mutants complete: two killed, two intentionally surviving. Failed
-baseline, timeout and launch-error controls distinguish broken runs; the
-baseline CLI's zero exit on launch failure requires structured-result inspection.
-See [the assessment](docs/evidence/2026-10-18-cosmic-ray.md). No mutation score
-gate, app-code mutation, hook or CI step is added. Codex CLI discovery using
-published v0.4.0 is now verified; the next adoption milestone is an authorized pilot.
+## Unscheduled upstream dependencies
 
-Complexity remediation completed for the 0.4.0 candidate on October 18:
-`configure` and `project_config` now separate validation, planning and write/
-rollback responsibilities. The checker's scope resolver also meets the cognitive
-ceiling. Ruff C901 (20), complexipy cognitive complexity (15), and the settled
-Lizard function/module/overall contract all pass across `src`, `tests` and `tools`.
-Maximum Lizard score is 16 and maximum cognitive score is 14. Preserve historical
-failing receipts; see the [before/after assessment](docs/evidence/2026-10-18-complexity-remediation.md).
-No thresholds, analyzer pins or measurement semantics changed. These checks
-are required at adoption/release acceptance and available on demand, outside
-routine hooks/CI; C901 remains absent from routine selection.
+### Cognitive engine integration
 
-## Settled C/C/C implementation — October 9, 2026
+Tracked as [issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1),
+without milestone or promised delivery date. Releases 0.7.1 and 0.8.0 retain the
+maintainer's explicit exception. Consumer preparation provides 42 qualification
+fixtures, independent source inventory, provenance and ceiling checks; no real
+engine is installed or qualified.
 
-This supersedes earlier pending-contract statements. The explicit on-demand
-Lizard checker implements `lizard-functions-v1`: function/module/overall
-ceilings 20/20/20, nested functions counted independently, no synthetic class
-scores, native assertion semantics, undefined empty means, and fail-closed
-syntax/discovery errors. Use native Lizard measurements without syntax adapters; unsupported inline
-suites fail discovery instead of disappearing from the measurement. Read `docs/engineering/ccc-contract.md` and run its CLI explicitly. Ruff and complexipy remain independent
-checks; routine pre-commit and CI selection are unchanged. SP-BP remains expected,
-deferred and disabled. No cob_reports tool configuration or app code changed.
-The source-only cob_reports receipt reports 649 functions, maximum 100, overall
-mean 7.14946, 42 function and 12 module failures, zero tool errors; this is
-verified enforcement with visible legacy debt, not a clean corpus.
+On an authorized upstream candidate, qualify the selected CPython AST approach
+at ceiling 15, including keyword conditionals and functions under module-level
+loops/match. Preserve public contracts, fail-closed discovery, historical failing
+evidence and upstream ownership. Complete the issue's corpus/qualification proof
+before removing the exception. Leave gzkit untouched; create no extraction
+project, private scorer or incidental plugin installation. See the
+[integration boundary](docs/engineering/cognitive-integration.md) and
+[extraction assessment](docs/evidence/2026-10-24-gzkit-cognitive-extraction.md).
+
+### Backplane readiness
+
+Keep SP-BP disabled until readiness and explicit adoption are established.
+Require upstream host/adapter acceptance and reviewed combined-stack evidence
+before claiming support. Existing Claude/OpenCode SP + gz-skills support does
+not depend on that future acceptance. Backplane owns requirements tracking,
+labels, backlog/release monitoring, handoffs and lite/heavy definitions; do not
+duplicate those lifecycles here.
+
+The 0.8.0 receipt assigns November 7 revisit dates to the cognitive/reproducer
+exceptions and Backplane readiness. That review remains due; this documentation
+reconciliation does not renew exceptions or establish upstream availability.
+
+## Python engineering follow-up
+
+Delivered: `src/` packaging with uv_build, centralized configuration, locked
+execution, reviewed Ruff selection, ty, unittest and pre-commit; expanded
+[Astral acceptance](docs/engineering/astral-acceptance.md) and
+[worked migrations](docs/engineering/astral-migrations.md). The approved four
+routine hooks remain Ruff check/format, ty and unittest. Deeper analysis stays
+outside routine hooks and routine CI.
+
+The 0.8.0 receipt records actual C901/Lizard, coverage, Interrogate, Vulture,
+Bandit, dependency audit, deptry and Import Linter results with reviewed findings
+and scope limits. Do not continue describing all of those checks as unperformed.
+Cosmic Ray has bounded runtime/worker controls, not a production mutation score.
+Shared/local analysis-utility ownership remains unresolved; cohesion selection
+and verification remain adopter-owned.
+
+Use the settled [lizard-functions-v1 contract](docs/engineering/ccc-contract.md)
+at function/module/overall ceilings 20/20/20. Syntax/discovery failures fail
+closed. Historical complexipy scores are defect-reproduction evidence only;
+they do not establish cognitive acceptance. Preserve the
+[earlier remediation record](docs/evidence/2026-10-18-complexity-remediation.md)
+without presenting its cognitive result as current qualification.
+
+Reusable Python-version idiom/stdlib review and generic dependency maintenance
+belong to gz-skills. The selected Pythonic-pattern workflows are not a complete
+version audit; record that coverage gap and review a released upstream workflow
+before adding routing. Do not create a local maintenance skill or freshness
+reporter. Refresh release-specific evidence for actual candidate inputs rather
+than treating old measurements or exact pins as current acceptance.
+
+## Later extensions requiring separate design
+
+- Language/environment and CLI/TUI/web/desktop support matrices. Current template
+  support remains Python-only; do not derive another language's policy from it.
+- Adopter-selected new-project product templates, without a mandatory framework.
+- Optional registration of project-owned operational plugins.
+
+No roadmap entry authorizes implementation in an adopting or upstream repository,
+plugin installation, GitHub mutation, tag movement or release publication.

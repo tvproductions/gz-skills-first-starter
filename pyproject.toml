@@ -1,6 +1,6 @@
 [project]
 name = "skills-first-starter"
-version = "0.8.1"
+version = "0.9.0"
 description = "Project-scoped SP + SP-BP + gz-skills adoption scaffold"
 readme = "README.md"
 requires-python = ">=3.14,<3.15"
@@ -16,7 +16,7 @@ requires = ["uv_build==0.13.6"]
 build-backend = "uv_build"
 
 [tool.uv]
-required-version = "==0.13.6"
+required-version = ">=0.13.5"
 python-preference = "only-managed"
 
 [tool.uv.build-backend]

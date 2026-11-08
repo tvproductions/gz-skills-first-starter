@@ -1,6 +1,7 @@
 version: 2
 updates:
   # Independent resolutions: never combine the 3.14 and host-bound 3.12 projects.
+  # Both projects accept uv >=0.13.5; CI's tested 0.13.6 is not an exact bot requirement.
   - package-ecosystem: uv
     directory: /
     schedule:

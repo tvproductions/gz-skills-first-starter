@@ -1,9 +1,11 @@
 # Template versioning
 
 The current template release is **0.8.0**; the initial release was **0.1.0**.
-The pending compatible correction is **0.8.1**, not yet published; its selected
-fix scope and cross-project findings are recorded in the
-[release-planning audit](evidence/2026-11-01-release-planning-audit.md).
+The pending release is **0.9.0**, not yet published. Its minimum-only uv policy
+change governs the minor increment, alongside compatible corrections recorded
+in the [release-planning audit](evidence/2026-11-01-release-planning-audit.md).
+The [current release-scope record](handoffs/2026-10-24-session-close.md#november-8-git-synchronization-and-release-scope)
+supersedes the audit's earlier patch-only target after upstream reconciliation.
 The 0.3 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
 Release 0.8.0 bundles three-host repository configuration, brownfield scope repair
 and mandatory adopter discipline. Its [release receipt](evidence/2026-10-31-0.8.0-release.md)
@@ -118,6 +120,15 @@ Backplane's unfinished capabilities remain unfinished, and both mode intent
 and policy alignment remain separate from installed readiness or full starter
 conformance. Keep existing project authorities until the relevant Backplane
 workflow is ready and explicitly adopted.
+
+Each companion owns the explicit binding for its own development environment.
+The maintainer's current Python rule is 3.14 for ordinary projects and supported
+3.12 for X-Plane/XPPython3-bound code; the starter owns that rule for its adopters.
+gz-skills workflows consume the governing project's policy instead of maintaining
+a competing family/tool/package baseline. Publisher-side choices do not become
+blanket constraints for unrelated skill or Backplane consumers. A corrected
+source candidate must still be released and explicitly selected before installed
+alignment can be claimed; source bindings are not native installation evidence.
 
 ## Version contract
 

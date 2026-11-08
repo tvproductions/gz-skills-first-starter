@@ -52,6 +52,15 @@ environments. A pin makes runs reproducible; it does not prove ongoing freshness
 Refresh during authorized setup/maintenance rather than resolving “latest” on
 every invocation. A check-only request reports a stale pin without upgrading it.
 
+For the uv executable, the [minimum-only policy](../baseline-policy.md#uv-executable-compatibility)
+supersedes exact-runtime matching: this checkout accepts `>=0.13.5` without an
+upper bound. CI 0.13.6 is the tested reference. Use any supported uv without
+switching it solely to match CI; record actual versions and let behavioral checks
+establish compatibility. This is an execution-compatibility rule, not permission
+to describe an old tool as latest. Keep exact Python, package/backend locks and
+locked commands. Review newer uv behavior during maintenance without rejecting
+a newer family solely because its version differs.
+
 If the newest release has a demonstrated compatibility problem or a host imposes
 another version, record the selected version, evidence, reason, checked date and
 revisit condition. Report that as an exception, not a current baseline claim.

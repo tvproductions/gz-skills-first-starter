@@ -2,9 +2,9 @@
 
 ## Unreleased
 
-Pending **0.8.1**, compared with published 0.8.0: compatible corrections to
-native-host idempotence and execution of the existing release-planning policy.
-No new product capability, baseline tool selection or publication is included.
+Pending **0.9.0**, compared with published 0.8.0: minimum-only uv compatibility,
+native-host idempotence fixes and release-planning/policy-authority corrections.
+The adopter policy change governs the minor increment; publication is pending.
 
 - Clarify the existing release-planning contract: PRDs guide majors, selected
   work/requirements drive minors, and fixes drive patches. Require explicit
@@ -19,6 +19,30 @@ No new product capability, baseline tool selection or publication is included.
   complete pending scope, reuse a valid target, reconcile mirrors immediately,
   bound the first-release outcome and fail incomplete version decisions. Supply
   worked version arithmetic and a compact record for existing planning authorities.
+
+- Clarify Python policy ownership across the starter and its companions: current
+  ordinary projects use 3.14, X-Plane/XPPython3-bound code uses supported 3.12,
+  and portable gz-skills workflows consume the project's governing standard.
+  Record the corrected unpublished gz-skills candidate separately from selected
+  0.8.3; keep SP-BP's independent tooling binding and unrelated consumers intact.
+  No plugin pin/update, release or complete cross-repository acceptance follows.
+
+- Adopt maintainer-approved minimum-only uv compatibility: both baselines require
+  `>=0.13.5` without an upper bound, while CI retains tested 0.13.6. Stop forcing
+  supported callers to match CI's exact uv. Reconcile internal/adopter guidance
+  and packaged instructions; preserve Python pins, package locks and uv_build.
+  This is an adopter policy change, separate from a tool-pin refresh; reconcile
+  it in the next minor release under the existing 0.x contract. No release is
+  published by this change. Record the prior Dependabot failures and rejected
+  retries. Fresh hosted scans now pass for both Python baselines and Actions
+  on e918dbb using updater uv 0.13.7. Ten real PRs have inspected scope and green
+  CI; none are merged. Compatibility/analyzer acceptance remains per update.
+
+- Reconcile the roadmap with delivered 0.8.0 three-host support and current
+  component selections. Order remaining adoption/upgrade/platform work, define
+  completion evidence, and record observed Dependabot uv failures separately
+  from unverified update-PR behavior. Preserve deferred upstream ownership and
+  existing release exceptions; no runtime or policy requirements change.
 
 - Fix repeated native-host configuration on Windows: compare discovery surfaces
   using slash-separated identifiers. Cover Windows path semantics for all three

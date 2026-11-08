@@ -19,6 +19,15 @@ substantive processing is actually needed, through the prescribed uv-managed
 environment. Run that Python with `uv run --locked python`, honoring the project's
 exact interpreter pin and required uv version.
 
+For the uv executable, declare a verified minimum supported version without an
+upper bound rather than an exact requirement. The starter's current minimum is
+uv 0.13.5; adopters select their own evidenced minimum. Record CI's exact tested
+version separately and allow local/hosted uv versions satisfying the minimum.
+Record the actual executable/version and verify affected behavior; a newer uv
+minor is not itself a reason to reject a run. Preserve locked execution, exact
+Python selections and project-owned package/build-backend locks. Compatibility
+with an older uv does not establish its freshness or require a per-run exception.
+
 Install and enable this stack at repository/project scope. Do not install or
 register its plugins or marketplace globally or at user scope. Use project-owned
 native configuration and explicit project-scope installation where supported;
@@ -180,7 +189,8 @@ exemption. Required stale/unknown freshness blocks adoption and release acceptan
 The adopter owns that decision even when gz-skills performs the review. Retained
 older tools need an explicit evidenced exception, owner and dated revisit and
 remain conditional/noncurrent. Check official releases at setup/adoption, before
-each release and scoped maintenance; pin the verified selections afterward. Python's
+each release and scoped maintenance; pin package selections and record the tested
+uv version separately from its minimum compatibility requirement. Python's
 family follows the user-directed N-1 rule: one stable minor behind, currently
 3.14.x for ordinary projects. XPPython3-bound code retains its supported 3.12.x
 host exception. This runtime policy does not exempt old tool families. Verify the latest
@@ -229,6 +239,9 @@ gz-skills owns runtime discovery; require its workflows to honor this project's
 adopted version-range and engineering policy, report missing/conflicting evidence
 and validate host-bound behavior separately. This template supplies policy, not
 an upstream discovery procedure.
+gz-skills supplies no competing family/tool/package standard for this project.
+Read the recorded adopted authority; if it is unavailable, keep dependent
+decisions unresolved instead of treating a stored pin or workflow default as policy.
 At adoption, runtime-family changes, feature design, code review and scoped
 maintenance, assess relevant idioms, stdlib advances and deprecations using
 versioned official documentation. Record benefits, risks and adopt/defer decisions;
