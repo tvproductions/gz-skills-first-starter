@@ -1,7 +1,12 @@
 # Template versioning
 
 The current template release is **0.9.0**; the initial release was **0.1.0**.
-Its minimum-only uv policy
+The selected next minor is **0.10.0**, unpublished: mandatory ADR practice for
+the trio and its adopters. The [governing release-scope record](handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope)
+distinguishes this accepted direction from unfinished design, implementation and
+acceptance. Adoption-acceptance reporting remains the final planned feature
+before a separately scoped 1.0.0 with its newly written PRD.
+Release 0.9.0's minimum-only uv policy
 change governs the minor increment, alongside compatible corrections recorded
 in the [release-planning audit](evidence/2026-11-01-release-planning-audit.md).
 The [current release-scope record](handoffs/2026-10-24-session-close.md#november-8-git-synchronization-and-release-scope)

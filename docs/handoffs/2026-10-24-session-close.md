@@ -1,5 +1,137 @@
 # Session handoff — October 24, 2026
 
+## November 8 save point — resume detailed design at issue #13
+
+The maintainer requested a handoff and Git sync, then a return to detailed
+design. Created [design issue #13](https://github.com/tvproductions/gz-skills-first-starter/issues/13)
+as a native child of [feature #12](https://github.com/tvproductions/gz-skills-first-starter/issues/12),
+both targeting [milestone 0.10.0](https://github.com/tvproductions/gz-skills-first-starter/milestone/2).
+This books the design explicitly. Neither a concrete specification nor its
+approval nor an implementation plan exists yet. Do not mark the feature ready
+or complete from this booking or the save point.
+
+There is enough accepted input to begin design without repeating settled
+questions. Read the whole COB discussion through direct `gh`, pinned to
+`dd1ab883c04e884678ed723959b17c5c364263d1` (live main rechecked unchanged):
+
+```powershell
+gh api 'repos/wtcis-pvecob/cob_projects/contents/docs/engineering/proposals/2026-11-07-gz-adr-workflow-discussion.md?ref=dd1ab883c04e884678ed723959b17c5c364263d1' -H 'Accept: application/vnd.github.raw+json'
+```
+
+The roughly 1,600-line document is a chronological discussion with explicit
+acceptances. Later operator decisions and **Final audience guidance** govern
+earlier candidate/open text. Use its standalone lightweight guidance and accepted
+sample/edition rules; separate its GZKit reconciliation, drydock, ledger, order,
+identity crossover and `g0` conventions. Preserve source identity and distinguish
+source design acceptance from a real architectural ADR's explicit approval.
+
+Start from this conversation's accepted boundaries recorded below: mandatory
+both lanes; trio internal use first; no centralized CLI/core prerequisite; starter
+leads its adopting stack and owns nothing for GZKit; acceptance reporting is the
+last planned feature before a separately scoped 1.0.0. Starter design owns its
+adopter policy and cross-component obligations. gz-skills and SP-BP design their
+internals in their own repositories; coordinate and link their records rather
+than silently deciding or duplicating their implementation here. The initial
+design must resolve distribution/version references and behavioral evaluation
+contracts. Reuse the source's accepted ADR semantics and ask only about actual
+remaining decisions. Follow SP design review before implementation planning;
+separate ADR approval still applies to new architectural choices.
+
+Sync scope: the eight reviewed starter planning/version/resource files, from
+published 0.9.0 commit `3f76acf0038b030bf5abd85ce4a419e890d3e420` to pending
+0.10.0. A fresh origin fetch confirms no main divergence; remote Dependabot
+branch refreshes do not alter this scope. No helper/analyzer implementation,
+component pin, native installation or companion repository changes are included.
+Keep normal hooks, run the documented local gate, push main normally and observe
+CI for that exact final SHA. Report the result without a receipt-only commit
+chain. This save point publishes no tag or release and starts no design work.
+
+Pre-sync verification passed again on uv 0.13.7 / managed Python 3.14.10:
+locked all-group sync, all four routine hooks, bundle/both-catalog validation,
+source-independent build and isolated installed-distribution checks. Analyzer
+regressions are not triggered by this documentation/version-only scope. Verify
+the final commit's own CI after push; prior release CI does not cover this change.
+
+## November 8 agreed ADR practice and next release scope
+
+Published baseline: **0.9.0**, immutable annotated `v0.9.0` tag
+`4e4a66d222488194b599de4f2ccef9ba291ea881`, release commit
+`3f76acf0038b030bf5abd85ce4a419e890d3e420`. Both exact-commit CI jobs passed
+in [run 42501660044](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/42501660044).
+GitHub reports a published stable release; downloaded wheel/sdist/update-skill
+ZIP hashes match SHA256SUMS. The downloaded wheel installs outside the checkout
+on managed Python 3.14.10, reports 0.9.0 and validates both catalogs. The earlier
+release-preparation entry below is historical; publication is complete.
+
+Pending target / kind: **0.10.0 / minor**. Governing work: the maintainer's
+agreement in this conversation to mandatory architectural decision practice in
+both lite and heavy lanes, informed by the
+[COB proposal's final lightweight guidance](https://github.com/wtcis-pvecob/cob_projects/blob/dd1ab883c04e884678ed723959b17c5c364263d1/docs/engineering/proposals/2026-11-07-gz-adr-workflow-discussion.md#final-audience-guidance).
+The new mandatory adoption/workflow requirement determines the minor increment.
+Bundle, package, generated resources and owning-tool lock metadata must agree.
+
+Release outcome: agents recognize consequential architectural choices before
+implementation embeds them, reuse applicable approved decisions, and obtain
+separate explicit approval of the identified edition for new or replacement
+decisions before dependent work. Check alignment during design, execution and
+review. Preserve honest approval provenance, editorial history and independent
+decision/requirement/design/work/evidence/release identities. An ADR is not a
+feature, task or release container. A successful test or general plan/release
+approval is not architectural approval. Existing authority to act remains intact.
+
+Initial rollout covers this starter, gz-skills and SP-BP before propagation to
+adopting projects. The starter leads policy for projects adopting/using this
+trio; it owns nothing on GZKit's behalf. GZKit drydock/ledger/order/crossover work
+remains under GZKit's own authority. The practice applies to these publishing
+repositories themselves as well as their adopters. No central CLI, shared
+runtime, application core or new planning hierarchy is a prerequisite.
+
+Included completed work: this agreed scope, ownership boundaries and reordered
+roadmap. Included remaining work: concrete design of the starter policy binding,
+portable gz-skills workflow/template and applicable SP-BP integration; reconcile
+each repository's own instructions; verify recognition/approval/alignment with
+invented positive and negative behavioral scenarios. Demonstrate use in all
+three repositories before adopter propagation. Missing approvals, vague assent,
+mid-implementation choices, existing-decision reuse, conflicting direction and
+honest backfills must be covered. The accepted conceptual direction does not
+constitute approval of an unwritten implementation design or a real ADR edition.
+
+Deferred/excluded from 0.10.0: real-adopter pilot execution, deterministic template
+upgrade/rollback tooling, remaining native-platform qualification and adoption-
+acceptance automation, except references needed to keep their future integration
+coherent. Acceptance reporting is the final planned feature before a proper
+1.0.0; existing adoption requirements remain mandatory throughout. The future
+1.0.0 needs its own new PRD and finite scope, not an automatic tag after reporting.
+Generic maintenance and cognitive integration retain their existing ownership.
+
+Compatibility/migration: a newly mandatory workflow changes the pre-1.0 adoption
+contract; preserve existing suitable ADR identities/history and explicit authority.
+Do not silently migrate collections or claim a native hook/approval writer exists.
+Publication: 0.10.0 is unpublished. No companion edits, plugin installation,
+issue mutation, commit/push or publication is performed by this discussion record.
+Detailed distribution/version binding and SP-BP integration remain design work;
+claim neither implementation readiness nor ADR-practice acceptance yet.
+
+Discussion-record verification: uv 0.13.7 and managed Python 3.14.10; owning-tool
+lock refresh changed only the starter version. Regenerated resources, locked
+all-group sync, all four routine hooks, bundle/both-catalog validation,
+source-independent build and isolated installed-distribution checks pass for
+0.10.0. Reviewed the complete eight-file diff and whitespace checks. No analyzer
+or helper behavior changed; deeper release acceptance and behavioral ADR
+evaluations remain outstanding. Changes are local and uncommitted.
+
+The maintainer subsequently requested a tracked feature increment. Created
+[feature #12](https://github.com/tvproductions/gz-skills-first-starter/issues/12)
+in [milestone 0.10.0](https://github.com/tvproductions/gz-skills-first-starter/milestone/2)
+using the existing enhancement classification. The issue captures bounded
+workstreams, acceptance criteria, exclusions and verification; detailed design
+is pending, not approved or implementation-ready. Starter design owns adopter
+policy/cross-component obligations. Each companion owns its detailed design and
+implementation in its own repository; link its records rather than duplicating
+task state here. Concrete specifications need maintainer approval before dependent
+implementation, and architectural ADR approval remains a separate checkpoint.
+No Backplane lifecycle labels, plugin activation or companion issues were created.
+
 ## November 8 authorized 0.9.0 release
 
 The maintainer requested publication and queried whether the version was 0.9.1.

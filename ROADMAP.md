@@ -1,10 +1,12 @@
 # Roadmap
 
-Reconciled November 7, 2026 against the 0.8.0 release evidence, current bundle,
-November 1 Windows correction and hosted scan results. This is the starter's
+Reconciled November 8, 2026 against the 0.9.0 release and agreed ADR priority,
+current bundle, Windows correction and hosted scan results. This is the starter's
 project roadmap, not a replacement for Backplane's backlog/lifecycle authority.
-Only cognitive integration currently has a GitHub issue; the other open items
-below are roadmap entries, not newly created issues or release commitments.
+The ADR increment is tracked as [feature #12](https://github.com/tvproductions/gz-skills-first-starter/issues/12)
+in [milestone 0.10.0](https://github.com/tvproductions/gz-skills-first-starter/milestone/2).
+Cognitive integration remains issue #1. Other entries remain roadmap work
+without assigned versions or newly created issues.
 
 ## Delivered baseline
 
@@ -27,11 +29,11 @@ below are roadmap entries, not newly created issues or release commitments.
   and OpenCode 2.2.0, including inside/outside controls and preserved user
   settings. Claude project installation and OpenCode v2 support are delivered;
   combined-stack Backplane acceptance remains separate and deferred.
-- **Unreleased Windows correction:** normalize discovery identifiers and scope-test
+- **0.9.0 Windows correction:** normalize discovery identifiers and scope-test
   paths. Public-helper regressions cover all three hosts using Windows path
   semantics; this does not prove fresh-session native discovery on Windows.
 
-See the [0.8.0 release receipt](docs/evidence/2026-10-31-0.8.0-release.md),
+See the [0.9.0 release receipt](docs/evidence/2026-11-08-0.9.0-release.md),
 [three-host receipt](docs/evidence/2026-10-31-three-host-repo-scope.md),
 [changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-10-24-session-close.md).
 Historical receipts establish their stated inputs and scope, not current
@@ -39,32 +41,43 @@ universal acceptance.
 
 ## Next work, in recommended order
 
-### 1. Dependency scans restored; review update candidates
+### 1. Establish mandatory ADR practice across the trio
 
-Weekly standard Python, independent X-Plane/XPPython3 and Actions jobs exist.
-Initial hosted scans succeeded, but the November 2 uv scans failed:
-[standard baseline](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/41469195255)
-and [X-Plane baseline](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/41469179882).
-Both report required uv `==0.13.6` unsupported by an updater supporting 0.13.5.
-The [Actions scan succeeded](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/41469217136).
-Hosted operation is observed, with a concrete uv compatibility failure; it is
-not wholly UNKNOWN or currently reliable.
+Selected next minor: **0.10.0**, from published 0.9.0. The maintainer agreed
+that both lite and heavy adopters must follow this practice, and that this
+starter, gz-skills and SP-BP must demonstrate it themselves before propagation.
+The [native feature issue](https://github.com/tvproductions/gz-skills-first-starter/issues/12)
+captures the increment's intent, workstreams and acceptance conditions. Detailed
+design is booked as [child issue #13](https://github.com/tvproductions/gz-skills-first-starter/issues/13)
+and resumes after the handoff/Git sync. This repository owns the adopter policy
+and cross-component contract; gz-skills and SP-BP design their internals in their
+own repositories.
+Approve each concrete design before dependent implementation; individual new
+architectural decisions retain their separate ADR approval checkpoint.
+See the [governing scope and discussion record](docs/handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope)
+and the [source proposal's final guidance](https://github.com/wtcis-pvecob/cob_projects/blob/dd1ab883c04e884678ed723959b17c5c364263d1/docs/engineering/proposals/2026-11-07-gz-adr-workflow-discussion.md#final-audience-guidance).
 
-The [November 7 diagnosis and resolution](docs/evidence/2026-11-07-dependabot-uv-compatibility.md)
-records the old exact-pin rejection and the maintainer's minimum-only decision.
-Both projects now accept uv `>=0.13.5` without an upper bound; CI retains tested
-0.13.6. The maintenance guide is reconciled; no replacement updater is needed for
-this version-only mismatch. Preserve locked execution and both Python families.
-The configuration-note update at `e918dbb` triggered fresh scans: both Python
-jobs and Actions succeeded, and both Python logs report actual uv 0.13.7.
-Ten real PRs demonstrate expected separate-baseline manifest/lock updates; their
-scope and green CI were inspected. This closes the version-rejection and real-PR
-generation proof gaps. No dependency upgrade was merged. Complete applicable
-compatibility/analyzer review before accepting those updates; root build-only
-uv_build PR behavior and embedded-host proof remain separate gaps. See the
-[completed receipt](docs/evidence/2026-11-07-dependabot-uv-compatibility.md#hosted-verification-completed--november-7)
-and [coverage and limits](docs/engineering/dependabot.md).
-Adopter scan schedules and update sources remain adopter-owned.
+Prevent surprise architectural commitments embedded in implementation. Require
+recognition during design, execution and review; reuse applicable approved
+choices; obtain separate explicit approval of an identified ADR edition before
+implementing a new or replacement choice. Preserve independent record identities,
+editorial history and honest approval provenance. Routine details within an
+accepted decision need no new ADR. Drafting or indexing does not confer approval.
+
+The starter leads adopted policy for the trio; gz-skills owns portable workflow
+and template behavior; SP-BP integrates with its existing planning/tracking
+surfaces. Each repository must bind the practice for its own development too.
+A central CLI, shared runtime or application core is not a prerequisite. The
+starter owns nothing on GZKit's behalf; its drydock and lifecycle remain separate.
+Do not introduce a competing planning hierarchy or fork upstream SP workflows.
+
+Completion requires a reviewed concrete design, the three project bindings,
+portable workflow and applicable SP-BP integration, plus behavioral positive and
+negative controls for missing/conflicting decisions, vague assent, mid-work
+choices, accepted-decision reuse and honest backfills. Demonstrate the practice
+in all three repositories before adopter propagation. Detailed distribution and
+integration remain to be designed; this scope agreement is not implementation
+acceptance or approval of an individual ADR.
 
 ### 2. Complete an authorized real-adopter pilot
 
@@ -78,21 +91,7 @@ fresh native discovery, preservation and rollback evidence. Report unresolved
 requirements explicitly; successful configuration is insufficient. Feed concrete
 pilot findings into the reporting and upgrade proposals below.
 
-### 3. Make adoption acceptance independently inspectable
-
-The [strict-adoption design](docs/engineering/strict-adoption-design.md) already
-identifies automatic lane/evidence/PRD validation as proposed, not implemented.
-Design reporting that distinguishes declared lane, managed configuration,
-Python conformance, native discovery and release eligibility. Preserve the
-upstream profile schema and existing planning/lifecycle authorities.
-
-Completion requires public-helper positive and negative controls for missing,
-failed, stale and inapplicable evidence, explicit exceptions with owner/revisit,
-and absence of a lane. Do not infer acceptance from configuration, a profile
-string or an installed plugin. Validate major-release PRD requirements without
-implementing a competing requirements-tracking system.
-
-### 4. Provide reviewed template upgrade and rollback tooling
+### 3. Provide reviewed template upgrade and rollback tooling
 
 The [canonical update workflow](docs/updating.md) exists; deterministic three-way
 reconciliation remains proposed. `localize` repairs activation but does not
@@ -104,7 +103,7 @@ preserved adopter edits and plugin enablement, and tested rollback. Exercise
 public helper seams with invented fixtures and a separately authorized pilot.
 Do not install plugins or overwrite user defaults as a migration shortcut.
 
-### 5. Close remaining native/platform proof gaps
+### 4. Close remaining native/platform proof gaps
 
 Keep completed CLI/runtime scope proofs separate from these open checks:
 
@@ -120,6 +119,41 @@ claimed target. The [October 18 Windows Codex CLI receipt](docs/evidence/2026-10
 proves its published 0.4.0 fixture, not universal current-host readiness.
 Test the actual embedded XPPython3 host separately; standalone 3.12 tool probes
 do not establish simulator/plugin compatibility.
+
+### 5. Make adoption acceptance independently inspectable
+
+The [strict-adoption design](docs/engineering/strict-adoption-design.md) already
+identifies automatic lane/evidence/PRD validation as proposed, not implemented.
+Design reporting that distinguishes declared lane, managed configuration,
+Python conformance, native discovery and release eligibility. Preserve the
+upstream profile schema and existing planning/lifecycle authorities.
+
+Completion requires public-helper positive and negative controls for missing,
+failed, stale and inapplicable evidence, explicit exceptions with owner/revisit,
+and absence of a lane. Do not infer acceptance from configuration, a profile
+string or an installed plugin. Validate major-release PRD requirements without
+implementing a competing requirements-tracking system.
+
+The maintainer selected this as the final planned feature before a proper 1.0.0,
+after ADR practice, pilot feedback, upgrade/rollback work and platform evidence.
+Include applicable architectural-decision approval and alignment evidence;
+field presence cannot establish human approval. Existing mandatory adoption
+checks remain in force before reporting automation exists. Prepare a newly
+written 1.0.0 PRD and finite release scope; this feature alone does not establish
+1.0.0 readiness or authorize publication.
+
+## Parallel maintenance: dependency scans and update candidates
+
+The November 7 hosted scans and real update-PR generation passed after the
+minimum-only uv correction; the historical failure and recovery evidence is in
+the [completed receipt](docs/evidence/2026-11-07-dependabot-uv-compatibility.md#hosted-verification-completed--november-7).
+Release 0.9.0 independently refreshed both locks and tested uv 0.13.7; see its
+[release receipt](docs/evidence/2026-11-08-0.9.0-release.md). This does not claim
+any update PR was merged or all future scan behavior is verified. Preserve the
+two Python baselines, exact locks and adopter-owned schedules. Review remaining
+PR applicability against the current locks; root build-only updater behavior and
+real embedded-host proof remain separate gaps. Plugin/Lizard qualification
+follow-ups retain the receipt's explicit ownership and revisit conditions.
 
 ## Unscheduled upstream dependencies
 

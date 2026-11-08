@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+Pending **0.10.0**, from published 0.9.0: the selected next feature bundle is
+mandatory ADR practice for both adoption lanes, first exercised by this starter,
+gz-skills and SP-BP before propagation to adopters. This is a new adoption/workflow
+requirement and therefore a minor increment. Only the agreed scope and roadmap
+order are recorded so far; workflow implementation and acceptance remain pending.
+See [the governing scope](docs/handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope).
+
+- Prioritize ADR practice before the real-adopter pilot and remaining upgrade/
+  native-platform work. Place adoption-acceptance reporting last among the planned
+  features before 1.0.0; retain existing mandatory adoption checks throughout.
+  Preserve independent decision/requirement/work/evidence/release identities and
+  separate explicit approval of each new or replacement architectural decision.
+  Apply the practice to the three publishing repositories as well as adopters,
+  without requiring a central CLI or shared application core. The starter leads
+  its adopting stack and owns no policy or implementation on GZKit's behalf.
+
 ## 0.9.0 — November 8, 2026
 
 Release **0.9.0**, compared with published 0.8.0: minimum-only uv compatibility,
