@@ -64,6 +64,18 @@ pin refreshes in release notes and adopter reviews.
 This is a public scaffold; use invented fixtures and preserve upstream ownership.
 
 Version the template independently of its upstream components and adopter apps.
+PRDs guide major releases; selected work and requirements drive minor releases;
+fixes drive patch releases. Follow `docs/versioning.md#plan-releases-from-their-governing-work`.
+Keep a release-scope record in the existing planning authority with the published
+baseline, proposed version, governing work, completed/remaining/deferred scope,
+compatibility impact and acceptance evidence. Reconcile it during planning and
+change closeout. Missing scope/version evidence blocks release preparation;
+neither task counts nor unpublished status substitutes for release accounting.
+Execute `docs/versioning.md#required-version-decision-procedure` at requirements
+intake, planning and closeout. Derive routine bumps without asking the user to
+choose a number. Require a finite initial-release scope, reuse a valid pending
+target and report baseline -> target with governing work and verified mirrors.
+Missing required PRD/scope/version evidence blocks the applicable completion claim.
 For adopters, permit `0.0.0` only as an unpublished bare-scaffold placeholder.
 As soon as original implementation, tests, documentation or configuration is
 added, set the initial project version to `0.1.0`. Do not release project-owned

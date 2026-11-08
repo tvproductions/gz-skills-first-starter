@@ -1,5 +1,29 @@
 # Session handoff — October 24, 2026
 
+## November 1 release-planning correction (unreleased)
+
+The maintainer clarified the governing hierarchy: PRDs guide majors, selected
+work/requirements drive minors, and fixes drive patches, then requested an audit
+and correction of adopting projects under agents/ and xp/. The
+[audit and verification receipt](../evidence/2026-11-01-release-planning-audit.md)
+records inventory, local binding edits, published-release evidence and unresolved
+scope decisions. Six project AGENTS files and both companions' release-policy
+bindings were corrected; existing changelogs were reconciled where applicable.
+Health's published 0.1.0 was incorrectly labeled unreleased. WebAPI's pending
+Python support removal needs a major/PRD or preservation decision before release.
+
+Starter pending version is 0.8.1 for compatible host fixes and clarification of
+existing release commitments. Metadata/lock/resources agree; the required local
+gate passed. Product versions, adoption records, plugin pins and approved scopes
+remain unchanged. No commits, pushes, tags or releases were requested or made.
+The maintainer then requested a reliable policy. Versioning now includes a
+mandatory decision procedure at requirements intake, planning and closeout,
+worked arithmetic, a bounded release record and failing completion conditions.
+All eight local bindings carry those checks and current source hashes; agents
+derive routine numbers and ask only for unresolved product-scope decisions.
+Backplane's release bundle, Ortho4XP's distributed baseline and WebAPI's support
+removal remain explicit decisions; do not manufacture them from this audit.
+
 Read this entry first, then the
 [0.7 tooling handoff](2026-10-24-0.7-latest-tooling.md) and
 [acceptance/synchronization record](../evidence/2026-10-24-git-sync.md).

@@ -90,7 +90,39 @@ future adoption but is disabled by default because readiness is incomplete.
 Use existing project backlog and handoff practices in the meantime.
 
 Release planning applies to this adopting project's own versions as well as
-the starter. A bare scaffold may retain `0.0.0` only as an unpublished placeholder.
+the starter. **PRDs guide major releases; selected work and requirements drive
+minor releases; fixes drive patch releases.** Before implementation planning,
+identify the release scope served by the work. In the existing backlog, roadmap
+or release authority, record the last published version/tag/revision (or evidence
+of no prior release), proposed next version, governing PRD/requirements/fixes,
+included completed and remaining work, deferred work, compatibility impact and
+acceptance gates. Reconcile completed changes into this record before closeout.
+Missing scope or version-decision evidence blocks release-preparation acceptance.
+Do not silently shrink an approved release, count commits/tasks as version bumps,
+or put the entire future backlog into one release. Multiple changes in a selected
+release share its pending version; classify the complete scope since publication.
+Maintain metadata/runtime mirrors, affected lock metadata and changelog together
+when selecting that pending version. Keep scope decisions explicit even when
+publication is not authorized. An initial unpublished `0.1.0` may contain its
+selected first-release scope; review scope growth rather than using "unreleased"
+to defer release accounting indefinitely. Preserve existing release gates.
+At requirements intake, planning and change closeout, derive the target from the
+published baseline and the highest required increment across the pending scope.
+Reset lower components: `1.4.2 -> 1.5.0` for new compatible requirements,
+`1.4.2 -> 1.4.3` for fixes, `1.4.2 -> 2.0.0` for a breaking major with its new
+PRD; during 0.x, new requirements drive `0.4.2 -> 0.5.0` and fixes `0.4.3`.
+Reuse an adequate pending target instead of bumping once per task. Identify the
+existing commitment a patch corrects; a "fix" label cannot hide new requirements.
+Select and reconcile routine version changes within authorized work without
+asking the maintainer to choose the number. Ask only for unresolved product
+scope decisions. Require a finite first-release outcome and gate; assign future
+requirements to later minor bundles. Report baseline -> target, governing source,
+compatibility, version agreement and publication state. Missing scope, required
+PRD or version evidence blocks the applicable planning/closeout claim, not just
+publication. Follow `docs/versioning.md#required-version-decision-procedure` in
+the reviewed starter. A selected version neither proves readiness nor authorizes
+publication.
+A bare scaffold may retain `0.0.0` only as an unpublished placeholder.
 As soon as any original implementation, tests, documentation or configuration
 is added, set the initial project version to **0.1.0**. Do not release
 project-owned work as `0.0.0`. Align package metadata, runtime version output

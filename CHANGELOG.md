@@ -2,6 +2,24 @@
 
 ## Unreleased
 
+Pending **0.8.1**, compared with published 0.8.0: compatible corrections to
+native-host idempotence and execution of the existing release-planning policy.
+No new product capability, baseline tool selection or publication is included.
+
+- Clarify the existing release-planning contract: PRDs guide majors, selected
+  work/requirements drive minors, and fixes drive patches. Require explicit
+  release-scope accounting during planning, closeout and release preparation;
+  preserve initial-release scope, compatibility gates and publication authority.
+  Carry the correction in adopter instructions and the migration runbook.
+  See the [cross-project audit](docs/evidence/2026-11-01-release-planning-audit.md)
+  for local adopter findings, corrections and verification limits.
+
+- Make the release-planning correction actionable at requirements intake,
+  planning and closeout: derive the target from the published baseline and
+  complete pending scope, reuse a valid target, reconcile mirrors immediately,
+  bound the first-release outcome and fail incomplete version decisions. Supply
+  worked version arithmetic and a compact record for existing planning authorities.
+
 - Fix repeated native-host configuration on Windows: compare discovery surfaces
   using slash-separated identifiers. Cover Windows path semantics for all three
   hosts and normalize the scope-repair test's relative paths.
