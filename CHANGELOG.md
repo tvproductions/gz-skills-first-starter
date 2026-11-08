@@ -5,9 +5,40 @@
 Pending **0.10.0**, from published 0.9.0: the selected next feature bundle is
 mandatory ADR practice for both adoption lanes, first exercised by this starter,
 gz-skills and SP-BP before propagation to adopters. This is a new adoption/workflow
-requirement and therefore a minor increment. Only the agreed scope and roadmap
-order are recorded so far; workflow implementation and acceptance remain pending.
+requirement and therefore a minor increment. Scope, roadmap order and a draft
+detailed design are recorded; the starter specification is approved and its
+implementation plan and ADR-0001-001 are separately approved. Starter policy and
+link/local helper support are implemented locally; companion delivery and
+whole-feature qualification/acceptance remain pending.
 See [the governing scope](docs/handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope).
+
+- Draft the [starter ADR-practice design](docs/superpowers/specs/2026-11-08-adr-practice-design.md)
+  using the maintainer-selected exact-component qualification approach. Define
+  ownership, approval/edition provenance, adopter reconciliation and behavioral
+  evaluation requirements. Preserve the component-binding choice as a separate
+  unapproved ADR proposal; approach selection approves neither the specification
+  nor its architectural record. Subsequent section review and explicit direction
+  to proceed approve the revised starter specification for planning; the separate
+  ADR subsequently received its own explicit approval, preserved with exact
+  reviewed proposal bytes. Companion designs/delivery remain owner-scoped.
+  Section review adds both repository-local policy copies and immutable source
+  links, lightweight approval receipts, and a full shared behavioral matrix with
+  targeted binding checks and required stop/continue controls in every binding.
+  Prepare the bounded starter implementation plan and its alignment audit;
+  preserve separate ADR, execution and companion-delivery gates.
+
+- Implement mandatory project ADR routing and `configure --adr-policy link|local`.
+  New projects default to immutable links; omission on repeat preserves the
+  recorded choice. Local mode copies exact packaged policy bytes and records
+  original source/hash/path in the existing lock. Preserve edited policies,
+  reject symlinked destinations and roll back failed writes. Older locks/mode
+  changes require reviewed reconciliation. Package the policy as the sixth
+  authoritative resource; verify both modes from clean installed wheels for
+  all three helper hosts. This is helper behavior, not portable-skill discovery
+  or trio behavioral qualification. Keep companion pins and activation unchanged.
+  Correct the inherited exclusive-create failure path so partial write/close
+  failures clean up the owned file while preserving a concurrent replacement;
+  review regression and final 72-test suite pass with the full repository gate.
 
 - Prioritize ADR practice before the real-adopter pilot and remaining upgrade/
   native-platform work. Place adoption-acceptance reporting last among the planned

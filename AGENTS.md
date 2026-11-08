@@ -23,6 +23,15 @@ For adoption into another project, start at
 For continuation of starter development, read
 `docs/handoffs/2026-10-24-session-close.md`; recheck live state before work.
 
+Follow `docs/engineering/architectural-decisions.md` during design, execution and
+review in both lanes. Find approved ADRs in `docs/decisions/`; reuse applicable
+decisions. Obtain separate explicit approval of an identified new/replacement
+ADR edition before dependent implementation; continue independent authorized
+work. Keep approval evidence and edition history with the ADR. Do not infer
+architectural approval from spec/plan/test/release assent or introduce a ledger.
+The selected gz-skills 0.8.3 ADR contribution remains unverified; do not claim
+portable workflow availability or feature qualification from this binding alone.
+
 Use this checkout's native development skills through `.codex/config.toml`:
 SP for feature work and gz-skills for engineering workflows. The project-scoped
 `update-gz-template` links to its canonical template source for adopter work;
@@ -204,7 +213,8 @@ Checks: `uv sync --locked --all-groups`, `uv run --locked pre-commit run --all-f
 Ruff check/format, ty and unittest. Run the checker CLI tests explicitly after
 analyzer changes: `uv run --locked --group hygiene python -m unittest discover -s tools/engineering -p "test_*.py" -v` (counting-contract, portability, cognitive-qualification and consumer-gate regressions).
 Refresh wheel resource copies with `uv run --locked python tools/package_resources.py`
-after changing their five authoritative inputs, including the update skill;
+after changing their six authoritative inputs, including the update skill and
+architectural-decision policy;
 unittest detects drift.
 No plugin installation, GitHub issue mutation, tag, or release publication is
 implied by editing this repository. Follow the user's actual authorization.
@@ -214,6 +224,9 @@ Keep gz-skills and SP agnostic; SP-BP should remain agnostic as well. Do not
 propagate these choices into upstream plugins.
 
 ## Git synchronization ritual
+
+Work and commit directly on `main`. Do not create feature branches unless the
+maintainer explicitly requests one. Preserve unrelated work and normal hooks.
 
 When the user requests Git sync, follow this repository-owned procedure whether
 or not gz-skills is installed or discoverable. An available upstream workflow

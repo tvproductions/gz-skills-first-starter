@@ -8,6 +8,7 @@ this tool writes project configuration and never edits their global caches.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -40,6 +41,8 @@ SHA = re.compile(r"[0-9a-f]{40}\Z")
 UPDATE_SKILL = "update-gz-template"
 UPDATE_SKILL_SOURCE = f"templates/skills/{UPDATE_SKILL}/SKILL.md"
 UPDATE_SKILL_DESTINATION = f".agents/skills/{UPDATE_SKILL}/SKILL.md"
+ADR_POLICY_SOURCE = "docs/engineering/architectural-decisions.md"
+ADR_POLICY_DESTINATION = ".skills-first/architectural-decisions.md"
 
 
 class AdoptionError(Exception):
@@ -227,8 +230,44 @@ def _check_discovery(root: Path, host: str = "codex") -> None:
                 _check_discovery_entry(surface, child, owned_surface)
 
 
+def _policy_candidates(
+    root: Path, ref: str, requested: str | None
+) -> tuple[dict[str, str], dict[str, str], str]:
+    """Resolve policy access and reject unreconciled provenance before writing."""
+    lock_path = check_path(root, ".skills-first/bundle.lock.json")
+    recorded = None
+    if lock_path.exists():
+        lock = json.loads(lock_path.read_bytes())
+        recorded = lock.get("adr_policy") if isinstance(lock, dict) else None
+        if not isinstance(recorded, dict) or recorded.get("mode") not in ("link", "local"):
+            raise AdoptionError("ADR policy selection is missing or invalid; reconcile the lock")
+    mode = requested if requested is not None else recorded["mode"] if recorded else "link"
+    if mode not in ("link", "local"):
+        raise AdoptionError("unsupported ADR policy mode; reconcile using link or local")
+    source = (HERE / ADR_POLICY_SOURCE).read_bytes()
+    policy = {
+        "mode": mode,
+        "source_path": ADR_POLICY_SOURCE,
+        "source_sha256": hashlib.sha256(source).hexdigest(),
+    }
+    if mode == "local":
+        policy["local_path"] = ADR_POLICY_DESTINATION
+    if recorded is not None and recorded != policy:
+        raise AdoptionError(
+            "ADR policy provenance or selection differs; reconcile without overwriting"
+        )
+    url = f"https://github.com/tvproductions/gz-skills-first-starter/blob/{ref}/{ADR_POLICY_SOURCE}"
+    copies = {ADR_POLICY_DESTINATION: source.decode("utf-8")} if mode == "local" else {}
+    return policy, copies, ADR_POLICY_DESTINATION if mode == "local" else url
+
+
 def _configuration_candidates(
-    paths: dict[str, Path], ref: str, host: str = "codex"
+    paths: dict[str, Path],
+    ref: str,
+    host: str = "codex",
+    *,
+    policy: dict[str, str],
+    working_policy: str,
 ) -> tuple[dict[str, str], dict]:
     """Prepare managed payloads without writing or changing existing authorities."""
     config_path = "opencode.jsonc" if "opencode.jsonc" in paths else HOST_PATHS[host]
@@ -238,10 +277,17 @@ def _configuration_candidates(
         else ""
     )
     fragment = (HERE / "templates/AGENTS.skills-first.md").read_text(encoding="utf-8")
+    policy_url = (
+        f"https://github.com/tvproductions/gz-skills-first-starter/blob/{ref}/{ADR_POLICY_SOURCE}"
+    )
+    fragment = fragment.replace("{{ADR_POLICY_WORKING_SOURCE}}", working_policy).replace(
+        "{{ADR_POLICY_CANONICAL_URL}}", policy_url
+    )
     lock = {
         "schema_version": 1,
         "starter": {"repository": ORIGIN, "version": template_version(), "revision": ref},
         "components": bundle()["components"],
+        "adr_policy": policy,
     }
     if host != "codex":
         lock["host"] = host
@@ -288,8 +334,21 @@ def _write_candidate(path: Path, payload: str, current: bytes | None) -> None:
     """Create exclusively or replace through a sibling temporary file."""
     path.parent.mkdir(parents=True, exist_ok=True)
     if current is None:
-        with path.open("xb") as stream:
-            stream.write(payload.encode())
+        created = None
+        try:
+            with path.open("xb") as stream:
+                created = os.fstat(stream.fileno())
+                stream.write(payload.encode())
+        except BaseException:
+            if created is not None:
+                try:
+                    remaining = path.stat(follow_symlinks=False)
+                except FileNotFoundError:
+                    pass
+                else:
+                    if os.path.samestat(created, remaining):
+                        path.unlink()
+            raise
         return
     with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as stream:
         temp = Path(stream.name)
@@ -327,7 +386,14 @@ def _apply_writes(
         raise
 
 
-def configure(project: Path, ref: str, *, apply: bool = False, host: str = "codex") -> dict:
+def configure(
+    project: Path,
+    ref: str,
+    *,
+    apply: bool = False,
+    host: str = "codex",
+    adr_policy: str | None = None,
+) -> dict:
     """Preview or apply the reviewed adoption plan with conflict preservation."""
     validate_bundle()
     if host not in HOST_PATHS:
@@ -337,6 +403,7 @@ def configure(project: Path, ref: str, *, apply: bool = False, host: str = "code
             "use a reviewed, published full starter commit SHA; moving branches are not pins"
         )
     root = _adoption_root(project)
+    policy, copies, working_policy = _policy_candidates(root, ref, adr_policy)
     _check_discovery(root, host)
     if host == "claude":
         local = check_path(root, ".claude/settings.local.json")
@@ -354,7 +421,11 @@ def configure(project: Path, ref: str, *, apply: bool = False, host: str = "code
         )
     }
     profile_check(paths[".gz-skills/settings.json"])
-    candidates, lock = _configuration_candidates(paths, ref, host)
+    paths.update({name: check_path(root, name) for name in copies})
+    candidates, lock = _configuration_candidates(
+        paths, ref, host, policy=policy, working_policy=working_policy
+    )
+    candidates.update(copies)
     writes, before, present = _plan_writes(paths, candidates)
     if apply:
         _apply_writes(root, paths, writes, before)
@@ -366,11 +437,13 @@ def configure(project: Path, ref: str, *, apply: bool = False, host: str = "code
         "runtime_readiness": "unverified",
         "host": host,
         "starter": lock["starter"],
+        "adr_policy": policy,
         "next": [
             "Review the project instructions fragment; link it from existing AGENTS.md if needed.",
             "Profile selection belongs to canonical gz-skills setup; no profile is inferred or created.",
             "Follow docs/adoption.md for native installation and a fresh-session discovery check.",
             "Use the project update-gz-template skill for released template updates; verify discovery separately.",
+            "Review ADR policy/source provenance; configuration does not qualify the portable workflow.",
         ],
     }
 
@@ -389,6 +462,7 @@ def status(project: Path) -> dict:
         "pending_files": expected["writes"],
         "starter": lock["starter"],
         "components": lock["components"],
+        "adr_policy": lock["adr_policy"],
     }
 
 
@@ -557,6 +631,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     configure_parser.add_argument("--apply", action="store_true")
     configure_parser.add_argument("--host", choices=tuple(HOST_PATHS), default="codex")
+    configure_parser.add_argument(
+        "--adr-policy",
+        choices=("link", "local"),
+        help="policy access; omitted preserves the recorded choice, otherwise defaults to link",
+    )
     localize_parser = sub.add_parser(
         "localize",
         help="preview repo activation repair; preserve user installs and adoption records",
@@ -590,6 +669,7 @@ def main(argv: list[str] | None = None) -> int:
                 args.starter_ref or source_revision(),
                 apply=args.apply,
                 host=args.host,
+                adr_policy=args.adr_policy,
             )
         elif args.command == "localize":
             result = localize(args.project, args.starter_ref, host=args.host, apply=args.apply)

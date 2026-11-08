@@ -55,10 +55,22 @@ updates as pending instead of changing scope.
    candidates. Reconcile the lock, host tables, fragment, policy references and
    native update skill together. Preserve local guidance, product dependencies,
    lane, behavior and rollback. No force overwrite is provided.
+   Include any `adr_policy` selection/provenance and repository-local working
+   policy. In a new empty candidate directory, pass the selected
+   `--adr-policy link|local` explicitly; omission there cannot inherit the real
+   adopter's choice. Compare the original source/hash with project adaptations
+   and target policy, preserving the actual working source. A missing older
+   policy record requires reviewed reconciliation, never an inferred approval.
+   Use the target's [policy-access contract](adoption.md#architectural-decision-policy-access)
+   and preserve suitable ADR collections/editions and exact approval evidence.
 5. Run the required checks and record actual evidence. Keep file configuration,
    Python conformance and native discovery separate. Changed required inputs
    invalidate affected proof. Report unresolved migration honestly; updating a
    recorded version does not certify acceptance or make every component current.
+   Keep ADR-policy access/provenance, portable workflow/native discovery and
+   behavioral qualification separate. Use actual owning releases and exact
+   combination evidence before propagation; no new ledger or skill installation
+   is implied by updated instructions.
 
 The skill is a compact entry to this method, not a resolver, automatic file
 merger or conformance engine. Use the installed upstream maintenance skill when

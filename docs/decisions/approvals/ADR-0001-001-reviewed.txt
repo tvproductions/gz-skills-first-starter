@@ -1,0 +1,76 @@
+# ADR-0001-001 — Qualify exact component combinations for starter releases
+
+Draft for separate architectural review; not an authoritative Current record.
+No architectural approval is recorded. Proposed identity: ADR-0001; edition: 1.
+Recorded: 2026-11-08. This proposal is preserved with the design material until
+approval. Do not fill approval fields with fictional values.
+
+## Scope
+
+The starter's ADR-practice policy distribution and qualification of its selected
+SP, gz-skills and SP-BP combination. Component versions/releases remain independent.
+This choice does not select future companion release numbers or activate plugins.
+
+## Context
+
+The starter already owns immutable bundle/catalog selections. Mandatory ADR
+practice needs a reliable relationship between starter adopter policy, the
+portable gz-skills procedure/template and applicable SP-BP integration. A version
+label or configured pin alone cannot prove the selected behavior. Each component
+has independent ownership, delivery and native availability.
+
+## Alternatives
+
+- Qualify each exact selected combination with source-bound behavioral evidence.
+  This fits current catalogs and keeps claims bounded, with an obligation to
+  reassess changed combinations.
+- Declare compatible component ranges. This permits broader independent upgrades
+  but needs a supported compatibility contract and evidence covering the ranges.
+  That evidence is not established.
+
+## Decision and rationale
+
+Propose qualifying an exact component combination for each starter release.
+The starter owns mandatory adopter policy and concise entry pointers; gz-skills
+owns the portable procedure and ADR template; SP-BP owns its planning/tracking
+integration. Keep component versions and releases independent. Record the exact
+reviewed source revisions and behavioral evidence in existing starter release
+evidence. Use existing immutable bundle/catalog pins and project activation
+configuration, without a central CLI, runtime or compatibility service.
+
+This makes the qualification claim match the inputs actually examined and
+preserves each component owner's design authority. The maintainer selected this
+approach in conversation; that selection has not been treated as approval of
+this subsequently written ADR edition.
+
+## Consequences
+
+- Changed combinations require impact review and affected requalification.
+  Preserve applicable unchanged evidence only with explicit justification.
+- Starter releases depend on immutable companion deliveries and internal-use
+  evidence; versions need not match and releases need not be simultaneous.
+- Independent adopter updates remain possible, but their resulting combination
+  cannot inherit a starter-qualified claim without assessment.
+- Expected pins, actual loaded sources and enablement require separate evidence.
+  Disabled Backplane remains disabled; its integration evidence does not establish
+  combined-stack readiness.
+- Detailed companion design remains in its owning repository. The starter must
+  link actual contribution records before claiming delivery or propagation.
+
+## Confirmation
+
+Review the bundle, both catalogs, project source/activation and release receipt
+for the exact candidate. Exercise the specification's behavioral matrix and
+verify internal use in all three publishing repositories before propagation.
+Record actual results in release/evaluation evidence, not in this ADR. This
+proposal claims no behavioral qualification has passed.
+
+## Related design and approval
+
+See [the draft specification](2026-11-08-adr-practice-design.md) and feature #12 /
+design #13 linked there. Approval of the specification does not approve this ADR.
+Before dependent implementation, obtain explicit approval identifying
+**ADR-0001-001** and preserve its reviewed content and actual approval through
+the specification's provenance contract. Move the approved working record to
+the decision collection, record administrative approval capture, and maintain
+references without losing this proposal's reviewed content.

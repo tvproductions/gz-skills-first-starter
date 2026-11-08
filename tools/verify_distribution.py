@@ -1,5 +1,6 @@
 """Verify built artifacts and installed CLI behavior outside the checkout."""
 
+import hashlib
 import json
 import os
 import subprocess
@@ -36,12 +37,18 @@ def verify_archives(wheel: Path, sdist: Path) -> None:
             raise ValueError("Wheel must contain exactly the template-owned update skill")
         if any(name.startswith(("tests/", "tools/")) for name in names):
             raise ValueError("Unexpected development files or skills in wheel")
+        if (
+            "skills_first_starter/resources/docs/engineering/architectural-decisions.md"
+            not in names
+        ):
+            raise ValueError("Wheel is missing the canonical ADR policy")
         for relative in (
             "bundle.json",
             ".agents/plugins/marketplace.json",
             ".claude-plugin/marketplace.json",
             "templates/AGENTS.skills-first.md",
             skill,
+            "docs/engineering/architectural-decisions.md",
         ):
             content = archive.read(f"skills_first_starter/resources/{relative}")
             if content != (ROOT / relative).read_bytes():
@@ -110,6 +117,44 @@ def verify_native_hosts(command: Path, directory: Path) -> None:
             raise ValueError(f"Installed {host} scope repair changed adoption provenance")
 
 
+def verify_policy_modes(command: Path, directory: Path) -> None:
+    """Verify both policy access forms from an installed wheel without a checkout."""
+    source = (ROOT / "docs/engineering/architectural-decisions.md").read_bytes()
+    for host in ("codex", "claude", "opencode"):
+        for mode in ("link", "local"):
+            target = directory / f"policy-{host}-{mode}"
+            target.mkdir()
+            args = (
+                str(command),
+                "configure",
+                "--project",
+                str(target),
+                "--starter-ref",
+                "a" * 40,
+                "--host",
+                host,
+            )
+            run(*args, "--adr-policy", mode, cwd=directory)
+            if list(target.iterdir()):
+                raise ValueError("Installed policy preview wrote files")
+            run(*args, "--adr-policy", mode, "--apply", cwd=directory)
+            local = target / ".skills-first/architectural-decisions.md"
+            if mode == "local" and local.read_bytes() != source:
+                raise ValueError("Installed local policy differs from the canonical bytes")
+            if mode == "link" and local.exists():
+                raise ValueError("Installed link mode created a policy copy")
+            lock = json.loads((target / ".skills-first/bundle.lock.json").read_bytes())
+            if lock["adr_policy"]["source_sha256"] != hashlib.sha256(source).hexdigest():
+                raise ValueError("Installed policy provenance hash differs")
+            if json.loads(run(*args, "--apply", cwd=directory).stdout)["writes"]:
+                raise ValueError("Installed helper did not preserve policy selection")
+            status = json.loads(
+                run(str(command), "status", "--project", str(target), cwd=directory).stdout
+            )
+            if status["adr_policy"]["mode"] != mode or status["runtime_readiness"] != "unverified":
+                raise ValueError("Installed policy status changed selection or claimed readiness")
+
+
 def main() -> None:
     """Inspect archives and exercise the installed helper outside the checkout."""
     metadata = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
@@ -161,6 +206,7 @@ def main() -> None:
         if status["runtime_readiness"] != "unverified":
             raise ValueError("Installed helper falsely claimed runtime readiness")
         verify_native_hosts(command, directory)
+        verify_policy_modes(command, directory)
         refused = subprocess.run(
             [str(command), "configure", "--project", str(target)],
             cwd=directory,

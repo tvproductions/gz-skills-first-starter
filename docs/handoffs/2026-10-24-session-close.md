@@ -1,5 +1,180 @@
 # Session handoff — October 24, 2026
 
+## November 8 branch preference — commit directly on main
+
+The maintainer directed: “please don't create feature branches, just commit to
+main”. This supersedes the execution isolation ruling below. Returned the
+uncommitted reviewed changes to `main` and removed `feature/adr-practice` only
+after verifying that both branch tips were identical and no distinct commits
+would be lost. Recorded the direct-main preference in AGENTS for future work.
+The requested scope is a normal local commit with hooks; no push, tag, release,
+plugin installation or companion edit is implied. Preserve the outstanding
+qualification work in the receipt. The commit identity belongs in Git history;
+do not create a self-referential receipt commit chain.
+
+## November 8 native implementation — starter complete, trio qualification pending
+
+The maintainer approved the plan for native execution and separately explicitly
+approved ADR-0001-001: “approve plan (explain native execution), and explicityly
+approve ADR-0001-001”. Native means the primary agent implements tasks in this
+session and a fresh reviewer checks the whole change. No per-task implementation
+agents, commits/pushes, plugin installs, companion writes or publication follow.
+The approved ADR now lives in `docs/decisions/`, with self-contained approval
+evidence and the exact reviewed proposal preserved/hash-verified under
+`docs/decisions/approvals/`. Earlier draft/approval-pending entries below are
+historical checkpoints superseded by this capture.
+
+Implementation branch: `feature/adr-practice`, based on
+`1dd24b2a52249e22170a102bb0c363daae3e243b`. Preserve the local uncommitted design
+and implementation artifacts. Starter policy and its own agent binding now
+route design/execution/review to applicable ADRs. `configure --adr-policy
+link|local` supports immutable links or an exact repository-local policy copy;
+omission preserves a recorded selection and defaults to link only on new
+projects. The existing lock records original source/hash/path; old locks, mode
+changes, adaptations and conflicts require reviewed reconciliation. The sixth
+packaged input is the ordinary ADR policy. No new ledger/capability or generic
+starter skill is added; component pins, activation and version remain unchanged.
+
+Verification on uv 0.13.7 / managed Python 3.14.10: baseline 60 tests passed;
+11 new policy test methods failed before implementation; the final review
+regression adds a twelfth policy method and the full suite now passes 72 tests.
+Covered both modes/all three helper hosts, exact UTF-8 LF/CRLF
+bytes/hashes, no-write previews, repeated selection, edits/legacy/malformed
+records, symlinked destination/parents, concurrency and failed-write rollback.
+The pre-change wheel failed the new missing-policy check. Final locked all-group
+sync, all four routine hooks, bundle/both-catalog validation, six-resource drift
+check, source-independent build and isolated installed helper checks pass.
+Portability audit reports no findings on Windows. macOS/Linux execution, actual
+native discovery and exact-candidate remote CI remain unverified. No analyzer
+changed; no analyzer-regression suite is triggered.
+
+The [qualification receipt](../evidence/2026-11-08-adr-practice-qualification.md)
+keeps the whole feature INCOMPLETE. Shared B01-B16 and targeted behavioral checks,
+released owning companion contributions and companion internal-use/alignment
+records remain outstanding. Both live companion trees/releases were inventoried
+read-only without qualifying or changing them. Initial starter internal use is
+this actual separately approved ADR and its application; independent alignment
+review is complete, with its sole medium finding fixed and verified below.
+
+Execution rulings: preserve the approved dirty checkout on a feature branch while
+the optional separate-worktree preference is unanswered (transfer if requested);
+use native PowerShell plan-scoped scratch bookkeeping rather than Bash helpers;
+put focused public-seam tests in `tests/test_adr_policy.py`; retain existing
+`update-gz-template` text because its fresh application baseline preserved local
+mode/provenance and routed to canonical target guidance. Put target details in
+adoption/updating docs; add no duplicate skill procedure. Incorrect rulings would
+require workspace/progress reconciliation, focused-command correction or renewed
+skill evaluation respectively, without authorizing wider product scope.
+
+Published baseline -> pending target remains **0.9.0 -> 0.10.0 / minor**, governed
+by #12/#13. Included starter policy/helper/docs/artifact work is locally verified;
+companion delivery and feature qualification remain included unfinished work.
+Existing pilot, deterministic upgrade/rollback, remaining platform and reporting
+deferrals remain unchanged. Final review found one medium defect: partial writes
+or close failures could leave a newly created policy after earlier outputs rolled
+back. A real-file regression failed for both cases; the fix removes the owned
+failed file while preserving a concurrent replacement. Full 72-test suite,
+routine hooks, catalogs, resource check, no-sources rebuild, isolated installed
+verification and portability audit pass after the fix. No unresolved important
+findings or deferred minors remain. The receipt records every declined review
+boundary and its disposition; no whole-feature acceptance follows.
+
+## November 8 specification approved — starter implementation plan prepared
+
+After the complete section review and a satisfaction check, the maintainer said
+“ok, proceed”. Captured that as approval of the revised starter specification
+for implementation planning; its approval section records the exact pre-capture
+content hash and actual conversation context. This does not approve
+ADR-0001-001. That architectural proposal remains unchanged and unapproved.
+
+Created the [starter implementation plan](../superpowers/plans/2026-11-08-adr-starter-binding.md)
+with four task units: policy/approval, public helper plus packaged policy,
+adopter/update reconciliation, and source-bound qualification evidence. It uses
+the existing provenance lock for link/local selection and adds no new ledger,
+generic workflow skill or companion-internal implementation. Companion owning
+designs/releases/evidence remain separate dependencies; the whole feature is not
+implementation-ready from this starter plan alone.
+
+The [plan alignment audit](../evidence/2026-11-08-adr-starter-plan-audit.md)
+passes intent-to-scope and scope-to-plan comparison for the bounded starter plan.
+Live published baseline/tag resolution still supports **0.9.0 -> 0.10.0 / minor**;
+all four version mirrors agree. No product code, runtime/pin, packaged input,
+native installation or companion file changed. Existing executable checks are
+unchanged; planning whitespace/local-link checks apply to these artifacts.
+Everything remains local and uncommitted. Next: review the implementation plan,
+confirm native execution (recommended), and obtain separate explicit approval
+of ADR-0001-001 before dependent implementation. Do not infer ADR approval from
+the specification approval or a general instruction to proceed.
+
+## November 8 design resumed — exact component qualification selected
+
+Resumed issue #13 from clean main `1dd24b2a52249e22170a102bb0c363daae3e243b`;
+direct `git ls-remote` confirmed origin/main matched. Read the pinned COB
+discussion and live issues #12/#13 through direct `gh`. The maintainer selected
+qualifying an exact component combination for each starter release: starter
+mandatory policy/entry pointers, gz-skills portable procedure/template and
+SP-BP planning/tracking integration, with independent component versions/releases
+and exact reviewed sources plus behavioral evidence.
+
+The [draft specification](../superpowers/specs/2026-11-08-adr-practice-design.md)
+records this selection and proposes policy/distribution touchpoints, approval
+provenance, preservation, owning companion obligations and a behavioral matrix.
+The separately identified
+[ADR-0001-001 record](../decisions/ADR-0001-001-qualify-exact-component-combinations.md)
+is preparatory design material, not an authoritative Current decision. Approach
+selection does not supply approval of either newly written document. Obtain
+explicit specification approval and separate exact-edition ADR approval before
+dependent implementation. The fresh SP builder check reported “nothing important
+left” for material planning questions; this does not supply human approval.
+
+During section-by-section review the maintainer accepted the propagation gate
+and directed support for both immutable source links and repository-local policy
+copies. Updated the draft with local-copy provenance, explicit working-source
+routing, preservation/reconciliation and affected packaging/helper-test and
+behavioral obligations. The initial builder check predates this addition; recheck
+the affected design before final approval. Whole-specification and separate ADR
+approval remain pending; continue reviewing the next sections with the maintainer.
+The maintainer also accepted the proposed lightweight Markdown approval receipt
+for otherwise unaddressable conversations, preserving actual approval text and
+context plus the exact reviewed edition. This accepts the mechanism; it does
+not approve the draft specification or ADR-0001-001.
+The maintainer then selected the full shared B01-B16 matrix plus targeted checks
+for each publishing repository and lite/heavy adopter fixture, replacing the
+proposed full matrix in every binding. Every binding must demonstrate a missing-
+approval stop and an approved-decision continuation. Preserve actual SP-BP
+integration checks, both policy-access forms, policy precedence and genuine
+internal use in all three publishers. Expand to affected matrix cases when a
+binding changes shared behavior or a targeted check reveals a discrepancy.
+The affected builder recheck remains due after section review is complete.
+
+The maintainer directed keeping the decision and approval metadata/history in
+the ADR, with approval evidence embedded or durably referenced and an optional
+lookup-only README. Do not introduce a new ledger or other Backplane capability.
+Live Backplane main `05505f8009989eb7514ec62750e33c78bc40abf9` defines heavy
+participation without a transaction-ledger guarantee; its governance describes
+checkpoint pairs and checkpoint installation/recovery receipts. The draft now
+links those exact sources and requires integration through existing supported
+records. This is a section decision, not whole-specification or ADR approval.
+A fresh affected SP builder recheck of local-policy distribution, qualification
+coverage and existing-record-only integration again reported “nothing important
+left”. Local design links resolve and diff whitespace checks pass after these
+revisions. Complete revised-specification approval and separate ADR approval
+remain the next checkpoints; no implementation plan or product code was added.
+
+Documentation verification: uv 0.13.7, pinned managed Python 3.14.10; all four
+routine hooks passed, as did the read-only packaged-resource drift check and
+diff whitespace check. No authoritative packaged input, code or analyzer changed;
+build/install and behavioral qualification are not claimed for this design work.
+
+Published baseline -> pending target remains **0.9.0 -> 0.10.0 / minor**, governed
+by #12 and the existing bounded release record below. Bundle, package, lock and
+packaged bundle still declare 0.10.0; no pin or runtime change is needed for this
+design. Remaining scope includes approvals, companion designs/delivery, bindings,
+behavioral qualification, internal use in all three repositories and distribution.
+Existing deferrals remain unchanged. No companion files, native installations,
+GitHub issues, commits, remote branches, tags or releases are changed by this
+design work. Drafts are local and uncommitted; no implementation plan exists.
+
 ## November 8 save point — resume detailed design at issue #13
 
 The maintainer requested a handoff and Git sync, then a return to detailed

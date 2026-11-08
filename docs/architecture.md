@@ -1,5 +1,13 @@
 # Architecture and ownership
 
+The [architectural decision policy](engineering/architectural-decisions.md)
+binds both lanes and this publishing repository. Decisions live in their ADRs
+under `docs/decisions/`, with embedded or durably referenced approval evidence.
+The [component-binding ADR](decisions/ADR-0001-001-qualify-exact-component-combinations.md)
+requires exact-source qualification and preserves independent component ownership.
+Use existing Backplane records where applicable; introduce no new ledger. Portable
+ADR workflow delivery and trio qualification remain separate pending evidence.
+
 The starter owns one narrow `update-gz-template` skill, introduced in 0.6 as the canonical entry for adopter template updates. Generic
 engineering and dependency-update skills remain upstream-owned. It owns opinionated
 project policy, deterministic adoption tooling, configuration and provenance;

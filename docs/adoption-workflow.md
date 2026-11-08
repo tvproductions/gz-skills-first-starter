@@ -10,6 +10,16 @@ and applicable adoption/release analysis are required in both lanes. The helper
 still configures files only; it does not automatically enforce acceptance.
 
 This document guides adoption; it does not replace the three upstream workflows.
+For the pending 0.10.0 ADR requirement, read the
+[architectural-decision policy](engineering/architectural-decisions.md) and
+[policy access/reconciliation guide](adoption.md#architectural-decision-policy-access).
+Bind both lanes to recognition, reuse, exact-edition approval and alignment.
+Keep suitable existing decision collections and actual approval history. Select
+an immutable source link, a repository-local policy copy, or both; preserve that
+choice and its provenance. Helper configuration does not establish portable ADR
+workflow discovery, behavioral qualification or adoption completion. Propagation
+awaits reviewed released companion contributions and three-publisher evidence.
+
 Read [the adoption guide](adoption.md) for native host loading,
 compatibility checks, updates, and rollback. The helper is
 [starter.py](../starter.py); use its CLI help for current options.

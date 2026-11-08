@@ -37,6 +37,7 @@ each adopter must establish its own enforcement and artifact verification.
 | `docs/baseline-policy.md` | Adopter allowed ranges, selection rules and documented constraint reasons |
 | `docs/gz-skills-python.md` | Verified upstream Python workflow coverage and project-policy precedence |
 | `docs/engineering/` | Python requirements, version-aware design and analyzer contracts |
+| `docs/engineering/architectural-decisions.md` and `docs/decisions/` | Mandatory ADR policy and self-contained architectural decisions/approval provenance; indexes are optional lookup aids |
 | `tools/engineering/` | Explicit on-demand analysis utilities and their CLI tests |
 | `docs/versioning.md` and `CHANGELOG.md` | Template compatibility, release identity and adopter impact |
 
@@ -64,6 +65,13 @@ Pythonic-pattern skills provide partial coverage, not a complete version audit;
 missing capability stays visible rather than becoming another starter skill.
 
 ## Native development skills
+
+The wheel has six authoritative resource inputs: bundle, two catalogs,
+instructions fragment, owned update skill and architectural-decision policy.
+Configure supports `--adr-policy link|local`; local mode writes the policy under
+`.skills-first/` with provenance in the existing bundle lock. Preserve local
+edits through the canonical update/reconciliation route. A copied policy is
+ordinary documentation, not another skill or a qualification receipt.
 
 This starter dogfoods the upstream development workflows through its checked-in
 `.codex/config.toml`, `.claude/settings.json` and `opencode.json`. It enables

@@ -21,6 +21,17 @@ Published 0.5.0 itself is unchanged and has no native update skill.
 
 ## Shared requirements in both lanes
 
+The pending 0.10.0 binding adds mandatory
+[architectural-decision practice](engineering/architectural-decisions.md).
+Follow the [policy-access guide](adoption.md#architectural-decision-policy-access)
+for explicit link/local selection, provenance and three-way preservation. Include
+the selected policy copy (if any), lock metadata and generated pointers in
+upgrade review/rollback. Preserve existing ADR conventions/history and actual
+approvals; do not infer approval from delivery or bulk-migrate collections.
+Configuration-only work reports missing procedure/discovery/behavioral evidence.
+Adopter propagation remains gated on the released qualified combination and
+actual internal use in all three publishers, not this pending implementation.
+
 The 0.7 development policy requires latest stable baseline tooling across
 families and a fresh official-source review at adoption and before release.
 Older ranges are not freshness exemptions. Keep exact pins after verification;

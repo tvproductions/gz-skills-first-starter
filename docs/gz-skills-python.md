@@ -9,6 +9,12 @@ it is not another skill or an implementation of their discovery/workflow logic.
 
 ## Current selection: v0.8.3
 
+The starter's [ADR policy](engineering/architectural-decisions.md) binds project
+design/execution/review, but this selection is not claimed to supply the new
+portable ADR procedure/template. Link the owning gz-skills delivery and verify
+its exact sources before claiming that contribution available. Keep the reusable
+procedure language/tool agnostic; Python requirements remain project-owned.
+
 The 0.8.0 starter bundle and both catalogs select released gz-skills v0.8.3 at
 `d6acc26e28ca1c4f43e5bb46d8973021d7d006c3`, checked October 31, 2026.
 Its compatible patches correct Git sync verification and promote the individually

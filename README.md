@@ -9,6 +9,14 @@ usefulness to other adopters is welcome, rather than a reason to dilute them.
 
 This repository is the bundle catalog, adoption tool, and guidance home.
 
+Pending **0.10.0** implements mandatory
+[ADR policy](docs/engineering/architectural-decisions.md) and
+[`--adr-policy link|local`](docs/adoption.md#architectural-decision-policy-access)
+for immutable-source or repository-local access. It preserves exact reviewed
+approval provenance and existing project authority. Starter helper verification
+does not establish portable workflow delivery or trio qualification; adopter
+propagation remains pending those companion and internal-use results.
+
 Release **0.9.0** permits uv >=0.13.5 without an upper bound, corrects Windows
 configuration idempotence and makes release-scope/version decisions explicit.
 It refreshes tested execution tools while retaining exact Python and plugin
@@ -324,7 +332,8 @@ run the same locked commands locally and in CI. Install them in a development
 checkout with `uv run --locked pre-commit install`. The old `uv run starter.py`
 launcher remains available; prefer `uv run --locked skills-first-starter`.
 Regenerate wheel resources with `uv run --locked python tools/package_resources.py`
-after changing the bundle, either catalog or the instructions template; tests
+after changing the bundle, either catalog, instructions template, update skill
+or architectural-decision policy; tests
 check their agreement. Wheels require explicit published `--starter-ref` for
 configuration because an installed environment has no starter Git provenance.
 

@@ -37,6 +37,66 @@ explicit adopter decisions required before completed adoption. Neither absent
 nor null selection is a completed lane. Preserve starter Python policy over
 profile defaults; both lanes require applicable adoption/release analysis.
 
+## Architectural decision policy access
+
+Pending 0.10.0 supplies the mandatory
+[ADR policy](engineering/architectural-decisions.md) through either an immutable
+source link or a repository-local copy. These commands describe the development
+implementation, not a claim that 0.10.0 or its companion ADR contributions are
+published/qualified. Before real adoption, verify the released target and its
+exact component qualification evidence.
+
+From the reviewed target checkout, preview one selection, review its files, then
+apply within the authorized adoption scope (replace the root/SHA placeholders):
+
+```bash
+uv run --locked skills-first-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy link
+uv run --locked skills-first-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy link --apply
+```
+
+For a repository-local working policy with its canonical source link retained:
+
+```bash
+uv run --locked skills-first-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy local
+uv run --locked skills-first-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy local --apply
+```
+
+Add `--host claude` or `--host opencode` for that host; policy access does not
+select a lane or change activation. A new project defaults to link mode if the
+flag is omitted. On repeated configure/status, omission preserves the lock's
+recorded selection. Local mode writes `.skills-first/architectural-decisions.md`
+from the exact packaged policy bytes, usable without GitHub or a starter checkout.
+It does not install the portable workflow or make an unreadable approval record
+available. Generated instructions identify the working source and immutable URL.
+
+The existing `.skills-first/bundle.lock.json` records policy mode, source path,
+original SHA-256 and conditional local path under `adr_policy`, alongside existing
+starter repository/version/full SHA. This additive schema-1 provenance is not
+architectural approval. `status` is read-only and still reports runtime readiness
+unverified. A modified local policy, changed source/hash, mode switch or older
+lock without this record requires explicit reviewed reconciliation; the helper
+preserves conflicting files rather than overwriting them.
+
+For upgrades or mode changes, preserve original/current bytes and provenance;
+generate target candidates in a separate empty directory using the explicitly
+selected mode. Omission in an empty directory defaults to link, even when the
+real adopter uses local mode. Compare old managed content, project edits and
+target candidates; reconcile the lock, generated fragment and selected policy
+together. Retain applicable project adaptations and canonical source identity.
+Preserve any former copy/history during a mode change; do not delete records or
+reconfigure forcibly to bypass a conflict. Existing reviewed policy adaptations
+may intentionally remain different from generated content: report the helper
+conflict and project disposition honestly instead of claiming a managed-byte match.
+This is the existing manual update route, not automatic merge/upgrade tooling.
+
+Project instructions must identify its actual ADR collection. Preserve suitable
+identities/editions and genuine approval evidence. Decisions remain self-contained;
+evidence can be embedded or referenced, and indexes are optional. Reuse approved
+choices; obtain separate explicit approval of the exact new/replacement edition
+before dependent work. Keep independent authorized work moving. Both lanes use
+the same rule; heavy adds no new approval ledger. Check policy access, portable
+workflow discovery, native activation and behavioral compliance separately.
+
 ## Project dependencies and settings
 
 Inventory the project's dependencies, lock and application settings before

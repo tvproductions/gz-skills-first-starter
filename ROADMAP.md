@@ -48,8 +48,15 @@ that both lite and heavy adopters must follow this practice, and that this
 starter, gz-skills and SP-BP must demonstrate it themselves before propagation.
 The [native feature issue](https://github.com/tvproductions/gz-skills-first-starter/issues/12)
 captures the increment's intent, workstreams and acceptance conditions. Detailed
-design is booked as [child issue #13](https://github.com/tvproductions/gz-skills-first-starter/issues/13)
-and resumes after the handoff/Git sync. This repository owns the adopter policy
+design is tracked as [child issue #13](https://github.com/tvproductions/gz-skills-first-starter/issues/13).
+The maintainer approved the [starter specification](docs/superpowers/specs/2026-11-08-adr-practice-design.md),
+the native implementation plan and separately
+[ADR-0001-001](docs/decisions/ADR-0001-001-qualify-exact-component-combinations.md).
+Starter policy, link/local helper support and packaged-policy verification are
+implemented locally. Companion designs/releases, shared/targeted behavioral
+qualification and three-publisher internal-use evidence remain outstanding;
+this is not feature acceptance or adopter propagation readiness.
+This repository owns the adopter policy
 and cross-component contract; gz-skills and SP-BP design their internals in their
 own repositories.
 Approve each concrete design before dependent implementation; individual new

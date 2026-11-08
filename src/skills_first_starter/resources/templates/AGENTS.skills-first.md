@@ -1,5 +1,23 @@
 # Skills-first development stack
 
+Follow the [identified architectural decision policy]({{ADR_POLICY_WORKING_SOURCE}})
+during design, execution and review in both lite and heavy lanes. Preserve its
+[immutable canonical source]({{ADR_POLICY_CANONICAL_URL}}); source version/full SHA,
+original content hash and link/local selection are recorded in
+`.skills-first/bundle.lock.json`. If a local policy copy is selected, use that
+working copy, preserve project adaptations and surface applicable source conflicts.
+Project instructions must identify the project's existing ADR collection; retain
+suitable identities/history. Reuse applicable approved decisions. Obtain separate
+explicit human approval of the exact new/replacement ADR edition before dependent
+implementation; continue independent authorized work. Keep decisions self-contained
+with approval evidence embedded or durably referenced. General spec/plan/test/release
+approval is not architectural approval. Use the exact selected gz-skills portable
+procedure/template only when its owning delivery and discovery are verified;
+gz-skills 0.8.3 is not claimed to supply the new ADR contribution. Report missing
+sources/evidence instead of claiming qualification. Heavy mode uses existing
+supported Backplane records; add no ledger or approval service. With Backplane
+disabled, keep existing project planning/review/handoff tools in either lane.
+
 These instructions are mandatory adoption requirements. Agents MUST execute the
 prescribed workflow and checks, preserve project authorities, and record evidence
 before claiming completion. Agents MUST NOT replace requirements with convenient
