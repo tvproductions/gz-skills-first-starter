@@ -1,5 +1,25 @@
 # Session handoff — October 24, 2026
 
+## November 8 authorized 0.9.0 release
+
+The maintainer requested publication and queried whether the version was 0.9.1.
+Live GitHub release/tag inventory confirms published 0.8.0 is the baseline,
+with no 0.9.x tag or release. The complete pending policy bundle requires 0.9.0;
+do not invent an intervening 0.9.0 to justify 0.9.1. The preceding save point
+`8870cc53b941ab1e40704d72e1b6144715c04c9b` matches origin/main with green
+[exact-commit CI](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/42500761358).
+
+The release outcome/scope below remains governing. Publication authority now
+includes the ordinary release commits/pushes, immutable annotated v0.9.0 tag,
+GitHub release and the four declared distribution assets. No plugin/native-cache
+installation or dependent-repository update is authorized. Freshness review
+precedes the release-scoped tool refresh; both locks and CI are reconciled.
+See the [candidate-specific receipt](../evidence/2026-11-08-0.9.0-release.md)
+and its JSON companion for actual input hashes, deeper checks and explicit
+retentions/limitations. Remaining work is exact-release-commit CI, remote tag,
+published stable status and downloaded asset/install verification. Record final
+results after publication without a chain of receipt-only commits.
+
 ## November 8 Git synchronization and release scope
 
 The maintainer invoked `gzs-git-sync` for this checkout. Initial main was

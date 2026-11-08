@@ -2,9 +2,22 @@
 
 ## Unreleased
 
-Pending **0.9.0**, compared with published 0.8.0: minimum-only uv compatibility,
+## 0.9.0 — November 8, 2026
+
+Release **0.9.0**, compared with published 0.8.0: minimum-only uv compatibility,
 native-host idempotence fixes and release-planning/policy-authority corrections.
-The adopter policy change governs the minor increment; publication is pending.
+The adopter policy change governs the minor increment. See the
+[release acceptance receipt](docs/evidence/2026-11-08-0.9.0-release.md).
+
+- Refresh both independent locks using uv 0.13.7: Ruff 0.17.4, ty 0.0.99,
+  uv_build 0.13.7, Coverage 7.17.2, Import Linter 2.16 and Cosmic Ray 8.8.0,
+  plus compatible transitive updates. CI tests uv 0.13.7 while the supported
+  minimum remains >=0.13.5. Python stays 3.14.10 / 3.12.16. These are tested
+  execution-pin refreshes, separate from adopter policy changes.
+  Retain Lizard 1.24.3 for its explicit counting contract, historical complexipy
+  reproducers and existing plugin selections pending separate qualification.
+  The receipt names current upstream targets, owners and revisit conditions;
+  retained selections are not described as latest.
 
 - Clarify the existing release-planning contract: PRDs guide majors, selected
   work/requirements drive minors, and fixes drive patches. Require explicit

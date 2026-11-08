@@ -1,0 +1,1748 @@
+{
+  "date": "2026-11-08",
+  "version": "0.9.0",
+  "baseline": {
+    "version": "0.8.0",
+    "sha": "e0b752fcc13b87ec7868fe0b0f85badefdb6bf52"
+  },
+  "starting_sha": "8870cc53b941ab1e40704d72e1b6144715c04c9b",
+  "python": "3.14.10",
+  "xplane_python": "3.12.16",
+  "uv": "0.13.7",
+  "registry_evidence": {
+    "aiohappyeyeballs": {
+      "latest": "2.7.1",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/aiohappyeyeballs/json"
+    },
+    "aiohttp": {
+      "latest": "3.14.5",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/aiohttp/json"
+    },
+    "aiosignal": {
+      "latest": "1.4.0",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/aiosignal/json"
+    },
+    "anybadge": {
+      "latest": "1.18.0",
+      "requires_python": ">=3.7",
+      "url": "https://pypi.org/pypi/anybadge/json"
+    },
+    "attrs": {
+      "latest": "26.1.0",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/attrs/json"
+    },
+    "bandit": {
+      "latest": "1.9.4",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/bandit/json"
+    },
+    "boolean-py": {
+      "latest": "5.0",
+      "requires_python": null,
+      "url": "https://pypi.org/pypi/boolean-py/json"
+    },
+    "cachecontrol": {
+      "latest": "0.14.4",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/cachecontrol/json"
+    },
+    "certifi": {
+      "latest": "2026.10.23",
+      "requires_python": ">=3.7",
+      "url": "https://pypi.org/pypi/certifi/json"
+    },
+    "cfgv": {
+      "latest": "3.5.0",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/cfgv/json"
+    },
+    "charset-normalizer": {
+      "latest": "3.5.2",
+      "requires_python": ">=3.7",
+      "url": "https://pypi.org/pypi/charset-normalizer/json"
+    },
+    "click": {
+      "latest": "8.5.1",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/click/json"
+    },
+    "colorama": {
+      "latest": "0.4.6",
+      "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7",
+      "url": "https://pypi.org/pypi/colorama/json"
+    },
+    "complexipy": {
+      "latest": "8.3.0",
+      "requires_python": "<3.16,>=3.8",
+      "url": "https://pypi.org/pypi/complexipy/json"
+    },
+    "cosmic-ray": {
+      "latest": "8.8.0",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/cosmic-ray/json"
+    },
+    "coverage": {
+      "latest": "7.17.2",
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/coverage/json"
+    },
+    "cyclonedx-python-lib": {
+      "latest": "11.12.0",
+      "requires_python": "<4.0,>=3.9",
+      "url": "https://pypi.org/pypi/cyclonedx-python-lib/json"
+    },
+    "decorator": {
+      "latest": "5.3.1",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/decorator/json"
+    },
+    "defusedxml": {
+      "latest": "0.7.1",
+      "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
+      "url": "https://pypi.org/pypi/defusedxml/json"
+    },
+    "deptry": {
+      "latest": "0.25.1",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/deptry/json"
+    },
+    "distlib": {
+      "latest": "0.4.4",
+      "requires_python": null,
+      "url": "https://pypi.org/pypi/distlib/json"
+    },
+    "exit-codes": {
+      "latest": "1.3.0",
+      "requires_python": "",
+      "url": "https://pypi.org/pypi/exit-codes/json"
+    },
+    "filelock": {
+      "latest": "4.2.9",
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/filelock/json"
+    },
+    "frozenlist": {
+      "latest": "1.8.0",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/frozenlist/json"
+    },
+    "gitdb": {
+      "latest": "4.0.12",
+      "requires_python": ">=3.7",
+      "url": "https://pypi.org/pypi/gitdb/json"
+    },
+    "gitpython": {
+      "latest": "3.2.1",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/gitpython/json"
+    },
+    "grimp": {
+      "latest": "3.19",
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/grimp/json"
+    },
+    "identify": {
+      "latest": "2.6.20",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/identify/json"
+    },
+    "idna": {
+      "latest": "3.20",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/idna/json"
+    },
+    "import-linter": {
+      "latest": "2.16",
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/import-linter/json"
+    },
+    "interrogate": {
+      "latest": "1.7.0",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/interrogate/json"
+    },
+    "license-expression": {
+      "latest": "30.4.4",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/license-expression/json"
+    },
+    "lizard": {
+      "latest": "1.25.1",
+      "requires_python": null,
+      "url": "https://pypi.org/pypi/lizard/json"
+    },
+    "markdown-it-py": {
+      "latest": "4.2.0",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/markdown-it-py/json"
+    },
+    "mdurl": {
+      "latest": "0.1.2",
+      "requires_python": ">=3.7",
+      "url": "https://pypi.org/pypi/mdurl/json"
+    },
+    "msgpack": {
+      "latest": "1.2.4",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/msgpack/json"
+    },
+    "multidict": {
+      "latest": "7.2.1",
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/multidict/json"
+    },
+    "nodeenv": {
+      "latest": "1.12.0",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/nodeenv/json"
+    },
+    "packageurl-python": {
+      "latest": "0.17.6",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/packageurl-python/json"
+    },
+    "packaging": {
+      "latest": "26.3",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/packaging/json"
+    },
+    "parso": {
+      "latest": "0.8.7",
+      "requires_python": ">=3.6",
+      "url": "https://pypi.org/pypi/parso/json"
+    },
+    "pathspec": {
+      "latest": "1.1.1",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/pathspec/json"
+    },
+    "pip": {
+      "latest": "26.3",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/pip/json"
+    },
+    "pip-api": {
+      "latest": "0.0.35",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/pip-api/json"
+    },
+    "pip-audit": {
+      "latest": "2.10.1",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/pip-audit/json"
+    },
+    "pip-requirements-parser": {
+      "latest": "32.0.1",
+      "requires_python": ">=3.6.0",
+      "url": "https://pypi.org/pypi/pip-requirements-parser/json"
+    },
+    "platformdirs": {
+      "latest": "4.14.5",
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/platformdirs/json"
+    },
+    "pre-commit": {
+      "latest": "4.7.0",
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/pre-commit/json"
+    },
+    "propcache": {
+      "latest": "0.5.4",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/propcache/json"
+    },
+    "py": {
+      "latest": "1.11.0",
+      "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
+      "url": "https://pypi.org/pypi/py/json"
+    },
+    "py-serializable": {
+      "latest": "2.2.0",
+      "requires_python": "<4.0,>=3.8",
+      "url": "https://pypi.org/pypi/py-serializable/json"
+    },
+    "pygments": {
+      "latest": "2.21.0",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/pygments/json"
+    },
+    "pyparsing": {
+      "latest": "3.3.3",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/pyparsing/json"
+    },
+    "python-discovery": {
+      "latest": "1.9.5",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/python-discovery/json"
+    },
+    "pyyaml": {
+      "latest": "6.0.3",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/pyyaml/json"
+    },
+    "requests": {
+      "latest": "2.34.2",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/requests/json"
+    },
+    "requirements-parser": {
+      "latest": "0.13.1",
+      "requires_python": "<4.0,>=3.8",
+      "url": "https://pypi.org/pypi/requirements-parser/json"
+    },
+    "rich": {
+      "latest": "15.0.0",
+      "requires_python": ">=3.9.0",
+      "url": "https://pypi.org/pypi/rich/json"
+    },
+    "ruff": {
+      "latest": "0.17.4",
+      "requires_python": ">=3.7",
+      "url": "https://pypi.org/pypi/ruff/json"
+    },
+    "smmap": {
+      "latest": "5.0.3",
+      "requires_python": ">=3.7",
+      "url": "https://pypi.org/pypi/smmap/json"
+    },
+    "sortedcontainers": {
+      "latest": "2.4.0",
+      "requires_python": "",
+      "url": "https://pypi.org/pypi/sortedcontainers/json"
+    },
+    "sqlalchemy": {
+      "latest": "2.1.8",
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/sqlalchemy/json"
+    },
+    "stevedore": {
+      "latest": "5.9.1",
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/stevedore/json"
+    },
+    "tabulate": {
+      "latest": "0.10.0",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/tabulate/json"
+    },
+    "toml": {
+      "latest": "0.10.2",
+      "requires_python": ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*",
+      "url": "https://pypi.org/pypi/toml/json"
+    },
+    "tomli": {
+      "latest": "2.5.0",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/tomli/json"
+    },
+    "tomli-w": {
+      "latest": "1.2.0",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/tomli-w/json"
+    },
+    "ty": {
+      "latest": "0.0.99",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/ty/json"
+    },
+    "typing-extensions": {
+      "latest": "4.16.0",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/typing-extensions/json"
+    },
+    "urllib3": {
+      "latest": "2.8.0",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/urllib3/json"
+    },
+    "uv": {
+      "latest": "0.13.7",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/uv/json"
+    },
+    "uv-build": {
+      "latest": "0.13.7",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/uv-build/json"
+    },
+    "uv_build": {
+      "latest": "0.13.7",
+      "requires_python": ">=3.8",
+      "url": "https://pypi.org/pypi/uv_build/json"
+    },
+    "virtualenv": {
+      "latest": "21.15.6",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/virtualenv/json"
+    },
+    "vulture": {
+      "latest": "2.16",
+      "requires_python": ">=3.9",
+      "url": "https://pypi.org/pypi/vulture/json"
+    },
+    "yarl": {
+      "latest": "1.25.1",
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/yarl/json"
+    },
+    "yattag": {
+      "latest": "1.16.1",
+      "requires_python": null,
+      "url": "https://pypi.org/pypi/yattag/json"
+    }
+  },
+  "locks": {
+    "uv.lock": {
+      "before": {
+        "aiohappyeyeballs": "2.7.1",
+        "aiohttp": "3.14.5",
+        "aiosignal": "1.4.0",
+        "anybadge": "1.16.0",
+        "attrs": "26.1.0",
+        "bandit": "1.9.4",
+        "boolean-py": "5.0",
+        "cachecontrol": "0.14.4",
+        "certifi": "2026.10.23",
+        "cfgv": "3.5.0",
+        "charset-normalizer": "3.5.2",
+        "click": "8.5.0",
+        "colorama": "0.4.6",
+        "complexipy": "8.1.0",
+        "cosmic-ray": "8.7.0",
+        "coverage": "7.17.0",
+        "cyclonedx-python-lib": "11.12.0",
+        "decorator": "5.3.1",
+        "defusedxml": "0.7.1",
+        "deptry": "0.25.1",
+        "distlib": "0.4.4",
+        "exit-codes": "1.3.0",
+        "filelock": "4.2.4",
+        "frozenlist": "1.8.0",
+        "gitdb": "4.0.12",
+        "gitpython": "3.2.1",
+        "grimp": "3.18",
+        "identify": "2.6.20",
+        "idna": "3.20",
+        "import-linter": "2.15",
+        "interrogate": "1.7.0",
+        "license-expression": "30.4.4",
+        "lizard": "1.24.3",
+        "markdown-it-py": "4.2.0",
+        "mdurl": "0.1.2",
+        "msgpack": "1.2.4",
+        "multidict": "7.2.0",
+        "nodeenv": "1.11.0",
+        "packageurl-python": "0.17.6",
+        "packaging": "26.3",
+        "parso": "0.8.7",
+        "pathspec": "1.1.1",
+        "pip": "26.2.2",
+        "pip-api": "0.0.35",
+        "pip-audit": "2.10.1",
+        "pip-requirements-parser": "32.0.1",
+        "platformdirs": "4.13.5",
+        "pre-commit": "4.7.0",
+        "propcache": "0.5.4",
+        "py": "1.11.0",
+        "py-serializable": "2.1.0",
+        "pygments": "2.21.0",
+        "pyparsing": "3.3.3",
+        "python-discovery": "1.6.4",
+        "pyyaml": "6.0.3",
+        "requests": "2.34.2",
+        "requirements-parser": "0.13.1",
+        "rich": "15.0.0",
+        "ruff": "0.17.3",
+        "smmap": "5.0.3",
+        "sortedcontainers": "2.4.0",
+        "sqlalchemy": "2.1.6",
+        "stevedore": "5.9.1",
+        "tabulate": "0.10.0",
+        "toml": "0.10.2",
+        "tomli": "2.5.0",
+        "tomli-w": "1.2.0",
+        "ty": "0.0.95",
+        "typing-extensions": "4.16.0",
+        "urllib3": "2.8.0",
+        "virtualenv": "21.14.13",
+        "vulture": "2.16",
+        "yarl": "1.25.1",
+        "yattag": "1.16.1"
+      },
+      "after": {
+        "aiohappyeyeballs": "2.7.1",
+        "aiohttp": "3.14.5",
+        "aiosignal": "1.4.0",
+        "anybadge": "1.18.0",
+        "attrs": "26.1.0",
+        "bandit": "1.9.4",
+        "boolean-py": "5.0",
+        "cachecontrol": "0.14.4",
+        "certifi": "2026.10.23",
+        "cfgv": "3.5.0",
+        "charset-normalizer": "3.5.2",
+        "click": "8.5.1",
+        "colorama": "0.4.6",
+        "complexipy": "8.1.0",
+        "cosmic-ray": "8.8.0",
+        "coverage": "7.17.2",
+        "cyclonedx-python-lib": "11.12.0",
+        "decorator": "5.3.1",
+        "defusedxml": "0.7.1",
+        "deptry": "0.25.1",
+        "distlib": "0.4.4",
+        "exit-codes": "1.3.0",
+        "filelock": "4.2.9",
+        "frozenlist": "1.8.0",
+        "gitdb": "4.0.12",
+        "gitpython": "3.2.1",
+        "grimp": "3.19",
+        "identify": "2.6.20",
+        "idna": "3.20",
+        "import-linter": "2.16",
+        "interrogate": "1.7.0",
+        "license-expression": "30.4.4",
+        "lizard": "1.24.3",
+        "markdown-it-py": "4.2.0",
+        "mdurl": "0.1.2",
+        "msgpack": "1.2.4",
+        "multidict": "7.2.1",
+        "nodeenv": "1.12.0",
+        "packageurl-python": "0.17.6",
+        "packaging": "26.3",
+        "parso": "0.8.7",
+        "pathspec": "1.1.1",
+        "pip": "26.3",
+        "pip-api": "0.0.35",
+        "pip-audit": "2.10.1",
+        "pip-requirements-parser": "32.0.1",
+        "platformdirs": "4.14.5",
+        "pre-commit": "4.7.0",
+        "propcache": "0.5.4",
+        "py": "1.11.0",
+        "py-serializable": "2.2.0",
+        "pygments": "2.21.0",
+        "pyparsing": "3.3.3",
+        "python-discovery": "1.9.5",
+        "pyyaml": "6.0.3",
+        "requests": "2.34.2",
+        "requirements-parser": "0.13.1",
+        "rich": "15.0.0",
+        "ruff": "0.17.4",
+        "smmap": "5.0.3",
+        "sortedcontainers": "2.4.0",
+        "sqlalchemy": "2.1.8",
+        "stevedore": "5.9.1",
+        "tabulate": "0.10.0",
+        "toml": "0.10.2",
+        "tomli": "2.5.0",
+        "tomli-w": "1.2.0",
+        "ty": "0.0.99",
+        "typing-extensions": "4.16.0",
+        "urllib3": "2.8.0",
+        "virtualenv": "21.15.6",
+        "vulture": "2.16",
+        "yarl": "1.25.1",
+        "yattag": "1.16.1"
+      },
+      "changes": {
+        "anybadge": {
+          "before": "1.16.0",
+          "after": "1.18.0"
+        },
+        "click": {
+          "before": "8.5.0",
+          "after": "8.5.1"
+        },
+        "cosmic-ray": {
+          "before": "8.7.0",
+          "after": "8.8.0"
+        },
+        "coverage": {
+          "before": "7.17.0",
+          "after": "7.17.2"
+        },
+        "filelock": {
+          "before": "4.2.4",
+          "after": "4.2.9"
+        },
+        "grimp": {
+          "before": "3.18",
+          "after": "3.19"
+        },
+        "import-linter": {
+          "before": "2.15",
+          "after": "2.16"
+        },
+        "multidict": {
+          "before": "7.2.0",
+          "after": "7.2.1"
+        },
+        "nodeenv": {
+          "before": "1.11.0",
+          "after": "1.12.0"
+        },
+        "pip": {
+          "before": "26.2.2",
+          "after": "26.3"
+        },
+        "platformdirs": {
+          "before": "4.13.5",
+          "after": "4.14.5"
+        },
+        "py-serializable": {
+          "before": "2.1.0",
+          "after": "2.2.0"
+        },
+        "python-discovery": {
+          "before": "1.6.4",
+          "after": "1.9.5"
+        },
+        "ruff": {
+          "before": "0.17.3",
+          "after": "0.17.4"
+        },
+        "sqlalchemy": {
+          "before": "2.1.6",
+          "after": "2.1.8"
+        },
+        "ty": {
+          "before": "0.0.95",
+          "after": "0.0.99"
+        },
+        "virtualenv": {
+          "before": "21.14.13",
+          "after": "21.15.6"
+        }
+      }
+    },
+    "baselines/xplane/uv.lock": {
+      "before": {
+        "aiohappyeyeballs": "2.7.1",
+        "aiohttp": "3.14.5",
+        "aiosignal": "1.4.0",
+        "anybadge": "1.16.0",
+        "attrs": "26.1.0",
+        "bandit": "1.9.4",
+        "boolean-py": "5.0",
+        "cachecontrol": "0.14.4",
+        "certifi": "2026.10.23",
+        "cfgv": "3.5.0",
+        "charset-normalizer": "3.5.2",
+        "click": "8.5.0",
+        "colorama": "0.4.6",
+        "complexipy": "8.2.0",
+        "cosmic-ray": "8.7.0",
+        "coverage": "7.17.0",
+        "cyclonedx-python-lib": "11.12.0",
+        "decorator": "5.3.1",
+        "defusedxml": "0.7.1",
+        "deptry": "0.25.1",
+        "distlib": "0.4.4",
+        "exit-codes": "1.3.0",
+        "filelock": "4.2.4",
+        "frozenlist": "1.8.0",
+        "gitdb": "4.0.12",
+        "gitpython": "3.2.1",
+        "grimp": "3.18",
+        "identify": "2.6.20",
+        "idna": "3.20",
+        "import-linter": "2.15",
+        "interrogate": "1.7.0",
+        "license-expression": "30.4.4",
+        "lizard": "1.24.3",
+        "markdown-it-py": "4.2.0",
+        "mdurl": "0.1.2",
+        "msgpack": "1.2.4",
+        "multidict": "7.2.1",
+        "nodeenv": "1.11.0",
+        "packageurl-python": "0.17.6",
+        "packaging": "26.3",
+        "parso": "0.8.7",
+        "pathspec": "1.1.1",
+        "pip": "26.2.2",
+        "pip-api": "0.0.35",
+        "pip-audit": "2.10.1",
+        "pip-requirements-parser": "32.0.1",
+        "platformdirs": "4.13.5",
+        "pre-commit": "4.7.0",
+        "propcache": "0.5.4",
+        "py": "1.11.0",
+        "py-serializable": "2.1.0",
+        "pygments": "2.21.0",
+        "pyparsing": "3.3.3",
+        "python-discovery": "1.6.4",
+        "pyyaml": "6.0.3",
+        "requests": "2.34.2",
+        "requirements-parser": "0.13.1",
+        "rich": "15.0.0",
+        "ruff": "0.17.3",
+        "smmap": "5.0.3",
+        "sortedcontainers": "2.4.0",
+        "sqlalchemy": "2.1.6",
+        "stevedore": "5.9.1",
+        "tabulate": "0.10.0",
+        "toml": "0.10.2",
+        "tomli": "2.5.0",
+        "tomli-w": "1.2.0",
+        "ty": "0.0.95",
+        "typing-extensions": "4.16.0",
+        "urllib3": "2.8.0",
+        "uv-build": "0.13.6",
+        "virtualenv": "21.14.13",
+        "vulture": "2.16",
+        "yarl": "1.25.1",
+        "yattag": "1.16.1"
+      },
+      "after": {
+        "aiohappyeyeballs": "2.7.1",
+        "aiohttp": "3.14.5",
+        "aiosignal": "1.4.0",
+        "anybadge": "1.18.0",
+        "attrs": "26.1.0",
+        "bandit": "1.9.4",
+        "boolean-py": "5.0",
+        "cachecontrol": "0.14.4",
+        "certifi": "2026.10.23",
+        "cfgv": "3.5.0",
+        "charset-normalizer": "3.5.2",
+        "click": "8.5.1",
+        "colorama": "0.4.6",
+        "complexipy": "8.2.0",
+        "cosmic-ray": "8.8.0",
+        "coverage": "7.17.2",
+        "cyclonedx-python-lib": "11.12.0",
+        "decorator": "5.3.1",
+        "defusedxml": "0.7.1",
+        "deptry": "0.25.1",
+        "distlib": "0.4.4",
+        "exit-codes": "1.3.0",
+        "filelock": "4.2.9",
+        "frozenlist": "1.8.0",
+        "gitdb": "4.0.12",
+        "gitpython": "3.2.1",
+        "grimp": "3.19",
+        "identify": "2.6.20",
+        "idna": "3.20",
+        "import-linter": "2.16",
+        "interrogate": "1.7.0",
+        "license-expression": "30.4.4",
+        "lizard": "1.24.3",
+        "markdown-it-py": "4.2.0",
+        "mdurl": "0.1.2",
+        "msgpack": "1.2.4",
+        "multidict": "7.2.1",
+        "nodeenv": "1.12.0",
+        "packageurl-python": "0.17.6",
+        "packaging": "26.3",
+        "parso": "0.8.7",
+        "pathspec": "1.1.1",
+        "pip": "26.3",
+        "pip-api": "0.0.35",
+        "pip-audit": "2.10.1",
+        "pip-requirements-parser": "32.0.1",
+        "platformdirs": "4.14.5",
+        "pre-commit": "4.7.0",
+        "propcache": "0.5.4",
+        "py": "1.11.0",
+        "py-serializable": "2.2.0",
+        "pygments": "2.21.0",
+        "pyparsing": "3.3.3",
+        "python-discovery": "1.9.5",
+        "pyyaml": "6.0.3",
+        "requests": "2.34.2",
+        "requirements-parser": "0.13.1",
+        "rich": "15.0.0",
+        "ruff": "0.17.4",
+        "smmap": "5.0.3",
+        "sortedcontainers": "2.4.0",
+        "sqlalchemy": "2.1.8",
+        "stevedore": "5.9.1",
+        "tabulate": "0.10.0",
+        "toml": "0.10.2",
+        "tomli": "2.5.0",
+        "tomli-w": "1.2.0",
+        "ty": "0.0.99",
+        "typing-extensions": "4.16.0",
+        "urllib3": "2.8.0",
+        "uv-build": "0.13.7",
+        "virtualenv": "21.15.6",
+        "vulture": "2.16",
+        "yarl": "1.25.1",
+        "yattag": "1.16.1"
+      },
+      "changes": {
+        "anybadge": {
+          "before": "1.16.0",
+          "after": "1.18.0"
+        },
+        "click": {
+          "before": "8.5.0",
+          "after": "8.5.1"
+        },
+        "cosmic-ray": {
+          "before": "8.7.0",
+          "after": "8.8.0"
+        },
+        "coverage": {
+          "before": "7.17.0",
+          "after": "7.17.2"
+        },
+        "filelock": {
+          "before": "4.2.4",
+          "after": "4.2.9"
+        },
+        "grimp": {
+          "before": "3.18",
+          "after": "3.19"
+        },
+        "import-linter": {
+          "before": "2.15",
+          "after": "2.16"
+        },
+        "nodeenv": {
+          "before": "1.11.0",
+          "after": "1.12.0"
+        },
+        "pip": {
+          "before": "26.2.2",
+          "after": "26.3"
+        },
+        "platformdirs": {
+          "before": "4.13.5",
+          "after": "4.14.5"
+        },
+        "py-serializable": {
+          "before": "2.1.0",
+          "after": "2.2.0"
+        },
+        "python-discovery": {
+          "before": "1.6.4",
+          "after": "1.9.5"
+        },
+        "ruff": {
+          "before": "0.17.3",
+          "after": "0.17.4"
+        },
+        "sqlalchemy": {
+          "before": "2.1.6",
+          "after": "2.1.8"
+        },
+        "ty": {
+          "before": "0.0.95",
+          "after": "0.0.99"
+        },
+        "uv-build": {
+          "before": "0.13.6",
+          "after": "0.13.7"
+        },
+        "virtualenv": {
+          "before": "21.14.13",
+          "after": "21.15.6"
+        }
+      }
+    }
+  },
+  "inputs": {
+    "bundle.json": "55b3a59dd2e6400c40479cd6394eb34427b1c834044e67ccd975324f40889aeb",
+    "pyproject.toml": "5da493d0adf4a9e370bc5c01f8698df1269b452ad376b25fe1e838a86a1e00f7",
+    "uv.lock": "792f88a3483acf1d1efb05462d1d84694e157f3ee3bae4c7570144a662fa8927",
+    ".python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+    ".github/workflows/check.yml": "918087ea5d6232d2da33a41600b54aefbebd6e4e849634c3eb5c451ee060bdba",
+    ".github/dependabot.yml": "ce471f59ef0dbf67454d71a30050ba9cc4775f51d83799d5916ba61ab1858b56",
+    ".pre-commit-config.yaml": "9959e75e2bc1f7e8e4bb1ffc7ed0ed8313dd280f063f0c20164b9383bc57b7cc",
+    ".agents/plugins/marketplace.json": "951d055a42c577cb4025aac3843dad66e8610124efdc038a60465806bbe3708d",
+    ".claude-plugin/marketplace.json": "86ad2e4768c1f9b83db0594eabcc6392bb150ec7946b737b8f36fe1879e31c4c",
+    ".codex/config.toml": "e860e0b4fbf6e82b5ea138fd99ac262fe23d6985e2fd7095c94940098920569a",
+    ".claude/settings.json": "b1168f6c95ea112e9d8c718b71ad9229b2f7e6ca5316c2d3f3fbd281e538a8f6",
+    "opencode.json": "b5adbcd7ded6673d6c84fdf1614e8dcfe0ce2e0caffb3baa5dc02431c286f971",
+    "baselines/xplane/pyproject.toml": "f0e60a6b9624f38d03adf0f324092b24dace44b86136e27d9d4ae28d7f8d4117",
+    "baselines/xplane/uv.lock": "a0e70d4f65b6914033e6c708779b01d1a573972df6d649e18c274ebe45ab70f9",
+    "baselines/xplane/.python-version": "a05e0074505ce29f25abf3aebe4f7218d28e98411822f199e3272740be4e363c",
+    "templates/AGENTS.skills-first.md": "726b3555393e03bbd6877797aeda9ec1a3c82a58dd7fb1f47ade8ff40728a3ef",
+    "templates/skills/update-gz-template/SKILL.md": "b4d19a9bd1c91fd3ea7429865354e0065f38bacd89a3693fe15e5b89559b212d",
+    "src/skills_first_starter/cli.py": "5c95e92fa2a6d3b49b0aa04bef4e505fab0a9efe013c0f8bb1a91d2469933aae",
+    "src/skills_first_starter/native.py": "796a892da701f60ac15f1d6197fc341e761fc4dcb345114ebc09988b2e02c477",
+    "src/skills_first_starter/native_json.py": "6bb870e505d024d9980d9d88ce1cc56c16c79d6992c0f04217aa774c75c3eae5",
+    "src/skills_first_starter/native_launch.py": "71e86230c43eaa0df424f8e160cb1912459f54a257bf9ae2a742ed88dd03d1b2",
+    "src/skills_first_starter/native_scope.py": "bd9af8c89534896bd936c859361b2420579b9415701ced0c348dc251e32c3501",
+    "src/skills_first_starter/__init__.py": "73347d532a7743e605183cb9508af5af0361ba7baa463a0e0fdec069a842139d",
+    "src/skills_first_starter/__main__.py": "d37d6d4f4a328b34a94665883f8b8caaaab2f25a680c4c2b4e8ed0a30718fbc0"
+  },
+  "complexity": {
+    "python": "3.14.10",
+    "scope": [
+      "src"
+    ],
+    "checker_sha256": "e469a03cf647d09a5df4e6afef4538e5aaacadfbc0dde8c435a8d759adf399b3",
+    "contract": "lizard-functions-v1",
+    "ceilings": [
+      20,
+      20,
+      20
+    ],
+    "modules": [
+      {
+        "file": "src\\skills_first_starter\\__init__.py",
+        "sha256": "73347d532a7743e605183cb9508af5af0361ba7baa463a0e0fdec069a842139d",
+        "functions": [],
+        "mean": null
+      },
+      {
+        "file": "src\\skills_first_starter\\__main__.py",
+        "sha256": "d37d6d4f4a328b34a94665883f8b8caaaab2f25a680c4c2b4e8ed0a30718fbc0",
+        "functions": [],
+        "mean": null
+      },
+      {
+        "file": "src\\skills_first_starter\\cli.py",
+        "sha256": "5c95e92fa2a6d3b49b0aa04bef4e505fab0a9efe013c0f8bb1a91d2469933aae",
+        "functions": [
+          {
+            "name": "bundle",
+            "line": 49,
+            "complexity": 1
+          },
+          {
+            "name": "template_version",
+            "line": 54,
+            "complexity": 3
+          },
+          {
+            "name": "validate_bundle",
+            "line": 64,
+            "complexity": 16
+          },
+          {
+            "name": "check_path",
+            "line": 91,
+            "complexity": 9
+          },
+          {
+            "name": "profile_check",
+            "line": 106,
+            "complexity": 7
+          },
+          {
+            "name": "_check_plugin_activation",
+            "line": 123,
+            "complexity": 7
+          },
+          {
+            "name": "_missing_config_tables",
+            "line": 141,
+            "complexity": 6
+          },
+          {
+            "name": "project_config",
+            "line": 161,
+            "complexity": 4
+          },
+          {
+            "name": "_adoption_root",
+            "line": 178,
+            "complexity": 4
+          },
+          {
+            "name": "_check_discovery_entry",
+            "line": 190,
+            "complexity": 6
+          },
+          {
+            "name": "_check_discovery",
+            "line": 212,
+            "complexity": 5
+          },
+          {
+            "name": "_configuration_candidates",
+            "line": 230,
+            "complexity": 6
+          },
+          {
+            "name": "_plan_writes",
+            "line": 267,
+            "complexity": 6
+          },
+          {
+            "name": "_write_candidate",
+            "line": 287,
+            "complexity": 3
+          },
+          {
+            "name": "_apply_writes",
+            "line": 304,
+            "complexity": 7
+          },
+          {
+            "name": "configure",
+            "line": 330,
+            "complexity": 8
+          },
+          {
+            "name": "status",
+            "line": 378,
+            "complexity": 3
+          },
+          {
+            "name": "_inherited_plugins",
+            "line": 395,
+            "complexity": 5
+          },
+          {
+            "name": "_scoped_config",
+            "line": 407,
+            "complexity": 3
+          },
+          {
+            "name": "localize",
+            "line": 417,
+            "complexity": 18
+          },
+          {
+            "name": "backport",
+            "line": 455,
+            "complexity": 9
+          },
+          {
+            "name": "source_revision.git",
+            "line": 518,
+            "complexity": 1
+          },
+          {
+            "name": "source_revision",
+            "line": 515,
+            "complexity": 4
+          },
+          {
+            "name": "main",
+            "line": 547,
+            "complexity": 10
+          }
+        ],
+        "mean": 6.291666666666667
+      },
+      {
+        "file": "src\\skills_first_starter\\native.py",
+        "sha256": "796a892da701f60ac15f1d6197fc341e761fc4dcb345114ebc09988b2e02c477",
+        "functions": [
+          {
+            "name": "configuration_path",
+            "line": 15,
+            "complexity": 4
+          },
+          {
+            "name": "update_skill_path",
+            "line": 24,
+            "complexity": 2
+          },
+          {
+            "name": "_merge_object",
+            "line": 30,
+            "complexity": 5
+          },
+          {
+            "name": "_claude_settings",
+            "line": 41,
+            "complexity": 7
+          },
+          {
+            "name": "_opencode_settings",
+            "line": 65,
+            "complexity": 14
+          },
+          {
+            "name": "project_json",
+            "line": 85,
+            "complexity": 5
+          }
+        ],
+        "mean": 6.166666666666667
+      },
+      {
+        "file": "src\\skills_first_starter\\native_json.py",
+        "sha256": "6bb870e505d024d9980d9d88ce1cc56c16c79d6992c0f04217aa774c75c3eae5",
+        "functions": [
+          {
+            "name": "_clean_token",
+            "line": 9,
+            "complexity": 2
+          },
+          {
+            "name": "document",
+            "line": 15,
+            "complexity": 3
+          },
+          {
+            "name": "_field_spans",
+            "line": 25,
+            "complexity": 5
+          },
+          {
+            "name": "replace_fields",
+            "line": 47,
+            "complexity": 11
+          }
+        ],
+        "mean": 5.25
+      },
+      {
+        "file": "src\\skills_first_starter\\native_launch.py",
+        "sha256": "71e86230c43eaa0df424f8e160cb1912459f54a257bf9ae2a742ed88dd03d1b2",
+        "functions": [
+          {
+            "name": "_merge",
+            "line": 12,
+            "complexity": 4
+          },
+          {
+            "name": "launch",
+            "line": 23,
+            "complexity": 16
+          }
+        ],
+        "mean": 10.0
+      },
+      {
+        "file": "src\\skills_first_starter\\native_scope.py",
+        "sha256": "bd9af8c89534896bd936c859361b2420579b9415701ced0c348dc251e32c3501",
+        "functions": [
+          {
+            "name": "_plugin_states",
+            "line": 11,
+            "complexity": 7
+          },
+          {
+            "name": "_table_identity",
+            "line": 22,
+            "complexity": 3
+          },
+          {
+            "name": "_set_plugin_state",
+            "line": 33,
+            "complexity": 11
+          },
+          {
+            "name": "codex_scope",
+            "line": 62,
+            "complexity": 4
+          },
+          {
+            "name": "claude_scope",
+            "line": 80,
+            "complexity": 1
+          },
+          {
+            "name": "_managed_target",
+            "line": 94,
+            "complexity": 4
+          },
+          {
+            "name": "opencode_scope",
+            "line": 104,
+            "complexity": 10
+          }
+        ],
+        "mean": 5.714285714285714
+      }
+    ],
+    "errors": [],
+    "lizard_version": "1.24.3",
+    "violations": [],
+    "aggregate": {
+      "functions": 43,
+      "maximum": 18,
+      "overall_mean": 6.255813953488372
+    },
+    "status": "passed"
+  },
+  "bandit": {
+    "errors": [],
+    "generated_at": "2026-11-08T16:39:54Z",
+    "metrics": {
+      "_totals": {
+        "CONFIDENCE.HIGH": 5,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 0,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 5,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 858,
+        "nosec": 0,
+        "skipped_tests": 0
+      },
+      "src\\skills_first_starter\\__init__.py": {
+        "CONFIDENCE.HIGH": 0,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 0,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 0,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 1,
+        "nosec": 0,
+        "skipped_tests": 0
+      },
+      "src\\skills_first_starter\\__main__.py": {
+        "CONFIDENCE.HIGH": 0,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 0,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 0,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 3,
+        "nosec": 0,
+        "skipped_tests": 0
+      },
+      "src\\skills_first_starter\\cli.py": {
+        "CONFIDENCE.HIGH": 3,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 0,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 3,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 557,
+        "nosec": 0,
+        "skipped_tests": 0
+      },
+      "src\\skills_first_starter\\native.py": {
+        "CONFIDENCE.HIGH": 0,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 0,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 0,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 82,
+        "nosec": 0,
+        "skipped_tests": 0
+      },
+      "src\\skills_first_starter\\native_json.py": {
+        "CONFIDENCE.HIGH": 0,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 0,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 0,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 60,
+        "nosec": 0,
+        "skipped_tests": 0
+      },
+      "src\\skills_first_starter\\native_launch.py": {
+        "CONFIDENCE.HIGH": 2,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 0,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 2,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 55,
+        "nosec": 0,
+        "skipped_tests": 0
+      },
+      "src\\skills_first_starter\\native_scope.py": {
+        "CONFIDENCE.HIGH": 0,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 0,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 0,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 100,
+        "nosec": 0,
+        "skipped_tests": 0
+      }
+    },
+    "results": [
+      {
+        "code": "13 import re\n14 import subprocess\n15 import sys\n",
+        "col_offset": 0,
+        "end_col_offset": 17,
+        "filename": "src\\skills_first_starter\\cli.py",
+        "issue_confidence": "HIGH",
+        "issue_cwe": {
+          "id": 78,
+          "link": "https://cwe.mitre.org/data/definitions/78.html"
+        },
+        "issue_severity": "LOW",
+        "issue_text": "Consider possible security implications associated with the subprocess module.",
+        "line_number": 14,
+        "line_range": [
+          14
+        ],
+        "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+        "test_id": "B404",
+        "test_name": "blacklist"
+      },
+      {
+        "code": "518     def git(*args: str) -> str:\n519         return subprocess.run(\n520             [\"git\", \"-C\", str(HERE), *args],\n521             check=True,\n522             capture_output=True,\n523             text=True,\n524             encoding=\"utf-8\",\n525             errors=\"strict\",\n526         ).stdout.strip()\n527 \n",
+        "col_offset": 15,
+        "end_col_offset": 9,
+        "filename": "src\\skills_first_starter\\cli.py",
+        "issue_confidence": "HIGH",
+        "issue_cwe": {
+          "id": 78,
+          "link": "https://cwe.mitre.org/data/definitions/78.html"
+        },
+        "issue_severity": "LOW",
+        "issue_text": "Starting a process with a partial executable path",
+        "line_number": 519,
+        "line_range": [
+          519,
+          520,
+          521,
+          522,
+          523,
+          524,
+          525,
+          526
+        ],
+        "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+        "test_id": "B607",
+        "test_name": "start_process_with_partial_path"
+      },
+      {
+        "code": "518     def git(*args: str) -> str:\n519         return subprocess.run(\n520             [\"git\", \"-C\", str(HERE), *args],\n521             check=True,\n522             capture_output=True,\n523             text=True,\n524             encoding=\"utf-8\",\n525             errors=\"strict\",\n526         ).stdout.strip()\n527 \n",
+        "col_offset": 15,
+        "end_col_offset": 9,
+        "filename": "src\\skills_first_starter\\cli.py",
+        "issue_confidence": "HIGH",
+        "issue_cwe": {
+          "id": 78,
+          "link": "https://cwe.mitre.org/data/definitions/78.html"
+        },
+        "issue_severity": "LOW",
+        "issue_text": "subprocess call - check for execution of untrusted input.",
+        "line_number": 519,
+        "line_range": [
+          519,
+          520,
+          521,
+          522,
+          523,
+          524,
+          525,
+          526
+        ],
+        "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html",
+        "test_id": "B603",
+        "test_name": "subprocess_without_shell_equals_true"
+      },
+      {
+        "code": "4 import os\n5 import subprocess\n6 from pathlib import Path\n",
+        "col_offset": 0,
+        "end_col_offset": 17,
+        "filename": "src\\skills_first_starter\\native_launch.py",
+        "issue_confidence": "HIGH",
+        "issue_cwe": {
+          "id": 78,
+          "link": "https://cwe.mitre.org/data/definitions/78.html"
+        },
+        "issue_severity": "LOW",
+        "issue_text": "Consider possible security implications associated with the subprocess module.",
+        "line_number": 5,
+        "line_range": [
+          5
+        ],
+        "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+        "test_id": "B404",
+        "test_name": "blacklist"
+      },
+      {
+        "code": "60         command.append(\"--standalone\")\n61     return subprocess.run(command, cwd=root, env=env, check=False).returncode\n",
+        "col_offset": 11,
+        "end_col_offset": 66,
+        "filename": "src\\skills_first_starter\\native_launch.py",
+        "issue_confidence": "HIGH",
+        "issue_cwe": {
+          "id": 78,
+          "link": "https://cwe.mitre.org/data/definitions/78.html"
+        },
+        "issue_severity": "LOW",
+        "issue_text": "subprocess call - check for execution of untrusted input.",
+        "line_number": 61,
+        "line_range": [
+          61
+        ],
+        "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html",
+        "test_id": "B603",
+        "test_name": "subprocess_without_shell_equals_true"
+      }
+    ]
+  },
+  "mutation_qualification": {
+    "date": "2026-11-08",
+    "python": "3.14.10",
+    "platform": "Windows",
+    "cosmic_ray": "8.8.0",
+    "probe_sha256": "e40cfa370a454506a4b2eb36b50b7f0073f0f532b8c5fa90af7ac142aeb936d8",
+    "fixtures": {
+      "specimen.py": "def checked() -> int:\n    return 1234\n\n\ndef unchecked() -> int:\n    return 4321\n",
+      "test_specimen.py": "import unittest\nimport specimen\n\n\nclass SpecimenTests(unittest.TestCase):\n    def test_checked(self):\n        self.assertEqual(specimen.checked(), 1234)\n",
+      "test_failing.py": "import unittest\nimport specimen\n\n\nclass SpecimenTests(unittest.TestCase):\n    def test_checked(self):\n        self.assertEqual(specimen.checked(), 0)\n"
+    },
+    "budget_seconds": 120,
+    "test_timeout_seconds": 5,
+    "observations": {
+      "commands": [
+        {
+          "argv": [
+            "<environment>/Scripts/python.exe",
+            "-B",
+            "-m",
+            "unittest",
+            "test_specimen",
+            "-v"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "baseline",
+            "good.toml",
+            "--session-file",
+            "passing.sqlite"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "dump",
+            "passing.sqlite"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "baseline",
+            "failing.toml",
+            "--session-file",
+            "failing.sqlite"
+          ],
+          "exit": 1
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "dump",
+            "failing.sqlite"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "baseline",
+            "timeout.toml",
+            "--session-file",
+            "timeout.sqlite"
+          ],
+          "exit": 1
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "dump",
+            "timeout.sqlite"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "baseline",
+            "launch_error.toml",
+            "--session-file",
+            "launch_error.sqlite"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "dump",
+            "launch_error.sqlite"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "init",
+            "good.toml",
+            "mutations.sqlite"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "exec",
+            "good.toml",
+            "mutations.sqlite"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cosmic-ray.EXE",
+            "dump",
+            "mutations.sqlite"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>/Scripts/python.exe",
+            "-B",
+            "-m",
+            "unittest",
+            "test_specimen",
+            "-v"
+          ],
+          "exit": 0
+        },
+        {
+          "argv": [
+            "<environment>\\Scripts\\cr-report.EXE",
+            "mutations.sqlite",
+            "--show-diff",
+            "--show-output"
+          ],
+          "exit": 0
+        }
+      ],
+      "controls": {
+        "passing": {
+          "cli_exit": 0,
+          "classification": "survived",
+          "worker_outcome": "normal",
+          "test_outcome": "survived"
+        },
+        "failing": {
+          "cli_exit": 1,
+          "classification": "killed",
+          "worker_outcome": "normal",
+          "test_outcome": "killed"
+        },
+        "timeout": {
+          "cli_exit": 1,
+          "classification": "timeout",
+          "worker_outcome": "normal",
+          "test_outcome": "killed"
+        },
+        "launch_error": {
+          "cli_exit": 0,
+          "classification": "tool_error",
+          "worker_outcome": "normal",
+          "test_outcome": "incompetent"
+        }
+      },
+      "counts": {
+        "killed": 2,
+        "survived": 2
+      },
+      "mutations": [
+        [
+          {
+            "job_id": "fbf00da0caa745d5bd0ae6f268109177",
+            "mutations": [
+              {
+                "module_path": "specimen.py",
+                "operator_name": "core/NumberReplacer",
+                "occurrence": 0,
+                "start_pos": [
+                  2,
+                  11
+                ],
+                "end_pos": [
+                  2,
+                  15
+                ],
+                "operator_args": {},
+                "definition_name": "checked"
+              }
+            ]
+          },
+          {
+            "worker_outcome": "normal",
+            "output": "",
+            "test_outcome": "killed",
+            "diff": "--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -1,5 +1,5 @@\n def checked() -> int:\n-    return 1234\n+    return 1235\n \n \n def unchecked() -> int:"
+          }
+        ],
+        [
+          {
+            "job_id": "0697d13a6e4f475ea01d707c3cc0e308",
+            "mutations": [
+              {
+                "module_path": "specimen.py",
+                "operator_name": "core/NumberReplacer",
+                "occurrence": 1,
+                "start_pos": [
+                  2,
+                  11
+                ],
+                "end_pos": [
+                  2,
+                  15
+                ],
+                "operator_args": {},
+                "definition_name": "checked"
+              }
+            ]
+          },
+          {
+            "worker_outcome": "normal",
+            "output": "",
+            "test_outcome": "killed",
+            "diff": "--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -1,5 +1,5 @@\n def checked() -> int:\n-    return 1234\n+    return 1233\n \n \n def unchecked() -> int:"
+          }
+        ],
+        [
+          {
+            "job_id": "a9455a14870c495da31a44130ad2ec1f",
+            "mutations": [
+              {
+                "module_path": "specimen.py",
+                "operator_name": "core/NumberReplacer",
+                "occurrence": 2,
+                "start_pos": [
+                  6,
+                  11
+                ],
+                "end_pos": [
+                  6,
+                  15
+                ],
+                "operator_args": {},
+                "definition_name": "unchecked"
+              }
+            ]
+          },
+          {
+            "worker_outcome": "normal",
+            "output": "",
+            "test_outcome": "survived",
+            "diff": "--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -3,5 +3,5 @@\n \n \n def unchecked() -> int:\n-    return 4321\n+    return 4322\n "
+          }
+        ],
+        [
+          {
+            "job_id": "745288d8534c4fd8a7a5c294b3df65b3",
+            "mutations": [
+              {
+                "module_path": "specimen.py",
+                "operator_name": "core/NumberReplacer",
+                "occurrence": 3,
+                "start_pos": [
+                  6,
+                  11
+                ],
+                "end_pos": [
+                  6,
+                  15
+                ],
+                "operator_args": {},
+                "definition_name": "unchecked"
+              }
+            ]
+          },
+          {
+            "worker_outcome": "normal",
+            "output": "",
+            "test_outcome": "survived",
+            "diff": "--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -3,5 +3,5 @@\n \n \n def unchecked() -> int:\n-    return 4321\n+    return 4320\n "
+          }
+        ]
+      ],
+      "report": "[job-id] fbf00da0caa745d5bd0ae6f268109177\nspecimen.py core/NumberReplacer 0\nworker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED\n=== OUTPUT ===\n\n==============\n=== DIFF ===\n--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -1,5 +1,5 @@\n def checked() -> int:\n-    return 1234\n+    return 1235\n \n \n def unchecked() -> int:\n============\n[job-id] 0697d13a6e4f475ea01d707c3cc0e308\nspecimen.py core/NumberReplacer 1\nworker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED\n=== OUTPUT ===\n\n==============\n=== DIFF ===\n--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -1,5 +1,5 @@\n def checked() -> int:\n-    return 1234\n+    return 1233\n \n \n def unchecked() -> int:\n============\n[job-id] a9455a14870c495da31a44130ad2ec1f\nspecimen.py core/NumberReplacer 2\nworker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED\n=== OUTPUT ===\n\n==============\n=== DIFF ===\n--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -3,5 +3,5 @@\n \n \n def unchecked() -> int:\n-    return 4321\n+    return 4322\n \n============\n[job-id] 745288d8534c4fd8a7a5c294b3df65b3\nspecimen.py core/NumberReplacer 3\nworker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED\n=== OUTPUT ===\n\n==============\n=== DIFF ===\n--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -3,5 +3,5 @@\n \n \n def unchecked() -> int:\n-    return 4321\n+    return 4320\n \n============\ntotal jobs: 4\ncomplete: 4 (100.00%)\nsurviving mutants: 2 (50.00%)\n",
+      "source_restored": true
+    }
+  },
+  "production_mutation_sample": {
+    "source": "src/skills_first_starter/native_json.py",
+    "sha256": "6bb870e505d024d9980d9d88ce1cc56c16c79d6992c0f04217aa774c75c3eae5",
+    "baseline_tests": 4,
+    "baseline_exit": 0,
+    "source_restored": true,
+    "sample": [
+      {
+        "operator": "core/NumberReplacer",
+        "occurrence": 0,
+        "result": {
+          "worker_outcome": "normal",
+          "output": "",
+          "test_outcome": "killed",
+          "diff": "--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -25,7 +25,7 @@\n def _field_spans(cleaned: str) -> dict[str, tuple[int, int]]:\n     \"\"\"Locate top-level values using JSON decoding rather than matching nested keys.\"\"\"\n     decoder = json.JSONDecoder()\n-    position = cleaned.index(\"{\") + 1\n+    position = cleaned.index(\"{\") + 2\n     spans = {}\n     while True:\n         position += len(cleaned[position:]) - len(cleaned[position:].lstrip())"
+        }
+      },
+      {
+        "operator": "core/ReplaceBinaryOperator_Add_Sub",
+        "occurrence": 0,
+        "result": {
+          "worker_outcome": "normal",
+          "output": "",
+          "test_outcome": "killed",
+          "diff": "--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -25,7 +25,7 @@\n def _field_spans(cleaned: str) -> dict[str, tuple[int, int]]:\n     \"\"\"Locate top-level values using JSON decoding rather than matching nested keys.\"\"\"\n     decoder = json.JSONDecoder()\n-    position = cleaned.index(\"{\") + 1\n+    position = cleaned.index(\"{\") - 1\n     spans = {}\n     while True:\n         position += len(cleaned[position:]) - len(cleaned[position:].lstrip())"
+        }
+      },
+      {
+        "operator": "core/ReplaceComparisonOperator_NotEq_Eq",
+        "occurrence": 0,
+        "result": {
+          "worker_outcome": "normal",
+          "output": "",
+          "test_outcome": "killed",
+          "diff": "--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -47,7 +47,7 @@\n def replace_fields(text: str, fields: dict) -> str:\n     \"\"\"Preserve every byte outside changed native configuration fields.\"\"\"\n     data, cleaned = document(text)\n-    changes = {key: value for key, value in fields.items() if key not in data or data[key] != value}\n+    changes = {key: value for key, value in fields.items() if key not in data or data[key] == value}\n     if not changes:\n         return text\n     if not text:"
+        }
+      }
+    ],
+    "scope": "Three first-occurrence mutations, not a project mutation score"
+  },
+  "coverage": {
+    "covered_lines": 507,
+    "num_statements": 558,
+    "percent_covered": 88.64197530864197,
+    "percent_covered_display": "89",
+    "missing_lines": 51,
+    "excluded_lines": 0,
+    "percent_statements_covered": 90.86021505376344,
+    "percent_statements_covered_display": "91",
+    "num_branches": 252,
+    "num_partial_branches": 41,
+    "covered_branches": 211,
+    "missing_branches": 41,
+    "percent_branches_covered": 83.73015873015873,
+    "percent_branches_covered_display": "84"
+  },
+  "standard_audit": {
+    "dependencies": 74,
+    "vulnerabilities": 0,
+    "skipped": []
+  },
+  "xplane_audit": {
+    "dependencies": 75,
+    "vulnerabilities": 0,
+    "skipped": []
+  }
+}

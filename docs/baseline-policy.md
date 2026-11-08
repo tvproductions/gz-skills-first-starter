@@ -124,7 +124,7 @@ The explicit Python/embedded-host families above remain separate runtime policy.
 ## uv executable compatibility
 
 Use a minimum-only `required-version` for uv, with no upper bound. This checkout
-requires `>=0.13.5`; CI records 0.13.6 as its exact tested reference. Do not require
+requires `>=0.13.5`; CI records 0.13.7 as its exact tested reference. Do not require
 local tools or hosted updaters to match that reference. Adopters select an
 evidenced minimum for their own configuration/features, rather than copying the
 tested version as an exact compatibility constraint. Record actual uv provenance

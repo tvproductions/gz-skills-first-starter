@@ -9,6 +9,12 @@ usefulness to other adopters is welcome, rather than a reason to dilute them.
 
 This repository is the bundle catalog, adoption tool, and guidance home.
 
+Release **0.9.0** permits uv >=0.13.5 without an upper bound, corrects Windows
+configuration idempotence and makes release-scope/version decisions explicit.
+It refreshes tested execution tools while retaining exact Python and plugin
+selections. See the [release receipt](docs/evidence/2026-11-08-0.9.0-release.md)
+for measured checks and retained cognitive/native-host limitations.
+
 Release **0.8.0** adds repository-owned Codex, Claude Code and
 OpenCode v2 configuration plus brownfield activation repair. Adoption requirements
 are mandatory; agents must execute the prescribed checks and present evidence before claiming completion.
@@ -25,7 +31,7 @@ Python baselines. No engine is installed or certified. Cognitive integration is
 an open, unscheduled [follow-up, issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1),
 with a standing maintainer-approved exception. Release 0.8.0 retains that exception
 and does not claim strict cognitive acceptance. See the
-[current release evidence](docs/evidence/2026-10-31-0.8.0-release.md) and
+[current release evidence](docs/evidence/2026-11-08-0.9.0-release.md) and
 [integration boundary](docs/engineering/cognitive-integration.md).
 
 Version **0.6.0** includes the single template-owned `update-gz-template` skill.
@@ -106,7 +112,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The template baseline is [v0.8.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.8.0).
+The template baseline is [v0.9.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.9.0).
 Start with the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
 existing-adopter upgrades and explicit acceptance/release requirements.
 Verify a published tag and exact commit before adoption; a metadata value
@@ -141,7 +147,7 @@ Requires uv >=0.13.5, Python 3.14, Git, and Codex with plugin support. GitHub CL
 for checking upstream releases; Backplane's GitHub workflows remain deferred. No Python dependencies are needed for this tool.
 
 uv uses a minimum-only compatibility requirement; local and hosted versions
-need not match CI's tested 0.13.6. See the
+need not match CI's tested 0.13.7. See the
 [uv policy](docs/baseline-policy.md#uv-executable-compatibility).
 
 Baseline tools use their latest stable release across tool families, with exact
@@ -154,7 +160,7 @@ an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
-git clone --branch v0.8.0 https://github.com/tvproductions/gz-skills-first-starter.git
+git clone --branch v0.9.0 https://github.com/tvproductions/gz-skills-first-starter.git
 cd gz-skills-first-starter
 uv run --locked skills-first-starter validate
 uv run --locked skills-first-starter configure --project /path/to/your-project
@@ -246,15 +252,19 @@ those exact full commit SHAs, not moving branches.
 Published template 0.6.0 retains its original SP 7.0.0 selection.
 Template 0.7.0 selects Superpowers
 [v7.0.1](https://github.com/obra/superpowers/releases/tag/v7.0.1), the latest stable
-release checked October 24, 2026. The old v6.4.1 selection came from Backplane's
+release checked October 24, 2026. The 0.9.0 freshness review found v7.0.2;
+its separate native-host upgrade is deferred in the release receipt.
+The old v6.4.1 selection came from Backplane's
 recorded compatibility proof; deferred Backplane does not constrain active SP
 updates. Review SP independently using the update guide. See the
 [update assessment](docs/evidence/2026-10-11-superpowers-7.0.0.md) for scope and
 verification limits.
 This is a reviewed
-starting set, **not a blanket compatibility certification**. Backplane has no
-published release; its remaining host acceptance and external pilot are tracked
-upstream. The pinned gz-skills release contains twenty skills, including
+starting set, **not a blanket compatibility certification**. Backplane now has
+published v0.2.0; its remaining host acceptance and external pilot are tracked
+upstream, so the selected snapshot remains disabled. gz-skills v0.10.1 is also
+available; this release retains v0.8.3 pending separate native qualification.
+The pinned gz-skills release contains twenty skills, including
 project setup, Pythonic pattern review/apply and freshness-only maintenance
 review with template/plugin inventory. The starter does not invoke setup or
 select a lite/heavy profile. Explicit selection is required before adoption is

@@ -1,11 +1,14 @@
 # Template versioning
 
-The current template release is **0.8.0**; the initial release was **0.1.0**.
-The pending release is **0.9.0**, not yet published. Its minimum-only uv policy
+The current template release is **0.9.0**; the initial release was **0.1.0**.
+Its minimum-only uv policy
 change governs the minor increment, alongside compatible corrections recorded
 in the [release-planning audit](evidence/2026-11-01-release-planning-audit.md).
 The [current release-scope record](handoffs/2026-10-24-session-close.md#november-8-git-synchronization-and-release-scope)
 supersedes the audit's earlier patch-only target after upstream reconciliation.
+The [0.9.0 receipt](evidence/2026-11-08-0.9.0-release.md) records the authorized
+publication and acceptance inputs. Verify its immutable tag and GitHub release
+before treating this metadata as publication evidence.
 The 0.3 adoption contract removes starter-authored skills; see [migration](migration-0.3.md).
 Release 0.8.0 bundles three-host repository configuration, brownfield scope repair
 and mandatory adopter discipline. Its [release receipt](evidence/2026-10-31-0.8.0-release.md)

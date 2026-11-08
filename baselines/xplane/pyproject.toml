@@ -14,19 +14,19 @@ python-preference = "only-managed"
 
 [dependency-groups]
 dev = [
-    "ruff==0.17.3",
-    "ty==0.0.95",
+    "ruff==0.17.4",
+    "ty==0.0.99",
     "pre-commit==4.7.0",
-    "uv_build==0.13.6",
+    "uv_build==0.13.7",
 ]
 hygiene = [
     "bandit==1.9.4",
     # Defect reproducer only; not qualified cognitive acceptance authority.
     "complexipy==8.2.0",
-    "cosmic-ray==8.7.0",
-    "coverage==7.17.0",
+    "cosmic-ray==8.8.0",
+    "coverage==7.17.2",
     "deptry==0.25.1",
-    "import-linter==2.15",
+    "import-linter==2.16",
     "interrogate==1.7.0",
     "lizard==1.24.3",
     "pip-audit==2.10.1",
