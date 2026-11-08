@@ -334,19 +334,22 @@ def _write_candidate(path: Path, payload: str, current: bytes | None) -> None:
     """Create exclusively or replace through a sibling temporary file."""
     path.parent.mkdir(parents=True, exist_ok=True)
     if current is None:
+        encoded = payload.encode()
         created = None
         try:
             with path.open("xb") as stream:
                 created = os.fstat(stream.fileno())
-                stream.write(payload.encode())
+                stream.write(encoded)
         except BaseException:
             if created is not None:
                 try:
                     remaining = path.stat(follow_symlinks=False)
+                    matching_content = encoded.startswith(path.read_bytes())
                 except FileNotFoundError:
                     pass
                 else:
-                    if os.path.samestat(created, remaining):
+                    # Inodes can be reused after close; identity alone is not ownership.
+                    if os.path.samestat(created, remaining) and matching_content:
                         path.unlink()
             raise
         return

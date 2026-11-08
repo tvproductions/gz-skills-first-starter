@@ -135,3 +135,24 @@ origin/main, ahead/behind is 0/0 and the worktree is clean; observe both jobs in
 the `Check starter` workflow for that exact SHA. Use `gh run list --commit <SHA>`
 and `gh run view <run-id>` to recover the final CI link/result on resume. Record
 the result in the sync response rather than creating CI-receipt-only commits.
+
+### Exact-commit CI correction during sync
+
+The first pushed save point was `67d71c877733cd7d4612f8fefb446ca546e80574`.
+Its [CI run](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/42536278799)
+passed the X-Plane baseline but failed the starter suite's concurrent-replacement
+case on Linux. After close, the filesystem reused the removed file's identity;
+stat identity alone caused cleanup to delete the unrelated replacement. The
+earlier Windows-only result did not establish this Linux behavior.
+
+The regression now forces identity reuse independently of the host filesystem;
+it failed locally before the fix. Cleanup requires both matching identity and
+content consistent with the attempted write, preserving a different replacement.
+All 12 policy methods and the full 72-test suite pass locally after the fix,
+alongside locked sync, all routine hooks, catalog/resource checks, source-
+independent build and isolated installed verification. This is a correction within
+the approved preservation contract, not a new ADR or runtime capability. The
+sync correction includes helper/test changes plus this handoff, changelog and
+qualification evidence; observe the correction commit's
+own CI before declaring synchronization verified. Retain the failed run as
+evidence; it supplies no passing starter/native qualification.

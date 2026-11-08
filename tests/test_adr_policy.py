@@ -238,11 +238,20 @@ class ADRPolicyTests(unittest.TestCase):
                         else stream
                     )
 
-                with mock.patch.object(Path, "open", autospec=True, side_effect=open_policy):
+                identity_reuse = (
+                    mock.patch.object(starter.os.path, "samestat", return_value=True)
+                    if replacement
+                    else contextlib.nullcontext()
+                )
+                with (
+                    mock.patch.object(Path, "open", autospec=True, side_effect=open_policy),
+                    identity_reuse,
+                ):
                     code, _, errors = self.configure(root=root, mode="local", apply=True)
                 self.assertEqual(code, 2)
                 self.assertIn("fixture disk full", errors)
                 if replacement:
+                    self.assertTrue(target.is_file(), "Reused file identity deleted a replacement")
                     self.assertEqual(target.read_bytes(), b"Concurrent replacement policy.\n")
                 else:
                     self.assertFalse(target.exists(), "Failed creation left an owned policy behind")

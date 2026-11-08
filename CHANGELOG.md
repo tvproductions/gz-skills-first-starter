@@ -39,6 +39,10 @@ See [the governing scope](docs/handoffs/2026-10-24-session-close.md#november-8-a
   Correct the inherited exclusive-create failure path so partial write/close
   failures clean up the owned file while preserving a concurrent replacement;
   review regression and final 72-test suite pass with the full repository gate.
+  Exact-commit Linux CI exposed immediate file-identity reuse during that cleanup;
+  require matching attempted-write content as well as identity before removing
+  the failed file. A deterministic identity-reuse case protects the concurrent
+  replacement on every test host; retain the failed CI evidence in the handoff.
 
 - Prioritize ADR practice before the real-adopter pilot and remaining upgrade/
   native-platform work. Place adoption-acceptance reporting last among the planned

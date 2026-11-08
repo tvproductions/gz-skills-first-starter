@@ -66,8 +66,10 @@ preview/apply/status and repeated selection outside the checkout. They run
 helper configuration only, not real native host discovery.
 
 Native Windows was exercised. The read-only portability audit returned no
-findings before implementation. Actual macOS/Linux execution and CI for these
-uncommitted changes remain unverified; no cross-host proof is inferred.
+findings before implementation. Actual macOS execution remains unverified.
+The first exact-commit Linux run and its preservation failure are recorded
+below; no cross-host or native skill proof is inferred from the earlier
+Windows-only results.
 
 The final repository gate passed: `uv sync --locked --all-groups`, all four
 routine pre-commit hooks, `skills-first-starter validate`, the six-resource drift
@@ -91,14 +93,32 @@ isolated installed verifier and portability audit all passed again. Ruff's
 loop-binding finding in the regression fixture was corrected; no rule was
 suppressed. No unresolved critical/important findings or deferred minors remain
 from the independent review. No second reviewer pass is claimed after the
-test-proven fix.
+test-proven fix. A later exact-commit Linux CI finding required the additional
+source-bound correction below; the initial review did not establish inode-reuse
+behavior on that filesystem.
+
+### Linux CI identity-reuse correction
+
+The [first save-point CI run](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/42536278799)
+for `67d71c877733cd7d4612f8fefb446ca546e80574` passed X-Plane but failed the
+starter's concurrent-replacement test. Linux reused the removed file identity,
+so stat comparison alone deleted the replacement. The regression now forces
+that identity collision on every host; it failed locally before the correction.
+Cleanup now requires identity and content consistent with the attempted write,
+preserving a replacement with different content. This is bounded preservation
+proof, not adversarial filesystem-race certification.
+
+After the correction, all 72 tests and the full local locked sync, hooks,
+catalog/resource checks, source-independent build and isolated installed
+verifier passed again on managed Python 3.14.10. The correction commit's exact
+CI result must be observed independently; the failed run cannot supply it.
 
 Verified executable/distribution inputs, SHA-256 (uncommitted candidate):
 
 | Input | SHA-256 |
 | --- | --- |
-| `src/skills_first_starter/cli.py` | `d8dc2ba63b313076a10e717ab7f066c592d6ebec22274791d0e5970009f73af3` |
-| `tests/test_adr_policy.py` | `64d84eeaeb6c0f5a8d95f1b00c5ca5bf7305cc9771ad531c30d5b178449bb7f9` |
+| `src/skills_first_starter/cli.py` | `9c59842be8e6460093a5789ea90bf3aff3a485c80871bb22b1d6e35ac9be6ced` |
+| `tests/test_adr_policy.py` | `3ba1da98564f5a316ff56925256c7b602b57a07fbfd595d3309640f3db994ad9` |
 | `tools/package_resources.py` | `22fe2d6ac68a9e174b004be2c4ad7c91a38c647cfaa160479983a15ad6ac422d` |
 | `tools/verify_distribution.py` | `06f2d37b3786bac79db9cb6491308478749e1402847faa6adb1f569a99f81a76` |
 | `docs/engineering/architectural-decisions.md` | `b0272acf8cecee53885579dadcdbfe3703d07a00f3168bad5449c20a9b1634b7` |
