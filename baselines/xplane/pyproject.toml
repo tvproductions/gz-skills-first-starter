@@ -22,7 +22,7 @@ dev = [
 hygiene = [
     "bandit==1.9.4",
     # Defect reproducer only; not qualified cognitive acceptance authority.
-    "complexipy==8.2.0",
+    "complexipy==8.3.0",
     "cosmic-ray==8.8.0",
     "coverage==7.17.2",
     "deptry==0.25.1",
