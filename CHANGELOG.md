@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Clarify that adopter agents accept **starter** and **starter template** as
+  conversational names for `gz-skills-first-starter`, including template update
+  and review requests. Resolve the recorded adoption source, retain canonical
+  identifiers and preserve the user's requested scope/mode. Refresh packaged
+  instructions; include this clarification in pending 0.10.0.
+
 - Change the dependency-maintenance authorization/completion policy for this
   starter and every adopter in both lanes: maintenance/update/upgrade/freshen
   requests and bare `gzs-update-dependencies` invocations must fully migrate the

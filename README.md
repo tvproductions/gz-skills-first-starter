@@ -3,6 +3,12 @@
 A reusable, project-scoped starting point for **Superpowers + Superpowers Backplane + gz-skills**,
 with room for each application's own operational skills and supporting code. Built for work and personal projects under `tvproductions`.
 
+Use **starter** or **starter template** in conversation to refer to
+`gz-skills-first-starter`. Adopter agents accept these short names; for example,
+"update the starter" requests a template migration and "check the starter
+template" requests a review. Recorded sources and executable identifiers retain
+their canonical names. See [template updates](docs/updating.md).
+
 > **MANDATORY FOR EVERY ADOPTER: dependency maintenance means completed migration.**
 > Maintenance requests and a bare `gzs-update-dependencies` invocation MUST migrate
 > every in-scope dependency and tool to its **most current stable version**, including

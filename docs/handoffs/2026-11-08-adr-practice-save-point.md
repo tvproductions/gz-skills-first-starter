@@ -23,6 +23,22 @@ write or adopter propagation is authorized by this save point.
 
 ## Dependency-maintenance policy correction — November 13
 
+Subsequent shorthand clarification: the maintainer requested accepting **starter**
+and **starter template** in adopter conversations instead of requiring the full
+`gz-skills-first-starter` name. Maintainer/adopter instructions, README and the
+update runbook now map those references to the recorded template source and
+route update/review requests with their original scope/mode. Canonical executable
+and provenance identifiers remain unchanged. The generated adopter fragment is
+refreshed. This compatible wording clarification shares pending **0.10.0** from
+published **0.9.0**; ADR companion delivery/qualification and other release gaps
+remain open. Local verification on uv 0.13.6 / managed Python 3.14.10 passed:
+locked all-group sync, all four routine hooks, bundle/both-catalog validation,
+six-resource drift check, source-independent build and isolated installed CLI
+verification. No analyzer implementation changed, so analyzer regressions are
+not triggered. Verify exact-commit CI during the already authorized Git sync;
+no publication, model-behavior qualification or installed-adopter propagation is
+implied. Report final CI in the sync response without a receipt-only commit.
+
 The maintainer explicitly required the **starter**, for every adopter, to make
 maintenance complete the most current stable dependency/tool migration across
 newer families. Review-and-offer is no longer the maintenance default; only an

@@ -1,5 +1,14 @@
 # Skills-first development stack
 
+Accept **starter** and **starter template** as shorthand for the adopted
+`gz-skills-first-starter` template. Resolve these references through this project's
+`.skills-first/bundle.lock.json` and adoption context; do not require the user to
+repeat the full repository name. Route requests such as "update the starter" or
+"check the starter template" to the template-update workflow below, preserving
+the requested update or review mode. Ask for clarification only when the context
+leaves the referenced template ambiguous. Preserve canonical repository, package,
+command and skill identifiers in provenance and executable instructions.
+
 **MANDATORY: dependency maintenance MUST complete migration to the most current
 stable versions of every in-scope dependency/tool, including newer families.**
 A bare `gzs-update-dependencies` invocation uses update mode, overriding its

@@ -1,5 +1,11 @@
 # GZ skills-first starter
 
+Accept **starter** and **starter template** as shorthand for
+`gz-skills-first-starter` when the conversation concerns this repository or its
+adopted template. Use the recorded adoption source/version/SHA to resolve the
+reference; do not require the full repository name. Preserve canonical repository,
+package, command and skill identifiers in provenance and executable instructions.
+
 **MANDATORY: dependency maintenance MUST complete migration to the most current
 stable versions of every in-scope dependency/tool, including newer families.**
 A bare `gzs-update-dependencies` invocation uses update mode, overriding its

@@ -8,6 +8,16 @@ do not contain it; use the bootstrap below or follow the
 
 ## What an adopter invokes
 
+Accept **starter** and **starter template** as conversational references to the
+adopted `gz-skills-first-starter` template. Resolve the source and recorded
+version/full SHA through `.skills-first/bundle.lock.json` and project adoption
+context; require clarification only if another template makes the reference
+ambiguous. "Update the starter" selects template migration; "check the starter
+template" selects review without updates. Route either to `update-gz-template`
+when available, or this runbook otherwise. The shorthand does not broaden the
+requested scope to unrelated dependencies or plugins. Keep canonical identifiers
+in source records, commands and skill invocations.
+
 After the skill is available in a fresh project session:
 
 ```text
