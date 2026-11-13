@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+- Change the dependency-maintenance authorization/completion policy for this
+  starter and every adopter in both lanes: maintenance/update/upgrade/freshen
+  requests and bare `gzs-update-dependencies` invocations must fully migrate the
+  requested scope to the most current stable upstream versions, including newer
+  dependency/tool families, and verify the result. Explicit check/freshness/
+  assessment/no-changes requests alone remain review-only. Override the portable
+  skill's default through starter/adopter bindings; preserve unrelated consumers.
+  Replace review-and-offer endings across instructions, adoption and engineering
+  guidance and regenerate packaged copies. Preserve Python N-1/host exceptions,
+  product requirements, native scope, rollback and thresholds; older selections
+  require demonstrated incompatibility and owned, dated exception evidence.
+  This is an adopter policy change for pending 0.10.0, not a pin refresh or
+  patch-only clarification. No extra version bump, publication, dependency
+  upgrade or native installation is performed by this documentation correction.
+  See [candidate evidence](docs/evidence/2026-11-13-dependency-maintenance-binding.md).
+
 Pending **0.10.0**, from published 0.9.0: the selected next feature bundle is
 mandatory ADR practice for both adoption lanes, first exercised by this starter,
 gz-skills and SP-BP before propagation to adopters. This is a new adoption/workflow
@@ -9,7 +25,9 @@ requirement and therefore a minor increment. Scope, roadmap order and a draft
 detailed design are recorded; the starter specification is approved and its
 implementation plan and ADR-0001-001 are separately approved. Starter policy and
 link/local helper support are implemented locally; companion delivery and
-whole-feature qualification/acceptance remain pending.
+whole-feature qualification/acceptance remain pending. The maintainer-directed
+completed-dependency-migration binding above is included in this existing minor;
+its bounded local checks do not waive the ADR feature's remaining gates.
 See [the governing scope](docs/handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope).
 
 - Draft the [starter ADR-practice design](docs/superpowers/specs/2026-11-08-adr-practice-design.md)

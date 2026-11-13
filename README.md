@@ -3,6 +3,13 @@
 A reusable, project-scoped starting point for **Superpowers + Superpowers Backplane + gz-skills**,
 with room for each application's own operational skills and supporting code. Built for work and personal projects under `tvproductions`.
 
+> **MANDATORY FOR EVERY ADOPTER: dependency maintenance means completed migration.**
+> Maintenance requests and a bare `gzs-update-dependencies` invocation MUST migrate
+> every in-scope dependency and tool to its **most current stable version**, including
+> newer families, and complete verification. Do not stop at a review or offer to
+> apply. Review-only requires an explicit check, assessment or no-changes request.
+> See the [mandatory maintenance contract](docs/baseline-policy.md#dependency-maintenance-means-completed-migration).
+
 Its primary purpose is consistent engineering across the maintainer's own
 projects. It deliberately records personal, strict design and tooling choices;
 usefulness to other adopters is welcome, rather than a reason to dilute them.
@@ -106,6 +113,15 @@ Adopters maintain the template, SP, SP-BP and gz-skills independently using
 tracking SP-BP readiness while it remains disabled.
 Generic maintenance workflows belong to gz-skills; the starter supplies policy
 and adoption bindings rather than another maintenance skill or freshness tool.
+**For this starter and every adopter, dependency/tool maintenance means fully
+migrating the requested scope to the most current stable upstream versions,
+including newer stable families, and verifying the result.** Bare
+`gzs-update-dependencies` uses update mode under this explicit binding, overriding
+its portable review-only default. Do not stop at a review or offer to apply.
+Only explicit check, freshness review, assessment or no-changes requests are
+review-only. Preserve Python N-1/host exceptions and required product behavior;
+older selections require demonstrated incompatibility with owned, dated evidence.
+See the mandatory [completed-migration policy](docs/baseline-policy.md#dependency-maintenance-means-completed-migration).
 
 This checkout configures weekly Dependabot update PRs for its standard Python
 project, a separately locked [X-Plane/XPPython3 tool baseline](baselines/xplane/),

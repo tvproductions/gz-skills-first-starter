@@ -1,5 +1,15 @@
 # Skills-first development stack
 
+**MANDATORY: dependency maintenance MUST complete migration to the most current
+stable versions of every in-scope dependency/tool, including newer families.**
+A bare `gzs-update-dependencies` invocation uses update mode, overriding its
+portable review-first default. Do not stop at recommendations or an offer to
+apply. Review-only requires an explicit check, assessment or no-changes request.
+This requirement applies to every adopter in both lanes; preserve the approved
+Python family, product contracts, thresholds and demonstrated compatibility
+exceptions under the reviewed starter's
+`docs/baseline-policy.md#dependency-maintenance-means-completed-migration`.
+
 Follow the [identified architectural decision policy]({{ADR_POLICY_WORKING_SOURCE}})
 during design, execution and review in both lite and heavy lanes. Preserve its
 [immutable canonical source]({{ADR_POLICY_CANONICAL_URL}}); source version/full SHA,
@@ -218,8 +228,9 @@ An already-installed version or a `3.14` selector does not prove freshness.
 The starter's current exact patch is a reproducibility baseline, not a permanent
 adopter requirement. XPPython3 controls its embedded interpreter; inspect and test
 that runtime separately, recording host limitations and revisit conditions.
-Keep tools pinned/locked after verification; changing families requires separate
-review. Record any compatibility exception with evidence and a revisit condition,
+Keep tools pinned/locked after verification; review newer tool-family
+compatibility within the authorized migration and preserve Python-family policy.
+Record any compatibility exception with evidence and a revisit condition,
 including the documented XPPython3 host exception. Preserve project dependencies
 and authorities, report adoption gaps, and follow the reviewed starter's Python
 engineering policy at `docs/engineering/python.md` in the reviewed starter
@@ -293,12 +304,29 @@ policy and stack-specific binding guidance. Do not create a duplicate local
 maintenance skill or generic freshness reporter. The pinned gz-skills v0.8.3
 supplies freshness-only review and template/plugin inventory. Review mode leaves
 pins and environments unchanged; preserve project policy and profile choices.
-End a freshness review with a concrete recommended upgrade batch and an explicit
-offer to apply it. Strongly recommend supported updates that satisfy project
-policy; state targets, benefits, compatibility risks and required checks. Do not
-stop at an inventory or adopt/defer table. If updates are already authorized,
-perform and verify them without asking again. State evidenced deferrals; if
-everything is current, say so instead of inventing an upgrade.
+For every adopter in both lite and heavy lanes, a request to maintain, update,
+upgrade or freshen dependencies/tools means fully migrate the requested scope
+to the **most current stable upstream versions, including newer stable families**,
+and complete verification. A bare `gzs-update-dependencies` invocation uses
+update mode here: this explicit starter/project binding overrides the portable
+skill's review-only default without changing unrelated consumers. Do not stop at
+an inventory, recommendation, adopt/defer table or offer to apply. Perform the
+ordinary resolution, integration and configuration work without asking again.
+Review-only applies **only to an explicit check, freshness review, assessment or
+no-changes request**; then leave pins, locks and environments unchanged and
+report concrete targets, benefits, compatibility risks and required checks.
+
+Follow `docs/baseline-policy.md#dependency-maintenance-means-completed-migration`
+in the reviewed starter. Reconcile affected constraints, declarations, exact
+selections, locks, backends, hook/CI pins, commands and configuration; adapt
+integration and run the full applicable project gate and changed-tool checks.
+Old ranges, major bumps, untested compatibility or hypothetical risk alone do
+not justify retaining older families. Preserve required product behavior,
+Python's N-1 family and evidenced embedded-host exceptions. Retain an older
+selection only for demonstrated incompatibility with evidence, accepted-by
+authority, owner and dated revisit; mark it noncurrent/conditional. Keep rollback
+and report blocked migration and acceptance gaps. Respect explicit scope and
+preserve native installation/activation boundaries. No publication is implied.
 
 Track the adopted starter's own version and exact SHA in its bundle lock,
 independently of app and upstream plugin versions. Compare reviewed template

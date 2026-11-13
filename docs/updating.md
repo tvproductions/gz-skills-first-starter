@@ -24,10 +24,17 @@ published target. Preserve project changes, reconcile managed files together,
 run the required verification, and report remaining conformance/readiness gaps.
 ```
 
-The request establishes review versus update mode. Invoking a skill alone does
-not authorize an upgrade, plugin activation, publication, or notifications.
-Generic dependency work remains with `gzs-update-dependencies`; template updates
-do not implicitly refresh the whole runtime/tool/plugin stack.
+For this narrow template entry, the request establishes review versus update
+mode. Invoking `update-gz-template` alone does not authorize an upgrade, plugin
+activation, publication, or notifications.
+Generic dependency work remains with `gzs-update-dependencies`, under the
+mandatory [completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
+for the starter and every adopter. Maintenance requests and bare dependency-skill
+invocations complete the most current stable migration across newer families and
+verification; review-only requires an explicit check/freshness/assessment request.
+Do not stop a broader authorized maintenance task after a template review or
+an offer to apply. A template-only request remains scoped to template migration;
+it does not implicitly refresh the whole runtime/tool/plugin stack.
 
 Keep native installation, version updates and enablement separate. For any
 authorized plugin update, record and preserve project enablement, user defaults

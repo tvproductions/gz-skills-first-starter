@@ -38,6 +38,13 @@ Older ranges are not freshness exemptions. Keep exact pins after verification;
 required stale/unknown evidence blocks acceptance. Explicit Python/host family
 policy and evidenced conditional exceptions remain visible. The current
 complexipy qualification defect cannot be treated as a passing cognitive check.
+For the starter and every adopter, [dependency maintenance](baseline-policy.md#dependency-maintenance-means-completed-migration)
+requires completing the most current stable migration across newer tool/dependency
+families and verification. Bare `gzs-update-dependencies` uses update mode here,
+overriding its portable review-only default. Only explicit check, freshness,
+assessment or no-changes requests remain read-only; a review or offer to apply
+does not complete maintenance. Preserve product contracts and Python N-1/host
+policy; retained older versions require demonstrated, owned and dated exceptions.
 
 Explicitly choose `lite` or `heavy` with the pinned `gzs-project-setup` workflow.
 Keep its two-field `.gz-skills/settings.json` schema; do not add starter policy

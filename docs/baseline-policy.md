@@ -121,6 +121,50 @@ pin cannot be used to declare a stale tool current. Review release changes and
 compatibility, adopt the newest stable selection, then retain exact pins/locks.
 The explicit Python/embedded-host families above remain separate runtime policy.
 
+## Dependency maintenance means completed migration
+
+This binding is mandatory for the starter itself and **every adopter, in both
+lite and heavy lanes**. A request to maintain, update, upgrade or freshen
+project dependencies/tools authorizes **fully migrating the requested scope to
+the most current stable upstream versions, including newer stable tool and
+dependency families**. A bare invocation of `gzs-update-dependencies` uses this
+update mode here. This explicit project binding overrides the portable skill's
+review-only default; it does not change that skill or its unrelated consumers.
+Do not stop after an inventory, recommendation, adopt/defer table or offer to
+apply. Complete the authorized migration and verification without another
+permission round for ordinary resolution, configuration or compatibility work.
+
+Review-only mode applies **only when the user explicitly requests a check,
+freshness review, assessment or no changes**. That mode leaves declarations,
+pins, locks and environments unchanged and reports concrete targets, benefits,
+compatibility risks and required checks. Do not silently turn a maintenance or
+upgrade request into review-only mode. Respect an explicitly bounded scope; a
+package-only update does not authorize unrelated plugin installation or template
+adoption, and a template-only update does not refresh the whole stack.
+
+For the requested scope, inspect official live releases across existing family
+constraints; migrate affected project declarations, exact selections, locks,
+build backends, hook/CI pins, commands and configuration together. Review
+breaking changes and adapt project integration as needed to preserve its required
+behavior. Existing ranges, old pins, an upstream major bump, untested compatibility
+or possible risk alone do not justify retaining an older family. Application
+contracts and support requirements remain project-owned: demonstrate an actual
+incompatibility before recording a retained older selection. Keep rollback and
+run the full applicable project gate plus changed-tool compatibility checks on
+the selected interpreter and installed artifacts. Report migration incomplete
+when any required update or verification remains blocked; a passing old lock is
+not completed maintenance.
+
+Python retains the deliberate **N-1 family** policy and XPPython3 its evidenced
+embedded-host exception; migrate their latest verified supported patches and
+review a coordinated family change when their policy/host target changes. Do
+not replace an embedded runtime independently. A demonstrated incompatibility
+may retain an older dependency/tool only with evidence, accepted-by authority,
+an owner and a dated revisit. Mark that selection noncurrent/conditional and
+keep missing/failed/stale acceptance evidence explicit. This binding neither
+waives thresholds nor authorizes publication, plugin activation, broader native
+installation scope or changes to unrelated projects.
+
 ## uv executable compatibility
 
 Use a minimum-only `required-version` for uv, with no upper bound. This checkout
@@ -205,7 +249,9 @@ and latest patch in the explicitly approved Python family against relevant
 project checks, then record the exact selected Python patch in
 `.python-version` and CI and exact dependency/tool resolutions in the appropriate
 lock/configuration. Keep that environment stable between authorized updates;
-do not resolve a moving latest version on every run. A freshness-only review
+do not resolve a moving latest version on every run. Apply the mandatory
+[completed-migration binding](#dependency-maintenance-means-completed-migration)
+for maintenance requests; only an explicit check/freshness/assessment request
 reports gaps without changing pins or environments.
 
 An installed interpreter, an allowed range or a passing lock validation does not

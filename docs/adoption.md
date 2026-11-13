@@ -412,15 +412,30 @@ freshness-only reporting and template/plugin inventory. Review mode leaves pins
 and environments unchanged. This starter adds no competing command and does not
 select a lite/heavy profile or invoke setup as part of a bundle update.
 
-Treat this as a freshen-up workflow. End every freshness review with a concrete
-recommended upgrade batch and an explicit offer to apply it. Strongly recommend
-supported policy-compliant updates; identify targets, benefits, compatibility
-risks and required checks. An inventory or adopt/defer table alone is incomplete.
-In review mode, leave dependency state unchanged until updates are authorized.
-When updates are already authorized, perform and verify them without asking
-again. Explain evidenced deferrals; if everything is current, state that no
-upgrade is needed. This is the starter's binding to the upstream skill, not a
-claim that the pinned skill already requires this closing behavior.
+For the starter and **every adopter**, dependency/tool maintenance is a
+completed migration, not a review followed by an offer. A maintenance, update,
+upgrade or freshen request, including a bare `gzs-update-dependencies` invocation,
+requires fully migrating its requested scope to the **most current stable
+upstream versions, including newer families**, and completing verification.
+This explicit [starter binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
+overrides the portable skill's review-only default. Do not ask again for ordinary
+migration steps. Only an explicit check, freshness review, assessment or
+no-changes request selects review-only mode and leaves dependency state unchanged;
+then report concrete targets, benefits, compatibility risks and required checks.
+Respect bounded requests: a template-only migration does not upgrade the whole
+stack, and a package-only update does not authorize unrelated plugin installation.
+
+Review breaking changes, update stale family constraints and adapt integration
+within the authorized scope. Existing pins, an upstream major bump, untested
+compatibility or hypothetical risk are not deferral evidence. Preserve product
+requirements and Python's N-1/embedded-host policy; retain older selections only
+for demonstrated incompatibility with evidence, accepted-by authority, owner and
+dated revisit. Complete the full applicable gate and changed-tool checks, retain
+rollback, and report blocked migration honestly. Missing required verification
+prevents a completed-maintenance claim; exceptions remain noncurrent/conditional.
+If the requested scope is already current and verified, state that no upgrade
+was needed. This changes the starter's binding, not the upstream skill or its
+unrelated consumers.
 
 1. Read `.skills-first/bundle.lock.json`, project configuration and native manager
    inventory. Record the adopted starter SHA, component SHAs, selected versions
@@ -443,9 +458,10 @@ claim that the pinned skill already requires this closing behavior.
    findings and independent adopt/defer decisions for all four. Record a reason
    and revisit condition for a retained older revision. Template maintenance may
    adopt useful guidance without wholesale copying of newer scaffold files.
-4. For an authorized update, preview the concrete diff from a separate reviewed
-   newer starter checkout. Review changelog changes to baseline policy as well as
-   dependency versions. Reconcile instructions, managed lock/configuration and
+4. For maintenance/update mode, complete the migration. For a starter-template
+   change, preview the concrete diff from a separate reviewed newer starter
+   checkout. Review changelog changes to baseline policy as well as dependency
+   versions. Reconcile instructions, managed lock/configuration and
    project policy references together; preserve app dependencies, settings, overrides,
    profile choices and native manager state. The helper refuses differing managed
    files: there is no force overwrite or automatic template migration. Run project

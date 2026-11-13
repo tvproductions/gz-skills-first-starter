@@ -21,6 +21,52 @@ fetch confirmed main ahead 1 / behind 0, with no remote work to integrate.
 Preserve published history and hooks. No release, tag, installation, companion
 write or adopter propagation is authorized by this save point.
 
+## Dependency-maintenance policy correction — November 13
+
+The maintainer explicitly required the **starter**, for every adopter, to make
+maintenance complete the most current stable dependency/tool migration across
+newer families. Review-and-offer is no longer the maintenance default; only an
+explicit check/freshness/assessment/no-changes request is review-only. A bare
+`gzs-update-dependencies` invocation uses update mode under the new binding,
+overriding the portable default without editing gz-skills or unrelated consumers.
+
+The development checkout was initially stale at `a483e382146c6082e590e31494c07d1812645014`.
+A live fetch exposed seven missing commits. The bounded patch was saved outside
+the checkout, reversed without touching other work, then reconciled after a safe
+fast-forward to `dff33ac2f598a1b2f239340318464713df3ad6d3`. No reset/rebase/force
+or commit was involved. The [candidate receipt](../evidence/2026-11-13-dependency-maintenance-binding.md)
+separates historical old-base checks from current-candidate verification.
+
+Published baseline is **0.9.0**, tag `v0.9.0`, exact release commit
+`3f76acf0038b030bf5abd85ce4a419e890d3e420`. Reuse pending **0.10.0 / minor**:
+this explicitly requested adopter authorization/completion policy joins the
+existing mandatory-policy bundle; do not bump once per task. Its completed scope
+is maintainer/adopter policy reconciliation, canonical/source packaging and the
+local gate. Remaining 0.10.0 ADR companion delivery/qualification and existing
+release gates are unchanged. Deferred/excluded scope remains the same; this
+correction adds no broad dependency refresh, lifecycle, native installation,
+consumer propagation or publication. Bundle/package/lock/resource version mirrors
+remain 0.10.0. See `docs/versioning.md` and the unreleased changelog.
+
+Canonical maintenance authority is
+`docs/baseline-policy.md#dependency-maintenance-means-completed-migration`, linked
+from the maintainer/adopter instructions, adoption/configuration/engineering
+guidance and narrow template-update entry. Generated instruction/owned-skill
+copies are refreshed. Preserve Python N-1/host policy, product behavior, native
+scope, rollback and thresholds; retained older selections require demonstrated
+incompatibility and owned, dated exceptions. Blocked migration and acceptance
+gaps remain explicit. Existing ADR-0001 ownership/independent-version decisions
+remain applicable; this correction introduces no replacement architecture.
+
+The maintainer reiterated that a local adjustment is insufficient. The verified
+source correction is synchronized to upstream main through the normal Git
+ritual; the final response records its exact commit and CI. The mandatory rule
+is also front-loaded in README and both maintainer/adopter instructions. No
+tag/release, cache edit or automatic adopter migration follows. Local package
+verification establishes neither fresh-session adopter compliance
+nor closure of cognitive/host or ADR behavioral qualification gaps. Recheck the
+live diff and exact-commit CI during any later authorized Git synchronization.
+
 ## Governing records and accepted design
 
 - [Feature #12](https://github.com/tvproductions/gz-skills-first-starter/issues/12)

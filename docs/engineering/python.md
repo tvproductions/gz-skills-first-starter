@@ -25,9 +25,9 @@ exact interpreter pin and required uv version.
 ### Latest stable within the selected family
 
 Baseline tooling must use its latest stable release across tool families. An old
-family restriction is not a freshness exemption; review new stable families and
-verify compatibility before selecting exact pins. The allowed Python families are **3.14.x for ordinary
-projects** and **3.12.x for XPPython3-bound projects**. Ordinary GZ code
+family restriction is not a freshness exemption; migrate to new stable families
+within authorized maintenance, verify compatibility and select exact pins. The
+allowed Python families are **3.14.x for ordinary projects** and **3.12.x for XPPython3-bound projects**. Ordinary GZ code
 deliberately stays one stable minor behind (N-1); this keeps 3.14 while 3.15
 is latest. Use the newest verified patch in that family and review a coordinated
 family migration when N-1 changes. Tooling still follows latest stable releases. Check official release
@@ -384,11 +384,18 @@ binds those workflows to the selected Python family, tool choices and verificati
 requirements; it does not duplicate their inventory, resolution or audit process.
 The pinned gz-skills v0.8.3 maintenance skill supports freshness-only review and
 template/plugin inventory. Review mode leaves pins and environments unchanged.
-End freshness reviews with a concrete recommended upgrade batch and an explicit
-offer to apply it. Strongly recommend supported updates under project policy;
-name targets, benefits, compatibility risks and required checks. An inventory
-alone is incomplete. Perform already-authorized updates without asking again;
-explain evidenced deferrals or state that no upgrade is needed.
+Apply the mandatory [completed-migration binding](../baseline-policy.md#dependency-maintenance-means-completed-migration)
+to the starter and every adopter: maintenance/update/upgrade/freshen requests,
+including a bare `gzs-update-dependencies` invocation, require fully migrating
+the requested scope to the most current stable versions across newer families
+and verifying the result. This overrides the portable skill's review-only default.
+Do not stop at recommendations or an offer to apply, and do not ask again for
+ordinary migration steps. Review-only is reserved for explicit check, freshness,
+assessment or no-changes requests; report concrete upgrade targets and checks
+while leaving dependency state unchanged. Review and adapt tool integrations
+within the authorized migration. Only demonstrated incompatibility, recorded as
+an owned and dated exception, permits retaining older versions. Preserve product
+requirements, rollback and acceptance thresholds; report blocked work explicitly.
 Preserve this starter's Python 3.14 family and retired Xenon/Radon decisions over
 upstream profile defaults; the pin update does not select a lite/heavy profile.
 

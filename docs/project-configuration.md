@@ -111,8 +111,15 @@ Generic maintenance workflows belong in gz-skills. Use its discovered
 policy and source locations. The starter supplies no competing maintenance skill
 or generic freshness-report command. The pinned gz-skills v0.8.3 maintenance
 skill supports freshness-only review and template/plugin source inventory.
-Review mode leaves pins and environments unchanged; updates require scoped
-authorization. Apply the guidance below as this project's binding, preserving
+The [completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
+requires maintenance/update/upgrade/freshen requests and bare
+`gzs-update-dependencies` invocations to complete migration to the most current
+stable upstream versions, including newer families, with verification. It
+overrides the portable skill's review-only default for the starter and every
+adopter. Do not stop at a report or offer to apply; ordinary migration steps
+need no further permission. Only explicit check/freshness/assessment/no-changes
+requests use review-only mode and leave pins and environments unchanged.
+Apply the guidance below as this project's binding, preserving
 its approved Python family, retired tools and explicit profile choices over
 upstream defaults.
 
@@ -126,8 +133,10 @@ maintenance, verify the latest patch from official sources, test it, and record
 an exact runtime pin shared by local execution and CI. For other baseline Python
 tools, assess the latest stable upstream release across families under the tool's
 versioning scheme; an old range requires an evidenced exception, not a current claim. An installed version, minor-only
-selector or old lock does not establish freshness. Family changes require
-separate review; compatibility exceptions need evidence and a revisit condition.
+selector or old lock does not establish freshness. Review tool-family changes
+and adapt integration within authorized maintenance; keep Python-family policy.
+Retained older versions require demonstrated incompatibility and an exception
+with evidence, accepted-by authority, owner and dated revisit condition.
 See the [Python baseline rule](engineering/python.md#latest-stable-within-the-selected-family).
 
 The current Python pin is 3.14.10, checked October 26, 2026 against the
@@ -160,16 +169,20 @@ on-demand maintenance:
 2. Record the checked date, baseline pin, latest release, supported minimum if
    tested, Python/platform risks, evidence links and adopt/defer decision.
    A selected but unverified tool is a gap, not a supported baseline dependency.
-3. For an authorized upgrade, update affected declarations, locks, commands and
-   guidance together. Plugin bundle changes also update both native catalogs.
+3. In maintenance/update mode, migrate affected family constraints, declarations,
+   exact pins, locks, backends, hook/CI pins, commands, configuration and guidance
+   together; adapt integration while preserving required product behavior. Plugin
+   bundle changes also update both native catalogs.
    Run the required project checks on the actual pinned interpreter; verify
    changed analyzers separately and retain honest legacy measurements.
 4. Review the adopter's diff independently. Preserve additional packages,
    settings, profiles and authorities; keep the previous lock/pins for rollback.
    Record host discovery separately from configuration validation.
 
-This is maintenance guidance, not an automatic updater, scheduled review or
-dependency upgrade. The Python policy's [freshness procedure](engineering/python.md#periodic-dependency-freshness-review)
+A maintenance request requires executing these steps, not merely reporting them.
+The helper itself remains a preservation/configuration tool and performs no
+implicit dependency upgrade or scheduled review. The Python policy's
+[freshness procedure](engineering/python.md#periodic-dependency-freshness-review)
 supplies the detailed assessment. No fresh package-release inventory is claimed
 by this documentation change. Python 3.14's new concurrency, compression and
 template APIs are not needed for this preservation contract; retain the existing

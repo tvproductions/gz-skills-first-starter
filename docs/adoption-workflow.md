@@ -66,8 +66,16 @@ updates and `gzs-dependency-risk-audit` for risk assessments. Keep the starter's
 role to policy and adoption bindings; do not add a competing local maintenance
 skill. The pinned gz-skills v0.8.3 maintenance skill also supports freshness-only
 reviews and starter/plugin inventory without changing pins or environments.
-Preserve approved starter Python policy over upstream profile defaults; choosing
-a profile remains explicit and separate from helper configuration, but is
+For the starter and every adopter, apply the mandatory
+[completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration):
+a maintenance/update/upgrade/freshen request or bare `gzs-update-dependencies`
+invocation completes migration to the most current stable versions, including
+new families, and verification. Override the portable skill's review-only default;
+only explicit check/freshness/assessment/no-changes requests are read-only. Do not
+stop at recommendations or an offer to apply. Preserve product requirements and
+retain older versions only for demonstrated incompatibility with an owned, dated
+exception. Preserve approved starter Python policy over upstream profile defaults;
+choosing a profile remains explicit and separate from helper configuration, but is
 required before adoption can be called complete.
 
 Establish the exact target project and a reviewed published starter revision.

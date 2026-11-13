@@ -2,7 +2,10 @@
 
 The current template release is **0.9.0**; the initial release was **0.1.0**.
 The selected next minor is **0.10.0**, unpublished: mandatory ADR practice for
-the trio and its adopters. The [governing release-scope record](handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope)
+the trio and its adopters, plus the maintainer-directed completed dependency-
+migration binding recorded in the
+[current handoff](handoffs/2026-11-08-adr-practice-save-point.md#dependency-maintenance-policy-correction--november-13).
+The [governing release-scope record](handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope)
 distinguishes this accepted direction from unfinished design, implementation and
 acceptance. Adoption-acceptance reporting remains the final planned feature
 before a separately scoped 1.0.0 with its newly written PRD.
@@ -282,6 +285,18 @@ fixes and clarifications. Release 1.0.0 only when the intended public contract
 and its compatibility guarantees are established. After 1.0, incompatible
 contract changes require a major bump, compatible additions a minor bump and
 compatible fixes a patch bump. Explain adopter impact even for small changes.
+
+The unreleased [completed dependency-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
+changes adopter authorization and completion requirements: ordinary maintenance
+and bare dependency-skill invocations now execute and verify the current stable
+migration across families; only explicit review requests are read-only. This is
+a policy change requiring **minor** reconciliation under the 0.x contract,
+not a patch clarification or pin refresh. Reuse the valid existing pending
+**0.10.0** target from published **0.9.0**, adding this maintainer-directed binding
+to its existing policy bundle without another per-task bump. Bundle, package,
+lock and packaged version mirrors remain 0.10.0; the ADR feature's remaining
+qualification gates are unchanged. Preserve immutable published history; no
+publication or adopter propagation is authorized by correcting documentation.
 
 Version 0.6.0 adds a native template-update skill and a managed adopter
 file, changing the supported adoption capability and ownership contract. It

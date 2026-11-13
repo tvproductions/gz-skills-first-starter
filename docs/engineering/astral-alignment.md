@@ -110,15 +110,19 @@ after exact development sync. Keep runtime, extras and dev/hygiene groups distin
 
 The [baseline policy](../baseline-policy.md) still selects Python 3.14.x, with
 the evidenced XPPython3 host exception. Align the actual interpreter, exact pin,
-`requires-python`, Ruff target, ty target and CI. Pin uv itself for reproducible
-resolution; document allowed tool families and verify freshness within them.
+`requires-python`, Ruff target, ty target and CI. Record uv's tested selection
+for reproducible resolution; verify latest stable tool releases across families and migrate under
+the [completed-maintenance binding](../baseline-policy.md#dependency-maintenance-means-completed-migration).
+The uv executable retains its minimum-only compatibility rule; record its tested
+selection separately from the support floor.
 Do not adopt preview features solely to maximize the number of enabled options.
 
 This checkout selects uv/uv_build 0.13.x, Ruff 0.17.x, pre-commit 4.x,
 complexipy 8.x and Lizard 1.24.x. Exact tested selections live in configuration
 and locks. These execution selections do not exempt newer stable tool families
-from review under the latest-tooling requirement. Required ty uses its current 0.0.x beta family because no stable
-release exists; the starter maintainer owns this exception and must revisit it
+from migration and verification during authorized maintenance under the
+latest-tooling requirement. Required ty uses its current 0.0.x beta family because
+no stable release exists; the starter maintainer owns this exception and must revisit it
 at stable release or the next scoped maintenance. See the
 [migration receipt](../evidence/2026-10-18-astral-alignment.md).
 

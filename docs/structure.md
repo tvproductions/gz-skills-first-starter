@@ -137,11 +137,17 @@ for both standard and X-Plane dependency baselines under the
 [scanning contract](baseline-policy.md#scheduled-dependency-scanning). This does
 not install a scanning service or impose a schedule in adopting projects.
 
-Checking is distinct from updating. Preserve exact pins after verification;
-Python stays current within the approved 3.14.x or host-bound 3.12.x family;
-family changes require separate review. An exact patch records a verified run,
-not a permanent adopter baseline. Adopters
-reconcile template changes against their own app dependencies, overrides,
+The [completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
+requires the starter and every adopter to fully migrate the requested maintenance
+scope to the most current stable dependencies/tools, including newer stable
+families, and verify it. A bare `gzs-update-dependencies` invocation uses update
+mode, overriding its portable review-only default here. Do not stop at a review
+or offer to apply; only explicit check/freshness/assessment/no-changes requests
+are review-only. Preserve exact pins after verification; Python stays within its
+N-1 or evidenced embedded-host family. Review tool-family compatibility and adapt
+integration during the authorized migration; retain older selections only for
+demonstrated incompatibility with owned and dated exception evidence. An exact
+patch records a verified run, not a permanent adopter baseline. Adopters reconcile template changes against their own app dependencies, overrides,
 instructions and native manager state. New template guidance neither silently
 waives existing requirements nor automatically migrates a project. Follow
 [stack maintenance](adoption.md#maintaining-the-adopted-stack).

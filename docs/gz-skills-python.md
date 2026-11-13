@@ -34,7 +34,7 @@ and actual discovery separately in each adopter.
 | Implement a selected simplification | `gzs-pythonic-pattern-apply` | One authorized candidate, with unchanged before/after behavior evidence and relevant verification |
 | Review or fix operating-system assumptions | `gzs-cross-platform-python` | Paths, explicit text encodings, subprocesses, temporary resources, cleanup and tests across Windows/macOS/Linux; includes deterministic portability checks |
 | Inspect or choose a project profile | `gzs-project-setup` | Explicit lite/heavy choice and Python environment guidance; adopted project policy takes precedence over defaults |
-| Check freshness or update a runtime/toolchain/template/plugin | `gzs-update-dependencies` | Separate review/update modes, approved family preservation, project additions and exception handling; review mode changes no environments or pins |
+| Check freshness or update a runtime/toolchain/template/plugin | `gzs-update-dependencies` | Starter binding selects completed latest-stable migration across families for maintenance/bare invocation; only explicit check/freshness/assessment is review-only; preserve Python N-1/host policy, product requirements and evidenced exceptions |
 | Survey a bounded source population for debt | `gzs-tech-debt-review` | Existing project probes and direct source/history review; reports missing coverage rather than inventing a clean assessment |
 | Review an implementation diff | `gzs-change-review` | Evidence-backed defects and maintainability/compatibility risks in a bounded change; not a style rewrite or broad modernization audit |
 

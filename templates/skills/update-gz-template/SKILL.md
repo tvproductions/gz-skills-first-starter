@@ -28,7 +28,16 @@ resolve, install or modify the adopter in review mode. A request to upgrade
 authorizes the scoped template reconciliation and necessary verification; use
 that authorization without asking again for routine migration steps. Keep
 runtime/tool/plugin refreshes separate unless required by the reviewed target
-policy or included in the user's request. With no adoption record, identify
+policy or included in the user's request. For broader dependency/tool maintenance,
+follow the starter's mandatory
+`docs/baseline-policy.md#dependency-maintenance-means-completed-migration` binding:
+maintenance and bare `gzs-update-dependencies` invocations require completing the
+most current stable migration across newer families and verification, overriding
+the portable skill's review-only default here. Only explicit check, freshness,
+assessment or no-changes requests are review-only. Do not end a broader maintenance
+request with this narrow template assessment or an offer to apply. Preserve
+Python N-1/embedded-host policy, product requirements and demonstrated, owned,
+dated compatibility exceptions. With no adoption record, identify
 first adoption and follow the starter's greenfield/brownfield entry instead of
 pretending this is an upgrade. A gzkit project retains its separate ecosystem.
 

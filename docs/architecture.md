@@ -111,10 +111,16 @@ to `gzs-update-dependencies`, and dependency-risk assessments route to
 `gzs-dependency-risk-audit`. This starter supplies release-family policy, project
 bindings, bundle/catalog consistency and preservation requirements. It does not
 add a parallel maintenance skill or generic freshness reporter. The pinned
-gz-skills v0.8.0 supplies freshness-only assessment and template/plugin inventory
-through its maintenance skill. Starter bindings preserve approved Python policy
-over upstream profile defaults; no setup invocation or profile selection follows
-from changing the bundle pin.
+gz-skills v0.8.3 supplies freshness-only assessment and template/plugin inventory
+through its maintenance skill. The starter's mandatory
+[completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
+overrides that portable skill's review-only default for this starter and every
+adopter: maintenance and bare maintenance-skill invocations complete the most
+current stable migration across families and verification. Only explicit
+check/freshness/assessment/no-changes requests remain review-only. This policy
+does not modify upstream workflows or unrelated consumers. Starter bindings
+preserve approved Python policy over upstream profile defaults; no setup
+invocation or profile selection follows from changing the bundle pin.
 
 Scheduled dependency scans and update PRs are permitted for this repository's
 standard and X-Plane baselines under the

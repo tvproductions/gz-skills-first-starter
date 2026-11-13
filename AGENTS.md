@@ -1,5 +1,14 @@
 # GZ skills-first starter
 
+**MANDATORY: dependency maintenance MUST complete migration to the most current
+stable versions of every in-scope dependency/tool, including newer families.**
+A bare `gzs-update-dependencies` invocation uses update mode, overriding its
+portable review-first default. Do not stop at recommendations or an offer to
+apply. Review-only requires an explicit check, assessment or no-changes request.
+Apply this contract to this starter and every adopter in both lanes; preserve
+the Python-family, product-contract and evidenced exception rules in
+`docs/baseline-policy.md#dependency-maintenance-means-completed-migration`.
+
 Adopter instructions are mandatory engineering requirements. Use imperative
 language, explicit completion conditions and required evidence. Agents MUST NOT
 substitute convenient defaults, bypass failed checks or claim acceptance from
@@ -145,10 +154,11 @@ maintenance. The starter's exact patch is not a permanent adopter requirement.
 Inspect/test XPPython3's embedded runtime separately; host limitations require
 evidence and a revisit condition rather than an independent runtime replacement.
 An installed interpreter satisfying `3.14` is not evidence of freshness. Keep
-exact package pins/locks after verification; family changes require separate review.
+exact package pins/locks after verification; review tool-family compatibility
+within the authorized migration, preserving the explicit Python-family policy.
 For the uv executable, declare a minimum supported version without an upper
 bound instead of an exact requirement. This checkout accepts uv >=0.13.5;
-CI's 0.13.6 is a tested reference, not an exclusive caller requirement. Permit
+CI's 0.13.7 is a tested reference, not an exclusive caller requirement. Permit
 newer uv releases without a version-only blocker, record actual provenance and
 verify affected behavior. Keep locked execution, Python pins and package/backend
 locks separate from uv executable compatibility. A supported older uv is not a
@@ -164,11 +174,19 @@ reporter. The pinned gz-skills v0.8.3 supplies freshness-only review and
 starter/template/plugin inventory through `gzs-update-dependencies`; review mode
 leaves pins and environments unchanged. Preserve this starter's approved Python
 family and retired-tool decisions over upstream profile defaults.
-End freshness reviews with a concrete recommended upgrade batch and an explicit
-offer to apply it. Strongly recommend supported policy-compliant updates; name
-targets, benefits, compatibility risks and required checks. An inventory alone
-is incomplete. Perform already-authorized updates without asking again. Explain
-evidenced deferrals, and state when no upgrade is needed.
+For this starter and every adopter, dependency/tool maintenance means fully
+migrating the requested scope to the most current stable upstream versions,
+including newer stable families, and completing the required verification.
+A bare `gzs-update-dependencies` invocation uses update mode under this explicit
+binding, overriding its portable review-only default. Do not stop at a review,
+recommendation or offer to apply, or ask again for ordinary migration steps.
+Review-only is reserved for an explicit check, freshness review, assessment or
+no-changes request. Follow
+`docs/baseline-policy.md#dependency-maintenance-means-completed-migration`:
+reconcile constraints, locks, configuration and integration; retain older versions
+only for demonstrated incompatibility with owned, dated exception evidence.
+Preserve Python N-1/embedded-host policy and product requirements; report blocked
+migration and acceptance gaps honestly. No publication or activation is implied.
 
 The routine standard is Ruff check/format, ty, unittest (never pytest), and
 pre-commit running those checks. Favor strict, reviewed lint rules. On-demand
@@ -270,9 +288,12 @@ plugins, or modify dependent repositories as an incidental sync action.
 ## Starter tooling maintenance
 
 Maintain this repository's own execution environment, not only adopter guidance.
-Perform a read-only freshness review before preparing each starter release, at
-scoped tool upgrades and during quarterly on-demand maintenance. Use discovered
-`gzs-update-dependencies` in review mode, following
+Complete dependency/tool migration before preparing each starter release, at
+scoped tool upgrades and during quarterly on-demand maintenance. Check official
+live releases first, then apply the most current stable versions across families
+and verify the requested scope. Use discovered `gzs-update-dependencies` in update
+mode unless the user explicitly requested only a check/freshness/assessment,
+following
 `docs/engineering/python.md#periodic-dependency-freshness-review` and
 `docs/adoption.md#maintaining-the-adopted-stack`. If the skill is unavailable,
 follow those documented procedures directly and report that limitation.
@@ -291,9 +312,10 @@ identify retained pins explicitly rather than describing unreviewed tooling as
 current. Stale, missing or unverifiable required freshness evidence blocks
 release/adoption acceptance. The starter maintainer owns this decision; invoking
 gz-skills does not discharge it. A receipt must name the actual candidate inputs
-and be refreshed for each release. Review mode leaves pins, locks and environments unchanged.
+and be refreshed for each release. Explicit review-only requests leave pins,
+locks and environments unchanged; ordinary maintenance must finish the migration.
 
-When an update is authorized, reconcile affected metadata, lock, Python/tool/CI
+During the authorized migration, reconcile affected metadata, lock, Python/tool/CI
 pins and guidance together through the owning tools. Plugin changes also update
 both catalogs; regenerate changed wheel resources. Run the documented repository
 gate and changed-tool compatibility checks on the actual pinned interpreter.
