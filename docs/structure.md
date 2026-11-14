@@ -80,11 +80,13 @@ This starter dogfoods the upstream development workflows through its checked-in
 alternative `gz-skills@gz-skills` source here to avoid duplicates, and keeps
 Backplane disabled. User defaults and unrelated projects retain their settings.
 
-The development configuration uses the published 0.8.0 preparation Git marketplace at
-`f176c5e29e61fad0b792d9cd6012f3ab8d95f5c5`. Its catalog matches this checkout's
-catalog and selects SP 7.0.1 and gz-skills 0.8.3. Reconcile this development
-marketplace ref when reviewing future catalog changes; do not assume a local
-catalog edit updates the pinned development source. A relative local marketplace
+The development configuration uses the immutable November 14 maintenance catalog
+at `23970c1cb2dd406159a8d1cb07d660e2cbdb4e35`. Its catalog matches this checkout's
+catalog and selects SP 7.0.2 and gz-skills 0.10.1, with Backplane 0.2.0 disabled.
+The binding commit follows its catalog commit to avoid a self-referential SHA.
+Reconcile this development marketplace ref when reviewing future catalog changes;
+a local catalog edit alone does not update the pinned development source.
+A relative local marketplace
 source of `.` failed when launching the CLI from `src/` on the verified host;
 the pinned Git source works from both locations without machine-specific paths.
 
