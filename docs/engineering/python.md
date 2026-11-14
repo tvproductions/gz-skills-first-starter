@@ -22,6 +22,13 @@ exact interpreter pin and required uv version.
 
 ## Runtime and version-aware decisions
 
+Apply [risk-based verification](verification-policy.md) to check scope, test cost
+and repetition. At session start, check freshness once and flag maintenance;
+do not update pins/environments as an implicit startup action. Explicit
+maintenance requests retain their complete-migration contract. Central workspace
+tool configuration remains in the root `pyproject.toml`; member package metadata
+does not justify a second Ruff/ty/uv configuration, lock or environment.
+
 ### Latest stable within the selected family
 
 Baseline tooling must use its latest stable release across tool families. An old

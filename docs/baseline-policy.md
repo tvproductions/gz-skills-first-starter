@@ -40,6 +40,13 @@ requirement for every adopter.
 
 ## Release planning
 
+Verification cadence is governed by [risk-based verification](engineering/verification-policy.md).
+Keep strict Astral configuration and meaningful quality evidence while scoping
+local work to the diff, owner and consumers. A full workspace gate is an
+integration/risk checkpoint, not a mandatory consequence of every small edit.
+Session-start freshness is a bounded check; migrations belong in separately
+authorized maintenance. This applies to both lanes and the starter itself.
+
 Adopters version their own public product contract using `MAJOR.MINOR.PATCH`:
 after 1.0, incompatible changes require major, compatible additions minor, and
 compatible fixes patch. During 0.x, additions and changes requiring reconciliation

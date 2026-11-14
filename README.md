@@ -22,6 +22,14 @@ usefulness to other adopters is welcome, rather than a reason to dilute them.
 
 This repository is the bundle catalog, adoption tool, and guidance home.
 
+The starter supports central uv workspaces: shared tool settings live in the root
+`pyproject.toml`, with one root lock/environment and package metadata in members.
+[Risk-based verification](docs/engineering/verification-policy.md) keeps local
+checks proportional to the diff and affected owners, reserves full gates for
+integration/broad risk, and rejects ceremonial test growth. Session startup
+checks dependency freshness; separately authorized maintenance performs updates.
+These rules are carried in the generated adopter instructions for pending 0.10.0.
+
 Pending **0.10.0** implements mandatory
 [ADR policy](docs/engineering/architectural-decisions.md) and
 [`--adr-policy link|local`](docs/adoption.md#architectural-decision-policy-access)

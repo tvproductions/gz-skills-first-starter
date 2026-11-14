@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+- Add maintainer-directed risk-based verification to pending 0.10.0: affected/
+  focused local checks, full integration/broad-risk gates, proportional process
+  and meaningful test-cost requirements. Clarify central uv workspaces with
+  root `pyproject.toml` tool settings, one lock/environment and member package
+  metadata; prohibit competing Astral configuration files. Session startup is
+  a bounded freshness check, with migration in separately authorized maintenance.
+  Bind both adopter lanes and the starter; refresh generated instructions.
+  Scope starter hooks to changed Python files and relevant helper inputs, and
+  reserve full CI for PR/main/manual checkpoints. Preserve existing component
+  pins and pending ADR qualification/release gaps; no automatic adopter update.
+
 - Clarify that adopter agents accept **starter** and **starter template** as
   conversational names for `gz-skills-first-starter`, including template update
   and review requests. Resolve the recorded adoption source, retain canonical

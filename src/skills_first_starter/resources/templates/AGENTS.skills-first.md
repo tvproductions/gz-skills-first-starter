@@ -119,6 +119,37 @@ configuration preservation is not a permanent exemption. Record constrained
 exceptions with evidence, an owner and revisit condition. Configuration-only
 requests report remaining refactoring instead of silently performing it.
 
+In a central uv workspace, the root `pyproject.toml` owns shared tool settings,
+workspace membership and dependency groups; one root `uv.lock` and `.venv` serve
+the members. Member `pyproject.toml` files own package metadata and explicit
+dependency edges. Do not create per-member locks/environments or competing
+`uv.toml`, `ruff.toml`, `.ruff.toml` or `ty.toml` configurations. Reconcile settings
+into the root `pyproject.toml`. Deliberately independent host/runtime projects
+need an explicit documented boundary rather than accidental workspace splitting.
+
+Apply `docs/engineering/verification-policy.md` from the reviewed starter source.
+Select checks from the diff's behavior, owning package and affected consumers.
+Documentation-only work needs review, not code tests. Small reversible layout,
+markup or wording changes use changed-file checks, relevant existing tests and
+invented rendered review where applicable. Full gates belong to broad/uncertain
+changes, verification/dependency/workspace changes and integration/release
+checkpoints; do not run every workspace suite at every local commit.
+Project hooks must support affected/focused checks and keep full checks directly
+runnable. This scope policy overrides generic imported workflow defaults demanding
+a full suite, fresh plan, independent review, negative control or installed-build
+replay for every edit. Use stronger evidence for consequential behavior or changed
+delivery boundaries. Add tests only for a plausible defect and observable result;
+reuse owning oracles, avoid ceremonial/duplicate tests and repeated workflow
+fixtures. Reuse passes while relevant inputs remain unchanged. Record scope and
+limits briefly in existing project records, not a new per-edit evidence system.
+
+At work-session start, perform a bounded dependency/tool/component freshness
+check against official sources, reusing applicable recent dated evidence. Flag
+stale/unavailable results without rewriting pins, locks, environments or native
+plugin state. Startup is freshness-only; migrate in a separately authorized
+maintenance pass under the completed-migration binding. Do not let startup
+checking turn every feature task into dependency migration or repeated scans.
+
 Read project AGENTS.md and linked authorities first. This project records sources
 in `.skills-first/bundle.lock.json`. The starter owns only the narrow
 `update-gz-template` skill; it supplies stack configuration, provenance and project

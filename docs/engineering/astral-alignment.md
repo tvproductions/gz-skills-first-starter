@@ -78,8 +78,10 @@ See [publishing guidance](https://docs.astral.sh/uv/guides/package/).
 `pyproject.toml` is the authority for Python metadata, supported Python range,
 dependencies, build backend, entry points and supported tool configuration.
 Use `[project]`, `[build-system]`, `[project.scripts]`, `[dependency-groups]`,
-`[tool.uv]`, `[tool.ruff]` and `[tool.ty]` as applicable. Avoid duplicate Ruff,
-ty or uv configuration files with conflicting precedence. Use standardized
+`[tool.uv]`, `[tool.ruff]` and `[tool.ty]` as applicable. Keep shared Astral tool
+settings in the root `pyproject.toml`; do not add competing `uv.toml`, `ruff.toml`,
+`.ruff.toml` or `ty.toml` files. Reconcile adopter settings into that authority.
+Use standardized
 dependency groups for development tools; `tool.uv.dev-dependencies` is a legacy
 field. Runtime requirements, optional features and development groups have
 distinct purposes. See [dependency management](https://docs.astral.sh/uv/concepts/projects/dependencies/),
@@ -156,6 +158,17 @@ does not establish enforcement; installing hooks locally and observing CI are
 separate evidence. No new backlog system, scheduler or upstream skill is added.
 
 ## Workspaces
+
+Central workspaces with multiple subprojects are a supported primary layout.
+Use one root `pyproject.toml` for shared uv/Ruff/ty settings, workspace membership
+and dependency groups, with one root `uv.lock` and `.venv`. Member `pyproject.toml`
+files provide package metadata/build declarations and explicit dependency edges;
+they do not require competing tool configuration or per-member locks/environments.
+Independent host/runtime baselines remain deliberately separate only under an
+explicit documented boundary. Follow [risk-based verification](verification-policy.md):
+member edits do not automatically require rerunning all members' suites or
+rebuilding the workspace. Broaden for affected consumers and shared uncertainty;
+verify built members independently at actual packaging/release boundaries.
 
 Use uv workspaces when interconnected packages in one repository can share a
 resolution and environment. Each runtime member owns its `pyproject.toml` and `src/`

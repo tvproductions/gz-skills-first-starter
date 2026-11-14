@@ -20,6 +20,17 @@ language, explicit completion conditions and required evidence. Agents MUST NOT
 substitute convenient defaults, bypass failed checks or claim acceptance from
 configuration alone. Keep missing requirements and evidenced exceptions explicit.
 
+Use `docs/engineering/verification-policy.md` for this starter and both adopter
+lanes. Scope local checks to changed files, owning behavior and affected consumers;
+keep full gates for broad/uncertain changes and integration/release checkpoints.
+This overrides generic workflow defaults requiring a full suite, fresh plan,
+review or build/install replay for each small edit. Add tests for meaningful
+defects and repeat passes only when relevant inputs/risk change. Keep Astral
+settings centralized in root `pyproject.toml`, including for workspaces.
+At session start, make a bounded freshness check and flag needed maintenance;
+migrate in a separately authorized maintenance pass. Startup is a freshness-only
+context, not a bare dependency-maintenance invocation.
+
 Use direct `gh` commands for GitHub operations and direct `git` commands for
 repository operations. Do not wrap routine CLI calls in Python. Use Python when
 substantive processing is actually needed, through the prescribed uv-managed
@@ -231,7 +242,8 @@ project files, explicit profile choices, and native manager state. A config file
 or successful manifest validation cannot prove fresh-session skill discovery.
 Report unverified host behavior and Backplane pre-release limitations explicitly.
 
-Checks: `uv sync --locked --all-groups`, `uv run --locked pre-commit run --all-files`,
+Full integration/release checks: `uv sync --locked --all-groups` when environment
+state requires it, `uv run --locked pre-commit run --all-files`,
 `uv run --locked skills-first-starter validate`, `uv build --no-sources`, and
 `uv run --locked python tools/verify_distribution.py`. The routine hooks run only
 Ruff check/format, ty and unittest. Run the checker CLI tests explicitly after
