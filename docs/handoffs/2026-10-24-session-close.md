@@ -234,6 +234,22 @@ the final commit's own CI after push; prior release CI does not cover this chang
 
 ## November 8 agreed ADR practice and next release scope
 
+November 14 scope reconciliation: the maintainer explicitly selected a
+[starter-wide cognitive qualification deferral](../engineering/cognitive-integration.md#starter-wide-qualification-deferral).
+Include that acceptance-policy change, adopter instructions and generated copy
+in pending **0.10.0 / minor**, alongside the existing ADR/policy work. Published
+baseline remains 0.9.0; bundle/package/lock/resource versions remain 0.10.0.
+The policy retains ceiling 15 and eventual qualification, permits conditional
+progression while shared-engine delivery is missing, and forbids strict
+conformance claims. Completion evidence for this slice is consistent policy and
+acceptance guidance, resource parity and the applicable existing helper checks;
+it is not cognitive measurement or completion of the remaining ADR/trio gates.
+The new independent gzkit-derived engine's design, implementation, consumer
+migrations and PyPI publication remain separately scoped future work, excluded
+from this release's required engine-delivery outcome. No other release gate is
+waived and no publication is authorized. See the
+[continuation](2026-11-14-opinionated-cli-design-discussion.md#november-14-continuation-cognitive-policy-decision).
+
 Published baseline: **0.9.0**, immutable annotated `v0.9.0` tag
 `4e4a66d222488194b599de4f2ccef9ba291ea881`, release commit
 `3f76acf0038b030bf5abd85ce4a419e890d3e420`. Both exact-commit CI jobs passed

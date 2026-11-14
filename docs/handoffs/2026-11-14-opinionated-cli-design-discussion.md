@@ -1,5 +1,64 @@
 # Opinionated enforcement CLI — design-discussion handoff
 
+## Evening wrap-up — resume the paired drafts
+
+Latest maintainer authority, November 14: update handoffs and Git sync **all
+three** repositories (GZ Starter, gz-skills and Superpowers Backplane), with
+normal verification/hooks. Preserve draft status; implement no new design and
+publish no release. This supersedes earlier sibling-edit/commit limitations in
+the historical entries below. Work remains local; no cloud environment change.
+
+**GZ Starter** is the selected short display/conversational name, with **starter**
+and **starter template** retained. Canonical `gz-skills-first-starter`, package,
+command and skill identities remain unchanged. No canonical rename/adopter
+migration or alternative name is selected. Incorporate any further final
+maintainer item received during save-point preparation; do not invent the
+unspecified item.
+
+Resume by reading the
+[starter contract draft](../superpowers/specs/2026-11-14-lite-record-and-commit-contract-draft.md)
+and the paired Backplane draft at repository `tvproductions/superpowers-backplane`,
+`docs/superpowers-backplane/specs/2026-11-14-lite-record-and-commit-alignment-design.md`.
+They are draft design slices, not approved implementation specs, plans or ADRs.
+The next review is narrative binding, field-level schemas, Backplane mapping
+gaps, schema upgrades, migration proof and prospective commit-policy enforcement.
+Obtain separate approval of identified ADR editions before dependent work.
+
+Settled direction: JSON sidecars own structured facts; Markdown owns narrative
+and generated views; CHANGELOG stays hand-written. Use Git history and bounded
+local recovery, with no SQLite, Dolt or permanent ledger. Keep lite and Backplane
+semantics aligned, explicit promotion and one owner per field. A typed JSON
+commit record is selected direction; the `Starter-Record` spelling, exact model
+and integration mechanism remain proposed. Preserve four routine checks.
+Superpowers remains the feature inner loop; do no gzkit integration/work.
+
+Cognitive qualification is now a starter-wide documented deferral for both
+lanes, with ceiling 15 and eventual qualification intact, measurement UNKNOWN
+and no strict-conformance claim. The separate maintained engine project is
+selected for future design: small Python API plus CLI, eventual PyPI/uv
+distribution, MCP/plugin integration deferred. No engine project is created.
+
+Release accounting remains **0.9.0 -> pending 0.10.0 / minor** for existing
+starter policy work; new record-platform behavior is not silently added to that
+implementation scope. Backplane stays at published 0.2.0 and gz-skills at
+published 0.12.0; their documentation-only save points require no new versions.
+Current startup gaps remain explicit: starter selects gz-skills 0.11.0 while
+0.12.0 is published; installed/loaded sources differ. Backplane records SP 7.0.1
+and older tested tools. Maintenance and native scope repair remain separate.
+
+Verification and exact-commit CI results are recorded with the completed sync;
+do not substitute historical green runs or this draft record for actual remote
+arrival. Keep final normal hook results and CI links in the sync response rather
+than making an endless chain of receipt-only commits.
+
+Observed pre-commit save-point checks: uv 0.13.8 with managed Python 3.14.10;
+fresh fetch gives 0/0 main divergence; bundle/catalog and generated-resource
+checks pass; `uv build --no-sources` and isolated installed-helper verification
+pass. New source-independent artifacts are ignored local outputs, not published
+releases. Implementation, analyzer and tool inputs remain unchanged; earlier
+Ruff/format/ty passes cover those same inputs. Normal commit hooks and exact-final
+CI still supply their required checks. No deeper release acceptance is claimed.
+
 ## Resume here: review the design evolution before implementation
 
 The maintainer requested this handoff and ordinary Git synchronization so the
@@ -119,8 +178,10 @@ starter-specific runtime preferences into unrelated portable consumers.
 
 ### Six separate management artifacts
 
-The maintainer selected structured single-file artifacts in lite, with a standard
-schema, update rules and forward translation into SP-BP. The responsibilities are:
+The maintainer selected six readable management artifacts in lite, with a standard
+schema, update rules and forward translation into SP-BP. The later sidecar choice
+below places structured facts in JSON and narrative/generated views in Markdown.
+The responsibilities are:
 
 | Artifact | Owns |
 | --- | --- |
@@ -144,9 +205,11 @@ for external validation; do not invent a finalized requirement hierarchy or PRD
 storage/edition rule from that assent.
 
 **No JSON blocks embedded in Markdown.** The maintainer explicitly rejected that
-proposal. If the structured data warrants JSON, use a sidecar. Sidecar granularity,
-field ownership, canonical-data versus projection roles, and narrative binding
-remain open. Do not independently duplicate mutable facts across Markdown/JSON.
+proposal. The subsequent selected split makes JSON sidecars authoritative for
+structured facts and Markdown authoritative for narrative, with generated views
+of those facts. CHANGELOG.md remains hand-written. Sidecar granularity, exact
+field schemas and narrative binding remain open. Do not independently duplicate
+mutable facts across Markdown/JSON.
 
 Pydantic was evaluated as a promising Python schema/validation tool. The
 maintainer explicitly accepts Python-centric tooling and wants the best tools
@@ -232,15 +295,483 @@ backport, bundle/catalog validate and version. It does **not** implement these
 six-file schemas, record-management commands, acceptance enforcement or complete
 mode/schema upgrade tooling. Do not present a proposed CLI as already delivered.
 
+## November 14 continuation: cognitive policy decision
+
+The maintainer explicitly instructed in the continuation chat: “Make cognitive
+qualification a starter-wide documented deferral until the shared engine is
+delivered. Keep the ceiling and eventual qualification requirement, and don’t
+claim strict conformance. Then continue the design review.” The maintainer also
+identified the near-term need for a new maintained project extracting the engine
+from gzkit, ultimately published on PyPI and installable with uv. This paragraph
+is an agent transcription of the actual instruction, not ADR approval.
+
+The [current policy](../engineering/cognitive-integration.md#starter-wide-qualification-deferral)
+now applies to the starter and both adopter lanes: DEFERRED / measurement UNKNOWN,
+ceiling 15 retained, conditional progression without another adopter waiver for
+missing shared-engine delivery alone, and no strict-conformance claim. Other
+checks and known findings remain mandatory. Delivery triggers independent
+qualification and consumer corpus measurement, not automatic acceptance. The
+starter maintainer owns the deferral and revisits it at release preparation and
+candidate delivery. Existing adopter records require explicit reconciliation.
+This supersedes the unresolved cognitive choice below, not historical evidence.
+
+The independent engine is selected direction, not a created repository or an
+approved package/API design. Resolve its API/CLI boundary, extraction provenance,
+discovery correction, runtime support, maintenance and release contract before
+implementation. Preserve the existing independent qualification fixtures. Keep
+consumer ceilings, baselines, scope selection and release rules in consumers;
+do not pull gzkit lifecycle dependencies into the engine. Inspect live gzkit
+source before extraction; the October source observations are historical.
+
+The adopter's release-readiness report adds design inputs: fresh consumer
+resolution/installation, separately provisioned tools, actual host use,
+distribution-content review, onboarding/support and declared-channel publication
+verification. Its PyPI/RTD/Pages choices are product-specific examples, not a
+universal hosting mandate or publication authorization here. Distinguish runtime,
+consumer, candidate and publication readiness. Reassess versions at work closeout;
+do not mechanically increment per backlog item. Concrete shared release schema
+and gz-skills contribution changes remain to be designed.
+
 ## Remaining design questions, in suggested discussion order
 
-1. **Cognitive blocker:** remove/suspend it as a universal blocker until delivery,
-   or prioritize producing the shared qualified engine? The maintainer demanded
-   that we either skip or make it; no choice was finalized. The agent recommended
-   centrally removing unavailable qualification as a blocker, which remains a
-   recommendation. [Issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1)
-   was open/unscheduled. No threshold waiver, private scorer or extension of a
-   release-specific/adopter-specific exception is authorized by this handoff.
+### Continuation constraint: small tool and plugin investigation
+
+The maintainer compared the proposed engine with gz-mcp-lsp: a small, doable
+project filling an identified gap. Keep its first scope to extraction, proven
+discovery corrections, a usable interface, qualification and distribution; do
+not make the broader starter enforcement design a prerequisite. Library plus a
+thin CLI was initially the agent's recommendation. The maintainer subsequently
+directed: “API plus CLI is sufficient for the first release. Keep the extraction
+small and maintainable, defer MCP/plugin integration, and continue the design
+review.” This is an agent transcription; it selects the first-release boundary,
+not an unwritten API specification or ADR. Leave
+thresholds, baselines and release/lifecycle rules with consumers. A plugin, if
+selected, must call the same maintained tool rather than duplicate scoring.
+
+Official documentation checked November 14, 2026:
+
+- [Build skills](https://learn.chatgpt.com/docs/build-skills) still supports
+  standalone repository/user skills, while recommending plugins for reusable
+  distribution. This is a distribution direction, not evidence that all local
+  skills were migrated or retired.
+- [Package your plugin](https://developers.openai.com/plugins/build/plugins)
+  documents root Agent Plugins `plugin.json`/`mcp.json`, OpenAI extensions and
+  continued `.codex-plugin/plugin.json` compatibility. gz-skills already has a
+  Codex plugin; no new plugin is needed merely to retain its skill packaging.
+- [GPT migration](https://learn.chatgpt.com/docs/migrate-custom-gpts#step-1-convert-your-gpt)
+  explicitly converts custom GPT instructions into plugin skills. The
+  [September 11 release notice](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
+  announces that migration direction. These are possible explanations of the
+  remembered notice, not confirmation of an account-specific migration.
+- [Plugin hooks](https://developers.openai.com/plugins/build/plugins#bundled-mcp-servers-and-lifecycle-hooks)
+  are documented for manually installed Codex desktop plugins; hook-bearing
+  plugins are excluded from the public plugin directory. Do not equate PyPI,
+  repository-marketplace availability and public-directory eligibility.
+- [Hook coverage](https://learn.chatgpt.com/docs/hooks#tool-coverage) includes
+  shell/unified exec, apply_patch, MCP and most local function tools, but excludes
+  hosted paths and permits specialized opt-outs. It is not complete enforcement.
+  [PreToolUse](https://learn.chatgpt.com/docs/hooks#pretooluse) supports explicit
+  denial/exit 2; unsupported decision shapes may report an error and continue.
+  Any starter hook adapter therefore needs actual supported-host positive and
+  negative tests; installation or skill activation alone cannot prove enforcement.
+
+Local read-only observation: Codex CLI 0.169.0 exposes plugin management. Its
+local listing reports enabled starter-marketplace gz-skills 0.10.1 despite the
+checkout's selected 0.11.0; the separate 0.12.0 copy is disabled here. It also
+reports two enabled Superpowers sources. The remote catalog query failed in the
+sandbox, so the listing is local evidence only. Loaded session guidance, desired
+configuration, installed revisions and scope remain distinct. No installation,
+activation repair or maintenance was performed by this investigation.
+
+Selected engine boundary: independently usable PyPI library/CLI, with MCP and
+plugin integration excluded from its first release. A future project-scoped
+Codex adapter remains deferred. Plugin schema migration, hook adapters and
+public-directory submission remain proposals. This does not defer the broader
+starter CLI ownership/record design discussion.
+
+Observed verification for the policy slice: uv 0.13.8 with managed Python
+3.14.10; all four existing pre-commit hooks pass (Ruff check/format, ty,
+unittest). Bundle/catalog validation and generated-resource parity pass. All
+182 concrete relative Markdown file targets across the changed authoritative
+documents exist; the two existing ADR template variables remain intentionally
+unrendered. Bundle/package/lock/packaged-bundle versions agree at 0.10.0.
+No analyzer implementation or threshold changed; no new tests, build/install
+replay or cognitive qualification result is claimed. Later handoff-only prose
+uses those unchanged-input checks plus diff/reference review. Changes remain
+local and uncommitted; no Git sync, release or companion edit was requested.
+
+### Selected structured-record and narrative split
+
+The maintainer explicitly directed: “That split makes sense. Let's use JSON
+sidecars for structured facts and Markdown for narrative and generated views.
+Keep CHANGELOG hand-written, and continue the design review.” This is an agent
+transcription of the continuation chat and selection of the approach, not approval
+of a completed specification or an identified ADR edition.
+
+Use sidecars as the authority for structured records associated with
+REQUIREMENTS.md, BACKLOG.md, ROADMAP.md, WORK.md and RELEASES.md. Markdown owns
+explanatory prose and presents generated views of those records. Each mutable
+fact has one authoritative home. Keep CHANGELOG.md manually curated; it does not
+need its own sidecar in the initial design. Generated content does not confer
+approval, evidence sufficiency or publication authority.
+
+The selected split must preserve the six responsibilities above and avoid
+multiple editable copies of status, criteria or release membership. Exact field
+ownership, filenames/location, schemas, generated-section markers, editing and
+conflict/recovery behavior remain design work. The earlier walkthrough proposed
+one sidecar per structured artifact and clearly marked generated sections, but
+the maintainer's response does not establish an unwritten storage/API contract.
+
+Continue review with how a normal authorized update changes structured facts
+and refreshes their views, how manual edits are reconciled, and how a release
+decision is distinguished from task completion. Keep the design independent of
+cloud execution; the maintainer selected local work for now. GitHub/local/cloud
+coordination was discussed as a possible future Git workflow, with no cloud
+environment or settings change authorized.
+
+This continuation records design only. It does not implement schemas, record
+commands, rendering or migration and does not expand the pending 0.10.0 release
+into the future enforcement platform. Reuse the prior unchanged-input checks;
+review this prose diff and references under the verification policy.
+
+### Ledger/storage sidebar and Backplane alignment review
+
+The maintainer raised JSONL event history and SQLite as alternatives to the
+selected JSON sidecars, emphasizing a small framework operating in gzkit's
+spirit without reproducing its ledger/lifecycle architecture. This was a design
+question, not selection of JSONL, SQLite or an event ledger. The maintainer then
+clarified that lite may remain a permanent choice and heavy means adopting
+Backplane; both representations must stay aligned. Backplane may receive useful
+requirement-structure improvements from this joint design. These are agent
+summaries of the actual continuation chat, not approval of a specification or
+identified ADR edition. Do not label installed plugin presence a mode transition.
+
+Read-only review covered Backplane main
+`05505f8009989eb7514ec62750e33c78bc40abf9`; its local worktree was clean and a
+direct `gh api repos/tvproductions/superpowers-backplane/commits/main` query
+confirmed the same remote revision. Reviewed its AGENTS/session-entry material,
+bootstrap design/plan, modes, governance, native issue contract, repository
+checkpoint/recovery and checkpoint format. The November 7 release-doctrine
+discussion remains a proposal; do not present its authority transfer or new
+release-check schema as implemented. No Backplane files, state, issues or native
+installation were changed. Recorded SP 7.0.1 there differs from current SP 7.0.2;
+this review performs no dependency maintenance or compatibility qualification.
+
+#### Observed Backplane contract
+
+- [Governance ownership](https://github.com/tvproductions/superpowers-backplane/blob/05505f8009989eb7514ec62750e33c78bc40abf9/docs/superpowers-backplane/governance.md#ownership-and-authority)
+  assigns live work scope/state/relationships to native GitHub issues, design and
+  execution to approved artifacts, and satisfaction to immutable accepted
+  evidence. Heavy is GitHub plus project documents/evidence, not exclusively
+  GitHub issue fields.
+- Stable requirement/criterion keys carry governing identity, revision and
+  wording. Coverage is many-to-many. SATISFIED/UNSATISFIED/UNKNOWN describe
+  satisfaction; deferred/excluded describe scope disposition separately. Native
+  lifecycle has six open states and distinct completed/not-planned closure.
+  Parentage, dependency order and priority have different meanings.
+- [Portable checkpoint](https://github.com/tvproductions/superpowers-backplane/blob/05505f8009989eb7514ec62750e33c78bc40abf9/docs/superpowers-backplane/governance.md#portable-repository-record-and-working-state)
+  pairs `.sp-bp/state.md` with `.sp-bp/github-state.json` under
+  `sp-bp-checkpoint/v1`. It is a dated read-only capture, not an editable offline
+  backlog or event ledger. Do not reuse its capture/pagination schema unchanged
+  as the lite source-of-truth schema.
+- Capture stages candidate files and a recovery receipt in ignored local work.
+  One verified Git commit accepts the exact pair. Filesystem replacement and
+  remote capture are explicitly not atomic. Recovery checks ownership and stops
+  on intervening edits. This is a directly relevant precedent for bounded
+  recovery without an authoritative permanent transaction ledger.
+- [Current modes](https://github.com/tvproductions/superpowers-backplane/blob/05505f8009989eb7514ec62750e33c78bc40abf9/docs/superpowers-backplane/modes.md)
+  preserve existing lite authorities and reserve ongoing Backplane management
+  for heavy. Turning the starter's six-file proposal into a shared supported
+  contract requires explicit reconciliation in Backplane's mode/governance
+  authority; today's prose does not already ship that lite implementation.
+
+#### Common meaning and storage boundary — design target
+
+Design a Backplane-owned semantic contract with an explicit lite representation: stable
+identities, criterion definitions/revisions, typed relationships, lifecycle
+meaning, scope dispositions, exact-input evaluation references and release
+scope/authority distinctions. The starter implements its opinionated file-based
+binding and enforcement. Keep native GitHub IDs and capture metadata in their
+adapters; do not invent native IDs before migration or require a speculative
+shared runtime package merely to publish the contract.
+
+| Lite artifact | Heavy correspondent to preserve |
+| --- | --- |
+| REQUIREMENTS.md + structured records | Approved governing docs/issues, stable statement/criterion keys, revisions and coverage |
+| BACKLOG.md + structured records | Native issues, issue-owned bounded scope, parent/dependency relationships and lifecycle |
+| ROADMAP.md + structured records | Capability/outcome decomposition, target groupings/milestones and derived views; not inferred execution order |
+| WORK.md + structured records | Approved issue-bound plans, actual execution/PR state, evidence and continuation artifacts |
+| RELEASES.md + structured records | Selected scope and project-owned release authority, native target grouping and actual release publication; full shared release-doctrine implementation remains pending |
+| Hand-written CHANGELOG.md | Remains a repository document with human-facing history |
+
+At explicit promotion, preview the local-to-native identity/relationship mapping,
+preserve wording/revisions/approvals/evidence and unresolved scope, verify the
+actual transfer, then retire local authority for fields now owned by GitHub.
+Remaining Markdown/JSON views become projections/captures where appropriate.
+No permanent dual-master synchronization or local ledger is implied. Keep the
+mapping/history inspectable. No one-to-one mapping from every Markdown file to
+one GitHub object is necessary or desirable.
+
+#### Storage alternatives and evidence
+
+1. **Current-state JSON + Markdown, Git history and bounded local recovery**
+   was recommended and subsequently selected below. Validate schemas, cross-record references,
+   criterion/evidence applicability and generated views directly. Stage a
+   coherent candidate, guard concurrent changes, and use an operation-local
+   recovery receipt only as needed. Refuse acceptance of interrupted/partial
+   updates; recovery must not overwrite independent edits. Agree exact
+   durability, reader/writer and acceptance semantics before implementation.
+   Do not require one Git commit or full quality gate for every field edit.
+2. **Permanent JSONL event ledger** adds ordering/history if events become the
+   authority, but then needs event schemas, replay, projections, evolution and
+   merge semantics. If sidecars remain authoritative, a ledger adds another
+   representation to reconcile. Events generated from the same asserted facts
+   are not independent evidence of semantic truth or human approval. Calling
+   the file `.log` does not reduce those responsibilities.
+3. **SQLite authority** provides database transactions, but makes the selected
+   JSON records exports/projections and changes the source-of-truth decision.
+   Database-to-files/GitHub publication still needs its own recovery/reconciliation.
+   A disposable rebuilt query index could be considered only for demonstrated
+   need; none is established. Do not add one in anticipation.
+
+SQLite is not intrinsically unsuitable for a local tool. Its default is a
+rollback journal; WAL is optional and adds associated files and checkpointing,
+with same-host shared-memory constraints. Those are separate from Git's lack of
+semantic merging of a binary database. See the
+[official WAL documentation](https://sqlite.org/wal.html) and
+[atomic-commit explanation](https://sqlite.org/atomiccommit.html).
+Yegge's [Beads 0.57.0 announcement](https://github.com/gastownhall/beads/discussions/2228)
+identifies Dolt replacing SQLite and JSONL primary storage. It does not establish
+that ordinary SQLite WAL alone caused that choice; do not turn remembered
+motivation into an asserted historical fact or adopt Beads' storage stack here.
+
+The recommended distinction is observable behavior: temporary recovery material
+for one incomplete write, Git history for committed changes, and canonical
+records/evidence for product state. There is no permanent append-only event
+authority or replay engine in that recommendation. Local locks do not coordinate
+separate machines; branches/clones integrate through Git, followed by semantic
+validation. Finish/recover a local incomplete write before normal synchronization;
+never rely on ignored scratch as cross-machine continuation authority.
+
+#### Selected storage boundary and proposed interrupted-update recovery
+
+The maintainer explicitly instructed: “Let's stick with JSON sidecars and Git
+history, no SQLite, Dolt, or permanent ledger. Keep it aligned with Backplane
+and walk me through how we'd recover an interrupted update without making this
+too heavy.” The maintainer reaffirmed philosophical alignment with gzkit only,
+no work across that boundary, and retention of Superpowers as the lightweight
+feature-development inner loop beneath the starter's outer loop. This is an
+agent transcription/summary of the continuation, not separate ADR approval.
+
+**Selected:** canonical JSON sidecars, Markdown narrative/generated views,
+hand-written changelog and committed Git history. Exclude SQLite, Dolt and a
+permanent operation/event ledger from the management-record design. A local
+temporary recovery record for an incomplete file update is permitted by the
+selected bounded-recovery direction; its exact schema and behavior remain a
+proposal. It must not grow into authoritative product history or a replay engine.
+Git preserves committed snapshots; it does not record every uncommitted operation
+or provide proof of semantic approval. No claim about gzkit ledger redundancy or
+changes to that separate project is made.
+
+**Alignment target:** lite and heavy preserve the same applicable management
+meanings, identities, criteria/revisions, relationships, dispositions and
+evidence. The six artifacts must have explicit Backplane correspondents without
+silent loss of requirements or unresolved obligations. Lite may remain permanent;
+heavy explicitly adopts verified Backplane management. Heavy-only hosting and
+monitoring capabilities need not be implemented locally to preserve the model.
+The crosswalk above grounds this design in existing Backplane contracts, but
+exact lite schemas, shared contract additions and migration have not been
+specified, reconciled or tested. Do not claim complete shape conformity or a
+delivered mode transition from conceptual alignment. Improve Backplane's owning
+contract deliberately where necessary rather than freeze a deficient local fork.
+
+**Proposed minimal file-update protocol:**
+
+1. Establish the actual worktree, affected paths, current source revisions and
+   starting bytes, including legitimate uncommitted edits. Serialize cooperating
+   writers in that worktree and detect changes to expected inputs. A local lock
+   does not coordinate other clones/machines or prevent an independent editor.
+2. Prepare and validate the complete affected JSON/view candidate before changing
+   authoritative files. Preserve narrative and test referential/semantic rules.
+   Durably prepare one bounded recovery bundle containing exact affected paths,
+   starting bytes/absence, proposed bytes and their identities before replacement.
+   Keep it in an ignored, confined local working area, not a permanent JSONL file.
+3. Recheck inputs and install the prepared files. Recheck final bytes and affected
+   invariants before reporting success. Cooperating commands refuse to accept an
+   unfinished update. Multiple replacements are not an atomic filesystem batch;
+   exact interruption/durability behavior requires reached-fault testing.
+4. On restart, inspect the pending bundle before further mutations. If every
+   output matches the proposed bytes, revalidate applicable inputs/invariants and
+   finalize the completed update. If every output matches the starting bytes,
+   discard the uninstalled candidate after verifying ownership. If outputs are a
+   mix of starting/proposed states, default to restoring the exact recorded
+   starting state only when inputs/ownership still match and applicable authority
+   permits recovery. Any third-party edit or unexplained revision change stops
+   automatic recovery; preserve files and explain the conflict. An unchanged
+   file may legitimately match both identities. Never reset the whole repository
+   or restore from HEAD over legitimate starting uncommitted work.
+5. Remove successful recovery material after verification; preserve unresolved
+   material until recovery/reconciliation is complete. Normal project commits
+   capture coherent changes at the existing cadence, without a commit or full
+   gate for each field update. Durable approval/evaluation/handoff evidence stays
+   in its existing tracked authority, not solely in disposable scratch. Finish
+   or explicitly reconcile interrupted updates before normal Git synchronization.
+
+This recovery protocol covers local record/view writes. It cannot make GitHub
+API calls, Git pushes, publication or arbitrary tool effects transactional; those
+retain their own observed-state and retry contracts. Promotion uses Backplane's
+authorized native operations and verified transfer, not replay of this scratch.
+
+This records selected design direction and a recovery proposal, not an approved
+identified ADR, implemented migration or Backplane conformance result. Preserve
+the pending 0.10.0 scope boundary. No behavior or tests change; diff/reference
+review and reuse of unchanged-input evidence are the applicable verification.
+
+### Shared field ownership and disciplined Git commits — design review
+
+The maintainer accepted the bounded recovery approach and requested continued
+review of the shared record contract. The maintainer proposed strict,
+deterministic typed metadata in commits as a way to strengthen Git discipline,
+potentially using Pydantic models, without introducing a separate permanent
+ledger. This is a proposed strategy, not an approved commit schema, new hook or
+permission to rewrite historical commits. Current storage/recovery selections
+remain intact; the exact recovery protocol still needs specification and tests.
+
+The following is the agent's field-ownership proposal, grounded in the reviewed
+Backplane governance/native-issue/checkpoint contracts, not a delivered schema:
+
+| Authority in lite | Fields owned there | Backplane correspondence |
+| --- | --- | --- |
+| Requirements sidecar | Stable requirement/statement keys, required wording, constraints, governing revision and approval references; requirement-level acceptance definitions where applicable | Requirement and Authority records; approved project document/issue statement and revision |
+| Backlog sidecar | Stable work/outcome keys, kind, bounded objective/scope, work-specific acceptance criterion keys/definitions, parent/dependency links, explicit priority and outcome lifecycle; links to governing requirements | Native issue contract plus Backplane Record; native hierarchy/dependencies/lifecycle; work criteria and Coverage map to requirements |
+| Roadmap sidecar | Capability progression, milestone identities and forecast/target relationships | Capability/outcome decomposition and native target grouping/views; exact shared roadmap schema is not delivered |
+| Work sidecar | Selected work references, plan identity/revision, task-level execution progress, blockers/resume context and evaluation/evidence references | Approved issue-bound Superpowers plan, execution/PR contributions, immutable evaluation pointers and handoff context |
+| Releases sidecar | Published baseline, bounded selected membership, pending version/classification rationale, release-specific gates/dispositions, publication authority and observed channel identities | Project-owned release scope/authority, native target grouping and actual release records; shared release-doctrine schema/ownership transfer remains pending |
+| CHANGELOG.md | Manually curated explanation of notable user-facing changes | Remains a repository document; references release identity without becoming publication authority |
+
+Do not independently store outcome lifecycle in WORK when BACKLOG owns it.
+WORK references that state and owns finer plan-task progress. Likewise, parent
+completion and release summaries derive from governed outcomes/evaluations,
+not separately editable satisfaction booleans. Requirement criteria and bounded
+work acceptance criteria need explicit identities/mappings; do not collapse
+them or mandate a redundant requirement hierarchy. Roadmap targets are forecasts;
+RELEASES owns actual selected membership. Historical published membership remains
+immutable. Current evidence pointers do not overwrite historical evaluations.
+
+Each structured artifact needs an identified format/schema version, project/
+namespace context and stable record keys. Exact common headers, source-revision
+binding, file locations, extension rules and model implementation are unresolved.
+Keep native issue IDs, Project fields, pagination and capture times out of the
+portable record core. An unobserved native ID is unavailable, not a fabricated
+issue number. The existing checkpoint types supply semantic precedent, not an
+editable lite source schema ready to adopt unchanged.
+
+Promotion preserves stable local/semantic keys, maps them to native GitHub issue
+identities, transfers relationships/criteria/authority/evidence and verifies
+arrival before switching field ownership. Current Backplane has no delivered
+lite-to-heavy converter for these five sidecars. It also lacks the finalized
+shared roadmap/release schema proposed here. Its existing checkpoint remains a
+read-only capture, not a general offline mutation/synchronization API. These are
+explicit design/implementation gaps, not permission to infer compatibility.
+
+#### Commit metadata proposal
+
+The agent supports examining a small typed change record carried by the commit
+message itself. Git owns the containing commit/tree/parents; sidecars remain
+the authority for product state. Metadata links a coherent change to governing
+work/requirement/criterion revisions and existing evidence, rather than requiring
+event replay or maintaining another mutable state log. Pydantic is a plausible
+validator, not a selected/installed dependency or semantic approval authority.
+
+Candidate meanings: format version, change category, affected stable record
+identities, governing authority revisions, evidence references and verification
+scope/reuse rationale where applicable. A documentation-only/no-tracked-work
+commit must have a truthful representation rather than invented issue/criterion
+links or unsupported completion claims. Keep readable human commit subjects.
+
+Exact JSON-in-message versus Git-trailer encoding is still open. Git's official
+[trailer mechanism](https://git-scm.com/docs/git-interpret-trailers) supplies a
+parseable message convention, not application-schema validation. A format marker
+and JSON payload could preserve the user's desired typed records; alternatively
+trailers could encode a bounded schema. Select one unambiguous authoritative
+encoding before implementation. Validate against the actual staged/committed
+paths and record references, not only against JSON types. The enclosing commit
+supplies its own identity: do not embed its future SHA into its message or a
+tracked receipt in that same commit. Post-publication CI/channel results arrive
+later and cannot be claimed prospectively.
+
+Required design cases include merge/squash, amend/rebase, cherry-pick and revert,
+automation commits, interrupted commit/hook failures and staged versus unstaged
+inputs. Changed payloads require reconciliation of metadata/evidence. Do not
+replay state changes from a copied message or rewrite published history to add
+records. Require no fresh full suite for a metadata/prose-only change when valid
+unchanged-input evidence suffices under the verification policy.
+
+Current routine hooks are explicitly limited to Ruff check/format, ty and
+unittest. A new commit-message hook changes that approved binding; do not install
+one silently. Git documents that
+[commit-msg may reject a message and can be bypassed](https://git-scm.com/docs/githooks#_commit_msg),
+so CLI preparation/local checks alone cannot establish integration enforcement.
+Determine the local/integration enforcement and adoption contract explicitly,
+without weakening the four existing checks or silently adding a fifth routine
+analysis category. Existing direct git/gh requirements remain in force.
+
+Git snapshots and commit metadata can travel through another Git host. Current
+Backplane deliberately requires GitHub/gh and native issue features; another
+host is a future adapter/conformance undertaking, not existing portable-host
+support. No alternate backend, GZKit change or Superpowers replacement is part
+of this discussion. This records architectural input only and leaves exact
+schema/ADR approval, implementation, release scope and publication separate.
+
+### Remaining detailed decisions
+
+#### Simultaneous design checkpoint
+
+The maintainer explicitly authorized dual design in the local starter and
+Backplane folders. The new
+[starter minimum-contract draft](../superpowers/specs/2026-11-14-lite-record-and-commit-contract-draft.md)
+defines the proposed file envelope, RecordRef/SourceRef types, field ownership
+and a compact JSON `Starter-Record` trailer. The paired Backplane draft is at
+`docs/superpowers-backplane/specs/2026-11-14-lite-record-and-commit-alignment-design.md`
+in `tvproductions/superpowers-backplane`; its HANDOFF and CHANGELOG now point to
+the shared design work. These are local, uncommitted design candidates, not
+approved ADRs, schema/commit-policy activation or published alignment.
+
+The maintainer selected a minimum typed JSON record for every governed new
+commit and preservation of the four routine checks. The proposed encoding is
+one `Starter-Record` Git trailer carrying format, kind, records, evidence and
+reason. Its exact spelling, strict models, 8,192-byte cap and acceptance mechanism
+remain draft choices. The standalone JSON and text message examples accompany
+the starter draft, respecting the no-embedded-JSON-in-management-Markdown rule.
+Direct `git interpret-trailers --parse` extracts the example successfully without
+a commit or configuration change. Git parses the footer; application validation
+must establish types/references and cannot manufacture human approval.
+
+Review the two drafts together before proposing identified ADR editions or
+dependent implementation. Starter follows reviewed Backplane design cues and
+maintains the mapping; this paired work permits improvements in Backplane's
+owning contract without making starter prose Backplane authority. Retain current
+lite/heavy definitions and make no prospective hosting or mode-convergence
+commitment from the broader conversation.
+
+Paired draft identities after the joint edits: starter minimum-contract SHA-256
+`e2f2fc7816d807d1eaa287a3747ad1dc4d830781632cd6aa61e3ab15c190ae3a`;
+Backplane counterpart SHA-256
+`b046c843e8b9980814256a8890b97982bc7c23537966d95204853f4f25079439`.
+The full starter base is `8c8ff4b113fa5ec8bd01d5ec3f09ba95c15f5574`;
+Backplane remains based on `05505f8009989eb7514ec62750e33c78bc40abf9`.
+Both are uncommitted candidates; hashes establish content identity, not approval.
+Observed checks: both diff whitespace checks pass; draft relative references
+exist; exact draft hashes match Backplane's handoff; Git extracts exactly one
+example trailer whose JSON equals the standalone five-field example. Root and
+Backplane hook/tool configuration is unchanged. No new behavior or model test,
+native qualification, hosted CI, Git sync or publication is claimed.
+
+1. **Cognitive delivery:** the universal-blocker choice is resolved by the
+   continuation above; API plus CLI is selected and MCP/plugins deferred for
+   the first release. Design the exact contract, independent maintained
+   extraction and qualification/release plan. No implementation date,
+   package name, new repository or actual engine acceptance is established.
 2. **Enforcement architecture/ownership:** define the CLI boundary, portable
    SP-BP semantics versus starter-specific executable rules, location/versioning
    of Pydantic models, and interfaces that avoid duplicate script implementations.
@@ -248,7 +779,9 @@ mode/schema upgrade tooling. Do not present a proposed CLI as already delivered.
    existing modules need refactoring, and which helpers are retained/moved/retired?
 3. **Record schema and authority:** exact headings, common metadata, stable IDs,
    criterion identities, state vocabularies, approval/evidence references,
-   sidecar purpose and binding, and how schema upgrades preserve local content.
+   sidecar granularity and binding, and how schema upgrades preserve local content.
+   JSON structured authority versus Markdown narrative/generated views and the
+   hand-written changelog are selected; do not reopen that split.
    Keep malformed records, unmet conditions and unknown evidence distinct.
 4. **Management and SemVer:** requirements versus backlog versus selected work;
    roadmap commitments versus forecasts; bounded release membership; classification

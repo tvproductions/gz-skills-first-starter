@@ -1,9 +1,9 @@
-# GZ skills-first starter
+# GZ Starter
 
 A reusable, project-scoped starting point for **Superpowers + Superpowers Backplane + gz-skills**,
 with room for each application's own operational skills and supporting code. Built for work and personal projects under `tvproductions`.
 
-Use **starter** or **starter template** in conversation to refer to
+Use **GZ Starter**, **starter** or **starter template** in conversation to refer to
 `gz-skills-first-starter`. Adopter agents accept these short names; for example,
 "update the starter" requests a template migration and "check the starter
 template" requests a review. Recorded sources and executable identifiers retain
@@ -62,6 +62,14 @@ with a standing maintainer-approved exception. Release 0.8.0 retains that except
 and does not claim strict cognitive acceptance. See the
 [current release evidence](docs/evidence/2026-11-08-0.9.0-release.md) and
 [integration boundary](docs/engineering/cognitive-integration.md).
+
+Pending 0.10.0 makes the
+[cognitive qualification deferral starter-wide](docs/engineering/cognitive-integration.md#starter-wide-qualification-deferral)
+for both adopter lanes. Missing shared-engine delivery alone does not block
+progression; retain ceiling 15 and eventual qualification, record measurement
+UNKNOWN and report conditional acceptance without strict-conformance claims.
+The planned engine is a separately maintained gzkit extraction for eventual
+PyPI/uv distribution; no new package is installed or qualified.
 
 Version **0.6.0** includes the single template-owned `update-gz-template` skill.
 See [canonical template updates](docs/updating.md), including bootstrap for

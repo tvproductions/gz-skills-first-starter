@@ -38,6 +38,11 @@ Older ranges are not freshness exemptions. Keep exact pins after verification;
 required stale/unknown evidence blocks acceptance. Explicit Python/host family
 policy and evidenced conditional exceptions remain visible. The current
 complexipy qualification defect cannot be treated as a passing cognitive check.
+Apply the [starter-wide cognitive qualification deferral](engineering/cognitive-integration.md#starter-wide-qualification-deferral):
+record DEFERRED / measurement UNKNOWN, retain ceiling 15 and eventual
+qualification, and permit progression despite missing shared-engine delivery
+alone. No separate adopter waiver is needed. Report conditional acceptance,
+never strict cognitive or full strict conformance; other requirements remain.
 For the starter and every adopter, [dependency maintenance](baseline-policy.md#dependency-maintenance-means-completed-migration)
 requires completing the most current stable migration across newer tool/dependency
 families and verification. Bare `gzs-update-dependencies` uses update mode here,

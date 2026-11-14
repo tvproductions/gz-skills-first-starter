@@ -5,6 +5,10 @@ The selected next minor is **0.10.0**, unpublished: mandatory ADR practice for
 the trio and its adopters, plus the maintainer-directed completed dependency-
 migration binding recorded in the
 [current handoff](handoffs/2026-11-08-adr-practice-save-point.md#dependency-maintenance-policy-correction--november-13).
+It also includes the November 14
+[starter-wide cognitive qualification deferral](engineering/cognitive-integration.md#starter-wide-qualification-deferral).
+This changes acceptance policy, not the ceiling or qualification requirement;
+it does not implement or publish the planned independent engine.
 The [governing release-scope record](handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope)
 distinguishes this accepted direction from unfinished design, implementation and
 acceptance. Adoption-acceptance reporting remains the final planned feature
@@ -25,9 +29,9 @@ Release 0.7.1 ships the consumer-side preparation and a compatible Ruff patch.
 The maintainer explicitly directed publication without waiting for the engine.
 Actual cognitive integration remains open and unscheduled in
 [issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1).
-The incoming gzkit-owned engine must still be selected, qualified and measured
-before the cognitive exception can be removed. This release retains that
-exception and does not claim the cognitive defect is fixed; see the
+The incoming shared gzkit-derived engine must still be selected, qualified and
+measured before the current deferral can end. Historical releases retain their
+recorded exceptions and do not claim the cognitive defect is fixed; see the
 [release receipt](evidence/2026-10-26-0.7.1-release.md).
 The current version is recorded in
 `bundle.json` as `template_version`, independently of SP, SP-BP and gz-skills

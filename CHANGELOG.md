@@ -2,6 +2,38 @@
 
 ## Unreleased
 
+- Use **GZ Starter** as the short display/conversational name, alongside
+  **starter** and **starter template**. Preserve canonical repository, package,
+  command and skill identifiers; no canonical rename or adopter migration is
+  selected. Refresh the packaged adopter instructions.
+
+- Record the selected management-record design: JSON sidecars own structured
+  facts, Markdown owns narrative and generated views, and CHANGELOG remains
+  hand-written. Use Git history; exclude SQLite, Dolt and a permanent ledger.
+  Ground lite/heavy alignment in Backplane's existing contracts and record a
+  bounded interrupted-update recovery proposal without claiming implemented
+  transactions or qualified schema compatibility. Preserve one authority per fact and the pending schema,
+  update/recovery and ADR work in the
+  [design handoff](docs/handoffs/2026-11-14-opinionated-cli-design-discussion.md#selected-structured-record-and-narrative-split).
+  Record proposed field ownership, remaining Backplane mapping gaps and typed
+  Git commit metadata in a
+  [minimum-contract draft](docs/superpowers/specs/2026-11-14-lite-record-and-commit-contract-draft.md)
+  and a simultaneous Backplane-owned counterpart; no commit schema or hook is activated.
+  This is design documentation, not delivered record-management functionality or
+  an expansion of the pending 0.10.0 implementation scope.
+
+- Make cognitive qualification a starter-wide documented delivery deferral for
+  both adopter lanes at the maintainer's November 14 direction. Retain ceiling
+  15, eventual independent qualification, known findings and all other gates;
+  record DEFERRED / measurement UNKNOWN and conditional acceptance without strict
+  conformance claims. Missing shared-engine delivery alone no longer blocks
+  progression or needs an adopter-specific waiver. Update policy, acceptance,
+  instructions and packaged copy; reuse pending 0.10.0 for this acceptance-policy
+  change. Record the planned separately maintained gzkit extraction with eventual
+  PyPI/uv distribution and the selected small API-plus-CLI first release, with
+  MCP/plugin integration deferred; exact package design, implementation and
+  publication remain pending. See the [policy](docs/engineering/cognitive-integration.md#starter-wide-qualification-deferral).
+
 - Preserve the November 14 adopter-audit and opinionated enforcement discussion
   in a [voice-session handoff](docs/handoffs/2026-11-14-opinionated-cli-design-discussion.md).
   Record selected component boundaries, six management artifacts, starter-owned

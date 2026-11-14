@@ -1,6 +1,6 @@
-# GZ skills-first starter
+# GZ Starter
 
-Accept **starter** and **starter template** as shorthand for
+Accept **GZ Starter**, **starter** and **starter template** as shorthand for
 `gz-skills-first-starter` when the conversation concerns this repository or its
 adopted template. Use the recorded adoption source/version/SHA to resolve the
 reference; do not require the full repository name. Preserve canonical repository,
@@ -213,6 +213,16 @@ hygiene selects Ruff C901 (cyclomatic ceiling 20), cognitive ceiling 15 using
 the user-selected gzkit CPython AST approach after qualification, and Lizard
 (cyclomatic scores and aggregates). Complexipy remains only a defect reproducer,
 not acceptance authority. The shared cognitive candidate is not yet installed.
+Apply the starter-wide documented deferral in
+`docs/engineering/cognitive-integration.md#starter-wide-qualification-deferral`
+to this starter and both adopter lanes. Record DEFERRED / measurement UNKNOWN;
+missing shared-engine delivery alone does not block adoption/release progression
+or require a separate adopter waiver. Retain ceiling 15, eventual independent
+qualification, known findings and all other checks. Report conditional acceptance,
+never strict cognitive or full strict conformance. Revisit at release preparation
+and candidate delivery; delivery alone does not establish qualification. Design
+the shared engine as a separately maintained Python extraction from gzkit with
+eventual PyPI publication and uv installation; no package is delivered yet.
 The remaining selections include
 Interrogate, Vulture, Bandit, branch/statement
 coverage through unittest, Cosmic Ray mutation testing, deptry, pip-audit and

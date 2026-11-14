@@ -1,0 +1,5 @@
+Explain the trailer format
+
+Document the message footer and how Git extracts it.
+
+Starter-Record: {"format":"skills-first-commit/v1","kind":"documentation","records":[],"evidence":[],"reason":"Explain the trailer format; no behavior or governed record changes."}

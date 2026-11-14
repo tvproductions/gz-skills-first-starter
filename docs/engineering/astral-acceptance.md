@@ -56,6 +56,14 @@ content. For example, A18 does not waive required on-demand selections simply
 because no deeper analyzer was needed for one migration. An outstanding tool
 compatibility proof stays outstanding.
 
+For A18, apply the [starter-wide cognitive qualification deferral](cognitive-integration.md#starter-wide-qualification-deferral).
+Record DEFERRED / measurement UNKNOWN, ceiling 15, the reviewed source and the
+delivery/qualification revisit condition. Missing shared-engine delivery alone
+does not block progression or require a separate adopter waiver. Keep acceptance
+conditional; do not claim strict cognitive or full strict conformance. Delivery
+does not close A18 without the required installed-engine qualification and corpus
+evidence. Other gaps and known findings retain their existing effect.
+
 ## Verify effective configuration and execution
 
 Inventory root/member/ancestor configuration, applicable user/system settings,

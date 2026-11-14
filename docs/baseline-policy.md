@@ -26,6 +26,14 @@ separately. Required FAIL/UNKNOWN/stale evidence blocks strict acceptance.
 Evidenced exceptions remain visibly conditional, never 100% conformance.
 The helper does not enforce these acceptance decisions automatically.
 
+Apply the [starter-wide cognitive qualification deferral](engineering/cognitive-integration.md#starter-wide-qualification-deferral)
+in both lanes until shared-engine delivery and successful consumer qualification.
+Record DEFERRED / measurement UNKNOWN; retain ceiling 15 and eventual qualification.
+Missing shared-engine delivery alone does not block adoption/release progression
+or require another adopter waiver. Acceptance remains conditional, never strict
+cognitive or full strict conformance; all other requirements and known findings
+remain in force. Reconcile existing adopter authority explicitly.
+
 Prove Python baseline adoption through the
 [Astral acceptance contract](engineering/astral-acceptance.md), retaining actual
 evidence, applicability and owned exceptions in project authorities. Applicable

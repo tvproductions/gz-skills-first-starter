@@ -1,13 +1,55 @@
 # Cognitive engine consumer boundary
 
-Status: consumer preparation shipped in 0.7.1. The maintainer confirmed on
-October 26 that the shared engine is coming from gzkit, without a promised date,
-and explicitly directed release without waiting. This starter contains
-no scorer, private fork or extraction project. No new dependency is installed.
-The cognitive exception remains active for 0.7.0 and 0.7.1. Issue #1 remains
-open and unscheduled; engine availability is not a prerequisite for this release.
+Status: consumer preparation shipped in 0.7.1; the shared engine remains
+unselected/uninstalled. This starter contains no scorer or private fork.
 
-The current upstream scorer at gzkit commit
+## Starter-wide qualification deferral
+
+Effective November 14, 2026, the maintainer explicitly directed: “Make cognitive
+qualification a starter-wide documented deferral until the shared engine is
+delivered. Keep the ceiling and eventual qualification requirement, and don’t
+claim strict conformance.” This is an agent transcription of the maintainer's
+instruction in the design-review continuation of the
+[current handoff](../handoffs/2026-11-14-opinionated-cli-design-discussion.md).
+It supersedes the earlier release-specific limitation for current starter policy.
+
+The starter and both lite/heavy adopter lanes MUST record shared-engine
+qualification as **DEFERRED / measurement UNKNOWN**, citing this policy and the
+reviewed starter source. Missing delivery of the qualified engine alone MUST NOT
+block adoption or release progression; report any resulting acceptance as
+conditional and never claim strict cognitive or full strict conformance.
+No separate adopter waiver is required for this shared dependency gap. Existing
+adopters reconcile this change explicitly through their own authority; this
+source edit does not migrate them or override a stricter product-specific gate.
+
+Retain cognitive ceiling **15**, the eventual independent qualification and
+corpus-measurement requirements, existing failed evidence and shrinking legacy
+baselines. Do not report an unavailable measurement as zero, PASS or not
+applicable. Do not substitute Complexipy or a private scorer, waive a known
+violation, or defer any other required check through this policy. Explicit
+analyzer invocations retain their fail-closed error behavior.
+
+The starter maintainer owns the deferral. Revisit it at release preparation and
+when a shared candidate is delivered. Delivery triggers selection and
+qualification work; it does not itself establish conformance. End the deferral
+for a consumer only after the completion evidence below exists for its actual
+runtime, source scope and installed candidate.
+
+The maintainer also directed near-term design toward a separate, maintained
+Python project extracting the engine from gzkit, ultimately published on PyPI
+and installable with uv. Treat that as a planned shared dependency for gzkit,
+the starter and other consumers, not a dependency on the gzkit application.
+The maintainer selected **Python API plus CLI** as sufficient for the first
+release, with a small, maintainable extraction and **MCP/plugin integration
+deferred**. Keep that first release bounded independently of the broader starter
+CLI design. Package/repository identity, exact API/CLI contract, runtime support,
+maintenance/release contract and extraction details remain to be designed.
+No new project, dependency or publication is delivered merely by recording this
+direction.
+
+## Historical source observation
+
+The October 26 upstream inspection recorded the scorer at gzkit commit
 `05f6e3db2fa7fd0ffb6795b86263e90a33d056e7` still has blob
 `bfff5db7014f6000eb35a870f852f9a6c81da50a`, identical to the previously reviewed
 source with incomplete loop/match discovery. A repository search did not locate
@@ -78,18 +120,19 @@ missing/empty source scopes fail. No synthetic zeros or baseline waivers.
 The 16 consumer regressions use explicit fixture-answer adapters to test
 comparison, discovery and failure handling. Their success is not a scorer
 qualification result. The real source corpus has not been cognitively measured
-with a new engine. Keep existing failed evidence and the release exception.
+with a new engine. Keep existing failed evidence and the documented deferral.
 
 ## Completion still required
 
-Once gzkit provides the candidate, pin/qualify it, run the actual corpus, compare
+Once the shared project delivers a candidate, pin/qualify it, run the actual corpus, compare
 qualified names/population/scores with the retained historical evidence, and
 review every violation without changing thresholds. Record exact engine version,
 source hashes, counting semantics, runtime, findings and owned legacy baselines.
-Remove the exception only after genuine qualification and required checks pass.
+End the deferral only after genuine qualification and required checks pass.
 
 Run the full repository gate plus explicit analyzer regressions and verify CI
 for the eventual engine implementation commit. Keep deeper analysis outside the
-four routine hooks and routine CI. The user authorized publication of consumer
-preparation as 0.7.1; gzkit changes, engine adoption and plugin installation remain
-separate work. Do not turn the lack of an upstream delivery date into a release hold.
+four routine hooks and routine CI. Engine implementation, gzkit migration,
+consumer adoption and publication remain separately scoped work. Record an exact
+released distribution/version, license/provenance, supported runtime proof and
+source-independent installed behavior before claiming the shared dependency ready.

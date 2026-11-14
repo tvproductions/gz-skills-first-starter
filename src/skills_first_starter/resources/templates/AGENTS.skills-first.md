@@ -1,6 +1,6 @@
 # Skills-first development stack
 
-Accept **starter** and **starter template** as shorthand for the adopted
+Accept **GZ Starter**, **starter** and **starter template** as shorthand for the adopted
 `gz-skills-first-starter` template. Resolve these references through this project's
 `.skills-first/bundle.lock.json` and adoption context; do not require the user to
 repeat the full repository name. Route requests such as "update the starter" or
@@ -294,12 +294,20 @@ class cohesion analysis; verify its standalone CLI on the selected runtime and
 representative invented classes. Record scopes, scores and reviewed findings;
 record not-applicable scopes with reasons and report missing installation or
 compatibility evidence as gaps. Preserve project-specific thresholds and keep
-cohesion outside routine hooks and routine CI. Complexipy is under qualification
-review: known keyword-conditional under-counting means a clean score alone cannot
-pass cognitive acceptance. Read the current qualification evidence before relying
-on that analyzer. The selected replacement direction is gzkit's CPython AST
-scoring approach, preferably through one shared package; qualification and
-distribution must be verified before claiming it is installed or authoritative.
+cohesion outside routine hooks and routine CI. Complexipy remains a defect
+reproducer, not cognitive acceptance authority. Apply the starter-wide cognitive
+qualification deferral in the reviewed starter's
+`docs/engineering/cognitive-integration.md#starter-wide-qualification-deferral`.
+Record DEFERRED / measurement UNKNOWN, retain ceiling 15 and eventual independent
+qualification, and do not block adoption/release progression solely on missing
+shared-engine delivery. No separate adopter waiver is required for that gap.
+Report conditional acceptance, never strict cognitive or full strict conformance;
+preserve known findings and every other required check. Reconcile existing
+project authority explicitly. The starter maintainer owns this deferral; revisit
+at release preparation and shared-candidate delivery. A separately maintained,
+gzkit-derived Python package with eventual PyPI/uv distribution is planned, not
+installed or qualified. End the deferral only after the actual released candidate
+is pinned, independently qualified and measured on the consumer's runtime/scope.
 See the reviewed starter's
 `docs/engineering/python.md` for the full selected tool set and interpretation.
 

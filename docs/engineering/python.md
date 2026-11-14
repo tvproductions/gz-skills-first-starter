@@ -200,7 +200,7 @@ source/test scopes and invented fixtures; exclude operational data and records.
 | Tool | Required interpretation |
 | --- | --- |
 | Ruff C901 | On-demand cyclomatic ceiling 20 per function; never raise the threshold to pass |
-| Cognitive scoring | Required ceiling 15; use the selected gzkit-derived CPython AST approach after qualification. Complexipy is retained locally only for defect reproduction, not acceptance authority. |
+| Cognitive scoring | Retain ceiling 15 and eventual qualification; record the starter-wide delivery deferral below. Use the selected gzkit-derived CPython AST approach after qualification. Complexipy is retained locally only for defect reproduction, not acceptance authority. |
 | Lizard | Per-function cyclomatic measurements and module/project aggregates for a reviewed C/C/C approximation; do not claim Radon-equivalent scores |
 | cohesion | Required adopter on-demand class cohesion analysis; review attribute-sharing scores against class responsibilities and project context |
 | Interrogate | Measure docstring presence; review usefulness and correctness separately |
@@ -234,13 +234,20 @@ shared-engine qualification requirement. See the historical
 [defect assessment](../evidence/2026-10-24-complexipy-assessment.md) and current
 [maintenance receipt](../evidence/2026-11-14-starter-maintenance.md).
 
-The maintainer confirmed that the shared engine is coming from gzkit. The
+The maintainer selected a separately maintained Python project extracting the
+shared engine from gzkit, with eventual PyPI distribution and uv installation.
+The package/API and migration design remain pending. The
 starter's [consumer qualification boundary](cognitive-integration.md) prepares
 fixtures, independent corpus inventory and ceiling enforcement; it supplies no
 scoring implementation. The engine remains unselected/uninstalled, so these
 tools and their passing regression tests do not establish cognitive acceptance.
-Keep the cognitive exception covering 0.7.0 and 0.7.1 until the actual upstream candidate is pinned,
-qualified and measured. Do not create a private scorer or an extraction project.
+Apply the [starter-wide qualification deferral](cognitive-integration.md#starter-wide-qualification-deferral)
+to the starter and both adopter lanes until delivery and successful consumer
+qualification/measurement. Record DEFERRED / measurement UNKNOWN with this policy
+as authority; no separate adopter waiver is required. Missing shared-engine
+delivery alone does not block adoption/release progression. Retain ceiling 15,
+existing findings and all other checks; report conditional acceptance and never
+strict cognitive or full strict conformance. Do not substitute a private scorer.
 
 ### Adopter class cohesion requirement
 
