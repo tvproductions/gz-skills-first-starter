@@ -1,7 +1,9 @@
 # Session handoff — October 24, 2026
 
-Current resume entry: [November 8 ADR-practice save point](2026-11-08-adr-practice-save-point.md).
-It supersedes the historical draft, branch and uncommitted checkpoints below.
+Current resume entry: [November 14 opinionated CLI design discussion](2026-11-14-opinionated-cli-design-discussion.md).
+It preserves the [November 8 ADR-practice save point](2026-11-08-adr-practice-save-point.md)
+and earlier implementation history below. Resume with the requested design review;
+the new discussion has no approved implementation specification or ADR yet.
 
 ## November 8 branch preference — commit directly on main
 

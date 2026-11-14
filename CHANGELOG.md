@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Preserve the November 14 adopter-audit and opinionated enforcement discussion
+  in a [voice-session handoff](docs/handoffs/2026-11-14-opinionated-cli-design-discussion.md).
+  Record selected component boundaries, six management artifacts, starter-owned
+  enforcement/migration direction, Python-only scope, Markdown/sidecar ruling,
+  proportionate QC and unresolved cognitive/schema/release questions. Route
+  continuation to design review before implementation. This is discussion and
+  routing documentation; no new CLI/schema, policy activation, upstream edit,
+  adopter migration, version bump or release publication is delivered.
+
 - Recheck the complete dependency surface after gz-skills 0.11.0 was published
   later on November 14. Select its immutable release in the bundle, both catalogs
   and OpenCode configuration; reconcile current guidance and packaged resources.

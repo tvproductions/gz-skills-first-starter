@@ -173,7 +173,7 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current handoff](docs/handoffs/2026-10-24-session-close.md).
+[the current design-discussion handoff](docs/handoffs/2026-11-14-opinionated-cli-design-discussion.md).
 This checkout enables native SP and gz-skills development workflows and exposes
 its own update skill for adopter work. See
 [native development skills](docs/structure.md#native-development-skills) for

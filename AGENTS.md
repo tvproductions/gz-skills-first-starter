@@ -47,7 +47,9 @@ and verification; do not generalize one target's proof to all product types.
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-11-08-adr-practice-save-point.md`; recheck live state before work.
+`docs/handoffs/2026-11-14-opinionated-cli-design-discussion.md`; begin with its
+design review and remaining questions, and recheck live state before work.
+The earlier ADR-practice save point remains linked there as implementation history.
 
 Follow `docs/engineering/architectural-decisions.md` during design, execution and
 review in both lanes. Find approved ADRs in `docs/decisions/`; reuse applicable

@@ -1,5 +1,10 @@
 # ADR practice save point — November 8, 2026
 
+Current continuation: [November 14 opinionated CLI design discussion](2026-11-14-opinionated-cli-design-discussion.md).
+Start with its requested design review and remaining questions. The approved ADR
+implementation and qualification history below remain authoritative for that
+earlier scope; the new discussion does not establish another approved architecture.
+
 ## Resume here
 
 Work directly on `main`; do not create feature branches unless the maintainer
