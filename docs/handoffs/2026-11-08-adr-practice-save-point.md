@@ -109,15 +109,17 @@ OpenCode source and current guidance now select it. See the
 [follow-up receipt](../evidence/2026-11-14-starter-maintenance.md#later-explicit-maintenance-invocation)
 for all 76 registry-project checks, unchanged current Python/tool/CI pins,
 compatibility and verification. Preserve pending 0.10.0, existing ADR/cognitive/
-host gaps and disabled Backplane. Codex/Claude's published development marketplace
-binding still selects the earlier catalog until the already authorized Git sync
-can publish the new catalog and follow it with an exact-SHA binding commit.
+host gaps and disabled Backplane. The earlier authorized Git sync published the
+source/catalog as `d874ef0a68b2892e79db37e27385f2026dc9793a` with normal hooks.
+The following binding commit selects that immutable catalog for Codex/Claude,
+preserving enablement and duplicate-source overrides. OpenCode already selects
+the same component source.
 No plugin installation, activation, tag or starter release follows from this
 maintenance invocation; native 0.11.0 loading remains unverified. Local full gate,
 catalog/resource validation, both dependency audits, standalone host-baseline
 checks, source-independent build and isolated installed-helper proof passed.
-The earlier main-sync authorization is carried through to publish the catalog,
-then bind Codex/Claude to that exact commit and verify final-commit CI. Report
+The earlier main-sync authorization carries through the binding commit and
+final-commit CI verification. Report
 the final CI result in the sync response without a receipt-only follow-up commit.
 
 - [Feature #12](https://github.com/tvproductions/gz-skills-first-starter/issues/12)

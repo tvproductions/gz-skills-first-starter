@@ -213,10 +213,20 @@ proof; embedded XPPython3/native host deployment is outside the standalone
 reference and remains UNKNOWN. A18 retains the existing owned cognitive and
 ADR/native-host gaps; this is not strict release/adoption acceptance.
 
-Codex/Claude development source remains the published maintenance catalog at
-`23970c1cb2dd406159a8d1cb07d660e2cbdb4e35` until the already authorized Git sync
-publishes this catalog and a following binding commit can use its exact SHA.
-Keep project activation and duplicate-source overrides; do not use `plugin add`
-or broaden user scope to work around publication. Native 0.11.0 discovery,
-combined-stack behavior and final candidate CI remain UNKNOWN. This receipt
-records source selection, not native installation or starter publication.
+The earlier explicit main-sync authorization is carried through after local
+verification. Source/catalog commit
+`d874ef0a68b2892e79db37e27385f2026dc9793a` was committed with normal hooks
+(unittest passes; Python-only hooks correctly have no changed Python inputs,
+after the full all-file run above), fetched and pushed ordinarily without
+remote divergence or reconciliation. A following binding commit changes only
+Codex/Claude marketplace refs and their documentation to that now-published
+catalog SHA. Both source-commit CI jobs passed in
+[run 43627842207](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/43627842207).
+Parsed Codex/Claude settings confirm both refs and all activation/duplicate
+overrides; project activation and duplicate-source overrides are unchanged;
+no `plugin add`, cache installation or user-scope change was used. OpenCode
+already selects the same exact component source. Native 0.11.0 discovery,
+combined-stack behavior and final candidate CI remain UNKNOWN until observed.
+Observe both `Check starter` jobs for the final binding commit and report the
+result at closeout without a receipt-only commit. This receipt records source
+selection and local verification, not native installation or starter publication.

@@ -10,8 +10,8 @@
   All 76 registry packages checked and both Python baseline patches are already
   current; uv resolution leaves both locks unchanged. Reuse pending 0.10.0 and
   preserve disabled Backplane, ADR/cognitive/host gaps and native activation.
-  Codex/Claude development marketplace refs require the resulting published
-  catalog commit during the already authorized synchronization. See the
+  Bind Codex/Claude development marketplaces to the resulting published catalog
+  commit, preserving enablement and duplicate-source overrides. See the
   [follow-up receipt](docs/evidence/2026-11-14-starter-maintenance.md#later-explicit-maintenance-invocation).
 
 - Complete the separately authorized November 14 maintenance pass: refresh both
