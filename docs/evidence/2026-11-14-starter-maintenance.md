@@ -96,3 +96,127 @@ Sources: [PyPI metadata](https://pypi.org/),
 [SP 7.0.2](https://github.com/obra/superpowers/releases/tag/v7.0.2),
 [gz-skills 0.10.1](https://github.com/tvproductions/gz-skills/releases/tag/v0.10.1),
 [Backplane 0.2.0](https://github.com/tvproductions/superpowers-backplane/releases/tag/v0.2.0).
+
+## Later explicit maintenance invocation
+
+Mode: **update**, explicitly invoked through `gzs-update-dependencies` under this
+repository's completed-migration binding on November 14, 2026. Candidate starts
+at clean main `0d60d0dc6b6a4a695135a9e1bbcc4e7830171dd2`; that commit is the
+rollback reference. No pre-existing changes, new dependency ecosystem, missing
+project-required package or profile change was found. This is the publishing
+starter, not a self-adopter. Reuse approved ADR-0001-001 and pending **0.10.0**
+from published **0.9.0** / `3f76acf0038b030bf5abd85ce4a419e890d3e420`.
+The existing #12 policy/ADR release scope and remaining/deferred gates still
+govern; this component refresh does not establish release acceptance.
+
+Live PyPI metadata covers **76 distinct registry projects**, including every
+registry package in both locks, all direct dev/hygiene/backend pins and the uv
+resolver. Every selected version equals its latest non-yanked stable upstream
+release; no selected release is yanked. The earlier table's Python tools remain
+unchanged. Full package results and authoritative metadata URLs are in the
+[registry recheck](2026-11-14-dependency-recheck.json). The initial urllib query
+failed on system DNS; curl retrieved the same official PyPI JSON successfully.
+Neither source availability nor package freshness is inferred from cached locks.
+
+Official [Python releases](https://www.python.org/downloads/) and uv's managed
+runtime inventory still select **3.14.10** and **3.12.16**. Python **3.15.2** is
+newest upstream, outside the ordinary N-1 and embedded-host families. Preserve
+`>=3.14,<3.15` and `>=3.12,<3.13`, exact runtime/CI pins and uv **>=0.13.5**.
+Actual resolver is uv **0.13.8**, current upstream; no machine-wide update needed.
+
+Live GitHub releases and resolved commits confirm SP 7.0.2, Backplane 0.2.0,
+checkout 7.0.1 and setup-uv 10.3.3 remain current at the exact SHAs above.
+The starter's latest published release remains 0.9.0. **gz-skills 0.11.0** was
+published at 18:05 UTC after the earlier pass. Its annotated tag resolves to
+`62622aee80ce27d4a39efe3554a583b844f38876`, replacing 0.10.1 /
+`4c836e3db6d43c495863a2090daaea56585a6ea9` in the bundle, both catalogs,
+OpenCode source and current guidance. Generated resource copies are refreshed.
+Reviewed official [release notes](https://github.com/tvproductions/gz-skills/releases/tag/v0.11.0),
+[source comparison](https://github.com/tvproductions/gz-skills/compare/v0.10.1...v0.11.0)
+and [release receipt](https://github.com/tvproductions/gz-skills/blob/62622aee80ce27d4a39efe3554a583b844f38876/docs/evidence/2026-11-14-0.11.0-release.md).
+
+Compatibility review: only three skill bodies change: Git sync 1.1.0, quality
+gate 0.1.3 and dependency update 0.4.2. The other seventeen, installer, lock,
+runtime and twenty-skill catalog contracts are unchanged. Stage-aware checks
+preserve required tests for this implemented helper. Dependency mode now honors
+established user/project authority explicitly. Git sync publication follow-through
+requires the consuming project's publication authority; it does not authorize
+publishing this starter's pending 0.10.0 or close its ADR feature. No new
+architecture, workflow lifecycle or gate waiver is adopted.
+
+Python 3.14 opportunity review against the versioned
+[release/porting notes](https://docs.python.org/3.14/whatsnew/3.14.html) and local
+opportunity guide: retain current annotation semantics; no runtime introspection
+consumer changed. Bounded executor submission and interpreter pools provide no
+helper benefit because its workflow remains sequential. Zstandard and structured
+templates have no storage/processor consumer. Defer Path.copy/move replacement:
+the helper's exclusive creation, rollback and concurrent-file preservation need
+their current tested semantics. No broad modernization is warranted by this
+instruction-only component refresh. These 3.14 APIs remain unavailable to the
+separate 3.12 host baseline; actual embedded-host execution remains UNKNOWN.
+
+Scope includes both pyprojects/locks, exact Python pins, backend, resolver,
+pre-commit's four local hooks, CI execution/action pins, bundle, both catalogs,
+packaged copies and all three project source configurations. No container,
+additional language manifest, separately managed binary or vendored skill tree
+exists. Native host CLI installations, user settings and plugin cache updates
+are outside this source-maintenance scope. Deferred cognitive/cohesion and ADR
+qualification obligations are unchanged, not satisfied by manifest validation.
+
+`uv lock --upgrade`, `uv sync --locked --all-groups`, `uv lock --check` and
+`uv pip list --outdated --format json` completed in each owning project. Both
+locks are byte-unchanged and both outdated results are `[]`. Dev/hygiene group
+placement and empty runtime dependency sets are preserved.
+
+Verification for the coherent candidate:
+
+- `uv run --locked pre-commit run --all-files`: all four hooks pass (Ruff
+  check/format, ty and unittest). No behavioral test additions or gate changes.
+- `uv run --locked skills-first-starter validate`: valid 0.10.0 bundle and both
+  catalogs with gz-skills 0.11.0. `tools/package_resources.py` refreshed affected
+  copies; the existing resource-drift tests pass. All version mirrors stay 0.10.0.
+- Root and standalone `uv export --locked --all-groups --format requirements.txt
+  --no-emit-project` retain hashes; the project-pinned `pip-audit --requirement
+  <export> --no-deps --disable-pip --format json` reports zero known
+  vulnerabilities across **74** and **75** registry dependencies respectively,
+  with no skipped registry packages. The unpublished projects are excluded by
+  the export. Exports contain 584/404 SHA-256 entries. The auditor emits generic
+  hash advice despite those hashes; the standalone run also reports ignored
+  cache-deserialization warnings, then successfully returns complete results.
+- `uv run --locked python ../../tools/verify_xplane_baseline.py` from the
+  standalone project passes on managed **3.12.16**; real host remains unverified.
+- `uv build --no-sources` builds sdist then wheel successfully with uv_build
+  **0.13.8**. `uv run --locked python tools/verify_distribution.py` passes archive
+  resources/metadata and isolated installed CLI/configuration proof for all
+  helper hosts and both policy modes outside the checkout.
+- Actual root execution is managed CPython **3.14.10**, arm64; Ruff, ty,
+  pre-commit and hygiene executables resolve within the project `.venv` at the
+  selected versions. Effective Ruff settings resolve root pyproject.toml,
+  target 3.14, line length 100 and the reviewed rule set; verbose ty passes.
+  No relevant UV/Ruff/ty/Python override flags or competing ancestor tool
+  configuration was present. The existing native pre-commit hook is installed.
+- Both lock hashes stay byte-identical to rollback: root
+  `e462d598bc66b8f8f1402510a73adcb846287192ee6549de2f45943fcecf3467`;
+  standalone `9fbd72e70b8bf85cc6927c26d259bd872906f4552b245d868432abc7f51925e8`.
+  Existing 29 analyzer regressions and bounded Cosmic Ray/Complexipy compatibility
+  results from the earlier pass remain applicable: their code, fixtures, tools,
+  configs and runtimes are unchanged. No analyzer-specific repeat is triggered.
+
+Astral acceptance applicability: A01-A08, A10-A12 and A17 have the scope,
+provenance, exact-environment, metadata, package/export and installed-artifact
+evidence above. A09 local hooks pass; final candidate CI is pending the authorized
+sync below. A13 is not applicable to this CLI rather than a published typed
+library. A14 is not applicable: two deliberately independent incompatible runtime
+families, no uv workspace. A15 has public PyPI and immutable public Git sources,
+no private index/auth integration. A16 has ordinary pure Python distribution
+proof; embedded XPPython3/native host deployment is outside the standalone
+reference and remains UNKNOWN. A18 retains the existing owned cognitive and
+ADR/native-host gaps; this is not strict release/adoption acceptance.
+
+Codex/Claude development source remains the published maintenance catalog at
+`23970c1cb2dd406159a8d1cb07d660e2cbdb4e35` until the already authorized Git sync
+publishes this catalog and a following binding commit can use its exact SHA.
+Keep project activation and duplicate-source overrides; do not use `plugin add`
+or broaden user scope to work around publication. Native 0.11.0 discovery,
+combined-stack behavior and final candidate CI remain UNKNOWN. This receipt
+records source selection, not native installation or starter publication.

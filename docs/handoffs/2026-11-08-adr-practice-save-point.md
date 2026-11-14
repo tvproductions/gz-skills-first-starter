@@ -102,6 +102,24 @@ and verify both exact-commit CI jobs. Record results in the maintenance receipt.
 
 ## Governing records and accepted design
 
+Later November 14, the maintainer explicitly invoked dependency maintenance
+again. Live metadata found newly published gz-skills 0.11.0 at
+`62622aee80ce27d4a39efe3554a583b844f38876`; the bundle, both catalogs,
+OpenCode source and current guidance now select it. See the
+[follow-up receipt](../evidence/2026-11-14-starter-maintenance.md#later-explicit-maintenance-invocation)
+for all 76 registry-project checks, unchanged current Python/tool/CI pins,
+compatibility and verification. Preserve pending 0.10.0, existing ADR/cognitive/
+host gaps and disabled Backplane. Codex/Claude's published development marketplace
+binding still selects the earlier catalog until the already authorized Git sync
+can publish the new catalog and follow it with an exact-SHA binding commit.
+No plugin installation, activation, tag or starter release follows from this
+maintenance invocation; native 0.11.0 loading remains unverified. Local full gate,
+catalog/resource validation, both dependency audits, standalone host-baseline
+checks, source-independent build and isolated installed-helper proof passed.
+The earlier main-sync authorization is carried through to publish the catalog,
+then bind Codex/Claude to that exact commit and verify final-commit CI. Report
+the final CI result in the sync response without a receipt-only follow-up commit.
+
 - [Feature #12](https://github.com/tvproductions/gz-skills-first-starter/issues/12)
   owns the bounded 0.10.0 outcome; [design #13](https://github.com/tvproductions/gz-skills-first-starter/issues/13)
   tracks the starter design. No issue mutation was part of this session.

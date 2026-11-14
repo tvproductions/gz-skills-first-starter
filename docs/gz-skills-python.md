@@ -7,7 +7,7 @@ fits the task, confirm discovery, and preserve project scope and authorities.
 This guide reinforces and highlights those upstream behaviors for adopters;
 it is not another skill or an implementation of their discovery/workflow logic.
 
-## Current selection: v0.10.1
+## Current selection: v0.11.0
 
 The starter's [ADR policy](engineering/architectural-decisions.md) binds project
 design/execution/review, but this selection is not claimed to supply the new
@@ -15,10 +15,14 @@ portable ADR procedure/template. Link the owning gz-skills delivery and verify
 its exact sources before claiming that contribution available. Keep the reusable
 procedure language/tool agnostic; Python requirements remain project-owned.
 
-The pending 0.10.0 bundle and both catalogs select released gz-skills v0.10.1 at
-`4c836e3db6d43c495863a2090daaea56585a6ea9`, checked November 14, 2026.
-This release uses uv_build and preserves the twenty-skill catalog. The published
-0.9.0 contribution removes portable fallback runtime/tool prescriptions; consuming
+The pending 0.10.0 bundle and both catalogs select released gz-skills v0.11.0 at
+`62622aee80ce27d4a39efe3554a583b844f38876`, checked November 14, 2026.
+This release preserves uv_build and the twenty-skill catalog. It updates Git sync
+release follow-through, stage-aware gate applicability and dependency-update
+authority. Publication still requires the consuming project's authority; this
+starter's deferred 0.10.0 release is not authorized by selecting the component.
+The published 0.9.0 contribution removes portable fallback runtime/tool
+prescriptions; consuming
 project policy supplies those choices. Selection is distinct from native installed
 revision, fresh-session discovery and model-behavior qualification. Historical
 installation receipts below retain their original version/platform scope.
@@ -63,7 +67,7 @@ released instructions are reviewed. The current release reinforcement is
 described below and is selected by the starter pin.
 
 Earlier 0.8.3 inspection found competing fallback runtime/tool prescriptions.
-The selected 0.10.1 setup/update instructions resolve governing project policy and
+The selected 0.11.0 setup/update instructions resolve governing project policy and
 report missing authority as UNKNOWN; they do not hardcode starter preferences.
 Starter-governed projects retain Python 3.14.x, or supported 3.12.x for the
 XPPython3 host exception, and the starter's retired-tool and gate decisions.
@@ -87,7 +91,7 @@ is distinct from fresh-session workflow execution and combined stack readiness.
 The release adds no comprehensive version-audit skill and preserves existing
 workflow scope and authorization boundaries. Adopter updates remain explicit.
 
-Authoritative selected [Python workflow instructions](https://github.com/tvproductions/gz-skills/tree/4c836e3db6d43c495863a2090daaea56585a6ea9/skills)
+Authoritative selected [Python workflow instructions](https://github.com/tvproductions/gz-skills/tree/62622aee80ce27d4a39efe3554a583b844f38876/skills)
 remain upstream-owned; this template supplies emphasis and policy bindings.
 
 ## Historical v0.6.0 inspection evidence

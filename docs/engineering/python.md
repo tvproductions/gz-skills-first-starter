@@ -388,7 +388,7 @@ updates to `gzs-update-dependencies` and dependency-risk assessments to
 `gzs-dependency-risk-audit`, preserving project scope and authorities. This policy
 binds those workflows to the selected Python family, tool choices and verification
 requirements; it does not duplicate their inventory, resolution or audit process.
-The pinned gz-skills v0.10.1 maintenance skill supports freshness-only review and
+The pinned gz-skills v0.11.0 maintenance skill supports freshness-only review and
 template/plugin inventory. Review mode leaves pins and environments unchanged.
 Apply the mandatory [completed-migration binding](../baseline-policy.md#dependency-maintenance-means-completed-migration)
 to the starter and every adopter: maintenance/update/upgrade/freshen requests,

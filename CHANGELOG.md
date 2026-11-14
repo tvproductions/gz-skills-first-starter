@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+- Recheck the complete dependency surface after gz-skills 0.11.0 was published
+  later on November 14. Select its immutable release in the bundle, both catalogs
+  and OpenCode configuration; reconcile current guidance and packaged resources.
+  Review Git sync release follow-through, stage-aware gate applicability and
+  preserved dependency-update authority without granting starter publication.
+  All 76 registry packages checked and both Python baseline patches are already
+  current; uv resolution leaves both locks unchanged. Reuse pending 0.10.0 and
+  preserve disabled Backplane, ADR/cognitive/host gaps and native activation.
+  Codex/Claude development marketplace refs require the resulting published
+  catalog commit during the already authorized synchronization. See the
+  [follow-up receipt](docs/evidence/2026-11-14-starter-maintenance.md#later-explicit-maintenance-invocation).
+
 - Complete the separately authorized November 14 maintenance pass: refresh both
   baseline locks, uv/uv_build 0.13.8, Ruff 0.17.5, ty 0.0.104, Complexipy 9.0.0,
   Cosmic Ray 8.9.0, coverage 7.17.3 and Lizard 1.26.0. Select immutable SP 7.0.2,

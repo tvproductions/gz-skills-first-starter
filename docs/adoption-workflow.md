@@ -64,7 +64,7 @@ enabling it while readiness and explicit adoption remain pending.
 Generic maintenance routes to gz-skills `gzs-update-dependencies` for authorized
 updates and `gzs-dependency-risk-audit` for risk assessments. Keep the starter's
 role to policy and adoption bindings; do not add a competing local maintenance
-skill. The pinned gz-skills v0.10.1 maintenance skill also supports freshness-only
+skill. The pinned gz-skills v0.11.0 maintenance skill also supports freshness-only
 reviews and starter/plugin inventory without changing pins or environments.
 For the starter and every adopter, apply the mandatory
 [completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration):

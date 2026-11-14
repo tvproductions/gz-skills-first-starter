@@ -12,7 +12,7 @@ without assigned versions or newly created issues.
 
 - Immutable bundle, two native marketplace catalogs, independent template
   versioning and exact-SHA adopter provenance. Current selections are SP 7.0.2
-  and gz-skills 0.10.1; Backplane stays pinned and disabled. `bundle.json` owns
+  and gz-skills 0.11.0; Backplane stays pinned and disabled. `bundle.json` owns
   those selections; exact pins do not establish upstream freshness.
 - Preview/apply/status configuration, preservation/conflict/symlink/duplicate/gzkit
   checks, unittest coverage and read-only structural backport assessment.

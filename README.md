@@ -284,7 +284,7 @@ those exact full commit SHAs, not moving branches.
 |---|---|---|
 | [Superpowers](https://github.com/obra/superpowers) | v7.0.2 | Feature design, plans, implementation, review |
 | [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | v0.2.0; disabled by default | GitHub-backed backlog and handoff continuity |
-| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.10.1 | Portable engineering disciplines |
+| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.11.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
 The November 14 maintenance pass selects the current stable releases above;

@@ -111,7 +111,7 @@ to `gzs-update-dependencies`, and dependency-risk assessments route to
 `gzs-dependency-risk-audit`. This starter supplies release-family policy, project
 bindings, bundle/catalog consistency and preservation requirements. It does not
 add a parallel maintenance skill or generic freshness reporter. The pinned
-gz-skills v0.10.1 supplies freshness-only assessment and template/plugin inventory
+gz-skills v0.11.0 supplies freshness-only assessment and template/plugin inventory
 through its maintenance skill. The starter's mandatory
 [completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
 overrides that portable skill's review-only default for this starter and every
