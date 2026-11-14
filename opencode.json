@@ -3,7 +3,7 @@
     "-superpowers",
     "-superpowers-backplane",
     "-gz-skills",
-    "git+https://github.com/obra/superpowers.git#2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
-    "git+https://github.com/tvproductions/gz-skills.git#d6acc26e28ca1c4f43e5bb46d8973021d7d006c3"
+    "git+https://github.com/obra/superpowers.git#22f0b463e7a5e579904dd6211a520321035526f7",
+    "git+https://github.com/tvproductions/gz-skills.git#4c836e3db6d43c495863a2090daaea56585a6ea9"
   ]
 }

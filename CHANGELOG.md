@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+- Complete the separately authorized November 14 maintenance pass: refresh both
+  baseline locks, uv/uv_build 0.13.8, Ruff 0.17.5, ty 0.0.104, Complexipy 9.0.0,
+  Cosmic Ray 8.9.0, coverage 7.17.3 and Lizard 1.26.0. Select immutable SP 7.0.2,
+  gz-skills 0.10.1 and released Backplane 0.2.0; keep Backplane disabled.
+  Preserve Python 3.14.10/3.12.16 families, uv >=0.13.5 support and centralized
+  pyproject.toml configuration. Revalidate analyzer compatibility without lowering
+  thresholds or claiming cognitive/ADR/native-host acceptance. Reuse pending
+  0.10.0; no tag/release or automatic adopter propagation. See the
+  [maintenance receipt](docs/evidence/2026-11-14-starter-maintenance.md).
+
 - Add maintainer-directed risk-based verification to pending 0.10.0: affected/
   focused local checks, full integration/broad-risk gates, proportional process
   and meaningful test-cost requirements. Clarify central uv workspaces with

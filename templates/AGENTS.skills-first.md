@@ -32,7 +32,7 @@ implementation; continue independent authorized work. Keep decisions self-contai
 with approval evidence embedded or durably referenced. General spec/plan/test/release
 approval is not architectural approval. Use the exact selected gz-skills portable
 procedure/template only when its owning delivery and discovery are verified;
-gz-skills 0.8.3 is not claimed to supply the new ADR contribution. Report missing
+gz-skills 0.10.1 is not claimed to supply the new ADR contribution. Report missing
 sources/evidence instead of claiming qualification. Heavy mode uses existing
 supported Backplane records; add no ledger or approval service. With Backplane
 disabled, keep existing project planning/review/handoff tools in either lane.
@@ -341,7 +341,7 @@ Generic maintenance belongs in gz-skills: use its discovered
 `gzs-update-dependencies` for authorized dependency/tool updates and
 `gzs-dependency-risk-audit` for risk assessments. The starter supplies baseline
 policy and stack-specific binding guidance. Do not create a duplicate local
-maintenance skill or generic freshness reporter. The pinned gz-skills v0.8.3
+maintenance skill or generic freshness reporter. The pinned gz-skills v0.10.1
 supplies freshness-only review and template/plugin inventory. Review mode leaves
 pins and environments unchanged; preserve project policy and profile choices.
 For every adopter in both lite and heavy lanes, a request to maintain, update,

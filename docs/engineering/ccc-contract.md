@@ -1,6 +1,6 @@
 # C/C/C contract: lizard-functions-v1
 
-The starter's on-demand checker uses pinned Lizard 1.24.3, not Radon/Xenon.
+The starter's on-demand checker uses pinned Lizard 1.26.0, not Radon/Xenon.
 Three ceilings are fixed at 20: each function score, each module's arithmetic
 mean of function scores, and the overall function-weighted mean. Values of 20
 pass; greater values fail. Means are never rounded before comparison. This

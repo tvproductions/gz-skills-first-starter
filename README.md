@@ -185,7 +185,7 @@ Requires uv >=0.13.5, Python 3.14, Git, and Codex with plugin support. GitHub CL
 for checking upstream releases; Backplane's GitHub workflows remain deferred. No Python dependencies are needed for this tool.
 
 uv uses a minimum-only compatibility requirement; local and hosted versions
-need not match CI's tested 0.13.7. See the
+need not match CI's tested 0.13.8. See the
 [uv policy](docs/baseline-policy.md#uv-executable-compatibility).
 
 Baseline tools use their latest stable release across tool families, with exact
@@ -282,26 +282,18 @@ those exact full commit SHAs, not moving branches.
 
 | Component | Initial baseline | Owns |
 |---|---|---|
-| [Superpowers](https://github.com/obra/superpowers) | v7.0.1 | Feature design, plans, implementation, review |
-| [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | Deferred; disabled by default | GitHub-backed backlog and handoff continuity |
-| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.8.3 | Portable engineering disciplines |
+| [Superpowers](https://github.com/obra/superpowers) | v7.0.2 | Feature design, plans, implementation, review |
+| [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | v0.2.0; disabled by default | GitHub-backed backlog and handoff continuity |
+| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.10.1 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-Published template 0.6.0 retains its original SP 7.0.0 selection.
-Template 0.7.0 selects Superpowers
-[v7.0.1](https://github.com/obra/superpowers/releases/tag/v7.0.1), the latest stable
-release checked October 24, 2026. The 0.9.0 freshness review found v7.0.2;
-its separate native-host upgrade is deferred in the release receipt.
-The old v6.4.1 selection came from Backplane's
-recorded compatibility proof; deferred Backplane does not constrain active SP
-updates. Review SP independently using the update guide. See the
-[update assessment](docs/evidence/2026-10-11-superpowers-7.0.0.md) for scope and
-verification limits.
-This is a reviewed
-starting set, **not a blanket compatibility certification**. Backplane now has
-published v0.2.0; its remaining host acceptance and external pilot are tracked
-upstream, so the selected snapshot remains disabled. gz-skills v0.10.1 is also
-available; this release retains v0.8.3 pending separate native qualification.
+The November 14 maintenance pass selects the current stable releases above;
+see the [maintenance receipt](docs/evidence/2026-11-14-starter-maintenance.md)
+for exact sources and verification. Published templates retain their original
+pins. Deferred Backplane does not constrain active SP/gz-skills updates, and its
+released status does not establish adoption or host readiness. This selection
+is not a blanket compatibility or ADR-feature certification. Native installed
+revisions and fresh-session discovery require separate evidence.
 The pinned gz-skills release contains twenty skills, including
 project setup, Pythonic pattern review/apply and freshness-only maintenance
 review with template/plugin inventory. The starter does not invoke setup or

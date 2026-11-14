@@ -31,7 +31,7 @@ older unversioned locks require reviewed reconciliation. See
 Review existing `AGENTS.md`, skill discovery surfaces, plugin configuration,
 and gzkit ownership. Existing project authorities remain in place. A conflict
 is a request for reconciliation, not permission to remove an existing install.
-The starter does not select a gz-skills profile. The pinned gz-skills v0.8.3
+The starter does not select a gz-skills profile. The pinned gz-skills v0.10.1
 supplies `gzs-project-setup`; invoking it and choosing lite/heavy remain separate
 explicit adopter decisions required before completed adoption. Neither absent
 nor null selection is a completed lane. Preserve starter Python policy over
@@ -280,7 +280,7 @@ lifecycle acceptance remain separate requirements.
 
 ## OpenCode
 
-Use OpenCode v2. The pinned SP 7.0.1 and gz-skills 0.8.3 releases already own
+Use OpenCode v2. The pinned SP 7.0.2 and gz-skills 0.10.1 releases already own
 their v2 adapters; this starter configures them and authors no competing adapter.
 Generate project `opencode.json` using `configure --host opencode`, or repair
 existing activation using `localize --host opencode`. The project `plugins`
@@ -330,10 +330,10 @@ starter skill leakage outside. See
 ## Getting current SP and gz-skills
 
 Check upstream at adoption time rather than assuming this template's baseline
-is newest. The October 31, 2026 release review selects SP **v7.0.1** at
-`2ce8aa15d05bd57213e6f746f953aafb7ded7a8b` and gz-skills **v0.8.3** at
-`d6acc26e28ca1c4f43e5bb46d8973021d7d006c3`. These observations expire as
-releases change. See the [0.8.0 release review](evidence/2026-10-31-0.8.0-release.md).
+is newest. The November 14, 2026 maintenance review selects SP **v7.0.2** at
+`22f0b463e7a5e579904dd6211a520321035526f7` and gz-skills **v0.10.1** at
+`4c836e3db6d43c495863a2090daaea56585a6ea9`. These observations expire as
+releases change. See the [maintenance receipt](evidence/2026-11-14-starter-maintenance.md).
 Explicit-only release support does not authorize publication by adoption.
 Backplane remains disabled and does not constrain active SP version selection;
 review its readiness and compatibility before any future enablement.
@@ -407,7 +407,7 @@ Route authorized dependency/tool updates through gz-skills'
 `gzs-update-dependencies` and dependency-risk reviews through
 `gzs-dependency-risk-audit`, subject to project scope and authorities. The source
 inventory and native adoption requirements below are the starter's binding to
-those portable workflows. The pinned gz-skills v0.8.3 maintenance skill supplies
+those portable workflows. The pinned gz-skills v0.10.1 maintenance skill supplies
 freshness-only reporting and template/plugin inventory. Review mode leaves pins
 and environments unchanged. This starter adds no competing command and does not
 select a lite/heavy profile or invoke setup as part of a bundle update.
@@ -470,7 +470,7 @@ unrelated consumers.
 
 Review SP and gz-skills without waiting for SP-BP. Track Backplane's updates and
 readiness even while disabled; a newer revision or first release alone does not
-authorize activation or prove compatibility. Its pre-release host acceptance
+authorize activation or prove compatibility. Its remaining host acceptance
 limitations remain until independently verified and adoption is explicit.
 Python/tool-family preferences stay in the starter/project binding; do not edit
 the upstream plugins to impose them.

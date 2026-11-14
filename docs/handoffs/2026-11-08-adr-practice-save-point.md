@@ -83,6 +83,23 @@ verification establishes neither fresh-session adopter compliance
 nor closure of cognitive/host or ADR behavioral qualification gaps. Recheck the
 live diff and exact-commit CI during any later authorized Git synchronization.
 
+## November 14 authorized maintenance pass
+
+The maintainer separately authorized current-stable dependency/component migration,
+normal Git synchronization and exact-commit CI. Delivery: refresh both Python
+baseline locks, backend/CI selections and immutable component catalogs, preserving
+central Astral settings in each owning pyproject.toml, Python 3.14/3.12 families
+and disabled Backplane. Reuse pending 0.10.0 from published 0.9.0; no release/tag,
+global plugin activation or adopter propagation. Existing ADR-0001-001 applies;
+component refresh does not qualify the outstanding ADR feature.
+
+Verification: resolve with task-local uv 0.13.8; synchronize all groups, check lock
+stability/outdated/advisories, run the four-check gate once, existing analyzer
+contract regressions, standalone host-baseline checks and source-independent
+build/installed-helper proof. Adapt only compatibility failures evidenced by these
+checks; preserve thresholds. Review the diff, commit with normal hooks, push main
+and verify both exact-commit CI jobs. Record results in the maintenance receipt.
+
 ## Governing records and accepted design
 
 - [Feature #12](https://github.com/tvproductions/gz-skills-first-starter/issues/12)
@@ -160,7 +177,7 @@ claiming feature acceptance or permitting separately authorized propagation.
 Keep explicit approval, source identity, configuration, discovery, behavioral
 compliance, delivery and publication separate.
 
-Current selections/activation are unchanged: SP 7.0.1, gz-skills 0.8.3 and
+At the November 8 save point, selections/activation were SP 7.0.1, gz-skills 0.8.3 and
 pre-release SP-BP snapshot disabled. Read-only live inventory saw gz-skills
 main `cfb34f8d2b6e6eebb268581ac07664a6b8074ebf` / stable 0.10.1 and SP-BP
 main `05505f8009989eb7514ec62750e33c78bc40abf9` / stable 0.2.0. That inventory
@@ -218,3 +235,7 @@ sync correction includes helper/test changes plus this handoff, changelog and
 qualification evidence; observe the correction commit's
 own CI before declaring synchronization verified. Retain the failed run as
 evidence; it supplies no passing starter/native qualification.
+
+The November 14 maintenance receipt supersedes that historical selection: SP
+7.0.2, gz-skills 0.10.1 and disabled Backplane 0.2.0. ADR feature qualification
+and native host acceptance remain separate; see the maintenance section above.

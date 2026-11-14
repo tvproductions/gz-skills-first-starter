@@ -61,7 +61,7 @@ every invocation. A check-only request reports a stale pin without upgrading it.
 
 For the uv executable, the [minimum-only policy](../baseline-policy.md#uv-executable-compatibility)
 supersedes exact-runtime matching: this checkout accepts `>=0.13.5` without an
-upper bound. CI 0.13.7 is the tested reference. Use any supported uv without
+upper bound. CI 0.13.8 is the tested reference. Use any supported uv without
 switching it solely to match CI; record actual versions and let behavioral checks
 establish compatibility. This is an execution-compatibility rule, not permission
 to describe an old tool as latest. Keep exact Python, package/backend locks and
@@ -225,15 +225,14 @@ do not import the whole gzkit lifecycle or create an unrelated scoring model.
 The extraction review must resolve discovery coverage and preserve a documented
 metric contract before replacing the acceptance tool.
 
-Complexipy 8.1.0 is installed for evaluation but is not qualified as sole evidence
-for cognitive acceptance. The October 24 probe reproduces a blind spot: nine
-conditional expressions in keyword argument values score zero, while equivalent
-tuple expressions score nine. The compatibility probe now records the failed
-canary and exits nonzero. A successful complexipy CLI run cannot override that
-failure. Keep the cognitive ceiling of 15; require qualified replacement or
-independent evidence before claiming that requirement passes. Historical passing
-receipts retain their narrower observed scope, not an evergreen qualification.
-See [the defect assessment](../evidence/2026-10-24-complexipy-assessment.md).
+Complexipy 9.0.0 is selected for evaluation, not as sole cognitive acceptance
+authority. It fixes the October 24 keyword-conditional blind spot: the current
+probe scores both keyword and tuple forms at nine, and all compatibility canaries
+pass. Its major release also changes other scoring rules; historical scores are
+not interchangeable. Preserve the cognitive ceiling of 15 and the independent
+shared-engine qualification requirement. See the historical
+[defect assessment](../evidence/2026-10-24-complexipy-assessment.md) and current
+[maintenance receipt](../evidence/2026-11-14-starter-maintenance.md).
 
 The maintainer confirmed that the shared engine is coming from gzkit. The
 starter's [consumer qualification boundary](cognitive-integration.md) prepares
@@ -292,7 +291,7 @@ no known advisories is not proof of absence of vulnerabilities. Do not run
 ### Complexity policy: Ruff, complexipy and Lizard
 
 Historically, Ruff 0.15.18 and complexipy 8.0.1 passed focused Python 3.14.8
-syntax, threshold-boundary and invalid-syntax checks. The current cyclomatic toolchain selects Lizard 1.24.3 and retires both Xenon and
+syntax, threshold-boundary and invalid-syntax checks. The current cyclomatic toolchain selects Lizard 1.26.0 and retires both Xenon and
 Radon. The saved two-tool receipt is historical; use the new three-tool receipt
 for Lizard evidence. Ruff measures cyclomatic branching;
 complexipy adds cognitive costs such as nesting. Use cyclomatic 20 and cognitive
@@ -389,7 +388,7 @@ updates to `gzs-update-dependencies` and dependency-risk assessments to
 `gzs-dependency-risk-audit`, preserving project scope and authorities. This policy
 binds those workflows to the selected Python family, tool choices and verification
 requirements; it does not duplicate their inventory, resolution or audit process.
-The pinned gz-skills v0.8.3 maintenance skill supports freshness-only review and
+The pinned gz-skills v0.10.1 maintenance skill supports freshness-only review and
 template/plugin inventory. Review mode leaves pins and environments unchanged.
 Apply the mandatory [completed-migration binding](../baseline-policy.md#dependency-maintenance-means-completed-migration)
 to the starter and every adopter: maintenance/update/upgrade/freshen requests,
