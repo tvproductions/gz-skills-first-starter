@@ -1,0 +1,209 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -37,7 +37,44 @@
+ line-length = 100
+ 
+ [tool.ruff.lint]
+-select = ["E4", "E7", "E9", "F", "I", "UP", "B", "SIM", "RUF"]
++select = [
++    "E4",
++    "E7",
++    "E9",
++    "F",
++    "I",
++    "UP",
++    "B",
++    "SIM",
++    "RUF",
++    "N",
++    "A",
++    "ASYNC",
++    "BLE",
++    "C4",
++    "DTZ",
++    "EXE",
++    "FA",
++    "FLY",
++    "FURB",
++    "G",
++    "ICN",
++    "INT",
++    "ISC001",
++    "LOG",
++    "PIE",
++    "PLE",
++    "PLW",
++    "PTH",
++    "PYI",
++    "RET",
++    "RSE",
++    "SLOT",
++    "TID",
++    "YTT",
++    "W",
++    "PGH",
++]
+ 
+ # Routine tools and explicit on-demand analysis stay out of runtime dependencies.
+ [dependency-groups]
+@@ -74,6 +111,160 @@
+ [tool.ty.environment]
+ python-version = "3.14"
+ 
++[tool.ty.rules]
++# Reviewed stable inventory of ty 0.0.104; no all selector.
++abstract-and-final-method = "error"
++abstract-class-instantiation = "error"
++abstract-method-call = "error"
++abstract-method-in-final-class = "error"
++ambiguous-protocol-member = "warn"
++assert-type-unspellable-subtype = "error"
++blanket-ignore-comment = "ignore"
++call-to-function-with-unknown-signature = "error"
++conflicting-declarations = "error"
++conflicting-metaclass = "error"
++cyclic-class-definition = "error"
++cyclic-type-alias-definition = "error"
++deprecated = "warn"
++disjoint-cast = "ignore"
++division-by-zero = "ignore"
++duplicate-base = "error"
++duplicate-kw-only = "error"
++dynamic-function-decorator-return = "ignore"
++escape-character-in-forward-annotation = "error"
++experimental-syntax = "warn"
++final-on-non-method = "error"
++final-without-value = "error"
++ignore-comment-unknown-rule = "warn"
++implicit-string-concatenation-in-annotation = "error"
++import-not-found = "error"
++incompatible-attribute-override = "error"
++incompatible-method-override = "error"
++incompatible-mutable-override = "error"
++incompatible-property-override = "error"
++inconsistent-mro = "error"
++inconsistent-overload-decorator = "error"
++inconsistent-overload-implementation = "error"
++index-out-of-bounds = "error"
++ineffective-final = "warn"
++instance-layout-conflict = "error"
++invalid-argument-type = "error"
++invalid-assignment = "error"
++invalid-attribute-access = "error"
++invalid-await = "error"
++invalid-base = "error"
++invalid-context-manager = "error"
++invalid-dataclass = "error"
++invalid-dataclass-field-order = "error"
++invalid-dataclass-override = "error"
++invalid-declaration = "error"
++invalid-enum-member-annotation = "warn"
++invalid-exception-caught = "error"
++invalid-explicit-override = "error"
++invalid-explicit-return = "error"
++invalid-frozen-dataclass-subclass = "error"
++invalid-generator-return-type = "error"
++invalid-generic-class = "error"
++invalid-generic-enum = "error"
++invalid-ignore-comment = "warn"
++invalid-implicit-return = "error"
++invalid-implicit-return-in-function-with-stub-body = "error"
++invalid-init-type-variable = "error"
++invalid-legacy-positional-parameter = "ignore"
++invalid-legacy-type-variable = "error"
++invalid-match-pattern = "error"
++invalid-metaclass = "error"
++invalid-module-getattr-call = "error"
++invalid-named-tuple = "error"
++invalid-named-tuple-override = "warn"
++invalid-newtype = "error"
++invalid-parameter-default = "error"
++invalid-paramspec = "error"
++invalid-protocol = "error"
++invalid-raise = "error"
++invalid-super-argument = "error"
++invalid-syntax-in-forward-annotation = "error"
++invalid-total-ordering = "error"
++invalid-type-alias-type = "error"
++invalid-type-arguments = "error"
++invalid-type-checking-constant = "error"
++invalid-type-form = "error"
++invalid-type-guard-definition = "error"
++invalid-type-variable-bound = "error"
++invalid-type-variable-constraints = "error"
++invalid-type-variable-default = "error"
++invalid-typed-dict-field = "error"
++invalid-typed-dict-header = "error"
++invalid-typed-dict-key = "error"
++invalid-typed-dict-statement = "error"
++invalid-yield = "error"
++isinstance-against-protocol = "error"
++isinstance-against-typed-dict = "error"
++lost-keyword-for-regular-parameter = "error"
++mismatched-sentinel-name = "ignore"
++mismatched-type-name = "warn"
++misplaced-overload-decorator = "error"
++missing-argument = "error"
++missing-attribute = "error"
++missing-overload-implementation = "error"
++missing-override-decorator = "ignore"
++missing-slot = "error"
++missing-type-argument = "ignore"
++missing-typed-dict-key = "error"
++missing-union-attribute = "error"
++no-matching-overload = "error"
++non-callable-init-subclass = "error"
++non-literal-typed-dict-key = "error"
++not-callable = "error"
++not-iterable = "error"
++not-subscriptable = "error"
++override-of-final-method = "error"
++override-of-final-variable = "error"
++parameter-already-assigned = "error"
++positional-only-parameter-as-kwarg = "error"
++possibly-missing-attribute = "ignore"
++possibly-missing-implicit-call = "warn"
++possibly-missing-import = "ignore"
++possibly-missing-submodule = "warn"
++possibly-unresolved-reference = "ignore"
++pydantic-discarded-extra-argument = "warn"
++raw-string-type-annotation = "error"
++redundant-cast = "warn"
++redundant-condition = "warn"
++redundant-condition-strict = "ignore"
++redundant-final-classvar = "warn"
++renamed-rule-in-ignore-comment = "warn"
++shadowed-type-variable = "error"
++single-overload = "warn"
++static-assert-error = "error"
++subclass-of-dataclass-with-order = "warn"
++subclass-of-final-class = "error"
++super-call-in-named-tuple-method = "error"
++too-many-positional-arguments = "error"
++truthiness-test-of-callable = "warn"
++truthiness-test-of-iterable = "warn"
++truthiness-test-of-none-union = "ignore"
++type-assertion-failure = "error"
++unavailable-implicit-super-arguments = "error"
++unbound-type-variable = "error"
++undefined-reveal = "warn"
++unknown-argument = "error"
++unknown-typed-dict-constructor-key = "error"
++unresolved-global = "warn"
++unresolved-reference = "error"
++unsound-assignment = "ignore"
++unsound-return = "ignore"
++unsound-yield = "ignore"
++unsupported-base = "warn"
++unsupported-bool-conversion = "error"
++unsupported-dynamic-base = "ignore"
++unsupported-operator = "error"
++unused-awaitable = "warn"
++unused-ignore-comment = "warn"
++unused-type-ignore-comment = "warn"
++useless-overload-body = "warn"
++zero-stepsize-in-slice = "error"
++
+ [tool.ty.src]
+ include = ["src", "starter.py", "tests", "tools"]
+ 

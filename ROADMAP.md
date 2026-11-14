@@ -41,6 +41,20 @@ universal acceptance.
 
 ## Next work, in recommended order
 
+### House naming and layout — proposal ready for review
+
+The maintainer requested the [dated house-policy draft](docs/engineering/naming-and-layout.md)
+and explicitly selected rejection of user-selected paths containing spaces.
+The draft supplies all 15 requested naming/layout areas, exact unapplied tool
+settings, per-member declaration verification and downstream migration guidance;
+see its [bounded evidence](docs/evidence/2026-11-14-naming-layout-proposal.md).
+This is minor-level work from published 0.9.0, but its implementation is not yet
+selected into pending 0.10.0. Reconcile the bounded scope and obtain required
+policy/design/ADR approvals before dependent work. Keep all four routine checks;
+remediate findings and prove actual path/declaration/artifact behavior. No
+adopter change, chore/skill creation, enforcement activation or release occurs
+by saving the draft. The prior sidecar/Backplane review remains pending too.
+
 ### Canonical rename selected: gz-starter
 
 November 14 maintainer decision: the canonical project name will be
@@ -49,8 +63,8 @@ repository/local-folder and adopter migration as minor-level work in the valid
 pending **0.10.0** target from published 0.9.0; do not add a bump per task.
 Execution is now authorized and the candidate uses the renamed GitHub repository,
 local checkout, distribution and canonical CLI. Compatibility interfaces remain
-as documented in `docs/rename-gz-starter.md`. Desktop binding and downstream
-adopter propagation remain explicit follow-up work. Keep the earlier ADR/policy
+as documented in `docs/rename-gz-starter.md`. Desktop primary-folder binding is now verified in the current handoff;
+downstream adopter propagation remains explicit follow-up work. Keep the earlier ADR/policy
 acceptance gates intact; this does not establish release acceptance.
 
 Required completion scope:

@@ -76,6 +76,19 @@ accurate limits. Retain checked-on versus page-updated dates separately.
   conventions, argparse, POSIX, Google JSON guidance, Agent Skills, complete
   Ruff/ty configuration or undeclared-import tooling.
 
+## Proposal continuation and explicit path ruling
+
+After this intake checkpoint, the maintainer answered “Prepare the proposal
+now” and extended the session. In response to whether the path rule should
+apply only to owned names or reject user-selected spaced paths, the maintainer
+selected “Reject all paths containing spaces” (2026-11-14). This supersedes the
+preliminary scope question above; do not silently limit the rule to owned names.
+
+Read the [draft policy](../../engineering/naming-and-layout.md), its
+[unapplied settings patch](2026-11-14-naming-layout-tool-settings.patch) and
+[bounded verification](../../evidence/2026-11-14-naming-layout-proposal.md).
+They are prepared for design review, not activated policy or adopter edits.
+
 ## Supplied request, preserved verbatim
 
 The following is user-supplied design input, not instructions activated by this

@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+- Prepare the source-backed [house naming/layout proposal](docs/engineering/naming-and-layout.md)
+  with an unapplied Ruff/ty settings patch, the maintainer's strict spaced-path
+  rejection choice, per-member declaration-check design and adopter migration
+  guidance. Measure rule coverage and disposable positive/negative controls;
+  retain 14 broader-lint findings and unimplemented enforcement as explicit gaps.
+  Keep the draft nonbinding and 0.10.0 implementation scope unchanged pending
+  selection; change no adopter, active tool configuration or skill ownership.
+
 - Verify the renamed desktop primary-folder/checkout binding and preserve the
   supplied house naming/workspace-layout request as a
   [nonbinding design intake](docs/superpowers/specs/2026-11-14-naming-layout-policy-intake.md).

@@ -1,5 +1,56 @@
 # Opinionated enforcement CLI — design-discussion handoff
 
+## Extended session — naming/layout proposal prepared
+
+After the readiness save point, the maintainer answered **“Prepare the proposal
+now”** and continued the session. Read the
+[draft policy, edition 1](../engineering/naming-and-layout.md),
+[exact unapplied tool-settings patch](../superpowers/specs/2026-11-14-naming-layout-tool-settings.patch)
+and [bounded source/tool evidence](../evidence/2026-11-14-naming-layout-proposal.md).
+The original 15-point attachment remains verbatim in the linked intake. These
+artifacts supersede the earlier next-session-only handling, not the current
+active engineering policy. No root tool settings, tests, helpers or adopter
+files were changed; no release or dependency/native update was performed.
+
+The maintainer explicitly chose **“Reject all paths containing spaces”**,
+including user-selected paths, in response to the scope clarification. The
+draft requires rejection before target I/O and review of actual path/platform
+contracts; do not silently narrow it to project-generated names. This is a
+house restriction, not a claimed Python/OS/Astral requirement. Owned schema keys
+stay snake_case while external tool/protocol keys keep their real spellings.
+
+The source-backed proposal covers all 15 requested areas. uv workspace/init
+pages display November 12, 2026; all Canonical lines record the November 14
+review. Root-only Ruff/ty discovery passed positive and negative controls in
+both application and library fixtures. The proposed Ruff selection enables
+541/815 stable rules, including all 16 naming rules; it finds 14 existing issues,
+with zero naming-only findings. ty's explicit proposed stable severities enable
+134/151 rules. Per-member deptry passes declared external/sibling imports and
+fails when omitted. Its extraction limits require the additional project-owned
+unittest contract specified in section 15; that test is not implemented.
+Unknown dynamic-import coverage blocks that requirement's acceptance.
+
+A fresh builder review exposed the release-scope decision and an acceptance
+ambiguity. The latter is resolved above. The former stays a maintainer choice:
+this task authorizes a proposal, not implementation or silently expanding
+0.10.0. Recommended bounded implementation scope is all 15 requirements plus
+starter policy/resource reconciliation, tool findings, strict paths, declaration
+tests and artifact/platform evidence. Downstream edits, chores/new skills,
+engine extraction and record-platform implementation are excluded.
+Published 0.9.0 -> pending 0.10.0 / minor remains mirrored and unpublished;
+reuse that target if the proposed coherent scope is selected. No task-count bump.
+
+Resume by reviewing this policy proposal and selecting its implementation scope,
+then any required architectural ADR editions separately. The paired sidecar/
+Backplane drafts, cognitive deferral and remaining shared-engine work remain as
+recorded, not approved or replaced. The desktop primary path is now verified;
+its earlier pending note below is historical. The preceding readiness commit
+`54cf1001ba1d7064639575561fe19d83adb79158` has
+[passing exact-commit CI](https://github.com/tvproductions/gz-starter/actions/runs/43648751233).
+Observe CI for the eventual proposal commit separately, without a receipt-only
+commit loop. Only starter docs were edited during this extension; companion
+repositories retain the verified migration commits recorded below.
+
 ## Ready to resume — primary folder verified November 14
 
 After the maintainer updated the desktop project, `list_projects` reports its

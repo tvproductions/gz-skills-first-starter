@@ -234,6 +234,18 @@ the final commit's own CI after push; prior release CI does not cover this chang
 
 ## November 8 agreed ADR practice and next release scope
 
+November 14 extended-session intake: the maintainer requested the concrete
+[house naming/layout proposal](../engineering/naming-and-layout.md), including
+strict rejection of user-selected spaced paths. This is new minor-level policy
+work; the prepared draft, exact unapplied settings and bounded verification do
+not activate it or silently add its implementation to 0.10.0. Proposed bounded
+scope/acceptance is stated in the draft for maintainer selection. Keep the
+existing 0.9.0 -> pending 0.10.0 mirrors and approved work; reuse a valid target
+if selected, without per-task increments. No adopter migration, chore framework,
+new skill, enforcement implementation or publication is delivered by the draft.
+The current handoff records the verified desktop binding and final trio sync.
+
+
 November 14 execution follow-up: the maintainer explicitly chose execution now.
 GitHub/local checkout and distribution/CLI are renamed to **gz-starter** in the
 candidate; legacy command/import/native IDs and immutable provenance are retained.

@@ -14,6 +14,12 @@ is booked as additional minor-level work in this valid pending 0.10.0 target;
 see [the roadmap](../ROADMAP.md#canonical-rename-selected-gz-starter). The repository/local-folder and distribution/CLI rename are implemented in the
 candidate with compatibility interfaces retained; downstream propagation and
 remaining acceptance are explicit gates, not publication. Preserve the existing ADR/policy scope.
+The November 14 [naming/layout proposal](engineering/naming-and-layout.md)
+is new minor-level policy work, including explicit spaced-path rejection.
+It remains a draft: preparing it neither activates the requirements nor selects
+its implementation into 0.10.0. Reconcile the proposed bounded bundle at planning
+and reuse this valid pending target if that scope is selected; do not increment
+per pending task. Version mirrors remain unchanged and no release is authorized.
 The [governing release-scope record](handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope)
 distinguishes this accepted direction from unfinished design, implementation and
 acceptance. Adoption-acceptance reporting remains the final planned feature
