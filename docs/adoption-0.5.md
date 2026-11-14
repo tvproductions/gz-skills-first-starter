@@ -92,16 +92,16 @@ conformance. Do not use existing structure as an exception by itself.
 Use a separate checkout. These commands are run from its parent directory:
 
 ```bash
-git clone --branch v0.6.0 https://github.com/tvproductions/gz-skills-first-starter.git reviewed-starter-0.6
+git clone --branch v0.6.0 https://github.com/tvproductions/gz-starter.git reviewed-starter-0.6
 cd reviewed-starter-0.6
 git rev-parse HEAD
 git rev-parse 'v0.6.0^{commit}'
 git status --short
-gh release view v0.6.0 --repo tvproductions/gz-skills-first-starter
+gh release view v0.6.0 --repo tvproductions/gz-starter
 uv --version
 uv sync --locked --all-groups
-uv run --locked skills-first-starter version
-uv run --locked skills-first-starter validate
+uv run --locked gz-starter version
+uv run --locked gz-starter validate
 ```
 
 The two SHAs must match and the checkout must be clean. Review the GitHub release,
@@ -139,9 +139,9 @@ merely to configure the stack. Use the scoped upstream maintenance workflow.
    existing product directory. Replace the example absolute path:
 
    ```bash
-   uv run --locked skills-first-starter configure --project /absolute/path/to/product
-   uv run --locked skills-first-starter configure --project /absolute/path/to/product --apply
-   uv run --locked skills-first-starter status --project /absolute/path/to/product
+   uv run --locked gz-starter configure --project /absolute/path/to/product
+   uv run --locked gz-starter configure --project /absolute/path/to/product --apply
+   uv run --locked gz-starter status --project /absolute/path/to/product
    ```
 
    Inspect the preview before applying. New locks record the published checkout
@@ -178,7 +178,7 @@ The same required target baseline and acceptance apply to all three cases.
 2. From the separate released starter, run the bounded read-only assessment:
 
    ```bash
-   uv run --locked skills-first-starter backport --project /absolute/path/to/product
+   uv run --locked gz-starter backport --project /absolute/path/to/product
    ```
 
    This lists top-level responsibilities, not an exhaustive source audit. Read
@@ -222,7 +222,7 @@ when invoked from a newer starter. This is a preservation boundary, not migratio
 
    ```bash
    candidate_dir=$(mktemp -d)
-   uv run --locked skills-first-starter configure --project "$candidate_dir" --apply
+   uv run --locked gz-starter configure --project "$candidate_dir" --apply
    ```
 
    Retain the printed directory for review. Its lock/fragment and managed Codex

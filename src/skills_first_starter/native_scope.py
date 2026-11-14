@@ -71,7 +71,7 @@ def codex_scope(existing: str, inherited: dict, ref: str, parts: list[dict]) -> 
     if "skills-first-starter" not in data.get("marketplaces", {}):
         text += (
             '\n[marketplaces.skills-first-starter]\nsource_type = "git"\n'
-            'source = "https://github.com/tvproductions/gz-skills-first-starter.git"\n'
+            'source = "https://github.com/tvproductions/gz-starter.git"\n'
             f'ref = "{ref}"\n'
         )
     return text

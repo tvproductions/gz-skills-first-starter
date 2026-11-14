@@ -159,8 +159,9 @@ def main() -> None:
     """Inspect archives and exercise the installed helper outside the checkout."""
     metadata = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     version = metadata["project"]["version"]
-    wheel = ROOT / "dist" / f"skills_first_starter-{version}-py3-none-any.whl"
-    sdist = ROOT / "dist" / f"skills_first_starter-{version}.tar.gz"
+    distribution = metadata["project"]["name"].replace("-", "_")
+    wheel = ROOT / "dist" / f"{distribution}-{version}-py3-none-any.whl"
+    sdist = ROOT / "dist" / f"{distribution}-{version}.tar.gz"
     verify_archives(wheel, sdist)
     with tempfile.TemporaryDirectory(prefix="starter-wheel-") as temporary:
         directory = Path(temporary)
@@ -168,9 +169,7 @@ def main() -> None:
         run("uv", "venv", "--python", sys.executable, str(environment), cwd=directory)
         scripts = environment / ("Scripts" if os.name == "nt" else "bin")
         python = scripts / ("python.exe" if os.name == "nt" else "python")
-        command = scripts / (
-            "skills-first-starter.exe" if os.name == "nt" else "skills-first-starter"
-        )
+        command = scripts / ("gz-starter.exe" if os.name == "nt" else "gz-starter")
         run(
             "uv",
             "pip",
@@ -183,6 +182,14 @@ def main() -> None:
             cwd=directory,
         )
         run(str(command), "validate", cwd=directory)
+        legacy = scripts / (
+            "skills-first-starter.exe" if os.name == "nt" else "skills-first-starter"
+        )
+        if (
+            run(str(legacy), "version", cwd=directory).stdout
+            != run(str(command), "version", cwd=directory).stdout
+        ):
+            raise ValueError("Legacy command alias differs from the canonical command")
         result = run(str(python), "-I", "-m", "skills_first_starter", "version", cwd=directory)
         if json.loads(result.stdout)["template_version"] != version:
             raise ValueError("Installed version differs from project metadata")

@@ -1,7 +1,7 @@
 # GZ Starter
 
 Accept **GZ Starter**, **starter** and **starter template** as shorthand for
-`gz-skills-first-starter` when the conversation concerns this repository or its
+`gz-starter` when the conversation concerns this repository or its
 adopted template. Use the recorded adoption source/version/SHA to resolve the
 reference; do not require the full repository name. Preserve canonical repository,
 package, command and skill identifiers in provenance and executable instructions.
@@ -84,7 +84,7 @@ Codex CLI 0.166.0 `plugin add` unconditionally enables the plugin user-wide even
 from a project with a local marketplace; do not use it as a project update or
 reinstall command. Verify installed revisions and enablement scope separately.
 OpenCode 2.2.0 has an inherited duplicate-ID precedence failure. Use
-`uv run --locked skills-first-starter run-opencode --project <root> -- <args>`
+`uv run --locked gz-starter run-opencode --project <root> -- <args>`
 for project commands. It reconciles user preferences with repo-owned config and
 starts a private native server without editing user settings or OpenCode code.
 
@@ -256,7 +256,7 @@ Report unverified host behavior and Backplane adoption/host limitations explicit
 
 Full integration/release checks: `uv sync --locked --all-groups` when environment
 state requires it, `uv run --locked pre-commit run --all-files`,
-`uv run --locked skills-first-starter validate`, `uv build --no-sources`, and
+`uv run --locked gz-starter validate`, `uv build --no-sources`, and
 `uv run --locked python tools/verify_distribution.py`. The routine hooks run only
 Ruff check/format, ty and unittest. Run the checker CLI tests explicitly after
 analyzer changes: `uv run --locked --group hygiene python -m unittest discover -s tools/engineering -p "test_*.py" -v` (counting-contract, portability, cognitive-qualification and consumer-gate regressions).

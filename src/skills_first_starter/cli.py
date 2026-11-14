@@ -36,7 +36,7 @@ HERE = (
     else _SOURCE.parent / "resources"
 )
 MARKETPLACE = "skills-first-starter"
-ORIGIN = "https://github.com/tvproductions/gz-skills-first-starter.git"
+ORIGIN = "https://github.com/tvproductions/gz-starter.git"
 SHA = re.compile(r"[0-9a-f]{40}\Z")
 UPDATE_SKILL = "update-gz-template"
 UPDATE_SKILL_SOURCE = f"templates/skills/{UPDATE_SKILL}/SKILL.md"
@@ -256,7 +256,7 @@ def _policy_candidates(
         raise AdoptionError(
             "ADR policy provenance or selection differs; reconcile without overwriting"
         )
-    url = f"https://github.com/tvproductions/gz-skills-first-starter/blob/{ref}/{ADR_POLICY_SOURCE}"
+    url = f"https://github.com/tvproductions/gz-starter/blob/{ref}/{ADR_POLICY_SOURCE}"
     copies = {ADR_POLICY_DESTINATION: source.decode("utf-8")} if mode == "local" else {}
     return policy, copies, ADR_POLICY_DESTINATION if mode == "local" else url
 
@@ -277,9 +277,7 @@ def _configuration_candidates(
         else ""
     )
     fragment = (HERE / "templates/AGENTS.skills-first.md").read_text(encoding="utf-8")
-    policy_url = (
-        f"https://github.com/tvproductions/gz-skills-first-starter/blob/{ref}/{ADR_POLICY_SOURCE}"
-    )
+    policy_url = f"https://github.com/tvproductions/gz-starter/blob/{ref}/{ADR_POLICY_SOURCE}"
     fragment = fragment.replace("{{ADR_POLICY_WORKING_SOURCE}}", working_policy).replace(
         "{{ADR_POLICY_CANONICAL_URL}}", policy_url
     )
@@ -606,14 +604,18 @@ def source_revision() -> str:
         raise AdoptionError("run from a standalone starter checkout or supply --starter-ref")
     origin = git("remote", "get-url", "origin")
     if origin not in (
-        ORIGIN,
-        ORIGIN.removesuffix(".git"),
-        "git@github.com:tvproductions/skills-first-starter.git",
-        "git@github.com:tvproductions/skills-first-starter",
+        "https://github.com/tvproductions/gz-starter.git",
+        "https://github.com/tvproductions/gz-starter",
+        "https://github.com/tvproductions/gz-skills-first-starter.git",
+        "https://github.com/tvproductions/gz-skills-first-starter",
         "https://github.com/tvproductions/skills-first-starter.git",
         "https://github.com/tvproductions/skills-first-starter",
+        "git@github.com:tvproductions/gz-starter.git",
+        "git@github.com:tvproductions/gz-starter",
         "git@github.com:tvproductions/gz-skills-first-starter.git",
         "git@github.com:tvproductions/gz-skills-first-starter",
+        "git@github.com:tvproductions/skills-first-starter.git",
+        "git@github.com:tvproductions/skills-first-starter",
     ):
         raise AdoptionError("this is an adopting repo; supply the published starter --starter-ref")
     if git("status", "--porcelain"):

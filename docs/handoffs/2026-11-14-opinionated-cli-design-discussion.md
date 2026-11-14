@@ -1,5 +1,52 @@
 # Opinionated enforcement CLI — design-discussion handoff
 
+## Canonical gz-starter migration — November 14 follow-up
+
+The maintainer explicitly chose execution of the rename/migration tonight.
+GitHub is now `tvproductions/gz-starter`, verified to retain the same repository
+ID and history. The checkout is relocated to `gz-starter`. GZ Starter is the
+display name. Pending distribution/CLI is `gz-starter` at **0.10.0**, from
+published 0.9.0; no extra per-task version bump or release publication occurs.
+
+The old `skills-first-starter` command remains an equivalent alias. The Python
+import `skills_first_starter`, marketplace/plugin IDs and `.skills-first/`
+provenance directory remain intentional compatibility interfaces. New source
+URLs/provenance use the canonical repository; historical adoption records and
+immutable receipts remain intact. Source detection accepts old and new origins.
+The update skill remains `update-gz-template`. See the starter's
+`docs/rename-gz-starter.md` for reviewed downstream migration guidance; no blanket
+downstream edits or native cache/user-scope activation were performed.
+
+The paired designs remain drafts. Their format examples now use
+`gz-starter-records/v1` and `gz-starter-commit/v1`, not activated schemas.
+Current draft SHA-256: starter 951a78aa9ddfdce7bfe88b38888deafaa0f0bf32d968142e180a47c3029aea61; Backplane f680c70202138c77d34a881f0e081c32f17847b1bf34c9390ad6d0ddd9b8e0e6.
+Earlier hashes below identify the pre-rename drafts and remain historical.
+No sidecar/ledger/Backplane workflow implementation is authorized by naming work.
+
+The relocated starter environment and four normal hooks were rebuilt from the
+same locked dependency selections on Python 3.14.10; the new and legacy commands
+both report 0.10.0. The desktop app's primary-folder binding requires the user:
+Computer Use cannot control the app, and no project-folder edit API is exposed.
+The old folder contains only a temporary relocation notice for the active chat,
+not a second checkout. Remove that placeholder after the desktop task/project
+has been rebound and no active runtime depends on it.
+
+Companion names, versions and remotes are unchanged. All three repositories must
+receive follow-up commits/sync and exact-final CI observation where configured.
+No tag/release is authorized. The original wrap-up commits below remain valid
+save points, not the final renamed-candidate identities.
+
+Observed rename verification: the existing canonical-source tests first failed
+against the old URL/accepted-origin list, then all 72 helper tests passed with
+new HTTPS/SSH origins and retained historical origins. GitHub repository ID is
+unchanged after `gh repo rename`. Canonical and legacy CLI version output agrees.
+All external locked package records are byte-equivalent as parsed; only the
+root distribution identity changed. The rebuilt relocated environment uses
+managed Python 3.14.10 and the existing lock. Renamed wheel/sdist builds and
+isolated installed CLI/resource checks pass. All 207 concrete relative Markdown
+targets in the reviewed migration files exist. Normal hooks and exact-final CI
+remain required; desktop native discovery is not inferred from these results.
+
 ## Evening wrap-up — resume the paired drafts
 
 Latest maintainer authority, November 14: update handoffs and Git sync **all
@@ -8,12 +55,28 @@ normal verification/hooks. Preserve draft status; implement no new design and
 publish no release. This supersedes earlier sibling-edit/commit limitations in
 the historical entries below. Work remains local; no cloud environment change.
 
-**GZ Starter** is the selected short display/conversational name, with **starter**
-and **starter template** retained. Canonical `gz-skills-first-starter`, package,
-command and skill identities remain unchanged. No canonical rename/adopter
-migration or alternative name is selected. Incorporate any further final
-maintainer item received during save-point preparation; do not invent the
-unspecified item.
+**Canonical naming decision, superseding the earlier short-name-only choice:**
+the maintainer explicitly accepted **gz-starter**, requested the GitHub/local
+folder rename and coordination across all three projects/downstream adopters,
+and asked to get that work booked at least in the starter. **GZ Starter** is the
+display name; **starter** and **starter template** remain shorthand. Actual
+repository/package/command identities remain unchanged until migration executes.
+The [roadmap](../../ROADMAP.md#canonical-rename-selected-gz-starter) books the
+required migration and compatibility proof as minor work in pending 0.10.0.
+The previously unnamed final item is now this canonical rename decision.
+
+Tonight's original save points are pushed: starter
+`454c59643013bd9aea4c5e3f4760ab873b86934e`, Backplane
+`5822c6b78acd08d7f90faefaf984f257c625d7a4`, gz-skills
+`5fc6cc330e45f40f1b904b6bb2d1ae7214b3dcc5`. Starter exact CI passes in
+[run 43645889085](https://github.com/tvproductions/gz-skills-first-starter/actions/runs/43645889085)
+and Backplane all-three-platform CI passes in
+[run 43646001240](https://github.com/tvproductions/superpowers-backplane/actions/runs/43646001240).
+gz-skills has no configured hosted Actions workflows; its documented local
+checks pass. A meaningful follow-up save point records the newly selected rename;
+its final remote/CI results must be observed separately. Designs remain drafts
+and no release has been published. Execution of the actual rename is a separate
+scope clarification while booking/synchronization continues.
 
 Resume by reading the
 [starter contract draft](../superpowers/specs/2026-11-14-lite-record-and-commit-contract-draft.md)

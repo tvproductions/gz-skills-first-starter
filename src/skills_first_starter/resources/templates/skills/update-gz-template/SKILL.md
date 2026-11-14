@@ -1,13 +1,13 @@
 ---
 name: update-gz-template
-description: Check or update a project's adopted gz-skills-first-starter template, explain released policy changes, and reconcile migration guidance. Use for starter-version reviews and template upgrades, rather than general package or plugin updates.
+description: Check or update a project's adopted gz-starter template, explain released policy changes, and reconcile migration guidance. Use for starter-version reviews and template upgrades, rather than general package or plugin updates.
 ---
 
 # Update the GZ template
 
 Help an existing adopter consume released template policy without replacing its
 product. The canonical repository is
-`https://github.com/tvproductions/gz-skills-first-starter`. This is a narrow guide
+`https://github.com/tvproductions/gz-starter`. This is a narrow guide
 to its maintained adoption instructions, not another dependency updater.
 
 ## Establish the request and current adoption
@@ -49,7 +49,7 @@ calls in Python; substantive Python processing must use the prescribed locked,
 uv-managed environment. For example:
 
 ```bash
-gh api repos/tvproductions/gz-skills-first-starter/releases/latest --jq '{tag_name,html_url,published_at}'
+gh api repos/tvproductions/gz-starter/releases/latest --jq '{tag_name,html_url,published_at}'
 ```
 
 Respect an explicitly requested published target. A failed query is UNKNOWN,

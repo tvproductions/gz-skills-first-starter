@@ -21,7 +21,7 @@ Preserve public behavior and original dependency/source intent. Exact developmen
 sync, source-independent builds and clean installed checks prove different parts
 of the result; complete all applicable rows rather than stopping at file moves.
 
-Run `uv run --locked skills-first-starter backport --project /path/to/project`. This assessment reads
+Run `uv run --locked gz-starter backport --project /path/to/project`. This assessment reads
 only bounded top-level names, does not follow symlinks, and writes nothing. It
 suggests responsibilities, not a complete migration plan. The agent must read
 the target's governing instructions and relevant source before recommending moves.

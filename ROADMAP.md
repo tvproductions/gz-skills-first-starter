@@ -3,8 +3,8 @@
 Reconciled November 8, 2026 against the 0.9.0 release and agreed ADR priority,
 current bundle, Windows correction and hosted scan results. This is the starter's
 project roadmap, not a replacement for Backplane's backlog/lifecycle authority.
-The ADR increment is tracked as [feature #12](https://github.com/tvproductions/gz-skills-first-starter/issues/12)
-in [milestone 0.10.0](https://github.com/tvproductions/gz-skills-first-starter/milestone/2).
+The ADR increment is tracked as [feature #12](https://github.com/tvproductions/gz-starter/issues/12)
+in [milestone 0.10.0](https://github.com/tvproductions/gz-starter/milestone/2).
 Cognitive integration remains issue #1. Other entries remain roadmap work
 without assigned versions or newly created issues.
 
@@ -41,14 +41,57 @@ universal acceptance.
 
 ## Next work, in recommended order
 
+### Canonical rename selected: gz-starter
+
+November 14 maintainer decision: the canonical project name will be
+**gz-starter**, with **GZ Starter** as the display name. Book the coordinated
+repository/local-folder and adopter migration as minor-level work in the valid
+pending **0.10.0** target from published 0.9.0; do not add a bump per task.
+Execution is now authorized and the candidate uses the renamed GitHub repository,
+local checkout, distribution and canonical CLI. Compatibility interfaces remain
+as documented in `docs/rename-gz-starter.md`. Desktop binding and downstream
+adopter propagation remain explicit follow-up work. Keep the earlier ADR/policy
+acceptance gates intact; this does not establish release acceptance.
+
+Required completion scope:
+
+- Rename the GitHub repository through `gh`, verify the same repository/history
+  and intended new URL, then reconcile local remotes and active source links.
+  Preserve immutable tags/releases and historical adoption provenance.
+- Coordinate the local folder move and desktop project binding with the
+  maintainer. Repair path-dependent environments, launchers and normal hooks;
+  verify the managed pinned runtime and clean installed behavior afterward.
+- Resolve the package/distribution, Python import, CLI and marketplace identity
+  migration explicitly. Prefer consistent canonical naming while defining any
+  supported compatibility aliases and retirement boundary before changing them.
+  Update owning metadata, locks, catalogs, native project bindings, tests,
+  documentation and generated resources coherently; do not edit native caches
+  or activate plugins user-wide.
+- Record the decision and migration boundary in gz-skills and Backplane. Keep
+  their independent names/versions and preserve their existing project policy.
+- Inventory authorized downstream adopters and provide a reviewed migration
+  path for old source URLs, identifiers/configuration and recorded versions/SHAs.
+  Preserve project additions and old immutable source identities. Do not perform
+  unrequested blanket changes to downstream repositories.
+- Verify preview/migration/recovery, repeat adoption and old-provenance handling,
+  both catalogs/resources, source-independent builds, installed commands and
+  applicable native project discovery. Observe exact-commit CI and ordinary
+  Git alignment. Scope activation, release acceptance and publication separately.
+
+Repository/folder target naming is selected. Exact public identifier/alias
+dispositions and the implementation sequence remain to review. This booking
+does not implement the rename, publish a release or approve the other draft
+record-platform architecture. See the current
+[handoff](docs/handoffs/2026-11-14-opinionated-cli-design-discussion.md).
+
 ### 1. Establish mandatory ADR practice across the trio
 
 Selected next minor: **0.10.0**, from published 0.9.0. The maintainer agreed
 that both lite and heavy adopters must follow this practice, and that this
 starter, gz-skills and SP-BP must demonstrate it themselves before propagation.
-The [native feature issue](https://github.com/tvproductions/gz-skills-first-starter/issues/12)
+The [native feature issue](https://github.com/tvproductions/gz-starter/issues/12)
 captures the increment's intent, workstreams and acceptance conditions. Detailed
-design is tracked as [child issue #13](https://github.com/tvproductions/gz-skills-first-starter/issues/13).
+design is tracked as [child issue #13](https://github.com/tvproductions/gz-starter/issues/13).
 The maintainer approved the [starter specification](docs/superpowers/specs/2026-11-08-adr-practice-design.md),
 the native implementation plan and separately
 [ADR-0001-001](docs/decisions/ADR-0001-001-qualify-exact-component-combinations.md).
@@ -166,7 +209,7 @@ follow-ups retain the receipt's explicit ownership and revisit conditions.
 
 ### Cognitive engine integration
 
-Tracked as [issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1),
+Tracked as [issue #1](https://github.com/tvproductions/gz-starter/issues/1),
 without milestone or promised delivery date. Releases 0.7.1 and 0.8.0 retain the
 maintainer's explicit exception. Consumer preparation provides 42 qualification
 fixtures, independent source inventory, provenance and ceiling checks; no real

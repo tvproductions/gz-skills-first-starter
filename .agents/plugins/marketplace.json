@@ -1,7 +1,7 @@
 {
   "name": "skills-first-starter",
   "interface": {
-    "displayName": "Skills-first development stack"
+    "displayName": "GZ Starter development stack"
   },
   "plugins": [
     {

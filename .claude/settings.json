@@ -9,7 +9,7 @@
     "skills-first-starter": {
       "source": {
         "source": "git",
-        "url": "https://github.com/tvproductions/gz-skills-first-starter.git",
+        "url": "https://github.com/tvproductions/gz-starter.git",
         "ref": "d874ef0a68b2892e79db37e27385f2026dc9793a"
       },
       "autoUpdate": false

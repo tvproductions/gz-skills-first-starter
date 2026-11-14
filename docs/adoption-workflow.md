@@ -91,7 +91,7 @@ Inspect project instructions, existing plugins and skill discovery, and gzkit
 ownership. Keep app rules and existing user changes. Do not make a copy of an
 upstream skill tree or install the same skill through two discovery contracts.
 
-Run `uv run --locked skills-first-starter configure --project <root>` from this starter checkout.
+Run `uv run --locked gz-starter configure --project <root>` from this starter checkout.
 Inspect its preview, then apply the already-authorized adoption with `--apply`.
 A conflict requires reconciliation of the specific source or file; do not remove
 other installations or use a force overwrite to make it pass. Existing AGENTS

@@ -9,6 +9,11 @@ It also includes the November 14
 [starter-wide cognitive qualification deferral](engineering/cognitive-integration.md#starter-wide-qualification-deferral).
 This changes acceptance policy, not the ceiling or qualification requirement;
 it does not implement or publish the planned independent engine.
+The maintainer's November 14 canonical **gz-starter** rename/migration decision
+is booked as additional minor-level work in this valid pending 0.10.0 target;
+see [the roadmap](../ROADMAP.md#canonical-rename-selected-gz-starter). The repository/local-folder and distribution/CLI rename are implemented in the
+candidate with compatibility interfaces retained; downstream propagation and
+remaining acceptance are explicit gates, not publication. Preserve the existing ADR/policy scope.
 The [governing release-scope record](handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope)
 distinguishes this accepted direction from unfinished design, implementation and
 acceptance. Adoption-acceptance reporting remains the final planned feature
@@ -28,7 +33,7 @@ records independent execution-pin refreshes and retained acceptance limitations.
 Release 0.7.1 ships the consumer-side preparation and a compatible Ruff patch.
 The maintainer explicitly directed publication without waiting for the engine.
 Actual cognitive integration remains open and unscheduled in
-[issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1).
+[issue #1](https://github.com/tvproductions/gz-starter/issues/1).
 The incoming shared gzkit-derived engine must still be selected, qualified and
 measured before the current deferral can end. Historical releases retain their
 recorded exceptions and do not claim the cognitive defect is fixed; see the
@@ -40,16 +45,16 @@ version for this starter's helper project; the repository tests check agreement.
 An adopter may change its app metadata without changing the starter's identity.
 
 ```bash
-uv run --locked skills-first-starter version
+uv run --locked gz-starter version
 ```
 
 This reports the checkout's declared version, not proof of a published release.
 The initial release is
-[v0.1.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.1.0),
+[v0.1.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.1.0),
 dated October 11, 2026. Its annotated tag identifies the verified release commit.
 Earlier development commits were untagged; do not label them as a released
 v0.1.0 retroactively. Release
-[v0.7.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.7.0)
+[v0.7.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.7.0)
 adds independently locked X-Plane tooling, Dependabot scans, current execution
 tooling and shared policy alignment. The maintainer explicitly authorized its
 publication with cognitive qualification deferred to planned 0.7.1; this is a

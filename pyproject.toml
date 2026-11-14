@@ -1,5 +1,5 @@
 [project]
-name = "skills-first-starter"
+name = "gz-starter"
 version = "0.10.0"
 description = "Project-scoped SP + SP-BP + gz-skills adoption scaffold"
 readme = "README.md"
@@ -9,6 +9,7 @@ license-files = ["LICENSE", "NOTICE"]
 dependencies = []
 
 [project.scripts]
+gz-starter = "skills_first_starter.cli:main"
 skills-first-starter = "skills_first_starter.cli:main"
 
 [build-system]
@@ -20,6 +21,7 @@ required-version = ">=0.13.5"
 python-preference = "only-managed"
 
 [tool.uv.build-backend]
+module-name = "skills_first_starter"
 source-include = [
     "bundle.json", "templates/**", ".agents/plugins/marketplace.json",
     ".claude-plugin/marketplace.json", "starter.py", "tests/**", "tools/**",

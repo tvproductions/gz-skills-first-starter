@@ -447,6 +447,10 @@ class AdoptionTests(unittest.TestCase):
 
     def test_source_revision_recognizes_legacy_and_canonical_starter_origins(self):
         origins = (
+            "https://github.com/tvproductions/gz-starter.git",
+            "https://github.com/tvproductions/gz-starter",
+            "git@github.com:tvproductions/gz-starter.git",
+            "git@github.com:tvproductions/gz-starter",
             "https://github.com/tvproductions/skills-first-starter.git",
             "https://github.com/tvproductions/skills-first-starter",
             "https://github.com/tvproductions/gz-skills-first-starter.git",
@@ -483,7 +487,7 @@ class AdoptionTests(unittest.TestCase):
         self.configure(True)
         config = tomllib.loads((self.root / ".codex/config.toml").read_text())
         lock = json.loads((self.root / ".skills-first/bundle.lock.json").read_bytes())
-        canonical = "https://github.com/tvproductions/gz-skills-first-starter.git"
+        canonical = "https://github.com/tvproductions/gz-starter.git"
         self.assertEqual(config["marketplaces"]["skills-first-starter"]["source"], canonical)
         self.assertEqual(lock["starter"]["repository"], canonical)
 

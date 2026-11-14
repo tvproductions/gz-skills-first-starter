@@ -47,7 +47,7 @@ def _claude_settings(data: dict, ref: str, parts: list[dict]) -> None:
             "skills-first-starter": {
                 "source": {
                     "source": "git",
-                    "url": "https://github.com/tvproductions/gz-skills-first-starter.git",
+                    "url": "https://github.com/tvproductions/gz-starter.git",
                     "ref": ref,
                 },
                 "autoUpdate": False,

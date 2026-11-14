@@ -15,7 +15,7 @@ from skills_first_starter import cli as starter
 REF = "a" * 40
 POLICY = "docs/engineering/architectural-decisions.md"
 LOCAL = ".skills-first/architectural-decisions.md"
-URL = f"https://github.com/tvproductions/gz-skills-first-starter/blob/{REF}/{POLICY}"
+URL = f"https://github.com/tvproductions/gz-starter/blob/{REF}/{POLICY}"
 
 
 class ADRPolicyTests(unittest.TestCase):

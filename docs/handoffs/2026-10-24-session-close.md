@@ -234,6 +234,22 @@ the final commit's own CI after push; prior release CI does not cover this chang
 
 ## November 8 agreed ADR practice and next release scope
 
+November 14 execution follow-up: the maintainer explicitly chose execution now.
+GitHub/local checkout and distribution/CLI are renamed to **gz-starter** in the
+candidate; legacy command/import/native IDs and immutable provenance are retained.
+The minor target remains pending 0.10.0. Verify final commit/build/CI and desktop
+binding; downstream adopter propagation and earlier ADR/trio gates remain open.
+No release is published. This supersedes the initial booking-only status below.
+
+November 14 naming scope decision: the maintainer explicitly selected the
+canonical name **gz-starter** and required the GitHub repository/local-folder
+rename plus coordinated downstream migration to be booked. Classify it as
+minor-level work and reuse **0.9.0 -> pending 0.10.0**. The
+[roadmap completion scope](../../ROADMAP.md#canonical-rename-selected-gz-starter)
+is included remaining work; no rename, identifier compatibility, native
+activation or downstream migration is claimed implemented. Preserve existing
+ADR/policy gates and immutable history. No release publication is authorized.
+
 November 14 scope reconciliation: the maintainer explicitly selected a
 [starter-wide cognitive qualification deferral](../engineering/cognitive-integration.md#starter-wide-qualification-deferral).
 Include that acceptance-policy change, adopter instructions and generated copy

@@ -4,7 +4,7 @@ A reusable, project-scoped starting point for **Superpowers + Superpowers Backpl
 with room for each application's own operational skills and supporting code. Built for work and personal projects under `tvproductions`.
 
 Use **GZ Starter**, **starter** or **starter template** in conversation to refer to
-`gz-skills-first-starter`. Adopter agents accept these short names; for example,
+`gz-starter`. Adopter agents accept these short names; for example,
 "update the starter" requests a template migration and "check the starter
 template" requests a review. Recorded sources and executable identifiers retain
 their canonical names. See [template updates](docs/updating.md).
@@ -57,7 +57,7 @@ The template refers to those workflows; it does not implement them.
 Release **0.7.1** introduced independent qualification and consumer checks for
 the future gzkit-owned cognitive engine and refreshed Ruff to 0.17.3 in both
 Python baselines. No engine is installed or certified. Cognitive integration is
-an open, unscheduled [follow-up, issue #1](https://github.com/tvproductions/gz-skills-first-starter/issues/1),
+an open, unscheduled [follow-up, issue #1](https://github.com/tvproductions/gz-starter/issues/1),
 with a standing maintainer-approved exception. Release 0.8.0 retains that exception
 and does not claim strict cognitive acceptance. See the
 [current release evidence](docs/evidence/2026-11-08-0.9.0-release.md) and
@@ -158,7 +158,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The template baseline is [v0.9.0](https://github.com/tvproductions/gz-skills-first-starter/releases/tag/v0.9.0).
+The template baseline is [v0.9.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.9.0).
 Start with the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
 existing-adopter upgrades and explicit acceptance/release requirements.
 Verify a published tag and exact commit before adoption; a metadata value
@@ -172,7 +172,7 @@ user requested before changing files:
 | --- | --- |
 | Adopt into an existing project | Inventory installed sources, preview configuration, preserve existing authorities |
 | Backport a preferred structure | [Structure mapping guide](docs/backport.md); make useful changes incrementally |
-| Start a new project | [Use this template](https://github.com/tvproductions/gz-skills-first-starter/generate), then adapt the copied starter material to the product |
+| Start a new project | [Use this template](https://github.com/tvproductions/gz-starter/generate), then adapt the copied starter material to the product |
 | Use an already adopted project | Project operational skills first; `gzs-router` for engineering skill selection; SP for feature design and implementation |
 
 The adopter instructions route project operations to project-owned skills,
@@ -188,6 +188,14 @@ its own update skill for adopter work. See
 setup, invocation and the boundary against self-adoption.
 
 ## Quick start: an existing or empty project
+
+The canonical repository and pending 0.10.0 distribution/command are
+**gz-starter**. Published 0.9.0 still uses `skills-first-starter`; the published
+quickstart below retains that command. Pending 0.10.0 also retains it as a
+compatibility alias. The Python import `skills_first_starter`, marketplace key
+`skills-first-starter`, `.skills-first/` provenance directory and
+`update-gz-template` skill ID remain stable compatibility surfaces. See the
+[rename migration](docs/rename-gz-starter.md).
 
 Requires uv >=0.13.5, Python 3.14, Git, and Codex with plugin support. GitHub CLI is useful
 for checking upstream releases; Backplane's GitHub workflows remain deferred. No Python dependencies are needed for this tool.
@@ -206,8 +214,8 @@ an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
-git clone --branch v0.9.0 https://github.com/tvproductions/gz-skills-first-starter.git
-cd gz-skills-first-starter
+git clone --branch v0.9.0 https://github.com/tvproductions/gz-starter.git
+cd gz-starter
 uv run --locked skills-first-starter validate
 uv run --locked skills-first-starter configure --project /path/to/your-project
 uv run --locked skills-first-starter configure --project /path/to/your-project --apply
@@ -219,8 +227,8 @@ compatibility. The helper writes only the selected host's repository settings.
 For an already configured brownfield project, repair activation independently:
 
 ```bash
-uv run --locked skills-first-starter localize --project /path/to/your-project --host codex --starter-ref FULL_STARTER_SHA
-uv run --locked skills-first-starter localize --project /path/to/your-project --host codex --starter-ref FULL_STARTER_SHA --apply
+uv run --locked gz-starter localize --project /path/to/your-project --host codex --starter-ref FULL_STARTER_SHA
+uv run --locked gz-starter localize --project /path/to/your-project --host codex --starter-ref FULL_STARTER_SHA --apply
 ```
 
 Use the corresponding Claude/OpenCode host value when repairing those clients.
@@ -228,7 +236,7 @@ Existing global/user copies may remain: the project owns selection and behavior,
 and the repair writes only project overrides. It preserves adoption records and
 uses adopted component pins when present. See the
 [three-host procedure](docs/adoption.md#repository-owned-installation-and-brownfield-repair).
-For OpenCode 2.2.0, use `uv run --locked skills-first-starter run-opencode
+For OpenCode 2.2.0, use `uv run --locked gz-starter run-opencode
 --project /path/to/project -- <native arguments>` from the starter environment.
 This avoids its inherited duplicate-ID failure without modifying OpenCode.
 
@@ -254,11 +262,11 @@ explicit lite/heavy selection and required adoption/release analysis. Configure
 and status do not certify Python conformance or complete an existing migration.
 
 ```bash
-uv run --locked skills-first-starter status --project /path/to/your-project
+uv run --locked gz-starter status --project /path/to/your-project
 ```
 
 For agent-guided adoption, read [the adoption workflow](docs/adoption-workflow.md).
-You can also [use this repository as a GitHub template](https://github.com/tvproductions/gz-skills-first-starter/generate),
+You can also [use this repository as a GitHub template](https://github.com/tvproductions/gz-starter/generate),
 then configure your new checkout from a separate, reviewed starter checkout.
 A generated repository inherits the starter files; simplify it for your product
 rather than turning this scaffolding into runtime dependencies. Running the copied
@@ -268,7 +276,7 @@ the default refuses to mistake an adopting repo commit for a starter revision.
 ## Backporting an existing project
 
 ```bash
-uv run --locked skills-first-starter backport --project /path/to/your-project
+uv run --locked gz-starter backport --project /path/to/your-project
 ```
 
 This read-only assessment suggests responsibilities to map onto existing material.
@@ -335,7 +343,7 @@ See [architecture](docs/architecture.md), [adoption](docs/adoption.md), and
 ```bash
 uv sync --locked --all-groups
 uv run --locked pre-commit run --all-files
-uv run --locked skills-first-starter validate
+uv run --locked gz-starter validate
 uv build --no-sources
 uv run --locked python tools/verify_distribution.py
 ```
@@ -360,7 +368,7 @@ The starter packages its helper under `src/skills_first_starter/`, uses uv_build
 and pins Ruff, ty and pre-commit in its dev group. The approved four routine hooks
 run the same locked commands locally and in CI. Install them in a development
 checkout with `uv run --locked pre-commit install`. The old `uv run starter.py`
-launcher remains available; prefer `uv run --locked skills-first-starter`.
+launcher remains available; prefer `uv run --locked gz-starter`.
 Regenerate wheel resources with `uv run --locked python tools/package_resources.py`
 after changing the bundle, either catalog, instructions template, update skill
 or architectural-decision policy; tests

@@ -1,7 +1,7 @@
 # Skills-first development stack
 
 Accept **GZ Starter**, **starter** and **starter template** as shorthand for the adopted
-`gz-skills-first-starter` template. Resolve these references through this project's
+`gz-starter` template. Resolve these references through this project's
 `.skills-first/bundle.lock.json` and adoption context; do not require the user to
 repeat the full repository name. Route requests such as "update the starter" or
 "check the starter template" to the template-update workflow below, preserving
@@ -244,7 +244,7 @@ and explicitly activated. The helper never selects a profile or certifies
 conformance. Follow `docs/adoption-0.5.md` in the reviewed starter for greenfield
 adoption and brownfield first-adoption/upgrade paths. No gzkit lifecycle is
 introduced. For structural backporting, updates and verification, use the reviewed starter at
-https://github.com/tvproductions/gz-skills-first-starter. Existing project instructions
+https://github.com/tvproductions/gz-starter. Existing project instructions
 and app architecture are preserved until specific changes are authorized.
 
 For projects adopting the starter's Python baseline, use the latest stable

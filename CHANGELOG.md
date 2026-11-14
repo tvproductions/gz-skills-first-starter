@@ -2,10 +2,21 @@
 
 ## Unreleased
 
+- Execute the canonical `gz-starter` repository/local-checkout and distribution/
+  CLI migration in pending 0.10.0. Use the new source for helper output and the
+  owned update skill; retain old origin recognition, command/import/native IDs
+  and immutable provenance. Regenerate locks/resources without dependency
+  upgrades, rebuild the relocated environment/hooks and verify installed aliases.
+  Document downstream migration; no release publication is implied.
+
 - Use **GZ Starter** as the short display/conversational name, alongside
   **starter** and **starter template**. Preserve canonical repository, package,
-  command and skill identifiers; no canonical rename or adopter migration is
-  selected. Refresh the packaged adopter instructions.
+  command and skill identifiers during this save point; refresh the packaged
+  adopter instructions. The maintainer subsequently selected the canonical
+  **gz-starter** rename: book the repository/folder, public-identifier and
+  downstream migration scope in pending 0.10.0, with compatibility and acceptance
+  gates explicit. The execution follow-up above performs the canonical migration; downstream
+  adopter propagation remains project-owned follow-up work.
 
 - Record the selected management-record design: JSON sidecars own structured
   facts, Markdown owns narrative and generated views, and CHANGELOG remains

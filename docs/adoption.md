@@ -10,7 +10,7 @@ upgrades. Pre-0.3 skill copies additionally require the [legacy migration](migra
 
 ## Establish the project boundary
 
-Use a separate reviewed checkout of `tvproductions/gz-skills-first-starter`. Record
+Use a separate reviewed checkout of `tvproductions/gz-starter`. Record
 its full published commit SHA and review `bundle.json`. The configure helper
 uses that checkout's HEAD unless `--starter-ref <full-SHA>` is supplied. Supplying
 a SHA records your selection; the helper does not prove it is published. Verify
@@ -18,11 +18,11 @@ it before applying:
 
 ```bash
 git rev-parse HEAD
-gh api repos/tvproductions/gz-skills-first-starter/commits/FULL_STARTER_SHA --jq .sha
+gh api repos/tvproductions/gz-starter/commits/FULL_STARTER_SHA --jq .sha
 ```
 
 Also read the checkout's declared template version with
-`uv run --locked skills-first-starter version`. For a published release, resolve its
+`uv run --locked gz-starter version`. For a published release, resolve its
 `vMAJOR.MINOR.PATCH` tag to the same full SHA and review its changelog. The label
 alone does not prove publication. New locks record version and SHA separately;
 older unversioned locks require reviewed reconciliation. See
@@ -50,15 +50,15 @@ From the reviewed target checkout, preview one selection, review its files, then
 apply within the authorized adoption scope (replace the root/SHA placeholders):
 
 ```bash
-uv run --locked skills-first-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy link
-uv run --locked skills-first-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy link --apply
+uv run --locked gz-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy link
+uv run --locked gz-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy link --apply
 ```
 
 For a repository-local working policy with its canonical source link retained:
 
 ```bash
-uv run --locked skills-first-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy local
-uv run --locked skills-first-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy local --apply
+uv run --locked gz-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy local
+uv run --locked gz-starter configure --project /path/to/project --starter-ref FULL_STARTER_SHA --adr-policy local --apply
 ```
 
 Add `--host claude` or `--host opencode` for that host; policy access does not
@@ -118,8 +118,8 @@ registries are storage; project activation must remain local.
 From a reviewed starter checkout, select the adopter's host on configure:
 
 ```bash
-uv run --locked skills-first-starter configure --project /path/to/project --host codex --starter-ref FULL_STARTER_SHA
-uv run --locked skills-first-starter configure --project /path/to/project --host codex --starter-ref FULL_STARTER_SHA --apply
+uv run --locked gz-starter configure --project /path/to/project --host codex --starter-ref FULL_STARTER_SHA
+uv run --locked gz-starter configure --project /path/to/project --host codex --starter-ref FULL_STARTER_SHA --apply
 ```
 
 Use `claude` or `opencode` for that host. The managed lock records non-Codex host
@@ -131,8 +131,8 @@ records. It does not install plugins or certify discovery.
 For brownfield activation repair, use the separate project-only command:
 
 ```bash
-uv run --locked skills-first-starter localize --project /path/to/project --host codex --starter-ref FULL_STARTER_SHA
-uv run --locked skills-first-starter localize --project /path/to/project --host codex --starter-ref FULL_STARTER_SHA --apply
+uv run --locked gz-starter localize --project /path/to/project --host codex --starter-ref FULL_STARTER_SHA
+uv run --locked gz-starter localize --project /path/to/project --host codex --starter-ref FULL_STARTER_SHA --apply
 ```
 
 Repeat for each client the project uses. `localize` reads user plugin identities
@@ -295,9 +295,9 @@ plugin with the same ID: native resolution retains the earlier source and marks
 the project copy as a duplicate. Agents MUST use the starter's scoped launcher:
 
 ```bash
-uv run --locked skills-first-starter run-opencode --project /path/to/project
-uv run --locked skills-first-starter run-opencode --project /path/to/project -- plugin list
-uv run --locked skills-first-starter run-opencode --project /path/to/project -- api skill.list
+uv run --locked gz-starter run-opencode --project /path/to/project
+uv run --locked gz-starter run-opencode --project /path/to/project -- plugin list
+uv run --locked gz-starter run-opencode --project /path/to/project -- api skill.list
 ```
 
 Run these from the reviewed starter environment. The launcher performs substantive
@@ -317,8 +317,8 @@ packages install in the background. An immediate one-shot list may be empty
 before loading completes. Inspect the native state after startup:
 
 ```bash
-uv run --locked skills-first-starter run-opencode --project /path/to/project -- plugin list
-uv run --locked skills-first-starter run-opencode --project /path/to/project -- api skill.list
+uv run --locked gz-starter run-opencode --project /path/to/project -- plugin list
+uv run --locked gz-starter run-opencode --project /path/to/project -- api skill.list
 ```
 
 Require SP and gz-skills to be active, verify their source targets and entry
@@ -442,7 +442,7 @@ unrelated consumers.
    and actual loaded sources. A generated template also carries copied files;
    inventory project changes before comparing them with newer starter material.
 2. Check official upstream sources independently:
-   [starter](https://github.com/tvproductions/gz-skills-first-starter),
+   [starter](https://github.com/tvproductions/gz-starter),
    [SP releases](https://github.com/obra/superpowers/releases),
    [SP-BP releases](https://github.com/tvproductions/superpowers-backplane/releases)
    and [gz-skills releases](https://github.com/tvproductions/gz-skills/releases).

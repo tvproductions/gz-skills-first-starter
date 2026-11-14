@@ -55,7 +55,7 @@ Each of the five structured artifacts MUST identify:
 
 | Field | Proposed type and meaning |
 | --- | --- |
-| `format` | Literal `skills-first-records/v1`; a format identity independent of product/template/plugin versions |
+| `format` | Literal `gz-starter-records/v1`; a format identity independent of product/template/plugin versions |
 | `artifact` | One of `requirements`, `backlog`, `roadmap`, `work`, `releases` |
 | `namespace` | Nonempty project-owned namespace for stable record identities |
 | `records` | Array of typed records valid for that artifact; unique identities |
@@ -132,7 +132,7 @@ is a single-line UTF-8 JSON object, with these required fields:
 
 | Field | Proposed type and meaning |
 | --- | --- |
-| `format` | Literal `skills-first-commit/v1` |
+| `format` | Literal `gz-starter-commit/v1` |
 | `kind` | `implementation`, `fix`, `documentation`, `maintenance`, `integration` or `revert`; describes the change, not its SemVer impact |
 | `records` | Unique RecordRef array, resolved against the committed snapshot and explicit external authorities |
 | `evidence` | Unique SourceRef array for evidence/approval; no prospective CI/publication claims |
