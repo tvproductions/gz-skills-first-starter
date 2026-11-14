@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Verify the renamed desktop primary-folder/checkout binding and preserve the
+  supplied house naming/workspace-layout request as a
+  [nonbinding design intake](docs/superpowers/specs/2026-11-14-naming-layout-policy-intake.md).
+  Reconcile the final three-repository sync identities in the resume handoff.
+  No naming rules, Ruff settings, chores or adopter migrations are activated;
+  pending 0.10.0 and existing implementation scope remain unchanged.
+
 - Execute the canonical `gz-starter` repository/local-checkout and distribution/
   CLI migration in pending 0.10.0. Use the new source for helper output and the
   owned update skill; retain old origin recognition, command/import/native IDs

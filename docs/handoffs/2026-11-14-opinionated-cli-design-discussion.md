@@ -1,5 +1,67 @@
 # Opinionated enforcement CLI — design-discussion handoff
 
+## Ready to resume — primary folder verified November 14
+
+After the maintainer updated the desktop project, `list_projects` reports its
+`gz-starter` primary path as the renamed checkout. Direct `pwd` and
+`git rev-parse --show-toplevel` agree; origin is the canonical
+`https://github.com/tvproductions/gz-starter.git`. Main was clean at
+`5845e8fb488f0674636a6c1748e3f0a97e1d8c08`, and a fresh fetch confirmed
+0 ahead / 0 behind before this documentation follow-up. This resolves the
+primary-folder action left pending in the earlier migration entry. It does not
+prove fresh-session plugin discovery. The old path contains only a relocation
+notice; remove it only after confirming no active chat/runtime needs its
+original working directory.
+
+Verified final migration sync identities, before this resume-note commit:
+
+- Starter `5845e8fb488f0674636a6c1748e3f0a97e1d8c08`:
+  [exact-commit CI](https://github.com/tvproductions/gz-starter/actions/runs/43647770059)
+  passed both jobs, including the four routine checks, catalogs, build and
+  isolated installed aliases, plus the separate X-Plane baseline.
+- Backplane `c1b63d8f72fba9996f0857120f8c97e9e8d5700d`:
+  [exact-commit CI](https://github.com/tvproductions/superpowers-backplane/actions/runs/43647870548)
+  passed on Linux, macOS and Windows; all four normal hooks passed.
+- gz-skills `4a7abd79f483c6c9abfc8f9470694be847f1347d`: 32 repository tests
+  passed after its final documentation changes; unchanged-source Ruff/format/ty
+  and 20-skill validations remain applicable. No hosted workflow is configured.
+
+All three were pushed with matching local/remote main and clean worktrees.
+This follow-up changes starter documentation only; do not infer new companion
+implementation, native activation, release acceptance or publication.
+
+### Newly supplied naming/layout request
+
+Read the [preserved intake](../superpowers/specs/2026-11-14-naming-layout-policy-intake.md)
+before the next design review. It contains the exact 15-point attachment,
+its hash, bounded official-source checks, review gaps and its guidance-only
+chore idea. Its embedded instructions are proposed work, not activated policy.
+Do not treat the supplied old starter name as another repository.
+
+Next session: review the proposed house naming/layout contract and source
+attributions; define Ruff/ty configuration propagation and the per-member
+undeclared-import check; reconcile existing interface compatibility, path/data
+scope, rule inventory and skill ownership. Read every cited primary source and
+record checked-on/page dates accurately. Prepare the policy/configuration and
+adopter-migration proposal before dependent implementation; obtain an identified
+ADR approval separately for any new architectural choice. No adopter changes,
+chores, new skill, new hook, expanded rule selection or dependency migration
+were performed by this intake. The existing paired sidecar/Backplane designs
+remain drafts for subsequent review, not displaced or approved by the new input.
+
+Version decision at intake: new mandatory naming/layout requirements are minor
+work under 0.x. Published 0.9.0 -> existing pending 0.10.0 stays unchanged in
+bundle/package mirrors. This documentation checkpoint does not expand the
+approved implementation bundle; reconcile bounded release scope at planning,
+reuse a valid pending target and never bump once per pending task. All earlier
+ADR/qualification/maintenance gates and no-release instruction remain intact.
+
+Verification scope: human documentation/intake only; review the diff, original
+attachment identity, local references, version mirrors and saved remote/CI
+identities. Existing runtime/build evidence is unchanged. Normal hooks remain
+enabled; configured hosted CI will verify the final pushed documentation SHA.
+Keep Git synchronization distinct from release acceptance/publication.
+
 ## Canonical gz-starter migration — November 14 follow-up
 
 The maintainer explicitly chose execution of the rename/migration tonight.
