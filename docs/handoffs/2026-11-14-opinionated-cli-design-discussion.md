@@ -1,5 +1,70 @@
 # Opinionated enforcement CLI — design-discussion handoff
 
+## End-of-day handoff — November 14, 2026
+
+The maintainer requested this handoff and ordinary Git sync, then stopping for
+the night. Canonical GitHub repository/local checkout is **gz-starter**. Codex's
+project primary path and direct Git top-level were verified to select the same
+renamed checkout. Origin is `https://github.com/tvproductions/gz-starter.git`.
+The rename, environment repair and desktop binding are complete; the earlier
+pending-binding notes below are historical. Retain the compatibility command,
+import, marketplace IDs and `.skills-first/` provenance described in the migration
+guide. The old directory is only a relocation notice, not another checkout;
+clean it up only when no active runtime still needs its original directory.
+
+### First work next session
+
+1. Read this entry, `AGENTS.md` and live Git state. Review the
+   [naming/layout policy draft, edition 1](../engineering/naming-and-layout.md),
+   [exact unapplied settings patch](../superpowers/specs/2026-11-14-naming-layout-tool-settings.patch)
+   and [bounded evidence](../evidence/2026-11-14-naming-layout-proposal.md).
+2. Discuss the proposed contract and select its bounded implementation/release
+   scope. The maintainer requested preparing a proposal, not activating it.
+   Strict rejection of all paths containing spaces, including user-selected
+   paths, is an explicit selected requirement for that proposal. Preserve it.
+3. Obtain any separately identified architectural ADR approvals before dependent
+   implementation. Then plan the selected work. Keep the 14 broader-lint findings,
+   declaration-test implementation and real path/platform/artifact checks open;
+   measurement and configuration alone are not acceptance.
+4. Continue the existing paired starter/Backplane sidecar and commit-record
+   design review afterward. Keep all new designs drafts until actually approved.
+   Preserve JSON/Git with no SQLite, Dolt or permanent ledger; Backplane owns
+   management semantics and Superpowers remains the feature inner loop.
+
+Starter-wide cognitive qualification remains deferred, ceiling 15 retained,
+measurement UNKNOWN and eventual shared-engine delivery/qualification required.
+The small API/CLI extraction is future work; MCP/plugins stay deferred. Keep four
+routine checks, local execution and existing skill ownership. Create no chore,
+new skill, ledger, downstream migration, cloud environment, tag or release from
+this handoff. The supplied attachment is preserved design input, not active
+policy. No adopter or companion source was changed during the proposal work.
+
+### Verified save point and release accounting
+
+Fresh fetch on all three repositories found clean main and 0 ahead / 0 behind:
+
+- Starter: `1a82a026eb337f024508133d28b70396136c000c`; both jobs passed in
+  [exact-commit CI](https://github.com/tvproductions/gz-starter/actions/runs/43650651825).
+  This is the full saved proposal before the present handoff-only commit.
+- gz-skills: `4a7abd79f483c6c9abfc8f9470694be847f1347d`; documented local
+  checks pass; hosted CI is not configured. No further edits need a commit.
+- Backplane: `c1b63d8f72fba9996f0857120f8c97e9e8d5700d`; previously observed
+  [three-platform CI](https://github.com/tvproductions/superpowers-backplane/actions/runs/43647870548)
+  passes; no further edits need a commit.
+
+Published 0.9.0 -> pending 0.10.0 / minor is unchanged in bundle/package mirrors.
+The proposal's implementation has not been silently added to that release's
+approved scope. Reuse a valid pending target when the coherent bundle is selected;
+do not bump per pending task. No release has been published by this session.
+Current draft SHA-256: policy 7b23a16cffc45053046a1f626949933a4ac44b27a77695738d07dea7fddea301; settings patch a5f1564f2c23cf50d19d2c954f0881cd74432d8a0749e12f00adab8400c05618.
+These hashes identify draft bytes and imply no approval.
+
+Verification for this final checkpoint is handoff diff/reference review, version
+mirror checks, unchanged unapplied-patch validation and normal hooks. Reuse the
+same-input proposal/runtime evidence; observe CI for this handoff commit through
+completion after ordinary push. The final sync response records that SHA/result;
+avoid another CI-receipt-only commit. Companion repositories remain unchanged.
+
 ## Extended session — naming/layout proposal prepared
 
 After the readiness save point, the maintainer answered **“Prepare the proposal
