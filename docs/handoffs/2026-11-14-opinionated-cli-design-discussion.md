@@ -1,5 +1,48 @@
 # Opinionated enforcement CLI — design-discussion handoff
 
+## Approved design, plans ready for review — November 15
+
+The maintainer said **“proceed with that design”** after main-thread review of
+the remote GZKit naming precedent. Both companion designs and actual separate
+ADR approvals are now captured with exact original proposal bytes/provenance.
+The [release assessment](../evidence/2026-11-15-0.10.0-release.md#approved-design-continuation-and-implementation-plan-review)
+links immutable owner commits, Current decisions, reviewable implementation plans
+and the proposed Backplane native intake body. No new work item is posted and no
+product skill/integration is implemented yet. Review plans in the main conversation,
+using native execution as the recommendation; do not repeat architectural approval
+already supplied or infer implementation evidence from the administrative capture.
+Then execute the approved plans, independently release both contributions and
+complete starter Task 4 qualification before the authorized 0.10.0 publication.
+Original dirty companion checkouts and all release/qualification gates remain.
+
+## Review correction — remote naming precedent, November 15
+
+Review designs and architectural decisions in the main conversation; the
+maintainer rejected side-question prompts as the place for that review. The
+main thread accepted the responsibility split and original gz-skills design,
+then requested checking the remote GZKit drydock ADR naming plan. The
+[readiness assessment](../evidence/2026-11-15-0.10.0-release.md#main-conversation-review-and-naming-precedent)
+records the exact source and comparison. GZKit's ratified H5 uses the same
+sequential decision/edition form with minimum-width numbers and its stated slug
+grammar. The companion drafts now cite this precedent and propose those precise
+details. Continue review here before implementation; do not infer approval of
+changed proposal bytes or skip the requested review based on side-question replies.
+
+## Release request checked — November 15, 2026
+
+The maintainer requested publishing the pending release. The
+[0.10.0 readiness assessment](../evidence/2026-11-15-0.10.0-release.md) records
+the actual candidate, live publication inventory, prepared release-note content
+and binding blockers. Current ADR-0001 and the approved #12 scope still require
+owning companion ADR deliveries, shared/targeted behavior and internal-use
+evidence. Current helper/dependency checks do not supply them. No 0.10.0 tag or
+release exists; keep versions/changelog pending. The maintainer explicitly chose
+**“Keep approved scope; complete prerequisites.”** Owning companion designs and
+ADR proposals are being prepared in clean registered worktrees identified in
+the assessment, preserving both original dirty checkouts. Publication authority
+is established; missing acceptance and approval of unwritten companion designs/
+ADR editions are not inferred from it. No narrower release exception is selected.
+
 ## Dependency maintenance follow-up — November 15, 2026
 
 The maintainer invoked `gzs-update-dependencies` after an ordinary Git sync in
