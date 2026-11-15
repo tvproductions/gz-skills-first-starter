@@ -14,16 +14,16 @@
     {
       "name": "superpowers-backplane",
       "repository": "https://github.com/tvproductions/superpowers-backplane",
-      "release": "v0.2.0",
-      "revision": "0b18e34e65379e729d8fece97151a1bb8604b461",
+      "release": "v0.3.0",
+      "revision": "39fbe3065c16ac119c4c10a3c2428fda39d57e61",
       "status": "released; deferred, adoption and host acceptance incomplete",
       "enabled_by_default": false
     },
     {
       "name": "gz-skills",
       "repository": "https://github.com/tvproductions/gz-skills",
-      "release": "v0.12.0",
-      "revision": "a8f67160475a6995391d2244188d7c38eda65dfb",
+      "release": "v0.13.0",
+      "revision": "0bdab63fc503c6b36e2dd487932689b4e555e41a",
       "status": "released",
       "enabled_by_default": true
     }

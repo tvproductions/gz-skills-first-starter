@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Select released gz-skills 0.13.0 (21 skills, ADR procedure/template and router
+  0.7.0) and Backplane 0.3.0 (existing-checkpoint ADR integration). Preserve
+  independent component ownership and disabled Backplane. Reconcile both
+  catalogs, development sources, policy availability guidance and packaged copies;
+  qualify exact sources through the [combination receipt](docs/evidence/2026-11-15-adr-combination.md).
+
 - Update gz-skills from 0.11.0 to immutable released 0.12.0 in the bundle,
   both catalogs, OpenCode source, current guidance and packaged resources.
   Review router 0.6.0 and dependency update 0.5.0 without changing project

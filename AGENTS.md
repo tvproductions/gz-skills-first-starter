@@ -57,8 +57,9 @@ decisions. Obtain separate explicit approval of an identified new/replacement
 ADR edition before dependent implementation; continue independent authorized
 work. Keep approval evidence and edition history with the ADR. Do not infer
 architectural approval from spec/plan/test/release assent or introduce a ledger.
-The selected gz-skills 0.12.0 ADR contribution remains unverified; do not claim
-portable workflow availability or feature qualification from this binding alone.
+The selected released gz-skills 0.13.0 supplies the portable ADR procedure/template.
+Use exact-source qualification in docs/evidence/2026-11-15-adr-combination.md;
+configuration alone does not prove native discovery or behavioral qualification.
 
 Use this checkout's native development skills through `.codex/config.toml`:
 SP for feature work and gz-skills for engineering workflows. The project-scoped
@@ -189,7 +190,7 @@ Generic dependency maintenance belongs in gz-skills. Route authorized updates to
 `gzs-update-dependencies` and dependency-risk reviews to
 `gzs-dependency-risk-audit`; keep this starter's material as policy and binding
 guidance. Do not add a competing local maintenance skill or generic freshness
-reporter. The pinned gz-skills v0.12.0 supplies freshness-only review and
+reporter. The pinned gz-skills v0.13.0 supplies freshness-only review and
 starter/template/plugin inventory through `gzs-update-dependencies`; review mode
 leaves pins and environments unchanged. Preserve this starter's approved Python
 family and retired-tool decisions over upstream profile defaults.

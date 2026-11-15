@@ -22,7 +22,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/tvproductions/superpowers-backplane.git",
-        "ref": "0b18e34e65379e729d8fece97151a1bb8604b461"
+        "ref": "39fbe3065c16ac119c4c10a3c2428fda39d57e61"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -35,7 +35,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/tvproductions/gz-skills.git",
-        "ref": "a8f67160475a6995391d2244188d7c38eda65dfb"
+        "ref": "0bdab63fc503c6b36e2dd487932689b4e555e41a"
       },
       "policy": {
         "installation": "AVAILABLE",

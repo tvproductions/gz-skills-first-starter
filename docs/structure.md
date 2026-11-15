@@ -82,7 +82,7 @@ Backplane disabled. User defaults and unrelated projects retain their settings.
 
 The development configuration uses the immutable November 15 catalog at
 `1173009eb4484c2dbde2bac672ad4f96b5208438`, selecting SP 7.0.2 and gz-skills
-0.12.0, with Backplane 0.2.0 disabled. Codex/Claude marketplace bindings and
+0.13.0, with Backplane 0.3.0 disabled. Codex/Claude marketplace bindings and
 OpenCode source configuration select the same component combination.
 Fresh-session loading remains separate evidence.
 The binding commit follows its catalog commit to avoid a self-referential SHA.

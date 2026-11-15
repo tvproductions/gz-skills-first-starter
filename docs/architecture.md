@@ -5,8 +5,9 @@ binds both lanes and this publishing repository. Decisions live in their ADRs
 under `docs/decisions/`, with embedded or durably referenced approval evidence.
 The [component-binding ADR](decisions/ADR-0001-001-qualify-exact-component-combinations.md)
 requires exact-source qualification and preserves independent component ownership.
-Use existing Backplane records where applicable; introduce no new ledger. Portable
-ADR workflow delivery and trio qualification remain separate pending evidence.
+Use existing Backplane records where applicable; introduce no new ledger. Released portable workflow delivery and exact-source qualification are recorded
+in [the combination receipt](evidence/2026-11-15-adr-combination.md); configuration
+alone does not establish native/model behavior.
 
 The starter owns one narrow `update-gz-template` skill, introduced in 0.6 as the canonical entry for adopter template updates. Generic
 engineering and dependency-update skills remain upstream-owned. It owns opinionated

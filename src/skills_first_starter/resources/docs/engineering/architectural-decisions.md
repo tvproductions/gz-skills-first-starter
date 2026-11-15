@@ -103,10 +103,10 @@ procedure or approval content is unreadable, report the gap and withhold affecte
 completion claims while continuing independent authorized work.
 
 Consult the exact selected gz-skills portable procedure/template when its owning
-delivery is verified. The selected gz-skills 0.12.0 is not claimed to deliver the
-new ADR contribution. Until owning designs/releases and qualification evidence
-exist, use this explicit project binding without claiming the portable workflow
-is installed, discoverable or qualified. Heavy mode uses existing supported
+delivery is verified. Released gz-skills 0.13.0 supplies
+`gzs-architectural-decisions` and its template; the source-bound qualification
+receipt is `docs/evidence/2026-11-15-adr-combination.md` in the starter. Verify
+actual installed/discovered sources before extending its observed scope. Heavy mode uses existing supported
 Backplane records; no new approval ledger/service is introduced. When Backplane
 is disabled, retain existing planning/review/handoff tools in either lane.
 

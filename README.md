@@ -34,9 +34,10 @@ Pending **0.10.0** implements mandatory
 [ADR policy](docs/engineering/architectural-decisions.md) and
 [`--adr-policy link|local`](docs/adoption.md#architectural-decision-policy-access)
 for immutable-source or repository-local access. It preserves exact reviewed
-approval provenance and existing project authority. Starter helper verification
-does not establish portable workflow delivery or trio qualification; adopter
-propagation remains pending those companion and internal-use results.
+approval provenance and existing project authority. Released gz-skills 0.13.0 and Backplane 0.3.0 provide the independent
+companion contributions. See the [exact-source qualification](docs/evidence/2026-11-15-adr-combination.md)
+for observed behavior, source identities and host limits. Backplane stays disabled
+by default; each adopter must verify its actual installed/discovered sources.
 
 Release **0.9.0** permits uv >=0.13.5 without an upper bound, corrects Windows
 configuration idempotence and makes release-scope/version decisions explicit.
@@ -299,8 +300,8 @@ those exact full commit SHAs, not moving branches.
 | Component | Initial baseline | Owns |
 |---|---|---|
 | [Superpowers](https://github.com/obra/superpowers) | v7.0.2 | Feature design, plans, implementation, review |
-| [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | v0.2.0; disabled by default | GitHub-backed backlog and handoff continuity |
-| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.12.0 | Portable engineering disciplines |
+| [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | v0.3.0; disabled by default | GitHub-backed backlog and handoff continuity |
+| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.13.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
 The November 15 maintenance pass selects the current stable releases above;
