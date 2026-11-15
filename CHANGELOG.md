@@ -7,7 +7,9 @@
   Review router 0.6.0 and dependency update 0.5.0 without changing project
   ownership, publication authority or disabled Backplane. Recheck all 76
   registry projects, both approved Python patches and CI actions; retain
-  current package/runtime pins and unchanged locks. Reuse pending 0.10.0.
+  current package/runtime pins and unchanged locks. Bind Codex/Claude development
+  sources to the published catalog commit, preserving activation and duplicate
+  overrides. Reuse pending 0.10.0.
   See the [maintenance receipt](docs/evidence/2026-11-15-starter-maintenance.md)
   for verification and native-binding/qualification limits.
 

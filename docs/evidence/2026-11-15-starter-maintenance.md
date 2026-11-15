@@ -13,6 +13,9 @@ rollback reference. Reuse approved ADR-0001-001: review exact component changes
 without claiming combined behavior from configuration. No new architecture,
 profile choice, tool family, routine hook or permanent maintenance reporter is
 introduced. The naming/layout and record-management proposals remain drafts.
+This Windows session uses `U:\repos\agents\gz-skills-first-starter`; it does not
+move the active checkout or establish the desktop binding described by earlier
+handoffs from another environment.
 
 Published baseline is **0.9.0**, immutable release commit
 `3f76acf0038b030bf5abd85ce4a419e890d3e420`; pending target stays **0.10.0 / minor**.
@@ -171,10 +174,31 @@ exact final-commit CI remains to be observed after source/binding publication.
 
 Astral applicability: A01-A08/A10/A17 have the identity, runtime, tool, source,
 lock and export evidence above. A09 local hooks pass; exact final-commit CI must
-be observed after sync. A11/A12 require source-independent build and isolated
-installed proof below. A13 is inapplicable to this CLI rather than a typed library;
+be observed after sync. A11/A12 have the source-independent build and isolated
+installed proof above. A13 is inapplicable to this CLI rather than a typed library;
 A14 is inapplicable to independent runtime projects; A15 has only public registry
 and immutable Git sources; A16 native/embedded deployment is unverified. A18 keeps
 the starter-wide cognitive deferral (ceiling 15, measurement UNKNOWN), remaining
 deeper-tool/cohesion and ADR/trio/native-host limits. This is source maintenance,
 not strict release/adoption acceptance or engine qualification.
+
+## Published catalog and project binding
+
+Source/catalog commit `1173009eb4484c2dbde2bac672ad4f96b5208438` passed normal
+commit hooks and was pushed ordinarily after a fresh fetch found no remote
+divergence. Its [CI run](https://github.com/tvproductions/gz-starter/actions/runs/43743537501)
+passed both jobs. The binding follow-up changes Codex/Claude project refs to
+that exact published catalog and updates this record, changelog, structure guide
+and handoff. Existing true/false activation values, duplicate suppression and
+Claude `autoUpdate: false` are preserved. OpenCode already selects the same
+component. No cache installation, user setting or deferred-plugin activation
+was performed. Native installation/discovery remains UNKNOWN.
+Parsed before/after TOML/JSON comparison confirms the ref is the only setting
+change. Both refs equal the published catalog commit, its catalog bytes agree
+with the working catalog, all 0.10.0 mirrors agree, and recorded pyproject/lock
+hashes remain unchanged.
+
+Reuse the unchanged-input full gate/build/artifact/audit results. Parse and
+compare the binding files and published catalog; retain normal hooks. Observe
+CI for the binding follow-up's own exact SHA at closeout, then verify clean
+main/origin alignment. Do not add another CI-receipt-only commit.

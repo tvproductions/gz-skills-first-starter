@@ -10,8 +10,11 @@ live registry/runtime/action checks, compatibility review and verification.
 All 76 registry projects are current; Python 3.14.10/3.12.16, uv/uv_build 0.13.8,
 SP 7.0.2 and disabled Backplane 0.2.0 stay selected. Both locks are unchanged.
 The separate local host-reference environment was synchronized to its existing
-lock. Catalog/resource/OpenCode updates precede the Codex/Claude binding to the
-resulting immutable published catalog; preserve activation/duplicate overrides.
+lock. Catalog/resource/OpenCode update `1173009eb4484c2dbde2bac672ad4f96b5208438`
+is published with both CI jobs passing in
+[run 43743537501](https://github.com/tvproductions/gz-starter/actions/runs/43743537501).
+Codex/Claude development sources now bind to that exact catalog, preserving
+activation/duplicate overrides. Native 0.12.0 installation/loading is not claimed.
 
 Reuse pending **0.10.0 / minor** from published **0.9.0**, under existing #12/#13
 scope and ADR-0001-001. Ordinary source sync remains separate from publication;

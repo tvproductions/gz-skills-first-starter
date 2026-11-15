@@ -80,12 +80,11 @@ This starter dogfoods the upstream development workflows through its checked-in
 alternative `gz-skills@gz-skills` source here to avoid duplicates, and keeps
 Backplane disabled. User defaults and unrelated projects retain their settings.
 
-The development configuration currently uses the immutable November 14 catalog
-at `d874ef0a68b2892e79db37e27385f2026dc9793a`, selecting SP 7.0.2 and gz-skills
-0.11.0, with Backplane 0.2.0 disabled. The November 15 source update selects
-gz-skills 0.12.0 in this checkout's catalogs and OpenCode source. Codex/Claude
-binding follows publication of that catalog's exact commit; until then their
-development source still selects 0.11.0. Fresh-session loading is separate proof.
+The development configuration uses the immutable November 15 catalog at
+`1173009eb4484c2dbde2bac672ad4f96b5208438`, selecting SP 7.0.2 and gz-skills
+0.12.0, with Backplane 0.2.0 disabled. Codex/Claude marketplace bindings and
+OpenCode source configuration select the same component combination.
+Fresh-session loading remains separate evidence.
 The binding commit follows its catalog commit to avoid a self-referential SHA.
 Reconcile this development marketplace ref when reviewing future catalog changes;
 a local catalog edit alone does not update the pinned development source.
