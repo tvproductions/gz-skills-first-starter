@@ -1,18 +1,29 @@
 # Roadmap
 
-Reconciled November 8, 2026 against the 0.9.0 release and agreed ADR priority,
-current bundle, Windows correction and hosted scan results. This is the starter's
-project roadmap, not a replacement for Backplane's backlog/lifecycle authority.
-The ADR increment is tracked as [feature #12](https://github.com/tvproductions/gz-starter/issues/12)
-in [milestone 0.10.0](https://github.com/tvproductions/gz-starter/milestone/2).
-Cognitive integration remains issue #1. Other entries remain roadmap work
-without assigned versions or newly created issues.
+Reconciled November 15, 2026 for the finite 0.10.0 release, governed by
+[#12](https://github.com/tvproductions/gz-starter/issues/12) and approved design
+[#13](https://github.com/tvproductions/gz-starter/issues/13). Published baseline
+0.9.0 -> 0.10.0 / minor; version mirrors agree. Completed scope includes mandatory
+ADR binding and link/local policy access, independently released companion ADR
+contributions, targeted both-lane disabled-path qualification, genuine publisher
+use/alignment, canonical naming and selected policy/tool maintenance. See the
+[release acceptance](docs/evidence/2026-11-15-0.10.0-release.md) and
+[combination receipt](docs/evidence/2026-11-15-adr-combination.md).
+
+Compatibility: new mandatory pre-1.0 adoption requirements need reviewed adopter
+reconciliation; existing authorities, profiles and Backplane-disabled settings
+are preserved. Real-adopter migration/pilot, naming enforcement, management
+sidecars, deterministic upgrades, broader platform proof and acceptance automation
+remain deferred. Cognitive measurement is UNKNOWN under the standing deferral;
+no full strict conformance is claimed. Publication is verified by the immutable
+release tag and GitHub record. Historical planning narrative below retains its
+original scope/ordering and is superseded by this completion record where stated.
 
 ## Delivered baseline
 
 - Immutable bundle, two native marketplace catalogs, independent template
   versioning and exact-SHA adopter provenance. Current selections are SP 7.0.2
-  and gz-skills 0.11.0; Backplane stays pinned and disabled. `bundle.json` owns
+  and gz-skills 0.13.0; Backplane 0.3.0 stays pinned and disabled. `bundle.json` owns
   those selections; exact pins do not establish upstream freshness.
 - Preview/apply/status configuration, preservation/conflict/symlink/duplicate/gzkit
   checks, unittest coverage and read-only structural backport assessment.
@@ -110,9 +121,9 @@ The maintainer approved the [starter specification](docs/superpowers/specs/2026-
 the native implementation plan and separately
 [ADR-0001-001](docs/decisions/ADR-0001-001-qualify-exact-component-combinations.md).
 Starter policy, link/local helper support and packaged-policy verification are
-implemented locally. Companion designs/releases, shared/targeted behavioral
-qualification and three-publisher internal-use evidence remain outstanding;
-this is not feature acceptance or adopter propagation readiness.
+implemented and qualified for the exact released sources and observed Windows
+Codex scope in the combination receipt. Each real adopter must reconcile its
+authorities and verify its actual installed/discovered sources.
 This repository owns the adopter policy
 and cross-component contract; gz-skills and SP-BP design their internals in their
 own repositories.

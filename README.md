@@ -28,9 +28,9 @@ The starter supports central uv workspaces: shared tool settings live in the roo
 checks proportional to the diff and affected owners, reserves full gates for
 integration/broad risk, and rejects ceremonial test growth. Session startup
 checks dependency freshness; separately authorized maintenance performs updates.
-These rules are carried in the generated adopter instructions for pending 0.10.0.
+These rules are carried in the generated adopter instructions in 0.10.0.
 
-Pending **0.10.0** implements mandatory
+Release **0.10.0** implements mandatory
 [ADR policy](docs/engineering/architectural-decisions.md) and
 [`--adr-policy link|local`](docs/adoption.md#architectural-decision-policy-access)
 for immutable-source or repository-local access. It preserves exact reviewed
@@ -64,7 +64,7 @@ and does not claim strict cognitive acceptance. See the
 [current release evidence](docs/evidence/2026-11-08-0.9.0-release.md) and
 [integration boundary](docs/engineering/cognitive-integration.md).
 
-Pending 0.10.0 makes the
+Release 0.10.0 makes the
 [cognitive qualification deferral starter-wide](docs/engineering/cognitive-integration.md#starter-wide-qualification-deferral)
 for both adopter lanes. Missing shared-engine delivery alone does not block
 progression; retain ceiling 15 and eventual qualification, record measurement

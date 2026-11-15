@@ -269,20 +269,20 @@ an explicit incomplete assessment. No companion implementation is part of this t
 - [x] Inventory actual owning records and delivery sources. If missing, list the
   missing records/owners and stop the affected qualification/propagation steps;
   continue independent starter checks. Do not invent future versions or skill names.
-- [ ] Once selection is separately authorized, reconcile bundle pins, both catalogs
+- [x] Once selection is separately authorized, reconcile bundle pins, both catalogs
   and development host marketplace refs together, preserving project activation,
   user defaults and disabled Backplane. Validate source revisions separately from
   loaded sources. Follow native project-only qualification; install nothing through
   this plan without separate authorization.
-- [ ] Run or inspect source-identical full shared B01-B16 evaluation evidence.
+- [x] Run or inspect source-identical full shared B01-B16 evaluation evidence.
   Preserve exact prompts/fixtures, loaded sources, environment/model metadata,
   full transcripts/actions and verdicts. Record missing metadata as UNKNOWN.
-- [ ] Run the targeted checks from the spec for all three repository bindings,
+- [x] Run the targeted checks from the spec for all three repository bindings,
   lite/heavy fixtures and owner-supported active SP-BP integration, coordinating
   owning repository execution under its own authority. Every binding needs B01
   stopping and B02 continuation controls. Verify both policy-access forms and
   project precedence; an active-integration result does not qualify disabled paths.
-- [ ] Expand to affected matrix cases on behavior changes/discrepancies. Preserve
+- [x] Expand to affected matrix cases on behavior changes/discrepancies. Preserve
   failures, fixes and reruns, and justify every reused shared result by unchanged
   inputs/applicability. Require genuine internal use plus alignment review in all
   three publishing repositories. Do not substitute fictional approvals for real use.
@@ -325,11 +325,16 @@ main and no feature branches. The reviewed work was returned to main and the
 temporary branch removed after verifying it held no distinct commits.
 The existing update skill remained unchanged after its application baseline
 preserved local-mode/provenance requirements; target-specific guidance lives in
-the canonical adoption/update documents it already routes to. Task 4's local
-inventory, gate and review/evidence steps are complete; companion delivery,
-shared/targeted behavioral evaluation and companion internal use remain pending.
+the canonical adoption/update documents it already routes to. Task 4 is complete
+for the exact released sources and observed host/model scope in the
+[November 15 combination receipt](../../evidence/2026-11-15-adr-combination.md):
+immutable companion delivery, source-identical shared matrix reuse, targeted
+publisher/lite/heavy access/precedence/stop/continue controls and genuine use/
+alignment in all three publishers. Existing cognitive/deeper/host limits remain.
 The fresh whole-change reviewer found one medium partial-write cleanup defect;
 its regression failed before the fix and all 72 tests plus the full gate pass
 afterward. See the [qualification receipt](../../evidence/2026-11-08-adr-practice-qualification.md)
-for source hashes, review dispositions and remaining UNKNOWNs. Do not mark the
-whole feature accepted or propagate this candidate.
+for original source hashes and review history. The later combination receipt
+supersedes its initial companion/behavioral/internal-use gaps for the selected
+exact sources. Real-adopter reconciliation and host-specific verification remain
+mandatory; publication uses the separately authorized immutable release.

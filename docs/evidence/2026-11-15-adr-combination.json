@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-15",
+  "starter_catalog": "9f0f27791713f735d960e44b18759a9fb63a61ae",
+  "policy_sha256": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7",
+  "host": "Windows Codex; native catalog0.169.0 and available test actor",
+  "model": "UNKNOWN",
+  "results": [
+    {
+      "case": "lite-link-stop",
+      "actual_source_of_truth": "local",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "lite-link-continue",
+      "actual_source_of_truth": "remote",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "lite-local-stop",
+      "actual_source_of_truth": "local",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "lite-local-continue",
+      "actual_source_of_truth": "remote",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "heavy-link-stop",
+      "actual_source_of_truth": "local",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "heavy-link-continue",
+      "actual_source_of_truth": "remote",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "heavy-local-stop",
+      "actual_source_of_truth": "local",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "heavy-local-continue",
+      "actual_source_of_truth": "remote",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "publisher-local-stop",
+      "actual_source_of_truth": "local",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "publisher-local-continue",
+      "actual_source_of_truth": "remote",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "lite-local-conflict",
+      "actual_source_of_truth": "local",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "heavy-local-conflict",
+      "actual_source_of_truth": "local",
+      "readme_corrected": true,
+      "protected_inputs_preserved": true,
+      "verdict": "PASS"
+    }
+  ],
+  "protected_input_count": 140,
+  "source_mode": "actual public helper-generated bindings; publisher binding exact Git blob; link mode pre-resolved immutable policy bytes; local mode actual working copy; procedure via released installed-consumer junction",
+  "native_inventory": "separate fresh codex app-server skills/list; exact procedure hash matched",
+  "prior_failed_attempt": "nested CLI inherited read-only permission profile; no reads/actions; not scored as behavioral pass/fail",
+  "limitations": "Isolated fixture discovery and source-read behavior are distinct observations. No normal-profile, other-host/model, live adopter migration or full-heavy readiness claim.",
+  "archive_sha256": "400c7edc70dd76e3ee9e1008aabc5c6b3023bd687d4e256bb011d6cf18df8fd6",
+  "archive_entries": 335,
+  "archive_redaction": "machine metadata and absolute paths only; original complete local records retained",
+  "native_observation": {
+    "method": "fresh codex app-server skills/list forceReload=true",
+    "cli_version": "0.169.0",
+    "profile": "isolated empty profile; no inference/auth request",
+    "errors": [],
+    "selected": [
+      {
+        "name": "gzs-architectural-decisions",
+        "scope": "repo",
+        "enabled": true,
+        "sha256": "a85b8a48fc700da52d65b5b61fa4ee525a1c0b7ffd303f02f753a26d5cf2339a",
+        "path_mapping": "isolated fixture per-skill junction to released installed consumer or independent SP7.0.2 checkout"
+      },
+      {
+        "name": "superpowers:executing-plans",
+        "scope": "repo",
+        "enabled": true,
+        "sha256": "deaf176fa179827e80f2ea3101db3ea90fdf562ebef340eba761e4687940f5f5",
+        "path_mapping": "isolated fixture per-skill junction to released installed consumer or independent SP7.0.2 checkout"
+      }
+    ],
+    "original_inventory_sha256": "02cf1025f695fa0c2942fb0e39ca3be19a9f91d7d2cb456b4ccf38cf02a7178a",
+    "raw_inventory": "retained locally; absolute paths excluded from public record"
+  }
+}

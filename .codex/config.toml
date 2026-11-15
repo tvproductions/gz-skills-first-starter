@@ -3,7 +3,7 @@
 [marketplaces.skills-first-starter]
 source_type = "git"
 source = "https://github.com/tvproductions/gz-starter.git"
-ref = "1173009eb4484c2dbde2bac672ad4f96b5208438"
+ref = "9f0f27791713f735d960e44b18759a9fb63a61ae"
 
 [plugins."superpowers@skills-first-starter"]
 enabled = true

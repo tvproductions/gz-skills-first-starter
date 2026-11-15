@@ -81,7 +81,7 @@ alternative `gz-skills@gz-skills` source here to avoid duplicates, and keeps
 Backplane disabled. User defaults and unrelated projects retain their settings.
 
 The development configuration uses the immutable November 15 catalog at
-`1173009eb4484c2dbde2bac672ad4f96b5208438`, selecting SP 7.0.2 and gz-skills
+`9f0f27791713f735d960e44b18759a9fb63a61ae`, selecting SP 7.0.2 and gz-skills
 0.13.0, with Backplane 0.3.0 disabled. Codex/Claude marketplace bindings and
 OpenCode source configuration select the same component combination.
 Fresh-session loading remains separate evidence.

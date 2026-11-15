@@ -202,3 +202,13 @@ Reuse the unchanged-input full gate/build/artifact/audit results. Parse and
 compare the binding files and published catalog; retain normal hooks. Observe
 CI for the binding follow-up's own exact SHA at closeout, then verify clean
 main/origin alignment. Do not add another CI-receipt-only commit.
+
+## Final release combination selection
+
+The later authorized release prerequisite pass published gz-skills 0.13.0 and
+Backplane 0.3.0. The [combination receipt](2026-11-15-adr-combination.md) supersedes
+the earlier component-selection rows and native-availability UNKNOWN for its
+explicit observed scope. Package/runtime/Action selections and manifest/lock
+hashes are unchanged; their same-day freshness/audit/compatibility evidence is
+reused. Official latest-release checks again return SP7.0.2/GZ0.13.0/BP0.3.0.
+Final project refs bind catalog9f0f277 while preserving all activation settings.

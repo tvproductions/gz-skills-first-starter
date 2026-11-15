@@ -331,7 +331,7 @@ starter skill leakage outside. See
 
 Check upstream at adoption time rather than assuming this template's baseline
 is newest. The November 15, 2026 maintenance review selects SP **v7.0.2** at
-`22f0b463e7a5e579904dd6211a520321035526f7` and gz-skills **v0.12.0** at
+`22f0b463e7a5e579904dd6211a520321035526f7` and gz-skills **v0.13.0** at
 `0bdab63fc503c6b36e2dd487932689b4e555e41a`. These observations expire as
 releases change. See the [maintenance receipt](evidence/2026-11-15-starter-maintenance.md).
 Explicit-only release support does not authorize publication by adoption.

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.10.0 — November 15, 2026
+
 - Select released gz-skills 0.13.0 (21 skills, ADR procedure/template and router
   0.7.0) and Backplane 0.3.0 (existing-checkpoint ADR integration). Preserve
   independent component ownership and disabled Backplane. Reconcile both

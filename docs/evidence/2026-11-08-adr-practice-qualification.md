@@ -1,6 +1,9 @@
 # ADR practice implementation and qualification — November 8, 2026
 
-Overall ADR-feature qualification: **INCOMPLETE**. Starter policy/helper
+Historical November 8 assessment, superseded for the exact released tuple by
+[November 15 qualification](2026-11-15-adr-combination.md).
+
+Original overall ADR-feature qualification: **INCOMPLETE**. Starter policy/helper
 implementation is locally verified; companion-owned delivery, full shared and
 targeted behavioral evaluation, and all three genuine internal-use records are
 not established. Do not propagate to adopters or claim feature #12 accepted.
