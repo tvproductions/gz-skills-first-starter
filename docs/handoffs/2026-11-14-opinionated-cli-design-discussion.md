@@ -1,5 +1,27 @@
 # Opinionated enforcement CLI — design-discussion handoff
 
+## Reviewed ADR guidance checkpoint — November 15
+
+The companion plans were approved for Superpowers Native execution. Keep the
+upstream term and main-conversation review preference. The maintainer questioned
+elapsed time and whether the separately planned CLI had started; it has not.
+No CLI naming/design decision or new CLI behavior was added. Avoid another
+verification framework, repeated unchanged model matrix or extra maintenance thread.
+
+Reviewed gz-skills source is pushed at `77ad2c792e0df39782271639c317e2c812b5a48e`:
+ADR skill/template/router, complete canonical instruction evidence and genuine
+approved-decision use/alignment review with no findings. Source/package gates
+pass; 0.13.0 is still unreleased because current OpenCode native acceptance is
+UNVERIFIED. Catalog refs stay on published 0.12.0; no tag/release or propagation.
+Backplane `5904713f47fae21e94813327b4e2daa9878605e3` preserves partial prerequisite
+tooling/probe work and owner issue #37; ADR integration/0.3.0 remain pending.
+
+The [release record](../evidence/2026-11-15-0.10.0-release.md#reviewed-guidance-implementation-checkpoint--november-15)
+contains exact sources, actual results, remaining gates and registered worktree
+paths. Preserve originals and scratch. Starter 0.10.0 remains blocked under the
+approved scope; do not claim completion or start the planned CLI. Resume owning
+plans from recorded checkpoints, not from the older pre-implementation note below.
+
 ## Approved design, plans ready for review — November 15
 
 The maintainer said **“proceed with that design”** after main-thread review of
