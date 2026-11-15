@@ -22,8 +22,8 @@
     {
       "name": "gz-skills",
       "repository": "https://github.com/tvproductions/gz-skills",
-      "release": "v0.11.0",
-      "revision": "62622aee80ce27d4a39efe3554a583b844f38876",
+      "release": "v0.12.0",
+      "revision": "a8f67160475a6995391d2244188d7c38eda65dfb",
       "status": "released",
       "enabled_by_default": true
     }

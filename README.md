@@ -300,11 +300,11 @@ those exact full commit SHAs, not moving branches.
 |---|---|---|
 | [Superpowers](https://github.com/obra/superpowers) | v7.0.2 | Feature design, plans, implementation, review |
 | [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | v0.2.0; disabled by default | GitHub-backed backlog and handoff continuity |
-| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.11.0 | Portable engineering disciplines |
+| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.12.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
-The November 14 maintenance pass selects the current stable releases above;
-see the [maintenance receipt](docs/evidence/2026-11-14-starter-maintenance.md)
+The November 15 maintenance pass selects the current stable releases above;
+see the [maintenance receipt](docs/evidence/2026-11-15-starter-maintenance.md)
 for exact sources and verification. Published templates retain their original
 pins. Deferred Backplane does not constrain active SP/gz-skills updates, and its
 released status does not establish adoption or host readiness. This selection

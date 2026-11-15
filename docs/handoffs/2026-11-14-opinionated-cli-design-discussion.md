@@ -1,5 +1,27 @@
 # Opinionated enforcement CLI — design-discussion handoff
 
+## Dependency maintenance follow-up — November 15, 2026
+
+The maintainer invoked `gzs-update-dependencies` after an ordinary Git sync in
+this conversation. Update mode selects released gz-skills **0.12.0**, exact
+commit `a8f67160475a6995391d2244188d7c38eda65dfb`, replacing 0.11.0. The
+[maintenance receipt](../evidence/2026-11-15-starter-maintenance.md) records
+live registry/runtime/action checks, compatibility review and verification.
+All 76 registry projects are current; Python 3.14.10/3.12.16, uv/uv_build 0.13.8,
+SP 7.0.2 and disabled Backplane 0.2.0 stay selected. Both locks are unchanged.
+The separate local host-reference environment was synchronized to its existing
+lock. Catalog/resource/OpenCode updates precede the Codex/Claude binding to the
+resulting immutable published catalog; preserve activation/duplicate overrides.
+
+Reuse pending **0.10.0 / minor** from published **0.9.0**, under existing #12/#13
+scope and ADR-0001-001. Ordinary source sync remains separate from publication;
+no tag/release, adopter/companion edit, new profile or native installation is
+implied. The naming/layout and record-management proposals below remain drafts,
+and their next design-review step is unchanged. Cognitive measurement, ADR/trio
+qualification and fresh-session native loading remain unverified/deferred as
+recorded. Observe exact final-commit CI and report it in the sync response;
+do not create a receipt-only commit chain.
+
 ## End-of-day handoff — November 14, 2026
 
 The maintainer requested this handoff and ordinary Git sync, then stopping for

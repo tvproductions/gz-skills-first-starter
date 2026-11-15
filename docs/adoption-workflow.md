@@ -64,13 +64,13 @@ enabling it while readiness and explicit adoption remain pending.
 Generic maintenance routes to gz-skills `gzs-update-dependencies` for authorized
 updates and `gzs-dependency-risk-audit` for risk assessments. Keep the starter's
 role to policy and adoption bindings; do not add a competing local maintenance
-skill. The pinned gz-skills v0.11.0 maintenance skill also supports freshness-only
+skill. The pinned gz-skills v0.12.0 maintenance skill also supports freshness-only
 reviews and starter/plugin inventory without changing pins or environments.
 For the starter and every adopter, apply the mandatory
 [completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration):
 a maintenance/update/upgrade/freshen request or bare `gzs-update-dependencies`
 invocation completes migration to the most current stable versions, including
-new families, and verification. Override the portable skill's review-only default;
+new families, and verification. Override older portable review-only defaults;
 only explicit check/freshness/assessment/no-changes requests are read-only. Do not
 stop at recommendations or an offer to apply. Preserve product requirements and
 retain older versions only for demonstrated incompatibility with an owned, dated

@@ -103,7 +103,7 @@ procedure or approval content is unreadable, report the gap and withhold affecte
 completion claims while continuing independent authorized work.
 
 Consult the exact selected gz-skills portable procedure/template when its owning
-delivery is verified. The selected gz-skills 0.11.0 is not claimed to deliver the
+delivery is verified. The selected gz-skills 0.12.0 is not claimed to deliver the
 new ADR contribution. Until owning designs/releases and qualification evidence
 exist, use this explicit project binding without claiming the portable workflow
 is installed, discoverable or qualified. Heavy mode uses existing supported

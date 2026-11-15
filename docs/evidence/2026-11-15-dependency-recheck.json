@@ -1,0 +1,926 @@
+{
+  "checked_date": "2026-11-15",
+  "source_revision": "fab4dc26d54d4cda0ac39d92608729ba7c8de56d",
+  "mode": "update",
+  "candidate_input_sha256": {
+    "uv.lock": "67f1fec2c542f6f43ba0652edb73ffa01f53ad3258b0e9c777c96cca8f788323",
+    "baselines/xplane/uv.lock": "9fbd72e70b8bf85cc6927c26d259bd872906f4552b245d868432abc7f51925e8",
+    "pyproject.toml": "6a552efca92b71bfa1d0665aa962d277b33af96a840f26204ca99ddd2d6edb38",
+    "baselines/xplane/pyproject.toml": "3c220a71b6d9674c407bfe1fd3e41429e1f5e68d8ba2d0178047637b27037b01"
+  },
+  "registry_packages_checked": 76,
+  "packages": [
+    {
+      "name": "aiohappyeyeballs",
+      "selected": [
+        "2.7.1"
+      ],
+      "latest_stable": "2.7.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/aiohappyeyeballs/json"
+    },
+    {
+      "name": "aiohttp",
+      "selected": [
+        "3.14.5"
+      ],
+      "latest_stable": "3.14.5",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/aiohttp/json"
+    },
+    {
+      "name": "aiosignal",
+      "selected": [
+        "1.4.0"
+      ],
+      "latest_stable": "1.4.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/aiosignal/json"
+    },
+    {
+      "name": "anybadge",
+      "selected": [
+        "1.18.0"
+      ],
+      "latest_stable": "1.18.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "evidence": "https://pypi.org/pypi/anybadge/json"
+    },
+    {
+      "name": "attrs",
+      "selected": [
+        "26.1.0"
+      ],
+      "latest_stable": "26.1.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/attrs/json"
+    },
+    {
+      "name": "bandit",
+      "selected": [
+        "1.9.4"
+      ],
+      "latest_stable": "1.9.4",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/bandit/json"
+    },
+    {
+      "name": "boolean-py",
+      "selected": [
+        "5.0"
+      ],
+      "latest_stable": "5.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ""
+      ],
+      "evidence": "https://pypi.org/pypi/boolean-py/json"
+    },
+    {
+      "name": "cachecontrol",
+      "selected": [
+        "0.14.4"
+      ],
+      "latest_stable": "0.14.4",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/cachecontrol/json"
+    },
+    {
+      "name": "certifi",
+      "selected": [
+        "2026.10.23"
+      ],
+      "latest_stable": "2026.10.23",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "evidence": "https://pypi.org/pypi/certifi/json"
+    },
+    {
+      "name": "cfgv",
+      "selected": [
+        "3.5.0"
+      ],
+      "latest_stable": "3.5.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/cfgv/json"
+    },
+    {
+      "name": "charset-normalizer",
+      "selected": [
+        "3.5.2"
+      ],
+      "latest_stable": "3.5.2",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "evidence": "https://pypi.org/pypi/charset-normalizer/json"
+    },
+    {
+      "name": "click",
+      "selected": [
+        "8.5.1"
+      ],
+      "latest_stable": "8.5.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/click/json"
+    },
+    {
+      "name": "colorama",
+      "selected": [
+        "0.4.6"
+      ],
+      "latest_stable": "0.4.6",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
+      ],
+      "evidence": "https://pypi.org/pypi/colorama/json"
+    },
+    {
+      "name": "complexipy",
+      "selected": [
+        "9.0.0"
+      ],
+      "latest_stable": "9.0.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        "<3.16,>=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/complexipy/json"
+    },
+    {
+      "name": "cosmic-ray",
+      "selected": [
+        "8.9.0"
+      ],
+      "latest_stable": "8.9.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/cosmic-ray/json"
+    },
+    {
+      "name": "coverage",
+      "selected": [
+        "7.17.3"
+      ],
+      "latest_stable": "7.17.3",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "evidence": "https://pypi.org/pypi/coverage/json"
+    },
+    {
+      "name": "cyclonedx-python-lib",
+      "selected": [
+        "11.12.0"
+      ],
+      "latest_stable": "11.12.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        "<4.0,>=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/cyclonedx-python-lib/json"
+    },
+    {
+      "name": "decorator",
+      "selected": [
+        "5.3.1"
+      ],
+      "latest_stable": "5.3.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/decorator/json"
+    },
+    {
+      "name": "defusedxml",
+      "selected": [
+        "0.7.1"
+      ],
+      "latest_stable": "0.7.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+      ],
+      "evidence": "https://pypi.org/pypi/defusedxml/json"
+    },
+    {
+      "name": "deptry",
+      "selected": [
+        "0.25.1"
+      ],
+      "latest_stable": "0.25.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/deptry/json"
+    },
+    {
+      "name": "distlib",
+      "selected": [
+        "0.4.4"
+      ],
+      "latest_stable": "0.4.4",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ""
+      ],
+      "evidence": "https://pypi.org/pypi/distlib/json"
+    },
+    {
+      "name": "exit-codes",
+      "selected": [
+        "1.3.0"
+      ],
+      "latest_stable": "1.3.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ""
+      ],
+      "evidence": "https://pypi.org/pypi/exit-codes/json"
+    },
+    {
+      "name": "filelock",
+      "selected": [
+        "4.2.10"
+      ],
+      "latest_stable": "4.2.10",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "evidence": "https://pypi.org/pypi/filelock/json"
+    },
+    {
+      "name": "frozenlist",
+      "selected": [
+        "1.8.0"
+      ],
+      "latest_stable": "1.8.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/frozenlist/json"
+    },
+    {
+      "name": "gitdb",
+      "selected": [
+        "4.0.12"
+      ],
+      "latest_stable": "4.0.12",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "evidence": "https://pypi.org/pypi/gitdb/json"
+    },
+    {
+      "name": "gitpython",
+      "selected": [
+        "3.2.1"
+      ],
+      "latest_stable": "3.2.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/gitpython/json"
+    },
+    {
+      "name": "grimp",
+      "selected": [
+        "3.20"
+      ],
+      "latest_stable": "3.20",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "evidence": "https://pypi.org/pypi/grimp/json"
+    },
+    {
+      "name": "identify",
+      "selected": [
+        "2.6.20"
+      ],
+      "latest_stable": "2.6.20",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/identify/json"
+    },
+    {
+      "name": "idna",
+      "selected": [
+        "3.20"
+      ],
+      "latest_stable": "3.20",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/idna/json"
+    },
+    {
+      "name": "import-linter",
+      "selected": [
+        "2.16"
+      ],
+      "latest_stable": "2.16",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "evidence": "https://pypi.org/pypi/import-linter/json"
+    },
+    {
+      "name": "interrogate",
+      "selected": [
+        "1.7.0"
+      ],
+      "latest_stable": "1.7.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/interrogate/json"
+    },
+    {
+      "name": "license-expression",
+      "selected": [
+        "30.4.4"
+      ],
+      "latest_stable": "30.4.4",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/license-expression/json"
+    },
+    {
+      "name": "lizard",
+      "selected": [
+        "1.26.0"
+      ],
+      "latest_stable": "1.26.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ""
+      ],
+      "evidence": "https://pypi.org/pypi/lizard/json"
+    },
+    {
+      "name": "markdown-it-py",
+      "selected": [
+        "4.3.0"
+      ],
+      "latest_stable": "4.3.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/markdown-it-py/json"
+    },
+    {
+      "name": "mdurl",
+      "selected": [
+        "0.1.2"
+      ],
+      "latest_stable": "0.1.2",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "evidence": "https://pypi.org/pypi/mdurl/json"
+    },
+    {
+      "name": "msgpack",
+      "selected": [
+        "1.2.4"
+      ],
+      "latest_stable": "1.2.4",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/msgpack/json"
+    },
+    {
+      "name": "multidict",
+      "selected": [
+        "7.2.1"
+      ],
+      "latest_stable": "7.2.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "evidence": "https://pypi.org/pypi/multidict/json"
+    },
+    {
+      "name": "nodeenv",
+      "selected": [
+        "1.12.0"
+      ],
+      "latest_stable": "1.12.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/nodeenv/json"
+    },
+    {
+      "name": "packageurl-python",
+      "selected": [
+        "0.17.6"
+      ],
+      "latest_stable": "0.17.6",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/packageurl-python/json"
+    },
+    {
+      "name": "packaging",
+      "selected": [
+        "26.3"
+      ],
+      "latest_stable": "26.3",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/packaging/json"
+    },
+    {
+      "name": "parso",
+      "selected": [
+        "0.8.7"
+      ],
+      "latest_stable": "0.8.7",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.6"
+      ],
+      "evidence": "https://pypi.org/pypi/parso/json"
+    },
+    {
+      "name": "pathspec",
+      "selected": [
+        "1.1.1"
+      ],
+      "latest_stable": "1.1.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/pathspec/json"
+    },
+    {
+      "name": "pip",
+      "selected": [
+        "26.3"
+      ],
+      "latest_stable": "26.3",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/pip/json"
+    },
+    {
+      "name": "pip-api",
+      "selected": [
+        "0.0.35"
+      ],
+      "latest_stable": "0.0.35",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/pip-api/json"
+    },
+    {
+      "name": "pip-audit",
+      "selected": [
+        "2.10.1"
+      ],
+      "latest_stable": "2.10.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/pip-audit/json"
+    },
+    {
+      "name": "pip-requirements-parser",
+      "selected": [
+        "32.0.1"
+      ],
+      "latest_stable": "32.0.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.6.0"
+      ],
+      "evidence": "https://pypi.org/pypi/pip-requirements-parser/json"
+    },
+    {
+      "name": "platformdirs",
+      "selected": [
+        "4.14.5"
+      ],
+      "latest_stable": "4.14.5",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "evidence": "https://pypi.org/pypi/platformdirs/json"
+    },
+    {
+      "name": "pre-commit",
+      "selected": [
+        "4.7.0"
+      ],
+      "latest_stable": "4.7.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "evidence": "https://pypi.org/pypi/pre-commit/json"
+    },
+    {
+      "name": "propcache",
+      "selected": [
+        "0.5.4"
+      ],
+      "latest_stable": "0.5.4",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/propcache/json"
+    },
+    {
+      "name": "py",
+      "selected": [
+        "1.11.0"
+      ],
+      "latest_stable": "1.11.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+      ],
+      "evidence": "https://pypi.org/pypi/py/json"
+    },
+    {
+      "name": "py-serializable",
+      "selected": [
+        "2.2.0"
+      ],
+      "latest_stable": "2.2.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        "<4.0,>=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/py-serializable/json"
+    },
+    {
+      "name": "pygments",
+      "selected": [
+        "2.21.0"
+      ],
+      "latest_stable": "2.21.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/pygments/json"
+    },
+    {
+      "name": "pyparsing",
+      "selected": [
+        "3.3.3"
+      ],
+      "latest_stable": "3.3.3",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/pyparsing/json"
+    },
+    {
+      "name": "python-discovery",
+      "selected": [
+        "1.9.5"
+      ],
+      "latest_stable": "1.9.5",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/python-discovery/json"
+    },
+    {
+      "name": "pyyaml",
+      "selected": [
+        "6.0.3"
+      ],
+      "latest_stable": "6.0.3",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/pyyaml/json"
+    },
+    {
+      "name": "requests",
+      "selected": [
+        "2.34.2"
+      ],
+      "latest_stable": "2.34.2",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/requests/json"
+    },
+    {
+      "name": "requirements-parser",
+      "selected": [
+        "0.13.1"
+      ],
+      "latest_stable": "0.13.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        "<4.0,>=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/requirements-parser/json"
+    },
+    {
+      "name": "rich",
+      "selected": [
+        "15.0.0"
+      ],
+      "latest_stable": "15.0.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9.0"
+      ],
+      "evidence": "https://pypi.org/pypi/rich/json"
+    },
+    {
+      "name": "ruff",
+      "selected": [
+        "0.17.5"
+      ],
+      "latest_stable": "0.17.5",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "evidence": "https://pypi.org/pypi/ruff/json"
+    },
+    {
+      "name": "smmap",
+      "selected": [
+        "5.0.3"
+      ],
+      "latest_stable": "5.0.3",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "evidence": "https://pypi.org/pypi/smmap/json"
+    },
+    {
+      "name": "sortedcontainers",
+      "selected": [
+        "2.4.0"
+      ],
+      "latest_stable": "2.4.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ""
+      ],
+      "evidence": "https://pypi.org/pypi/sortedcontainers/json"
+    },
+    {
+      "name": "sqlalchemy",
+      "selected": [
+        "2.1.8"
+      ],
+      "latest_stable": "2.1.8",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "evidence": "https://pypi.org/pypi/sqlalchemy/json"
+    },
+    {
+      "name": "stevedore",
+      "selected": [
+        "5.10.0"
+      ],
+      "latest_stable": "5.10.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "evidence": "https://pypi.org/pypi/stevedore/json"
+    },
+    {
+      "name": "tabulate",
+      "selected": [
+        "0.10.0"
+      ],
+      "latest_stable": "0.10.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/tabulate/json"
+    },
+    {
+      "name": "toml",
+      "selected": [
+        "0.10.2"
+      ],
+      "latest_stable": "0.10.2",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+      ],
+      "evidence": "https://pypi.org/pypi/toml/json"
+    },
+    {
+      "name": "tomli",
+      "selected": [
+        "2.5.0"
+      ],
+      "latest_stable": "2.5.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/tomli/json"
+    },
+    {
+      "name": "tomli-w",
+      "selected": [
+        "1.2.0"
+      ],
+      "latest_stable": "1.2.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/tomli-w/json"
+    },
+    {
+      "name": "ty",
+      "selected": [
+        "0.0.104"
+      ],
+      "latest_stable": "0.0.104",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/ty/json"
+    },
+    {
+      "name": "typing-extensions",
+      "selected": [
+        "4.16.0"
+      ],
+      "latest_stable": "4.16.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/typing-extensions/json"
+    },
+    {
+      "name": "urllib3",
+      "selected": [
+        "2.8.0"
+      ],
+      "latest_stable": "2.8.0",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/urllib3/json"
+    },
+    {
+      "name": "uv",
+      "selected": [
+        "0.13.8"
+      ],
+      "latest_stable": "0.13.8",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/uv/json"
+    },
+    {
+      "name": "uv-build",
+      "selected": [
+        "0.13.8"
+      ],
+      "latest_stable": "0.13.8",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "evidence": "https://pypi.org/pypi/uv_build/json"
+    },
+    {
+      "name": "virtualenv",
+      "selected": [
+        "21.15.6"
+      ],
+      "latest_stable": "21.15.6",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/virtualenv/json"
+    },
+    {
+      "name": "vulture",
+      "selected": [
+        "2.16"
+      ],
+      "latest_stable": "2.16",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "evidence": "https://pypi.org/pypi/vulture/json"
+    },
+    {
+      "name": "yarl",
+      "selected": [
+        "1.25.1"
+      ],
+      "latest_stable": "1.25.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "evidence": "https://pypi.org/pypi/yarl/json"
+    },
+    {
+      "name": "yattag",
+      "selected": [
+        "1.16.1"
+      ],
+      "latest_stable": "1.16.1",
+      "yanked_selected": [],
+      "latest_requires_python": [
+        ""
+      ],
+      "evidence": "https://pypi.org/pypi/yattag/json"
+    }
+  ]
+}

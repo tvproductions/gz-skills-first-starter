@@ -9,7 +9,7 @@ package, command and skill identifiers in provenance and executable instructions
 **MANDATORY: dependency maintenance MUST complete migration to the most current
 stable versions of every in-scope dependency/tool, including newer families.**
 A bare `gzs-update-dependencies` invocation uses update mode, overriding its
-portable review-first default. Do not stop at recommendations or an offer to
+older portable review-first defaults. Do not stop at recommendations or an offer to
 apply. Review-only requires an explicit check, assessment or no-changes request.
 Apply this contract to this starter and every adopter in both lanes; preserve
 the Python-family, product-contract and evidenced exception rules in
@@ -57,7 +57,7 @@ decisions. Obtain separate explicit approval of an identified new/replacement
 ADR edition before dependent implementation; continue independent authorized
 work. Keep approval evidence and edition history with the ADR. Do not infer
 architectural approval from spec/plan/test/release assent or introduce a ledger.
-The selected gz-skills 0.11.0 ADR contribution remains unverified; do not claim
+The selected gz-skills 0.12.0 ADR contribution remains unverified; do not claim
 portable workflow availability or feature qualification from this binding alone.
 
 Use this checkout's native development skills through `.codex/config.toml`:
@@ -189,7 +189,7 @@ Generic dependency maintenance belongs in gz-skills. Route authorized updates to
 `gzs-update-dependencies` and dependency-risk reviews to
 `gzs-dependency-risk-audit`; keep this starter's material as policy and binding
 guidance. Do not add a competing local maintenance skill or generic freshness
-reporter. The pinned gz-skills v0.11.0 supplies freshness-only review and
+reporter. The pinned gz-skills v0.12.0 supplies freshness-only review and
 starter/template/plugin inventory through `gzs-update-dependencies`; review mode
 leaves pins and environments unchanged. Preserve this starter's approved Python
 family and retired-tool decisions over upstream profile defaults.
@@ -197,7 +197,7 @@ For this starter and every adopter, dependency/tool maintenance means fully
 migrating the requested scope to the most current stable upstream versions,
 including newer stable families, and completing the required verification.
 A bare `gzs-update-dependencies` invocation uses update mode under this explicit
-binding, overriding its portable review-only default. Do not stop at a review,
+binding, overriding older portable review-only defaults. Do not stop at a review,
 recommendation or offer to apply, or ask again for ordinary migration steps.
 Review-only is reserved for an explicit check, freshness review, assessment or
 no-changes request. Follow

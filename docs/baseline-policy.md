@@ -143,8 +143,9 @@ lite and heavy lanes**. A request to maintain, update, upgrade or freshen
 project dependencies/tools authorizes **fully migrating the requested scope to
 the most current stable upstream versions, including newer stable tool and
 dependency families**. A bare invocation of `gzs-update-dependencies` uses this
-update mode here. This explicit project binding overrides the portable skill's
-review-only default; it does not change that skill or its unrelated consumers.
+update mode here. This explicit project binding overrides older portable
+review-only defaults and agrees with selected gz-skills 0.12.0. It does not
+change upstream skills or unrelated consumers.
 Do not stop after an inventory, recommendation, adopt/defer table or offer to
 apply. Complete the authorized migration and verification without another
 permission round for ordinary resolution, configuration or compatibility work.
@@ -183,7 +184,7 @@ installation scope or changes to unrelated projects.
 ## uv executable compatibility
 
 Use a minimum-only `required-version` for uv, with no upper bound. This checkout
-requires `>=0.13.5`; CI records 0.13.7 as its exact tested reference. Do not require
+requires `>=0.13.5`; CI records 0.13.8 as its exact tested reference. Do not require
 local tools or hosted updaters to match that reference. Adopters select an
 evidenced minimum for their own configuration/features, rather than copying the
 tested version as an exact compatibility constraint. Record actual uv provenance

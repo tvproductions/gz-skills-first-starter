@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Update gz-skills from 0.11.0 to immutable released 0.12.0 in the bundle,
+  both catalogs, OpenCode source, current guidance and packaged resources.
+  Review router 0.6.0 and dependency update 0.5.0 without changing project
+  ownership, publication authority or disabled Backplane. Recheck all 76
+  registry projects, both approved Python patches and CI actions; retain
+  current package/runtime pins and unchanged locks. Reuse pending 0.10.0.
+  See the [maintenance receipt](docs/evidence/2026-11-15-starter-maintenance.md)
+  for verification and native-binding/qualification limits.
+
 - Prepare the source-backed [house naming/layout proposal](docs/engineering/naming-and-layout.md)
   with an unapplied Ruff/ty settings patch, the maintainer's strict spaced-path
   rejection choice, per-member declaration-check design and adopter migration

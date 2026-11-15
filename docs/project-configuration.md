@@ -109,13 +109,13 @@ Generic maintenance workflows belong in gz-skills. Use its discovered
 `gzs-update-dependencies` for authorized dependency/tool updates and
 `gzs-dependency-risk-audit` for risk assessments. This document supplies project
 policy and source locations. The starter supplies no competing maintenance skill
-or generic freshness-report command. The pinned gz-skills v0.11.0 maintenance
+or generic freshness-report command. The pinned gz-skills v0.12.0 maintenance
 skill supports freshness-only review and template/plugin source inventory.
 The [completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
 requires maintenance/update/upgrade/freshen requests and bare
 `gzs-update-dependencies` invocations to complete migration to the most current
 stable upstream versions, including newer families, with verification. It
-overrides the portable skill's review-only default for the starter and every
+overrides older portable review-only defaults for the starter and every
 adopter. Do not stop at a report or offer to apply; ordinary migration steps
 need no further permission. Only explicit check/freshness/assessment/no-changes
 requests use review-only mode and leave pins and environments unchanged.

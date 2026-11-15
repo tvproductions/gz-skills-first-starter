@@ -12,7 +12,7 @@ command and skill identifiers in provenance and executable instructions.
 **MANDATORY: dependency maintenance MUST complete migration to the most current
 stable versions of every in-scope dependency/tool, including newer families.**
 A bare `gzs-update-dependencies` invocation uses update mode, overriding its
-portable review-first default. Do not stop at recommendations or an offer to
+older portable review-first defaults. Do not stop at recommendations or an offer to
 apply. Review-only requires an explicit check, assessment or no-changes request.
 This requirement applies to every adopter in both lanes; preserve the approved
 Python family, product contracts, thresholds and demonstrated compatibility
@@ -32,7 +32,7 @@ implementation; continue independent authorized work. Keep decisions self-contai
 with approval evidence embedded or durably referenced. General spec/plan/test/release
 approval is not architectural approval. Use the exact selected gz-skills portable
 procedure/template only when its owning delivery and discovery are verified;
-gz-skills 0.11.0 is not claimed to supply the new ADR contribution. Report missing
+gz-skills 0.12.0 is not claimed to supply the new ADR contribution. Report missing
 sources/evidence instead of claiming qualification. Heavy mode uses existing
 supported Backplane records; add no ledger or approval service. With Backplane
 disabled, keep existing project planning/review/handoff tools in either lane.
@@ -349,7 +349,7 @@ Generic maintenance belongs in gz-skills: use its discovered
 `gzs-update-dependencies` for authorized dependency/tool updates and
 `gzs-dependency-risk-audit` for risk assessments. The starter supplies baseline
 policy and stack-specific binding guidance. Do not create a duplicate local
-maintenance skill or generic freshness reporter. The pinned gz-skills v0.11.0
+maintenance skill or generic freshness reporter. The pinned gz-skills v0.12.0
 supplies freshness-only review and template/plugin inventory. Review mode leaves
 pins and environments unchanged; preserve project policy and profile choices.
 For every adopter in both lite and heavy lanes, a request to maintain, update,
@@ -357,8 +357,8 @@ upgrade or freshen dependencies/tools means fully migrate the requested scope
 to the **most current stable upstream versions, including newer stable families**,
 and complete verification. A bare `gzs-update-dependencies` invocation uses
 update mode here: this explicit starter/project binding overrides the portable
-skill's review-only default without changing unrelated consumers. Do not stop at
-an inventory, recommendation, adopt/defer table or offer to apply. Perform the
+skill's older review-only default without changing unrelated consumers. Do not
+stop at an inventory, recommendation, adopt/defer table or offer to apply. Perform the
 ordinary resolution, integration and configuration work without asking again.
 Review-only applies **only to an explicit check, freshness review, assessment or
 no-changes request**; then leave pins, locks and environments unchanged and
