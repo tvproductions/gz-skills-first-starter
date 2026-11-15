@@ -1,5 +1,8 @@
 # Opinionated enforcement CLI — design-discussion handoff
 
+Current continuation: [fresh ADR/release session handoff](2026-11-15-adr-release-session-handoff.md).
+Use that resume point; the discussion and checkpoints below remain history.
+
 ## Reviewed ADR guidance checkpoint — November 15
 
 The companion plans were approved for Superpowers Native execution. Keep the
