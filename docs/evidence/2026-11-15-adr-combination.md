@@ -141,8 +141,9 @@ response. Fictional fixtures do not establish these approvals:
 
 Final starter review: focused independent review found two stale current-source
 references, corrected in adoption/structure guidance. Source/configuration,
-actual targeted results and protected hashes have no unresolved findings; final
-receipt/archive/plan reconciliation is the remaining review closeout. No new
+actual targeted results, protected hashes, final receipt/archive and plan
+reconciliation have no unresolved critical or important findings. The completed
+fresh review confirms alignment with the actual approved ADR-0001. No new
 architecture approval or repeated case run is required.
 
 Full locked starter gate, 72 tests, catalogs/resources, source-independent build
