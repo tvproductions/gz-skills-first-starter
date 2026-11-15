@@ -1,5 +1,55 @@
 # Fresh ADR/release session handoff — November 15, 2026
 
+## Resumed execution — latest checkpoint
+
+The maintainer requested resumption from this handoff. gz-skills prerequisite
+Task 3 is now complete: [v0.13.0](https://github.com/tvproductions/gz-skills/releases/tag/v0.13.0)
+is published at `0bdab63fc503c6b36e2dd487932689b4e555e41a`; its evidence descendant
+`36377cb27638194e122f268781557a729c9bdf5c` is aligned with remote main. Clean
+release gates, fresh focused independent review, downloaded artifact hashes and
+all four exact tagged channels pass. The owning packaging procedure places
+tagged-channel observation after publication; the previous pre-tag hold was a
+sequencing assumption, not added policy. The exact tagged OpenCode package is
+active and all 21 loaded skill bodies/flags and 48 resources match. A cold empty
+catalog preceded completed activation; no adapter or configuration fix was made,
+and not every earlier inconclusive probe's cause is established. See the owning
+[completed release receipt](https://github.com/tvproductions/gz-skills/blob/36377cb27638194e122f268781557a729c9bdf5c/docs/evidence/2026-11-15-0.13.0-release.md).
+
+Backplane continuation is local at `e207fa3951fa97acb3d6d4805b3d853658deed90`,
+following maintenance commit `2a9ef916fb9293b291e59f4259da59defa40495a`, in
+the same preserved registered worktree. Its completed maintenance unit records
+71 current stable registry selections, zero known vulnerabilities, all five SP
+conformance checks, fresh independent SP 7.0.2/both Backplane discovery, and
+changed-tool compatibility: eleven guide tests, 42 statements/14 branches,
+135 normal mutation workers (128 killed/seven exact previously reviewed survivors).
+Four normal hooks pass; the previously absent shared hook was inspected and
+installed. Project source declarations select SP 7.0.2/gz-skills 0.13.0 while
+normal profiles and original dirty checkouts remain untouched. Pre-authorship
+ADR stop/continue baselines now preserve observed actions and exact protected
+input checks: all wrong-edition dependent work stops, covered local implementation
+continues, and ten independent corrections complete. Baseline passes remain passes.
+Capture qualification is UNKNOWN for a diagnosed source-alias layout gap: the
+fixture omits the relative docs parent, while canonical governance exists at its
+recorded hash. Preserve the failed floor; restore equivalent package layout in
+later fixtures and complete T4's actual complete/stale/edited-pair controls. No
+product ADR guidance has been authored. Full invented fixture bytes, initial Git
+archives, final outputs and native transcripts are retained in the owning evidence
+archives and linked from its updated HANDOFF.md.
+
+Automatic approval review rejected an interim Backplane main push and the proposed
+#37 `designing -> ready -> active` transitions for missing explicit remote
+mutation authorization. Neither command ran. A concrete user authorization request
+is pending for those label transitions and pushing maintenance commit 2a9ef91 with
+exact-commit CI observation. Preserve the local commits; issue #37 remains
+designing and remote Backplane remains at
+`5904713f47fae21e94813327b4e2daa9878605e3`; no new CI is claimed. Re-read live
+state and approvals before any authorized retry; do not bypass the rejection or
+begin dependent T3 work while its native start gate remains closed.
+Starter 0.10.0 remains unfinished
+under unchanged scope and ADR-0001. Starter selections remain unchanged pending
+companion delivery and actual combination qualification. Earlier sections below
+are historical observations, superseded only by the explicit results above.
+
 ## Resume point
 
 The original request to complete the pending starter release is **unfinished**.
