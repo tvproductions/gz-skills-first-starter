@@ -1,44 +1,98 @@
-# Starter 0.10.0 release closeout — November 15, 2026
+# Fresh handoff after 0.10.0 publication — November 15, 2026
 
-The maintainer explicitly instructed: **“do the work, do the release.”** Complete
-the authorized 0.10.0 publication; do not reopen settled architecture or require
-another publication approval. Approved scope and ADR-0001 edition 1 are unchanged.
-The [release acceptance](../evidence/2026-11-15-0.10.0-release.md) and
-[combination receipt](../evidence/2026-11-15-adr-combination.md) own current evidence.
-Use the annotated v0.10.0 tag/GitHub release for final source and exact CI links.
+## Resume point
 
-Both prerequisites are published: gz-skills 0.13.0 at
-`0bdab63fc503c6b36e2dd487932689b4e555e41a` (all four tagged channels verified),
-and Backplane 0.3.0 at `39fbe3065c16ac119c4c10a3c2428fda39d57e61`
-(independent review, active controls, native arrival and three-platform CI pass).
-Backplane owner #37 is closed completed; main evidence descendant
-`6362be0da9ad9f0eba8889b94bf1047671156f88` is aligned and its CI passes.
-Original companion dirty checkouts remain untouched. Starter selects SP 7.0.2,
-gz-skills 0.13.0 and disabled Backplane 0.3.0. Project marketplace bindings use
-published starter catalog `9f0f27791713f735d960e44b18759a9fb63a61ae`.
+**The requested 0.10.0 release is complete.** The current request is a fresh
+handoff and ordinary Git sync of this starter. No further implementation,
+maintenance, companion mutation, installation or publication is selected.
+Do not resume obsolete release blockers or repeat unchanged qualification.
+Start future work from the published 0.10.0 baseline and existing authorities;
+derive a new version only when governing work is selected.
 
-The complete starter release gate, all twelve targeted cases/140 protected
-inputs and fresh independent final review pass. Remaining publication closeout
-is the final normal-hook commit/push, exact-source CI, annotated v0.10.0 and
-GitHub publication with remote SHA verification. Do not repeat unchanged full matrices, broader maintenance or
-build a new evaluation framework. After publication, report Git synchronization,
-release acceptance and publication separately; do not create CI-receipt-only
-commit chains. No real-adopter migration or normal-profile plugin installation
-is part of this release.
+## Verified release and source state
 
-Historical checkpoints, rejected interim remote actions and approval/source
-records are preserved in Git history through c83e472 and the linked owning
-records. Later explicit release authority superseded those earlier remote-action
-rejections. A raw dependency-test archive was rejected for lack of sensitive-data
-inspection; raw logs stayed local and only a sanitized public hash/link receipt
-was committed. No rejected action was bypassed.
+- [GZ Starter 0.10.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.10.0)
+  was published at **2026-11-15 23:35:00 UTC**, as a normal, nondraft release.
+- Release source: `6b236d87f301f689edae6934dabee9495df726d4`.
+  Annotated tag object: `b6079417b9e1460ff0ee799655ad587ead40538d`.
+  The remote tag peels to that source; never move it.
+- [Exact release-source CI](https://github.com/tvproductions/gz-starter/actions/runs/43775495781)
+  passed both `checks` and `xplane-baseline`.
+- Downloaded tagged source equals `git archive` for all **189 files**.
+  Captured ZIP SHA256:
+  `e3b3936e69eb96f6792b02a9a57f1ba2ad85bbf9dc71fe2d5e60b0dae647b6ad`.
+- Governing issues [#12](https://github.com/tvproductions/gz-starter/issues/12)
+  and [#13](https://github.com/tvproductions/gz-starter/issues/13) are closed
+  completed. Milestone 0.10.0 is closed with zero open and two closed issues.
+- This handoff starts from clean `main`, aligned with freshly fetched origin at
+  the release source. Its documentation-only follow-up commit and exact CI result
+  are supplied in the sync response; do not create a self-referential receipt chain.
+  The existing origin URL redirects successfully to canonical `gz-starter`.
 
-Preserve registered companion worktrees under the task-specific temporary root
-and owned test material until no longer needed. Never publish private OpenCode
-server stdout, copy authentication, reset original dirty work or move tags.
-Retain genuine separate ADR approvals and Superpowers' **Native** terminology.
-Deferred naming enforcement, management records, future CLI, real-adopter pilot
-and cognitive engine remain governed by their existing authorities.
+Release acceptance, publication and Git synchronization are separate results.
+See the [release receipt](../evidence/2026-11-15-0.10.0-release.md) and
+[exact-combination qualification](../evidence/2026-11-15-adr-combination.md).
+The approved scope and actual ADR-0001 edition 1 are unchanged.
 
-Earlier implementation history: [ADR save point](2026-11-08-adr-practice-save-point.md)
-and [November 14 design discussion](2026-11-14-opinionated-cli-design-discussion.md).
+## Completed evidence and retained limits
+
+The locked release gate passed with managed Python **3.14.10** and uv **0.13.8**:
+four routine checks, 72 unittest methods, both catalogs, six-resource drift,
+source-independent build and isolated installed CLI/alias/link/local checks.
+All twelve targeted publisher/lite/heavy/access/conflict scenarios passed;
+all 140 protected inputs remained unchanged. The source-identical shared B01–B16
+matrix, active Backplane controls, genuine use/alignment in all three publishers
+and completed independent final review are linked from the combination receipt.
+Its curated invented-fixture archive is committed; complete local originals and
+the unsuccessful permission-limited probe remain under `dist/adr-qualification/`.
+
+Acceptance retains the documented cognitive deferral: ceiling 15, measurement
+UNKNOWN, no shared engine installed or qualified. Actual model identity,
+normal-profile restart, other native hosts/models, and the stated deeper-tool,
+cohesion and embedded-deployment gaps remain explicit. Do not claim full strict
+conformance or extend bounded observations to real adopters.
+
+Same-day official freshness/audit evidence remains applicable to unchanged
+manifests and locks. This handoff reuses it under the
+[documentation-only verification policy](../engineering/verification-policy.md);
+no dependency migration or build/model replay is required for these prose edits.
+Preserve normal hooks and observe the handoff commit's own CI after pushing.
+
+## Component and workspace preservation
+
+The selected combination is SP **7.0.2**, gz-skills **0.13.0**, and Backplane
+**0.3.0 disabled**. Both catalogs agree. Codex/Claude project marketplace refs
+use starter catalog `9f0f27791713f735d960e44b18759a9fb63a61ae`; OpenCode
+selects matching sources. Activation, duplicate overrides and user defaults stay
+unchanged. Configuration does not prove normal-profile skill loading.
+
+Registered companion worktrees remain under
+`%TEMP%/gz-adr-prerequisites-20261115/`. Read-only inspection for this handoff found
+both clean and equal to their recorded origin/main:
+
+| Worktree | Published source | Evidence descendant |
+| --- | --- | --- |
+| gz-skills | 0.13.0 `0bdab63fc503c6b36e2dd487932689b4e555e41a` | `36377cb27638194e122f268781557a729c9bdf5c` |
+| superpowers-backplane | 0.3.0 `39fbe3065c16ac119c4c10a3c2428fda39d57e61` | `6362be0da9ad9f0eba8889b94bf1047671156f88` |
+
+GZ's four exact tagged channels and Backplane's native arrival/three-platform CI
+are verified in their owning receipts. Backplane #37 is closed completed.
+Companion synchronization is not part of this documentation-only starter sync.
+
+Original sibling checkouts retain unrelated edits. Preserve gz-skills'
+`CHANGELOG.md`, `docs/evidence/2026-11-14-dependency-maintenance.md`, and
+`docs/release-policy.md`; preserve Backplane's `docs/release-policy.md`.
+Do not reset, stash, remove their worktrees, or sweep those edits into commits.
+Keep private OpenCode server stdout and authentication out of public evidence.
+
+## Future work
+
+Naming/layout enforcement, management sidecars/commit metadata, a future CLI,
+real-adopter pilot, deterministic upgrades, wider platform proof and acceptance
+automation remain deferred under their existing authorities. No next feature
+or version has been selected. Preserve separate explicit ADR approval and
+Superpowers' **Native** execution term; keep updates plain and bounded.
+
+Earlier history remains in Git through the release source and the linked
+[ADR save point](2026-11-08-adr-practice-save-point.md) and
+[November 14 design discussion](2026-11-14-opinionated-cli-design-discussion.md).
