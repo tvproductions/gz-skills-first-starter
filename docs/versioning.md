@@ -1,7 +1,17 @@
 # Template versioning
 
-The current template release is **0.9.0**; the initial release was **0.1.0**.
-The selected next minor is **0.10.0**, unpublished: mandatory ADR practice for
+Current status, November 16, 2026: the published template is **0.10.0** at
+`6b236d87f301f689edae6934dabee9495df726d4`; the selected pending target is
+**0.11.0 / minor**, for the finite application-foundations/house-style design
+scope in the [roadmap](../ROADMAP.md#selected-0110-scope--application-foundations-november-16-2026).
+Design/ADR review and implementation remain incomplete. Version mirrors record
+the pending target, not policy activation or release acceptance. No publication
+is authorized by this design request. The initial release was **0.1.0**.
+
+The following development narrative records the preceding 0.10.0 work; its
+unpublished/next-target statements are historical and superseded by the current
+status above and the [published release handoff](handoffs/2026-11-15-adr-release-session-handoff.md).
+The then-selected minor was **0.10.0**: mandatory ADR practice for
 the trio and its adopters, plus the maintainer-directed completed dependency-
 migration binding recorded in the
 [current handoff](handoffs/2026-11-08-adr-practice-save-point.md#dependency-maintenance-policy-correction--november-13).

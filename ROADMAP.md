@@ -1,5 +1,38 @@
 # Roadmap
 
+## Selected 0.11.0 scope — application foundations, November 16, 2026
+
+Published baseline: **0.10.0**, immutable release source
+`6b236d87f301f689edae6934dabee9495df726d4`. Pending target: **0.11.0 / minor**,
+governed by the maintainer's foundations/house-style design request and
+[draft design edition 1](docs/superpowers/specs/2026-11-16-application-foundations-design.md).
+Outcome: coherent Python application guidance in both lanes, separate runtime
+settings.json, environment/secrets handling, right-sized hexagonal guidance,
+operator warnings/overrides and bounded worked verification.
+
+Completed: repository gap review, exact-source GZKit drydock/house-style/hexagonal
+comparison, comparison with selected gz-skills criteria, captured settings.json
+and operator-authority decisions, draft design and draft ADR-0002 edition 1.
+Builder review is complete; its two questions are resolved: keep the broader
+Ruff/ty patch deferred, and retain the maintainer-reaffirmed rejection of all
+paths containing spaces, including user-selected paths.
+Remaining: maintainer design approval, separate identified ADR approval,
+policy/instruction/resource reconciliation, applicable starter use and worked
+positive/negative verification. Required release freshness and applicable
+acceptance remain future gates; cognitive measurement remains deferred/UNKNOWN.
+
+Compatibility: new guidance/default configuration responsibilities require
+adopter review; preserve existing settings, interfaces, mandatory engineering
+requirements and project choices. No automatic adopter refactoring. Excluded:
+GZKit lifecycle/kernel, universal runtime library, upstream edits/releases,
+native activation, real-adopter migration, management sidecars and full TUI/web/
+desktop qualification. No publication is authorized. Version mirrors are
+reconciled to the pending planning target; this does not mark draft behavior
+implemented. Reconcile this record at design approval and implementation closeout.
+
+The following 0.10.0 completion record and historical narratives retain their
+original dates and are superseded by this new scope where they describe next work.
+
 Reconciled November 15, 2026 for the finite 0.10.0 release, governed by
 [#12](https://github.com/tvproductions/gz-starter/issues/12) and approved design
 [#13](https://github.com/tvproductions/gz-starter/issues/13). Published baseline

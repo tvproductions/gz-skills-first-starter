@@ -1,5 +1,32 @@
 # Fresh handoff after 0.10.0 publication — November 15, 2026
 
+## Foundations design continuation — November 16, 2026
+
+The maintainer subsequently selected application foundations, house style and
+hexagonal guidance as **0.11.0 / minor** work, requesting Superpowers
+brainstorming. Continue from the [design draft, edition 1](../superpowers/specs/2026-11-16-application-foundations-design.md)
+and [draft ADR-0002 edition 1](../decisions/ADR-0002-001-runtime-configuration-boundary.md),
+with release scope in the roadmap. Both await their distinct approvals; no
+foundation behavior is implemented or activated by these drafts.
+
+Decisions: settings.json for runtime configuration, separate from pyproject tool/
+build settings; right-sized architecture retains principles with fewer components;
+agents offer warnings and respect explicit human departures. The maintainer
+specifically reaffirmed rejection of all paths containing spaces, including
+user-selected paths. Preserve that runtime contract rather than treating it as an
+advisory warning. The broader proposed Ruff/ty activation stays deferred.
+Independent builder review found those last two scope questions; both are now
+resolved. The design includes a complete numbered disposition of GZKit's 108
+house-style candidates and links exact drydock/hexagonal sources.
+
+Pending-version mirrors are 0.11.0, with dependency/component pins unchanged.
+Five focused version/resource tests, catalog validation, resource-drift and lock
+checks passed. Draft prose/reference review follows the risk-based verification
+policy; no runtime-foundations, upstream-audit effectiveness or strict acceptance
+claim follows. Existing 0.10.0 release evidence below remains historical and valid
+for its own exact source. No new publication, native installation, companion
+mutation or adopter migration is authorized.
+
 ## Resume point
 
 **The requested 0.10.0 release is complete.** The current request is a fresh

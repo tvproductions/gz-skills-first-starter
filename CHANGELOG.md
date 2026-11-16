@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### 0.11.0 — design in progress
+
+- Select the next minor scope for application foundations and house-style
+  guidance. Prepare a [draft design](docs/superpowers/specs/2026-11-16-application-foundations-design.md)
+  and draft ADR-0002 for separate runtime settings.json, explicit environment/
+  secret handling and boundary configuration. Compare GZKit's exact drydock
+  sources and selected gz-skills audit criteria. Capture right-sized architecture
+  as agent guidance with operator warnings and informed human overrides.
+  Preserve the specifically reaffirmed rejection of paths containing spaces,
+  including user-selected paths; keep the broader naming-tool patch deferred.
+  Policy activation, implementation, worked verification and approvals remain
+  pending; selecting the version delivers none of those behaviors.
+
 ## 0.10.0 — November 15, 2026
 
 - Select released gz-skills 0.13.0 (21 skills, ADR procedure/template and router
