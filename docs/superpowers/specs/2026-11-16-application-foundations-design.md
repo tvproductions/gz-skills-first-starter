@@ -1,6 +1,6 @@
 # Application foundations and house style — 0.11.0 design
 
-Status: **draft for maintainer review, edition 2, November 16, 2026**.
+Status: **draft for maintainer review, edition 3, November 16, 2026**.
 This is design work, not active adopter policy or implemented behavior. Design
 approval and separate approval of an identified architectural ADR edition remain
 distinct. No publication, upstream edit, adopter migration or native installation
@@ -86,6 +86,58 @@ decision. No numeric architecture score or automatic conformance claim is added.
 
 ## Configuration contract
 
+### Astral project model, application interface and deployment
+
+Start project classification with Astral's model, checked November 16, 2026:
+[creating projects](https://docs.astral.sh/uv/concepts/projects/init/),
+[packaging and entry points](https://docs.astral.sh/uv/concepts/projects/config/),
+[workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces/),
+[FastAPI](https://docs.astral.sh/uv/guides/integration/fastapi/), and
+[Docker](https://docs.astral.sh/uv/guides/integration/docker/).
+Keep the following dimensions distinct rather than using deployment roots as
+an alternative project-type taxonomy:
+
+| Dimension | Classification and consequence |
+| --- | --- |
+| Project role | uv's two basic templates are applications and libraries. Applications include web servers, scripts and CLIs; libraries expose reusable functions/objects to consumers. Record the intended role, not just an entry-point spelling. |
+| Packaging | A build system determines building/installing the project. Libraries require packaging; uv also supports unpackaged applications. The starter retains its existing packaged src/uv_build baseline for pure Python; permitted uv alternatives are not newly adopted by this design. |
+| Repository organization | A project may stand alone or be a workspace member. Workspaces can contain applications and libraries, each with metadata and a shared lock; membership does not select runtime settings or deployment ownership. |
+| Application interface | CLI, TUI, web, desktop and plugin/host entry points describe how the product is driven. A web application is still an application in uv's model; importing its server entry point does not make it a reusable library. |
+| Deployment and config scope | Project, per-user, service/container, host and explicit portable operation describe installation and configuration ownership, not uv project types. Record the actual delivered artifact, launch mechanism and configuration owner separately. |
+
+uv currently prefers a build system and src layout for both basic templates; it
+documents CLI, GUI and plugin entry-point mechanisms separately. A missing
+project.scripts table is not sufficient to classify a project as a library.
+Reconcile section 12 of the older naming/layout proposal on that basis: a
+deployable Python web server belongs to the application role even when a server
+loads its module through an import string and there is no owned CLI command.
+Do not add a dummy command to satisfy an incorrect folder-classification rule.
+
+Astral's FastAPI integration demonstrates a web application deployed as a
+containerized server. That is service/container scope by default, not portable
+scope. Its flat/unpackaged example and other example execution/pin choices do
+not silently replace this starter's packaged-src, locked-execution, runtime or
+verified-tool requirements. Application framework choice is not selected here.
+Extension backends and non-Python frontends require their own scoped policy and
+evidence; citing those uv capabilities does not extend current starter support.
+
+**Portable** means an explicitly selected deployment whose installation/config
+layout can be relocated under its documented contract while retaining settings
+and resolving paths correctly. An image being transferable, a server having an
+application directory, or a repository containing settings.json does not by
+itself establish portable operation. A web server could deliberately support a
+portable deployment, but web interface and portable delivery are independent.
+
+For an invented Python web service, an illustrative split is installed code at
+/opt/example-web, runtime settings at /etc/example-web/settings.json, and mutable
+data at /var/lib/example-web. A container can mount settings at an explicit path
+instead; deployment tooling passes that path to the server initialization
+boundary. These are examples, not mandated OS locations. Keep server settings
+and secret references outside publicly served static/document roots; public
+browser configuration is a separately identified, nonsecret contract. Validate
+the selected paths against the no-spaces rule. No full web/deployment acceptance
+claim follows from this classification or the existing CLI/library fixture.
+
 ### Responsibilities
 
 | Home | Owns | Does not own |
@@ -132,6 +184,9 @@ universal configuration home.
 | Service/container/deployment | An explicitly supplied absolute file, commonly mounted or provisioned by deployment tooling; document the process identity, access permissions and whether the mount is read-only; do not infer the interactive user's home |
 | Host/plugin/library consumer | The host/consumer owns its file and passes the selected settings or explicit values across the boundary; document the host initialization and precedence contract |
 | Portable deployment | An explicitly selected writable deployment/configuration root; settings may be beside the executable when that contract preserves them on update and the no-spaces rule holds; no automatic portable mode merely because a nearby file exists |
+
+These rows are configuration scopes and can be combined only by an explicit
+product contract; they are not an exhaustive list of application types.
 
 File selection is distinct from value precedence. Proposed application rule:
 **explicit API/launch --config path → documented APP_CONFIG file-path variable →
@@ -435,6 +490,12 @@ left in the changed scope.” Fixture/directory names, documented relative-path
 bases and platform-test decomposition remain builder-owned; unavailable native
 proof stays explicitly unverified. Design and architectural approval remain
 pending. This records the actual scope of each review.
+Edition 3 adds the maintainer-requested Astral project-role and packaging context,
+distinguishes interface/deployment dimensions, and clarifies web versus portable
+operation. It does not change ADR-0002 edition 2's configuration-boundary choice
+or add another runtime implementation. Review these classification clarifications
+with the complete draft before approval; do not extend edition 2's builder result
+into a claim of qualified web behavior.
 
 Design acceptance requires a complete source crosswalk, resolved consequential
 questions, a finite 0.11.0 release scope, builder review and maintainer approval

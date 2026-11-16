@@ -14,6 +14,8 @@
   including user-selected paths; keep the broader naming-tool patch deferred.
   Require every adopter to identify deployment/configuration ownership and propose
   file selection by deployment scope rather than a universal install-directory home.
+  Incorporate Astral's application/library, packaging and workspace guidance;
+  distinguish a web application's interface from service or portable deployment.
   Policy activation, implementation, worked verification and approvals remain
   pending; selecting the version delivers none of those behaviors.
 

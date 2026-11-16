@@ -4,7 +4,7 @@
 
 The maintainer subsequently selected application foundations, house style and
 hexagonal guidance as **0.11.0 / minor** work, requesting Superpowers
-brainstorming. Continue from the [design draft, edition 2](../superpowers/specs/2026-11-16-application-foundations-design.md)
+brainstorming. Continue from the [design draft, edition 3](../superpowers/specs/2026-11-16-application-foundations-design.md)
 and [draft ADR-0002 edition 2](../decisions/ADR-0002-002-runtime-configuration-boundary.md),
 with release scope in the roadmap. Both await their distinct approvals; no
 foundation behavior is implemented or activated by these drafts.
@@ -22,6 +22,12 @@ Edition 2 adds the maintainer's universal deployment/configuration concern and a
 proposed location/selection contract by deployment scope; the focused independent
 builder check found nothing important left in that changed scope. Settings live outside
 installed code by default, with an explicit portable-deployment alternative.
+Edition 3 incorporates live official Astral guidance: application/library roles,
+packaging and workspace organization are distinct from UI/entry points and
+deployment scopes. Web does not imply portable; an imported server module does
+not imply a library. The older naming draft's command-only application criterion
+must be reconciled accordingly. These are design clarifications, not web support
+qualification or new architectural approval; ADR-0002 remains draft edition 2.
 
 Pending-version mirrors are 0.11.0, with dependency/component pins unchanged.
 Five focused version/resource tests, catalog validation, resource-drift and lock

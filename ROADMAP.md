@@ -5,7 +5,7 @@
 Published baseline: **0.10.0**, immutable release source
 `6b236d87f301f689edae6934dabee9495df726d4`. Pending target: **0.11.0 / minor**,
 governed by the maintainer's foundations/house-style design request and
-[draft design edition 2](docs/superpowers/specs/2026-11-16-application-foundations-design.md).
+[draft design edition 3](docs/superpowers/specs/2026-11-16-application-foundations-design.md).
 Outcome: coherent Python application guidance in both lanes, separate runtime
 settings.json, environment/secrets handling, right-sized hexagonal guidance,
 operator warnings/overrides and bounded worked verification.
@@ -19,6 +19,10 @@ Edition 1's builder review is complete; its two questions are resolved: keep the
 Ruff/ty patch deferred, and retain the maintainer-reaffirmed rejection of all
 paths containing spaces, including user-selected paths.
 Edition 2's focused location/selection builder check found nothing important left.
+Edition 3 incorporates Astral's application/library model, packaging and workspace
+guidance, distinguishing these from interface and deployment/configuration scope.
+A Python web service is an application and normally service/container scope;
+portable operation requires a separately explicit relocation contract.
 Remaining: maintainer design approval, separate identified ADR approval,
 policy/instruction/resource reconciliation, applicable starter use and worked
 positive/negative verification. Required release freshness and applicable
