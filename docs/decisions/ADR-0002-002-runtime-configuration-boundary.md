@@ -1,7 +1,7 @@
 ---
 id: ADR-0002
 title: Resolve runtime configuration at the application boundary
-revision: 1
+revision: 2
 state: Draft
 decision_date: null
 revision_date: 2026-11-16
@@ -12,7 +12,7 @@ approval_ref: null
 
 # ADR-0002 — Resolve runtime configuration at the application boundary
 
-**Draft edition 1. Separate explicit architectural approval is pending.**
+**Draft edition 2. Separate explicit architectural approval is pending.**
 The maintainer's selection of settings.json and approval of general direction
 do not approve this identified edition. No dependent implementation is authorized
 by this draft.
@@ -23,8 +23,10 @@ The starter's configuration guidance presently presents a pyproject tool namespa
 and settings.json as alternative application settings homes. This conflates
 development/project-tool settings with deployment/runtime settings and leaves
 agents to invent loading and external-access boundaries. Scope is the starter's
-guidance to Python applications in both lanes, and its own applicable behavior.
-Libraries and applications with no process settings do not need a new loader.
+guidance to Python adopters in both lanes, and its own applicable behavior.
+Every adopter has a deployment/configuration concern, including libraries and
+hosted plugins. The contract identifies the actual configuring consumer; this
+does not require a library to introduce independent global settings discovery.
 
 ## Proposed decision
 
@@ -32,6 +34,19 @@ Use settings.json as the house default for application runtime configuration.
 Keep packaging, dependencies and supported development-tool configuration in
 pyproject.toml, with any code-design checker configuration in its legitimate
 tool namespace. Keep secret values outside committed configuration.
+
+Every adopter identifies its deployment unit, configuration owner/scope, selected
+location, precedence, permissions, startup/reload and upgrade responsibilities.
+Use one selected settings file under the application's documented configuration
+root, outside installed code by default. Select an explicit launch/API path first,
+then a documented application config-path variable, then the declared default for
+that deployment scope. Do not merge scopes or fall back after an invalid explicit
+selection. Project, per-user, service, host and explicitly portable deployments
+have different roots; no directory is universal. Libraries receive configuration
+through their consumers. A portable install may co-locate code and settings only
+through its explicit preservation contract. All selected paths honor the
+maintainer-reaffirmed rejection of spaces, with explicit alternate roots when a
+normal OS path is incompatible.
 
 An application configuration adapter resolves defaults, a selected settings file
 and documented environment/explicit overrides once at startup, validates the
@@ -72,7 +87,11 @@ not invented approval fields. Related design:
 
 ## Approval and edition history
 
-Edition 1 proposed November 16, 2026. Approval: **pending**. Preserve exact reviewed
+Edition 1 was proposed November 16, 2026 and is preserved in commit `ed2417d`.
+Edition 2, also November 16, adds the universal deployment/configuration concern
+and scope-specific location/selection contract following the maintainer's
+clarification. Both editions are unapproved drafts. Approval: **pending**. Preserve exact reviewed
 content and actual approval provenance under the existing ADR policy before
 marking this record Current. The actual design-input conversation selected
-“settings.json”; it supplied no approval of this ADR edition.
+“settings.json” and “we'll always have some deployment/config aspect with any
+adopter”; it supplied no approval of this ADR edition.

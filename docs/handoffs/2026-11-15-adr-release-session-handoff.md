@@ -4,8 +4,8 @@
 
 The maintainer subsequently selected application foundations, house style and
 hexagonal guidance as **0.11.0 / minor** work, requesting Superpowers
-brainstorming. Continue from the [design draft, edition 1](../superpowers/specs/2026-11-16-application-foundations-design.md)
-and [draft ADR-0002 edition 1](../decisions/ADR-0002-001-runtime-configuration-boundary.md),
+brainstorming. Continue from the [design draft, edition 2](../superpowers/specs/2026-11-16-application-foundations-design.md)
+and [draft ADR-0002 edition 2](../decisions/ADR-0002-002-runtime-configuration-boundary.md),
 with release scope in the roadmap. Both await their distinct approvals; no
 foundation behavior is implemented or activated by these drafts.
 
@@ -18,6 +18,10 @@ advisory warning. The broader proposed Ruff/ty activation stays deferred.
 Independent builder review found those last two scope questions; both are now
 resolved. The design includes a complete numbered disposition of GZKit's 108
 house-style candidates and links exact drydock/hexagonal sources.
+Edition 2 adds the maintainer's universal deployment/configuration concern and a
+proposed location/selection contract by deployment scope; the focused independent
+builder check found nothing important left in that changed scope. Settings live outside
+installed code by default, with an explicit portable-deployment alternative.
 
 Pending-version mirrors are 0.11.0, with dependency/component pins unchanged.
 Five focused version/resource tests, catalog validation, resource-drift and lock

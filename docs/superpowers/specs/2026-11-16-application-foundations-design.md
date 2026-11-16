@@ -1,6 +1,6 @@
 # Application foundations and house style — 0.11.0 design
 
-Status: **draft for maintainer review, edition 1, November 16, 2026**.
+Status: **draft for maintainer review, edition 2, November 16, 2026**.
 This is design work, not active adopter policy or implemented behavior. Design
 approval and separate approval of an identified architectural ADR edition remain
 distinct. No publication, upstream edit, adopter migration or native installation
@@ -25,6 +25,9 @@ The maintainer subsequently reaffirmed the specific path restriction: “we do n
 want paths with spaces, it is sloppy.” Retain rejection as the default behavior,
 including user-selected paths; the general architectural warning posture does
 not weaken that explicit input contract.
+The maintainer also specified: “we'll always have some deployment/config aspect
+with any adopter.” Edition 2 makes the deployment/configuration contract universal
+and separates that obligation from the location chosen for each deployment.
 
 Published baseline: **0.10.0**, tag v0.10.0 at
 `6b236d87f301f689edae6934dabee9495df726d4`; publication was verified through
@@ -92,18 +95,78 @@ decision. No numeric architecture score or automatic conformance claim is added.
 | Environment variables | Explicitly documented process inputs and overrides | An undocumented second settings schema or arbitrary executable expressions |
 | Secret source | Credentials and other sensitive values resolved at the application boundary | Committed values in examples, metadata, evidence or build artifacts |
 
-settings.json is a filename/default format, not a requirement that every
-application have a settings file. A library can accept explicit arguments without
-process configuration. Small applications can use validated built-in defaults.
-Do not add configuration machinery without a consumer. Existing adopter formats
-need an inventory and reviewed migration or an operator-selected departure;
-adoption must not overwrite them. There is no generic settings loader in the
-starter helper and this design adds no shared runtime loader.
+Every adopter must identify its deployment and configuration contract, including
+libraries, plugins, command-line tools and hosted applications. Do not label the
+whole concern inapplicable because a project has few settings or no standalone
+process. Identify what is installed/deployed, who configures it, the settings and
+secret inputs, the loading boundary, the selected location, upgrade ownership and
+verification. This requirement to identify the contract is universal; the runtime
+mechanism follows the actual consuming application and host.
+
+settings.json is the house default for operator-managed runtime files. A library's
+consumer may supply validated arguments; the contract then identifies that
+consumer and its deployment/configuration responsibilities. The library must not
+silently search the user's filesystem or environment. A host may own loading and
+pass settings into its plugin. Document even an empty operator-settings surface
+and how deployment inputs are supplied; do not invent a second loader merely to
+create a file. Existing adopter formats need an inventory and reviewed migration
+or an operator-selected departure; adoption must not overwrite them. There is no
+generic settings loader in the starter helper and this design adds none.
+
+### Configuration ownership and location
+
+The common rule is **one selected settings file at a documented configuration
+root, owned by the deploying operator or consuming host**. Mutable settings live
+outside the installed code by default, so code replacement does not replace
+operator settings. The installation may contain immutable defaults and an
+example; installation, code, data, cache and configuration are distinct roles.
+The same directory may serve multiple roles only through an explicitly selected
+deployment contract, such as a portable application. Do not assume a site-packages
+directory, executable directory, repository root or current directory is the
+universal configuration home.
+
+| Configuration owner/scope | Location selection and proof |
+| --- | --- |
+| Project-owned operation | settings.json under the explicitly selected project/workspace root, or an explicit external path; prove that two projects do not read each other's settings |
+| Per-user installed application | A documented application-specific directory under the selected user configuration root; resolve the OS directory through its supported mechanism where applicable; prove separate-user isolation and survival across code replacement |
+| Service/container/deployment | An explicitly supplied absolute file, commonly mounted or provisioned by deployment tooling; document the process identity, access permissions and whether the mount is read-only; do not infer the interactive user's home |
+| Host/plugin/library consumer | The host/consumer owns its file and passes the selected settings or explicit values across the boundary; document the host initialization and precedence contract |
+| Portable deployment | An explicitly selected writable deployment/configuration root; settings may be beside the executable when that contract preserves them on update and the no-spaces rule holds; no automatic portable mode merely because a nearby file exists |
+
+File selection is distinct from value precedence. Proposed application rule:
+**explicit API/launch --config path → documented APP_CONFIG file-path variable →
+the application's one declared scope-specific default**. A host-supplied explicit
+path/value contract uses the first branch without inventing a CLI. Select one
+file, not an implicit merge across project, user and system scopes. An explicitly
+supplied invalid, empty, inaccessible or missing selection fails; do not quietly
+fall through to another file. Relative explicit paths resolve once against the
+invocation's documented base and become absolute; do not let later directory
+changes affect them. Diagnose the selected location without secret contents.
+
+For the current Python CLI baseline, XDG_CONFIG_HOME with HOME/.config fallback
+is an available Linux default; uv also documents .config on macOS, an appropriate
+CLI precedent rather than a universal desktop rule. Windows selection must state
+whether settings are local or roaming and use the corresponding configured known
+folder rather than synthesizing a username path. Native macOS Application Support
+contains a space: our strict path contract requires an explicit space-free
+configuration root. The same applies to any spaced home/redirected directory on
+any platform. Reject with actionable guidance; do not rename an OS directory,
+strip spaces or switch locations silently. Services and hosts select their own
+roots through the deployment contract. These are location recommendations;
+TUI/web/desktop/embedded qualification remains separate from Python CLI proof.
+
+Official location context, checked November 16:
+[XDG](https://specifications.freedesktop.org/basedir/latest/),
+[uv](https://docs.astral.sh/uv/concepts/configuration-files/),
+[Windows known folders](https://learn.microsoft.com/en-us/windows/win32/shell/knownfolderid),
+[macOS directories](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/MacOSXDirectories/MacOSXDirectories.html).
+Platform conventions inform the selected profile; they do not override the
+maintainer's explicit no-spaces rule or establish qualification of an untested host.
 
 ### Proposed loading semantics
 
-For an application that needs runtime settings, use one configuration adapter at
-startup and pass the resolved settings inward as values. Keep environment/file
+At the application's declared configuration boundary, use one configuration
+adapter at startup and pass the resolved settings inward as values. Keep environment/file
 reads and concrete adapter selection out of domain logic. In services or hosted
 plugins, startup means the owning application/host initialization boundary, not
 each request. Explicit reload is a separately designed capability.
@@ -319,16 +382,22 @@ schemas, variable names, path contracts, data and automation, previews changes,
 preserves existing working behavior and obtains the actual migration authority.
 No adopter or companion edit is incidental to this release.
 
-Implement one small invented, project-owned reference application/fixture with
-settings.json and isolated unittest examples. Exercise actual behavior rather
-than freezing policy wording. The bounded acceptance matrix is:
+Implement one small invented, project-owned Python CLI/library reference fixture
+with settings.json and isolated unittest examples. Simulate project/user/service/
+host launch contexts within that fixture; do not build four new products or claim
+native GUI, simulator or real multi-account permission qualification from those
+examples. Exercise actual behavior rather than freezing policy wording. The
+bounded acceptance matrix is:
 
 1. Precedence including omitted CLI options, missing versus empty environment
    input, scalar/list replacement and configuration-source diagnostics.
 2. Invalid/duplicate/unknown keys, unsupported schemas and absent explicit file:
    actionable errors before application effects.
 3. Execution from another working directory and an installed artifact without a
-   source pyproject; deterministic path resolution.
+   source pyproject; deterministic path resolution, isolation of two selected
+   project/user roots, explicit-file selection with no fallback after invalid
+   input, and preservation of external settings across code replacement. Exercise
+   explicit service/host selection without relying on an interactive home.
 4. Secret-like sentinels absent from stdout, stderr, logs, committed examples and
    distribution contents; explicit child forwarding controls.
 5. Domain decisions exercised with values and fakes, an adapter failure reaching
@@ -354,18 +423,23 @@ document unavailable platform/embedded-host proof rather than generalizing.
 
 ## Completion, decisions and exclusions
 
-Builder review, November 16: the independent reviewer identified two consequential
+Builder review of edition 1, November 16: the independent reviewer identified two consequential
 questions. Naming-tool activation was resolved by the explicit guidance-only
 scope above, keeping the broader Ruff/ty patch deferred. The spaced-path question
 was put to the maintainer and resolved by the actual reaffirmation quoted above.
-No important builder question remains unanswered from that review; design and
-architectural approval remain pending. This records the actual review and its
-disposition, not an invented second review pass.
+No important builder question remains unanswered from that review. Edition 2
+adds the maintainer-directed universal deployment/configuration concern and the
+proposed scope-specific location/selection contract. The same independent reviewer
+performed the focused check of that changed scope and returned “Nothing important
+left in the changed scope.” Fixture/directory names, documented relative-path
+bases and platform-test decomposition remain builder-owned; unavailable native
+proof stays explicitly unverified. Design and architectural approval remain
+pending. This records the actual scope of each review.
 
 Design acceptance requires a complete source crosswalk, resolved consequential
 questions, a finite 0.11.0 release scope, builder review and maintainer approval
 of this exact design edition. Dependent implementation additionally requires
-separate approval of ADR-0002 edition 1 for runtime configuration ownership and
+separate approval of ADR-0002 edition 2 for runtime configuration ownership and
 boundary loading. Reuse ADR-0001 for unchanged component ownership/qualification;
 this design does not alter that decision or promise a new combination.
 

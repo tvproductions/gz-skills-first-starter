@@ -5,17 +5,20 @@
 Published baseline: **0.10.0**, immutable release source
 `6b236d87f301f689edae6934dabee9495df726d4`. Pending target: **0.11.0 / minor**,
 governed by the maintainer's foundations/house-style design request and
-[draft design edition 1](docs/superpowers/specs/2026-11-16-application-foundations-design.md).
+[draft design edition 2](docs/superpowers/specs/2026-11-16-application-foundations-design.md).
 Outcome: coherent Python application guidance in both lanes, separate runtime
 settings.json, environment/secrets handling, right-sized hexagonal guidance,
 operator warnings/overrides and bounded worked verification.
 
 Completed: repository gap review, exact-source GZKit drydock/house-style/hexagonal
 comparison, comparison with selected gz-skills criteria, captured settings.json
-and operator-authority decisions, draft design and draft ADR-0002 edition 1.
-Builder review is complete; its two questions are resolved: keep the broader
+and operator-authority decisions, draft design and draft ADR-0002 edition 2.
+Every adopter must identify its deployment/configuration contract; the selected
+file location follows project, user, service, host or explicit portable scope.
+Edition 1's builder review is complete; its two questions are resolved: keep the broader
 Ruff/ty patch deferred, and retain the maintainer-reaffirmed rejection of all
 paths containing spaces, including user-selected paths.
+Edition 2's focused location/selection builder check found nothing important left.
 Remaining: maintainer design approval, separate identified ADR approval,
 policy/instruction/resource reconciliation, applicable starter use and worked
 positive/negative verification. Required release freshness and applicable

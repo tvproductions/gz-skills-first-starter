@@ -6,12 +6,14 @@
 
 - Select the next minor scope for application foundations and house-style
   guidance. Prepare a [draft design](docs/superpowers/specs/2026-11-16-application-foundations-design.md)
-  and draft ADR-0002 for separate runtime settings.json, explicit environment/
+  and draft ADR-0002 edition 2 for separate runtime settings.json, explicit environment/
   secret handling and boundary configuration. Compare GZKit's exact drydock
   sources and selected gz-skills audit criteria. Capture right-sized architecture
   as agent guidance with operator warnings and informed human overrides.
   Preserve the specifically reaffirmed rejection of paths containing spaces,
   including user-selected paths; keep the broader naming-tool patch deferred.
+  Require every adopter to identify deployment/configuration ownership and propose
+  file selection by deployment scope rather than a universal install-directory home.
   Policy activation, implementation, worked verification and approvals remain
   pending; selecting the version delivers none of those behaviors.
 
