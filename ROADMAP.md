@@ -23,7 +23,13 @@ Edition 3 incorporates Astral's application/library model, packaging and workspa
 guidance, distinguishing these from interface and deployment/configuration scope.
 A Python web service is an application and normally service/container scope;
 portable operation requires a separately explicit relocation contract.
-Remaining: maintainer design approval, separate identified ADR approval,
+Design edition 3 was approved in the main conversation; the exact draft bytes
+and approval context are preserved in the
+[continuation handoff](docs/handoffs/2026-11-16-application-foundations-design-handoff.md).
+The [implementation plan](docs/superpowers/plans/2026-11-16-application-foundations.md)
+is drafted. Its review leaves fixture verification/distribution integration,
+pre-read rejection evidence and concrete fixture interfaces/commands to refine.
+Remaining: plan refinement/review, separate identified ADR approval,
 policy/instruction/resource reconciliation, applicable starter use and worked
 positive/negative verification. Required release freshness and applicable
 acceptance remain future gates; cognitive measurement remains deferred/UNKNOWN.

@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-### 0.11.0 — design in progress
+### 0.11.0 — implementation planning
 
 - Select the next minor scope for application foundations and house-style
   guidance. Prepare a [draft design](docs/superpowers/specs/2026-11-16-application-foundations-design.md)
@@ -16,8 +16,10 @@
   file selection by deployment scope rather than a universal install-directory home.
   Incorporate Astral's application/library, packaging and workspace guidance;
   distinguish a web application's interface from service or portable deployment.
-  Policy activation, implementation, worked verification and approvals remain
-  pending; selecting the version delivers none of those behaviors.
+  Record approval of design edition 3 and prepare an implementation plan.
+  Plan refinements/review, separate ADR approval, policy activation,
+  implementation and worked verification remain pending; selecting the version
+  delivers none of those behaviors.
 
 ## 0.10.0 — November 15, 2026
 

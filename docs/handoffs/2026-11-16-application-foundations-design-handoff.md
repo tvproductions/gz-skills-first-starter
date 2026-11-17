@@ -1,6 +1,39 @@
 # Application foundations — fresh design handoff, November 16, 2026
 
-## Resume disposition
+## Continuation: design approval
+
+On November 16, 2026, the maintainer replied “approve” in the main
+conversation immediately after being asked to approve the complete design
+edition 3 identified below. This approves those exact draft bytes; it does not
+approve ADR-0002 edition 2. The original disposition below is preserved as
+the historical handoff. The implementation plan is
+[application foundations](../superpowers/plans/2026-11-16-application-foundations.md).
+Separate explicit ADR approval remains necessary before dependent implementation.
+
+November 17 continuation: the maintainer requested review of the plan in the
+main conversation, then Git synchronization. The plan is a draft save point,
+not accepted for execution. Review identified three refinements before execution:
+explicit fixture test/type/build integration and distribution delivery;
+an observable guard proving rejected paths are not read, beyond unchanged-file
+assertions; and a concrete fixture schema, typed interfaces, module boundaries
+and build/install commands. Preserve these open findings and complete the plan
+before dependent implementation. ADR-0002 edition 2 remains unapproved, with its
+reviewed bytes unchanged. Design approval does not need to be requested again.
+The pending release target remains 0.11.0; no implementation or release acceptance
+is claimed. The earlier bounded freshness check did not establish newer targets;
+the November 15 maintenance receipt remains the latest complete review.
+
+Sync validation on November 17 used uv 0.13.8 and managed CPython 3.14.10 on
+macOS ARM64. The full pre-commit run passed Ruff check/format and unittest;
+ty initially found missing hygiene imports in the newly created environment.
+`uv sync --locked --all-groups` restored the declared locked environment, then
+`uv run --locked pre-commit run ty --all-files` passed. Catalog validation,
+`uv build --no-sources` and `uv run --locked python tools/verify_distribution.py`
+passed, including isolated installed CLI checks. No pins, locks, catalogs,
+analyzers or runtime behavior changed. Exact-commit remote CI is observed after
+push and reported with the sync result, without a CI-receipt-only commit chain.
+
+## Original resume disposition (historical; superseded above)
 
 **Resume with maintainer review of design edition 3. Design approval is pending;
 do not begin implementation.** The latest request is to preserve this disposition
