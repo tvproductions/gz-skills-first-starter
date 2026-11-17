@@ -1,5 +1,13 @@
 # Adopter baseline policy
 
+Both lanes MUST identify and verify the actual deployment/configuration contract
+under [project configuration](project-configuration.md) and
+[application foundations](engineering/application-foundations.md).
+settings.json is the runtime-file default; packaging/dependencies/tool settings
+remain in pyproject.toml. Respect informed architectural departures recorded in
+existing authority while preserving mandatory engineering and approved ADRs.
+No automatic adopter migration or generic runtime framework follows.
+
 The current template is Python-only in both lite and full/heavy adoption lanes.
 Other languages, likely including Go, require a future designed and released
 baseline; the portability of upstream skills does not establish template support.

@@ -5,7 +5,7 @@
 Published baseline: **0.10.0**, immutable release source
 `6b236d87f301f689edae6934dabee9495df726d4`. Pending target: **0.11.0 / minor**,
 governed by the maintainer's foundations/house-style design request and
-[draft design edition 3](docs/superpowers/specs/2026-11-16-application-foundations-design.md).
+[approved design edition 3](docs/superpowers/specs/2026-11-16-application-foundations-design.md).
 Outcome: coherent Python application guidance in both lanes, separate runtime
 settings.json, environment/secrets handling, right-sized hexagonal guidance,
 operator warnings/overrides and bounded worked verification.
@@ -27,21 +27,35 @@ Design edition 3 was approved in the main conversation; the exact draft bytes
 and approval context are preserved in the
 [continuation handoff](docs/handoffs/2026-11-16-application-foundations-design-handoff.md).
 The [implementation plan](docs/superpowers/plans/2026-11-16-application-foundations.md)
-is drafted. Its review leaves fixture verification/distribution integration,
-pre-read rejection evidence and concrete fixture interfaces/commands to refine.
-Remaining: plan refinement/review, separate identified ADR approval,
-policy/instruction/resource reconciliation, applicable starter use and worked
-positive/negative verification. Required release freshness and applicable
-acceptance remain future gates; cognitive measurement remains deferred/UNKNOWN.
+is revised with root-owned fixture verification/distribution integration,
+pre-read rejection guards and concrete fixture schema/interfaces/commands.
+November 17 [dependency maintenance](docs/evidence/2026-11-17-starter-maintenance.md)
+updates both baselines and records current official selections and compatibility
+evidence; release acceptance still requires candidate-specific evidence.
+The maintainer separately approved ADR-0002 edition 2 on November 17; its exact
+reviewed draft and approval context are preserved with that decision. The revised
+plan is implemented. Guidance/instructions/resources, starter path rejection
+and the worked CLI/library fixture are delivered with **95 owning tests**,
+the full gate and clean installed-artifact checks passing. Independent review's
+four Important findings were corrected with reached-fault/negative controls;
+see the [implementation evidence](docs/evidence/2026-11-17-application-foundations.md).
+November 17: the maintainer explicitly requested Git synchronization and release.
+Release-specific freshness, deeper analyses, installed typing and the bounded
+release-delta review are complete; see the
+[0.11.0 acceptance receipt](docs/evidence/2026-11-17-0.11.0-release.md).
+Remaining: synchronize the reviewed source, observe its exact-commit CI, then
+create/verify the annotated tag and GitHub release. Cognitive measurement remains
+deferred/UNKNOWN under the standing policy.
 
 Compatibility: new guidance/default configuration responsibilities require
 adopter review; preserve existing settings, interfaces, mandatory engineering
 requirements and project choices. No automatic adopter refactoring. Excluded:
 GZKit lifecycle/kernel, universal runtime library, upstream edits/releases,
 native activation, real-adopter migration, management sidecars and full TUI/web/
-desktop qualification. No publication is authorized. Version mirrors are
-reconciled to the pending planning target; this does not mark draft behavior
-implemented. Reconcile this record at design approval and implementation closeout.
+desktop qualification. Publication is authorized by the November 17 request,
+after its documented source/CI gates. Version mirrors are
+reconciled to the pending target. Implementation evidence does not authorize
+release publication; reconcile this record at final closeout.
 
 The following 0.10.0 completion record and historical narratives retain their
 original dates and are superseded by this new scope where they describe next work.

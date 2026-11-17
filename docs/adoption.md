@@ -1,5 +1,13 @@
 # Adoption and native loading
 
+Apply the [application configuration contract](project-configuration.md) and
+[foundations](engineering/application-foundations.md) in both lanes. Each adopter
+identifies its deploying/configuring operator or host, selected location, schema,
+precedence, permissions, initialization and upgrade preservation. Validate
+supplied/resolved space-free paths before effects. Reconcile existing contracts
+through authorized migration or informed departure; helper configuration and the
+starter fixture do not prove the adopter's runtime behavior.
+
 Version 0.6 supplies one owned template-update skill; published 0.5.0
 supplies none. Use [canonical template updates](updating.md) for bootstrap and
 maintenance. Start with the

@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from skills_first_starter.native_json import document, replace_fields
+from skills_first_starter.paths import space_free
 
 HOST_PATHS = {
     "codex": ".codex/config.toml",
@@ -14,7 +15,8 @@ HOST_PATHS = {
 
 def configuration_path(root: Path, host: str) -> str:
     """Repair existing JSONC in place rather than shadowing project configuration."""
-    if host == "opencode" and (root / "opencode.jsonc").exists():
+    space_free(root / HOST_PATHS[host])
+    if host == "opencode" and space_free(root / "opencode.jsonc").exists():
         if (root / "opencode.json").exists():
             raise ValueError("both OpenCode JSON and JSONC exist; reconcile their precedence first")
         return "opencode.jsonc"

@@ -1,5 +1,13 @@
 # Skill ownership and template maintenance
 
+[Application foundations](engineering/application-foundations.md) and
+[project configuration](project-configuration.md) own runtime guidance.
+examples/application_foundations is an invented project-owned dev fixture,
+sharing the root lock/environment and tool configuration, with separate package
+metadata and clean installed-artifact proof. It ships in the source distribution,
+not as a starter runtime dependency. Tests remain in the root tests directory.
+Portable workflows stay upstream-owned; this adds no generic local skill.
+
 Version 0.6 authors and distributes **one narrow template-update skill**,
 `update-gz-template`, as the canonical adopter entry. This is the user-directed
 exception to the former zero-skills rule. Published 0.5.0 remains skill-free.

@@ -1,0 +1,13 @@
+[project]
+name = "example-foundations"
+version = "0.1.0"
+description = "Invented application-boundary reference for GZ Starter"
+requires-python = ">=3.14,<3.15"
+dependencies = []
+
+[project.scripts]
+example-foundations = "example_foundations.cli:main"
+
+[build-system]
+requires = ["uv_build==0.13.8"]
+build-backend = "uv_build"

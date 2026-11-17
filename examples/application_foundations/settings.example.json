@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "message": "Hello example",
+  "repeat": 1,
+  "tags": ["demo"],
+  "output_file": null,
+  "credential_ref": null
+}

@@ -2,6 +2,57 @@
 
 ## Continuation: design approval
 
+Current November 17 release checkpoint: the maintainer requested “git sync and
+do release”. The 0.11.0 release scope and version are reconciled, official
+freshness/deeper analysis/typing evidence is complete, and the independent
+release-delta review found no material defects. See the
+[release receipt](../evidence/2026-11-17-0.11.0-release.md). Synchronize this exact
+candidate, observe both CI jobs for its SHA, then tag/publish under that explicit
+authorization. Preserve immutable 0.10.0 and all existing deferred work.
+This request supersedes earlier statements withholding Git/release authority;
+native installations, companion edits and real-adopter migration remain outside
+scope. Publication identities are recorded after actual observation.
+
+Current November 17 execution: the maintainer explicitly replied
+“approve ADR-0002 edition 2”. Approval metadata and the exact reviewed draft are
+preserved with [ADR-0002](../decisions/ADR-0002-002-runtime-configuration-boundary.md).
+Implementation of the revised plan is complete locally on main: foundation policy,
+both-lane pointers, generated resources, starter path rejection and a local dev
+CLI/library fixture are delivered in the working tree. Initial four-hook gate,
+95 owning tests and extracted-sdist installed/reinstall artifact checks pass.
+Independent review returned four Important findings; the single correction pass
+fixed them and verified CLI redaction, empty-root rejection, poisoned-parent
+environment isolation and missing path/bounds/preservation controls. Use the
+[implementation evidence](../evidence/2026-11-17-application-foundations.md).
+Preserve the separate maintenance work. No commit, push, native plugin action or
+release publication is authorized by this implementation. Earlier pending-approval
+and no-implementation dispositions below are historical and superseded here.
+Resume with Git synchronization if requested, or separately authorized release
+preparation and its candidate-specific freshness/deeper acceptance. Do not
+request design or ADR approval again. Cognitive qualification remains DEFERRED /
+measurement UNKNOWN; native/embedded and broader interface limits stay explicit.
+
+November 17 planning continuation: the maintainer returned to the pending plan
+refinements and ADR approval. The implementation plan now addresses all three
+recorded findings: root-owned tests/type checks and source-distribution/installed
+verification; target-content read guards with a deliberate-read positive control;
+and an explicit fixture schema, modules, typed interfaces, CLI contract and
+build/install commands. A reached atomic-replacement failure must preserve prior
+bytes and remove its temporary sibling. The revised plan awaits maintainer
+review. ADR-0002 edition 2 remains unapproved; both reviewed design/ADR hashes
+remain unchanged. No dependent implementation has begun. Preserve the separate
+uncommitted maintenance changes. Earlier open-refinement statements below are
+historical and superseded by this continuation.
+
+November 17 maintenance continuation: the explicit `gzs-update-dependencies`
+invocation completed the five-package migration in both Python baselines.
+Use the [new maintenance receipt](../evidence/2026-11-17-starter-maintenance.md)
+and registry/candidate hashes for current evidence. Lizard's existing contract
+is requalified; all routine hooks, checker regressions, artifact checks and
+standalone baseline checks pass, and both security audits find no known
+vulnerabilities or skipped packages. Changes remain local pending Git sync.
+This supersedes the freshness limitation below without approving the plan or ADR.
+
 On November 16, 2026, the maintainer replied “approve” in the main
 conversation immediately after being asked to approve the complete design
 edition 3 identified below. This approves those exact draft bytes; it does not

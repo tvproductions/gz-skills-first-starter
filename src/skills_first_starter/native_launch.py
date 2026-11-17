@@ -7,6 +7,7 @@ from pathlib import Path
 
 from skills_first_starter.native import configuration_path
 from skills_first_starter.native_json import document
+from skills_first_starter.paths import space_free
 
 
 def _merge(base: dict, override: dict) -> dict:
@@ -22,13 +23,13 @@ def _merge(base: dict, override: dict) -> dict:
 
 def launch(project: Path, arguments: list[str]) -> int:
     """Isolate config for a private server without editing user settings or installs."""
-    root = project.resolve(strict=True)
+    root = space_free(project).resolve(strict=True)
     path = root / configuration_path(root, "opencode")
     settings, _ = document(path.read_text(encoding="utf-8"))
     config_root = Path(os.environ.get("OPENCODE_CONFIG_DIR", str(Path.home() / ".config/opencode")))
     inherited = {}
     for name in ("opencode.json", "opencode.jsonc"):
-        user_file = config_root / name
+        user_file = space_free(config_root / name)
         if user_file.exists():
             inherited = _merge(inherited, document(user_file.read_text(encoding="utf-8"))[0])
     inherited.pop("plugins", None)
@@ -36,7 +37,7 @@ def launch(project: Path, arguments: list[str]) -> int:
     effective = _merge(inherited, settings)
     skills = list(effective.get("skills", []))
     for surface in (".claude/skills", ".agents/skills", ".opencode/skills"):
-        source = root / surface
+        source = space_free(root / surface)
         if source.is_dir() and str(source) not in skills:
             skills.append(str(source))
     if skills:

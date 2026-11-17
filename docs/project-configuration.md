@@ -20,11 +20,14 @@ Verify the resulting effective configuration and execution through the
 own configuration/override precedence, selected environment and tool provenance.
 Centralized declarations alone do not prove that the tools used them.
 
-Use either `pyproject.toml` or a project-owned `settings.json` for application
-settings, following the project's existing convention. Link the chosen file and
-its loader from project instructions. Python dependency declarations still belong
-in `pyproject.toml`, with resolved versions in `uv.lock`; JSON application settings
-do not replace uv's dependency metadata.
+Use project-owned `settings.json` for operator-managed application runtime
+settings under [ADR-0002 edition 2](decisions/ADR-0002-002-runtime-configuration-boundary.md).
+Keep packaging, dependencies, workspace declarations and supported development
+tool configuration in `pyproject.toml`. Every adopter MUST identify its deployed
+artifact, configuring operator/consumer, configuration scope/location, input
+schema, loading boundary, permissions, startup/reload and upgrade preservation.
+Libraries and plugins identify the configuring consumer/host and receive values;
+they need not invent a settings file or independent global discovery.
 
 | Concern | Authority |
 | --- | --- |
@@ -33,7 +36,7 @@ do not replace uv's dependency metadata.
 | Development and on-demand tools | Separate `dependency-groups` |
 | Workspace membership and local member dependencies | Root `tool.uv.workspace`, member dependencies and `tool.uv.sources` |
 | Exact resolved Python environment | Project-owned `uv.lock` |
-| Application settings | A project namespace under `tool` in TOML, or project-owned `settings.json` |
+| Application runtime settings | Operator/host-owned `settings.json` or an explicitly reviewed departure |
 | Plugin sources | Reviewed bundle and native marketplace configuration |
 | Adopted template identity | Starter version and exact SHA in `.skills-first/bundle.lock.json` |
 | gz-skills profile | Its version-specific `.gz-skills/settings.json` contract |
@@ -43,18 +46,7 @@ An application `settings.json` is separate from `.gz-skills/settings.json` and
 host settings. Preserve the latter files' own schemas and explicit profile
 choices. Neither the starter nor uv supplies an application settings loader.
 
-For example, an invented application could choose this TOML namespace:
-
-```toml
-[tool.example_app]
-schema_version = 1
-output_directory = "products"
-
-[tool.example_app.extensions]
-enabled = ["summary_export"]
-```
-
-Or the same application could choose JSON:
+An invented application can define this JSON schema:
 
 ```json
 {
@@ -64,9 +56,58 @@ Or the same application could choose JSON:
 }
 ```
 
-These illustrate application-owned schemas, not new starter inputs. Choose one
-source of truth; if an existing project needs both, document their distinct
-responsibilities and precedence instead of duplicating values.
+This is an application-owned schema, not a starter helper input. Existing
+formats require an inventory, reviewed migration or an informed operator-selected
+departure; never overwrite an adopter's settings during configuration.
+
+## Location, selection and precedence
+
+Keep mutable settings outside replaceable installed code by default. Declare one
+root: explicitly selected project/workspace, per-user application configuration,
+service/container provisioning, host/consumer configuration, or explicit portable
+deployment. Ownership scope is independent of uv application/library role and
+CLI/TUI/web/desktop interface. A Python web server is an application even without
+a project.scripts entry. Portable operation needs explicit relocation and
+settings-preservation evidence; web delivery alone does not provide it.
+
+Select one file: explicit launch/API path → documented application config-path
+variable → one declared scope-specific default. Invalid, empty, missing or
+inaccessible explicit selections fail without fallback or implicit scope merging.
+Absence at an optional default permits defaults only by the product contract.
+Resolve relative selections once from a documented invocation base. Services
+must not infer an interactive user's home. Use supported OS configuration roots
+for per-user scope, including explicit local/roaming choice on Windows. Spaced
+OS defaults, including macOS Application Support, require an explicit space-free
+root; do not rename directories, strip spaces or silently relocate configuration.
+
+Resolve values as defaults → selected file → documented environment values →
+explicit CLI/API overrides. Omitted flags must not erase lower layers. Validate
+supplied inputs and resolved values before application effects. Use UTF-8 JSON
+with integer schema_version for persistent schemas. Reject duplicate/unknown
+owned keys, malformed/nonfinite JSON, unsupported versions and wrong types;
+preserve deliberate documented extension namespaces. Scalars/arrays replace,
+and only documented object fields merge. Define null/empty/absent semantics
+per setting; avoid accidental interpolation or recursive merging. Resolve
+file-relative values from the file's parent and other paths from their documented
+base. Reading never rewrites operator files or silently migrates their schema.
+
+Reject U+0020 in supplied/resolved paths, parents, symlink targets and paths
+encountered during traversal before content access, creation or writing. Quoting
+is not an exemption. Preserve input contents containing spaces, leave existing
+data intact and offer an actionable alternate-root error.
+
+Inventory each environment variable's type, bounds, default, requiredness,
+sensitivity, precedence, path base and reload behavior. Parse booleans from a
+closed set and lists with one encoding; absent differs from empty. Ignore
+unrelated names. No eval, shell expansion, automatic dotenv discovery or arbitrary
+working-directory search. An explicitly selected dotenv workflow documents its
+syntax/selection and lets real process variables win. Forward child variables
+deliberately and never dump the full environment.
+
+One adapter resolves settings at application/host initialization; domain logic
+receives finished values. Explicit reload is separate work. Expose redacted
+winning-source diagnostics when useful. See [application foundations](engineering/application-foundations.md)
+and the [worked reference](../examples/application_foundations/README.md).
 
 ## Additions, extensions and overrides
 
@@ -88,10 +129,10 @@ decisions. Do not discard a dependency conflict to make adoption appear successf
 
 Application settings defaults, extensions and explicit overrides belong to the
 project loader. Document its precedence, collection merge/replacement behavior,
-schema validation and handling of invalid values. A reasonable new-project
-choice is defaults followed by explicit project values and documented environment
-overrides. Existing projects retain their own established semantics. The starter
-does not implement that precedence or interpret the example files above.
+schema validation and handling of invalid values. Apply the selection/precedence
+contract above to new work; preserve established behavior through reviewed
+migration or an informed departure. The starter helper does not load application
+runtime settings or interpret the example file above.
 
 Dependency and configuration flexibility does not silently waive the starter's
 required Python engineering standards. Preserve existing-project authorities and

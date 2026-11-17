@@ -1,5 +1,14 @@
 # GZ Starter
 
+Release 0.11.0 adds [application foundations](docs/engineering/application-foundations.md),
+the [runtime configuration contract](docs/project-configuration.md), reconciled
+[naming/layout guidance](docs/engineering/naming-and-layout.md), and an
+[invented CLI/library reference](examples/application_foundations/README.md).
+Both lanes identify deployment/configuration ownership. The helper rejects
+supplied/resolved filesystem paths containing spaces before target content access
+or changes; existing application data/settings require reviewed migration.
+The broader Ruff/ty proposal remains deferred.
+
 A reusable, project-scoped starting point for **Superpowers + Superpowers Backplane + gz-skills**,
 with room for each application's own operational skills and supporting code. Built for work and personal projects under `tvproductions`.
 

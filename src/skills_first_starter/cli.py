@@ -26,6 +26,7 @@ from skills_first_starter.native import (
 )
 from skills_first_starter.native_launch import launch as launch_opencode
 from skills_first_starter.native_scope import claude_scope, codex_scope, opencode_scope
+from skills_first_starter.paths import space_free
 
 _SOURCE = Path(__file__).resolve()
 _CHECKOUT = _SOURCE.parents[2]
@@ -51,7 +52,7 @@ class AdoptionError(Exception):
 
 def bundle() -> dict:
     """Read the authoritative bundle or its installed resource copy."""
-    return json.loads((HERE / "bundle.json").read_text(encoding="utf-8"))
+    return json.loads(space_free(HERE / "bundle.json").read_text(encoding="utf-8"))
 
 
 def template_version() -> str:
@@ -80,11 +81,15 @@ def validate_bundle() -> None:
         raise AdoptionError("every component needs an immutable full commit SHA")
     if any(type(p.get("enabled_by_default")) is not bool for p in parts):
         raise AdoptionError("every component needs an explicit boolean default activation")
-    codex = json.loads((HERE / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
+    codex = json.loads(
+        space_free(HERE / ".agents/plugins/marketplace.json").read_text(encoding="utf-8")
+    )
     actual = {p["name"]: (p["source"]["url"], p["source"]["ref"]) for p in codex["plugins"]}
     if actual != expected or codex["name"] != MARKETPLACE:
         raise AdoptionError("Codex marketplace does not match bundle pins")
-    claude = json.loads((HERE / ".claude-plugin/marketplace.json").read_text(encoding="utf-8"))
+    claude = json.loads(
+        space_free(HERE / ".claude-plugin/marketplace.json").read_text(encoding="utf-8")
+    )
     # Claude Code reads "ref" as a branch or tag; a commit pin must use "sha".
     actual = {p["name"]: (p["source"]["url"], p["source"].get("sha")) for p in claude["plugins"]}
     if actual != expected or claude["name"] != MARKETPLACE:
@@ -93,7 +98,7 @@ def validate_bundle() -> None:
 
 def check_path(root: Path, relative: str) -> Path:
     """Resolve a managed destination while rejecting symlinked parents."""
-    path = root / relative
+    path = space_free(root / relative)
     for item in (path, *path.parents):
         if item == root:
             break
@@ -180,7 +185,7 @@ def project_config(existing: str, ref: str) -> str:
 
 def _adoption_root(project: Path) -> Path:
     """Resolve the existing project and preserve the separate gzkit ecosystem."""
-    root = project.resolve(strict=True)
+    root = space_free(project).resolve(strict=True)
     if not root.is_dir():
         raise AdoptionError("project must be an existing directory")
     if (root / ".gzkit").exists() or (root / ".gzkit").is_symlink():
@@ -222,11 +227,12 @@ def _check_discovery(root: Path, host: str = "codex") -> None:
         ".github/skills",
         ".opencode/skills",
     ):
-        folder = root / surface
+        folder = space_free(root / surface)
         if folder.is_symlink():
             raise AdoptionError(f"inspect existing discovery link {surface} before adoption")
         if folder.is_dir():
             for child in folder.iterdir():
+                space_free(child)
                 _check_discovery_entry(surface, child, owned_surface)
 
 
@@ -244,7 +250,7 @@ def _policy_candidates(
     mode = requested if requested is not None else recorded["mode"] if recorded else "link"
     if mode not in ("link", "local"):
         raise AdoptionError("unsupported ADR policy mode; reconcile using link or local")
-    source = (HERE / ADR_POLICY_SOURCE).read_bytes()
+    source = space_free(HERE / ADR_POLICY_SOURCE).read_bytes()
     policy = {
         "mode": mode,
         "source_path": ADR_POLICY_SOURCE,
@@ -276,7 +282,7 @@ def _configuration_candidates(
         if paths[config_path].exists()
         else ""
     )
-    fragment = (HERE / "templates/AGENTS.skills-first.md").read_text(encoding="utf-8")
+    fragment = space_free(HERE / "templates/AGENTS.skills-first.md").read_text(encoding="utf-8")
     policy_url = f"https://github.com/tvproductions/gz-starter/blob/{ref}/{ADR_POLICY_SOURCE}"
     fragment = fragment.replace("{{ADR_POLICY_WORKING_SOURCE}}", working_policy).replace(
         "{{ADR_POLICY_CANONICAL_URL}}", policy_url
@@ -299,7 +305,7 @@ def _configuration_candidates(
         config_path: config,
         ".skills-first/bundle.lock.json": json.dumps(lock, indent=2) + "\n",
         "AGENTS.skills-first.md": fragment,
-        update_skill_path(host): (HERE / UPDATE_SKILL_SOURCE).read_text(encoding="utf-8"),
+        update_skill_path(host): space_free(HERE / UPDATE_SKILL_SOURCE).read_text(encoding="utf-8"),
     }
     if not paths["AGENTS.md"].exists():
         candidates["AGENTS.md"] = (
@@ -451,7 +457,7 @@ def configure(
 
 def status(project: Path) -> dict:
     """Compare managed project files with this starter's expected content."""
-    root = project.resolve(strict=True)
+    root = space_free(project).resolve(strict=True)
     path = check_path(root, ".skills-first/bundle.lock.json")
     if not path.exists():
         return {"status": "not configured", "runtime_readiness": "unverified"}
@@ -471,10 +477,12 @@ def _inherited_plugins(host: str) -> dict:
     """Read user activation for project overrides; never edit user settings."""
     home = Path.home()
     if host == "codex":
-        path = Path(os.environ.get("CODEX_HOME", str(home / ".codex"))) / "config.toml"
+        path = space_free(Path(os.environ.get("CODEX_HOME", str(home / ".codex"))) / "config.toml")
         return tomllib.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     if host == "claude":
-        path = Path(os.environ.get("CLAUDE_CONFIG_DIR", str(home / ".claude"))) / "settings.json"
+        path = space_free(
+            Path(os.environ.get("CLAUDE_CONFIG_DIR", str(home / ".claude"))) / "settings.json"
+        )
         return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     return {}
 
@@ -529,13 +537,14 @@ def localize(project: Path, ref: str, *, host: str, apply: bool = False) -> dict
 
 def backport(project: Path) -> dict:
     """Assess structure from names only; never read records or move files."""
-    root = project.resolve(strict=True)
+    root = space_free(project).resolve(strict=True)
     if not root.is_dir():
         raise AdoptionError("project must be an existing directory")
     entries = []
     truncated = False
     with os.scandir(root) as items:
         for entry in items:
+            space_free(Path(entry.path))
             if len(entries) >= 200:
                 truncated = True
                 break

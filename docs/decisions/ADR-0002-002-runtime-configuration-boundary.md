@@ -2,20 +2,18 @@
 id: ADR-0002
 title: Resolve runtime configuration at the application boundary
 revision: 2
-state: Draft
-decision_date: null
+state: Current
+decision_date: 2026-11-17
 revision_date: 2026-11-16
-approved_by: null
-approved_revision: null
-approval_ref: null
+approved_by: "project maintainer in this conversation"
+approved_revision: 2
+approval_ref: "#approval-evidence"
 ---
 
 # ADR-0002 — Resolve runtime configuration at the application boundary
 
-**Draft edition 2. Separate explicit architectural approval is pending.**
-The maintainer's selection of settings.json and approval of general direction
-do not approve this identified edition. No dependent implementation is authorized
-by this draft.
+**Current edition 2. Explicit architectural approval recorded November 17, 2026.**
+The reviewed draft bytes and actual approval context are preserved below.
 
 ## Context and scope
 
@@ -28,7 +26,7 @@ Every adopter has a deployment/configuration concern, including libraries and
 hosted plugins. The contract identifies the actual configuring consumer; this
 does not require a library to introduce independent global settings discovery.
 
-## Proposed decision
+## Decision
 
 Use settings.json as the house default for application runtime configuration.
 Keep packaging, dependencies and supported development-tool configuration in
@@ -90,8 +88,28 @@ not invented approval fields. Related design:
 Edition 1 was proposed November 16, 2026 and is preserved in commit `ed2417d`.
 Edition 2, also November 16, adds the universal deployment/configuration concern
 and scope-specific location/selection contract following the maintainer's
-clarification. Both editions are unapproved drafts. Approval: **pending**. Preserve exact reviewed
-content and actual approval provenance under the existing ADR policy before
-marking this record Current. The actual design-input conversation selected
+clarification. Edition 1 remains historical; edition 2 was separately approved
+November 17. The original design-input conversation selected
 “settings.json” and “we'll always have some deployment/config aspect with any
-adopter”; it supplied no approval of this ADR edition.
+adopter”; that earlier input did not itself approve this ADR edition.
+
+## Approval evidence
+
+Source: the main project maintainer conversation, November 17, 2026. This is
+an agent transcription; no durable conversation URL is available. After the
+agent presented the refined plan and separately requested approval of the
+identified ADR edition, the maintainer replied verbatim:
+
+> approve ADR-0002 edition 2
+
+The exact reviewed draft is preserved in
+[ADR-0002-002-reviewed.txt](approvals/ADR-0002-002-reviewed.txt), SHA-256
+`94b414de72d191ab9d3cd7c7fcc968e6beb708eeb93e9d24fea09d341212758b`.
+The hash identifies content; the actual human response establishes approval.
+
+## Administrative capture
+
+November 17: preserved the reviewed draft, recorded Current/approval metadata
+and replaced pending/proposal status wording. Decision, scope and constraints
+are unchanged. This administrative capture does not advance the edition or
+establish implementation acceptance, host qualification or release authority.

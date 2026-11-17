@@ -1,10 +1,13 @@
 # House naming and Python workspace layout
 
-**Draft proposal, edition 1 — November 14, 2026. Not active policy.**
-The maintainer requested this proposal and explicitly selected rejection of
-user-selected paths containing spaces. Approval of this draft and any separately
-identified architectural ADR is still required before dependent implementation.
-The imperative requirements below describe the proposed adopted contract.
+**0.11.0 implementation guidance — November 17, 2026.**
+Reconciled with approved application-foundations design edition 3 and
+[ADR-0002 edition 2](../decisions/ADR-0002-002-runtime-configuration-boundary.md).
+All 15 topics below are agent guidance with informed operator departures,
+except the explicitly selected runtime rejection of spaced paths and existing
+mandatory engineering requirements. Imperative style states the recommended
+action; it does not activate the deferred tool patch or a new architectural gate.
+Preserve public names and external schemas through reviewed migration.
 
 This is GZ Starter's concrete interpretation of the cited documentation as read
 on **2026-11-14**. The uv workspace and init pages display **2026-11-12**;
@@ -75,8 +78,9 @@ Use snake_case for functions, methods, parameters, variables and ordinary
 attributes; CapWords for classes; SCREAMING_SNAKE_CASE for constants. Give
 project-defined error exceptions names ending in `Error`. Preserve Python's
 specified special methods and external API spellings at explicit boundaries.
-Enable all stable pep8-naming N rules and keep the pinned tool's documented
-unittest method handling. Do not broaden ignores merely to silence new findings.
+Review names using the stable pep8-naming N rules as a reference. The broader
+activation patch remains deferred; current root selections are authoritative.
+Preserve unittest method spellings and reviewed suppressions.
 
 N801–N818 and N999 cover class/function/argument/local/module names, several
 mixed-case/import patterns, method parameters and error suffixes. They do not
@@ -173,7 +177,8 @@ This deliberately rules out application data under locations such as
 space-free location. Before activation, audit relevant runtime/resource/cache
 paths and existing path contracts on all supported systems. Test supplied and
 resolved paths, input/output/parent paths, traversal and no-partial-write cases.
-Use invalid path strings as negative controls without writing forbidden paths.
+Construct invalid-path controls only in isolated, task-owned temporary fixtures;
+production operations reject them before content access or mutation.
 Do not claim this restriction is implemented by Ruff or by this proposal.
 
 Canonical: operator request and explicit follow-up, 2026-11-14; preserved in the
@@ -197,63 +202,24 @@ rule. Preserve upstream ownership and identifiers.
 Canonical: [Agent Skills specification](https://agentskills.io/specification#name-field) — checked 2026-11-14.
 Canonical: [uv module derivation](https://docs.astral.sh/uv/concepts/build-backend/#modules) — checked 2026-11-14.
 
-## 10. Reviewed majority of Ruff and ty rules
+## 10. Reviewed Ruff and ty selection
 
-Enable more than half of each pinned tool's stable rule inventory, with the
-actual enabled set measured after ignores/overrides. Count rules, not families.
-Document selected families/rules, justified exclusions and adoption findings.
-Move toward more reviewed coverage without enabling incompatible rules or
-claiming that rule counts establish code quality. Do not use Ruff `ALL` or ty
-`all` as a substitute for review. Keep preview rules separately selected and
-exclude deprecated/removed rules from the stable denominator.
+Keep the existing routine Ruff E4/E7/E9/F/I/UP/B/SIM/RUF selection, ty, and the
+four hook categories. Do not activate the broader November 14 Ruff/ty patch,
+its 14-finding remediation or a majority-rule quota as part of this release.
+That [unapplied patch](../superpowers/specs/2026-11-14-naming-layout-tool-settings.patch)
+and its [dated proposal evidence](../evidence/2026-11-14-naming-layout-proposal.md)
+are historical candidates, not current effective configuration.
 
-Keep tool versions exact in the uv lock/declarations between authorized updates.
-At an update, compare the rule inventory and actual selection before accepting
-new defaults or new members of selected families. A family selector can expand
-on upgrade too. Pinning delays that change until a reviewed tool update; it
-cannot remove the need to inspect it. Use unittest, never pytest.
+At authorized tool updates, review actual changed rules/severities and their
+consumer behavior. Keep exact tool selections between updates. Rule counts
+cannot establish quality or substitute for owning tests. Keep C901/deeper
+analysis on demand, unittest as the test runner, and cognitive qualification
+DEFERRED / measurement UNKNOWN. Do not import GZKit ALL/preview selections.
 
-Measured proposal on Python 3.14.10 / uv 0.13.8, Ruff 0.17.5 and ty 0.0.104:
-
-| Tool | Stable denominator | Proposed enabled | Coverage | Current limitation |
-| --- | ---: | ---: | ---: | --- |
-| Ruff | 815 | 541 | 66.4% | Existing starter selects 227; broader candidate has 14 findings |
-| ty | 151 | 134 | 88.7% | Preserve the pinned default active severities explicitly; do not infer consumer acceptance |
-
-Use this reviewed candidate Ruff selection in root `pyproject.toml` after
-approval and remediation. N adds all 16 stable naming rules. The complete
-[proposed patch](../superpowers/specs/2026-11-14-naming-layout-tool-settings.patch)
-also records ty's 151 individual stable severity settings (134 enabled), avoiding
-implicit `all`. The patch is not applied to this checkout.
-
-```toml
-[tool.ruff]
-target-version = "py314"
-line-length = 100
-
-[tool.ruff.lint]
-select = [
-    "E4", "E7", "E9", "F", "I", "UP", "B", "SIM", "RUF", "N",
-    "A", "ASYNC", "BLE", "C4", "DTZ", "EXE", "FA", "FLY", "FURB",
-    "G", "ICN", "INT", "ISC001", "LOG", "PIE", "PLE", "PLW", "PTH",
-    "PYI", "RET", "RSE", "SLOT", "TID", "YTT", "W", "PGH",
-]
-```
-
-The additions cover shadowing, async hazards, comprehensions, dates, executable
-files, annotations/import conventions, logging, Python correctness and safer
-filesystem idioms. Stub rules apply where stubs exist. Leave complexity C901
-on demand, avoid formatter-conflicting families, and do not select pytest
-rules. Documentation/security/deeper tools retain their separate existing
-contracts; omitted families are not declared permanently undesirable.
-Review the 14 existing findings before activation, especially intentional broad
-exception handling at analyzer fail-closed boundaries. Fix or narrowly justify
-findings with evidence; do not blindly rewrite boundaries to satisfy a count.
-
-Canonical: [Ruff selection](https://docs.astral.sh/ruff/linter/#rule-selection) — checked 2026-11-14; warns that ALL expands on upgrade.
-Canonical: [Ruff rule inventory](https://docs.astral.sh/ruff/rules/) — checked 2026-11-14; actual counts use the pinned executable.
-Canonical: [ty rule levels](https://docs.astral.sh/ty/rules/) — checked 2026-11-14; page 2026-11-13.
-Canonical: [ty configuration](https://docs.astral.sh/ty/configuration/) — checked 2026-11-14; page 2026-11-13.
+Canonical: [Ruff selection](https://docs.astral.sh/ruff/linter/#rule-selection)
+and [ty configuration](https://docs.astral.sh/ty/configuration/) — reviewed
+November 14; current exact selections are in root pyproject.toml.
 
 ## 11. Distinguish uv requirements from the house layout
 
@@ -271,10 +237,13 @@ Canonical: [uv workspace membership/layouts](https://docs.astral.sh/uv/concepts/
 
 Keep the root a real packaged workspace member, with root `src/<root_import>/`.
 Put other members exactly one project level under `applications/` or
-`libraries/`, spelled out. A member declaring a command in `[project.scripts]`
-belongs under applications; a member exposing a reusable API without such a
-command belongs under libraries. A command-bearing member remains an application
-if it also exposes importable functions. Use subpackages for internal structure,
+`libraries/`, spelled out. Classify by intended uv application/library role:
+a deployable web server belongs under applications even when its server imports
+an entry point and it declares no project.scripts. Reusable consumer APIs belong
+under libraries. A CLI can expose an API without changing its application role.
+Role, packaging, workspace organization, interface and deployment scope are
+separate dimensions; see the [configuration contract](../project-configuration.md).
+Do not create dummy commands to satisfy a folder rule. Use subpackages for internal structure,
 not nested workspace members. A standalone one-package project needs no empty
 role folders or invented workspace members.
 
@@ -422,57 +391,33 @@ Canonical: [deptry extraction/configuration](https://deptry.com/usage/) — chec
 Canonical: [deptry rules](https://deptry.com/rules-violations/) — checked 2026-11-14.
 Canonical: [deptry declaration sources](https://deptry.com/supported-dependency-managers/) — checked 2026-11-14.
 
-## Adopter migration proposal
+## Adopter migration
 
-For cob_projects, inventory and propose member-folder moves from snake_case
-into `applications/<kebab-name>/` and `libraries/<kebab-name>/`, keeping imports
-snake_case under src. Review each distribution name rather than guessing it
-from an old folder. Move project-defined environment variables to one COB family
-prefix, and migrate owned settings.json fields from camelCase to snake_case.
-Update paths, references, scripts, tests and serialized readers/writers together;
-handle old/new key conflicts explicitly. Do not rewrite externally specified
-schemas or historical evidence. Do not change an adopter as part of this task.
+Inventory distributions, modules, commands, environment names, settings schemas,
+member roles, paths, automation and serialized contracts before changing them.
+Preview a mapping to guidance, including preserved compatibility spellings.
+Existing formats and layouts need reviewed migration or an informed operator
+departure; never rename files, rewrite data keys or migrate an adopter as an
+incidental starter update. Resolve old/new key conflicts explicitly and preserve
+external schemas, historical evidence, data and existing authorities.
 
-For the starter itself, reconcile retained public import/CLI/native/provenance
-compatibility, existing non-project workspace examples, flat legacy commands,
-the broader Ruff findings and all path entry points before activation. Replace
-inconsistent active guidance coherently only after approval; the existing
-published guidance remains in force until then. Refresh instructions/resources
-if their authoritative inputs change and run affected consumer/artifact checks.
-No downstream conformance follows from publishing this draft.
+The starter retains its public skills_first_starter import, compatibility command,
+marketplace identities and provenance paths. The reference under examples is a
+local dev fixture, not a workspace application member; it shares root tooling
+and is independently packaged solely for worked delivery verification.
 
 ## Version, acceptance and future maintenance
 
-Published baseline: **0.9.0**. Existing pending candidate: **0.10.0 / minor**.
-The naming/layout requirement change is minor-level under the 0.x contract,
-including the deliberate path restriction. The current authorization delivers
-this proposal only; it does not select its implementation into 0.10.0. The
-recommended next scope is the complete bounded contract below alongside the
-existing opinionated policy/rename work, subject to the maintainer's scope/design
-approval. Reuse a valid pending target rather than bumping per task. Bundle/package mirrors remain 0.10.0; no tag or release is authorized.
-The new record-platform architecture is not added to this scope.
+Published baseline is 0.10.0; pending target is 0.11.0 / minor under the existing
+application-foundations scope. This work reconciles all 15 topics as guidance,
+implements the selected path rule and supplies bounded worked evidence. It
+does not activate the deferred Ruff/ty patch, impose a quota, publish a release,
+qualify all platforms or migrate real adopters. See the [approved design](../superpowers/specs/2026-11-16-application-foundations-design.md)
+for the complete GZKit disposition and exclusions. The
+[intake](../superpowers/specs/2026-11-14-naming-layout-policy-intake.md) preserves
+the original request and earlier proposals.
 
-For that proposed implementation bundle, include all 15 requirements, starter
-policy/instructions/resource reconciliation, tool-setting activation and finding
-remediation, path rejection at API/CLI boundaries, root/member declaration tests
-and artifact/platform evidence. Exclude downstream adopter edits, the chore
-framework, new skills, the cognitive engine and the record-platform design.
-The completion gate is the following evidence set for that exact candidate,
-not merely merging this proposal.
-
-Before acceptance: approve the policy and any identified architectural ADR,
-reconcile existing guidance/instructions, apply reviewed settings, remediate
-findings, implement/verify path rejection and member declaration tests, inspect
-built typing markers and installed imports, and run the applicable integration
-checks on supported platforms. Preserve all four routine checks and existing
-cognitive qualification deferral/ceiling; claim no strict cognitive conformance.
-The [intake](../superpowers/specs/2026-11-14-naming-layout-policy-intake.md)
-preserves the original operator request and superseded preliminary notes.
-
-Future chore hook, guidance only: when an authorized uv/Ruff/ty version update
-is detected, re-read the cited Astral pages, compare claims/defaults/rule sets
-with this dated policy, and record source dates, differences, adopt/defer calls
-and evidence in the existing maintenance authority. How this is tracked and
-whether any starter-owned chore skill exists are undecided. Design that boundary
-with the current single-owned-skill contract and upstream maintenance ownership;
-implement no chore, schedule or new skill from this paragraph.
+During authorized maintenance, compare applicable official documentation,
+effective tool settings, actual runtime behavior and changed consumer evidence.
+Keep that result in existing maintenance/release records. Generic maintenance
+stays upstream-owned; add no new local chore skill, lifecycle or registry.

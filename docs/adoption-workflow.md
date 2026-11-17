@@ -1,5 +1,12 @@
 # Adopt the skills stack
 
+Both lanes MUST identify deployment/configuration ownership and follow the
+[configuration contract](project-configuration.md) and
+[application foundations](engineering/application-foundations.md). Inventory
+existing formats, environment names, paths, data and automation before a reviewed
+migration; preserve working settings and project authorities. Require actual
+consumer and installed-preservation evidence, recording unavailable host checks.
+
 For recurring template updates and pre-skill adopter bootstrap, use
 [canonical template updates](updating.md). Version 0.6 adds one native
 update skill; 0.5 and earlier adopters can bootstrap it from the published release.

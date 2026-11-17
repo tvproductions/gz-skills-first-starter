@@ -2,7 +2,18 @@
 
 ## Unreleased
 
-### 0.11.0 — implementation planning
+## 0.11.0 — November 17, 2026
+
+- Complete release analysis: reduce the reference loader's cyclomatic complexity
+  without changing behavior, analyze its dependencies independently, deliver
+  py.typed with installed consumer checks, and select verified detect-secrets
+  1.5.0 for on-demand repository scans. Keep the four routine hooks unchanged.
+
+- Complete [November 17 dependency maintenance](docs/evidence/2026-11-17-starter-maintenance.md)
+  in both Python baselines: update Lizard to 1.26.1 and refresh CacheControl,
+  filelock, SQLAlchemy and virtualenv locks. Requalify the existing complexity
+  contract with unchanged Python corpus scores and passing checker regressions.
+  Retain current runtime, tooling, CI action and component selections.
 
 - Select the next minor scope for application foundations and house-style
   guidance. Prepare a [draft design](docs/superpowers/specs/2026-11-16-application-foundations-design.md)
@@ -16,10 +27,13 @@
   file selection by deployment scope rather than a universal install-directory home.
   Incorporate Astral's application/library, packaging and workspace guidance;
   distinguish a web application's interface from service or portable deployment.
-  Record approval of design edition 3 and prepare an implementation plan.
-  Plan refinements/review, separate ADR approval, policy activation,
-  implementation and worked verification remain pending; selecting the version
-  delivers none of those behaviors.
+  Record approval of design edition 3 and separate approval of ADR-0002 edition 2.
+  Deliver the reconciled guidance/instructions, API/CLI path rejection and an
+  invented CLI/library fixture with root-owned checks and extracted-source
+  installed/reinstall preservation proof. Correct the independent review's CLI
+  redaction, empty-root selection and inherited probe-environment defects; add
+  missing read/preservation/bounds controls. Final gate and 95 owning tests pass;
+  release acceptance/publication remain separate.
 
 ## 0.10.0 — November 15, 2026
 

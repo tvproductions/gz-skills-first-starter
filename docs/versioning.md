@@ -1,12 +1,15 @@
 # Template versioning
 
-Current status, November 16, 2026: the published template is **0.10.0** at
+Release preparation, November 17, 2026: the published baseline is **0.10.0** at
 `6b236d87f301f689edae6934dabee9495df726d4`; the selected pending target is
 **0.11.0 / minor**, for the finite application-foundations/house-style design
 scope in the [roadmap](../ROADMAP.md#selected-0110-scope--application-foundations-november-16-2026).
-Design/ADR review and implementation remain incomplete. Version mirrors record
-the pending target, not policy activation or release acceptance. No publication
-is authorized by this design request. The initial release was **0.1.0**.
+Design edition 3 and ADR-0002 edition 2 are explicitly approved; implementation
+and independent-review corrections are complete. The maintainer requested Git
+sync and release publication on November 17. The
+[0.11.0 receipt](evidence/2026-11-17-0.11.0-release.md) records release acceptance,
+retained limits and exact-source CI/publication checks. Version mirrors agree;
+a version string alone is not publication evidence. The initial release was 0.1.0.
 
 The following development narrative records the preceding 0.10.0 work; its
 unpublished/next-target statements are historical and superseded by the current

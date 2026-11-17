@@ -1,0 +1,39 @@
+{
+  "source": "examples/application_foundations/src/example_foundations/domain.py",
+  "sha256": "d49c7b2222397a417d75029c33dc1e2a8b42939e59d7b7989bca3f67631a5ae3",
+  "counts": {
+    "killed": 1
+  },
+  "mutations": [
+    [
+      {
+        "job_id": "ae0208bb873f4c2b9a6fe1a23da367f1",
+        "mutations": [
+          {
+            "module_path": "specimen.py",
+            "operator_name": "core/AddNot",
+            "occurrence": 0,
+            "start_pos": [
+              7,
+              36
+            ],
+            "end_pos": [
+              7,
+              42
+            ],
+            "operator_args": {},
+            "definition_name": "render_message"
+          }
+        ]
+      },
+      {
+        "worker_outcome": "normal",
+        "output": "",
+        "test_outcome": "killed",
+        "diff": "--- mutation diff ---\n--- a/specimen.py\n+++ b/specimen.py\n@@ -4,6 +4,6 @@\n def render_message(message: str, repeat: int, tags: tuple[str, ...]) -> str:\n     \"\"\"Render an ordered tagged message a bounded number of times.\"\"\"\n     prefix = \"\".join(f\"[{tag}]\" for tag in tags)\n-    line = f\"{prefix} {message}\" if prefix else message\n+    line = f\"{prefix} {message}\" if not prefix else message\n     return \"\\n\".join(line for _ in range(repeat))\n "
+      }
+    ]
+  ],
+  "normal_worker_outcomes_only": true,
+  "source_restored": true
+}

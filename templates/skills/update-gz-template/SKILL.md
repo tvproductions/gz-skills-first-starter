@@ -43,6 +43,17 @@ pretending this is an upgrade. A gzkit project retains its separate ecosystem.
 
 ## Find the released target and its instructions
 
+When the target includes application foundations, review
+docs/project-configuration.md, docs/engineering/application-foundations.md and
+docs/engineering/naming-and-layout.md with the adopter's existing deployment and
+settings contract. Inventory formats, variable names, path bases, credentials,
+data and automation; preview migration and preserve working inputs. Do not
+overwrite settings or infer a shared runtime-loader dependency. Explain the
+settings.json default, startup boundary, explicit configuration owner and
+space-free path requirement, recording informed departures in existing authority.
+Verify the actual application's positive/negative behavior and installed
+preservation; starter fixture/configuration results cannot qualify that adopter.
+
 Query the canonical repository's live stable releases with direct `gh` commands.
 Use direct `git` commands for repository operations. Do not wrap routine CLI
 calls in Python; substantive Python processing must use the prescribed locked,

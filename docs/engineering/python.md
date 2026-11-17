@@ -298,7 +298,7 @@ no known advisories is not proof of absence of vulnerabilities. Do not run
 ### Complexity policy: Ruff, complexipy and Lizard
 
 Historically, Ruff 0.15.18 and complexipy 8.0.1 passed focused Python 3.14.8
-syntax, threshold-boundary and invalid-syntax checks. The current cyclomatic toolchain selects Lizard 1.26.0 and retires both Xenon and
+syntax, threshold-boundary and invalid-syntax checks. The current cyclomatic toolchain selects Lizard 1.26.1 and retires both Xenon and
 Radon. The saved two-tool receipt is historical; use the new three-tool receipt
 for Lizard evidence. Ruff measures cyclomatic branching;
 complexipy adds cognitive costs such as nesting. Use cyclomatic 20 and cognitive

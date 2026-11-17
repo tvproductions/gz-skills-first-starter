@@ -151,6 +151,21 @@ plugin state. Startup is freshness-only; migrate in a separately authorized
 maintenance pass under the completed-migration binding. Do not let startup
 checking turn every feature task into dependency migration or repeated scans.
 
+Apply the reviewed starter's docs/project-configuration.md and
+docs/engineering/application-foundations.md in both lanes, following ADR-0002.
+Every adopter MUST identify its deployment unit, configuration owner/location,
+schema, loading/override behavior, permissions and upgrade preservation, including
+the consuming application/host for libraries and plugins. Use settings.json for
+operator-managed runtime settings, separate from pyproject packaging/tool settings.
+Resolve one selected file and validated values at initialization; domain logic
+receives values. Reject supplied/resolved paths containing spaces before content
+access or changes. Preserve data and existing settings during reviewed migration.
+Offer actionable architectural warnings, record informed human departures once
+in existing authority and respect them without repeat questioning. Existing
+mandatory requirements and approved ADRs retain authority. Verify actual consumer
+behavior; configuration alone is not acceptance. All 15 naming/layout topics
+are guidance; the broader Ruff/ty patch and quota remain deferred.
+
 Read project AGENTS.md and linked authorities first. This project records sources
 in `.skills-first/bundle.lock.json`. The starter owns only the narrow
 `update-gz-template` skill; it supplies stack configuration, provenance and project
