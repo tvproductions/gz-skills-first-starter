@@ -1,15 +1,42 @@
 # Roadmap
 
+## Selected 0.11.1 scope — roadmap reconciliation, November 17, 2026
+
+Published baseline: **0.11.0**, immutable tag source
+`ccac3b5e1ac03f2cf5642d7766aed6e68001997c`. Pending target: **0.11.1 / patch**.
+Governing correction: the maintainer requested reconciliation of obsolete
+rename/ADR backlog entries after their verified publication. Correct the active
+roadmap and continuation pointers without changing the released adoption contract.
+
+Included work: distinguish completed 0.10.0/0.11.0 delivery from remaining
+enforcement, real-adopter and platform work; link exact release/qualification
+evidence; reconcile changelog and version mirrors. Acceptance requires reviewed
+diff/references, consistent version mirrors, catalog/resource checks and the
+applicable packaging checks. Record observed results in the current handoff.
+No new feature, policy requirement or architectural choice is selected.
+
+Completed locally: reconciliation and version mirrors; reviewed references and
+diff; all four routine hooks, catalog/resource/lock checks, source-independent
+build and isolated installed-artifact verification. Included implementation work
+remaining: **none**. The maintainer subsequently requested “commit, push,
+publish”. Candidate-specific freshness/security evidence is refreshed; unchanged
+source analysis is retained in the [release receipt](docs/evidence/2026-11-17-0.11.1-release.md).
+Complete ordinary sync, exact-commit CI and immutable tag/release verification.
+
+Deferred/excluded: all implementation in the next-work sections, companion or
+adopter edits and native activation. Compatibility: prose correction only; no
+adopter migration is required. Publication: **authorized, not yet observed**;
+no unresolved product decision. No next feature release scope is selected.
+
 ## Selected 0.11.0 scope — application foundations, November 16, 2026
 
 **Published November 17:** [0.11.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.0),
 source ccac3b5e1ac03f2cf5642d7766aed6e68001997c. Exact-source CI passed both
 jobs; the annotated remote tag and downloaded source are verified in the release
-receipt. The baseline/target accounting below describes this completed increment;
-no subsequent release scope is selected.
+receipt. The baseline/target accounting below describes this completed increment.
 
 Published baseline: **0.10.0**, immutable release source
-`6b236d87f301f689edae6934dabee9495df726d4`. Pending target: **0.11.0 / minor**,
+`6b236d87f301f689edae6934dabee9495df726d4`. Released target: **0.11.0 / minor**,
 governed by the maintainer's foundations/house-style design request and
 [approved design edition 3](docs/superpowers/specs/2026-11-16-application-foundations-design.md).
 Outcome: coherent Python application guidance in both lanes, separate runtime
@@ -17,8 +44,8 @@ settings.json, environment/secrets handling, right-sized hexagonal guidance,
 operator warnings/overrides and bounded worked verification.
 
 Completed: repository gap review, exact-source GZKit drydock/house-style/hexagonal
-comparison, comparison with selected gz-skills criteria, captured settings.json
-and operator-authority decisions, draft design and draft ADR-0002 edition 2.
+comparison, comparison with selected gz-skills criteria, settings.json and
+operator-authority decisions, approved design edition 3 and ADR-0002 edition 2.
 Every adopter must identify its deployment/configuration contract; the selected
 file location follows project, user, service, host or explicit portable scope.
 Edition 1's builder review is complete; its two questions are resolved: keep the broader
@@ -36,8 +63,8 @@ The [implementation plan](docs/superpowers/plans/2026-11-16-application-foundati
 is revised with root-owned fixture verification/distribution integration,
 pre-read rejection guards and concrete fixture schema/interfaces/commands.
 November 17 [dependency maintenance](docs/evidence/2026-11-17-starter-maintenance.md)
-updates both baselines and records current official selections and compatibility
-evidence; release acceptance still requires candidate-specific evidence.
+updated both baselines; candidate-specific freshness and compatibility evidence
+is recorded in the release acceptance receipt below.
 The maintainer separately approved ADR-0002 edition 2 on November 17; its exact
 reviewed draft and approval context are preserved with that decision. The revised
 plan is implemented. Guidance/instructions/resources, starter path rejection
@@ -59,13 +86,11 @@ adopter review; preserve existing settings, interfaces, mandatory engineering
 requirements and project choices. No automatic adopter refactoring. Excluded:
 GZKit lifecycle/kernel, universal runtime library, upstream edits/releases,
 native activation, real-adopter migration, management sidecars and full TUI/web/
-desktop qualification. Publication is authorized by the November 17 request,
-after its documented source/CI gates. Version mirrors are
-reconciled to the pending target. Implementation evidence does not authorize
-release publication; reconcile this record at final closeout.
+desktop qualification. Publication completed under the November 17 request
+after the documented source/CI gates. The receipt records version-mirror checks
+for that immutable release.
 
-The following 0.10.0 completion record and historical narratives retain their
-original dates and are superseded by this new scope where they describe next work.
+## Completed 0.10.0 scope — ADR practice and canonical rename
 
 Reconciled November 15, 2026 for the finite 0.10.0 release, governed by
 [#12](https://github.com/tvproductions/gz-starter/issues/12) and approved design
@@ -83,8 +108,8 @@ are preserved. Real-adopter migration/pilot, naming enforcement, management
 sidecars, deterministic upgrades, broader platform proof and acceptance automation
 remain deferred. Cognitive measurement is UNKNOWN under the standing deferral;
 no full strict conformance is claimed. Publication is verified by the immutable
-release tag and GitHub record. Historical planning narrative below retains its
-original scope/ordering and is superseded by this completion record where stated.
+release tag and GitHub record. Historical planning/approval narratives remain
+in their dated handoffs; they do not reopen completed release gates.
 
 ## Delivered baseline
 
@@ -113,115 +138,69 @@ original scope/ordering and is superseded by this completion record where stated
 
 See the [0.9.0 release receipt](docs/evidence/2026-11-08-0.9.0-release.md),
 [three-host receipt](docs/evidence/2026-10-31-three-host-repo-scope.md),
-[changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-10-24-session-close.md).
+[changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-11-16-application-foundations-design-handoff.md).
 Historical receipts establish their stated inputs and scope, not current
 universal acceptance.
 
-## Next work, in recommended order
-
-### House naming and layout — proposal ready for review
-
-The maintainer requested the [dated house-policy draft](docs/engineering/naming-and-layout.md)
-and explicitly selected rejection of user-selected paths containing spaces.
-The draft supplies all 15 requested naming/layout areas, exact unapplied tool
-settings, per-member declaration verification and downstream migration guidance;
-see its [bounded evidence](docs/evidence/2026-11-14-naming-layout-proposal.md).
-This is minor-level work from published 0.9.0, but its implementation is not yet
-selected into pending 0.10.0. Reconcile the bounded scope and obtain required
-policy/design/ADR approvals before dependent work. Keep all four routine checks;
-remediate findings and prove actual path/declaration/artifact behavior. No
-adopter change, chore/skill creation, enforcement activation or release occurs
-by saving the draft. The prior sidecar/Backplane review remains pending too.
-
 ### Canonical rename selected: gz-starter
 
-November 14 maintainer decision: the canonical project name will be
-**gz-starter**, with **GZ Starter** as the display name. Book the coordinated
-repository/local-folder and adopter migration as minor-level work in the valid
-pending **0.10.0** target from published 0.9.0; do not add a bump per task.
-Execution is now authorized and the candidate uses the renamed GitHub repository,
-local checkout, distribution and canonical CLI. Compatibility interfaces remain
-as documented in `docs/rename-gz-starter.md`. Desktop primary-folder binding is now verified in the current handoff;
-downstream adopter propagation remains explicit follow-up work. Keep the earlier ADR/policy
-acceptance gates intact; this does not establish release acceptance.
+**Completed and published in 0.10.0.** The November 14 decision was executed:
+canonical repository/local folder, distribution and CLI are **gz-starter**;
+the display name is **GZ Starter**. Desktop primary-folder binding, relocated
+environment/hooks, installed command/alias behavior and release-source CI are
+recorded in the [release handoff](docs/handoffs/2026-11-15-adr-release-session-handoff.md)
+and [release receipt](docs/evidence/2026-11-15-0.10.0-release.md).
+The legacy CLI alias, Python import, marketplace identity, record directory and
+update-skill ID remain intentional compatibility interfaces; see the
+[migration guide](docs/rename-gz-starter.md).
 
-Required completion scope:
+Remaining work is downstream propagation under each adopter's authorization:
+inventory its source/version/SHA and local changes, preview reconciliation,
+preserve immutable provenance and verify preservation, rollback and discovery.
+Include this in the real-adopter pilot below; do not repeat the starter rename
+or assume publication migrated existing adopters.
 
-- Rename the GitHub repository through `gh`, verify the same repository/history
-  and intended new URL, then reconcile local remotes and active source links.
-  Preserve immutable tags/releases and historical adoption provenance.
-- Coordinate the local folder move and desktop project binding with the
-  maintainer. Repair path-dependent environments, launchers and normal hooks;
-  verify the managed pinned runtime and clean installed behavior afterward.
-- Resolve the package/distribution, Python import, CLI and marketplace identity
-  migration explicitly. Prefer consistent canonical naming while defining any
-  supported compatibility aliases and retirement boundary before changing them.
-  Update owning metadata, locks, catalogs, native project bindings, tests,
-  documentation and generated resources coherently; do not edit native caches
-  or activate plugins user-wide.
-- Record the decision and migration boundary in gz-skills and Backplane. Keep
-  their independent names/versions and preserve their existing project policy.
-- Inventory authorized downstream adopters and provide a reviewed migration
-  path for old source URLs, identifiers/configuration and recorded versions/SHAs.
-  Preserve project additions and old immutable source identities. Do not perform
-  unrequested blanket changes to downstream repositories.
-- Verify preview/migration/recovery, repeat adoption and old-provenance handling,
-  both catalogs/resources, source-independent builds, installed commands and
-  applicable native project discovery. Observe exact-commit CI and ordinary
-  Git alignment. Scope activation, release acceptance and publication separately.
+### Mandatory ADR practice across the trio
 
-Repository/folder target naming is selected. Exact public identifier/alias
-dispositions and the implementation sequence remain to review. This booking
-does not implement the rename, publish a release or approve the other draft
-record-platform architecture. See the current
-[handoff](docs/handoffs/2026-11-14-opinionated-cli-design-discussion.md).
+**Completed and published in 0.10.0.** Governing issues
+[#12](https://github.com/tvproductions/gz-starter/issues/12) and
+[#13](https://github.com/tvproductions/gz-starter/issues/13) are closed completed.
+The approved specification/plan and separately approved ADR-0001 edition 1 led
+to mandatory both-lane policy, link/local policy access, preservation/conflict
+behavior, independently released gz-skills procedure/template and Backplane
+checkpoint integration. Genuine use/alignment in all three publishers and the
+source-bound behavioral controls are recorded in the
+[exact-combination receipt](docs/evidence/2026-11-15-adr-combination.md).
 
-### 1. Establish mandatory ADR practice across the trio
+This completes the bounded trio delivery, not universal adopter/native-host
+acceptance or Backplane enablement. Each adopter must reconcile its authorities
+and verify actual installed/discovered sources. Reuse applicable approved ADRs;
+obtain separate explicit approval of an identified new/replacement edition before
+dependent implementation. Do not request completed design/ADR approvals again.
 
-Selected next minor: **0.10.0**, from published 0.9.0. The maintainer agreed
-that both lite and heavy adopters must follow this practice, and that this
-starter, gz-skills and SP-BP must demonstrate it themselves before propagation.
-The [native feature issue](https://github.com/tvproductions/gz-starter/issues/12)
-captures the increment's intent, workstreams and acceptance conditions. Detailed
-design is tracked as [child issue #13](https://github.com/tvproductions/gz-starter/issues/13).
-The maintainer approved the [starter specification](docs/superpowers/specs/2026-11-08-adr-practice-design.md),
-the native implementation plan and separately
-[ADR-0001-001](docs/decisions/ADR-0001-001-qualify-exact-component-combinations.md).
-Starter policy, link/local helper support and packaged-policy verification are
-implemented and qualified for the exact released sources and observed Windows
-Codex scope in the combination receipt. Each real adopter must reconcile its
-authorities and verify its actual installed/discovered sources.
-This repository owns the adopter policy
-and cross-component contract; gz-skills and SP-BP design their internals in their
-own repositories.
-Approve each concrete design before dependent implementation; individual new
-architectural decisions retain their separate ADR approval checkpoint.
-See the [governing scope and discussion record](docs/handoffs/2026-10-24-session-close.md#november-8-agreed-adr-practice-and-next-release-scope)
-and the [source proposal's final guidance](https://github.com/wtcis-pvecob/cob_projects/blob/dd1ab883c04e884678ed723959b17c5c364263d1/docs/engineering/proposals/2026-11-07-gz-adr-workflow-discussion.md#final-audience-guidance).
+## Next work, in recommended order
 
-Prevent surprise architectural commitments embedded in implementation. Require
-recognition during design, execution and review; reuse applicable approved
-choices; obtain separate explicit approval of an identified ADR edition before
-implementing a new or replacement choice. Preserve independent record identities,
-editorial history and honest approval provenance. Routine details within an
-accepted decision need no new ADR. Drafting or indexing does not confer approval.
+These items remain unselected implementation work; the 0.11.1 documentation
+correction does not select a feature release or authorize implementation.
 
-The starter leads adopted policy for the trio; gz-skills owns portable workflow
-and template behavior; SP-BP integrates with its existing planning/tracking
-surfaces. Each repository must bind the practice for its own development too.
-A central CLI, shared runtime or application core is not a prerequisite. The
-starter owns nothing on GZKit's behalf; its drydock and lifecycle remain separate.
-Do not introduce a competing planning hierarchy or fork upstream SP workflows.
+### House naming and layout — deferred enforcement
 
-Completion requires a reviewed concrete design, the three project bindings,
-portable workflow and applicable SP-BP integration, plus behavioral positive and
-negative controls for missing/conflicting decisions, vague assent, mid-work
-choices, accepted-decision reuse and honest backfills. Demonstrate the practice
-in all three repositories before adopter propagation. Detailed distribution and
-integration remain to be designed; this scope agreement is not implementation
-acceptance or approval of an individual ADR.
+**Guidance and starter path rejection shipped in 0.11.0.** All 15 topics in the
+[house policy](docs/engineering/naming-and-layout.md) were reconciled with the
+approved foundations design. The helper rejects supplied/resolved spaced paths
+before target content access or changes; the CLI/library reference and installed
+preservation controls are delivered. See the
+[implementation evidence](docs/evidence/2026-11-17-application-foundations.md).
 
-### 2. Complete an authorized real-adopter pilot
+Remaining: the broader November 14 Ruff/ty activation proposal, majority-rule
+quota and 14-finding remediation, plus separately reviewed adopter enforcement
+and migration. The [original proposal evidence](docs/evidence/2026-11-14-naming-layout-proposal.md)
+is historical input, not evidence that these remaining changes are active.
+Select a bounded scope before implementation, reuse existing design/ADR approvals
+where applicable and obtain approval only for actual new/replacement decisions.
+Keep all four routine checks and prove affected declaration/artifact behavior.
+
+### Complete an authorized real-adopter pilot
 
 FDAU remains the primary candidate, subject to authorization in that repository.
 Exercise adoption and a subsequent template upgrade against real project edits.
@@ -233,7 +212,7 @@ fresh native discovery, preservation and rollback evidence. Report unresolved
 requirements explicitly; successful configuration is insufficient. Feed concrete
 pilot findings into the reporting and upgrade proposals below.
 
-### 3. Provide reviewed template upgrade and rollback tooling
+### Provide reviewed template upgrade and rollback tooling
 
 The [canonical update workflow](docs/updating.md) exists; deterministic three-way
 reconciliation remains proposed. `localize` repairs activation but does not
@@ -245,7 +224,7 @@ preserved adopter edits and plugin enablement, and tested rollback. Exercise
 public helper seams with invented fixtures and a separately authorized pilot.
 Do not install plugins or overwrite user defaults as a migration shortcut.
 
-### 4. Close remaining native/platform proof gaps
+### Close remaining native/platform proof gaps
 
 Keep completed CLI/runtime scope proofs separate from these open checks:
 
@@ -259,10 +238,12 @@ Completion requires exact host/version/source identities, actual invocation or
 discovery results, inside/outside controls and preserved user settings for each
 claimed target. The [October 18 Windows Codex CLI receipt](docs/evidence/2026-10-18-codex-discovery-verified.md)
 proves its published 0.4.0 fixture, not universal current-host readiness.
+The 0.10.0 ADR combination receipt adds its exact Windows Codex observations;
+it does not close the broader normal-profile/other-host gaps.
 Test the actual embedded XPPython3 host separately; standalone 3.12 tool probes
 do not establish simulator/plugin compatibility.
 
-### 5. Make adoption acceptance independently inspectable
+### Make adoption acceptance independently inspectable
 
 The [strict-adoption design](docs/engineering/strict-adoption-design.md) already
 identifies automatic lane/evidence/PRD validation as proposed, not implemented.
@@ -284,26 +265,40 @@ checks remain in force before reporting automation exists. Prepare a newly
 written 1.0.0 PRD and finite release scope; this feature alone does not establish
 1.0.0 readiness or authorize publication.
 
+### Management records and commit metadata — deferred design
+
+The selected JSON-sidecar/Markdown split and minimum commit-contract draft remain
+design work in the [November 14 discussion handoff](docs/handoffs/2026-11-14-opinionated-cli-design-discussion.md).
+Schema, Backplane mapping, update/recovery behavior and applicable ADR approval
+remain unresolved. No sidecar manager, commit schema or hook is implemented by
+the rename, ADR-practice or application-foundations releases. Continue through
+the existing design authority before dependent implementation; preserve
+Backplane's lifecycle ownership.
+
 ## Parallel maintenance: dependency scans and update candidates
 
 The November 7 hosted scans and real update-PR generation passed after the
 minimum-only uv correction; the historical failure and recovery evidence is in
 the [completed receipt](docs/evidence/2026-11-07-dependabot-uv-compatibility.md#hosted-verification-completed--november-7).
-Release 0.9.0 independently refreshed both locks and tested uv 0.13.7; see its
-[release receipt](docs/evidence/2026-11-08-0.9.0-release.md). This does not claim
+The latest completed maintenance and candidate-specific review are recorded in
+the [0.11.0 release receipt](docs/evidence/2026-11-17-0.11.0-release.md), including
+both locks, Lizard 1.26.1 requalification and actual uv 0.13.8. This does not claim
 any update PR was merged or all future scan behavior is verified. Preserve the
 two Python baselines, exact locks and adopter-owned schedules. Review remaining
 PR applicability against the current locks; root build-only updater behavior and
-real embedded-host proof remain separate gaps. Plugin/Lizard qualification
-follow-ups retain the receipt's explicit ownership and revisit conditions.
+real embedded-host proof remain separate gaps. Native/plugin qualification
+retains the release receipt's explicit scope limits; do not reopen the completed
+Lizard scoring-contract requalification as an unperformed check.
 
 ## Unscheduled upstream dependencies
 
 ### Cognitive engine integration
 
 Tracked as [issue #1](https://github.com/tvproductions/gz-starter/issues/1),
-without milestone or promised delivery date. Releases 0.7.1 and 0.8.0 retain the
-maintainer's explicit exception. Consumer preparation provides 42 qualification
+without milestone or promised delivery date. The current starter-wide deferral
+applies to this checkout and both adopter lanes: **DEFERRED / measurement UNKNOWN**,
+ceiling 15, conditional acceptance without strict-conformance claims. Consumer
+preparation provides 42 qualification
 fixtures, independent source inventory, provenance and ceiling checks; no real
 engine is installed or qualified.
 
@@ -325,11 +320,13 @@ not depend on that future acceptance. Backplane owns requirements tracking,
 labels, backlog/release monitoring, handoffs and lite/heavy definitions; do not
 duplicate those lifecycles here.
 
-The 0.8.0 receipt assigns November 7 revisit dates to the cognitive/reproducer
-exceptions and Backplane readiness. That review remains due; this documentation
-reconciliation does not renew exceptions or establish upstream availability.
+The current release receipt rechecked component selections and retained the
+cognitive deferral and disabled Backplane. Historical revisit dates do not
+establish availability or readiness; revisit at release preparation and candidate
+delivery, with independent qualification before removing the cognitive deferral.
+This reconciliation neither qualifies an engine nor enables Backplane.
 
-## Python engineering follow-up
+## Python engineering policy follow-up
 
 Delivered: `src/` packaging with uv_build, centralized configuration, locked
 execution, reviewed Ruff selection, ty, unittest and pre-commit; expanded
@@ -338,9 +335,10 @@ execution, reviewed Ruff selection, ty, unittest and pre-commit; expanded
 routine hooks remain Ruff check/format, ty and unittest. Deeper analysis stays
 outside routine hooks and routine CI.
 
-The 0.8.0 receipt records actual C901/Lizard, coverage, Interrogate, Vulture,
-Bandit, dependency audit, deptry and Import Linter results with reviewed findings
-and scope limits. Do not continue describing all of those checks as unperformed.
+The [0.11.0 receipt](docs/evidence/2026-11-17-0.11.0-release.md) records the latest
+candidate's C901/Lizard, coverage, Interrogate, Vulture, Bandit, dependency audit,
+deptry, Import Linter and installed-typing results with findings and scope limits.
+Do not continue describing those completed checks as unperformed.
 Cosmic Ray has bounded runtime/worker controls, not a production mutation score.
 Shared/local analysis-utility ownership remains unresolved; cohesion selection
 and verification remain adopter-owned.

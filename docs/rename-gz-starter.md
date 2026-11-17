@@ -4,8 +4,12 @@ The maintainer selected **gz-starter** as the canonical repository, distribution
 and command name on November 14, 2026, and explicitly authorized executing the
 GitHub/local-folder migration. Display name is **GZ Starter**; **starter** and
 **starter template** remain valid shorthand. This is minor-level work in the
-existing **0.9.0 -> pending 0.10.0** scope, not a second increment per task.
-No release is published by the rename.
+completed **0.9.0 -> 0.10.0** scope, not a second increment per task.
+The rename shipped in [0.10.0](evidence/2026-11-15-0.10.0-release.md);
+the latest published baseline is [0.11.0](evidence/2026-11-17-0.11.0-release.md).
+Starter checkout relocation, desktop binding, environment repair and installed
+aliases are complete. The checkout procedure below is retained as migration
+guidance; it is not pending starter work. Downstream migrations remain explicit.
 
 ## Canonical identities and retained compatibility
 
@@ -13,7 +17,7 @@ No release is published by the rename.
 | --- | --- |
 | GitHub repository | `tvproductions/gz-starter` |
 | Local checkout folder | `gz-starter` under the existing project parent |
-| Python distribution | `gz-starter`, pending 0.10.0 |
+| Python distribution | `gz-starter`, shipped in 0.10.0 |
 | CLI | `gz-starter`; `skills-first-starter` remains an equivalent alias |
 | Python import | `skills_first_starter` is retained for compatibility |
 | Native marketplace identity | `skills-first-starter` is retained to preserve configured plugin IDs and overrides; display name is GZ Starter |
@@ -61,15 +65,16 @@ marketplace/plugin IDs. Keep project overrides and user defaults intact.
 
 Historical `.skills-first/bundle.lock.json` source/version/SHA records describe
 the actual adopted source. Preserve those records as provenance; do not pretend
-the adopter already adopted pending 0.10.0 or rewrite old exact sources merely
+the adopter already adopted 0.10.0 or later, or rewrite old exact sources merely
 to modernize the name. An actual upgrade records its reviewed target and exact
 SHA through the owning workflow. Verify required project behavior and fresh
 native discovery before accepting each migration.
 
-The latest published starter remains **0.9.0**. It uses the old distribution and
-command; select that release with its historical contract until a newer release
-is separately authorized and verified. The new repository name does not publish
-0.10.0, satisfy remaining ADR/trio gates or authorize mass adopter edits.
+Published **0.9.0** retains its old distribution/command contract. Releases
+**0.10.0 and later** use the canonical distribution/command with the compatibility
+interfaces above. Select a verified published version/full SHA through the
+owning update workflow; the completed starter rename and ADR/trio qualification
+do not authorize mass adopter edits or certify an individual adopter's migration.
 
 ## Coordinated companions
 

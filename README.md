@@ -168,7 +168,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The template baseline is [v0.9.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.9.0).
+The published template baseline is [v0.11.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.0).
 Start with the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
 existing-adopter upgrades and explicit acceptance/release requirements.
 Verify a published tag and exact commit before adoption; a metadata value
@@ -191,7 +191,7 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current design-discussion handoff](docs/handoffs/2026-11-14-opinionated-cli-design-discussion.md).
+[the current continuation handoff](docs/handoffs/2026-11-16-application-foundations-design-handoff.md).
 This checkout enables native SP and gz-skills development workflows and exposes
 its own update skill for adopter work. See
 [native development skills](docs/structure.md#native-development-skills) for
@@ -199,10 +199,9 @@ setup, invocation and the boundary against self-adoption.
 
 ## Quick start: an existing or empty project
 
-The canonical repository and pending 0.10.0 distribution/command are
-**gz-starter**. Published 0.9.0 still uses `skills-first-starter`; the published
-quickstart below retains that command. Pending 0.10.0 also retains it as a
-compatibility alias. The Python import `skills_first_starter`, marketplace key
+The canonical repository and distribution/command are **gz-starter**, shipped
+in 0.10.0 and retained in published 0.11.0. The `skills-first-starter` command
+remains a compatibility alias. The Python import `skills_first_starter`, marketplace key
 `skills-first-starter`, `.skills-first/` provenance directory and
 `update-gz-template` skill ID remain stable compatibility surfaces. See the
 [rename migration](docs/rename-gz-starter.md).
@@ -224,11 +223,11 @@ an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
-git clone --branch v0.9.0 https://github.com/tvproductions/gz-starter.git
+git clone --branch v0.11.0 https://github.com/tvproductions/gz-starter.git
 cd gz-starter
-uv run --locked skills-first-starter validate
-uv run --locked skills-first-starter configure --project /path/to/your-project
-uv run --locked skills-first-starter configure --project /path/to/your-project --apply
+uv run --locked gz-starter validate
+uv run --locked gz-starter configure --project /path/to/your-project
+uv run --locked gz-starter configure --project /path/to/your-project --apply
 ```
 
 Select the native host explicitly with `--host codex`, `--host claude` or

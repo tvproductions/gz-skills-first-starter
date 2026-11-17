@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 0.11.1 — November 17, 2026
+
+- Correct stale rename/ADR backlog entries using the published 0.10.0/0.11.0
+  evidence. Distinguish delivered naming/layout guidance and path rejection from
+  deferred Ruff/ty enforcement and adopter migration; retain the other open work.
+  Refresh active release/continuation pointers and rename migration guidance.
+  This is a compatible documentation correction, with no new adoption requirement.
+
+- Refresh candidate-specific official freshness evidence for all 77 registry
+  packages, both Python baselines, components and CI Actions; no selection needs
+  migration. Both exact-lock security audits cover 75 registry packages with no
+  known vulnerabilities or skipped packages. Retain the source-identical deeper
+  analysis and cognitive/native/embedded limits in the
+  [release receipt](docs/evidence/2026-11-17-0.11.1-release.md).
+
 ## 0.11.0 — November 17, 2026
 
 - Complete release analysis: reduce the reference loader's cyclomatic complexity

@@ -9,7 +9,15 @@ and independent-review corrections are complete. The maintainer requested Git
 sync and release publication on November 17. The
 [0.11.0 receipt](evidence/2026-11-17-0.11.0-release.md) records release acceptance,
 retained limits and verified exact-source CI, annotated tag and GitHub publication.
-Version mirrors agree with the current release; no subsequent target is selected.
+The maintainer subsequently requested correction of stale completed-work backlog
+entries. Published baseline **0.11.0 -> pending 0.11.1 / patch** is selected for
+that compatible documentation correction; see the
+[bounded roadmap scope](../ROADMAP.md#selected-0111-scope--roadmap-reconciliation-november-17-2026).
+Version mirrors agree with that target. The maintainer explicitly requested
+“commit, push, publish”; complete ordinary main synchronization, exact-source CI
+and immutable tag/GitHub publication as recorded in the
+[0.11.1 receipt](evidence/2026-11-17-0.11.1-release.md). Publication is not yet
+observed. No next feature release is selected.
 A version string alone is not publication evidence. The initial release was 0.1.0.
 
 The following development narrative records the preceding 0.10.0 work; its

@@ -1,7 +1,7 @@
 # Fresh handoff after 0.10.0 publication — November 15, 2026
 
 Current continuation: [fresh foundations design handoff, November 16](2026-11-16-application-foundations-design-handoff.md).
-Use its pending-approval disposition; the checkpoints below remain history.
+Use its latest continuation status; the checkpoints below remain history.
 
 ## Foundations design continuation — November 16, 2026
 

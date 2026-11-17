@@ -1,6 +1,39 @@
 # Application foundations — fresh design handoff, November 16, 2026
 
-## Continuation: design approval
+## Continuation: roadmap reconciliation
+
+**November 17 roadmap reconciliation:** the maintainer requested correction of
+obsolete rename/ADR backlog entries. The roadmap now records their completed
+0.10.0 delivery and the 0.11.0 guidance/path-rejection delivery, preserving the
+remaining Ruff/ty enforcement, real-adopter, upgrade/rollback, native/platform,
+acceptance-reporting and management-record work. Rename guidance and active
+README continuation/release pointers are reconciled. Historical release and
+approval records retain their identities; do not reopen their completed gates.
+
+Published baseline **0.11.0 -> 0.11.1 / patch**, governed solely by this compatible
+documentation correction. The maintainer subsequently requested “commit, push,
+publish”. This authorizes ordinary main sync and 0.11.1 publication after the
+required gates; it supersedes the earlier uncommitted/unpublished disposition.
+No new feature or architecture is selected. Resume with exact-source CI and
+immutable publication verification, then the next explicitly selected work.
+
+Verification on uv **0.13.8** / managed CPython **3.14.10**: reviewed the complete
+diff against both release receipts and the exact ADR-combination evidence;
+all **153** local references/anchors in the six changed Markdown files resolve.
+`uv run --locked pre-commit run --all-files` passes all four hooks;
+`uv run --locked gz-starter validate`, resource drift and offline lock checks pass.
+`uv build --no-sources` and `uv run --locked python tools/verify_distribution.py`
+pass for 0.11.1, including isolated installed CLI checks. Bundle, pyproject, local
+lock entry, runtime output and generated bundle copy agree on **0.11.1**; the
+lock diff changes only this project's version. No dependency/component selection
+changed. The final evidence-only prose updates reuse these passes under the
+verification policy. No new behavioral test or analyzer/platform replay is
+needed; existing release limits remain. The
+[0.11.1 release receipt](../evidence/2026-11-17-0.11.1-release.md) adds fresh
+official registry/runtime/component/Action checks and clean exact-lock security
+audits for this candidate. Preserve normal hooks; verify local/remote alignment
+and CI for the actual pushed SHA before tagging. Record observed publication
+identities once, without a CI-receipt-only commit chain.
 
 **Published November 17:** [GZ Starter 0.11.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.0),
 source ccac3b5e1ac03f2cf5642d7766aed6e68001997c, annotated tag object
@@ -9,8 +42,8 @@ passed both jobs before tagging. The downloaded tagged source matches all 212
 files of local git archive. The release receipt records observed identities and
 retained conditional engineering limits.
 
-Resume from released 0.11.0 with the next explicitly selected work; no new release
-scope/target is selected. Design edition 3, ADR-0002 edition 2, implementation,
+The completed release is the baseline for the documentation correction above;
+no next feature scope is selected. Design edition 3, ADR-0002 edition 2, implementation,
 maintenance, scoped acceptance and publication are complete. Do not request
 those approvals again or reopen completed plan tasks. Cognitive qualification
 remains DEFERRED / measurement UNKNOWN; documented native/embedded and broader
@@ -18,7 +51,9 @@ interface limits remain. This publication record supersedes earlier checkpoint
 statements below. The final documentation follow-up is synchronized ordinarily,
 with its own exact-commit CI observed; do not add a receipt-only commit chain.
 
-Current November 17 release checkpoint: the maintainer requested “git sync and
+### Historical execution checkpoints — superseded by publication above
+
+November 17 release checkpoint: the maintainer requested “git sync and
 do release”. The 0.11.0 release scope and version are reconciled, official
 freshness/deeper analysis/typing evidence is complete, and the independent
 release-delta review found no material defects. See the
