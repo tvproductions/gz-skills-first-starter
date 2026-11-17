@@ -2,6 +2,19 @@
 
 ## Continuation: roadmap reconciliation
 
+**0.11.1 is published and verified**, source
+`041c1989406c1b9c4978042661c2dd38ff1db160`, annotated tag object
+`1aa29e6fe24214a7ce85073fc599da84169cea82`. Both jobs passed in
+[exact-release-source CI](https://github.com/tvproductions/gz-starter/actions/runs/44054657062);
+downloaded tagged source matches all 216 Git entries, including both symlinks.
+The [release receipt](../evidence/2026-11-17-0.11.1-release.md) records publication,
+freshness/security checks, preserved limits and recovery from the initial
+email-privacy push rejection using only an unpublished-commit identity correction.
+Resume from released 0.11.1 with the next explicitly selected work. No pending
+release target or new feature is selected; do not reopen completed release gates.
+This publication-result follow-up is synchronized ordinarily and its exact CI
+is observed in the sync response; do not add a receipt-only commit chain.
+
 **November 17 roadmap reconciliation:** the maintainer requested correction of
 obsolete rename/ADR backlog entries. The roadmap now records their completed
 0.10.0 delivery and the 0.11.0 guidance/path-rejection delivery, preserving the
@@ -14,8 +27,8 @@ Published baseline **0.11.0 -> 0.11.1 / patch**, governed solely by this compati
 documentation correction. The maintainer subsequently requested “commit, push,
 publish”. This authorizes ordinary main sync and 0.11.1 publication after the
 required gates; it supersedes the earlier uncommitted/unpublished disposition.
-No new feature or architecture is selected. Resume with exact-source CI and
-immutable publication verification, then the next explicitly selected work.
+No new feature or architecture is selected. Exact-source CI and immutable
+publication verification are complete as recorded above.
 
 Verification on uv **0.13.8** / managed CPython **3.14.10**: reviewed the complete
 diff against both release receipts and the exact ADR-combination evidence;
@@ -31,9 +44,9 @@ verification policy. No new behavioral test or analyzer/platform replay is
 needed; existing release limits remain. The
 [0.11.1 release receipt](../evidence/2026-11-17-0.11.1-release.md) adds fresh
 official registry/runtime/component/Action checks and clean exact-lock security
-audits for this candidate. Preserve normal hooks; verify local/remote alignment
-and CI for the actual pushed SHA before tagging. Record observed publication
-identities once, without a CI-receipt-only commit chain.
+audits for this candidate. Normal hooks remained enabled; local/remote release
+alignment and exact-source CI were verified before tagging. Publication identities
+are recorded above; verify this follow-up's CI without another receipt-only commit.
 
 **Published November 17:** [GZ Starter 0.11.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.0),
 source ccac3b5e1ac03f2cf5642d7766aed6e68001997c, annotated tag object

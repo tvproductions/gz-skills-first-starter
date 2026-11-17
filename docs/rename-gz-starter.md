@@ -6,7 +6,7 @@ GitHub/local-folder migration. Display name is **GZ Starter**; **starter** and
 **starter template** remain valid shorthand. This is minor-level work in the
 completed **0.9.0 -> 0.10.0** scope, not a second increment per task.
 The rename shipped in [0.10.0](evidence/2026-11-15-0.10.0-release.md);
-the latest published baseline is [0.11.0](evidence/2026-11-17-0.11.0-release.md).
+the latest published baseline is [0.11.1](evidence/2026-11-17-0.11.1-release.md).
 Starter checkout relocation, desktop binding, environment repair and installed
 aliases are complete. The checkout procedure below is retained as migration
 guidance; it is not pending starter work. Downstream migrations remain explicit.

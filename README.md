@@ -1,5 +1,9 @@
 # GZ Starter
 
+Release **0.11.1** reconciles the [roadmap](ROADMAP.md) and active release/
+continuation guidance after the completed rename, ADR and foundations releases.
+It adds no adoption requirement or runtime behavior.
+
 Release 0.11.0 adds [application foundations](docs/engineering/application-foundations.md),
 the [runtime configuration contract](docs/project-configuration.md), reconciled
 [naming/layout guidance](docs/engineering/naming-and-layout.md), and an
@@ -168,7 +172,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The published template baseline is [v0.11.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.0).
+The published template baseline is [v0.11.1](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.1).
 Start with the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
 existing-adopter upgrades and explicit acceptance/release requirements.
 Verify a published tag and exact commit before adoption; a metadata value
@@ -200,7 +204,7 @@ setup, invocation and the boundary against self-adoption.
 ## Quick start: an existing or empty project
 
 The canonical repository and distribution/command are **gz-starter**, shipped
-in 0.10.0 and retained in published 0.11.0. The `skills-first-starter` command
+in 0.10.0 and retained in published 0.11.1. The `skills-first-starter` command
 remains a compatibility alias. The Python import `skills_first_starter`, marketplace key
 `skills-first-starter`, `.skills-first/` provenance directory and
 `update-gz-template` skill ID remain stable compatibility surfaces. See the
@@ -223,7 +227,7 @@ an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
-git clone --branch v0.11.0 https://github.com/tvproductions/gz-starter.git
+git clone --branch v0.11.1 https://github.com/tvproductions/gz-starter.git
 cd gz-starter
 uv run --locked gz-starter validate
 uv run --locked gz-starter configure --project /path/to/your-project

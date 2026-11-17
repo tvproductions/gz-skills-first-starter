@@ -1,6 +1,15 @@
 # Template versioning
 
-Current status, November 17, 2026: published **0.11.0** at immutable source
+Current status, November 17, 2026: published **0.11.1** at immutable source
+`041c1989406c1b9c4978042661c2dd38ff1db160` advances **0.11.0** by a compatible
+documentation patch for the bounded
+[roadmap reconciliation](../ROADMAP.md#selected-0111-scope--roadmap-reconciliation-november-17-2026).
+Version mirrors agree; no subsequent target or feature release is selected.
+The [0.11.1 receipt](evidence/2026-11-17-0.11.1-release.md) records refreshed
+freshness/security evidence, retained conditional engineering limits and verified
+exact-source CI, annotated tag, GitHub release and tagged-source contents.
+
+Previously published **0.11.0** at immutable source
 `ccac3b5e1ac03f2cf5642d7766aed6e68001997c` advances **0.10.0**
 (`6b236d87f301f689edae6934dabee9495df726d4`) by a minor release for the finite application-foundations/house-style
 scope in the [roadmap](../ROADMAP.md#selected-0110-scope--application-foundations-november-16-2026).
@@ -10,14 +19,9 @@ sync and release publication on November 17. The
 [0.11.0 receipt](evidence/2026-11-17-0.11.0-release.md) records release acceptance,
 retained limits and verified exact-source CI, annotated tag and GitHub publication.
 The maintainer subsequently requested correction of stale completed-work backlog
-entries. Published baseline **0.11.0 -> pending 0.11.1 / patch** is selected for
-that compatible documentation correction; see the
-[bounded roadmap scope](../ROADMAP.md#selected-0111-scope--roadmap-reconciliation-november-17-2026).
-Version mirrors agree with that target. The maintainer explicitly requested
-“commit, push, publish”; complete ordinary main synchronization, exact-source CI
-and immutable tag/GitHub publication as recorded in the
-[0.11.1 receipt](evidence/2026-11-17-0.11.1-release.md). Publication is not yet
-observed. No next feature release is selected.
+entries, then explicitly requested “commit, push, publish”. That completed patch
+is the current 0.11.1 release above; it adds no adoption requirement or runtime
+behavior. Preserve both immutable releases and their distinct acceptance evidence.
 A version string alone is not publication evidence. The initial release was 0.1.0.
 
 The following development narrative records the preceding 0.10.0 work; its

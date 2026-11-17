@@ -2,8 +2,14 @@
 
 ## Selected 0.11.1 scope — roadmap reconciliation, November 17, 2026
 
-Published baseline: **0.11.0**, immutable tag source
-`ccac3b5e1ac03f2cf5642d7766aed6e68001997c`. Pending target: **0.11.1 / patch**.
+**Published November 17:** [0.11.1](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.1),
+source `041c1989406c1b9c4978042661c2dd38ff1db160`. Both exact-source CI jobs,
+annotated remote tag and downloaded tagged-source contents are verified in the
+[release receipt](docs/evidence/2026-11-17-0.11.1-release.md). No subsequent
+release scope/target is selected.
+
+Previous published baseline: **0.11.0**, immutable tag source
+`ccac3b5e1ac03f2cf5642d7766aed6e68001997c`. Released target: **0.11.1 / patch**.
 Governing correction: the maintainer requested reconciliation of obsolete
 rename/ADR backlog entries after their verified publication. Correct the active
 roadmap and continuation pointers without changing the released adoption contract.
@@ -21,11 +27,11 @@ build and isolated installed-artifact verification. Included implementation work
 remaining: **none**. The maintainer subsequently requested “commit, push,
 publish”. Candidate-specific freshness/security evidence is refreshed; unchanged
 source analysis is retained in the [release receipt](docs/evidence/2026-11-17-0.11.1-release.md).
-Complete ordinary sync, exact-commit CI and immutable tag/release verification.
+Ordinary sync, exact-commit CI and immutable tag/release verification completed.
 
 Deferred/excluded: all implementation in the next-work sections, companion or
 adopter edits and native activation. Compatibility: prose correction only; no
-adopter migration is required. Publication: **authorized, not yet observed**;
+adopter migration is required. Publication: **verified**;
 no unresolved product decision. No next feature release scope is selected.
 
 ## Selected 0.11.0 scope — application foundations, November 16, 2026
@@ -280,9 +286,10 @@ Backplane's lifecycle ownership.
 The November 7 hosted scans and real update-PR generation passed after the
 minimum-only uv correction; the historical failure and recovery evidence is in
 the [completed receipt](docs/evidence/2026-11-07-dependabot-uv-compatibility.md#hosted-verification-completed--november-7).
-The latest completed maintenance and candidate-specific review are recorded in
-the [0.11.0 release receipt](docs/evidence/2026-11-17-0.11.0-release.md), including
-both locks, Lizard 1.26.1 requalification and actual uv 0.13.8. This does not claim
+The [0.11.1 release receipt](docs/evidence/2026-11-17-0.11.1-release.md) refreshes
+candidate-specific freshness/security evidence and retains the same-day 0.11.0
+maintenance/analysis, including both locks, Lizard 1.26.1 requalification and
+actual uv 0.13.8. This does not claim
 any update PR was merged or all future scan behavior is verified. Preserve the
 two Python baselines, exact locks and adopter-owned schedules. Review remaining
 PR applicability against the current locks; root build-only updater behavior and
