@@ -23,6 +23,15 @@ main commit/push and exact-commit CI observation for the reviewed session scope.
 It authorizes no implementation, adopter write, new dependency migration, native
 installation/activation, companion change, tag or release publication.
 
+## GitHub operations preference
+
+Maintainer direction, November 17: **both the starter and adopters MUST STRONGLY
+PREFER the GitHub CLI (`gh`) for ALL GitHub operations**. Use direct `gh`
+commands, including `gh api` where needed, for GitHub service operations and
+automation. Keep direct `git` for repository operations such as commits, fetches
+and pushes. Carry this preference into starter/adopter instructions and supported
+CI/migration examples during the authorized reconciliation; preserve both lanes.
+
 ## Selected problem and evidence
 
 The maintainer requested a bounded upstream correction to the v0.9.0 adopter
