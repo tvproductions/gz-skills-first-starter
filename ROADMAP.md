@@ -2,6 +2,12 @@
 
 ## Selected 0.11.0 scope — application foundations, November 16, 2026
 
+**Published November 17:** [0.11.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.0),
+source ccac3b5e1ac03f2cf5642d7766aed6e68001997c. Exact-source CI passed both
+jobs; the annotated remote tag and downloaded source are verified in the release
+receipt. The baseline/target accounting below describes this completed increment;
+no subsequent release scope is selected.
+
 Published baseline: **0.10.0**, immutable release source
 `6b236d87f301f689edae6934dabee9495df726d4`. Pending target: **0.11.0 / minor**,
 governed by the maintainer's foundations/house-style design request and
@@ -43,8 +49,9 @@ November 17: the maintainer explicitly requested Git synchronization and release
 Release-specific freshness, deeper analyses, installed typing and the bounded
 release-delta review are complete; see the
 [0.11.0 acceptance receipt](docs/evidence/2026-11-17-0.11.0-release.md).
-Remaining: synchronize the reviewed source, observe its exact-commit CI, then
-create/verify the annotated tag and GitHub release. Cognitive measurement remains
+Completed: synchronized source, exact-commit CI and verified annotated tag/
+GitHub release. No included implementation or publication gate remains.
+Cognitive measurement remains
 deferred/UNKNOWN under the standing policy.
 
 Compatibility: new guidance/default configuration responsibilities require

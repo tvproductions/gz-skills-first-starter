@@ -2,6 +2,22 @@
 
 ## Continuation: design approval
 
+**Published November 17:** [GZ Starter 0.11.0](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.0),
+source ccac3b5e1ac03f2cf5642d7766aed6e68001997c, annotated tag object
+7040c90aa86feecf5cd2367d81cd41fe9f69d697. Exact-source CI run 44050428855
+passed both jobs before tagging. The downloaded tagged source matches all 212
+files of local git archive. The release receipt records observed identities and
+retained conditional engineering limits.
+
+Resume from released 0.11.0 with the next explicitly selected work; no new release
+scope/target is selected. Design edition 3, ADR-0002 edition 2, implementation,
+maintenance, scoped acceptance and publication are complete. Do not request
+those approvals again or reopen completed plan tasks. Cognitive qualification
+remains DEFERRED / measurement UNKNOWN; documented native/embedded and broader
+interface limits remain. This publication record supersedes earlier checkpoint
+statements below. The final documentation follow-up is synchronized ordinarily,
+with its own exact-commit CI observed; do not add a receipt-only commit chain.
+
 Current November 17 release checkpoint: the maintainer requested “git sync and
 do release”. The 0.11.0 release scope and version are reconciled, official
 freshness/deeper analysis/typing evidence is complete, and the independent

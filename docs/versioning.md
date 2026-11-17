@@ -1,15 +1,16 @@
 # Template versioning
 
-Release preparation, November 17, 2026: the published baseline is **0.10.0** at
-`6b236d87f301f689edae6934dabee9495df726d4`; the selected pending target is
-**0.11.0 / minor**, for the finite application-foundations/house-style design
+Current status, November 17, 2026: published **0.11.0** at immutable source
+`ccac3b5e1ac03f2cf5642d7766aed6e68001997c` advances **0.10.0**
+(`6b236d87f301f689edae6934dabee9495df726d4`) by a minor release for the finite application-foundations/house-style
 scope in the [roadmap](../ROADMAP.md#selected-0110-scope--application-foundations-november-16-2026).
 Design edition 3 and ADR-0002 edition 2 are explicitly approved; implementation
 and independent-review corrections are complete. The maintainer requested Git
 sync and release publication on November 17. The
 [0.11.0 receipt](evidence/2026-11-17-0.11.0-release.md) records release acceptance,
-retained limits and exact-source CI/publication checks. Version mirrors agree;
-a version string alone is not publication evidence. The initial release was 0.1.0.
+retained limits and verified exact-source CI, annotated tag and GitHub publication.
+Version mirrors agree with the current release; no subsequent target is selected.
+A version string alone is not publication evidence. The initial release was 0.1.0.
 
 The following development narrative records the preceding 0.10.0 work; its
 unpublished/next-target statements are historical and superseded by the current
