@@ -195,7 +195,7 @@ are references to independently maintained workflows; the starter installs no
 routing skill or engineering catalog.
 
 For starter development or a fresh-chat continuation, read
-[the current continuation handoff](docs/handoffs/2026-11-17-post-release-handoff.md).
+[the current continuation handoff](docs/handoffs/2026-11-17-bootstrap-verification-handoff.md).
 This checkout enables native SP and gz-skills development workflows and exposes
 its own update skill for adopter work. See
 [native development skills](docs/structure.md#native-development-skills) for
@@ -214,7 +214,7 @@ Requires uv >=0.13.5, Python 3.14, Git, and Codex with plugin support. GitHub CL
 for checking upstream releases; Backplane's GitHub workflows remain deferred. No Python dependencies are needed for this tool.
 
 uv uses a minimum-only compatibility requirement; local and hosted versions
-need not match CI's tested 0.13.8. See the
+need not match CI's selected 0.13.9. See the
 [uv policy](docs/baseline-policy.md#uv-executable-compatibility).
 
 Baseline tools use their latest stable release across tool families, with exact

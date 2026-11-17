@@ -1,12 +1,86 @@
 # Roadmap
 
+## Selected correction — pre-implementation verification, November 17, 2026
+
+The maintainer selected correction of the v0.9.0 adopter bootstrap deadlock:
+authoritative pre-runtime verification, a supported executable hook/CI path,
+automatic real-test requirements when implementation/tooling appears, concrete
+existing-adopter migration and actual Windows/macOS evidence without Node.
+Preserve genuine discovery/coverage failures and separate runtime-design approval.
+
+Diagnosis reproduced: managed Python 3.14.10 exits 5 for empty discovery in an
+invented documentation/configuration-only checkout. The runbook permits this
+stage, but the worked hook runs discovery unconditionally. The
+[design edition 2](docs/superpowers/specs/2026-11-17-bootstrap-verification-design.md)
+and [ADR-0003 edition 1](docs/decisions/ADR-0003-001-own-bootstrap-verification-in-the-starter.md)
+are **drafts awaiting separate approvals**; no dependent implementation exists.
+The proposal adds an installed development verification command/extra with owning
+tests and reviewed migration, rather than an allow-empty mode or copied helper.
+The maintainer endorsed that delivery direction and emphasized the starter's
+existing and new owning tests. Preserve producer qualification, adopter artifact
+validation and adopter behavior/coverage as distinct obligations. This review
+direction does not approve the complete design or separately identified ADR.
+Resume from the [current handoff](docs/handoffs/2026-11-17-bootstrap-verification-handoff.md),
+including the still-open transition-rule review and actual platform gates.
+
+Version decision at intake: published **0.11.1** -> proposed **0.12.0 / minor**
+for the new supported command/dependency/adoption interface. Fold the already
+completed uncommitted tool maintenance below into that bounded minor if the
+design is approved. Development metadata still records its **0.11.2** checkpoint;
+planning acceptance MUST reconcile all mirrors after design approval, before
+implementation/closeout. No completed version reconciliation is claimed yet.
+
+Completed: read-only consumer diagnosis, negative reproduction and reviewable
+design/ADR drafts. Remaining: separate approvals, implementation plan, helper/
+consumer regression tests, policy/examples/migration reconciliation, installed
+proof and actual Windows/macOS execution. Excluded: consumer runtime/adopter
+writes, native activation, companion changes, unrelated backlog, Git sync and
+publication. Existing cognitive/native/embedded limits remain explicit.
+The subsequent “write handoff and git sync” request authorizes saving this
+review/maintenance checkpoint on main; it grants no design/ADR approval,
+dependent implementation or publication authority.
+
+## Selected 0.11.2 scope — post-release dependency maintenance, November 17, 2026
+
+Published baseline: **0.11.1**, immutable source
+`041c1989406c1b9c4978042661c2dd38ff1db160`. Pending target: **0.11.2 / patch**.
+Governing work: the maintainer's explicit `gzs-update-dependencies` invocation
+after the clean post-release sync at `0667b3347bfc98cd26179fdc41f820ce67d2a2d2`.
+Restore the existing latest-stable tooling commitment after new same-day releases;
+introduce no new capability, adoption obligation or architectural choice.
+
+Included: live inventory of both Python baselines, all registry dependencies,
+uv/backend, example build backend, Actions, components and native source bindings;
+migrate uv/uv_build 0.13.8 -> 0.13.9 and ty 0.0.104 -> 0.0.105; reconcile locks,
+CI/reference guidance, version mirrors and packaged bundle. Acceptance requires
+stable repeat resolution, exact-environment sync, empty outdated results,
+security audits, the full repository gate and affected ty/backend controls.
+Record actual results and remaining gates in the
+[maintenance receipt](docs/evidence/2026-11-17-post-release-maintenance.md).
+
+Completed locally: all three tool selections, both locked environments,
+byte-stable repeat resolution, empty outdated results, 75-package security
+audits per baseline with zero known vulnerabilities/skips, all four routine
+hooks, catalog/resource/version checks, source-independent build and clean
+installed CLI/example typing/preservation checks. Included source/environment
+work remaining: **none**. Existing native caches differ from the selected
+versions; no current native-stack/discovery claim follows. Exact-candidate hosted
+CI and release preparation remain future gates; no push or publication is selected.
+
+Compatibility: execution-pin refresh only; preserve public behavior and uv's
+>=0.13.5 caller minimum. No runtime-family migration or new ADR is needed.
+Excluded/deferred: native installation/activation, companion/adopter changes,
+the broader draft naming-rule patch and all existing roadmap work. Cognitive
+DEFERRED / measurement UNKNOWN and native/embedded limits remain explicit.
+Commit, push and release publication are not selected by this maintenance request.
+
 ## Selected 0.11.1 scope — roadmap reconciliation, November 17, 2026
 
 **Published November 17:** [0.11.1](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.1),
 source `041c1989406c1b9c4978042661c2dd38ff1db160`. Both exact-source CI jobs,
 annotated remote tag and downloaded tagged-source contents are verified in the
-[release receipt](docs/evidence/2026-11-17-0.11.1-release.md). No subsequent
-release scope/target is selected.
+[release receipt](docs/evidence/2026-11-17-0.11.1-release.md). The subsequent
+maintenance target is recorded above; this section preserves the released scope.
 
 Previous published baseline: **0.11.0**, immutable tag source
 `ccac3b5e1ac03f2cf5642d7766aed6e68001997c`. Released target: **0.11.1 / patch**.
@@ -144,7 +218,7 @@ in their dated handoffs; they do not reopen completed release gates.
 
 See the [0.9.0 release receipt](docs/evidence/2026-11-08-0.9.0-release.md),
 [three-host receipt](docs/evidence/2026-10-31-three-host-repo-scope.md),
-[changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-11-17-post-release-handoff.md).
+[changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-11-17-bootstrap-verification-handoff.md).
 Historical receipts establish their stated inputs and scope, not current
 universal acceptance.
 

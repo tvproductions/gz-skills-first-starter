@@ -47,7 +47,7 @@ and verification; do not generalize one target's proof to all product types.
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-11-17-post-release-handoff.md`; begin with its
+`docs/handoffs/2026-11-17-bootstrap-verification-handoff.md`; begin with its
 resume point and remaining gates, and recheck live state before work.
 The earlier ADR-practice save point remains linked there as implementation history.
 
@@ -178,7 +178,7 @@ exact package pins/locks after verification; review tool-family compatibility
 within the authorized migration, preserving the explicit Python-family policy.
 For the uv executable, declare a minimum supported version without an upper
 bound instead of an exact requirement. This checkout accepts uv >=0.13.5;
-CI's 0.13.8 is a tested reference, not an exclusive caller requirement. Permit
+CI selects 0.13.9 as a reference, not an exclusive caller requirement. Permit
 newer uv releases without a version-only blocker, record actual provenance and
 verify affected behavior. Keep locked execution, Python pins and package/backend
 locks separate from uv executable compatibility. A supported older uv is not a

@@ -1,6 +1,29 @@
 # Fresh handoff after 0.11.1 publication — November 17, 2026
 
+Current continuation: [bootstrap-verification review handoff](2026-11-17-bootstrap-verification-handoff.md).
+The checkpoints below preserve the earlier post-release/maintenance and initial
+design-intake history; use the newer handoff for current review/approval state.
+
 ## Resume point
+
+Latest selected work: correct the pre-implementation verification deadlock,
+as recorded in the [roadmap](../../ROADMAP.md#selected-correction--pre-implementation-verification-november-17-2026).
+The [initial design edition 1](../superpowers/specs/2026-11-17-bootstrap-verification-design-edition-1.md)
+and [ADR-0003 edition 1](../decisions/ADR-0003-001-own-bootstrap-verification-in-the-starter.md)
+are draft proposals, not approval or implementation. Preserve the completed
+maintenance below. Resolve the separate design/ADR approvals before dependent
+implementation; the proposed combined 0.12.0 minor still needs mirror reconciliation.
+Consumer runtime design approval remains separate and its repository is untouched.
+
+Subsequent authorized work: the maintainer invoked `gzs-update-dependencies`
+after sync verification of clean main `0667b3347bfc98cd26179fdc41f820ce67d2a2d2`.
+The [post-release maintenance receipt](../evidence/2026-11-17-post-release-maintenance.md)
+records that update pass and its actual results. Pending **0.11.2 / patch** over
+published 0.11.1 is limited to compatible uv/backend and ty maintenance; the
+[roadmap](../../ROADMAP.md#selected-0112-scope--post-release-dependency-maintenance-november-17-2026)
+owns the finite scope. No subsequent publication or native installation is
+authorized. The completed-release record below preserves the previous checkpoint;
+its no-next-target statements describe that earlier sync, not the new maintenance.
 
 **The requested 0.11.1 release and roadmap reconciliation are complete.** The
 maintainer then requested “create handoff and git sync”. This handoff records

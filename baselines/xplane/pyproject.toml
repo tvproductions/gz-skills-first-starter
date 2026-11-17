@@ -15,9 +15,9 @@ python-preference = "only-managed"
 [dependency-groups]
 dev = [
     "ruff==0.17.5",
-    "ty==0.0.104",
+    "ty==0.0.105",
     "pre-commit==4.7.0",
-    "uv_build==0.13.8",
+    "uv_build==0.13.9",
 ]
 hygiene = [
     "bandit==1.9.4",

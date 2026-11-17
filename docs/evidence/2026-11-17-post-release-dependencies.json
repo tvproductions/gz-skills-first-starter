@@ -1,0 +1,1959 @@
+{
+  "checked_at_utc": "2026-11-17T13:21:42.399623+00:00",
+  "mode": "update; completed source/environment migration; native cache drift reported separately",
+  "packages": [
+    {
+      "name": "aiohappyeyeballs",
+      "selected_before": [
+        "2.7.1"
+      ],
+      "latest_stable": "2.7.1",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "2.7.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/aiohappyeyeballs/json",
+      "selected_after": [
+        "2.7.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "aiohttp",
+      "selected_before": [
+        "3.14.5"
+      ],
+      "latest_stable": "3.14.5",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "3.14.5": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/aiohttp/json",
+      "selected_after": [
+        "3.14.5"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "aiosignal",
+      "selected_before": [
+        "1.4.0"
+      ],
+      "latest_stable": "1.4.0",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "1.4.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/aiosignal/json",
+      "selected_after": [
+        "1.4.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "anybadge",
+      "selected_before": [
+        "1.18.0"
+      ],
+      "latest_stable": "1.18.0",
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "selected_yanked": {
+        "1.18.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/anybadge/json",
+      "selected_after": [
+        "1.18.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "attrs",
+      "selected_before": [
+        "26.1.0"
+      ],
+      "latest_stable": "26.1.0",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "26.1.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/attrs/json",
+      "selected_after": [
+        "26.1.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "bandit",
+      "selected_before": [
+        "1.9.4"
+      ],
+      "latest_stable": "1.9.4",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "1.9.4": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/bandit/json",
+      "selected_after": [
+        "1.9.4"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "boolean-py",
+      "selected_before": [
+        "5.0"
+      ],
+      "latest_stable": "5.0",
+      "latest_requires_python": [
+        ""
+      ],
+      "selected_yanked": {
+        "5.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/boolean-py/json",
+      "selected_after": [
+        "5.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "cachecontrol",
+      "selected_before": [
+        "0.15.0"
+      ],
+      "latest_stable": "0.15.0",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "0.15.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/cachecontrol/json",
+      "selected_after": [
+        "0.15.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "certifi",
+      "selected_before": [
+        "2026.10.23"
+      ],
+      "latest_stable": "2026.10.23",
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "selected_yanked": {
+        "2026.10.23": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/certifi/json",
+      "selected_after": [
+        "2026.10.23"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "cfgv",
+      "selected_before": [
+        "3.5.0"
+      ],
+      "latest_stable": "3.5.0",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "3.5.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/cfgv/json",
+      "selected_after": [
+        "3.5.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "charset-normalizer",
+      "selected_before": [
+        "3.5.2"
+      ],
+      "latest_stable": "3.5.2",
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "selected_yanked": {
+        "3.5.2": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/charset-normalizer/json",
+      "selected_after": [
+        "3.5.2"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "click",
+      "selected_before": [
+        "8.5.1"
+      ],
+      "latest_stable": "8.5.1",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "8.5.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/click/json",
+      "selected_after": [
+        "8.5.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "colorama",
+      "selected_before": [
+        "0.4.6"
+      ],
+      "latest_stable": "0.4.6",
+      "latest_requires_python": [
+        "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
+      ],
+      "selected_yanked": {
+        "0.4.6": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/colorama/json",
+      "selected_after": [
+        "0.4.6"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "complexipy",
+      "selected_before": [
+        "9.0.0"
+      ],
+      "latest_stable": "9.0.0",
+      "latest_requires_python": [
+        "<3.16,>=3.8"
+      ],
+      "selected_yanked": {
+        "9.0.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/complexipy/json",
+      "selected_after": [
+        "9.0.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "cosmic-ray",
+      "selected_before": [
+        "8.9.0"
+      ],
+      "latest_stable": "8.9.0",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "8.9.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/cosmic-ray/json",
+      "selected_after": [
+        "8.9.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "coverage",
+      "selected_before": [
+        "7.17.3"
+      ],
+      "latest_stable": "7.17.3",
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "selected_yanked": {
+        "7.17.3": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/coverage/json",
+      "selected_after": [
+        "7.17.3"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "cyclonedx-python-lib",
+      "selected_before": [
+        "11.12.0"
+      ],
+      "latest_stable": "11.12.0",
+      "latest_requires_python": [
+        "<4.0,>=3.9"
+      ],
+      "selected_yanked": {
+        "11.12.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/cyclonedx-python-lib/json",
+      "selected_after": [
+        "11.12.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "decorator",
+      "selected_before": [
+        "5.3.1"
+      ],
+      "latest_stable": "5.3.1",
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "selected_yanked": {
+        "5.3.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/decorator/json",
+      "selected_after": [
+        "5.3.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "defusedxml",
+      "selected_before": [
+        "0.7.1"
+      ],
+      "latest_stable": "0.7.1",
+      "latest_requires_python": [
+        ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+      ],
+      "selected_yanked": {
+        "0.7.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/defusedxml/json",
+      "selected_after": [
+        "0.7.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "deptry",
+      "selected_before": [
+        "0.25.1"
+      ],
+      "latest_stable": "0.25.1",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "0.25.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/deptry/json",
+      "selected_after": [
+        "0.25.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "detect-secrets",
+      "selected_before": [
+        "1.5.0"
+      ],
+      "latest_stable": "1.5.0",
+      "latest_requires_python": [
+        ""
+      ],
+      "selected_yanked": {
+        "1.5.0": false
+      },
+      "locations": [
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/detect-secrets/json",
+      "selected_after": [
+        "1.5.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "distlib",
+      "selected_before": [
+        "0.4.4"
+      ],
+      "latest_stable": "0.4.4",
+      "latest_requires_python": [
+        ""
+      ],
+      "selected_yanked": {
+        "0.4.4": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/distlib/json",
+      "selected_after": [
+        "0.4.4"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "exit-codes",
+      "selected_before": [
+        "1.3.0"
+      ],
+      "latest_stable": "1.3.0",
+      "latest_requires_python": [
+        ""
+      ],
+      "selected_yanked": {
+        "1.3.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/exit-codes/json",
+      "selected_after": [
+        "1.3.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "filelock",
+      "selected_before": [
+        "4.2.11"
+      ],
+      "latest_stable": "4.2.11",
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "selected_yanked": {
+        "4.2.11": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/filelock/json",
+      "selected_after": [
+        "4.2.11"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "frozenlist",
+      "selected_before": [
+        "1.8.0"
+      ],
+      "latest_stable": "1.8.0",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "1.8.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/frozenlist/json",
+      "selected_after": [
+        "1.8.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "gitdb",
+      "selected_before": [
+        "4.0.12"
+      ],
+      "latest_stable": "4.0.12",
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "selected_yanked": {
+        "4.0.12": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/gitdb/json",
+      "selected_after": [
+        "4.0.12"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "gitpython",
+      "selected_before": [
+        "3.2.1"
+      ],
+      "latest_stable": "3.2.1",
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "selected_yanked": {
+        "3.2.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/gitpython/json",
+      "selected_after": [
+        "3.2.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "grimp",
+      "selected_before": [
+        "3.20"
+      ],
+      "latest_stable": "3.20",
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "selected_yanked": {
+        "3.20": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/grimp/json",
+      "selected_after": [
+        "3.20"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "identify",
+      "selected_before": [
+        "2.6.20"
+      ],
+      "latest_stable": "2.6.20",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "2.6.20": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/identify/json",
+      "selected_after": [
+        "2.6.20"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "idna",
+      "selected_before": [
+        "3.20"
+      ],
+      "latest_stable": "3.20",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "3.20": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/idna/json",
+      "selected_after": [
+        "3.20"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "import-linter",
+      "selected_before": [
+        "2.16"
+      ],
+      "latest_stable": "2.16",
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "selected_yanked": {
+        "2.16": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/import-linter/json",
+      "selected_after": [
+        "2.16"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "interrogate",
+      "selected_before": [
+        "1.7.0"
+      ],
+      "latest_stable": "1.7.0",
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "selected_yanked": {
+        "1.7.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/interrogate/json",
+      "selected_after": [
+        "1.7.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "license-expression",
+      "selected_before": [
+        "30.4.4"
+      ],
+      "latest_stable": "30.4.4",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "30.4.4": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/license-expression/json",
+      "selected_after": [
+        "30.4.4"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "lizard",
+      "selected_before": [
+        "1.26.1"
+      ],
+      "latest_stable": "1.26.1",
+      "latest_requires_python": [
+        ""
+      ],
+      "selected_yanked": {
+        "1.26.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/lizard/json",
+      "selected_after": [
+        "1.26.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "markdown-it-py",
+      "selected_before": [
+        "4.3.0"
+      ],
+      "latest_stable": "4.3.0",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "4.3.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/markdown-it-py/json",
+      "selected_after": [
+        "4.3.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "mdurl",
+      "selected_before": [
+        "0.1.2"
+      ],
+      "latest_stable": "0.1.2",
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "selected_yanked": {
+        "0.1.2": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/mdurl/json",
+      "selected_after": [
+        "0.1.2"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "msgpack",
+      "selected_before": [
+        "1.2.4"
+      ],
+      "latest_stable": "1.2.4",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "1.2.4": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/msgpack/json",
+      "selected_after": [
+        "1.2.4"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "multidict",
+      "selected_before": [
+        "7.2.1"
+      ],
+      "latest_stable": "7.2.1",
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "selected_yanked": {
+        "7.2.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/multidict/json",
+      "selected_after": [
+        "7.2.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "nodeenv",
+      "selected_before": [
+        "1.12.0"
+      ],
+      "latest_stable": "1.12.0",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "1.12.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/nodeenv/json",
+      "selected_after": [
+        "1.12.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "packageurl-python",
+      "selected_before": [
+        "0.17.6"
+      ],
+      "latest_stable": "0.17.6",
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "selected_yanked": {
+        "0.17.6": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/packageurl-python/json",
+      "selected_after": [
+        "0.17.6"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "packaging",
+      "selected_before": [
+        "26.3"
+      ],
+      "latest_stable": "26.3",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "26.3": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/packaging/json",
+      "selected_after": [
+        "26.3"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "parso",
+      "selected_before": [
+        "0.8.7"
+      ],
+      "latest_stable": "0.8.7",
+      "latest_requires_python": [
+        ">=3.6"
+      ],
+      "selected_yanked": {
+        "0.8.7": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/parso/json",
+      "selected_after": [
+        "0.8.7"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "pathspec",
+      "selected_before": [
+        "1.1.1"
+      ],
+      "latest_stable": "1.1.1",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "1.1.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/pathspec/json",
+      "selected_after": [
+        "1.1.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "pip",
+      "selected_before": [
+        "26.3"
+      ],
+      "latest_stable": "26.3",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "26.3": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/pip/json",
+      "selected_after": [
+        "26.3"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "pip-api",
+      "selected_before": [
+        "0.0.35"
+      ],
+      "latest_stable": "0.0.35",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "0.0.35": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/pip-api/json",
+      "selected_after": [
+        "0.0.35"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "pip-audit",
+      "selected_before": [
+        "2.10.1"
+      ],
+      "latest_stable": "2.10.1",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "2.10.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/pip-audit/json",
+      "selected_after": [
+        "2.10.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "pip-requirements-parser",
+      "selected_before": [
+        "32.0.1"
+      ],
+      "latest_stable": "32.0.1",
+      "latest_requires_python": [
+        ">=3.6.0"
+      ],
+      "selected_yanked": {
+        "32.0.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/pip-requirements-parser/json",
+      "selected_after": [
+        "32.0.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "platformdirs",
+      "selected_before": [
+        "4.14.5"
+      ],
+      "latest_stable": "4.14.5",
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "selected_yanked": {
+        "4.14.5": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/platformdirs/json",
+      "selected_after": [
+        "4.14.5"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "pre-commit",
+      "selected_before": [
+        "4.7.0"
+      ],
+      "latest_stable": "4.7.0",
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "selected_yanked": {
+        "4.7.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/pre-commit/json",
+      "selected_after": [
+        "4.7.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "propcache",
+      "selected_before": [
+        "0.5.4"
+      ],
+      "latest_stable": "0.5.4",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "0.5.4": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/propcache/json",
+      "selected_after": [
+        "0.5.4"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "py",
+      "selected_before": [
+        "1.11.0"
+      ],
+      "latest_stable": "1.11.0",
+      "latest_requires_python": [
+        ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+      ],
+      "selected_yanked": {
+        "1.11.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/py/json",
+      "selected_after": [
+        "1.11.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "py-serializable",
+      "selected_before": [
+        "2.2.0"
+      ],
+      "latest_stable": "2.2.0",
+      "latest_requires_python": [
+        "<4.0,>=3.8"
+      ],
+      "selected_yanked": {
+        "2.2.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/py-serializable/json",
+      "selected_after": [
+        "2.2.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "pygments",
+      "selected_before": [
+        "2.21.0"
+      ],
+      "latest_stable": "2.21.0",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "2.21.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/pygments/json",
+      "selected_after": [
+        "2.21.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "pyparsing",
+      "selected_before": [
+        "3.3.3"
+      ],
+      "latest_stable": "3.3.3",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "3.3.3": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/pyparsing/json",
+      "selected_after": [
+        "3.3.3"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "python-discovery",
+      "selected_before": [
+        "1.9.5"
+      ],
+      "latest_stable": "1.9.5",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "1.9.5": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/python-discovery/json",
+      "selected_after": [
+        "1.9.5"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "pyyaml",
+      "selected_before": [
+        "6.0.3"
+      ],
+      "latest_stable": "6.0.3",
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "selected_yanked": {
+        "6.0.3": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/pyyaml/json",
+      "selected_after": [
+        "6.0.3"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "requests",
+      "selected_before": [
+        "2.34.2"
+      ],
+      "latest_stable": "2.34.2",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "2.34.2": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/requests/json",
+      "selected_after": [
+        "2.34.2"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "requirements-parser",
+      "selected_before": [
+        "0.13.1"
+      ],
+      "latest_stable": "0.13.1",
+      "latest_requires_python": [
+        "<4.0,>=3.8"
+      ],
+      "selected_yanked": {
+        "0.13.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/requirements-parser/json",
+      "selected_after": [
+        "0.13.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "rich",
+      "selected_before": [
+        "15.0.0"
+      ],
+      "latest_stable": "15.0.0",
+      "latest_requires_python": [
+        ">=3.9.0"
+      ],
+      "selected_yanked": {
+        "15.0.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/rich/json",
+      "selected_after": [
+        "15.0.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "ruff",
+      "selected_before": [
+        "0.17.5"
+      ],
+      "latest_stable": "0.17.5",
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "selected_yanked": {
+        "0.17.5": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/ruff/json",
+      "selected_after": [
+        "0.17.5"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "smmap",
+      "selected_before": [
+        "5.0.3"
+      ],
+      "latest_stable": "5.0.3",
+      "latest_requires_python": [
+        ">=3.7"
+      ],
+      "selected_yanked": {
+        "5.0.3": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/smmap/json",
+      "selected_after": [
+        "5.0.3"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "sortedcontainers",
+      "selected_before": [
+        "2.4.0"
+      ],
+      "latest_stable": "2.4.0",
+      "latest_requires_python": [
+        ""
+      ],
+      "selected_yanked": {
+        "2.4.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/sortedcontainers/json",
+      "selected_after": [
+        "2.4.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "sqlalchemy",
+      "selected_before": [
+        "2.1.9"
+      ],
+      "latest_stable": "2.1.9",
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "selected_yanked": {
+        "2.1.9": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/sqlalchemy/json",
+      "selected_after": [
+        "2.1.9"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "stevedore",
+      "selected_before": [
+        "5.10.0"
+      ],
+      "latest_stable": "5.10.0",
+      "latest_requires_python": [
+        ">=3.11"
+      ],
+      "selected_yanked": {
+        "5.10.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/stevedore/json",
+      "selected_after": [
+        "5.10.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "tabulate",
+      "selected_before": [
+        "0.10.0"
+      ],
+      "latest_stable": "0.10.0",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "0.10.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/tabulate/json",
+      "selected_after": [
+        "0.10.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "toml",
+      "selected_before": [
+        "0.10.2"
+      ],
+      "latest_stable": "0.10.2",
+      "latest_requires_python": [
+        ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+      ],
+      "selected_yanked": {
+        "0.10.2": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/toml/json",
+      "selected_after": [
+        "0.10.2"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "tomli",
+      "selected_before": [
+        "2.5.0"
+      ],
+      "latest_stable": "2.5.0",
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "selected_yanked": {
+        "2.5.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/tomli/json",
+      "selected_after": [
+        "2.5.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "tomli-w",
+      "selected_before": [
+        "1.2.0"
+      ],
+      "latest_stable": "1.2.0",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "1.2.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/tomli-w/json",
+      "selected_after": [
+        "1.2.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "ty",
+      "selected_before": [
+        "0.0.104"
+      ],
+      "latest_stable": "0.0.105",
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "selected_yanked": {
+        "0.0.104": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/ty/json",
+      "selected_after": [
+        "0.0.105"
+      ],
+      "decision": "adopt",
+      "selected_after_yanked": {
+        "0.0.105": false
+      }
+    },
+    {
+      "name": "typing-extensions",
+      "selected_before": [
+        "4.16.0"
+      ],
+      "latest_stable": "4.16.0",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "4.16.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/typing-extensions/json",
+      "selected_after": [
+        "4.16.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "urllib3",
+      "selected_before": [
+        "2.8.0"
+      ],
+      "latest_stable": "2.8.0",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "2.8.0": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/urllib3/json",
+      "selected_after": [
+        "2.8.0"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "uv",
+      "selected_before": [
+        "0.13.8"
+      ],
+      "latest_stable": "0.13.9",
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "selected_yanked": {
+        "0.13.8": false
+      },
+      "locations": [
+        "CI and actual resolver"
+      ],
+      "url": "https://pypi.org/pypi/uv/json",
+      "selected_after": [
+        "0.13.9"
+      ],
+      "decision": "adopt",
+      "selected_after_yanked": {
+        "0.13.9": false
+      }
+    },
+    {
+      "name": "uv-build",
+      "selected_before": [
+        "0.13.8"
+      ],
+      "latest_stable": "0.13.9",
+      "latest_requires_python": [
+        ">=3.8"
+      ],
+      "selected_yanked": {
+        "0.13.8": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "examples/application_foundations/pyproject.toml:build-system",
+        "pyproject.toml:build-system"
+      ],
+      "url": "https://pypi.org/pypi/uv-build/json",
+      "selected_after": [
+        "0.13.9"
+      ],
+      "decision": "adopt",
+      "selected_after_yanked": {
+        "0.13.9": false
+      }
+    },
+    {
+      "name": "virtualenv",
+      "selected_before": [
+        "21.15.7"
+      ],
+      "latest_stable": "21.15.7",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "21.15.7": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/virtualenv/json",
+      "selected_after": [
+        "21.15.7"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "vulture",
+      "selected_before": [
+        "2.16"
+      ],
+      "latest_stable": "2.16",
+      "latest_requires_python": [
+        ">=3.9"
+      ],
+      "selected_yanked": {
+        "2.16": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/vulture/json",
+      "selected_after": [
+        "2.16"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "yarl",
+      "selected_before": [
+        "1.25.1"
+      ],
+      "latest_stable": "1.25.1",
+      "latest_requires_python": [
+        ">=3.10"
+      ],
+      "selected_yanked": {
+        "1.25.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/yarl/json",
+      "selected_after": [
+        "1.25.1"
+      ],
+      "decision": "retain; current"
+    },
+    {
+      "name": "yattag",
+      "selected_before": [
+        "1.16.1"
+      ],
+      "latest_stable": "1.16.1",
+      "latest_requires_python": [
+        ""
+      ],
+      "selected_yanked": {
+        "1.16.1": false
+      },
+      "locations": [
+        "baselines/xplane/uv.lock",
+        "uv.lock"
+      ],
+      "url": "https://pypi.org/pypi/yattag/json",
+      "selected_after": [
+        "1.16.1"
+      ],
+      "decision": "retain; current"
+    }
+  ],
+  "python": {
+    "source": "https://www.python.org/downloads/",
+    "latest_by_family": {
+      "3.12": "3.12.16",
+      "3.14": "3.14.10",
+      "3.15": "3.15.2"
+    }
+  },
+  "rollback_sha": "0667b3347bfc98cd26179fdc41f820ce67d2a2d2",
+  "published_baseline": "0.11.1",
+  "pending_target": "0.11.2",
+  "selected_python_families": {
+    "ordinary": {
+      "family": "3.14",
+      "pin": "3.14.10",
+      "range": ">=3.14,<3.15"
+    },
+    "host_reference": {
+      "family": "3.12",
+      "pin": "3.12.16",
+      "range": ">=3.12,<3.13",
+      "embedded_host": "UNKNOWN"
+    }
+  },
+  "updates_completed": [
+    {
+      "name": "ty",
+      "before": [
+        "0.0.104"
+      ],
+      "after": [
+        "0.0.105"
+      ]
+    },
+    {
+      "name": "uv",
+      "before": [
+        "0.13.8"
+      ],
+      "after": [
+        "0.13.9"
+      ]
+    },
+    {
+      "name": "uv-build",
+      "before": [
+        "0.13.8"
+      ],
+      "after": [
+        "0.13.9"
+      ]
+    }
+  ],
+  "updates_remaining": [],
+  "upstreams": [
+    {
+      "repository": "astral-sh/uv",
+      "latest_stable": "0.13.9",
+      "published_at": "2026-11-17T09:57:55Z",
+      "release_evidence": "https://github.com/astral-sh/uv/releases/tag/0.13.9",
+      "decision": "adopt"
+    },
+    {
+      "repository": "astral-sh/ty",
+      "latest_stable": "0.0.105",
+      "published_at": "2026-11-17T09:46:22Z",
+      "release_evidence": "https://github.com/astral-sh/ty/releases/tag/0.0.105",
+      "decision": "adopt"
+    },
+    {
+      "repository": "obra/superpowers",
+      "latest_stable": "v7.0.2",
+      "published_at": "2026-11-03T22:17:54Z",
+      "release_evidence": "https://github.com/obra/superpowers/releases/tag/v7.0.2",
+      "decision": "retain; current",
+      "source_sha": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "source_evidence": "https://api.github.com/repos/obra/superpowers/commits/v7.0.2"
+    },
+    {
+      "repository": "tvproductions/gz-skills",
+      "latest_stable": "v0.13.0",
+      "published_at": "2026-11-15T21:26:19Z",
+      "release_evidence": "https://github.com/tvproductions/gz-skills/releases/tag/v0.13.0",
+      "decision": "retain; current",
+      "source_sha": "0bdab63fc503c6b36e2dd487932689b4e555e41a",
+      "source_evidence": "https://api.github.com/repos/tvproductions/gz-skills/commits/v0.13.0"
+    },
+    {
+      "repository": "tvproductions/superpowers-backplane",
+      "latest_stable": "v0.3.0",
+      "published_at": "2026-11-15T23:14:26Z",
+      "release_evidence": "https://github.com/tvproductions/superpowers-backplane/releases/tag/v0.3.0",
+      "decision": "retain; current",
+      "source_sha": "39fbe3065c16ac119c4c10a3c2428fda39d57e61",
+      "source_evidence": "https://api.github.com/repos/tvproductions/superpowers-backplane/commits/v0.3.0",
+      "enabled": false
+    },
+    {
+      "repository": "actions/checkout",
+      "latest_stable": "v7.0.1",
+      "published_at": "2026-07-20T15:10:05Z",
+      "release_evidence": "https://github.com/actions/checkout/releases/tag/v7.0.1",
+      "decision": "retain; current",
+      "source_sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "source_evidence": "https://api.github.com/repos/actions/checkout/commits/v7.0.1"
+    },
+    {
+      "repository": "astral-sh/setup-uv",
+      "latest_stable": "v10.3.3",
+      "published_at": "2026-10-28T14:35:19Z",
+      "release_evidence": "https://github.com/astral-sh/setup-uv/releases/tag/v10.3.3",
+      "decision": "retain; current",
+      "source_sha": "68559e99cc807c1eb7e9238fd43a15bba460eec2",
+      "source_evidence": "https://api.github.com/repos/astral-sh/setup-uv/commits/v10.3.3"
+    }
+  ],
+  "security_audits": {
+    "root": {
+      "registry_dependencies": 75,
+      "known_vulnerabilities": 0,
+      "skipped": 0,
+      "requirements_sha256": "5c49e59962878628bea825e8e400542bffd19ca0880875da50756e7b9ff719b6",
+      "audit_sha256": "c8d070484a446647a88fe67c323170bc5b1c18637e9ca514249671aeae3f581a",
+      "command_options": "--require-hashes --no-deps --disable-pip; separate task-local caches",
+      "warnings": "pip-audit reports redundant --no-deps and generic hashing advice; exports are hash-required; no skipped dependencies"
+    },
+    "host": {
+      "registry_dependencies": 75,
+      "known_vulnerabilities": 0,
+      "skipped": 0,
+      "requirements_sha256": "7df0381b3ac52a8627598d41c26a826e626ddd0586e2f36a5a3815dabe5dc3fd",
+      "audit_sha256": "874fe9d3d84bf22bb7a4c7f66c56128fa20645d25803a9926fd3659cca168974",
+      "command_options": "--require-hashes --no-deps --disable-pip; separate task-local caches",
+      "warnings": "pip-audit reports redundant --no-deps and generic hashing advice; exports are hash-required; no skipped dependencies"
+    }
+  },
+  "outdated": {
+    "root": [],
+    "host": []
+  },
+  "resolution_byte_stable": {
+    "uv.lock": "701576b06d5cce917209abc1c38c31036bbc635fbb0d92908572784766ba3014",
+    "baselines/xplane/uv.lock": "580d497d881de6c16e684c7adb6515725baf89e9aa21a1a8de282348f9d7023d"
+  },
+  "lock_semantic_changes": {
+    "root": [
+      "gz-starter",
+      "ty"
+    ],
+    "host": [
+      "skills-first-xplane-baseline",
+      "ty",
+      "uv-build"
+    ]
+  },
+  "native_codex": {
+    "cli": "0.169.0",
+    "installed": [
+      {
+        "pluginId": "superpowers@skills-first-starter",
+        "name": "superpowers",
+        "marketplaceName": "skills-first-starter",
+        "version": "7.0.2",
+        "installed": true,
+        "enabled": true,
+        "source": {
+          "source": "git",
+          "url": "https://github.com/obra/superpowers.git",
+          "ref": "22f0b463e7a5e579904dd6211a520321035526f7"
+        },
+        "marketplaceSource": {
+          "sourceType": "git",
+          "source": "https://github.com/tvproductions/gz-starter.git"
+        },
+        "installPolicy": "AVAILABLE",
+        "authPolicy": "ON_USE"
+      },
+      {
+        "pluginId": "superpowers-backplane@skills-first-starter",
+        "name": "superpowers-backplane",
+        "marketplaceName": "skills-first-starter",
+        "version": "0.2.0",
+        "installed": true,
+        "enabled": false,
+        "source": {
+          "source": "git",
+          "url": "https://github.com/tvproductions/superpowers-backplane.git",
+          "ref": "0b18e34e65379e729d8fece97151a1bb8604b461"
+        },
+        "marketplaceSource": {
+          "sourceType": "git",
+          "source": "https://github.com/tvproductions/gz-starter.git"
+        },
+        "installPolicy": "AVAILABLE",
+        "authPolicy": "ON_USE"
+      },
+      {
+        "pluginId": "gz-skills@skills-first-starter",
+        "name": "gz-skills",
+        "marketplaceName": "skills-first-starter",
+        "version": "0.11.0",
+        "installed": true,
+        "enabled": true,
+        "source": {
+          "source": "git",
+          "url": "https://github.com/tvproductions/gz-skills.git",
+          "ref": "62622aee80ce27d4a39efe3554a583b844f38876"
+        },
+        "marketplaceSource": {
+          "sourceType": "git",
+          "source": "https://github.com/tvproductions/gz-starter.git"
+        },
+        "installPolicy": "AVAILABLE",
+        "authPolicy": "ON_USE"
+      }
+    ],
+    "limitation": "Installed gz-skills 0.11.0 and disabled Backplane 0.2.0 differ from repository selections 0.13.0/0.3.0. No fresh-session discovery/current-installation claim. No project-scoped version updater advertised; plugin add is prohibited because scope preservation is unproven. No native installation/update performed.",
+    "update_inspection": "codex plugin --help; marketplace upgrade --help; plugin add --help. No project scope advertised for installed-version update; no mutation attempted."
+  },
+  "candidate_sha256": {
+    "pyproject.toml": "95dc74095a3621fd26f08c264c82106592c7490df42fa675baeeefa3792a999f",
+    "uv.lock": "701576b06d5cce917209abc1c38c31036bbc635fbb0d92908572784766ba3014",
+    "baselines/xplane/pyproject.toml": "502f46f82584ec370256853f7bc69f344ea366c240b84ebe57708e55f5195e59",
+    "baselines/xplane/uv.lock": "580d497d881de6c16e684c7adb6515725baf89e9aa21a1a8de282348f9d7023d",
+    ".python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+    "baselines/xplane/.python-version": "a05e0074505ce29f25abf3aebe4f7218d28e98411822f199e3272740be4e363c",
+    "bundle.json": "ca5a222d7a249b8bf21969cd423093b18bb423df9152838700a8ade6b7be6629",
+    ".github/workflows/check.yml": "a677662ff6fc57506b764f5c939e09e6530f8b0ddf9ceaf1e99691b52ea1ade4",
+    ".pre-commit-config.yaml": "a60ccfa5d5b5589635efe46692f574276302ba5a0eb2e5e6f8b74363f513908c",
+    ".agents/plugins/marketplace.json": "bf60a89ad94f6736300eedf0a363177558428df45202cefcbce9b8693f7bd1c5",
+    ".claude-plugin/marketplace.json": "cf2ffc67347f8b105a59301bef7cc0daed5d1bf6c0ca7275fd17b197e8c37d8e",
+    ".codex/config.toml": "30bcf703d6940731b527e68f412bcee566e34e8ff204674fcbefdb3a0f678af8",
+    ".claude/settings.json": "9205fc5b9065470b831c396bdf47649265b47c8d502063fbbda6e288415c84fe",
+    "opencode.json": "79d7b2ed74d3fce6592bd1ef80e09b8580c9faf5fc14d6a8cd992625fe77a405",
+    "examples/application_foundations/pyproject.toml": "e822bd7f03fa86e21196abb9c05aafdf80c3199aa2dd951065c613a38f6aa3a7",
+    "src/skills_first_starter/resources/bundle.json": "ca5a222d7a249b8bf21969cd423093b18bb423df9152838700a8ade6b7be6629",
+    ".github/dependabot.yml": "a2cd8964a0c1c40322d2fd52117a438d4f9e1e53ea070ff3c1991bed61298587",
+    "AGENTS.md": "6511038ab2e010ad60b5548224deb16c0641ae0d433121fa419eca793c786bd0",
+    "docs/engineering/python.md": "24d97f420a628eddbe739b2ad2650b9dc7a6c77db939004828fa439de12ab896",
+    "docs/baseline-policy.md": "691114f30c9f17bbb0494b6e851ec49e0edb1f77f096053fd67cfd9db3eb32be"
+  },
+  "verification": {
+    "routine_hooks": "PASS: Ruff check, Ruff format, ty, unittest",
+    "catalog_and_resources": "PASS: 0.11.2; both catalogs; regenerated bundle resource",
+    "source_independent_build": "PASS: uv build --no-sources using uv/uv_build 0.13.9",
+    "installed_behavior": "PASS: verify_distribution.py, including example build, installed typing and preservation",
+    "host_reference": "PASS: managed CPython 3.12.16 positive/negative standalone probes after reinstall repaired obsolete shebang paths",
+    "ci": "Not run on uncommitted candidate; prior SHA CI is not candidate proof",
+    "cognitive": "DEFERRED / measurement UNKNOWN; ceiling 15",
+    "final_documentation": "Evidence and reference wording finalized after gates; no owning implementation/tool/resource input changes. Checks reused under risk-based policy."
+  }
+}

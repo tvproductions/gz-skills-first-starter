@@ -1,10 +1,29 @@
 # Template versioning
 
+The [bootstrap-verification correction](../ROADMAP.md#selected-correction--pre-implementation-verification-november-17-2026)
+is in design review. Its proposed supported command/dependency/adoption interface
+would select **0.12.0 / minor**, folding in the maintenance below after design
+approval. Preserve the current **0.11.2** development checkpoint until that
+dependent planning/mirror reconciliation. No correction implementation, approved
+architecture, completed minor-version reconciliation or release acceptance is
+claimed. The [current handoff](handoffs/2026-11-17-bootstrap-verification-handoff.md)
+distinguishes review direction from required complete-design/ADR approvals.
+
+Pending **0.11.2 / patch** over published **0.11.1** is selected for the
+maintainer-invoked post-release dependency maintenance. New same-day uv/backend
+and ty releases require a compatible pin/lock refresh under the existing
+latest-stable commitment. No new requirement, runtime behavior, architectural
+decision or adopter migration is introduced. The
+[bounded roadmap scope](../ROADMAP.md#selected-0112-scope--post-release-dependency-maintenance-november-17-2026)
+and [maintenance receipt](evidence/2026-11-17-post-release-maintenance.md)
+own included work, acceptance evidence and remaining limits. Publication is not
+authorized by maintenance; preserve all immutable published tags.
+
 Current status, November 17, 2026: published **0.11.1** at immutable source
 `041c1989406c1b9c4978042661c2dd38ff1db160` advances **0.11.0** by a compatible
 documentation patch for the bounded
 [roadmap reconciliation](../ROADMAP.md#selected-0111-scope--roadmap-reconciliation-november-17-2026).
-Version mirrors agree; no subsequent target or feature release is selected.
+Its release mirrors agree; the subsequent maintenance target is recorded above.
 The [0.11.1 receipt](evidence/2026-11-17-0.11.1-release.md) records refreshed
 freshness/security evidence, retained conditional engineering limits and verified
 exact-source CI, annotated tag, GitHub release and tagged-source contents.

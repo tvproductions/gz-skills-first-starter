@@ -15,7 +15,7 @@ their own build-system declaration and installed-artifact verification. Do not
 copy the root helper's Python 3.14 package into a host-bound environment.
 
 The executable requirement is minimum-only uv `>=0.13.5`, without an upper bound.
-CI uses tested uv 0.13.6; supported local and hosted versions need not match it.
+CI selects uv 0.13.9; supported local and hosted versions need not match it.
 Older uv may need the exact managed Python already provisioned or reviewed
 official download metadata. The tested CI uv embeds metadata for Python 3.12.16;
 the earlier external manifest override is removed. Keep exact managed-runtime

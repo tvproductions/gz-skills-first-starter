@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+- Save the pre-implementation verification defect diagnosis and draft design/
+  ADR for review. Record the maintainer's installed-development-verifier
+  direction and mandatory starter/adopter testing distinction. The correction
+  remains unimplemented and separately approval-gated; preserve the
+  [continuation handoff](docs/handoffs/2026-11-17-bootstrap-verification-handoff.md).
+
+- Refresh execution pins to uv/uv_build 0.13.9 and ty 0.0.105 in both Python
+  baselines and the packaged reference fixture. Preserve minimum-only uv
+  >=0.13.5, exact Python families, routine hooks and component activation.
+  Pending 0.11.2 is a compatible maintenance patch; see the
+  [post-release maintenance receipt](docs/evidence/2026-11-17-post-release-maintenance.md).
+
 ## 0.11.1 — November 17, 2026
 
 - Correct stale rename/ADR backlog entries using the published 0.10.0/0.11.0
