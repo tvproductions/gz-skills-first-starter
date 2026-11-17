@@ -1,5 +1,9 @@
 # Application foundations — fresh design handoff, November 16, 2026
 
+Current continuation: [post-0.11.1 handoff, November 17](2026-11-17-post-release-handoff.md).
+Use its resume point; the checkpoints below preserve the earlier design and
+release history.
+
 ## Continuation: roadmap reconciliation
 
 **0.11.1 is published and verified**, source

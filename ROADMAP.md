@@ -144,7 +144,7 @@ in their dated handoffs; they do not reopen completed release gates.
 
 See the [0.9.0 release receipt](docs/evidence/2026-11-08-0.9.0-release.md),
 [three-host receipt](docs/evidence/2026-10-31-three-host-repo-scope.md),
-[changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-11-16-application-foundations-design-handoff.md).
+[changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-11-17-post-release-handoff.md).
 Historical receipts establish their stated inputs and scope, not current
 universal acceptance.
 
