@@ -47,7 +47,7 @@ and verification; do not generalize one target's proof to all product types.
 For adoption into another project, start at
 `docs/adoption-workflow.md` and preserve that project's instructions.
 For continuation of starter development, read
-`docs/handoffs/2026-11-17-bootstrap-verification-handoff.md`; begin with its
+`docs/handoffs/2026-11-18-discipline-evaluation-handoff.md`; begin with its
 resume point and remaining gates, and recheck live state before work.
 The earlier ADR-practice save point remains linked there as implementation history.
 

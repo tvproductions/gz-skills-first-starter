@@ -5,6 +5,11 @@
 No subsequent release scope is selected. The bootstrap-verification correction
 remains in design review for proposed 0.12.0.
 
+- Save the November 18 starter-discipline evaluation discussion and proposed
+  method in a [fresh handoff](docs/handoffs/2026-11-18-discipline-evaluation-handoff.md).
+  Update continuation pointers; preserve current requirements and distinguish
+  the unexecuted evaluation proposal from observed qualification evidence.
+
 ## 0.11.2 — November 18, 2026
 
 - Refresh both dependency locks to filelock 4.2.12, platformdirs 4.14.7,

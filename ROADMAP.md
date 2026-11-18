@@ -1,5 +1,18 @@
 # Roadmap
 
+## Current review — starter discipline evaluation, November 18, 2026
+
+Review gz-starter and its use/extension of SP and gz-skills against the
+maintainer's operating constraint of recurrent model drift. Preserve required
+discipline; assess activation, precedence, sustained adherence and truthful
+closeout before proposing changes. The
+[current handoff](docs/handoffs/2026-11-18-discipline-evaluation-handoff.md)
+records the discussion and proposed obligation/evidence audit followed by bounded
+behavioral scenarios. That campaign has not run; its protocol remains proposed.
+No policy relaxation, implementation, native activation or new release scope is
+selected. Published metadata stays 0.11.2. The separately approval-gated
+bootstrap correction/proposed 0.12.0 below remains open.
+
 ## Selected correction — pre-implementation verification, November 17, 2026
 
 The maintainer selected correction of the v0.9.0 adopter bootstrap deadlock:
@@ -20,7 +33,7 @@ The maintainer endorsed that delivery direction and emphasized the starter's
 existing and new owning tests. Preserve producer qualification, adopter artifact
 validation and adopter behavior/coverage as distinct obligations. This review
 direction does not approve the complete design or separately identified ADR.
-Resume from the [current handoff](docs/handoffs/2026-11-17-bootstrap-verification-handoff.md),
+Resume that review from the [bootstrap handoff](docs/handoffs/2026-11-17-bootstrap-verification-handoff.md),
 including the still-open transition-rule review and actual platform gates.
 
 Version decision at intake: published **0.11.1** -> proposed **0.12.0 / minor**
@@ -245,7 +258,7 @@ in their dated handoffs; they do not reopen completed release gates.
 
 See the [0.9.0 release receipt](docs/evidence/2026-11-08-0.9.0-release.md),
 [three-host receipt](docs/evidence/2026-10-31-three-host-repo-scope.md),
-[changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-11-17-bootstrap-verification-handoff.md).
+[changelog](CHANGELOG.md) and [current handoff](docs/handoffs/2026-11-18-discipline-evaluation-handoff.md).
 Historical receipts establish their stated inputs and scope, not current
 universal acceptance.
 
