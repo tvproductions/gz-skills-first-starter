@@ -43,6 +43,12 @@ dependent implementation or publication authority.
 
 ## Selected 0.11.2 scope — post-release dependency maintenance, November 17, 2026
 
+**Published November 18:** [0.11.2](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.2)
+at immutable source `1175433c950d47d5330e4a9a36a986f1a0c6ae26`.
+Both exact-source CI jobs, remote annotated tag and downloaded tagged-source
+contents are verified in the release receipt below. Included release work
+remaining: **none**. The draft correction and all other deferred work stay open.
+
 **Publication authorized November 18:** the maintainer requested “publish 0.11.2”.
 This selects ordinary main synchronization, immutable annotated tag and GitHub
 release after the required exact-candidate gates. The
@@ -63,7 +69,7 @@ was performed. Retain the draft correction's separate approvals/proposed minor,
 conditional engineering limits and separate publication authority.
 
 Published baseline: **0.11.1**, immutable source
-`041c1989406c1b9c4978042661c2dd38ff1db160`. Pending target: **0.11.2 / patch**.
+`041c1989406c1b9c4978042661c2dd38ff1db160`. Released target: **0.11.2 / patch**.
 Governing work: the maintainer's explicit `gzs-update-dependencies` invocation
 after the clean post-release sync at `0667b3347bfc98cd26179fdc41f820ce67d2a2d2`.
 Restore the existing latest-stable tooling commitment after new same-day releases;
@@ -85,7 +91,7 @@ hooks, catalog/resource/version checks, source-independent build and clean
 installed CLI/example typing/preservation checks. Included source/environment
 work remaining: **none**. November 18 native inventory matches selected sources;
 broader discovery/readiness remains unverified. Exact-candidate hosted CI and
-publication verification are the remaining gates for the authorized release.
+publication verification now pass; no included release gate remains.
 
 Compatibility: execution-pin refresh only; preserve public behavior and uv's
 >=0.13.5 caller minimum. No runtime-family migration or new ADR is needed.

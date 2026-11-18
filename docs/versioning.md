@@ -1,5 +1,11 @@
 # Template versioning
 
+Current published release: **0.11.2 / patch**, November 18, 2026, immutable source
+`1175433c950d47d5330e4a9a36a986f1a0c6ae26`. Both exact-source CI jobs, annotated
+remote tag, stable GitHub release and downloaded tagged-source contents are
+verified in the [release receipt](evidence/2026-11-18-0.11.2-release.md).
+Preserve 0.11.2 metadata; no subsequent implementation release is approved.
+
 The [bootstrap-verification correction](../ROADMAP.md#selected-correction--pre-implementation-verification-november-17-2026)
 is in design review. Its proposed supported command/dependency/adoption interface
 would select **0.12.0 / minor** after design approval. The maintainer separately
@@ -23,13 +29,13 @@ November 18 “publish 0.11.2” request authorizes publication; follow the
 preserve all immutable published tags.
 
 The November 18 maintenance invocation also refreshes four transitive packages
-in both locks within that same pending patch. Use its
+in both locks within that same patch. Use its
 [candidate-specific receipt](evidence/2026-11-18-dependency-maintenance.md) for the
 current inputs; preserve the November 17 receipt as historical evidence. This
 compatible refresh adds no supported interface or adoption obligation and does
 not select another per-task version bump.
 
-Current status, November 17, 2026: published **0.11.1** at immutable source
+Previous status, November 17, 2026: published **0.11.1** at immutable source
 `041c1989406c1b9c4978042661c2dd38ff1db160` advances **0.11.0** by a compatible
 documentation patch for the bounded
 [roadmap reconciliation](../ROADMAP.md#selected-0111-scope--roadmap-reconciliation-november-17-2026).
@@ -49,7 +55,7 @@ sync and release publication on November 17. The
 retained limits and verified exact-source CI, annotated tag and GitHub publication.
 The maintainer subsequently requested correction of stale completed-work backlog
 entries, then explicitly requested “commit, push, publish”. That completed patch
-is the current 0.11.1 release above; it adds no adoption requirement or runtime
+produced the 0.11.1 release above; it adds no adoption requirement or runtime
 behavior. Preserve both immutable releases and their distinct acceptance evidence.
 A version string alone is not publication evidence. The initial release was 0.1.0.
 

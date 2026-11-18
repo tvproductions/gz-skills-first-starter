@@ -8,7 +8,12 @@ maintainer requested “publish 0.11.2”. See the
 CI, tag and publication outcome. This supersedes the earlier publication limits
 only for this maintenance patch and its ordinary synchronization. The design
 review below remains the resume point; no verifier or ADR approval is inferred.
-Proposed 0.12.0 will advance the separately selected 0.11.2 patch.
+**Published and verified:** 0.11.2 at immutable source
+`1175433c950d47d5330e4a9a36a986f1a0c6ae26`; both exact-source CI jobs, remote
+annotated tag and downloaded source contents pass. Proposed 0.12.0 will advance
+this published patch. This single publication-result follow-up updates pointers;
+its final main/CI alignment is reported in the release response without another
+receipt-only commit.
 
 Resume the maintainer's **design review**, at the automatic transition from
 bootstrap validation to adopter behavior tests. Read
@@ -166,6 +171,11 @@ query. Preserve the receipt's historical hashes rather than rewriting evidence
 to match later prose. Release preparation needs its own actual candidate receipt.
 
 ## Version accounting and retained limits
+
+The following November 17 accounting is historical: 0.11.2 has now published
+as recorded at the top of this handoff. Preserve the unimplemented correction's
+proposed 0.12.0 and its separate design/ADR approvals; no current release gate
+remains for the completed maintenance patch.
 
 Last published baseline: **0.11.1**, immutable source
 `041c1989406c1b9c4978042661c2dd38ff1db160`; [publication is verified](../evidence/2026-11-17-0.11.1-release.md).
