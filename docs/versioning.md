@@ -2,22 +2,32 @@
 
 The [bootstrap-verification correction](../ROADMAP.md#selected-correction--pre-implementation-verification-november-17-2026)
 is in design review. Its proposed supported command/dependency/adoption interface
-would select **0.12.0 / minor**, folding in the maintenance below after design
-approval. Preserve the current **0.11.2** development checkpoint until that
+would select **0.12.0 / minor** after design approval. The maintainer separately
+requested publication of the completed maintenance as **0.11.2**; the proposed
+minor advances that patch. Preserve current **0.11.2** metadata until that
 dependent planning/mirror reconciliation. No correction implementation, approved
 architecture, completed minor-version reconciliation or release acceptance is
 claimed. The [current handoff](handoffs/2026-11-17-bootstrap-verification-handoff.md)
 distinguishes review direction from required complete-design/ADR approvals.
 
-Pending **0.11.2 / patch** over published **0.11.1** is selected for the
+Release **0.11.2 / patch** over published **0.11.1** is selected for the
 maintainer-invoked post-release dependency maintenance. New same-day uv/backend
 and ty releases require a compatible pin/lock refresh under the existing
 latest-stable commitment. No new requirement, runtime behavior, architectural
 decision or adopter migration is introduced. The
 [bounded roadmap scope](../ROADMAP.md#selected-0112-scope--post-release-dependency-maintenance-november-17-2026)
 and [maintenance receipt](evidence/2026-11-17-post-release-maintenance.md)
-own included work, acceptance evidence and remaining limits. Publication is not
-authorized by maintenance; preserve all immutable published tags.
+own included work, acceptance evidence and remaining limits. The subsequent
+November 18 “publish 0.11.2” request authorizes publication; follow the
+[release receipt](evidence/2026-11-18-0.11.2-release.md) for actual outcome and
+preserve all immutable published tags.
+
+The November 18 maintenance invocation also refreshes four transitive packages
+in both locks within that same pending patch. Use its
+[candidate-specific receipt](evidence/2026-11-18-dependency-maintenance.md) for the
+current inputs; preserve the November 17 receipt as historical evidence. This
+compatible refresh adds no supported interface or adoption obligation and does
+not select another per-task version bump.
 
 Current status, November 17, 2026: published **0.11.1** at immutable source
 `041c1989406c1b9c4978042661c2dd38ff1db160` advances **0.11.0** by a compatible

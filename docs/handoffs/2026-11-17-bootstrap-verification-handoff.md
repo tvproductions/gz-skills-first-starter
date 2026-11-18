@@ -2,6 +2,14 @@
 
 ## Resume point and authority
 
+**November 18 release update:** after completed dependency maintenance, the
+maintainer requested “publish 0.11.2”. See the
+[release receipt](../evidence/2026-11-18-0.11.2-release.md) for exact source,
+CI, tag and publication outcome. This supersedes the earlier publication limits
+only for this maintenance patch and its ordinary synchronization. The design
+review below remains the resume point; no verifier or ADR approval is inferred.
+Proposed 0.12.0 will advance the separately selected 0.11.2 patch.
+
 Resume the maintainer's **design review**, at the automatic transition from
 bootstrap validation to adopter behavior tests. Read
 [design edition 2](../superpowers/specs/2026-11-17-bootstrap-verification-design.md)
@@ -120,6 +128,16 @@ No new helper exists, so its tests are pending implementation. Existing starter
 tests remain applicable now; no bootstrap exception is claimed for this sync.
 
 ## Tool maintenance included in this save point
+
+**November 18 follow-up:** a new explicit `gzs-update-dependencies` invocation
+updates filelock/platformdirs/python-discovery/virtualenv in both locks. Read the
+[current maintenance receipt](../evidence/2026-11-18-dependency-maintenance.md)
+and its exact candidate inventory before reusing earlier dependency evidence.
+Retain pending 0.11.2, the design-review resume point and the separate design/ADR
+approvals above. This maintenance invocation grants no additional Git sync or
+publication authority. Codex 0.170.0 now observes installed SP 7.0.2, gz-skills
+0.13.0 and disabled Backplane 0.3.0 at selected SHAs; the older native drift below
+is historical. No installation or activation was performed in this follow-up.
 
 Earlier this session, the maintainer explicitly invoked dependency maintenance.
 The [post-release receipt](../evidence/2026-11-17-post-release-maintenance.md) and

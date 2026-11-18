@@ -24,9 +24,10 @@ Resume from the [current handoff](docs/handoffs/2026-11-17-bootstrap-verificatio
 including the still-open transition-rule review and actual platform gates.
 
 Version decision at intake: published **0.11.1** -> proposed **0.12.0 / minor**
-for the new supported command/dependency/adoption interface. Fold the already
-completed uncommitted tool maintenance below into that bounded minor if the
-design is approved. Development metadata still records its **0.11.2** checkpoint;
+for the new supported command/dependency/adoption interface. The maintainer has
+since selected publication of the completed maintenance as **0.11.2** below;
+the proposed minor therefore advances that patch, rather than folding in an
+unpublished maintenance checkpoint. Development metadata still records **0.11.2**;
 planning acceptance MUST reconcile all mirrors after design approval, before
 implementation/closeout. No completed version reconciliation is claimed yet.
 
@@ -41,6 +42,25 @@ review/maintenance checkpoint on main; it grants no design/ADR approval,
 dependent implementation or publication authority.
 
 ## Selected 0.11.2 scope — post-release dependency maintenance, November 17, 2026
+
+**Publication authorized November 18:** the maintainer requested “publish 0.11.2”.
+This selects ordinary main synchronization, immutable annotated tag and GitHub
+release after the required exact-candidate gates. The
+[release receipt](docs/evidence/2026-11-18-0.11.2-release.md) records final
+acceptance and publication separately. No bootstrap-verifier implementation,
+design/ADR approval, native installation or companion/adopter write is selected.
+
+November 18 authorized maintenance follow-through: include the newly released
+transitive fixes filelock 4.2.12, platformdirs 4.14.7, python-discovery 1.9.6 and
+virtualenv 21.15.8 in both locks under this same compatible patch. The
+[new candidate receipt](docs/evidence/2026-11-18-dependency-maintenance.md) records
+fresh official inventory, exact environments, security audits and changed-package
+controls. Direct tool/backend/runtime/component/Action selections remain current
+and unchanged. Native Codex 0.170.0 now reports the selected component revisions;
+that observation supersedes the earlier installed-version drift for this host,
+without proving all-host discovery or Backplane readiness. No native mutation
+was performed. Retain the draft correction's separate approvals/proposed minor,
+conditional engineering limits and separate publication authority.
 
 Published baseline: **0.11.1**, immutable source
 `041c1989406c1b9c4978042661c2dd38ff1db160`. Pending target: **0.11.2 / patch**.
@@ -63,16 +83,17 @@ byte-stable repeat resolution, empty outdated results, 75-package security
 audits per baseline with zero known vulnerabilities/skips, all four routine
 hooks, catalog/resource/version checks, source-independent build and clean
 installed CLI/example typing/preservation checks. Included source/environment
-work remaining: **none**. Existing native caches differ from the selected
-versions; no current native-stack/discovery claim follows. Exact-candidate hosted
-CI and release preparation remain future gates; no push or publication is selected.
+work remaining: **none**. November 18 native inventory matches selected sources;
+broader discovery/readiness remains unverified. Exact-candidate hosted CI and
+publication verification are the remaining gates for the authorized release.
 
 Compatibility: execution-pin refresh only; preserve public behavior and uv's
 >=0.13.5 caller minimum. No runtime-family migration or new ADR is needed.
 Excluded/deferred: native installation/activation, companion/adopter changes,
 the broader draft naming-rule patch and all existing roadmap work. Cognitive
 DEFERRED / measurement UNKNOWN and native/embedded limits remain explicit.
-Commit, push and release publication are not selected by this maintenance request.
+Maintenance alone did not authorize publication; the later explicit request above
+now supplies release authority. Historical receipts retain their original scope.
 
 ## Selected 0.11.1 scope — roadmap reconciliation, November 17, 2026
 

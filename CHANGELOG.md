@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+No subsequent release scope is selected. The bootstrap-verification correction
+remains in design review for proposed 0.12.0.
+
+## 0.11.2 — November 18, 2026
+
+- Refresh both dependency locks to filelock 4.2.12, platformdirs 4.14.7,
+  python-discovery 1.9.6 and virtualenv 21.15.8. Preserve existing direct tool
+  pins and Python families; see the
+  [November 18 maintenance receipt](docs/evidence/2026-11-18-dependency-maintenance.md).
+
 - Save the pre-implementation verification defect diagnosis and draft design/
   ADR for review. Record the maintainer's installed-development-verifier
   direction and mandatory starter/adopter testing distinction. The correction
@@ -11,8 +21,13 @@
 - Refresh execution pins to uv/uv_build 0.13.9 and ty 0.0.105 in both Python
   baselines and the packaged reference fixture. Preserve minimum-only uv
   >=0.13.5, exact Python families, routine hooks and component activation.
-  Pending 0.11.2 is a compatible maintenance patch; see the
+  This is a compatible maintenance patch; see the
   [post-release maintenance receipt](docs/evidence/2026-11-17-post-release-maintenance.md).
+
+- Refresh release-specific freshness evidence for all 77 registry projects and
+  retain zero known vulnerabilities/skips across each 75-package locked audit.
+  Preserve cognitive DEFERRED / measurement UNKNOWN and native/embedded limits;
+  see the [release receipt](docs/evidence/2026-11-18-0.11.2-release.md).
 
 ## 0.11.1 — November 17, 2026
 
