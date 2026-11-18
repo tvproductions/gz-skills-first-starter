@@ -1,5 +1,29 @@
 # Bootstrap verification review — handoff, November 17, 2026
 
+## November 18 reference save point
+
+The maintainer invoked `gzs-git-sync`. Fast-forwarded main from `7dea4b5` to
+`de5cdcd`, preserving the local three-page Addy Osmani article PDF in `docs/`.
+Reviewed its text and rendered pages; retain it as reference material, without
+adopting its recommendations as project instructions. This save point adds no
+behavior, dependency selection or release scope. Published version **0.11.2**
+and the separately approval-gated proposed **0.12.0** remain unchanged.
+
+Startup freshness reuses the November 18 release-specific official-source receipt:
+all **20 candidate input hashes match**, and it records no required updates.
+Actual caller uv **0.13.8** satisfies the **>=0.13.5** floor; validation uses
+managed CPython **3.14.10** and the current exact lock. Native discovery and
+cognitive/embedded/platform limits remain as recorded below. Final sync must
+preserve normal hooks, verify remote SHA equality and observe both exact-commit
+CI jobs; report their outcome without a receipt-only follow-up commit.
+
+Local integration checks pass: `uv sync --locked --all-groups`, all four hooks
+through `uv run --locked pre-commit run --all-files`, `uv run --locked gz-starter
+validate`, `uv build --no-sources`, and `uv run --locked python
+tools/verify_distribution.py`. No new behavior or analyzer input requires new
+tests or deeper-tool replay. Reuse those passes for this result-only prose;
+the final exact-commit CI verifies the complete committed candidate.
+
 ## Resume point and authority
 
 **November 18 release update:** after completed dependency maintenance, the
