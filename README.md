@@ -1,5 +1,10 @@
 # GZ Starter
 
+Release **0.11.3** refreshes ty, Import Linter and virtualenv in both Python
+baselines. Publication is authorized and being verified; the published baseline
+remains **0.11.2** until that completes. See the
+[release receipt](docs/evidence/2026-11-19-0.11.3-release.md).
+
 Release **0.11.2** refreshes verified execution and transitive tooling in both
 Python baselines. It preserves public behavior, Python families and component
 activation; see the [release receipt](docs/evidence/2026-11-18-0.11.2-release.md).

@@ -1,5 +1,37 @@
 # Starter discipline evaluation — handoff, November 18, 2026
 
+## November 19 maintenance continuation
+
+Subsequent authority: the maintainer requested **“release 0.11.3”**. Preparation,
+ordinary main commit/push, exact-source CI, immutable annotated tag and GitHub
+publication are now authorized; use the
+[release receipt](../evidence/2026-11-19-0.11.3-release.md) for current outcome.
+The maintenance-only boundaries recorded below describe the earlier invocation.
+No bootstrap approval, experiment, native activation or companion/adopter write
+is added by publication authority.
+
+The subsequent Git sync confirmed clean main/origin/main at
+`6535e9cd93baca66a21deb8243188db79796508a`, ordinary push already up to date,
+ahead/behind **0/0**, and both jobs passing in
+[that exact-commit CI](https://github.com/tvproductions/gz-starter/actions/runs/44421572075).
+That sync is complete; no additional sync authority carries into this change.
+
+The maintainer then explicitly invoked `gzs-update-dependencies`. Its separate
+source/environment maintenance is locally complete: ty **0.0.107**, Import Linter
+**2.17** and virtualenv **21.15.9** in both locked Python baselines, with pending
+**0.11.3 / patch** over published **0.11.2**. Use the
+[bounded roadmap scope](../../ROADMAP.md#selected-0113-scope--dependency-maintenance-november-19-2026)
+and [candidate receipt](../evidence/2026-11-19-dependency-maintenance.md) for exact
+inputs, all applicable gate results, changed-tool controls and remaining limits.
+The reviewed changes remain uncommitted; exact-candidate hosted CI is UNKNOWN.
+No publication, native installation/activation or companion/adopter change is
+authorized. The prior discussion below selects no implementation; its evaluation
+proposal and the bootstrap correction's separate approvals remain open.
+
+The version/authority statements below describe the November 18 save point;
+this continuation supersedes only their current-state references. Preserve the
+historical evidence, Python families and cognitive/native/embedded limitations.
+
 ## Resume point and scope
 
 Resume the discussion of how to evaluate **gz-starter and its extension/use of

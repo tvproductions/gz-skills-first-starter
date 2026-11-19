@@ -10,8 +10,56 @@ closeout before proposing changes. The
 records the discussion and proposed obligation/evidence audit followed by bounded
 behavioral scenarios. That campaign has not run; its protocol remains proposed.
 No policy relaxation, implementation, native activation or new release scope is
-selected. Published metadata stays 0.11.2. The separately approval-gated
+selected by that discussion. Published baseline stays 0.11.2; the November 19
+maintenance below selects development metadata 0.11.3. The separately approval-gated
 bootstrap correction/proposed 0.12.0 below remains open.
+
+## Selected 0.11.3 scope — dependency maintenance, November 19, 2026
+
+Published baseline **0.11.2**, immutable source
+`1175433c950d47d5330e4a9a36a986f1a0c6ae26` -> pending **0.11.3 / patch**.
+The subsequent maintainer request **“release 0.11.3”** authorizes release-specific
+preparation, ordinary main commit/push, exact-source CI, immutable annotated tag
+and GitHub publication. The
+[release receipt](docs/evidence/2026-11-19-0.11.3-release.md) records those gates
+and their actual outcome separately from the completed maintenance below.
+Governing work: the maintainer's explicit `gzs-update-dependencies` invocation
+from clean main `6535e9cd93baca66a21deb8243188db79796508a`. Restore the existing
+latest-stable tooling commitment after new upstream releases; add no new product
+requirement, policy, supported interface or architectural choice. The proposed
+0.12.0 correction remains independently approval-gated, not a selected maintenance
+target. Reuse ADR-0001's unchanged component-binding decision.
+
+Included: inventory both Python baselines and all registry dependencies, runtimes,
+uv/backend, root-managed example, Actions, components, catalogs and native source
+bindings; migrate ty 0.0.105 -> 0.0.107, Import Linter 2.16 -> 2.17 and virtualenv
+21.15.8 -> 21.15.9; reconcile locks, version mirrors and packaged bundle.
+Acceptance: current official-source evidence, stable repeat resolution, exact
+environment sync, empty outdated results, complete locked security audits, the
+full repository gate and affected tool positive/negative controls on managed
+Python 3.14.10 and independent 3.12.16. Record outcomes and remaining work in the
+[candidate receipt](docs/evidence/2026-11-19-dependency-maintenance.md).
+
+Completed locally: both migrations, stable repeat locks, exact environment sync,
+empty outdated results, all four routine hooks (**95 unittest tests**) and
+**29 checker CLI tests**, complete
+75-package security audits per baseline with zero vulnerabilities/skips, catalog/
+resource/version checks, source-independent build, isolated installed behavior/
+typing and changed-tool positive/negative controls on both exact interpreters.
+The [candidate receipt](docs/evidence/2026-11-19-dependency-maintenance.md) and its
+machine-readable companion retain inputs, results and bounded platform claims.
+Included local maintenance work remaining: **none**. Exact-candidate hosted CI
+remains pending until the authorized release sync; current release-specific
+evidence and acceptance are recorded in the receipt above. Excluded:
+bootstrap implementation/approvals, discipline experiments, unrelated backlog,
+policy changes, native installation/activation and companion/adopter writes.
+Git sync and publication were excluded from maintenance and are now separately
+authorized by the release request. Retain cognitive DEFERRED / measurement UNKNOWN, ceiling
+15, adopter-owned cohesion and embedded/platform/native qualification limits.
+Compatibility impact: development-tool pin refresh; preserve application behavior,
+Python families, routine hooks and project/user activation scope. Release
+acceptance/publication requires the current candidate evidence and exact-source
+verification recorded above.
 
 ## Selected correction — pre-implementation verification, November 17, 2026
 
@@ -40,7 +88,8 @@ Version decision at intake: published **0.11.1** -> proposed **0.12.0 / minor**
 for the new supported command/dependency/adoption interface. The maintainer has
 since selected publication of the completed maintenance as **0.11.2** below;
 the proposed minor therefore advances that patch, rather than folding in an
-unpublished maintenance checkpoint. Development metadata still records **0.11.2**;
+unpublished maintenance checkpoint. Development metadata now records **0.11.3**
+for the independent November 19 maintenance;
 planning acceptance MUST reconcile all mirrors after design approval, before
 implementation/closeout. No completed version reconciliation is claimed yet.
 

@@ -5,10 +5,25 @@
 No subsequent release scope is selected. The bootstrap-verification correction
 remains in design review for proposed 0.12.0.
 
+## 0.11.3 — November 19, 2026
+
+Compatible maintenance patch; no baseline policy, public interface or activation
+change. Adopters may reconcile the refreshed tool pins with their own locks and
+environments. Retain cognitive DEFERRED / measurement UNKNOWN and native/embedded
+qualification limits. See the [release receipt](docs/evidence/2026-11-19-0.11.3-release.md).
+
+- Refresh both Python baselines to ty 0.0.107, Import Linter 2.17 and transitive
+  virtualenv 21.15.9. Preserve Python families, baseline policy, routine hooks,
+  uv minimum-only compatibility and component activation. See the
+  [November 19 maintenance receipt](docs/evidence/2026-11-19-dependency-maintenance.md)
+  for exact candidate inputs, compatibility controls and remaining limits.
+
 - Save the November 18 starter-discipline evaluation discussion and proposed
   method in a [fresh handoff](docs/handoffs/2026-11-18-discipline-evaluation-handoff.md).
   Update continuation pointers; preserve current requirements and distinguish
   the unexecuted evaluation proposal from observed qualification evidence.
+  Retain the saved overprompting article/reference and prior publication records;
+  no experiment, framework change or bootstrap implementation is delivered.
 
 ## 0.11.2 — November 18, 2026
 

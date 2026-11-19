@@ -4,14 +4,25 @@ Current published release: **0.11.2 / patch**, November 18, 2026, immutable sour
 `1175433c950d47d5330e4a9a36a986f1a0c6ae26`. Both exact-source CI jobs, annotated
 remote tag, stable GitHub release and downloaded tagged-source contents are
 verified in the [release receipt](evidence/2026-11-18-0.11.2-release.md).
-Preserve 0.11.2 metadata; no subsequent implementation release is approved.
+Pending **0.11.3 / patch**, selected by the November 19 maintenance invocation,
+restores the existing latest-stable tooling commitment with ty 0.0.107, Import
+Linter 2.17 and virtualenv 21.15.9 in both Python baselines. Reconcile all version
+mirrors and preserve the immutable published baseline. The
+[bounded roadmap scope](../ROADMAP.md#selected-0113-scope--dependency-maintenance-november-19-2026)
+and [candidate receipt](evidence/2026-11-19-dependency-maintenance.md) own its
+verification and remaining limits. The subsequent maintainer request **“release
+0.11.3”** authorizes preparation, ordinary main synchronization, immutable
+annotated tag and GitHub publication after the required exact-candidate checks.
+The [release receipt](evidence/2026-11-19-0.11.3-release.md) records actual status;
+no publication success is inferred from development metadata.
 
 The [bootstrap-verification correction](../ROADMAP.md#selected-correction--pre-implementation-verification-november-17-2026)
 is in design review. Its proposed supported command/dependency/adoption interface
 would select **0.12.0 / minor** after design approval. The maintainer separately
 requested publication of the completed maintenance as **0.11.2**; the proposed
-minor advances that patch. Preserve current **0.11.2** metadata until that
-dependent planning/mirror reconciliation. No correction implementation, approved
+minor advances the published patch; the independent maintenance now selects
+**0.11.3** metadata. Reconcile the minor's mirrors only after its design approval.
+No correction implementation, approved
 architecture, completed minor-version reconciliation or release acceptance is
 claimed. The [current handoff](handoffs/2026-11-17-bootstrap-verification-handoff.md)
 distinguishes review direction from required complete-design/ADR approvals.
