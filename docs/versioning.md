@@ -1,20 +1,21 @@
 # Template versioning
 
-Current published release: **0.11.2 / patch**, November 18, 2026, immutable source
-`1175433c950d47d5330e4a9a36a986f1a0c6ae26`. Both exact-source CI jobs, annotated
+Current published release: **0.11.3 / patch**, November 19, 2026, immutable source
+`309c1a204174d802c69fc7e3c4d65ec236abe121`. Both exact-source CI jobs, annotated
 remote tag, stable GitHub release and downloaded tagged-source contents are
-verified in the [release receipt](evidence/2026-11-18-0.11.2-release.md).
-Pending **0.11.3 / patch**, selected by the November 19 maintenance invocation,
+verified in the [release receipt](evidence/2026-11-19-0.11.3-release.md).
+Release **0.11.3 / patch**, selected by the November 19 maintenance invocation,
 restores the existing latest-stable tooling commitment with ty 0.0.107, Import
 Linter 2.17 and virtualenv 21.15.9 in both Python baselines. Reconcile all version
-mirrors and preserve the immutable published baseline. The
+mirrors at 0.11.3 and preserve both immutable published sources. The
 [bounded roadmap scope](../ROADMAP.md#selected-0113-scope--dependency-maintenance-november-19-2026)
 and [candidate receipt](evidence/2026-11-19-dependency-maintenance.md) own its
 verification and remaining limits. The subsequent maintainer request **“release
 0.11.3”** authorizes preparation, ordinary main synchronization, immutable
 annotated tag and GitHub publication after the required exact-candidate checks.
-The [release receipt](evidence/2026-11-19-0.11.3-release.md) records actual status;
-no publication success is inferred from development metadata.
+The [release receipt](evidence/2026-11-19-0.11.3-release.md) records verified
+publication. Included release work remaining: **none**. No next implementation
+release is approved; the draft correction below remains independently gated.
 
 The [bootstrap-verification correction](../ROADMAP.md#selected-correction--pre-implementation-verification-november-17-2026)
 is in design review. Its proposed supported command/dependency/adoption interface

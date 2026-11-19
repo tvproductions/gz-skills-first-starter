@@ -10,14 +10,18 @@ closeout before proposing changes. The
 records the discussion and proposed obligation/evidence audit followed by bounded
 behavioral scenarios. That campaign has not run; its protocol remains proposed.
 No policy relaxation, implementation, native activation or new release scope is
-selected by that discussion. Published baseline stays 0.11.2; the November 19
-maintenance below selects development metadata 0.11.3. The separately approval-gated
+selected by that discussion. The November 19 maintenance below is published as
+0.11.3, with matching development metadata. The separately approval-gated
 bootstrap correction/proposed 0.12.0 below remains open.
 
 ## Selected 0.11.3 scope — dependency maintenance, November 19, 2026
 
 Published baseline **0.11.2**, immutable source
-`1175433c950d47d5330e4a9a36a986f1a0c6ae26` -> pending **0.11.3 / patch**.
+`1175433c950d47d5330e4a9a36a986f1a0c6ae26` -> released **0.11.3 / patch**.
+**Published and verified November 19:** [0.11.3](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.3)
+at immutable source `309c1a204174d802c69fc7e3c4d65ec236abe121`. Both exact-source
+CI jobs, annotated remote tag and downloaded tagged-source identity pass.
+Included release work remaining: **none**; all excluded work remains open.
 The subsequent maintainer request **“release 0.11.3”** authorizes release-specific
 preparation, ordinary main commit/push, exact-source CI, immutable annotated tag
 and GitHub publication. The
@@ -48,9 +52,9 @@ resource/version checks, source-independent build, isolated installed behavior/
 typing and changed-tool positive/negative controls on both exact interpreters.
 The [candidate receipt](docs/evidence/2026-11-19-dependency-maintenance.md) and its
 machine-readable companion retain inputs, results and bounded platform claims.
-Included local maintenance work remaining: **none**. Exact-candidate hosted CI
-remains pending until the authorized release sync; current release-specific
-evidence and acceptance are recorded in the receipt above. Excluded:
+Included local maintenance work remaining: **none**. Both exact-candidate hosted
+CI jobs passed; current release-specific evidence and conditional acceptance are
+recorded in the receipt above. Excluded:
 bootstrap implementation/approvals, discipline experiments, unrelated backlog,
 policy changes, native installation/activation and companion/adopter writes.
 Git sync and publication were excluded from maintenance and are now separately

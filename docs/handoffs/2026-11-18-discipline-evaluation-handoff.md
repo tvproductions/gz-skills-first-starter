@@ -4,7 +4,11 @@
 
 Subsequent authority: the maintainer requested **“release 0.11.3”**. Preparation,
 ordinary main commit/push, exact-source CI, immutable annotated tag and GitHub
-publication are now authorized; use the
+publication completed at immutable release source
+`309c1a204174d802c69fc7e3c4d65ec236abe121`. Both jobs passed in
+[exact-source CI](https://github.com/tvproductions/gz-starter/actions/runs/44527090703),
+the annotated remote tag resolves correctly and downloaded tagged source matches
+all 233 local archive entries, including two symlinks. Use the
 [release receipt](../evidence/2026-11-19-0.11.3-release.md) for current outcome.
 The maintenance-only boundaries recorded below describe the earlier invocation.
 No bootstrap approval, experiment, native activation or companion/adopter write
@@ -18,14 +22,14 @@ That sync is complete; no additional sync authority carries into this change.
 
 The maintainer then explicitly invoked `gzs-update-dependencies`. Its separate
 source/environment maintenance is locally complete: ty **0.0.107**, Import Linter
-**2.17** and virtualenv **21.15.9** in both locked Python baselines, with pending
-**0.11.3 / patch** over published **0.11.2**. Use the
+**2.17** and virtualenv **21.15.9** in both locked Python baselines, now published
+as **0.11.3 / patch** over **0.11.2**. Use the
 [bounded roadmap scope](../../ROADMAP.md#selected-0113-scope--dependency-maintenance-november-19-2026)
 and [candidate receipt](../evidence/2026-11-19-dependency-maintenance.md) for exact
 inputs, all applicable gate results, changed-tool controls and remaining limits.
-The reviewed changes remain uncommitted; exact-candidate hosted CI is UNKNOWN.
-No publication, native installation/activation or companion/adopter change is
-authorized. The prior discussion below selects no implementation; its evaluation
+The maintenance was initially uncommitted and is now included in the verified
+release source above. No native installation/activation or companion/adopter
+change is authorized. The prior discussion below selects no implementation; its evaluation
 proposal and the bootstrap correction's separate approvals remain open.
 
 The version/authority statements below describe the November 18 save point;
