@@ -395,20 +395,12 @@ updates to `gzs-update-dependencies` and dependency-risk assessments to
 `gzs-dependency-risk-audit`, preserving project scope and authorities. This policy
 binds those workflows to the selected Python family, tool choices and verification
 requirements; it does not duplicate their inventory, resolution or audit process.
-The pinned gz-skills v0.12.0 maintenance skill supports freshness-only review and
-template/plugin inventory. Review mode leaves pins and environments unchanged.
-Apply the mandatory [completed-migration binding](../baseline-policy.md#dependency-maintenance-means-completed-migration)
-to the starter and every adopter: maintenance/update/upgrade/freshen requests,
-including a bare `gzs-update-dependencies` invocation, require fully migrating
-the requested scope to the most current stable versions across newer families
-and verifying the result. This overrides older portable review-only defaults.
-Do not stop at recommendations or an offer to apply, and do not ask again for
-ordinary migration steps. Review-only is reserved for explicit check, freshness,
-assessment or no-changes requests; report concrete upgrade targets and checks
-while leaving dependency state unchanged. Review and adapt tool integrations
-within the authorized migration. Only demonstrated incompatibility, recorded as
-an owned and dated exception, permits retaining older versions. Preserve product
-requirements, rollback and acceptance thresholds; report blocked work explicitly.
+The selected maintenance skill supplies freshness review and template/plugin
+inventory; resolve its version from the project-owned bundle and actual discovery.
+Before a freshness assessment or authorized migration, read and apply the
+[completed-migration binding](../baseline-policy.md#dependency-maintenance-means-completed-migration).
+It owns mode selection, completed migration, newer-family review, product
+preservation, retained-version exceptions and acceptance requirements for both lanes.
 Preserve this starter's Python 3.14 family and retired Xenon/Radon decisions over
 upstream profile defaults; the pin update does not select a lite/heavy profile.
 
@@ -431,6 +423,38 @@ before merge. No automatic merge, publication, maintenance hook or extra deeper
 analysis CI gate follows. Adopters choose their update sources and timing.
 Keep these tool preferences starter-owned and upstream plugins agnostic. SP-BP
 remains disabled until readiness and explicit adoption are established.
+
+### Starter publisher inventory and receipts
+
+This subsection applies to this starter repository's own execution environment;
+adopters use the stack-maintenance procedure above. Complete maintenance before
+each starter release, at scoped tool upgrades and during quarterly on-demand
+maintenance. Use the selected gz-skills workflow; if it is unavailable, follow
+this policy and the linked stack procedure directly and report the limitation.
+
+Inventory `.python-version`, uv/uv_build, dev and hygiene groups, uv.lock,
+pre-commit/CI execution pins, pinned GitHub Actions, SP, gz-skills and deferred
+SP-BP. Cover the standard and X-Plane/XPPython3 baselines independently. Compare
+official live stable releases across families while retaining the approved
+Python/embedded-host policy. Installed versions, passing tests and a valid lock
+do not establish freshness.
+
+Keep a dated receipt in `docs/evidence/` naming actual candidate inputs,
+current/latest versions or SHAs, official sources, compatibility findings,
+adopt/defer decisions, exception owner/revisit and remaining UNKNOWNs. Refresh it
+for every release and link it from release preparation. Identify retained pins
+explicitly. Stale, missing or unverifiable required freshness evidence blocks
+release/adoption acceptance; the starter maintainer owns that judgment.
+
+During authorized migration, reconcile affected metadata, locks, tool/CI pins,
+configuration and guidance through their owning tools. Plugin changes update
+both catalogs; regenerate changed wheel resources. Run the repository gate and
+changed-tool checks on the actual pinned interpreter, preserve rollback and
+record results before claiming verification. Keep exact pins between updates.
+Keep scheduled baseline scans separate; missing inputs remain coverage gaps.
+Require review/checks before merge. Do not automatically merge, publish or update
+native plugin/cache installations, and add no maintenance hook or competing
+maintenance skill/reporter. Publication requires the user's actual authorization.
 
 ## Ownership and evidence
 

@@ -129,6 +129,9 @@ into the root `pyproject.toml`. Deliberately independent host/runtime projects
 need an explicit documented boundary rather than accidental workspace splitting.
 
 Apply `docs/engineering/verification-policy.md` from the reviewed starter source.
+Follow SP's verification-before-completion discipline with this project-specific
+scope. Execute each selected command completely and freshly, inspect its real
+results and exit status, then make the corresponding completion claim.
 Select checks from the diff's behavior, owning package and affected consumers.
 Documentation-only work needs review, not code tests. Small reversible layout,
 markup or wording changes use changed-file checks, relevant existing tests and
@@ -136,13 +139,13 @@ invented rendered review where applicable. Full gates belong to broad/uncertain
 changes, verification/dependency/workspace changes and integration/release
 checkpoints; do not run every workspace suite at every local commit.
 Project hooks must support affected/focused checks and keep full checks directly
-runnable. This scope policy overrides generic imported workflow defaults demanding
-a full suite, fresh plan, independent review, negative control or installed-build
-replay for every edit. Use stronger evidence for consequential behavior or changed
-delivery boundaries. Add tests only for a plausible defect and observable result;
-reuse owning oracles, avoid ceremonial/duplicate tests and repeated workflow
-fixtures. Reuse passes while relevant inputs remain unchanged. Record scope and
-limits briefly in existing project records, not a new per-edit evidence system.
+runnable. Carry forward applicable existing plans; use stronger evidence and the
+owning workflow's review/test discipline for consequential behavior or changed
+delivery boundaries. Add tests for a plausible defect and observable result;
+reuse owning oracles and avoid ceremonial/duplicate tests. Cite earlier results
+with their date and exact inputs as historical evidence for unchanged areas;
+they do not establish a fresh execution. Repeat affected checks when inputs/risk
+change. Record scope and limits briefly in existing project records.
 
 At work-session start, perform a bounded dependency/tool/component freshness
 check against official sources, reusing applicable recent dated evidence. Flag
@@ -175,10 +178,15 @@ with gz-skills; this is not a second dependency updater.
 Its guidance highlights the emphasis when using gz-skills: dependency freshness,
 current Python practices, portability and obedience to adopted project policy.
 For project operations, use project-owned skills. For feature work, use the
-installed SP `using-superpowers` workflow; for engineering skill selection, use
-gz-skills `gzs-router`. Verify actual discovery before claiming either is available.
-Superpowers supplies feature design and implementation; gz-skills supplies
-portable engineering disciplines. Superpowers Backplane remains pinned for
+installed SP `using-superpowers` workflow. **Starter is the outer loop, SP is the
+inner loop, and gz-skills is supplemental.** Within existing project authority,
+the starter frames the objective, authorized scope, requirements and completion
+conditions, selects the work and assesses overall fulfillment. SP carries out
+development within that context. Use gz-skills `gzs-router` for a distinct
+supplemental engineering need, including scoped maintenance or audits. Enhance
+SP with project context and requirements; keep its workflow intact. Verify actual
+discovery before claiming either plugin is available.
+Superpowers Backplane remains pinned for
 future adoption but is disabled by default because readiness is incomplete.
 Use existing project backlog and handoff practices in the meantime.
 
@@ -347,50 +355,16 @@ verified mapping; those workflows do not establish a complete version audit.
 Report missing workflow coverage rather than inventing a starter skill or claiming
 that a current runtime proves current code.
 
-At setup/adoption, before each release, scoped upgrades and quarterly on-demand
-maintenance, check this starter template, Superpowers,
-Superpowers Backplane and gz-skills independently for upstream updates. Compare
-the recorded starter/component SHAs with official published releases; where no
-release exists, distinguish a reviewed published commit from a stable release.
-Review template changelogs for baseline-policy changes as well as dependency
-versions; a new template release does not automatically change project policy.
-Record the checked date, selected/latest versions or SHAs, compatibility evidence
-and adopt/defer decisions. Review configuration changes before using native
-update operations, preserve project additions and overrides, keep rollback pins,
-and verify actual loaded sources in a fresh session. Track SP-BP freshness while
-it is deferred; keep it disabled until readiness and explicit adoption are
-established. Use the reviewed starter's `docs/adoption.md` maintenance procedure.
-
-Generic maintenance belongs in gz-skills: use its discovered
-`gzs-update-dependencies` for authorized dependency/tool updates and
-`gzs-dependency-risk-audit` for risk assessments. The starter supplies baseline
-policy and stack-specific binding guidance. Do not create a duplicate local
-maintenance skill or generic freshness reporter. The pinned gz-skills v0.13.0
-supplies freshness-only review and template/plugin inventory. Review mode leaves
-pins and environments unchanged; preserve project policy and profile choices.
-For every adopter in both lite and heavy lanes, a request to maintain, update,
-upgrade or freshen dependencies/tools means fully migrate the requested scope
-to the **most current stable upstream versions, including newer stable families**,
-and complete verification. A bare `gzs-update-dependencies` invocation uses
-update mode here: this explicit starter/project binding overrides the portable
-skill's older review-only default without changing unrelated consumers. Do not
-stop at an inventory, recommendation, adopt/defer table or offer to apply. Perform the
-ordinary resolution, integration and configuration work without asking again.
-Review-only applies **only to an explicit check, freshness review, assessment or
-no-changes request**; then leave pins, locks and environments unchanged and
-report concrete targets, benefits, compatibility risks and required checks.
-
-Follow `docs/baseline-policy.md#dependency-maintenance-means-completed-migration`
-in the reviewed starter. Reconcile affected constraints, declarations, exact
-selections, locks, backends, hook/CI pins, commands and configuration; adapt
-integration and run the full applicable project gate and changed-tool checks.
-Old ranges, major bumps, untested compatibility or hypothetical risk alone do
-not justify retaining older families. Preserve required product behavior,
-Python's N-1 family and evidenced embedded-host exceptions. Retain an older
-selection only for demonstrated incompatibility with evidence, accepted-by
-authority, owner and dated revisit; mark it noncurrent/conditional. Keep rollback
-and report blocked migration and acceptance gaps. Respect explicit scope and
-preserve native installation/activation boundaries. No publication is implied.
+Before setup/adoption, release preparation, scoped upgrades or quarterly
+maintenance, read the reviewed starter's
+`docs/adoption.md#maintaining-the-adopted-stack` and
+`docs/baseline-policy.md#dependency-maintenance-means-completed-migration`.
+Apply the mandatory maintenance contract at the top of this file. Use
+`gzs-update-dependencies` for updates and `gzs-dependency-risk-audit` for risk
+assessments; preserve project choices and keep generic workflows upstream-owned.
+Those authorities require independent starter/component freshness review, exact
+provenance, policy-change review, rollback, scoped migration, native preservation
+and actual discovery evidence. Keep deferred SP-BP disabled until explicit adoption.
 
 Track the adopted starter's own version and exact SHA in its bundle lock,
 independently of app and upstream plugin versions. Compare reviewed template

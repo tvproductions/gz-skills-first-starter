@@ -19,9 +19,12 @@ until readiness and explicit adoption. Project operational skills remain
 project-owned.
 
 The starter reinforces and highlights upstream behaviors so adopters understand
-which practices matter here. gz-skills supplies the reusable skills; this template
-makes freshness, version-appropriate Python code, portability and project-policy
-precedence visible in its instructions and guidance. It adds no parallel workflow.
+which practices matter here. **Starter is the outer loop, SP is the inner loop,
+and gz-skills is supplemental.** The starter supplies the objective, scope,
+project requirements and completion assessment around SP's development workflow.
+gz-skills adds distinct engineering disciplines as needed. The
+[architecture guide](architecture.md#outer-loop-inner-loop-and-supplemental-disciplines)
+defines this composition and its ownership boundaries.
 
 The narrow ownership boundary does not make this a neutral template. The
 starter deliberately selects uv-managed Python 3.14 (3.12 for XPPython3-bound
@@ -59,8 +62,9 @@ selection is required before completed adoption. See the
 [greenfield/brownfield runbook](adoption-0.5.md); policy acceptance remains a
 project-owned review obligation rather than a helper readiness claim.
 
-Project instructions route feature work to SP and engineering selection to
-gz-skills. Generic maintenance stays in gz-skills `gzs-update-dependencies`;
+Project instructions carry the starter's outer-loop context into SP and select
+supplemental engineering skills through gz-skills `gzs-router`.
+Generic maintenance stays in gz-skills `gzs-update-dependencies`;
 dependency-risk review stays in `gzs-dependency-risk-audit`. This repository owns
 the policy binding and adoption helper, not another skill catalog or generic
 dependency updater. Supporting utilities remain ordinary tooling, not skills.
@@ -85,7 +89,8 @@ This starter dogfoods the upstream development workflows through its checked-in
 `.codex/config.toml`, `.claude/settings.json` and `opencode.json`. It enables
 `superpowers@skills-first-starter` and
 `gz-skills@skills-first-starter` only in this trusted project, disables the
-alternative `gz-skills@gz-skills` source here to avoid duplicates, and keeps
+alternative `gz-skills@gz-skills` and inherited `superpowers@superpowers-dev`
+sources here to avoid duplicates, and keeps
 Backplane disabled. User defaults and unrelated projects retain their settings.
 
 The development configuration uses the immutable November 15 catalog at
@@ -93,6 +98,10 @@ The development configuration uses the immutable November 15 catalog at
 0.13.0, with Backplane 0.3.0 disabled. Codex/Claude marketplace bindings and
 OpenCode source configuration select the same component combination.
 Fresh-session loading remains separate evidence.
+The [November 19 evaluation](evidence/2026-11-19-instruction-discipline-evaluation.md)
+records actual duplicate Superpowers discovery, project-only `localize` repair
+and fresh root/src/outside lookup controls on Codex CLI 0.170.0. Broader model
+behavior and existing desktop conversation refresh remain separate questions.
 The binding commit follows its catalog commit to avoid a self-referential SHA.
 Reconcile this development marketplace ref when reviewing future catalog changes;
 a local catalog edit alone does not update the pinned development source.

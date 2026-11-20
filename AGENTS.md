@@ -20,13 +20,13 @@ language, explicit completion conditions and required evidence. Agents MUST NOT
 substitute convenient defaults, bypass failed checks or claim acceptance from
 configuration alone. Keep missing requirements and evidenced exceptions explicit.
 
-Use `docs/engineering/verification-policy.md` for this starter and both adopter
-lanes. Scope local checks to changed files, owning behavior and affected consumers;
-keep full gates for broad/uncertain changes and integration/release checkpoints.
-This overrides generic workflow defaults requiring a full suite, fresh plan,
-review or build/install replay for each small edit. Add tests for meaningful
-defects and repeat passes only when relevant inputs/risk change. Keep Astral
-settings centralized in root `pyproject.toml`, including for workspaces.
+Follow SP's verification-before-completion discipline. Use
+`docs/engineering/verification-policy.md` to select complete commands for the
+changed behavior and affected consumers; run them freshly before claiming their
+results. Keep full gates for broad/uncertain changes and integration/release
+checkpoints. Cite earlier results with their date and inputs as historical
+evidence; repeat affected checks when inputs/risk change. Add tests for meaningful
+defects. Keep Astral settings centralized in root `pyproject.toml`, including workspaces.
 At session start, make a bounded freshness check and flag needed maintenance;
 migrate in a separately authorized maintenance pass. Startup is a freshness-only
 context, not a bare dependency-maintenance invocation.
@@ -62,7 +62,14 @@ Use exact-source qualification in docs/evidence/2026-11-15-adr-combination.md;
 configuration alone does not prove native discovery or behavioral qualification.
 
 Use this checkout's native development skills through `.codex/config.toml`:
-SP for feature work and gz-skills for engineering workflows. The project-scoped
+**starter is the outer loop, SP is the inner loop, and gz-skills is supplemental.**
+The starter frames the objective, authorized scope, project requirements and
+completion conditions, selects the work and assesses overall fulfillment.
+Use the applicable SP development workflow within that context; add gz-skills
+for a distinct engineering need, including scoped maintenance or audits.
+Enhance SP with project context and requirements; keep its workflow intact.
+See `docs/architecture.md#outer-loop-inner-loop-and-supplemental-disciplines`.
+The project-scoped
 `update-gz-template` links to its canonical template source for adopter work;
 do not run template adoption or template upgrades against this starter itself.
 See `docs/structure.md#native-development-skills` for discovery and verification.
@@ -186,28 +193,6 @@ claim of freshness; report limitations without requiring a per-run exception.
 Record compatibility exceptions with evidence and a revisit condition. Pass this
 rule to adopters through the instructions fragment and Python engineering policy.
 
-Generic dependency maintenance belongs in gz-skills. Route authorized updates to
-`gzs-update-dependencies` and dependency-risk reviews to
-`gzs-dependency-risk-audit`; keep this starter's material as policy and binding
-guidance. Do not add a competing local maintenance skill or generic freshness
-reporter. The pinned gz-skills v0.13.0 supplies freshness-only review and
-starter/template/plugin inventory through `gzs-update-dependencies`; review mode
-leaves pins and environments unchanged. Preserve this starter's approved Python
-family and retired-tool decisions over upstream profile defaults.
-For this starter and every adopter, dependency/tool maintenance means fully
-migrating the requested scope to the most current stable upstream versions,
-including newer stable families, and completing the required verification.
-A bare `gzs-update-dependencies` invocation uses update mode under this explicit
-binding, overriding older portable review-only defaults. Do not stop at a review,
-recommendation or offer to apply, or ask again for ordinary migration steps.
-Review-only is reserved for an explicit check, freshness review, assessment or
-no-changes request. Follow
-`docs/baseline-policy.md#dependency-maintenance-means-completed-migration`:
-reconcile constraints, locks, configuration and integration; retain older versions
-only for demonstrated incompatibility with owned, dated exception evidence.
-Preserve Python N-1/embedded-host policy and product requirements; report blocked
-migration and acceptance gaps honestly. No publication or activation is implied.
-
 The routine standard is Ruff check/format, ty, unittest (never pytest), and
 pre-commit running those checks. Favor strict, reviewed lint rules. On-demand
 hygiene selects Ruff C901 (cyclomatic ceiling 20), cognitive ceiling 15 using
@@ -296,8 +281,9 @@ requested branch/PR scope. A local commit alone is not a completed sync.
    `uv tool run --from uv==<supported-version> uv ...`; record the actual version
    and ensure nested hooks resolve that selection. Run the repository gate and
    applicable changed-tool/analyzer checks. Keep the four routine hooks intact;
-   do not bypass failing checks. For documentation-only changes, reuse checks
-   already passed on the same relevant inputs rather than inventing tests.
+   do not bypass failing checks. For documentation-only edits, run fresh diff/
+   reference checks and cite unchanged owning results by date and inputs as
+   historical evidence; add no ceremonial tests. Keep the required integration gate.
 4. Commit the reviewed changes with the normal hooks enabled. Push the intended
    branch using an ordinary push. If the remote advanced, fetch, reconcile and
    rerun affected checks before retrying; never overwrite remote work.
@@ -318,49 +304,12 @@ plugins, or modify dependent repositories as an incidental sync action.
 
 ## Starter tooling maintenance
 
-Maintain this repository's own execution environment, not only adopter guidance.
-Complete dependency/tool migration before preparing each starter release, at
-scoped tool upgrades and during quarterly on-demand maintenance. Check official
-live releases first, then apply the most current stable versions across families
-and verify the requested scope. Use discovered `gzs-update-dependencies` in update
-mode unless the user explicitly requested only a check/freshness/assessment,
-following
-`docs/engineering/python.md#periodic-dependency-freshness-review` and
-`docs/adoption.md#maintaining-the-adopted-stack`. If the skill is unavailable,
-follow those documented procedures directly and report that limitation.
-
-Inventory `.python-version`, uv/uv_build, dev and hygiene groups, uv.lock,
-pre-commit/CI execution pins and pinned GitHub Actions, plus SP, gz-skills and
-deferred SP-BP. Compare the latest stable releases across tooling families;
-keep the explicitly approved Python/embedded-host families distinct. Review new
-tool families instead of using an old range to declare currency. Installed versions, passing tests and a valid
-lock do not establish freshness. Distinguish release age from abandonment.
-
-Keep a dated receipt in `docs/evidence/` with current/latest versions or SHAs,
-official evidence, compatibility findings, adopt/defer decisions, owner/revisit
-for exceptions and remaining UNKNOWNs. Link the receipt from release preparation;
-identify retained pins explicitly rather than describing unreviewed tooling as
-current. Stale, missing or unverifiable required freshness evidence blocks
-release/adoption acceptance. The starter maintainer owns this decision; invoking
-gz-skills does not discharge it. A receipt must name the actual candidate inputs
-and be refreshed for each release. Explicit review-only requests leave pins,
-locks and environments unchanged; ordinary maintenance must finish the migration.
-
-During the authorized migration, reconcile affected metadata, lock, Python/tool/CI
-pins and guidance together through the owning tools. Plugin changes also update
-both catalogs; regenerate changed wheel resources. Run the documented repository
-gate and changed-tool compatibility checks on the actual pinned interpreter.
-Preserve rollback and record results before claiming the update is verified.
-Keep exact pins between scoped updates. Scheduled dependency scans and update
-PRs are permitted for this repository's standard and X-Plane/XPPython3 baselines;
-keep their Python families, dependency declarations, locks and verification
-separate. Missing baseline inputs are coverage gaps, not successful scans.
-Require review and applicable checks before merge; do not automatically merge,
-publish releases or update native plugin/cache installations. Add no maintenance
-hook or competing maintenance skill/reporter. Adopters choose whether to use
-starter updates, independent upstream updates or both; no adopter schedule is
-imposed. See `docs/baseline-policy.md#scheduled-dependency-scanning`.
-Publication follows the user's actual release authorization.
+Before release preparation, scoped tool upgrades or quarterly maintenance, read
+`docs/engineering/python.md#periodic-dependency-freshness-review`, including its
+starter-publisher inventory/receipt requirements, and apply the mandatory contract
+at the top of this file. Use `gzs-update-dependencies` for maintenance and
+`gzs-dependency-risk-audit` for risk review. If unavailable, follow that documented
+procedure directly and report the limitation. Keep generic skills upstream-owned.
 
 When designing features or reviewing dependencies, assess concrete Python 3.14
 gains over 3.13 using the Python policy's versioned opportunity guide. Record

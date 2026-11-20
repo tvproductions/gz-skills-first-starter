@@ -1,5 +1,27 @@
 # Architecture and ownership
 
+## Outer loop, inner loop and supplemental disciplines
+
+**GZ Starter is the outer loop, Superpowers (SP) is the inner loop, and gz-skills
+is supplemental.** Apply this composition within the project's existing authority:
+
+- **Starter — outer loop:** frame the objective, authorized scope, project
+  requirements and completion conditions; select the work, supply its context
+  and assess whether the overall request was fulfilled.
+- **SP — inner loop:** carry out development through its applicable design,
+  planning, implementation, testing and review workflows.
+- **gz-skills — supplemental:** supply a specific engineering discipline when
+  needed, supporting the SP workflow or handling a scoped engineering task such
+  as dependency maintenance within the starter's outer loop.
+
+The starter enhances SP with project context and requirements. Keep SP's
+development workflow intact and compose supplemental disciplines for distinct
+needs. Project instructions, configuration and existing planning/evidence records
+carry this relationship; workflow implementations remain with their owners.
+Project-owned operational skills retain their domain responsibilities.
+
+## Component ownership and delivery
+
 The [architectural decision policy](engineering/architectural-decisions.md)
 binds both lanes and this publishing repository. Decisions live in their ADRs
 under `docs/decisions/`, with embedded or durably referenced approval evidence.
@@ -33,11 +55,12 @@ contain authored copies of those skill trees.
 
 ```text
 Project AGENTS and domain authorities
-  -> direct workflow references -> SP (feature work) + gz-skills (engineering)
-  -> existing backlog/handoff practice; SP-BP deferred
+  -> Starter outer loop: objective, scope, requirements, completion
+     -> SP inner loop: development workflow
+        <- gz-skills: supplemental engineering disciplines
+     -> gz-skills: scoped engineering tasks where applicable
   -> project-owned operational skills
-  -> project-owned deterministic code and adapters
-  -> versioned operational records and generated products
+  -> existing backlog/handoff and evidence records; SP-BP deferred
 ```
 
 The adoption helper is standard-library Python. `configure --host` selects
@@ -111,9 +134,9 @@ Generic dependency maintenance is owned by gz-skills: authorized updates route
 to `gzs-update-dependencies`, and dependency-risk assessments route to
 `gzs-dependency-risk-audit`. This starter supplies release-family policy, project
 bindings, bundle/catalog consistency and preservation requirements. It does not
-add a parallel maintenance skill or generic freshness reporter. The pinned
-gz-skills v0.12.0 supplies freshness-only assessment and template/plugin inventory
-through its maintenance skill. The starter's mandatory
+add a parallel maintenance skill or generic freshness reporter. The selected
+gz-skills maintenance skill supplies freshness-only assessment and template/plugin
+inventory. The starter's mandatory
 [completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
 overrides older portable review-only defaults for this starter and every
 adopter: maintenance and bare maintenance-skill invocations complete the most

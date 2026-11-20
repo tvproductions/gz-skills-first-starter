@@ -1,5 +1,11 @@
 # GZ Starter
 
+Release **0.11.4** fixes duplicate Superpowers discovery, clarifies the starter/
+SP/gz-skills composition and simplifies instruction delivery. It refreshes Ruff,
+platformdirs and the starter's setup-uv CI action. See the
+[release receipt](docs/evidence/2026-11-20-0.11.4-release.md) for verification and
+retained discipline/native/platform limits.
+
 Release **0.11.3** refreshes ty, Import Linter and virtualenv in both Python
 baselines. Published November 19, 2026, at immutable source
 `309c1a204174d802c69fc7e3c4d65ec236abe121`. See the
@@ -178,7 +184,7 @@ The template has its own version, independent of its plugins and adopter apps.
 `bundle.json` owns `template_version`; `starter.py version` reports it, and new
 adoption records both version and full commit SHA. See
 [versioning and release policy](docs/versioning.md) and [changelog](CHANGELOG.md).
-The published template baseline is [v0.11.3](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.3).
+The template release is [v0.11.4](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.4).
 Start with the [greenfield/brownfield runbook](docs/adoption-0.5.md), including
 existing-adopter upgrades and explicit acceptance/release requirements.
 Verify a published tag and exact commit before adoption; a metadata value
@@ -193,12 +199,15 @@ user requested before changing files:
 | Adopt into an existing project | Inventory installed sources, preview configuration, preserve existing authorities |
 | Backport a preferred structure | [Structure mapping guide](docs/backport.md); make useful changes incrementally |
 | Start a new project | [Use this template](https://github.com/tvproductions/gz-starter/generate), then adapt the copied starter material to the product |
-| Use an already adopted project | Project operational skills first; `gzs-router` for engineering skill selection; SP for feature design and implementation |
+| Use an already adopted project | Starter outer loop; SP inner development loop; gz-skills supplemental; project-owned skills for domain operations |
 
-The adopter instructions route project operations to project-owned skills,
-feature work to SP and engineering selection to gz-skills `gzs-router`. These
-are references to independently maintained workflows; the starter installs no
-routing skill or engineering catalog.
+**Starter is the outer loop, SP is the inner loop, and gz-skills is supplemental.**
+The starter frames the objective, authorized scope, project requirements and
+completion conditions, selects the work and assesses overall fulfillment. SP
+supplies the development workflow; gz-skills adds specific engineering disciplines
+where needed. The starter enhances SP through project context and requirements.
+Project operations use project-owned skills. See the
+[composition and ownership model](docs/architecture.md#outer-loop-inner-loop-and-supplemental-disciplines).
 
 For starter development or a fresh-chat continuation, read
 [the current continuation handoff](docs/handoffs/2026-11-18-discipline-evaluation-handoff.md).
@@ -233,7 +242,7 @@ an installed older patch is not a freshness check. See the
 [baseline rule](docs/engineering/python.md#latest-stable-within-the-selected-family).
 
 ```bash
-git clone --branch v0.11.3 https://github.com/tvproductions/gz-starter.git
+git clone --branch v0.11.4 https://github.com/tvproductions/gz-starter.git
 cd gz-starter
 uv run --locked gz-starter validate
 uv run --locked gz-starter configure --project /path/to/your-project

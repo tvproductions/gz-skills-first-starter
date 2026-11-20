@@ -2,17 +2,94 @@
 
 ## Current review — starter discipline evaluation, November 18, 2026
 
-Review gz-starter and its use/extension of SP and gz-skills against the
+Completed bounded review of gz-starter and its use/extension of SP and gz-skills against the
 maintainer's operating constraint of recurrent model drift. Preserve required
 discipline; assess activation, precedence, sustained adherence and truthful
 closeout before proposing changes. The
 [current handoff](docs/handoffs/2026-11-18-discipline-evaluation-handoff.md)
 records the discussion and proposed obligation/evidence audit followed by bounded
-behavioral scenarios. That campaign has not run; its protocol remains proposed.
-No policy relaxation, implementation, native activation or new release scope is
-selected by that discussion. The November 19 maintenance below is published as
+behavioral scenarios. The [November 19 evaluation](docs/evidence/2026-11-19-instruction-discipline-evaluation.md)
+completes the first source/evidence audit and fresh native discovery checks,
+including a separately requested duplicate-source repair. The authorized
+[pilot](docs/evidence/2026-11-19-discipline-pilot-results.md) now covers three
+cases in each host. The [completed assessment](docs/evidence/2026-11-19-discipline-evaluation-results.md)
+adds the five remaining scenario families and fixed positive follow-ups. The
+stack has not earned discipline acceptance: repeated locked-Python invocation
+violations remain. The runner's trust/delivery, resume-scope and cache preflight errors
+are diagnosed and corrected in disposable controls. Functional task results,
+violations and setup diagnostics remain separate. The subsequent
+[correction follow-up](docs/evidence/2026-11-19-discipline-corrections.md)
+completes the sampled adopter link and declared-verification gaps with three
+fresh corrective sessions. The maintainer accepted withdrawal of
+[ADR-0004 edition 1](docs/superpowers/specs/ADR-0004-001-python-command-control.md):
+the proposed enforcement subsystem exceeds the starter's lightweight scope.
+The Python invocation requirement and observed failures remain; automatic
+enforcement is not selected work. Continue from the evaluation findings through
+existing policy, upstream workflows and native capabilities. The maintainer
+subsequently selected bounded instruction cleanup: consolidate repeated maintenance
+guidance, bind verification scope to SP's fresh-command discipline and separate
+current handoff authority from history. This compatible correction is part of
+pending 0.11.4 below. No new tooling subsystem or broader comparative campaign is
+selected. The November 19 maintenance below is published as
 0.11.3, with matching development metadata. The separately approval-gated
 bootstrap correction/proposed 0.12.0 below remains open.
+
+## Selected 0.11.4 scope — Codex duplicate-source repair, November 19, 2026
+
+Published baseline **0.11.3**, immutable source
+`309c1a204174d802c69fc7e3c4d65ec236abe121` -> pending **0.11.4 / patch**.
+Governing work: the maintainer's request to fix duplicate Superpowers discovery
+found during the continued instruction evaluation. Restore the existing
+project-owned activation and inherited-duplicate suppression commitment. The
+existing approved native binding and ADR-0001 apply; no new ADR or PRD is needed.
+The maintainer's November 20 clarification also requires explicit composition:
+starter outer loop, SP inner loop, gz-skills supplemental. Reconcile repository
+guidance, the adopter instruction source and its packaged copy under the
+[ownership model](docs/architecture.md#outer-loop-inner-loop-and-supplemental-disciplines).
+This clarifies existing responsibilities and adds no workflow or public interface;
+retain the pending patch target and existing version mirrors.
+The maintainer then requested the concrete cleanup identified by the review.
+Preserve the prominent maintenance contract in each instruction entry point;
+use the existing baseline, Python policy and adopted-stack procedure as the
+authoritative detail. Align verification wording with SP and make the current
+handoff resume point unambiguous. This is a compatible clarification of existing
+requirements and source ownership, not a new workflow or supported interface.
+
+Included: preview/review/apply the project-only `localize --host codex` repair,
+preserve selected pins and user defaults, verify fresh discovery from root/src
+with an outside cwd control, reconcile metadata/lock/resource mirrors and record
+the research/audit and subsequent bounded pilot results. Current official advice informs the evaluation; it
+does not change engineering requirements. Completed: the override, idempotent
+preview, 15 duplicate pairs removed in fresh native discovery and unchanged user/
+other-host settings. The original activation repair passed the full applicable
+local gate: all four routine
+checks, **95 unittest tests**, catalog/resource/version validation,
+source-independent build and isolated installed verification. The November 20
+ownership clarification passes 50 affected adoption/native-host tests, resource/
+catalog/link checks, a fresh source-independent build and isolated installed
+verification. These are dated results for those inputs. The subsequent cleanup
+passed a fresh four-hook gate, resource/catalog/reference checks,
+source-independent build and isolated installed verification. Root instructions
+are 15.6% smaller by bytes and the adopter fragment 8.0% smaller, with requirements
+retained through explicit pointers to existing authorities. Included local work
+remaining: **none**. Model adherence is unverified; new-candidate hosted CI is
+UNKNOWN without a requested sync.
+The evaluation retains historical and untested behavior separately from the
+actual native discovery evidence. Compatibility: local activation correction;
+no component, public interface or adopter policy change.
+
+Excluded: upstream changes, extra hooks,
+global activation/uninstallation, comparative behavioral campaign, companion/adopter changes,
+and native plugin installation. The subsequent maintainer request “git sync and release 0.11.4”
+authorizes ordinary synchronization and publication after the release gates.
+Release preparation migrates fresh Ruff 0.17.6/platformdirs 4.14.8 releases in both
+Python baselines and setup-uv 10.4.0 in both CI jobs. The
+[release receipt](docs/evidence/2026-11-20-0.11.4-release.md) records actual candidate
+freshness, compatibility, security, verification and publication state.
+Local candidate checks pass; exact-source CI and publication remain pending.
+The proposed bootstrap 0.12.0 remains separately
+approval-gated. The [evaluation](docs/evidence/2026-11-19-instruction-discipline-evaluation.md)
+owns observed results and the distinction between discovery and model behavior.
 
 ## Selected 0.11.3 scope — dependency maintenance, November 19, 2026
 

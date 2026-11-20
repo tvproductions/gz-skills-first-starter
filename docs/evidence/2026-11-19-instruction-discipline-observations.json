@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-19T13:12:09.522484+00:00",
+  "starter_version": "0.11.3",
+  "starting_main_sha": "3a21fd48812698376d843d93e720c504bfedffeb",
+  "host": "Codex CLI 0.170.0; macOS ARM64",
+  "scope": "read-only native skill discovery; no model turn or behavioral replay",
+  "method": "fresh native app-server initialize/initialized; skills/list cwds root, src, isolated temporary outside directory; forceReload=true; no model turn",
+  "protocol_source": "codex app-server generate-json-schema; installed protocol v1 InitializeParams and v2 SkillsListParams",
+  "contexts": [
+    {
+      "cwd_label": "root",
+      "group_counts": [
+        {
+          "group": "local_update",
+          "enabled": true,
+          "count": 1
+        },
+        {
+          "group": "project_gz",
+          "enabled": true,
+          "count": 21
+        },
+        {
+          "group": "project_sp",
+          "enabled": true,
+          "count": 15
+        },
+        {
+          "group": "inherited_sp",
+          "enabled": true,
+          "count": 15
+        }
+      ],
+      "duplicate_names": [
+        "superpowers:brainstorming",
+        "superpowers:diagnosing-superpowers",
+        "superpowers:dispatching-parallel-agents",
+        "superpowers:executing-plans",
+        "superpowers:finishing-a-development-branch",
+        "superpowers:receiving-code-review",
+        "superpowers:requesting-code-review",
+        "superpowers:subagent-driven-development",
+        "superpowers:systematic-debugging",
+        "superpowers:test-driven-development",
+        "superpowers:using-git-worktrees",
+        "superpowers:using-superpowers",
+        "superpowers:verification-before-completion",
+        "superpowers:writing-plans",
+        "superpowers:writing-skills"
+      ],
+      "duplicate_bodies_identical": true,
+      "errors": 0
+    },
+    {
+      "cwd_label": "src",
+      "group_counts": [
+        {
+          "group": "local_update",
+          "enabled": true,
+          "count": 1
+        },
+        {
+          "group": "project_gz",
+          "enabled": true,
+          "count": 21
+        },
+        {
+          "group": "project_sp",
+          "enabled": true,
+          "count": 15
+        },
+        {
+          "group": "inherited_sp",
+          "enabled": true,
+          "count": 15
+        }
+      ],
+      "duplicate_names": [
+        "superpowers:brainstorming",
+        "superpowers:diagnosing-superpowers",
+        "superpowers:dispatching-parallel-agents",
+        "superpowers:executing-plans",
+        "superpowers:finishing-a-development-branch",
+        "superpowers:receiving-code-review",
+        "superpowers:requesting-code-review",
+        "superpowers:subagent-driven-development",
+        "superpowers:systematic-debugging",
+        "superpowers:test-driven-development",
+        "superpowers:using-git-worktrees",
+        "superpowers:using-superpowers",
+        "superpowers:verification-before-completion",
+        "superpowers:writing-plans",
+        "superpowers:writing-skills"
+      ],
+      "duplicate_bodies_identical": true,
+      "errors": 0
+    },
+    {
+      "cwd_label": "outside_control",
+      "group_counts": [
+        {
+          "group": "inherited_sp",
+          "enabled": true,
+          "count": 15
+        }
+      ],
+      "duplicate_names": [],
+      "duplicate_bodies_identical": true,
+      "errors": 0
+    }
+  ],
+  "duplicate_skill_sources": [
+    {
+      "name": "superpowers:brainstorming",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/brainstorming/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/brainstorming/SKILL.md"
+      ],
+      "sha256": "2c9ca71f94886f9ca9f4aef055f7cafb3e1a9bdf3aeebf8f4cb547c69405d207",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:diagnosing-superpowers",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/diagnosing-superpowers/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/diagnosing-superpowers/SKILL.md"
+      ],
+      "sha256": "3143de8695c5a2d63e8b1675f33837578076f464deb127c2ebdd0b46fceef886",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:dispatching-parallel-agents",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/dispatching-parallel-agents/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/dispatching-parallel-agents/SKILL.md"
+      ],
+      "sha256": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:executing-plans",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/executing-plans/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/executing-plans/SKILL.md"
+      ],
+      "sha256": "deaf176fa179827e80f2ea3101db3ea90fdf562ebef340eba761e4687940f5f5",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:finishing-a-development-branch",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/finishing-a-development-branch/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/finishing-a-development-branch/SKILL.md"
+      ],
+      "sha256": "8db5a922b242dd4e1bf824cb91c13b3e8d8e8a86d6ceaf7f0774eb9cce909d65",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:receiving-code-review",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/receiving-code-review/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/receiving-code-review/SKILL.md"
+      ],
+      "sha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:requesting-code-review",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/requesting-code-review/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/requesting-code-review/SKILL.md"
+      ],
+      "sha256": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:subagent-driven-development",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/subagent-driven-development/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/subagent-driven-development/SKILL.md"
+      ],
+      "sha256": "1baf70e307bde682c462513c86116333f1f066168c6710f45145bf5f0b00828d",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:systematic-debugging",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/systematic-debugging/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/systematic-debugging/SKILL.md"
+      ],
+      "sha256": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:test-driven-development",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/test-driven-development/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/test-driven-development/SKILL.md"
+      ],
+      "sha256": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:using-git-worktrees",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/using-git-worktrees/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/using-git-worktrees/SKILL.md"
+      ],
+      "sha256": "8cfb86f121269e8f7f12361e6795c4f6738828340e28964c9229d365666c9edd",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:using-superpowers",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/using-superpowers/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/using-superpowers/SKILL.md"
+      ],
+      "sha256": "82c5c8866ad7f5dd4440ce66bd7806ba48a2f13771beae5cf112e53f08fe36ba",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:verification-before-completion",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/verification-before-completion/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/verification-before-completion/SKILL.md"
+      ],
+      "sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:writing-plans",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/writing-plans/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/writing-plans/SKILL.md"
+      ],
+      "sha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    },
+    {
+      "name": "superpowers:writing-skills",
+      "sources": [
+        "$USER_HOME/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/writing-skills/SKILL.md",
+        "$USER_HOME/.codex/plugins/cache/superpowers-dev/superpowers/7.0.2/skills/writing-skills/SKILL.md"
+      ],
+      "sha256": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe",
+      "enabled_at_both_sources": true,
+      "body_bytes_identical": true
+    }
+  ],
+  "selected_workflow_examples": [
+    {
+      "name": "update-gz-template",
+      "enabled": true,
+      "source": "$REPO/templates/skills/update-gz-template/SKILL.md",
+      "sha256": "08c3f7a9a6e793055dd12b43cd80970babf638f91cbbf7b3860ce52d04b39997"
+    },
+    {
+      "name": "gz-skills:gzs-architectural-decisions",
+      "enabled": true,
+      "source": "$USER_HOME/.codex/plugins/cache/skills-first-starter/gz-skills/0.13.0/skills/gzs-architectural-decisions/SKILL.md",
+      "sha256": "a85b8a48fc700da52d65b5b61fa4ee525a1c0b7ffd303f02f753a26d5cf2339a"
+    },
+    {
+      "name": "gz-skills:gzs-intent-audit",
+      "enabled": true,
+      "source": "$USER_HOME/.codex/plugins/cache/skills-first-starter/gz-skills/0.13.0/skills/gzs-intent-audit/SKILL.md",
+      "sha256": "2ca84c69da73a3e15b1ab4be225d970db79b87e669d6fbc976bd0ca02b048679"
+    }
+  ],
+  "settings_guard": {
+    "protected_files": 5,
+    "outcome": "SHA256 values unchanged before/after native app-server query",
+    "content": "three repository configs and two user configs; no settings content published"
+  },
+  "unavailable_probe": {
+    "command": "codex plugin list --json",
+    "outcome": "no response within approximately one minute; terminated only the task-owned process",
+    "claim_limit": "no inventory verdict inferred from the stalled call; fresh local app-server query succeeded"
+  },
+  "limits": [
+    "One fresh process queried all three cwd scopes with forceReload=true; outside cwd is a lookup control, not a separately launched outside host or a model-turn test.",
+    "Native skill availability does not prove automatic skill selection, body loading, instruction compliance or retention after compaction.",
+    "No current-chat serving-model identity, effort, token usage or latency attribution was obtained.",
+    "No new Claude Code/OpenCode/desktop discovery or multi-model behavioral run was performed."
+  ],
+  "input_sha256": {
+    "AGENTS.md": "3f83da62e99fd358e47f64fb7883093053a5d6e8ea2b8f41221ba6b83eb143b3",
+    "templates/AGENTS.skills-first.md": "3c0b6c14f620ff8fbedeeaa798c441390b56da926b3648a56078fbab393584b3",
+    ".codex/config.toml": "30bcf703d6940731b527e68f412bcee566e34e8ff204674fcbefdb3a0f678af8",
+    ".claude/settings.json": "9205fc5b9065470b831c396bdf47649265b47c8d502063fbbda6e288415c84fe",
+    "opencode.json": "79d7b2ed74d3fce6592bd1ef80e09b8580c9faf5fc14d6a8cd992625fe77a405",
+    ".pre-commit-config.yaml": "a60ccfa5d5b5589635efe46692f574276302ba5a0eb2e5e6f8b74363f513908c",
+    "docs/engineering/verification-policy.md": "981657b5218a2ab554005a1352580bd49804f23ba230ee18ce8a3cde4adf1d20",
+    "docs/engineering/architectural-decisions.md": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7"
+  },
+  "instruction_size": {
+    "AGENTS.md": {
+      "utf8_bytes": 25728,
+      "lines": 368
+    },
+    "templates/AGENTS.skills-first.md": {
+      "utf8_bytes": 28830,
+      "lines": 400
+    },
+    "token_counts": "UNKNOWN; byte/line counts are not token measurements",
+    "truncation": "not demonstrated; root AGENTS.md alone is below documented 32768-byte default; effective combined chain not measured"
+  },
+  "repair": {
+    "host": "Codex CLI 0.170.0; macOS ARM64",
+    "method": "separate fresh app-server after project-only localize; initialize/initialized; skills/list forceReload=true for root, src and outside cwd",
+    "model_turns": 0,
+    "results": [
+      {
+        "cwd_label": "root",
+        "enabled_relevant_skills": 37,
+        "groups": {
+          "project_sp": 15,
+          "inherited_sp": 0,
+          "project_gz": 21,
+          "local_update": 1
+        },
+        "duplicate_names": {},
+        "discovery_errors": 0
+      },
+      {
+        "cwd_label": "src",
+        "enabled_relevant_skills": 37,
+        "groups": {
+          "project_sp": 15,
+          "inherited_sp": 0,
+          "project_gz": 21,
+          "local_update": 1
+        },
+        "duplicate_names": {},
+        "discovery_errors": 0
+      },
+      {
+        "cwd_label": "outside_control",
+        "enabled_relevant_skills": 15,
+        "groups": {
+          "project_sp": 0,
+          "inherited_sp": 15,
+          "project_gz": 0,
+          "local_update": 0
+        },
+        "duplicate_names": {},
+        "discovery_errors": 0
+      }
+    ],
+    "preserved": {
+      "user_and_other_project_settings": true,
+      "adoption_record": true,
+      "marketplace_ref": "9f0f27791713f735d960e44b18759a9fb63a61ae",
+      "component_versions": "SP 7.0.2; gz-skills 0.13.0; Backplane 0.3.0 disabled"
+    },
+    "scope_limit": "Fresh native discovery only; existing chat catalogs and model compliance/compaction were not tested.",
+    "authorization": "maintainer explicitly requested the project duplicate-source fix after the read-only finding",
+    "command": "uv run --locked gz-starter localize --project <checkout> --host codex --starter-ref 9f0f27791713f735d960e44b18759a9fb63a61ae; review preview; repeat with --apply",
+    "idempotence": "subsequent preview has writes=[]",
+    "config_after_sha256": "1f69ddcf384e31815779232458e20181cc60060089a76629d76be05d101e5b1f",
+    "local_verification": {
+      "python": "3.14.10",
+      "uv": "0.13.9 via temporary tool environment; machine uv unchanged",
+      "routine_checks": "PASS; Ruff check/format, ty, unittest through full pre-commit",
+      "unittest_count": 95,
+      "catalogs_and_resources": "PASS",
+      "source_independent_build": "PASS",
+      "isolated_installed_cli_and_example_typing_preservation": "PASS",
+      "checker_regressions": "reuse 29 passed tests; analyzer/checker inputs unchanged",
+      "hosted_candidate_ci": "UNKNOWN; no sync requested"
+    },
+    "final_input_sha256": {
+      ".codex/config.toml": "1f69ddcf384e31815779232458e20181cc60060089a76629d76be05d101e5b1f",
+      "pyproject.toml": "2bc9a9140bababdf678c37abcf7519e7c8eab33b07654d0674a758d6afbb453f",
+      "bundle.json": "9c8186fe016f35662ee7798823c5c6f36b443c8d8fe2165155fa61553ba1d3f1",
+      "uv.lock": "0cc0d44f06e1a5461e229e8096c2da6774efb43dedca7f10bf7aa37fa024379e",
+      "src/skills_first_starter/resources/bundle.json": "9c8186fe016f35662ee7798823c5c6f36b443c8d8fe2165155fa61553ba1d3f1",
+      "docs/evidence/2026-11-19-instruction-discipline-evaluation.md": "ac809bdd660fcd466d29da5471dbc2281ce068aaf1fd0b72fe9054ff57892dfd"
+    }
+  },
+  "version_decision": {
+    "published_baseline": "0.11.3",
+    "pending_target": "0.11.4",
+    "kind": "patch",
+    "governing_work": "restore existing project duplicate-source suppression; no policy or component change",
+    "publication": "not authorized"
+  },
+  "conversation_observation": {
+    "source": "maintainer/assistant messages in this conversation; transcribed, no durable conversation URL",
+    "event": "first duplicate-source fix request received a wording rewrite; maintainer repeated the fix request; project repair then completed",
+    "classification": "unnecessary intermediate response; recovered after user intervention",
+    "causality": "unmeasured; no demonstrated connection to duplicate skill metadata",
+    "model_identity": "UNKNOWN",
+    "experiment": "uncontrolled observation"
+  }
+}

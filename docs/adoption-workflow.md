@@ -16,8 +16,12 @@ upgrade paths, start with [the 0.5 runbook](adoption-0.5.md). Explicit lane sele
 and applicable adoption/release analysis are required in both lanes. The helper
 still configures files only; it does not automatically enforce acceptance.
 
-This document guides adoption; it does not replace the three upstream workflows.
-For the pending 0.10.0 ADR requirement, read the
+Adopt the [outer/inner-loop composition](architecture.md#outer-loop-inner-loop-and-supplemental-disciplines):
+starter supplies the outer loop, SP the inner development loop, and gz-skills
+supplemental engineering disciplines. Preserve project authority and carry this
+model into the project's linked instructions. This document guides adoption;
+upstream workflows retain their owners.
+For the mandatory ADR practice introduced in 0.10.0, read the
 [architectural-decision policy](engineering/architectural-decisions.md) and
 [policy access/reconciliation guide](adoption.md#architectural-decision-policy-access).
 Bind both lanes to recognition, reuse, exact-edition approval and alignment.

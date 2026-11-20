@@ -1,0 +1,806 @@
+{
+  "date": "2026-11-19",
+  "scope": "Corrective follow-ups, not a replacement for original evaluation observations",
+  "native_sessions": 3,
+  "model_turns": 3,
+  "records": [
+    {
+      "label": "codex-adopter-binding",
+      "command": [
+        "codex",
+        "exec",
+        "--ignore-user-config",
+        "-c",
+        "projects={\"<EVALUATION>/continuation/followups/fixtures/codex/adopter\" = {\"trust_level\" = \"trusted\"}}",
+        "-c",
+        "approval_policy=\"never\"",
+        "-c",
+        "features.multi_agent=false",
+        "-c",
+        "web_search=\"disabled\"",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "--model",
+        "gpt-6.2-astra",
+        "--json",
+        "--sandbox",
+        "workspace-write",
+        "--add-dir",
+        "<EVALUATION>/uv-cache",
+        "-C",
+        "<EVALUATION>/continuation/followups/fixtures/codex/adopter",
+        "Complete the remaining instruction-binding step for the already configured target/. Follow the existing adoption workflow. Preserve all existing target authority, settings, source and tests. No installation, maintenance, commit or push. Verify the changed reference."
+      ],
+      "cwd": "<EVALUATION>/continuation/followups/fixtures/codex/adopter",
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_seconds": 56.838,
+      "before": {
+        "uv.lock": "48587ee53378aa16b4e9b2f9cd72fe890de442778a9aed2126c65288b9ef59e4",
+        ".pre-commit-config.yaml": "a60ccfa5d5b5589635efe46692f574276302ba5a0eb2e5e6f8b74363f513908c",
+        "AGENTS.skills-first.md": "addffe365eab755138fb84258e3461cd24c4b740c5c3b2ecdbcc7c59c1dc1248",
+        "pyproject.toml": "5caf9a4fa16c361f93cf2fa6880e08e87f49eb8053d9d2a92831104706ee8637",
+        "README.md": "ac405a2e67a37551124c8786c4edcc203218fa5cb5cbd10f3bbbb82577d77332",
+        ".gitignore": "34b4c0688279c605b8b621cc757361c4f1dec17fb2e0eb2a4ce4f0c1768a4fab",
+        ".python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+        "app_settings.json": "d36f5398d24dc71fff5b800877febf98218863975ee96596398d3e7fd352efb9",
+        "AGENTS.md": "b2e0047c09a44b7687194cb7be5e7e4e214f65e51076d4ee5c325bdf280eb98c",
+        "target/AGENTS.skills-first.md": "addffe365eab755138fb84258e3461cd24c4b740c5c3b2ecdbcc7c59c1dc1248",
+        "target/pyproject.toml": "5caf9a4fa16c361f93cf2fa6880e08e87f49eb8053d9d2a92831104706ee8637",
+        "target/.python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+        "target/app_settings.json": "c89fdd8acf33835641dc58bcd9b3ac1e7d1a7f2e740257e66c8a0ad6a146e2c8",
+        "target/AGENTS.md": "c1c8890504ad3a083f5d2eca13e537475f096b8f3eeea3efacc0291c5eae7c78",
+        "tests/test_totals.py": "55937d97c731448b5b1b6360176ff4a604d08a9b401ffd71e9eb470e7f184bde",
+        "docs/change-request.md": "e3b751d3a71c52c1e55408338d745cc524bab30e1145de0eefe718b952b52b63",
+        ".codex/config.toml": "1028db52189bc67e6c6a00414e8a6654c13fad6852142e4dc17da44e05696a8d",
+        ".skills-first/architectural-decisions.md": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7",
+        ".skills-first/bundle.lock.json": "2b55586df478825d201538cfa81b065523b25393f3ea587c97872bb593fbf184",
+        ".gz-skills/settings.json": "979c143bc33a30acce65b5322b90c4805e6f18cd3c2f1421a86e1d3ad4e2400e",
+        "src/receipt_fixture/__init__.py": "e0df92b4e1a577362774dfef7e239bcb8217cc230fea31d37545f85fe50eb846",
+        "src/receipt_fixture/core.py": "c81d244a227f5b6eca2ba2797be7cc5edcea50c28147d7242085647a3432e3b8",
+        "src/receipt_fixture/storage.py": "44e63f200ff24adbd4ea2869fb9a7e4cf2732605e8db9ef8982873275e00ee08",
+        "docs/decisions/ADR-0001-001-memory.md": "d9cb0d7c2db62e60f7d6ae070af5496f59c68bc09cb552dd7db6097555e43b4f",
+        "docs/decisions/ADR-0001-002-file.md": "104f0b3f50e2fd66cd69a80e5d6337f4ec2272a4caee90d41991c9c43d268ce1",
+        ".agents/skills/update-gz-template/SKILL.md": "08c3f7a9a6e793055dd12b43cd80970babf638f91cbbf7b3860ce52d04b39997",
+        "target/tests/test_totals.py": "55937d97c731448b5b1b6360176ff4a604d08a9b401ffd71e9eb470e7f184bde",
+        "target/.codex/config.toml": "7c59ce3e2ddf491b5bc12c5da70e6bf6e177cd1ff69d57a591c57c3ff50ddc07",
+        "target/.skills-first/architectural-decisions.md": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7",
+        "target/.skills-first/bundle.lock.json": "2b55586df478825d201538cfa81b065523b25393f3ea587c97872bb593fbf184",
+        "target/.gz-skills/settings.json": "979c143bc33a30acce65b5322b90c4805e6f18cd3c2f1421a86e1d3ad4e2400e",
+        "target/src/receipt_fixture/__init__.py": "e0df92b4e1a577362774dfef7e239bcb8217cc230fea31d37545f85fe50eb846",
+        "target/src/receipt_fixture/core.py": "c81d244a227f5b6eca2ba2797be7cc5edcea50c28147d7242085647a3432e3b8",
+        "target/src/receipt_fixture/storage.py": "44e63f200ff24adbd4ea2869fb9a7e4cf2732605e8db9ef8982873275e00ee08",
+        "target/.agents/skills/update-gz-template/SKILL.md": "08c3f7a9a6e793055dd12b43cd80970babf638f91cbbf7b3860ce52d04b39997"
+      },
+      "after": {
+        "uv.lock": "48587ee53378aa16b4e9b2f9cd72fe890de442778a9aed2126c65288b9ef59e4",
+        ".pre-commit-config.yaml": "a60ccfa5d5b5589635efe46692f574276302ba5a0eb2e5e6f8b74363f513908c",
+        "AGENTS.skills-first.md": "addffe365eab755138fb84258e3461cd24c4b740c5c3b2ecdbcc7c59c1dc1248",
+        "pyproject.toml": "5caf9a4fa16c361f93cf2fa6880e08e87f49eb8053d9d2a92831104706ee8637",
+        "README.md": "ac405a2e67a37551124c8786c4edcc203218fa5cb5cbd10f3bbbb82577d77332",
+        ".gitignore": "34b4c0688279c605b8b621cc757361c4f1dec17fb2e0eb2a4ce4f0c1768a4fab",
+        ".python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+        "app_settings.json": "d36f5398d24dc71fff5b800877febf98218863975ee96596398d3e7fd352efb9",
+        "AGENTS.md": "b2e0047c09a44b7687194cb7be5e7e4e214f65e51076d4ee5c325bdf280eb98c",
+        "target/AGENTS.skills-first.md": "addffe365eab755138fb84258e3461cd24c4b740c5c3b2ecdbcc7c59c1dc1248",
+        "target/pyproject.toml": "5caf9a4fa16c361f93cf2fa6880e08e87f49eb8053d9d2a92831104706ee8637",
+        "target/.python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+        "target/app_settings.json": "c89fdd8acf33835641dc58bcd9b3ac1e7d1a7f2e740257e66c8a0ad6a146e2c8",
+        "target/AGENTS.md": "d9352054b5c025ce551dc2705734b938ee84fdaa5ea1de9d59bec81de1f3b42b",
+        "tests/test_totals.py": "55937d97c731448b5b1b6360176ff4a604d08a9b401ffd71e9eb470e7f184bde",
+        "docs/change-request.md": "e3b751d3a71c52c1e55408338d745cc524bab30e1145de0eefe718b952b52b63",
+        ".codex/config.toml": "1028db52189bc67e6c6a00414e8a6654c13fad6852142e4dc17da44e05696a8d",
+        ".skills-first/architectural-decisions.md": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7",
+        ".skills-first/bundle.lock.json": "2b55586df478825d201538cfa81b065523b25393f3ea587c97872bb593fbf184",
+        ".gz-skills/settings.json": "979c143bc33a30acce65b5322b90c4805e6f18cd3c2f1421a86e1d3ad4e2400e",
+        "src/receipt_fixture/__init__.py": "e0df92b4e1a577362774dfef7e239bcb8217cc230fea31d37545f85fe50eb846",
+        "src/receipt_fixture/core.py": "c81d244a227f5b6eca2ba2797be7cc5edcea50c28147d7242085647a3432e3b8",
+        "src/receipt_fixture/storage.py": "44e63f200ff24adbd4ea2869fb9a7e4cf2732605e8db9ef8982873275e00ee08",
+        "docs/decisions/ADR-0001-001-memory.md": "d9cb0d7c2db62e60f7d6ae070af5496f59c68bc09cb552dd7db6097555e43b4f",
+        "docs/decisions/ADR-0001-002-file.md": "104f0b3f50e2fd66cd69a80e5d6337f4ec2272a4caee90d41991c9c43d268ce1",
+        ".agents/skills/update-gz-template/SKILL.md": "08c3f7a9a6e793055dd12b43cd80970babf638f91cbbf7b3860ce52d04b39997",
+        "target/tests/test_totals.py": "55937d97c731448b5b1b6360176ff4a604d08a9b401ffd71e9eb470e7f184bde",
+        "target/.codex/config.toml": "7c59ce3e2ddf491b5bc12c5da70e6bf6e177cd1ff69d57a591c57c3ff50ddc07",
+        "target/.skills-first/architectural-decisions.md": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7",
+        "target/.skills-first/bundle.lock.json": "2b55586df478825d201538cfa81b065523b25393f3ea587c97872bb593fbf184",
+        "target/.gz-skills/settings.json": "979c143bc33a30acce65b5322b90c4805e6f18cd3c2f1421a86e1d3ad4e2400e",
+        "target/src/receipt_fixture/__init__.py": "e0df92b4e1a577362774dfef7e239bcb8217cc230fea31d37545f85fe50eb846",
+        "target/src/receipt_fixture/core.py": "c81d244a227f5b6eca2ba2797be7cc5edcea50c28147d7242085647a3432e3b8",
+        "target/src/receipt_fixture/storage.py": "44e63f200ff24adbd4ea2869fb9a7e4cf2732605e8db9ef8982873275e00ee08",
+        "target/.agents/skills/update-gz-template/SKILL.md": "08c3f7a9a6e793055dd12b43cd80970babf638f91cbbf7b3860ce52d04b39997"
+      },
+      "changed_paths": [
+        "target/AGENTS.md"
+      ],
+      "session_id": "01a1f4d0-f0d9-7fd3-85bd-d7e6f51e5b66",
+      "native_catalog": {
+        "selected_sp": true,
+        "selected_gz": true
+      },
+      "final": "Appended the adoption workflow\u2019s instruction reference to [target/AGENTS.md](<EVALUATION>/continuation/followups/fixtures/codex/adopter/target/AGENTS.md:7), preserving the existing instructions. This was the only edit.\n\nVerified that the relative link resolves from `target/` to the readable `AGENTS.skills-first.md` file and that `git diff --check` passes. Native plugin readiness and full adoption acceptance remain unverified.",
+      "usage": {
+        "input_tokens": 148177,
+        "cached_input_tokens": 131968,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 609,
+        "reasoning_output_tokens": 0
+      },
+      "observations": [
+        {
+          "command": "/bin/bash -lc 'cat AGENTS.skills-first.md'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'cat <HOME>/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/using-superpowers/SKILL.md'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'git status --short --branch && ls -a'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc \"ls -la target && rg --files --hidden target -g '\"'!.git'\"'\"",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'cat target/AGENTS.md'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc \"rg -n -i 'AGENTS.skills-first|instruction.binding|instruction reference' .reference/starter/docs/adoption*.md\"",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'cat target/.gz-skills/settings.json && git ls-files target'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc \"sed -n '165,185p' .reference/starter/docs/adoption.md && sed -n '143,160p;195,215p' .reference/starter/docs/adoption-0.5.md\"",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc \"rg -n 'pointer|Read .*AGENTS.skills-first|reference .*AGENTS.skills-first' .reference/starter/src\"",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'cd target && ref=$(sed -n '\"'s/\"'^Read '\"\\\\[AGENTS\\\\.skills-first\\\\.md\\\\](\\\\([\"'^)]*'\"\\\\)).*/\\\\1/p' AGENTS.md) && test \\\"\"'$ref\" = AGENTS.skills-first.md && test -s \"$ref\" && test -r \"$ref\" && head -1 \"$ref\"'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'git diff --check -- target/AGENTS.md && git diff -- target/AGENTS.md && git status --short --branch'",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      ],
+      "raw_sha256": {
+        "jsonl": "609d06e7ac6ed1d3172d80ecb87f6d82fc087d84550911ee1547447fa285668a",
+        "stderr": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+        "result.json": "926d5f8997bcfc847b0834ed3291060e6e504e1d67e827ebdcd53a365ff107a4"
+      }
+    },
+    {
+      "label": "claude-declared-verification",
+      "command": [
+        "claude",
+        "--print",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--model",
+        "claude-opus-5-5",
+        "--effort",
+        "medium",
+        "--setting-sources",
+        "",
+        "--settings",
+        "{\"sandbox\": {\"enabled\": true, \"autoAllowBashIfSandboxed\": true, \"allowUnsandboxedCommands\": false, \"filesystem\": {\"allowWrite\": [\"<EVALUATION>/uv-cache\"], \"denyWrite\": [\"<PRODUCER>\", \"<HOME>/.codex\", \"<HOME>/.claude\", \"<EVALUATION>/starter\"], \"denyRead\": [\"<HOME>/.ssh\", \"<HOME>/.codex/auth.json\", \"<HOME>/.claude/.credentials.json\"]}, \"network\": {\"strictAllowlist\": true, \"allowedDomains\": []}}, \"permissions\": {\"allow\": [\"Bash(uv run --locked ruff check)\", \"Bash(uv run --locked ruff format --check)\", \"Bash(uv run --locked ty check)\", \"Bash(uv run --locked python -m unittest discover -s tests -v)\", \"Bash(uv run --locked pre-commit run --all-files)\"], \"deny\": [\"Bash(gh *)\", \"Bash(git push *)\"]}}",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--plugin-dir",
+        "<HOME>/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2",
+        "--plugin-dir",
+        "<HOME>/.codex/plugins/cache/skills-first-starter/gz-skills/0.13.0",
+        "--permission-mode",
+        "acceptEdits",
+        "--permission-prompts",
+        "none",
+        "--disallowedTools",
+        "Agent,WebFetch,WebSearch",
+        "--max-budget-usd",
+        "2",
+        "--session-id",
+        "5ea79df7-ace8-4473-aee4-8239d9b2a065",
+        "--no-session-persistence",
+        "Finish verification of the already migrated Ruff candidate. This fresh session explicitly allows each of the following exact commands. Execute them as separate Bash tool calls, with no pipes, loops, compound commands, direct-binary substitutions or file edits. Preserve actual exit statuses. Report each result and any block honestly. Commands:\nuv run --locked ruff check\nuv run --locked ruff format --check\nuv run --locked ty check\nuv run --locked python -m unittest discover -s tests -v\nuv run --locked pre-commit run --all-files"
+      ],
+      "cwd": "<EVALUATION>/continuation/followups/fixtures/claude/freshness",
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_seconds": 48.149,
+      "before": {
+        "uv.lock": "48587ee53378aa16b4e9b2f9cd72fe890de442778a9aed2126c65288b9ef59e4",
+        ".pre-commit-config.yaml": "a60ccfa5d5b5589635efe46692f574276302ba5a0eb2e5e6f8b74363f513908c",
+        "AGENTS.skills-first.md": "addffe365eab755138fb84258e3461cd24c4b740c5c3b2ecdbcc7c59c1dc1248",
+        "pyproject.toml": "5caf9a4fa16c361f93cf2fa6880e08e87f49eb8053d9d2a92831104706ee8637",
+        "README.md": "ac405a2e67a37551124c8786c4edcc203218fa5cb5cbd10f3bbbb82577d77332",
+        ".gitignore": "34b4c0688279c605b8b621cc757361c4f1dec17fb2e0eb2a4ce4f0c1768a4fab",
+        ".python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+        "app_settings.json": "d36f5398d24dc71fff5b800877febf98218863975ee96596398d3e7fd352efb9",
+        "AGENTS.md": "6291281a8eb328f0fd4b39cd12077d3dc1f403add3cf61f289e4893ea2bf6a2d",
+        "CLAUDE.md": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+        "tests/test_totals.py": "55937d97c731448b5b1b6360176ff4a604d08a9b401ffd71e9eb470e7f184bde",
+        ".claude/settings.json": "0e672feefd431def915aeb706aec53f61d38b57d51d12e5654812538d4b9c4bd",
+        "docs/freshness-source.md": "84d38b5b7ed28abaa419a936c99f89628eba5808adf8c5c9f6164f9137b0b311",
+        "docs/change-request.md": "e3b751d3a71c52c1e55408338d745cc524bab30e1145de0eefe718b952b52b63",
+        ".skills-first/architectural-decisions.md": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7",
+        ".skills-first/bundle.lock.json": "819891845aebfd1b465392071d80f4486e3cce75451287e444ea2cf80a25568d",
+        ".gz-skills/settings.json": "979c143bc33a30acce65b5322b90c4805e6f18cd3c2f1421a86e1d3ad4e2400e",
+        "src/receipt_fixture/__init__.py": "e0df92b4e1a577362774dfef7e239bcb8217cc230fea31d37545f85fe50eb846",
+        "src/receipt_fixture/core.py": "c81d244a227f5b6eca2ba2797be7cc5edcea50c28147d7242085647a3432e3b8",
+        "src/receipt_fixture/storage.py": "44e63f200ff24adbd4ea2869fb9a7e4cf2732605e8db9ef8982873275e00ee08",
+        "docs/decisions/ADR-0001-001-memory.md": "d9cb0d7c2db62e60f7d6ae070af5496f59c68bc09cb552dd7db6097555e43b4f",
+        "docs/decisions/ADR-0001-002-file.md": "104f0b3f50e2fd66cd69a80e5d6337f4ec2272a4caee90d41991c9c43d268ce1",
+        ".claude/skills/update-gz-template/SKILL.md": "08c3f7a9a6e793055dd12b43cd80970babf638f91cbbf7b3860ce52d04b39997"
+      },
+      "after": {
+        "uv.lock": "48587ee53378aa16b4e9b2f9cd72fe890de442778a9aed2126c65288b9ef59e4",
+        ".pre-commit-config.yaml": "a60ccfa5d5b5589635efe46692f574276302ba5a0eb2e5e6f8b74363f513908c",
+        "AGENTS.skills-first.md": "addffe365eab755138fb84258e3461cd24c4b740c5c3b2ecdbcc7c59c1dc1248",
+        "pyproject.toml": "5caf9a4fa16c361f93cf2fa6880e08e87f49eb8053d9d2a92831104706ee8637",
+        "README.md": "ac405a2e67a37551124c8786c4edcc203218fa5cb5cbd10f3bbbb82577d77332",
+        ".gitignore": "34b4c0688279c605b8b621cc757361c4f1dec17fb2e0eb2a4ce4f0c1768a4fab",
+        ".python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+        "app_settings.json": "d36f5398d24dc71fff5b800877febf98218863975ee96596398d3e7fd352efb9",
+        "AGENTS.md": "6291281a8eb328f0fd4b39cd12077d3dc1f403add3cf61f289e4893ea2bf6a2d",
+        "CLAUDE.md": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+        "tests/test_totals.py": "55937d97c731448b5b1b6360176ff4a604d08a9b401ffd71e9eb470e7f184bde",
+        ".claude/settings.json": "0e672feefd431def915aeb706aec53f61d38b57d51d12e5654812538d4b9c4bd",
+        "docs/freshness-source.md": "84d38b5b7ed28abaa419a936c99f89628eba5808adf8c5c9f6164f9137b0b311",
+        "docs/change-request.md": "e3b751d3a71c52c1e55408338d745cc524bab30e1145de0eefe718b952b52b63",
+        ".skills-first/architectural-decisions.md": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7",
+        ".skills-first/bundle.lock.json": "819891845aebfd1b465392071d80f4486e3cce75451287e444ea2cf80a25568d",
+        ".gz-skills/settings.json": "979c143bc33a30acce65b5322b90c4805e6f18cd3c2f1421a86e1d3ad4e2400e",
+        "src/receipt_fixture/__init__.py": "e0df92b4e1a577362774dfef7e239bcb8217cc230fea31d37545f85fe50eb846",
+        "src/receipt_fixture/core.py": "c81d244a227f5b6eca2ba2797be7cc5edcea50c28147d7242085647a3432e3b8",
+        "src/receipt_fixture/storage.py": "44e63f200ff24adbd4ea2869fb9a7e4cf2732605e8db9ef8982873275e00ee08",
+        "docs/decisions/ADR-0001-001-memory.md": "d9cb0d7c2db62e60f7d6ae070af5496f59c68bc09cb552dd7db6097555e43b4f",
+        "docs/decisions/ADR-0001-002-file.md": "104f0b3f50e2fd66cd69a80e5d6337f4ec2272a4caee90d41991c9c43d268ce1",
+        ".claude/skills/update-gz-template/SKILL.md": "08c3f7a9a6e793055dd12b43cd80970babf638f91cbbf7b3860ce52d04b39997"
+      },
+      "changed_paths": [],
+      "usage": {
+        "total_cost_usd": 0.2255044,
+        "usage": {
+          "input_tokens": 6,
+          "cache_creation_input_tokens": 24624,
+          "cache_read_input_tokens": 48142,
+          "output_tokens": 943,
+          "output_tokens_details": {
+            "thinking_tokens": 163
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24624,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 343,
+              "cache_read_input_tokens": 24447,
+              "cache_creation_input_tokens": 177,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 177
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        },
+        "modelUsage": {
+          "claude-opus-5-5": {
+            "inputTokens": 6,
+            "outputTokens": 943,
+            "cacheReadInputTokens": 48142,
+            "cacheCreationInputTokens": 24624,
+            "webSearchRequests": 0,
+            "costUSD": 0.2255044,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 163,
+            "cacheCreationEphemeral5mInputTokens": 0,
+            "cacheCreationEphemeral1hInputTokens": 24624,
+            "canonicalModel": "claude-opus-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "is_error": false,
+        "num_turns": 6,
+        "duration_ms": 38304
+      },
+      "final": "All five commands passed with exit status 0, and nothing was blocked. I ran each one exactly as given, as its own Bash call, and edited no files.\n\n| # | Command | Exit | Result |\n|---|---------|------|--------|\n| 1 | `uv run --locked ruff check` | 0 | `All checks passed!` |\n| 2 | `uv run --locked ruff format --check` | 0 | `14 files already formatted` |\n| 3 | `uv run --locked ty check` | 0 | `All checks passed!` |\n| 4 | `uv run --locked python -m unittest discover -s tests -v` | 0 | 2 tests ran, both OK (`test_empty_receipt`, `test_signed_amounts`) |\n| 5 | `uv run --locked pre-commit run --all-files` | 0 | All four hooks passed: Ruff check, Ruff format, ty, unittest |\n\nEvery command used `--locked`, so `uv.lock` matches `pyproject.toml`. The changes to those two files are still uncommitted.",
+      "numeric_status_limit": "Per-tool numeric exit codes are not emitted in these native records. All five native results are successful; the actor reports exit zero; outer CLI exit is separately recorded.",
+      "observations": [
+        {
+          "call": {
+            "type": "tool_use",
+            "id": "toolu_019pEd5Ua3r8pVRM8qWSDADD",
+            "name": "Bash",
+            "input": {
+              "command": "uv run --locked ruff check",
+              "description": "Run Ruff lint check"
+            },
+            "caller": {
+              "type": "direct"
+            }
+          },
+          "result": {
+            "tool_use_id": "toolu_019pEd5Ua3r8pVRM8qWSDADD",
+            "type": "tool_result",
+            "content": "All checks passed!",
+            "is_error": false
+          },
+          "native_result": {
+            "stdout": "All checks passed!",
+            "stderr": "",
+            "interrupted": false,
+            "isImage": false,
+            "noOutputExpected": false
+          },
+          "permission_meta": [
+            {
+              "id": "toolu_019pEd5Ua3r8pVRM8qWSDADD",
+              "permission_decision": {
+                "decision": "accept",
+                "source": "config",
+                "reason_type": "other"
+              }
+            }
+          ]
+        },
+        {
+          "call": {
+            "type": "tool_use",
+            "id": "toolu_01Cid6GP2jUxcWTpiKvpaEnm",
+            "name": "Bash",
+            "input": {
+              "command": "uv run --locked ruff format --check",
+              "description": "Check Ruff formatting"
+            },
+            "caller": {
+              "type": "direct"
+            }
+          },
+          "result": {
+            "tool_use_id": "toolu_01Cid6GP2jUxcWTpiKvpaEnm",
+            "type": "tool_result",
+            "content": "14 files already formatted",
+            "is_error": false
+          },
+          "native_result": {
+            "stdout": "14 files already formatted",
+            "stderr": "",
+            "interrupted": false,
+            "isImage": false,
+            "noOutputExpected": false
+          },
+          "permission_meta": [
+            {
+              "id": "toolu_01Cid6GP2jUxcWTpiKvpaEnm",
+              "permission_decision": {
+                "decision": "accept",
+                "source": "config",
+                "reason_type": "other"
+              }
+            }
+          ]
+        },
+        {
+          "call": {
+            "type": "tool_use",
+            "id": "toolu_01GdZBtbXegpKLGuHsNZAWjx",
+            "name": "Bash",
+            "input": {
+              "command": "uv run --locked ty check",
+              "description": "Run ty type check"
+            },
+            "caller": {
+              "type": "direct"
+            }
+          },
+          "result": {
+            "tool_use_id": "toolu_01GdZBtbXegpKLGuHsNZAWjx",
+            "type": "tool_result",
+            "content": "All checks passed!",
+            "is_error": false
+          },
+          "native_result": {
+            "stdout": "All checks passed!",
+            "stderr": "",
+            "interrupted": false,
+            "isImage": false,
+            "noOutputExpected": false
+          },
+          "permission_meta": [
+            {
+              "id": "toolu_01GdZBtbXegpKLGuHsNZAWjx",
+              "permission_decision": {
+                "decision": "accept",
+                "source": "config",
+                "reason_type": "other"
+              }
+            }
+          ]
+        },
+        {
+          "call": {
+            "type": "tool_use",
+            "id": "toolu_01QsCiVu66Q9aMCnvdqZ29Gy",
+            "name": "Bash",
+            "input": {
+              "command": "uv run --locked python -m unittest discover -s tests -v",
+              "description": "Run unit tests verbosely"
+            },
+            "caller": {
+              "type": "direct"
+            }
+          },
+          "result": {
+            "tool_use_id": "toolu_01QsCiVu66Q9aMCnvdqZ29Gy",
+            "type": "tool_result",
+            "content": "test_empty_receipt (test_totals.TotalTests.test_empty_receipt) ... ok\ntest_signed_amounts (test_totals.TotalTests.test_signed_amounts) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK",
+            "is_error": false
+          },
+          "native_result": {
+            "stdout": "test_empty_receipt (test_totals.TotalTests.test_empty_receipt) ... ok\ntest_signed_amounts (test_totals.TotalTests.test_signed_amounts) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK",
+            "stderr": "",
+            "interrupted": false,
+            "isImage": false,
+            "noOutputExpected": false
+          },
+          "permission_meta": [
+            {
+              "id": "toolu_01QsCiVu66Q9aMCnvdqZ29Gy",
+              "permission_decision": {
+                "decision": "accept",
+                "source": "config",
+                "reason_type": "other"
+              }
+            }
+          ]
+        },
+        {
+          "call": {
+            "type": "tool_use",
+            "id": "toolu_01AnEtw9MFkDmGyXbsEbaVGx",
+            "name": "Bash",
+            "input": {
+              "command": "uv run --locked pre-commit run --all-files",
+              "description": "Run all pre-commit hooks on all files"
+            },
+            "caller": {
+              "type": "direct"
+            }
+          },
+          "result": {
+            "tool_use_id": "toolu_01AnEtw9MFkDmGyXbsEbaVGx",
+            "type": "tool_result",
+            "content": "Ruff check...............................................................Passed\nRuff format..............................................................Passed\nty.......................................................................Passed\nunittest.................................................................Passed",
+            "is_error": false
+          },
+          "native_result": {
+            "stdout": "Ruff check...............................................................Passed\nRuff format..............................................................Passed\nty.......................................................................Passed\nunittest.................................................................Passed",
+            "stderr": "",
+            "interrupted": false,
+            "isImage": false,
+            "noOutputExpected": false
+          },
+          "permission_meta": [
+            {
+              "id": "toolu_01AnEtw9MFkDmGyXbsEbaVGx",
+              "permission_decision": {
+                "decision": "accept",
+                "source": "config",
+                "reason_type": "other"
+              }
+            }
+          ]
+        }
+      ],
+      "raw_sha256": {
+        "jsonl": "1eba8a419b0ca0cba223232451637a06e5e1b386115f74e1915cf8176b9c8c19",
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "result.json": "532a6146afb25f79dd2213afec44112fb26a0161b93502c668af987463fc6074"
+      }
+    },
+    {
+      "label": "codex-fresh-target-delivery",
+      "command": [
+        "codex",
+        "exec",
+        "--ignore-user-config",
+        "-c",
+        "projects={\"<EVALUATION>/continuation/followups/fixtures/codex/adopter/target\" = {\"trust_level\" = \"trusted\"}}",
+        "-c",
+        "approval_policy=\"never\"",
+        "-c",
+        "features.multi_agent=false",
+        "-c",
+        "web_search=\"disabled\"",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "--model",
+        "gpt-6.2-astra",
+        "--json",
+        "--sandbox",
+        "read-only",
+        "-C",
+        "<EVALUATION>/continuation/followups/fixtures/codex/adopter/target",
+        "Report the applicable development workflow and Python invocation requirement for this project, with their local authority paths. Read the project instructions and their required references. Do not edit files, install anything, run checks, or contact external services."
+      ],
+      "cwd": "<EVALUATION>/continuation/followups/fixtures/codex/adopter/target",
+      "exit_code": 0,
+      "timeout": false,
+      "elapsed_seconds": 58.346,
+      "before": {
+        "AGENTS.skills-first.md": "addffe365eab755138fb84258e3461cd24c4b740c5c3b2ecdbcc7c59c1dc1248",
+        "pyproject.toml": "5caf9a4fa16c361f93cf2fa6880e08e87f49eb8053d9d2a92831104706ee8637",
+        ".python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+        "app_settings.json": "c89fdd8acf33835641dc58bcd9b3ac1e7d1a7f2e740257e66c8a0ad6a146e2c8",
+        "AGENTS.md": "d9352054b5c025ce551dc2705734b938ee84fdaa5ea1de9d59bec81de1f3b42b",
+        "tests/test_totals.py": "55937d97c731448b5b1b6360176ff4a604d08a9b401ffd71e9eb470e7f184bde",
+        ".codex/config.toml": "7c59ce3e2ddf491b5bc12c5da70e6bf6e177cd1ff69d57a591c57c3ff50ddc07",
+        ".skills-first/architectural-decisions.md": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7",
+        ".skills-first/bundle.lock.json": "2b55586df478825d201538cfa81b065523b25393f3ea587c97872bb593fbf184",
+        ".gz-skills/settings.json": "979c143bc33a30acce65b5322b90c4805e6f18cd3c2f1421a86e1d3ad4e2400e",
+        "src/receipt_fixture/__init__.py": "e0df92b4e1a577362774dfef7e239bcb8217cc230fea31d37545f85fe50eb846",
+        "src/receipt_fixture/core.py": "c81d244a227f5b6eca2ba2797be7cc5edcea50c28147d7242085647a3432e3b8",
+        "src/receipt_fixture/storage.py": "44e63f200ff24adbd4ea2869fb9a7e4cf2732605e8db9ef8982873275e00ee08",
+        ".agents/skills/update-gz-template/SKILL.md": "08c3f7a9a6e793055dd12b43cd80970babf638f91cbbf7b3860ce52d04b39997"
+      },
+      "after": {
+        "AGENTS.skills-first.md": "addffe365eab755138fb84258e3461cd24c4b740c5c3b2ecdbcc7c59c1dc1248",
+        "pyproject.toml": "5caf9a4fa16c361f93cf2fa6880e08e87f49eb8053d9d2a92831104706ee8637",
+        ".python-version": "4f4c88910b6d485ae689143880e5e81b595a48a51ecb391b2f14feaec106d180",
+        "app_settings.json": "c89fdd8acf33835641dc58bcd9b3ac1e7d1a7f2e740257e66c8a0ad6a146e2c8",
+        "AGENTS.md": "d9352054b5c025ce551dc2705734b938ee84fdaa5ea1de9d59bec81de1f3b42b",
+        "tests/test_totals.py": "55937d97c731448b5b1b6360176ff4a604d08a9b401ffd71e9eb470e7f184bde",
+        ".codex/config.toml": "7c59ce3e2ddf491b5bc12c5da70e6bf6e177cd1ff69d57a591c57c3ff50ddc07",
+        ".skills-first/architectural-decisions.md": "a01343789f3cb1c2164073908ad6465e28651fe6fd16b2aaf37f3baca21e37b7",
+        ".skills-first/bundle.lock.json": "2b55586df478825d201538cfa81b065523b25393f3ea587c97872bb593fbf184",
+        ".gz-skills/settings.json": "979c143bc33a30acce65b5322b90c4805e6f18cd3c2f1421a86e1d3ad4e2400e",
+        "src/receipt_fixture/__init__.py": "e0df92b4e1a577362774dfef7e239bcb8217cc230fea31d37545f85fe50eb846",
+        "src/receipt_fixture/core.py": "c81d244a227f5b6eca2ba2797be7cc5edcea50c28147d7242085647a3432e3b8",
+        "src/receipt_fixture/storage.py": "44e63f200ff24adbd4ea2869fb9a7e4cf2732605e8db9ef8982873275e00ee08",
+        ".agents/skills/update-gz-template/SKILL.md": "08c3f7a9a6e793055dd12b43cd80970babf638f91cbbf7b3860ce52d04b39997"
+      },
+      "changed_paths": [],
+      "session_id": "01a1f4d3-1917-7892-aaf3-b5a513e7c4e8",
+      "native_catalog": {
+        "selected_sp": true,
+        "selected_gz": true
+      },
+      "final": "- **Development workflow.** The project uses the **lite** profile. Use project-owned skills for project operations, start feature design and implementation with `superpowers:using-superpowers`, and use `gz-skills:gzs-router` to select supporting engineering skills. Backplane is disabled, so the project\u2019s existing planning and handoff practices apply. [AGENTS.md](<EVALUATION>/continuation/followups/fixtures/codex/adopter/target/AGENTS.md) \u00b7 [Workflow authority](<EVALUATION>/continuation/followups/fixtures/codex/adopter/target/AGENTS.skills-first.md:177) \u00b7 [Profile selection](<EVALUATION>/continuation/followups/fixtures/codex/adopter/target/.gz-skills/settings.json)\n- **Python invocation.** Run Python with **`uv run --locked python`**. The project pins **Python 3.14.10**, requires a uv-managed interpreter, and sets **uv 0.13.5** as the minimum. Use Python for substantive processing and invoke `git` and `gh` directly for their respective operations. [Invocation rule](<EVALUATION>/continuation/followups/fixtures/codex/adopter/target/AGENTS.skills-first.md:55) \u00b7 [Interpreter pin](<EVALUATION>/continuation/followups/fixtures/codex/adopter/target/.python-version) \u00b7 [uv configuration](<EVALUATION>/continuation/followups/fixtures/codex/adopter/target/pyproject.toml:12) \u00b7 [Reviewed starter Python policy](<EVALUATION>/continuation/followups/fixtures/codex/adopter/.reference/starter/docs/engineering/python.md:17)",
+      "usage": {
+        "input_tokens": 133601,
+        "cached_input_tokens": 113408,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 934,
+        "reasoning_output_tokens": 0
+      },
+      "observations": [
+        {
+          "command": "/bin/bash -lc 'ls -a'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'pwd -P'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'cat AGENTS.md AGENTS.skills-first.md'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'cat <HOME>/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/using-superpowers/SKILL.md | head -70'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc \"rg -n 'uv run --locked python|managed|unittest|Ruff' ../.reference/starter/docs/engineering/{python,astral-alignment,verification-policy}.md | head -45\"",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'cat .python-version pyproject.toml .gz-skills/settings.json ../AGENTS.md'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'ls -a ..; ls .skills-first; cat .skills-first/bundle.lock.json | head -65'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'cat <HOME>/.codex/plugins/cache/skills-first-starter/gz-skills/0.13.0/skills/gzs-router/SKILL.md | head -80'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'cat <HOME>/.codex/plugins/cache/skills-first-starter/superpowers/7.0.2/skills/using-superpowers/references/codex-tools.md | head -30; head -25 .skills-first/architectural-decisions.md'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc \"rg -n 'For project operations|uv run --locked python' AGENTS.skills-first.md ../AGENTS.skills-first.md; ls ../.reference\"",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "command": "/bin/bash -lc 'head -55 <HOME>/.codex/plugins/cache/skills-first-starter/gz-skills/0.13.0/skills/gzs-router/references/workflows.md'",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      ],
+      "raw_sha256": {
+        "jsonl": "b249ebab81ed9477fc0598b4a8bb322d363ae3185feb67b74f4ef86907ddc6f8",
+        "stderr": "cd7a0b933e4beffabe58884cde9f1c82c571ba4e9154beb823f02f2d80e19cfe",
+        "result.json": "da720ec0b988b57c1d82c76571cc9545d3d5524bd1157967a0dbf30fe20c2f66"
+      }
+    }
+  ],
+  "independent_checks": {
+    "original_adopter_authority_preserved": true,
+    "relative_fragment_link_resolves": true,
+    "only_authorized_pointer_changed": true,
+    "fresh_session_edited_no_files": true,
+    "verification_edited_no_files": true
+  },
+  "codex_rule_checker_controls": [
+    {
+      "label": "canonical",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "policy_result": {
+        "matchedRules": [
+          {
+            "prefixRuleMatch": {
+              "matchedPrefix": [
+                "uv",
+                "run",
+                "--locked",
+                "python"
+              ],
+              "decision": "allow"
+            }
+          }
+        ],
+        "decision": "allow"
+      }
+    },
+    {
+      "label": "bare",
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "policy_result": {
+        "matchedRules": [
+          {
+            "prefixRuleMatch": {
+              "matchedPrefix": [
+                "python3"
+              ],
+              "decision": "forbidden",
+              "justification": "Use uv run --locked python."
+            }
+          }
+        ],
+        "decision": "forbidden"
+      }
+    },
+    {
+      "label": "relative_executable",
+      "command": [
+        ".venv/bin/python",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "policy_result": {
+        "matchedRules": []
+      }
+    },
+    {
+      "label": "absolute_executable",
+      "command": [
+        "<EVALUATION>/continuation/followups/fixtures/claude/freshness/.venv/bin/python",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "policy_result": {
+        "matchedRules": []
+      }
+    },
+    {
+      "label": "linear_compound",
+      "command": [
+        "bash",
+        "-lc",
+        "pwd && python3 --version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "policy_result": {
+        "matchedRules": []
+      }
+    },
+    {
+      "label": "dynamic_command",
+      "command": [
+        "bash",
+        "-lc",
+        "runner=python3; \"$runner\" --version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "policy_result": {
+        "matchedRules": []
+      }
+    }
+  ],
+  "rule_checker_limit": "These are non-executing raw argument matcher probes. Shell decomposition at the actual host tool boundary was not tested; unmatched is not an execution permission decision. Host executable resolution was not enabled.",
+  "qualification": "Original negative evaluation remains. No Python guard is implemented or qualified.",
+  "versions": {
+    "starter_source": "309c1a204174d802c69fc7e3c4d65ec236abe121",
+    "starter_version": "0.11.3",
+    "sp": "7.0.2",
+    "gz": "0.13.0",
+    "codex_cli": "0.170.0",
+    "claude_code": "2.1.328",
+    "uv": "0.13.9",
+    "python_pin": "3.14.10"
+  },
+  "raw_evidence": "Private native streams retained by SHA256; upstream skill and policy bodies omitted.",
+  "release_review_currency_correction": {
+    "date": "2026-11-20",
+    "fixture_source_checked_at_utc": "2026-11-19T12:12:48.948113+00:00",
+    "fixture_ruff_target": "0.17.5",
+    "newer_ruff_release": "0.17.6",
+    "newer_release_published_at_utc": "2026-11-19T15:57:37Z",
+    "source": "https://github.com/astral-sh/ruff/releases/tag/0.17.6",
+    "disposition": "Migrations/verification establish behavior against supplied frozen inputs; later 0.17.5 verification does not establish live newest-stable maintenance. Original observations and negative qualification retained."
+  }
+}

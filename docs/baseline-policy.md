@@ -152,7 +152,7 @@ project dependencies/tools authorizes **fully migrating the requested scope to
 the most current stable upstream versions, including newer stable tool and
 dependency families**. A bare invocation of `gzs-update-dependencies` uses this
 update mode here. This explicit project binding overrides older portable
-review-only defaults and agrees with selected gz-skills 0.12.0. It does not
+review-only defaults and uses the selected gz-skills update workflow. It does not
 change upstream skills or unrelated consumers.
 Do not stop after an inventory, recommendation, adopt/defer table or offer to
 apply. Complete the authorized migration and verification without another

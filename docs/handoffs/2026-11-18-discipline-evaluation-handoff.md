@@ -1,5 +1,166 @@
 # Starter discipline evaluation — handoff, November 18, 2026
 
+## Current resume point — November 20, 2026
+
+**Release continuation:** the maintainer now requests “git sync and release 0.11.4.”
+The [release receipt](../evidence/2026-11-20-0.11.4-release.md) owns current progress
+and acceptance. It authorizes ordinary main synchronization, exact-source CI,
+immutable tagging and GitHub publication. Release freshness found Ruff 0.17.6,
+platformdirs 4.14.8 and setup-uv 10.4.0; both Python baselines and CI pins are
+migrated. Local gates, source-independent build and installed verification pass;
+exact-source CI and publication remain pending. The cleanup-only authority
+below describes the completed preceding step; it does not limit this explicit
+release request or authorize unrelated installations or repository changes.
+
+**Objective:** evaluate and improve how the lightweight starter supplies context
+and requirements to SP and assesses overall fulfillment, with gz-skills as
+supplemental disciplines. Preserve required engineering discipline.
+
+**Completed cleanup authority:** the maintainer requested “do the next step”: consolidate
+duplicated maintenance guidance, align verification wording with SP and separate
+current handoff instructions from history. The local cleanup preserves the early
+mandatory migration contract, Python/host exceptions, project-only activation,
+upstream ownership and acceptance requirements. Conditional maintenance procedure
+is reached through explicit read-before-work pointers. SP's fresh verification
+rule governs current claims; earlier results are identified as dated evidence.
+The selected cleanup is locally complete; verification and limits are below.
+
+The source review and all seven bounded scenario families are complete. The
+[assessment](../evidence/2026-11-19-discipline-evaluation-results.md) retains its
+negative qualification; the [corrective follow-ups](../evidence/2026-11-19-discipline-corrections.md)
+close the sampled adopter-link and declared-command gaps. Repeated Python
+invocation violations remain findings. Text simplification is not proof of
+improved model adherence; no new behavioral campaign is selected by this cleanup.
+[ADR-0004](../superpowers/specs/ADR-0004-001-python-command-control.md) is withdrawn.
+
+Published 0.11.3 remains immutable; pending 0.11.4 / patch contains the activation
+repair, ownership clarification and this compatible instruction cleanup. Keep
+cognitive DEFERRED / measurement UNKNOWN and the recorded native/platform limits.
+At cleanup closeout, all local work remained uncommitted on main. The release
+continuation above now authorizes sync/publication; installation and companion/
+adopter-repository mutation remain outside scope.
+
+### Cleanup verification and requirement retention
+
+The authored root instructions shrink from 375 lines / 26,208 bytes to
+317 lines / 22,124 bytes (**15.6% fewer bytes**). The adopter fragment shrinks
+from 405 lines / 29,166 bytes to 374 lines / 26,835 bytes (**8.0% fewer bytes**).
+Its wheel-resource copy is regenerated through `tools/package_resources.py`
+and byte-equal. These are byte/line measurements, not token or adherence results.
+
+The mandatory migration contract remains once in each instruction entry point.
+Mode selection, newer-family migration, product preservation, exceptions and
+acceptance remain in the [baseline authority](../baseline-policy.md#dependency-maintenance-means-completed-migration).
+The moved starter inventory, per-release candidate receipt, catalog/resource
+reconciliation and actual-interpreter checks remain in
+[Python policy](../engineering/python.md#starter-publisher-inventory-and-receipts).
+Native settings/provenance, profile preservation, independent component review,
+rollback and discovery remain in the
+[adopted-stack procedure](../adoption.md#maintaining-the-adopted-stack).
+Entry-point triggers require reading these authorities before the corresponding
+work. Python/host families, direct Git/GitHub commands, locked Python execution,
+project-only activation, deferred Backplane and cognitive limits remain binding.
+
+Fresh verification on managed Python 3.14.10 with uv 0.13.9: all four routine
+hooks passed through `uv run --locked pre-commit run --all-files`; resource
+synchronization, `gz-starter validate`, local links/anchors, entry-point policy
+pointers, whitespace and version-mirror checks passed. A source-independent
+build and isolated installed CLI/resource verification passed. Relevant Python
+implementation, tool and analyzer inputs are unchanged; no new tests or analyzer
+replays are needed for this instruction cleanup. Model adherence is unverified.
+
+## Historical record
+
+The dated accounts below preserve prior requests, observations and verification.
+They grant no current work or publication authority. Resume from the section
+above; use the linked evidence for the exact scope and date of an earlier result.
+
+## November 20 ownership clarification
+
+Maintainer direction: starter is the **outer loop**, SP is the **inner loop**,
+and gz-skills is **supplemental**. The starter frames the overall request and
+assesses fulfillment; SP supplies development discipline within that context.
+Review and simplify starter-owned guidance to enhance SP. The
+[architecture guide](../architecture.md#outer-loop-inner-loop-and-supplemental-disciplines)
+now states this model, carried by the repository and generated adopter instructions.
+This is a compatible clarification in pending 0.11.4; no new workflow or
+enforcement mechanism is selected.
+
+Verification at that save point: 39 adoption/resource tests and 11 native-host
+configuration tests passed. Resource synchronization, catalog validation, 217 local links/anchors,
+whitespace checks, the source-independent build and isolated installed CLI/resource
+verification passed. All four version mirrors were 0.11.4. These checks establish
+instruction delivery and preservation, not improved model adherence.
+
+## November 19 evaluation continuation
+
+**November 19 outcome:** the bounded evaluation is complete; discipline acceptance
+is **not earned**. Use the
+[final assessment](../evidence/2026-11-19-discipline-evaluation-results.md) and
+[curated continuation evidence](../evidence/2026-11-19-discipline-evaluation-results.json).
+All seven selected scenario families have observations and dispositions. Across
+the pilot, continuation and fixed follow-ups, 22 CLI sessions / 33 turns include
+setup diagnostics; they are not independent reliability samples.
+
+The maintainer requested continued evaluation with current November 2026 advice,
+including Codex/ChatGPT. The
+[evaluation](../evidence/2026-11-19-instruction-discipline-evaluation.md) records
+the source review, first obligation/evidence audit and fresh native discovery.
+Fifteen Superpowers skills appeared twice through project and inherited sources.
+The maintainer then explicitly requested the fix; project-only `localize` now
+suppresses `superpowers@superpowers-dev`. Fresh root/src discovery has one copy
+per skill, and the inherited copy remains available outside the project.
+
+Pending **0.11.4 / patch** covers this compatible activation correction and its
+evidence; published 0.11.3 stays immutable. No other instruction, upstream skill,
+native installation or user setting is changed by the repair. The maintainer
+subsequently accepted the six-case native-CLI pilot and completed Claude sign-in.
+The [protocol](../evidence/2026-11-19-discipline-pilot-protocol.md) and
+[results](../evidence/2026-11-19-discipline-pilot-results.md) now record both
+hosts' documentation, ADR and failed-check observations. Sampled task conditions
+held, but discipline qualification is incomplete: Claude violated the managed
+Python requirement, and some required workflow evidence is missing. The
+evaluator's subsequent "bounded success" closeout understated these findings.
+The original Codex ADR session had a sandbox reset; its clean replay holds write
+scope constant. Actual execution was seven sessions/fourteen turns, with six
+cases/ten turns graded. Producer/user-config guards passed for 236 files.
+
+**Objective:** evaluate whether gz-starter's use/extension of SP and gz-skills
+sustains required engineering discipline through activation, execution and
+truthful closeout, treating recurrent model drift as the operating constraint.
+The original maintainer direction and method remain below.
+
+**Assessment completed:** the matrix and causal probes separate actor, runner,
+fixture and evaluator failures. The original Codex trust override did not load
+the selected plugins; canonical-path inline trust fixes delivery, confirmed in
+actual actor catalogs and skill reads. Bare Python invocations recur in Claude;
+the resolved binary is unknown, but the required locked invocation was bypassed.
+Both local Git cases preserve hooks/tests and disclose absent CI. Positive
+adopter cases preserve existing authority/settings, but Codex omits the required
+instruction pointer. Claude's updated Ruff tool outputs do not establish its
+denied declared command paths. The final report routes each correction.
+
+**Correction continuation:** the maintainer asked to address the identified
+implementation corrections. The [follow-up](../evidence/2026-11-19-discipline-corrections.md)
+now completes the sampled Codex adopter link, proves its fresh-session retrieval,
+and executes Claude's declared locked checks plus all four hooks through explicit
+session-only permissions. Three fresh corrective sessions/turns preserve original
+failures; no producer implementation or persistent host settings change.
+
+**Review disposition:** the maintainer identified the proposed enforcement
+subsystem as inconsistent with the starter's lightweight role and accepted
+withdrawal of [ADR-0004 edition 1](../superpowers/specs/ADR-0004-001-python-command-control.md)
+with “proceed as recommended,” then called out the drift from the original
+request. Keep the proposal as history; do not resume its approval or implementation.
+Return to the original evaluation and its findings. The Python invocation rule
+remains binding and the observed violations remain failures. Use existing policy,
+upstream workflows, native configuration and honest verification; no new command
+classifier, host adapter layer or installed enforcement dependency is selected.
+Overall discipline acceptance remains unearned. The broader pointer/import
+comparison remains unselected; no general efficacy/compaction/drift-rate claim
+is made. The evaluation's negative qualification result is final for this
+sample. No Git sync or publication is authorized.
+
 ## November 19 maintenance continuation
 
 Subsequent authority: the maintainer requested **“release 0.11.3”**. Preparation,
@@ -29,27 +190,23 @@ and [candidate receipt](../evidence/2026-11-19-dependency-maintenance.md) for ex
 inputs, all applicable gate results, changed-tool controls and remaining limits.
 The maintenance was initially uncommitted and is now included in the verified
 release source above. No native installation/activation or companion/adopter
-change is authorized. The prior discussion below selects no implementation; its evaluation
-proposal and the bootstrap correction's separate approvals remain open.
+change is authorized. The evaluation proposal below was subsequently executed;
+the bootstrap correction's separate approvals remain open.
 
 The version/authority statements below describe the November 18 save point;
 this continuation supersedes only their current-state references. Preserve the
 historical evidence, Python families and cognitive/native/embedded limitations.
 
-## Resume point and scope
+## November 18 resume point and scope
 
-Resume the discussion of how to evaluate **gz-starter and its extension/use of
-Superpowers and gz-skills**. Start with a read-only audit of existing intent and
-evidence. The proposed behavioral evaluation below has not been executed or
-approved as a complete experiment protocol. Establish its concrete fixtures,
-host/session mechanism and bounded run scope before execution; preserve current
-engineering requirements throughout.
+The following sections preserve the November 18 discussion and proposed
+evaluation. All seven selected scenario families have since run. A comparative
+campaign and measured drift rate were not delivered or selected as follow-up work.
 
-The maintainer's latest request is **“create fresh handoff and git sync”**.
-It authorizes this handoff, continuation-pointer reconciliation, applicable
-verification, ordinary main commit/push and exact-commit CI observation. It
-supplies no implementation, policy relaxation, dependency migration, native
-installation/activation, companion/adopter mutation, tag or release authority.
+The November 18 request was **“create fresh handoff and git sync”**. It authorized
+that save point and its synchronization, since completed as recorded above.
+It supplies no current Git sync, implementation, dependency migration, native
+installation/activation, companion/adopter mutation, tag or publication authority.
 
 ## Maintainer direction and discussion
 
@@ -123,16 +280,18 @@ workflow defaults:
   behavior actor manually loaded procedures; normal startup/discovery and model
   identity limits remain explicit. Do not promote those results to automatic
   activation or universal adherence.
-- [Risk-based verification](../engineering/verification-policy.md) already
-  overrides imported demands for a new plan, full suite, independent review or
-  build replay on every small change. Evaluate whether that precedence works.
+- The November 18 [risk-based verification](../engineering/verification-policy.md)
+  question concerned the composition of project scope with imported workflows.
+  The November 20 cleanup states fresh execution of selected complete commands
+  within SP's verification discipline; it does not replace SP's workflow.
 - Starter policy and portable procedures have different ownership. Inspect
   activation, precedence, repetitions and historical supersession for actual
   effects before proposing edits. Moving a requirement behind a pointer adds a
   retrieval obligation that also needs evidence.
-- No completed obligation/evidence inventory, behavioral campaign, comparative prompt experiment,
-  measured drift rate or simplification result has been delivered in this
-  discussion. No upstream issue or change has been requested.
+- At the November 18 save point, no obligation/evidence inventory or behavioral
+  campaign had run. The completed November 19 assessment supersedes that status.
+  A comparative prompt experiment and measured drift rate remain unestablished;
+  no upstream issue or change is authorized.
 
 ## Previous work, versions and retained limits
 

@@ -16,3 +16,6 @@ enabled = false
 
 [plugins."superpowers-backplane@skills-first-starter"]
 enabled = false
+
+[plugins."superpowers@superpowers-dev"]
+enabled = false

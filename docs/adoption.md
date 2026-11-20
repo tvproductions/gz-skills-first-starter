@@ -420,29 +420,12 @@ freshness-only reporting and template/plugin inventory. Review mode leaves pins
 and environments unchanged. This starter adds no competing command and does not
 select a lite/heavy profile or invoke setup as part of a bundle update.
 
-For the starter and **every adopter**, dependency/tool maintenance is a
-completed migration, not a review followed by an offer. A maintenance, update,
-upgrade or freshen request, including a bare `gzs-update-dependencies` invocation,
-requires fully migrating its requested scope to the **most current stable
-upstream versions, including newer families**, and completing verification.
-This explicit [starter binding](baseline-policy.md#dependency-maintenance-means-completed-migration)
-overrides older portable review-only defaults. Do not ask again for ordinary
-migration steps. Only an explicit check, freshness review, assessment or
-no-changes request selects review-only mode and leaves dependency state unchanged;
-then report concrete targets, benefits, compatibility risks and required checks.
-Respect bounded requests: a template-only migration does not upgrade the whole
-stack, and a package-only update does not authorize unrelated plugin installation.
-
-Review breaking changes, update stale family constraints and adapt integration
-within the authorized scope. Existing pins, an upstream major bump, untested
-compatibility or hypothetical risk are not deferral evidence. Preserve product
-requirements and Python's N-1/embedded-host policy; retain older selections only
-for demonstrated incompatibility with evidence, accepted-by authority, owner and
-dated revisit. Complete the full applicable gate and changed-tool checks, retain
-rollback, and report blocked migration honestly. Missing required verification
-prevents a completed-maintenance claim; exceptions remain noncurrent/conditional.
+Before assessment or migration, apply the mandatory
+[completed-migration binding](baseline-policy.md#dependency-maintenance-means-completed-migration).
+It owns mode selection, authorized scope, newer-family migration, compatibility
+exceptions, rollback and verification requirements for this starter and both lanes.
 If the requested scope is already current and verified, state that no upgrade
-was needed. This changes the starter's binding, not the upstream skill or its
+was needed. The binding preserves independent upstream skill ownership and
 unrelated consumers.
 
 1. Read `.skills-first/bundle.lock.json`, project configuration and native manager

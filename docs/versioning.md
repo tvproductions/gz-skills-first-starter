@@ -4,6 +4,24 @@ Current published release: **0.11.3 / patch**, November 19, 2026, immutable sour
 `309c1a204174d802c69fc7e3c4d65ec236abe121`. Both exact-source CI jobs, annotated
 remote tag, stable GitHub release and downloaded tagged-source contents are
 verified in the [release receipt](evidence/2026-11-19-0.11.3-release.md).
+Pending **0.11.4 / patch** restores this checkout's existing project-owned,
+duplicate-free skill selection by suppressing inherited `superpowers-dev`.
+The maintainer explicitly requested the repair during the instruction evaluation.
+This is a compatible configuration correction; no new policy, component version,
+public interface or architecture is selected. The November 20 ownership
+clarification and selected instruction cleanup also belong
+to this patch: preserve requirements while consolidating maintenance guidance,
+aligning verification wording with SP and identifying current handoff authority.
+The [bounded scope](../ROADMAP.md#selected-0114-scope--codex-duplicate-source-repair-november-19-2026)
+and [evaluation](evidence/2026-11-19-instruction-discipline-evaluation.md) record
+acceptance and remaining work. Development mirrors move together to 0.11.4;
+published v0.11.3 is immutable. The maintainer subsequently requested “git sync
+and release 0.11.4,” authorizing ordinary synchronization, exact-source CI,
+immutable tagging and GitHub publication after acceptance. The
+[release receipt](evidence/2026-11-20-0.11.4-release.md) records actual progress,
+including the mandatory release-time Ruff/platformdirs/setup-uv migration.
+
+The following 0.11.3 paragraphs record the completed preceding release.
 Release **0.11.3 / patch**, selected by the November 19 maintenance invocation,
 restores the existing latest-stable tooling commitment with ty 0.0.107, Import
 Linter 2.17 and virtualenv 21.15.9 in both Python baselines. Reconcile all version

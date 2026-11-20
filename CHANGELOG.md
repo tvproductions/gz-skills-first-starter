@@ -2,8 +2,58 @@
 
 ## Unreleased
 
-No subsequent release scope is selected. The bootstrap-verification correction
-remains in design review for proposed 0.12.0.
+The bootstrap-verification correction remains in design review for proposed 0.12.0.
+
+## 0.11.4 — November 20, 2026
+
+Compatible patch fixing duplicate Superpowers discovery in this checkout.
+It also clarifies starter/SP/gz-skills workflow ownership in repository and
+generated adopter guidance.
+The instruction cleanup consolidates maintenance detail, binds check scope to
+SP's fresh verification discipline and separates active handoff authority from history.
+Adopters review the clarified instruction fragment and reconcile it with their
+project authority; preserve existing SP workflows and project-only activation.
+Ruff/platformdirs pins require owning-tool lock refreshes. Setup-uv changes only
+the starter's two CI jobs. Keep cognitive qualification DEFERRED / measurement
+UNKNOWN and the recorded native/model/embedded limits. See the
+[release receipt](docs/evidence/2026-11-20-0.11.4-release.md).
+
+- Refresh Ruff 0.17.5 -> 0.17.6 and platformdirs 4.14.7 -> 4.14.8 in both
+  independent Python baselines. Pin setup-uv 10.4.0 to its verified source SHA.
+  Preserve the approved Python families, uv floor/backend and component selections.
+- State the composition explicitly: starter is the outer loop, SP is the inner
+  development loop, and gz-skills is supplemental. Align the architecture,
+  repository instructions and generated adopter fragment; enhance SP with project
+  context and requirements while preserving its workflow and upstream ownership.
+- Consolidate repeated maintenance instructions behind explicit read-before-work
+  pointers while retaining the mandatory migration contract in each entry point.
+  Keep the existing policy/procedure authorities and their requirements. Align
+  scoped verification with SP, distinguish dated evidence from fresh results,
+  and identify one current handoff resume point above historical accounts.
+- Disable inherited `superpowers@superpowers-dev` in this project's Codex
+  configuration through the existing `localize` helper. Fresh native discovery
+  lists one selected copy per skill from both root and src; inherited user
+  activation remains available outside the project. No component or policy changes.
+- Continue the instruction-discipline evaluation with current November 2026
+  Anthropic, OpenAI/Codex/ChatGPT and primary research sources. Record measured
+  discovery results separately from model behavior in the
+  [evaluation](docs/evidence/2026-11-19-instruction-discipline-evaluation.md).
+- Record the authorized six-case Codex/Claude
+  [discipline pilot](docs/evidence/2026-11-19-discipline-pilot-results.md),
+  including approval controls, preserved failed checks, a managed-Python miss,
+  instruction-retrieval limits and the excluded sandbox-reset diagnostic.
+- Complete the bounded instruction-discipline evaluation across its seven
+  scenario families. Record the negative qualification result, repeated Python
+  invocation violations, incomplete adopter binding, verification limits and
+  demonstrated fixture trust/cache corrections in the
+  [final assessment](docs/evidence/2026-11-19-discipline-evaluation-results.md).
+- Complete the sampled adopter instruction link and verify retrieval in a fresh
+  target session. Run the previously denied locked verification paths and all
+  four hooks through explicit session-only permissions. Preserve original
+  failures and record the [corrections](docs/evidence/2026-11-19-discipline-corrections.md).
+  Withdraw ADR-0004's proposed enforcement subsystem after maintainer review of
+  the starter's lightweight scope. Preserve the Python requirement and observed
+  failures; no enforcement implementation or activation is included in 0.11.4.
 
 ## 0.11.3 — November 19, 2026
 

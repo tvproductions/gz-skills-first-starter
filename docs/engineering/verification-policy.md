@@ -33,11 +33,14 @@ scopes. Full checks remain directly runnable. Dependencies, imports, resources,
 packaging and entry-point changes require corresponding build/installed proof;
 ordinary presentation edits do not require rebuilding an unchanged workspace.
 
-This policy overrides generic imported workflow defaults demanding a full suite,
-fresh design/plan, independent review, negative control or build/install replay
-for every edit. Small reversible work can update an existing plan briefly. Use
-stronger evidence and independent review when the changed boundary/consequence
-warrants them. Preserve separate approval for actual new architectural choices;
+Follow SP's applicable development workflow and its verification-before-completion
+discipline. This policy supplies the project-specific check scope: execute each
+selected command completely, with fresh output and its real exit status, before
+claiming the result. The full selected command need not be every repository check.
+Small reversible work can update an applicable existing plan briefly. Select
+independent review, negative controls and build/installed proof for the changed
+boundary and its consequences; retain stronger evidence where the owning workflow
+requires it. Preserve separate approval for actual new architectural choices;
 routine details within approved decisions do not need another ADR.
 
 ## Control test cost and repetition
@@ -57,10 +60,14 @@ a broad test-quality audit is separate work, not a prelude to every edit.
 
 Run the full gate once for a coherent integration candidate. When commit hooks
 provide that gate, use them as the final run rather than first repeating it by
-hand. Reuse passes while relevant inputs remain unchanged; later changes
-invalidate only evidence they affect. Record scope, rationale, commands, results
-and important limits concisely in existing records. Never describe a focused
-pass as a complete workspace pass.
+hand. Earlier results may support unchanged areas when their inputs and scope
+remain applicable; cite their date and exact inputs as historical evidence.
+They do not establish a fresh execution or a current completion claim. Run the
+selected checks freshly for the current change and claim; repeat other checks
+when their relevant inputs or risk change. Documentation-only closeout uses
+fresh diff/reference checks and may cite earlier code-test evidence by date.
+Record scope, rationale, commands, results and important limits concisely in
+existing records. Never describe a focused pass as a complete workspace pass.
 
 ## Session-start freshness is a check
 
