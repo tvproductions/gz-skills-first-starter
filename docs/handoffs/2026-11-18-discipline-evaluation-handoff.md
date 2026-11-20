@@ -2,6 +2,52 @@
 
 ## Current resume point — November 20, 2026
 
+**Handoff checkpoint — November 20, 23:22 UTC:** the maintainer requested
+“create handoff and git sync” after reviewing outstanding backlog. This request
+authorizes this continuity update and ordinary main commit/push with exact-commit
+CI observation. It selects no implementation, new release, installation or
+adopter/upstream change.
+
+**First advised next action:** resume the
+[bootstrap design review](2026-11-17-bootstrap-verification-handoff.md#resume-point-and-authority)
+at design edition 2's supported command/CI contract and automatic transition from
+bootstrap validation to meaningful adopter tests. Review the observed code,
+tooling and test assets that activate behavioral requirements. Expected result:
+a settled finite contract with preserved negative controls, producer/adopter test
+separation and actual Windows/macOS acceptance obligations. The design and
+[ADR-0003 edition 1](../decisions/ADR-0003-001-own-bootstrap-verification-in-the-starter.md)
+remain drafts requiring separate explicit approvals before dependent planning
+and implementation. The recommendation itself supplies neither approval.
+
+The [roadmap](../../ROADMAP.md#selected-correction--pre-implementation-verification-november-17-2026)
+owns the selected correction; its
+[next-work section](../../ROADMAP.md#next-work-in-recommended-order) owns the
+remaining pilot, upgrade/rollback, native/platform, acceptance-reporting and
+deferred-design backlog. At this checkpoint GitHub has
+[one open issue](https://github.com/tvproductions/gz-starter/issues/1) and no open
+PRs. Cognitive integration and Backplane readiness remain unscheduled; the
+completed discipline evaluation has not qualified reliable model adherence.
+No further behavioral campaign is selected.
+
+Observed starting state: `main` / `origin/main` at
+`e29ec4459e0eab68eef2ec188d160d4f1da10ad0`, clean worktree and divergence 0/0
+after fetch. Both jobs passed in
+[that commit's CI](https://github.com/tvproductions/gz-starter/actions/runs/44812719919).
+The published 0.11.4 source/tag below stays immutable. This human-documentation
+handoff selects no new product version: mirrors remain 0.11.4; proposed 0.12.0
+remains independently approval-gated. The same-day release freshness receipt
+still matches the checked tooling/catalog/native-configuration inputs; caller
+uv 0.13.9 satisfies the floor, with managed Python 3.14.10. No maintenance
+migration is selected by this save point.
+
+Verification scope: fresh diff/reference checks for this single Markdown file;
+normal commit hooks remain enabled. Unchanged code/build evidence is historical
+November 20 evidence from the release and starting commit, not a new local run.
+Final integration requires both CI jobs on this handoff commit and local/remote
+SHA equality; report those observed results in the sync response without another
+CI-receipt-only commit. The current handoff is durable here; raw evaluation
+transcripts remain local-only as recorded in the linked evaluation evidence.
+
 **Published 0.11.4:** the maintainer's “git sync and release 0.11.4” request is
 completed in the [release receipt](../evidence/2026-11-20-0.11.4-release.md).
 Immutable source `75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63` passed both required
