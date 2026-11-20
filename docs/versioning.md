@@ -1,11 +1,11 @@
 # Template versioning
 
-Current published release: **0.11.3 / patch**, November 19, 2026, immutable source
-`309c1a204174d802c69fc7e3c4d65ec236abe121`. Both exact-source CI jobs, annotated
+Current published release: **0.11.4 / patch**, November 20, 2026, immutable source
+`75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63`. Both exact-source CI jobs, annotated
 remote tag, stable GitHub release and downloaded tagged-source contents are
-verified in the [release receipt](evidence/2026-11-19-0.11.3-release.md).
-Pending **0.11.4 / patch** restores this checkout's existing project-owned,
-duplicate-free skill selection by suppressing inherited `superpowers-dev`.
+verified in the [release receipt](evidence/2026-11-20-0.11.4-release.md).
+Release **0.11.4 / patch** over published 0.11.3 restores this checkout's existing
+project-owned, duplicate-free skill selection by suppressing inherited `superpowers-dev`.
 The maintainer explicitly requested the repair during the instruction evaluation.
 This is a compatible configuration correction; no new policy, component version,
 public interface or architecture is selected. The November 20 ownership
@@ -14,12 +14,13 @@ to this patch: preserve requirements while consolidating maintenance guidance,
 aligning verification wording with SP and identifying current handoff authority.
 The [bounded scope](../ROADMAP.md#selected-0114-scope--codex-duplicate-source-repair-november-19-2026)
 and [evaluation](evidence/2026-11-19-instruction-discipline-evaluation.md) record
-acceptance and remaining work. Development mirrors move together to 0.11.4;
+acceptance and remaining work. Development mirrors are aligned at 0.11.4;
 published v0.11.3 is immutable. The maintainer subsequently requested “git sync
 and release 0.11.4,” authorizing ordinary synchronization, exact-source CI,
 immutable tagging and GitHub publication after acceptance. The
 [release receipt](evidence/2026-11-20-0.11.4-release.md) records actual progress,
 including the mandatory release-time Ruff/platformdirs/setup-uv migration.
+Included release work remaining: **none**; conditional engineering limits remain.
 
 The following 0.11.3 paragraphs record the completed preceding release.
 Release **0.11.3 / patch**, selected by the November 19 maintenance invocation,
@@ -39,8 +40,8 @@ The [bootstrap-verification correction](../ROADMAP.md#selected-correction--pre-i
 is in design review. Its proposed supported command/dependency/adoption interface
 would select **0.12.0 / minor** after design approval. The maintainer separately
 requested publication of the completed maintenance as **0.11.2**; the proposed
-minor advances the published patch; the independent maintenance now selects
-**0.11.3** metadata. Reconcile the minor's mirrors only after its design approval.
+minor advances the published patch; development metadata is now **0.11.4**.
+Reconcile the minor's mirrors only after its design approval.
 No correction implementation, approved
 architecture, completed minor-version reconciliation or release acceptance is
 claimed. The [current handoff](handoffs/2026-11-17-bootstrap-verification-handoff.md)

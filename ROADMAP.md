@@ -29,15 +29,15 @@ existing policy, upstream workflows and native capabilities. The maintainer
 subsequently selected bounded instruction cleanup: consolidate repeated maintenance
 guidance, bind verification scope to SP's fresh-command discipline and separate
 current handoff authority from history. This compatible correction is part of
-pending 0.11.4 below. No new tooling subsystem or broader comparative campaign is
-selected. The November 19 maintenance below is published as
-0.11.3, with matching development metadata. The separately approval-gated
+released 0.11.4 below. No new tooling subsystem or broader comparative campaign is
+selected. The November 19 maintenance below was published as
+0.11.3; development metadata now matches 0.11.4. The separately approval-gated
 bootstrap correction/proposed 0.12.0 below remains open.
 
 ## Selected 0.11.4 scope — Codex duplicate-source repair, November 19, 2026
 
 Published baseline **0.11.3**, immutable source
-`309c1a204174d802c69fc7e3c4d65ec236abe121` -> pending **0.11.4 / patch**.
+`309c1a204174d802c69fc7e3c4d65ec236abe121` -> released **0.11.4 / patch**.
 Governing work: the maintainer's request to fix duplicate Superpowers discovery
 found during the continued instruction evaluation. Restore the existing
 project-owned activation and inherited-duplicate suppression commitment. The
@@ -72,8 +72,8 @@ passed a fresh four-hook gate, resource/catalog/reference checks,
 source-independent build and isolated installed verification. Root instructions
 are 15.6% smaller by bytes and the adopter fragment 8.0% smaller, with requirements
 retained through explicit pointers to existing authorities. Included local work
-remaining: **none**. Model adherence is unverified; new-candidate hosted CI is
-UNKNOWN without a requested sync.
+remaining at cleanup closeout: **none**. Model adherence remains unqualified.
+The release continuation below records subsequent exact-source hosted CI.
 The evaluation retains historical and untested behavior separately from the
 actual native discovery evidence. Compatibility: local activation correction;
 no component, public interface or adopter policy change.
@@ -86,7 +86,11 @@ Release preparation migrates fresh Ruff 0.17.6/platformdirs 4.14.8 releases in b
 Python baselines and setup-uv 10.4.0 in both CI jobs. The
 [release receipt](docs/evidence/2026-11-20-0.11.4-release.md) records actual candidate
 freshness, compatibility, security, verification and publication state.
-Local candidate checks pass; exact-source CI and publication remain pending.
+**Published and verified November 20:** [0.11.4](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.4)
+at immutable source `75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63`. Both exact-source
+CI jobs, annotated remote tag and downloaded tagged-source identity pass.
+Included release work remaining: **none**. Conditional engineering limits and the
+evaluation's negative discipline result remain; publication does not qualify model adherence.
 The proposed bootstrap 0.12.0 remains separately
 approval-gated. The [evaluation](docs/evidence/2026-11-19-instruction-discipline-evaluation.md)
 owns observed results and the distinction between discovery and model behavior.

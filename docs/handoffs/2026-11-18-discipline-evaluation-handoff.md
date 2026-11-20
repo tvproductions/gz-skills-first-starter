@@ -2,15 +2,17 @@
 
 ## Current resume point — November 20, 2026
 
-**Release continuation:** the maintainer now requests “git sync and release 0.11.4.”
-The [release receipt](../evidence/2026-11-20-0.11.4-release.md) owns current progress
-and acceptance. It authorizes ordinary main synchronization, exact-source CI,
-immutable tagging and GitHub publication. Release freshness found Ruff 0.17.6,
-platformdirs 4.14.8 and setup-uv 10.4.0; both Python baselines and CI pins are
-migrated. Local gates, source-independent build and installed verification pass;
-exact-source CI and publication remain pending. The cleanup-only authority
-below describes the completed preceding step; it does not limit this explicit
-release request or authorize unrelated installations or repository changes.
+**Published 0.11.4:** the maintainer's “git sync and release 0.11.4” request is
+completed in the [release receipt](../evidence/2026-11-20-0.11.4-release.md).
+Immutable source `75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63` passed both required
+CI jobs, annotated remote-tag verification and downloaded-source comparison.
+The stable GitHub release is published. Ruff 0.17.6, platformdirs 4.14.8 and
+setup-uv 10.4.0 are migrated; local gates, source-independent build and installed
+verification pass. This documentation descendant records publication; final main
+synchronization is verified against its own CI without moving the release tag.
+Included release work remaining: **none**. No further implementation or behavioral
+campaign is selected. The bootstrap correction remains separately approval-gated.
+Installation and companion/adopter-repository changes remain outside scope.
 
 **Objective:** evaluate and improve how the lightweight starter supplies context
 and requirements to SP and assesses overall fulfillment, with gz-skills as
@@ -33,12 +35,12 @@ invocation violations remain findings. Text simplification is not proof of
 improved model adherence; no new behavioral campaign is selected by this cleanup.
 [ADR-0004](../superpowers/specs/ADR-0004-001-python-command-control.md) is withdrawn.
 
-Published 0.11.3 remains immutable; pending 0.11.4 / patch contains the activation
+Published 0.11.3 remains immutable; published 0.11.4 / patch contains the activation
 repair, ownership clarification and this compatible instruction cleanup. Keep
 cognitive DEFERRED / measurement UNKNOWN and the recorded native/platform limits.
 At cleanup closeout, all local work remained uncommitted on main. The release
-continuation above now authorizes sync/publication; installation and companion/
-adopter-repository mutation remain outside scope.
+continuation above records subsequent synchronization and publication; that
+historical state is no longer the current resume point.
 
 ### Cleanup verification and requirement retention
 

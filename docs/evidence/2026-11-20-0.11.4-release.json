@@ -8,7 +8,7 @@
     "kind": "patch",
     "scope": "ROADMAP.md selected 0.11.4 scope",
     "publication_authority": "maintainer: git sync and release 0.11.4",
-    "status": "LOCAL CANDIDATE VERIFIED; exact-source CI and publication pending"
+    "status": "PUBLISHED AND VERIFIED; conditional engineering acceptance"
   },
   "packages": [
     {
@@ -3128,8 +3128,8 @@
     "xplane_baseline": "PASS on managed Python 3.12.16; actual simulator unverified",
     "catalog_resources": "PASS",
     "build_installed": "PASS; source-independent build, resource/archive checks, isolated installed helper/example",
-    "exact_source_ci": "PENDING",
-    "publication": "PENDING",
+    "exact_source_ci": "PASS; both required jobs on 75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63",
+    "publication": "PASS; stable non-draft GitHub release, annotated remote tag and downloaded-source identity",
     "c901": "PASS; ceiling 20 unchanged",
     "local_links_and_anchors": 353
   },
@@ -3142,5 +3142,37 @@
     "newer_release_published_at_utc": "2026-11-19T15:57:37Z",
     "source": "https://github.com/astral-sh/ruff/releases/tag/0.17.6",
     "disposition": "Migrations/verification establish behavior against supplied frozen inputs; later 0.17.5 verification does not establish live newest-stable maintenance. Original observations and negative qualification retained."
-  }
+  },
+  "publication": {
+    "release": {
+      "assets": [],
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-20T20:29:13Z",
+      "tagName": "v0.11.4",
+      "targetCommitish": "75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63",
+      "url": "https://github.com/tvproductions/gz-starter/releases/tag/v0.11.4"
+    },
+    "release_sha": "75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63",
+    "tag_object": "d871aaf1afa56fddb5b6bebcf8bbb2af5904dd64",
+    "exact_source_ci": {
+      "url": "https://github.com/tvproductions/gz-starter/actions/runs/44811558781",
+      "head_sha": "75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63",
+      "conclusion": "success",
+      "jobs": {
+        "checks": "success",
+        "xplane-baseline": "success"
+      }
+    },
+    "downloaded_source": {
+      "channel": "GitHub tarball v0.11.4",
+      "sha256": "e7889c344b3735b048a01197685cb05c756a49378766838faaa45185c438c331",
+      "entries": 246,
+      "files": 244,
+      "symlinks": 2,
+      "comparison": "PASS: names, kinds, regular-file bytes, executable bits and symlink targets match local git archive of v0.11.4",
+      "zip_observation": "ZIP regular-file bytes matched; ZIP permissions were absent, so final type/mode/link verification used the downloaded tarball."
+    }
+  },
+  "candidate_sha256_scope": "Immutable release source 75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63, excluding this structured receipt itself. Preserved when a documentation descendant records observed publication."
 }
