@@ -2,6 +2,42 @@
 
 ## Current resume point — November 21, 2026
 
+### Next GovZero skills for the starter
+
+At 19:19 UTC, `main` and `origin/main` were clean and aligned at
+`e1984b31205e2811bb8ef5beafb78512686dc6a5`. Both jobs passed on that
+[November 21 checkpoint](https://github.com/tvproductions/gz-starter/actions/runs/44939742062).
+The published baseline is [0.11.6](https://github.com/tvproductions/gz-starter/releases/tag/v0.11.6).
+The maintainer requested this handoff and Git sync. The selected next work
+remains the [0.12.0 bootstrap review](2026-11-17-bootstrap-verification-handoff.md#resume-point-and-authority).
+
+1. **Run `$gz-skills:gzs-architectural-decisions` first.** Start with
+   “Review the starter's bootstrap verification design and ADR-0003 edition 1
+   in read-only mode. Check the executable command and CI contract and the
+   automatic transition from a pre-runtime project to required behavior tests.”
+   Review [design edition 2](../superpowers/specs/2026-11-17-bootstrap-verification-design.md)
+   and [ADR-0003 edition 1](../decisions/ADR-0003-001-own-bootstrap-verification-in-the-starter.md).
+   Report the exact editions, any open design choices, and required macOS
+   and Windows evidence. Stop before implementation until the complete
+   design and the exact ADR edition receive separate approval.
+2. **Run `$gz-skills:gzs-plan-audit` once the approved design has an
+   execution plan.** Trace the plan to the [selected correction](../../ROADMAP.md#selected-correction--pre-implementation-verification-november-17-2026).
+   Check the transition cases, preservation of genuine test failures,
+   existing-adopter migration and actual Windows/macOS acceptance commands.
+   Use `$gz-skills:gzs-cross-platform-python` for a focused review of the
+   helper's subprocess, path and exit-status behavior when code exists.
+3. **Run `$gz-skills:gzs-intent-audit` after a new candidate exists.**
+   Exercise the installed verifier at the adopter seam, from a docs/config-only
+   checkout through the first change that makes behavior tests mandatory. For
+   instruction-guidance work, scope a separate audit to new matched trials and
+   use the existing [task and locked-Python rubric](../evidence/2026-11-21-instruction-delivery-evals.md#locked-python-workflow-replay).
+   The 0.11.6 replay already records the sampled drift. Only new comparative
+   trials can establish whether a guidance change affects it.
+
+The [roadmap](../../ROADMAP.md#next-work-in-recommended-order) carries the other
+starter work. [Issue #1](https://github.com/tvproductions/gz-starter/issues/1)
+remains open pending delivery of the cognitive engine.
+
 ### 0.11.6 locked Python eval checkpoint
 
 The maintainer requested a fresh handoff, Git sync and publication of 0.11.6.
