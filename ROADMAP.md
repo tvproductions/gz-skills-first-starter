@@ -7,8 +7,8 @@ Published baseline **0.11.4**, immutable source
 The maintainer invoked `gzs-update-dependencies` from clean main
 `ec5b2f1379c0bcfe46d8850c0b02dcf4ef297dad`. Restore the existing latest-stable
 tooling commitment in both baselines with a compatible development-tool refresh.
-The scope preserves the public adoption contract, Python families, component
-selections and routine hooks. The proposed **0.12.0** bootstrap correction
+The scope preserves the public adoption contract, Python families, activation
+choices and routine hooks. The proposed **0.12.0** bootstrap correction
 remains separately approval-gated.
 
 Included: update coverage, certifi, decorator, PyYAML and virtualenv, verify both
@@ -20,8 +20,7 @@ and remaining host limits in the
 Local maintenance is complete. Both exact environments, full gates and
 changed-tool controls passed. Each locked audit covered 75 packages with zero
 known vulnerabilities and zero skips. Exact-candidate hosted CI and release
-acceptance remain pending.
-Release acceptance and publication require separate authorization.
+acceptance remain pending. The maintainer subsequently authorized publication.
 
 The maintainer's `gzs-agent-context-diet` invocation also selects instruction
 delivery cleanup for 0.11.5. Shorten the root and generated adopter instructions,
@@ -39,12 +38,13 @@ The Git assertion-order check now replays the saved native traces directly.
 Keep this bounded evidence in the same patch and report the unaffected
 manual observations separately.
 
-The maintainer requested version bumps for the starter and its upstream context
-diet skill. Retain the pending starter patch for the compatible instruction
-delivery and evaluation changes. The independently versioned skill and bundle
-candidates are `gzs-agent-context-diet` 0.2.0 and `gz-skills` 0.14.0. The
-starter patch selects the published `gz-skills` v0.13.0 source. A future
-component update requires the upstream release and its own qualification.
+The maintainer requested including released `gz-skills` **v0.14.0** in starter
+0.11.5. Update the immutable component pin in the bundle, catalogs and
+development bindings. The enabled catalog continues to expose the same skills.
+The behavioral verification change belongs to the independently versioned
+`gzs-agent-context-diet` 0.2.0 workflow. It adds no starter baseline or managed
+file requirement. Retain the patch and verify the changed exact combination
+under ADR-0001. Adopters select updates through their own reviewed migration.
 
 ## Current review — starter discipline evaluation, November 18, 2026
 
