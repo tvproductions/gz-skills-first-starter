@@ -3,7 +3,7 @@
 ## Selected 0.11.5 scope — dependency maintenance, November 21, 2026
 
 Published baseline **0.11.4**, immutable source
-`75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63` → pending **0.11.5 / patch**.
+`75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63` → published **0.11.5 / patch**.
 The maintainer invoked `gzs-update-dependencies` from clean main
 `ec5b2f1379c0bcfe46d8850c0b02dcf4ef297dad`. Restore the existing latest-stable
 tooling commitment in both baselines with a compatible development-tool refresh.
@@ -19,8 +19,9 @@ and remaining host limits in the
 [maintenance receipt](docs/evidence/2026-11-21-dependency-maintenance.md).
 Local maintenance is complete. Both exact environments, full gates and
 changed-tool controls passed. Each locked audit covered 75 packages with zero
-known vulnerabilities and zero skips. Exact-candidate hosted CI and release
-acceptance remain pending. The maintainer subsequently authorized publication.
+known vulnerabilities and zero skips. The maintainer subsequently authorized
+publication. The [release receipt](docs/evidence/2026-11-21-0.11.5-release.md)
+records both passing exact-source CI jobs and the verified tag.
 
 The maintainer's `gzs-agent-context-diet` invocation also selects instruction
 delivery cleanup for 0.11.5. Shorten the root and generated adopter instructions,
@@ -31,8 +32,7 @@ copy. See the [instruction delivery handoff](docs/handoffs/2026-11-18-discipline
 The [instruction delivery eval](docs/evidence/2026-11-21-instruction-delivery-evals.md)
 adds project-owned evidence for the same patch. It restores the applicability
 guard and records fixed comparative cases, deterministic grading and a
-bounded native pilot. Broader reliability assessment and exact-candidate hosted
-CI remain open.
+bounded native pilot. Broader reliability assessment remains open.
 
 The Git assertion-order check now replays the saved native traces directly.
 Keep this bounded evidence in the same patch and report the unaffected
@@ -77,7 +77,7 @@ guidance, bind verification scope to SP's fresh-command discipline and separate
 current handoff authority from history. This compatible correction is part of
 released 0.11.4 below. No new tooling subsystem or broader comparative campaign is
 selected. The November 19 maintenance below was published as
-0.11.3; the current development target is 0.11.5. The separately approval-gated
+0.11.3; the current published starter is 0.11.5. The separately approval-gated
 bootstrap correction/proposed 0.12.0 below remains open.
 
 ## Selected 0.11.4 scope — Codex duplicate-source repair, November 19, 2026

@@ -8,7 +8,9 @@ coverage 7.17.4, certifi 2026.11.20, decorator 5.3.2, PyYAML 6.0.4 and
 virtualenv 21.15.11. See the
 [bounded roadmap scope](../../ROADMAP.md#selected-0115-scope--dependency-maintenance-november-21-2026)
 and [maintenance receipt](../evidence/2026-11-21-dependency-maintenance.md) for
-verification and remaining release gates. The bootstrap design and ADR review
+verification. The [starter 0.11.5 release](../evidence/2026-11-21-0.11.5-release.md)
+was published with gz-skills 0.14.0 after both exact-source CI jobs passed.
+The bootstrap design and ADR review
 below still require separate approvals before dependent work.
 
 ### November 21 instruction delivery evals
@@ -23,8 +25,8 @@ records the original cleanup before that correction.
 The case grader detected edits before failure reproduction and an omitted CI
 disclosure even though the final patches passed. Cross-case Python workflow
 violations remain explicit. The pilot supplies bounded evidence for the sampled
-hosts and instructions. Broader reliability and exact-candidate hosted CI
-remain open. Keep the eval tooling project-owned and out of routine CI.
+hosts and instructions. Broader reliability remains open. Keep the eval
+tooling project-owned and out of routine CI.
 
 The maintainer then approved direct replay for the Git assertion-order check.
 The [raw trace replay](../evidence/2026-11-21-instruction-delivery-evals.md#direct-replay-of-the-git-ordering-check)
@@ -41,19 +43,18 @@ trials when binding instructions change. The
 [starter release receipt](../evidence/2026-11-21-0.11.5-release.md) records the
 exact selected combination and its verification.
 
-The maintainer requested Git synchronization of both repositories. The starter
-save point keeps 0.11.5 pending. Fresh local verification on November 21 ran
+The maintainer requested Git synchronization of both repositories before
+subsequently authorizing publication. Fresh local verification on November 21 ran
 all four pre-commit checks, starter validation, all 38 engineering checker
 tests, scoped C901 and source-independent build and installed distribution
-checks with uv 0.13.9 and managed Python 3.14.10. The
-[Actions workflow](https://github.com/tvproductions/gz-starter/actions/workflows/check.yml)
-reports hosted results for the exact pushed commit.
+checks with uv 0.13.9 and managed Python 3.14.10. Both hosted checks passed
+for the [immutable release commit](https://github.com/tvproductions/gz-starter/actions/runs/44932168863).
 
 ### November 21 instruction delivery cleanup
 
 The maintainer invoked `gzs-agent-context-diet` to shorten the root instructions
 and the adopter fragment. Include this compatible delivery cleanup in the
-[pending 0.11.5 scope](../../ROADMAP.md#selected-0115-scope--dependency-maintenance-november-21-2026).
+[0.11.5 scope](../../ROADMAP.md#selected-0115-scope--dependency-maintenance-november-21-2026).
 The source edit preserves the mandatory project policy and the managed-file
 conflict and preservation contract. Existing adopters receive the shorter
 fragment through the reviewed template-upgrade procedure.

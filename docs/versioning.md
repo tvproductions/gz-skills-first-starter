@@ -1,17 +1,13 @@
 # Template versioning
 
-Current published release: **0.11.4 / patch**, November 20, 2026, immutable source
-`75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63`. Both exact-source CI jobs, annotated
-remote tag, stable GitHub release and downloaded tagged-source contents are
-verified in the [release receipt](evidence/2026-11-20-0.11.4-release.md).
-
-Pending **0.11.5 / patch** restores latest-stable development-tool selections
+Current published release **0.11.5 / patch** at immutable source
+`0d3be366bc3048ed123d36dd6af93ad4d8850b80` restores latest-stable development-tool selections
 in both Python baselines after the November 21 maintenance invocation. It also
 covers the compatible instruction delivery cleanup and
 [deterministic eval evidence](evidence/2026-11-21-instruction-delivery-evals.md).
 The maintainer authorized publication with the gz-skills 0.14.0 pin refresh.
-The [release receipt](evidence/2026-11-21-0.11.5-release.md) owns the
-exact combination and release checks. The
+The [release receipt](evidence/2026-11-21-0.11.5-release.md) records the
+exact combination, completed CI, annotated tag and downloaded-source checks. The
 [roadmap scope](../ROADMAP.md#selected-0115-scope--dependency-maintenance-november-21-2026)
 and [maintenance receipt](evidence/2026-11-21-dependency-maintenance.md) record
 the governing commitment, checks and publication status.
