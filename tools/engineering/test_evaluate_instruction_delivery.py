@@ -39,6 +39,51 @@ CONTROL_KEYS = {
 
 
 class InstructionDeliveryTests(unittest.TestCase):
+    def test_cli_reports_task_pass_and_workflow_failure_for_each_case(self):
+        command = [sys.executable, "-m", "tools.engineering.evaluate_instruction_delivery"]
+        shell = {
+            "id": "check",
+            "type": "command_execution",
+            "command": "/bin/bash -lc 'uv run --locked python -VV && .venv/bin/python -m json.tool app.json'",
+        }
+        events = [
+            {"type": "turn.started"},
+            {"type": "item.started", "item": shell},
+            {"type": "item.completed", "item": {**shell, "exit_code": 0}},
+            {"type": "turn.completed"},
+        ]
+        with TemporaryDirectory() as directory:
+            path = Path(directory)
+            trace = path / "trace.jsonl"
+            trace.write_text(
+                "".join(json.dumps(event) + "\n" for event in events), encoding="utf-8"
+            )
+            evidence = path / "observations.json"
+            for case, checks in CONTROL_KEYS.items():
+                with self.subTest(case=case):
+                    evidence.write_text(json.dumps(dict.fromkeys(checks, True)), encoding="utf-8")
+                    result = subprocess.run(
+                        [
+                            *command,
+                            "grade",
+                            case,
+                            str(evidence),
+                            "--trace",
+                            str(trace),
+                            "--host",
+                            "codex",
+                        ],
+                        capture_output=True,
+                        text=True,
+                        encoding="utf-8",
+                        check=False,
+                    )
+                    self.assertEqual(result.returncode, 1, result.stderr)
+                    verdict = json.loads(result.stdout)
+                    self.assertEqual(verdict["status"], "FAIL")
+                    self.assertEqual(verdict["task"]["status"], "PASS")
+                    self.assertEqual(verdict["workflow"]["locked_python"]["status"], "FAIL")
+
     def test_fixed_contract_and_compliant_controls(self):
         cases = load_cases(FIXTURES)
         self.assertEqual(set(cases), set(CONTROL_KEYS))

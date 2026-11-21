@@ -1,5 +1,10 @@
 # GZ Starter
 
+Release **0.11.6** grades locked Python use alongside task outcomes when
+replaying native instruction-delivery traces. See the
+[release receipt](docs/evidence/2026-11-21-0.11.6-release.md) for verified
+results and the scope of the evidence.
+
 Release **0.11.5** delivers shorter agent instructions, fixed instruction
 delivery evals, and the gz-skills 0.14.0 component update. See the
 [release receipt](docs/evidence/2026-11-21-0.11.5-release.md) for verification

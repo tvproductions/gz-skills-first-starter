@@ -7,10 +7,13 @@ from pathlib import Path, PurePosixPath
 
 if __package__:
     from tools.engineering.instruction_delivery_git_trace import check_git_trace
+    from tools.engineering.instruction_delivery_python_trace import check_locked_python
 else:
     from instruction_delivery_git_trace import check_git_trace
+    from instruction_delivery_python_trace import check_locked_python
 
 FIXTURES = Path(__file__).parent / "fixtures" / "instruction-delivery-v1.json"
+EXIT_CODES = {"PASS": 0, "FAIL": 1, "UNVERIFIED": 3}
 
 
 def load_cases(path: Path) -> dict[str, tuple[str, ...]]:
@@ -64,19 +67,52 @@ def prepare_fixture(case: str, destination: Path) -> None:
         target.write_text(content, encoding="utf-8", newline="\n")
 
 
-def grade_trace(path: Path, host: str, workspace: PurePosixPath) -> int:
-    """Read the native events and report the assertion-order verdict."""
+def read_trace(path: Path) -> list[dict]:
+    """Decode raw JSONL without executing anything in it."""
     events = [
         json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()
     ]
     if not all(isinstance(event, dict) for event in events):
         raise ValueError("Trace must contain JSON objects")
+    return events
+
+
+def grade_trace(path: Path, host: str, workspace: PurePosixPath) -> int:
+    """Read the native events and report the assertion-order verdict."""
+    events = read_trace(path)
     result = check_git_trace(events, host, workspace)
     status, code = {True: ("PASS", 0), False: ("FAIL", 1), None: ("UNVERIFIED", 3)}[
         result["failure_observed"]
     ]
     print(json.dumps({"case": "git-sync", "status": status, **result}, indent=2))
     return code
+
+
+def report_grade(
+    case: str,
+    task: dict[str, str | list[str]],
+    paths: list[Path],
+    host: str | None,
+) -> int:
+    """Report workflow evidence separately and carry observed failures into the exit status."""
+    status = str(task["status"])
+    if host is not None and paths:
+        workflow = check_locked_python([read_trace(path) for path in paths], host)
+        statuses = {status, workflow["status"]}
+        if "FAIL" in statuses:
+            status = "FAIL"
+        elif "UNVERIFIED" in statuses:
+            status = "UNVERIFIED"
+        payload = {
+            "case": case,
+            "status": status,
+            "task": task,
+            "workflow": {"locked_python": workflow},
+        }
+    else:
+        payload = {"case": case, **task}
+    print(json.dumps(payload, indent=2))
+    return EXIT_CODES[status]
 
 
 def main() -> int:
@@ -88,9 +124,20 @@ def main() -> int:
     parser.add_argument("path", type=Path, help="fixture directory, JSON evidence, or native JSONL")
     parser.add_argument("--host", choices=("codex", "claude"))
     parser.add_argument(
+        "--trace",
+        type=Path,
+        action="append",
+        default=[],
+        help="native JSONL turn for grade (repeatable)",
+    )
+    parser.add_argument(
         "--workspace", type=PurePosixPath, help="recorded fixture workspace for trace"
     )
     args = parser.parse_args()
+    if args.trace and (args.action != "grade" or args.host is None):
+        parser.error("--trace requires grade and --host")
+    if args.action == "grade" and args.host is not None and not args.trace:
+        parser.error("grade --host requires at least one --trace")
     try:
         if args.action == "trace":
             if args.case != "git-sync" or args.host is None or args.workspace is None:
@@ -105,10 +152,9 @@ def main() -> int:
         if not isinstance(evidence, dict):
             raise ValueError("Evidence must be a JSON object")
         result = score_trial(cases[args.case], evidence)
+        return report_grade(args.case, result, args.trace, args.host)
     except (OSError, ValueError) as error:
         parser.error(str(error))
-    print(json.dumps({"case": args.case, **result}, indent=2))
-    return {"PASS": 0, "FAIL": 1, "UNVERIFIED": 3}[str(result["status"])]
 
 
 if __name__ == "__main__":

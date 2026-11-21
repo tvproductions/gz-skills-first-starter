@@ -1,5 +1,10 @@
 # Template versioning
 
+Pending **0.11.6 / patch** corrects the project-owned eval's handling of the
+existing locked Python requirement. The
+[bounded scope](../ROADMAP.md#selected-0116-scope--locked-python-eval-correction-november-21-2026)
+records the governing defect and acceptance.
+
 Current published release **0.11.5 / patch** at immutable source
 `0d3be366bc3048ed123d36dd6af93ad4d8850b80` restores latest-stable development-tool selections
 in both Python baselines after the November 21 maintenance invocation. It also

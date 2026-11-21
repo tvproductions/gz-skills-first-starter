@@ -1,0 +1,703 @@
+{
+  "checked_at_utc": "2026-11-21T19:08:27+00:00",
+  "lock_sha256": {
+    "uv.lock": "9e4f48a4cc7c857a8caa9ec2f9f092c79af680b1062459c7d5123c9c00c9bab1",
+    "baselines/xplane/uv.lock": "59603d9e68274ce50dc26b28da0a33228fb3d02cefaaea78651bb0587ee3586c"
+  },
+  "pypi": [
+    {
+      "name": "aiohappyeyeballs",
+      "selected": {
+        "uv.lock": "2.7.1",
+        "baselines/xplane/uv.lock": "2.7.1"
+      },
+      "latest_stable": "2.7.1",
+      "source": "https://pypi.org/pypi/aiohappyeyeballs/json"
+    },
+    {
+      "name": "aiohttp",
+      "selected": {
+        "uv.lock": "3.14.5",
+        "baselines/xplane/uv.lock": "3.14.5"
+      },
+      "latest_stable": "3.14.5",
+      "source": "https://pypi.org/pypi/aiohttp/json"
+    },
+    {
+      "name": "aiosignal",
+      "selected": {
+        "uv.lock": "1.4.0",
+        "baselines/xplane/uv.lock": "1.4.0"
+      },
+      "latest_stable": "1.4.0",
+      "source": "https://pypi.org/pypi/aiosignal/json"
+    },
+    {
+      "name": "anybadge",
+      "selected": {
+        "uv.lock": "1.18.0",
+        "baselines/xplane/uv.lock": "1.18.0"
+      },
+      "latest_stable": "1.18.0",
+      "source": "https://pypi.org/pypi/anybadge/json"
+    },
+    {
+      "name": "attrs",
+      "selected": {
+        "uv.lock": "26.1.0",
+        "baselines/xplane/uv.lock": "26.1.0"
+      },
+      "latest_stable": "26.1.0",
+      "source": "https://pypi.org/pypi/attrs/json"
+    },
+    {
+      "name": "bandit",
+      "selected": {
+        "uv.lock": "1.9.4",
+        "baselines/xplane/uv.lock": "1.9.4"
+      },
+      "latest_stable": "1.9.4",
+      "source": "https://pypi.org/pypi/bandit/json"
+    },
+    {
+      "name": "boolean-py",
+      "selected": {
+        "uv.lock": "5.0",
+        "baselines/xplane/uv.lock": "5.0"
+      },
+      "latest_stable": "5.0",
+      "source": "https://pypi.org/pypi/boolean-py/json"
+    },
+    {
+      "name": "cachecontrol",
+      "selected": {
+        "uv.lock": "0.15.0",
+        "baselines/xplane/uv.lock": "0.15.0"
+      },
+      "latest_stable": "0.15.0",
+      "source": "https://pypi.org/pypi/cachecontrol/json"
+    },
+    {
+      "name": "certifi",
+      "selected": {
+        "uv.lock": "2026.11.20",
+        "baselines/xplane/uv.lock": "2026.11.20"
+      },
+      "latest_stable": "2026.11.20",
+      "source": "https://pypi.org/pypi/certifi/json"
+    },
+    {
+      "name": "cfgv",
+      "selected": {
+        "uv.lock": "3.5.0",
+        "baselines/xplane/uv.lock": "3.5.0"
+      },
+      "latest_stable": "3.5.0",
+      "source": "https://pypi.org/pypi/cfgv/json"
+    },
+    {
+      "name": "charset-normalizer",
+      "selected": {
+        "uv.lock": "3.5.2",
+        "baselines/xplane/uv.lock": "3.5.2"
+      },
+      "latest_stable": "3.5.2",
+      "source": "https://pypi.org/pypi/charset-normalizer/json"
+    },
+    {
+      "name": "click",
+      "selected": {
+        "uv.lock": "8.5.1",
+        "baselines/xplane/uv.lock": "8.5.1"
+      },
+      "latest_stable": "8.5.1",
+      "source": "https://pypi.org/pypi/click/json"
+    },
+    {
+      "name": "colorama",
+      "selected": {
+        "uv.lock": "0.4.6",
+        "baselines/xplane/uv.lock": "0.4.6"
+      },
+      "latest_stable": "0.4.6",
+      "source": "https://pypi.org/pypi/colorama/json"
+    },
+    {
+      "name": "complexipy",
+      "selected": {
+        "uv.lock": "9.0.0",
+        "baselines/xplane/uv.lock": "9.0.0"
+      },
+      "latest_stable": "9.0.0",
+      "source": "https://pypi.org/pypi/complexipy/json"
+    },
+    {
+      "name": "cosmic-ray",
+      "selected": {
+        "uv.lock": "8.9.0",
+        "baselines/xplane/uv.lock": "8.9.0"
+      },
+      "latest_stable": "8.9.0",
+      "source": "https://pypi.org/pypi/cosmic-ray/json"
+    },
+    {
+      "name": "coverage",
+      "selected": {
+        "uv.lock": "7.17.4",
+        "baselines/xplane/uv.lock": "7.17.4"
+      },
+      "latest_stable": "7.17.4",
+      "source": "https://pypi.org/pypi/coverage/json"
+    },
+    {
+      "name": "cyclonedx-python-lib",
+      "selected": {
+        "uv.lock": "11.12.0",
+        "baselines/xplane/uv.lock": "11.12.0"
+      },
+      "latest_stable": "11.12.0",
+      "source": "https://pypi.org/pypi/cyclonedx-python-lib/json"
+    },
+    {
+      "name": "decorator",
+      "selected": {
+        "uv.lock": "5.3.2",
+        "baselines/xplane/uv.lock": "5.3.2"
+      },
+      "latest_stable": "5.3.2",
+      "source": "https://pypi.org/pypi/decorator/json"
+    },
+    {
+      "name": "defusedxml",
+      "selected": {
+        "uv.lock": "0.7.1",
+        "baselines/xplane/uv.lock": "0.7.1"
+      },
+      "latest_stable": "0.7.1",
+      "source": "https://pypi.org/pypi/defusedxml/json"
+    },
+    {
+      "name": "deptry",
+      "selected": {
+        "uv.lock": "0.25.1",
+        "baselines/xplane/uv.lock": "0.25.1"
+      },
+      "latest_stable": "0.25.1",
+      "source": "https://pypi.org/pypi/deptry/json"
+    },
+    {
+      "name": "detect-secrets",
+      "selected": {
+        "uv.lock": "1.5.0"
+      },
+      "latest_stable": "1.5.0",
+      "source": "https://pypi.org/pypi/detect-secrets/json"
+    },
+    {
+      "name": "distlib",
+      "selected": {
+        "uv.lock": "0.4.4",
+        "baselines/xplane/uv.lock": "0.4.4"
+      },
+      "latest_stable": "0.4.4",
+      "source": "https://pypi.org/pypi/distlib/json"
+    },
+    {
+      "name": "exit-codes",
+      "selected": {
+        "uv.lock": "1.3.0",
+        "baselines/xplane/uv.lock": "1.3.0"
+      },
+      "latest_stable": "1.3.0",
+      "source": "https://pypi.org/pypi/exit-codes/json"
+    },
+    {
+      "name": "filelock",
+      "selected": {
+        "uv.lock": "4.2.12",
+        "baselines/xplane/uv.lock": "4.2.12"
+      },
+      "latest_stable": "4.2.12",
+      "source": "https://pypi.org/pypi/filelock/json"
+    },
+    {
+      "name": "frozenlist",
+      "selected": {
+        "uv.lock": "1.8.0",
+        "baselines/xplane/uv.lock": "1.8.0"
+      },
+      "latest_stable": "1.8.0",
+      "source": "https://pypi.org/pypi/frozenlist/json"
+    },
+    {
+      "name": "gitdb",
+      "selected": {
+        "uv.lock": "4.0.12",
+        "baselines/xplane/uv.lock": "4.0.12"
+      },
+      "latest_stable": "4.0.12",
+      "source": "https://pypi.org/pypi/gitdb/json"
+    },
+    {
+      "name": "gitpython",
+      "selected": {
+        "uv.lock": "3.2.1",
+        "baselines/xplane/uv.lock": "3.2.1"
+      },
+      "latest_stable": "3.2.1",
+      "source": "https://pypi.org/pypi/gitpython/json"
+    },
+    {
+      "name": "grimp",
+      "selected": {
+        "uv.lock": "3.20",
+        "baselines/xplane/uv.lock": "3.20"
+      },
+      "latest_stable": "3.20",
+      "source": "https://pypi.org/pypi/grimp/json"
+    },
+    {
+      "name": "identify",
+      "selected": {
+        "uv.lock": "2.6.20",
+        "baselines/xplane/uv.lock": "2.6.20"
+      },
+      "latest_stable": "2.6.20",
+      "source": "https://pypi.org/pypi/identify/json"
+    },
+    {
+      "name": "idna",
+      "selected": {
+        "uv.lock": "3.20",
+        "baselines/xplane/uv.lock": "3.20"
+      },
+      "latest_stable": "3.20",
+      "source": "https://pypi.org/pypi/idna/json"
+    },
+    {
+      "name": "import-linter",
+      "selected": {
+        "uv.lock": "2.17",
+        "baselines/xplane/uv.lock": "2.17"
+      },
+      "latest_stable": "2.17",
+      "source": "https://pypi.org/pypi/import-linter/json"
+    },
+    {
+      "name": "interrogate",
+      "selected": {
+        "uv.lock": "1.7.0",
+        "baselines/xplane/uv.lock": "1.7.0"
+      },
+      "latest_stable": "1.7.0",
+      "source": "https://pypi.org/pypi/interrogate/json"
+    },
+    {
+      "name": "license-expression",
+      "selected": {
+        "uv.lock": "30.4.4",
+        "baselines/xplane/uv.lock": "30.4.4"
+      },
+      "latest_stable": "30.4.4",
+      "source": "https://pypi.org/pypi/license-expression/json"
+    },
+    {
+      "name": "lizard",
+      "selected": {
+        "uv.lock": "1.26.1",
+        "baselines/xplane/uv.lock": "1.26.1"
+      },
+      "latest_stable": "1.26.1",
+      "source": "https://pypi.org/pypi/lizard/json"
+    },
+    {
+      "name": "markdown-it-py",
+      "selected": {
+        "uv.lock": "4.3.0",
+        "baselines/xplane/uv.lock": "4.3.0"
+      },
+      "latest_stable": "4.3.0",
+      "source": "https://pypi.org/pypi/markdown-it-py/json"
+    },
+    {
+      "name": "mdurl",
+      "selected": {
+        "uv.lock": "0.1.2",
+        "baselines/xplane/uv.lock": "0.1.2"
+      },
+      "latest_stable": "0.1.2",
+      "source": "https://pypi.org/pypi/mdurl/json"
+    },
+    {
+      "name": "msgpack",
+      "selected": {
+        "uv.lock": "1.2.4",
+        "baselines/xplane/uv.lock": "1.2.4"
+      },
+      "latest_stable": "1.2.4",
+      "source": "https://pypi.org/pypi/msgpack/json"
+    },
+    {
+      "name": "multidict",
+      "selected": {
+        "uv.lock": "7.2.1",
+        "baselines/xplane/uv.lock": "7.2.1"
+      },
+      "latest_stable": "7.2.1",
+      "source": "https://pypi.org/pypi/multidict/json"
+    },
+    {
+      "name": "nodeenv",
+      "selected": {
+        "uv.lock": "1.12.0",
+        "baselines/xplane/uv.lock": "1.12.0"
+      },
+      "latest_stable": "1.12.0",
+      "source": "https://pypi.org/pypi/nodeenv/json"
+    },
+    {
+      "name": "packageurl-python",
+      "selected": {
+        "uv.lock": "0.17.6",
+        "baselines/xplane/uv.lock": "0.17.6"
+      },
+      "latest_stable": "0.17.6",
+      "source": "https://pypi.org/pypi/packageurl-python/json"
+    },
+    {
+      "name": "packaging",
+      "selected": {
+        "uv.lock": "26.3",
+        "baselines/xplane/uv.lock": "26.3"
+      },
+      "latest_stable": "26.3",
+      "source": "https://pypi.org/pypi/packaging/json"
+    },
+    {
+      "name": "parso",
+      "selected": {
+        "uv.lock": "0.8.7",
+        "baselines/xplane/uv.lock": "0.8.7"
+      },
+      "latest_stable": "0.8.7",
+      "source": "https://pypi.org/pypi/parso/json"
+    },
+    {
+      "name": "pathspec",
+      "selected": {
+        "uv.lock": "1.1.1",
+        "baselines/xplane/uv.lock": "1.1.1"
+      },
+      "latest_stable": "1.1.1",
+      "source": "https://pypi.org/pypi/pathspec/json"
+    },
+    {
+      "name": "pip",
+      "selected": {
+        "uv.lock": "26.3",
+        "baselines/xplane/uv.lock": "26.3"
+      },
+      "latest_stable": "26.3",
+      "source": "https://pypi.org/pypi/pip/json"
+    },
+    {
+      "name": "pip-api",
+      "selected": {
+        "uv.lock": "0.0.35",
+        "baselines/xplane/uv.lock": "0.0.35"
+      },
+      "latest_stable": "0.0.35",
+      "source": "https://pypi.org/pypi/pip-api/json"
+    },
+    {
+      "name": "pip-audit",
+      "selected": {
+        "uv.lock": "2.10.1",
+        "baselines/xplane/uv.lock": "2.10.1"
+      },
+      "latest_stable": "2.10.1",
+      "source": "https://pypi.org/pypi/pip-audit/json"
+    },
+    {
+      "name": "pip-requirements-parser",
+      "selected": {
+        "uv.lock": "32.0.1",
+        "baselines/xplane/uv.lock": "32.0.1"
+      },
+      "latest_stable": "32.0.1",
+      "source": "https://pypi.org/pypi/pip-requirements-parser/json"
+    },
+    {
+      "name": "platformdirs",
+      "selected": {
+        "uv.lock": "4.14.8",
+        "baselines/xplane/uv.lock": "4.14.8"
+      },
+      "latest_stable": "4.14.8",
+      "source": "https://pypi.org/pypi/platformdirs/json"
+    },
+    {
+      "name": "pre-commit",
+      "selected": {
+        "uv.lock": "4.7.0",
+        "baselines/xplane/uv.lock": "4.7.0"
+      },
+      "latest_stable": "4.7.0",
+      "source": "https://pypi.org/pypi/pre-commit/json"
+    },
+    {
+      "name": "propcache",
+      "selected": {
+        "uv.lock": "0.5.4",
+        "baselines/xplane/uv.lock": "0.5.4"
+      },
+      "latest_stable": "0.5.4",
+      "source": "https://pypi.org/pypi/propcache/json"
+    },
+    {
+      "name": "py",
+      "selected": {
+        "uv.lock": "1.11.0",
+        "baselines/xplane/uv.lock": "1.11.0"
+      },
+      "latest_stable": "1.11.0",
+      "source": "https://pypi.org/pypi/py/json"
+    },
+    {
+      "name": "py-serializable",
+      "selected": {
+        "uv.lock": "2.2.0",
+        "baselines/xplane/uv.lock": "2.2.0"
+      },
+      "latest_stable": "2.2.0",
+      "source": "https://pypi.org/pypi/py-serializable/json"
+    },
+    {
+      "name": "pygments",
+      "selected": {
+        "uv.lock": "2.21.0",
+        "baselines/xplane/uv.lock": "2.21.0"
+      },
+      "latest_stable": "2.21.0",
+      "source": "https://pypi.org/pypi/pygments/json"
+    },
+    {
+      "name": "pyparsing",
+      "selected": {
+        "uv.lock": "3.3.3",
+        "baselines/xplane/uv.lock": "3.3.3"
+      },
+      "latest_stable": "3.3.3",
+      "source": "https://pypi.org/pypi/pyparsing/json"
+    },
+    {
+      "name": "python-discovery",
+      "selected": {
+        "uv.lock": "1.9.6",
+        "baselines/xplane/uv.lock": "1.9.6"
+      },
+      "latest_stable": "1.9.6",
+      "source": "https://pypi.org/pypi/python-discovery/json"
+    },
+    {
+      "name": "pyyaml",
+      "selected": {
+        "uv.lock": "6.0.4",
+        "baselines/xplane/uv.lock": "6.0.4"
+      },
+      "latest_stable": "6.0.4",
+      "source": "https://pypi.org/pypi/pyyaml/json"
+    },
+    {
+      "name": "requests",
+      "selected": {
+        "uv.lock": "2.34.2",
+        "baselines/xplane/uv.lock": "2.34.2"
+      },
+      "latest_stable": "2.34.2",
+      "source": "https://pypi.org/pypi/requests/json"
+    },
+    {
+      "name": "requirements-parser",
+      "selected": {
+        "uv.lock": "0.13.1",
+        "baselines/xplane/uv.lock": "0.13.1"
+      },
+      "latest_stable": "0.13.1",
+      "source": "https://pypi.org/pypi/requirements-parser/json"
+    },
+    {
+      "name": "rich",
+      "selected": {
+        "uv.lock": "15.0.0",
+        "baselines/xplane/uv.lock": "15.0.0"
+      },
+      "latest_stable": "15.0.0",
+      "source": "https://pypi.org/pypi/rich/json"
+    },
+    {
+      "name": "ruff",
+      "selected": {
+        "uv.lock": "0.17.6",
+        "baselines/xplane/uv.lock": "0.17.6"
+      },
+      "latest_stable": "0.17.6",
+      "source": "https://pypi.org/pypi/ruff/json"
+    },
+    {
+      "name": "smmap",
+      "selected": {
+        "uv.lock": "5.0.3",
+        "baselines/xplane/uv.lock": "5.0.3"
+      },
+      "latest_stable": "5.0.3",
+      "source": "https://pypi.org/pypi/smmap/json"
+    },
+    {
+      "name": "sortedcontainers",
+      "selected": {
+        "uv.lock": "2.4.0",
+        "baselines/xplane/uv.lock": "2.4.0"
+      },
+      "latest_stable": "2.4.0",
+      "source": "https://pypi.org/pypi/sortedcontainers/json"
+    },
+    {
+      "name": "sqlalchemy",
+      "selected": {
+        "uv.lock": "2.1.9",
+        "baselines/xplane/uv.lock": "2.1.9"
+      },
+      "latest_stable": "2.1.9",
+      "source": "https://pypi.org/pypi/sqlalchemy/json"
+    },
+    {
+      "name": "stevedore",
+      "selected": {
+        "uv.lock": "5.10.0",
+        "baselines/xplane/uv.lock": "5.10.0"
+      },
+      "latest_stable": "5.10.0",
+      "source": "https://pypi.org/pypi/stevedore/json"
+    },
+    {
+      "name": "tabulate",
+      "selected": {
+        "uv.lock": "0.10.0",
+        "baselines/xplane/uv.lock": "0.10.0"
+      },
+      "latest_stable": "0.10.0",
+      "source": "https://pypi.org/pypi/tabulate/json"
+    },
+    {
+      "name": "toml",
+      "selected": {
+        "uv.lock": "0.10.2",
+        "baselines/xplane/uv.lock": "0.10.2"
+      },
+      "latest_stable": "0.10.2",
+      "source": "https://pypi.org/pypi/toml/json"
+    },
+    {
+      "name": "tomli",
+      "selected": {
+        "uv.lock": "2.5.0",
+        "baselines/xplane/uv.lock": "2.5.0"
+      },
+      "latest_stable": "2.5.0",
+      "source": "https://pypi.org/pypi/tomli/json"
+    },
+    {
+      "name": "tomli-w",
+      "selected": {
+        "uv.lock": "1.2.0",
+        "baselines/xplane/uv.lock": "1.2.0"
+      },
+      "latest_stable": "1.2.0",
+      "source": "https://pypi.org/pypi/tomli-w/json"
+    },
+    {
+      "name": "ty",
+      "selected": {
+        "uv.lock": "0.0.107",
+        "baselines/xplane/uv.lock": "0.0.107"
+      },
+      "latest_stable": "0.0.107",
+      "source": "https://pypi.org/pypi/ty/json"
+    },
+    {
+      "name": "typing-extensions",
+      "selected": {
+        "uv.lock": "4.16.0",
+        "baselines/xplane/uv.lock": "4.16.0"
+      },
+      "latest_stable": "4.16.0",
+      "source": "https://pypi.org/pypi/typing-extensions/json"
+    },
+    {
+      "name": "urllib3",
+      "selected": {
+        "uv.lock": "2.8.0",
+        "baselines/xplane/uv.lock": "2.8.0"
+      },
+      "latest_stable": "2.8.0",
+      "source": "https://pypi.org/pypi/urllib3/json"
+    },
+    {
+      "name": "uv-build",
+      "selected": {
+        "baselines/xplane/uv.lock": "0.13.9"
+      },
+      "latest_stable": "0.13.9",
+      "source": "https://pypi.org/pypi/uv-build/json"
+    },
+    {
+      "name": "virtualenv",
+      "selected": {
+        "uv.lock": "21.15.11",
+        "baselines/xplane/uv.lock": "21.15.11"
+      },
+      "latest_stable": "21.15.11",
+      "source": "https://pypi.org/pypi/virtualenv/json"
+    },
+    {
+      "name": "vulture",
+      "selected": {
+        "uv.lock": "2.16",
+        "baselines/xplane/uv.lock": "2.16"
+      },
+      "latest_stable": "2.16",
+      "source": "https://pypi.org/pypi/vulture/json"
+    },
+    {
+      "name": "yarl",
+      "selected": {
+        "uv.lock": "1.25.1",
+        "baselines/xplane/uv.lock": "1.25.1"
+      },
+      "latest_stable": "1.25.1",
+      "source": "https://pypi.org/pypi/yarl/json"
+    },
+    {
+      "name": "yattag",
+      "selected": {
+        "uv.lock": "1.16.1",
+        "baselines/xplane/uv.lock": "1.16.1"
+      },
+      "latest_stable": "1.16.1",
+      "source": "https://pypi.org/pypi/yattag/json"
+    }
+  ],
+  "audit": {
+    "root": {
+      "packages": 75,
+      "vulnerabilities": 0,
+      "skipped": 0
+    },
+    "xplane": {
+      "packages": 75,
+      "vulnerabilities": 0,
+      "skipped": 0
+    }
+  }
+}

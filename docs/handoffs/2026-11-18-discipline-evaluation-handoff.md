@@ -2,6 +2,35 @@
 
 ## Current resume point — November 21, 2026
 
+### 0.11.6 locked Python eval checkpoint
+
+The maintainer requested a fresh handoff, Git sync and publication of 0.11.6.
+The starting `main` and `origin/main` matched at
+`a2aa5f96c2621134d0670cf9c293576fa950b9e2`. The scoped changes to the eval,
+version mirrors and evidence were local before this checkpoint. See the
+[release scope](../../ROADMAP.md#selected-0116-scope--locked-python-eval-correction-november-21-2026)
+and [release receipt](../evidence/2026-11-21-0.11.6-release.md).
+
+The new `grade --trace` path grades the locked Python rule for each case.
+The reviewed [replay](../evidence/2026-11-21-instruction-delivery-python-replay.json)
+records seven workflow failures among 28 saved trials and 21 unverified
+workflow verdicts. The original task verdicts and all eight Git ordering
+observations reproduced. The digest-indexed receipt is public. Raw traces
+are private local fixtures, so assume a new checkout has only the receipt
+and synthetic controls. Keep the checker out of routine CI.
+
+For publication, finish the starter checkout gates, sync `main`, verify both
+CI jobs on the exact release commit and verify the immutable tag and GitHub
+archive. After that, the next advised work is the read-only
+[bootstrap design review](2026-11-17-bootstrap-verification-handoff.md#resume-point-and-authority).
+Review the automatic transition from pre-runtime checks to mandatory real
+tests and the Windows and macOS evidence. Stop before dependent
+implementation until the design and ADR-0003 edition 1 are separately
+approved. A matched instruction experiment remains open for measuring whether
+guidance changes reduce locked-Python drift.
+
+### Earlier November 21 maintenance checkpoint
+
 The maintainer's `gzs-update-dependencies` invocation selected a compatible
 **0.11.5 / patch** over published **0.11.4**. Both Python baselines select
 coverage 7.17.4, certifi 2026.11.20, decorator 5.3.2, PyYAML 6.0.4 and
@@ -14,6 +43,14 @@ The bootstrap design and ADR review
 below still require separate approvals before dependent work.
 
 ### November 21 instruction delivery evals
+
+The post-release intent audit found two ADR trials that honored the approval
+gate and checked fixture state by calling the virtual-environment interpreter
+directly. The pending 0.11.6 patch adds the shared
+[locked Python workflow check](../evidence/2026-11-21-instruction-delivery-evals.md#locked-python-workflow-replay).
+The replay found seven workflow failures across the prior pilot and fresh
+audit. The earlier task and Git-order verdicts reproduced. Other workflow
+observations remain unverified.
 
 The maintainer requested the fixed comparative cases and deterministic grading.
 The [eval protocol and pilot](../evidence/2026-11-21-instruction-delivery-evals.md)

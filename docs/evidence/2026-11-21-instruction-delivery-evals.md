@@ -183,3 +183,40 @@ formats, including an unrelated failure, late stash reproduction, scope
 mismatch, mixed output, unsupported operations and missing evidence. ADR,
 policy delivery and CI closeout continue to use the existing reviewed
 observations.
+
+## Locked Python workflow replay
+
+The post-release intent audit observed both fresh ADR actors handling the
+approval gate correctly while running `.venv/bin/python` directly for an
+ancillary check. The adopter requires `uv run --locked python` for these
+checks. Include native traces with task observations to grade the workflow
+across all three existing cases:
+
+```bash
+uv run --locked python -m tools.engineering.evaluate_instruction_delivery \
+  grade adr OBSERVATIONS.json --host codex --trace TURN1.jsonl --trace TURN2.jsonl
+```
+
+Use `--host claude` for Claude Code. Repeat `--trace` in turn order and
+supply every recorded turn. The output gives the original task rubric and
+`workflow.locked_python` separately. The combined exit status is 1 for a
+known task or workflow failure, 3 for unverified evidence without a failure,
+and 0 when the required checks pass. `NOT_APPLICABLE` denotes a recognized
+trace with no observed Python execution. The original task-only `grade`
+and Git assertion-order `trace git-sync` invocations retain their contracts.
+
+The fixed controls distinguish locked and unlocked uv execution, direct
+POSIX and Windows interpreter paths, inspection such as `ls .venv/bin/python`,
+host-denied tools, conditional command chains and truncated turns. A location
+uses the one-based trace argument index and native JSONL line. Line 0 marks
+a missing turn boundary. Observations record literal invocation form.
+They do not verify which Python binary actually ran or inspect programs
+launched inside hooks, scripts or opaque shell constructs.
+
+The [replay receipt](2026-11-21-instruction-delivery-python-replay.json)
+matches input SHA-256 values for 24 pilot trials and four fresh adopter
+trials. All 24 historical task verdicts and eight Git ordering observations
+reproduced. Five pilot trials and both fresh ADR trials failed the Python
+check while meeting their sampled task criteria. The other 21 workflow
+verdicts are unverified because the trace or grammar did not establish all
+command effects. This replay supplies no new comparative model runs.

@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.11.6 — November 21, 2026
+
+- Grade locked Python invocations alongside task outcomes in instruction-delivery
+  replay. Record direct interpreter calls as failures and retain unknown trace
+  evidence. See the
+  [release receipt](docs/evidence/2026-11-21-0.11.6-release.md).
+
 ## 0.11.5 — November 21, 2026
 
 - Refresh coverage 7.17.3 → 7.17.4 and the locked certifi, decorator, PyYAML and

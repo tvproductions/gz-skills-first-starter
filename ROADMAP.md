@@ -1,5 +1,23 @@
 # Roadmap
 
+## Selected 0.11.6 scope — locked Python eval correction, November 21, 2026
+
+Published baseline **0.11.5** at `0d3be366bc3048ed123d36dd6af93ad4d8850b80`
+→ pending **0.11.6 / patch**. The instruction-delivery intent audit found that
+both fresh ADR actors called the virtual-environment interpreter directly
+while fulfilling the case's approval requirement. Correct the project-owned
+eval to grade the existing locked Python rule from saved traces in every case.
+Retain the task rubric, historical receipts and the Git assertion-order CLI
+contract. The [eval protocol](docs/evidence/2026-11-21-instruction-delivery-evals.md#locked-python-workflow-replay)
+records the controls and replay.
+
+Acceptance requires fixed positive, negative and missing-evidence controls,
+replay of archived pilot and intent-audit traces, unchanged Git order
+observations, checker tests and synchronized version mirrors. The scope
+preserves adoption and runtime policy. New model trials, hosted candidate CI
+and publication remain separate. The 0.12.0 bootstrap proposal stays
+approval-gated.
+
 ## Selected 0.11.5 scope — dependency maintenance, November 21, 2026
 
 Published baseline **0.11.4**, immutable source

@@ -2,10 +2,24 @@
 
 import re
 import shlex
-from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import PurePosixPath
 from typing import Literal, NotRequired, TypedDict
+
+if __package__:
+    from tools.engineering.instruction_delivery_native_trace import (
+        PASSIVE_CLAUDE,
+        boundary_observed,
+        claude_records,
+        codex_records,
+    )
+else:
+    from instruction_delivery_native_trace import (
+        PASSIVE_CLAUDE,
+        boundary_observed,
+        claude_records,
+        codex_records,
+    )
 
 Effect = Literal["irrelevant", "assertion", "source_edit", "opaque"]
 TEST = ["uv", "run", "--locked", "python", "-m", "unittest", "discover", "-s", "tests"]
@@ -41,8 +55,6 @@ TEST_SUPPORT = {
     ("ls", "CHANGELOG.md"),
     *(("uv", *args) for args in UV_READS),
 }
-PASSIVE_CODEX = {"agent_message", "reasoning", "todo_list", "plan", "web_search"}
-PASSIVE_CLAUDE = {"Read", "Grep", "Glob", "Skill"}
 FILE_LIST = re.compile(r"\$\(git ls-files \| grep -v (?:-E )?'[^'\n]*'(?: \| head -\d+)?\)")
 SKILL_READ_LOOP = re.compile(r"for s in [\w -]+; do cat /[\w./-]+/\$s/SKILL\.md; done")
 TOKEN = re.compile(
@@ -227,36 +239,9 @@ def _claude_effect(start: dict, result: dict, workspace: PurePosixPath) -> Effec
     return "opaque"
 
 
-def _codex_records(event: dict) -> Iterator[tuple[str, bool, dict]]:
-    """Yield Codex operation IDs, start flags, and payloads."""
-    phase = event.get("type")
-    if phase in {"item.started", "item.completed"}:
-        item = event["item"]
-        if item.get("type") not in PASSIVE_CODEX:
-            yield item["id"], phase == "item.started", item
-
-
-def _claude_records(event: dict) -> Iterator[tuple[str, bool, dict]]:
-    """Yield Claude tool requests and results with their reported paths."""
-    phase = event.get("type")
-    message = event.get("message")
-    if phase not in {"assistant", "user"} or not isinstance(message, dict):
-        return
-    content = message.get("content")
-    if not isinstance(content, list):
-        return
-    for block in content:
-        if phase == "assistant" and block.get("type") == "tool_use":
-            yield block["id"], True, block
-        elif phase == "user" and block.get("type") == "tool_result":
-            native_result = event.get("tool_use_result")
-            file_path = native_result.get("filePath") if isinstance(native_result, dict) else None
-            yield block["tool_use_id"], False, {**block, "file_path": file_path}
-
-
 def _actions(events: list[dict], host: str, workspace: PurePosixPath) -> list[Action]:
     """Pair trace events into intervals and preserve opaque operations."""
-    records = _codex_records if host == "codex" else _claude_records
+    records = codex_records if host == "codex" else claude_records
     effect = _codex_effect if host == "codex" else _claude_effect
     pending: dict[str, tuple[int, dict]] = {}
     actions: list[Action] = []
@@ -275,13 +260,6 @@ def _actions(events: list[dict], host: str, workspace: PurePosixPath) -> list[Ac
                     actions.append(Action(start, line, effect(request, payload, workspace)))
     actions.extend(Action(line, len(events) + 1, "opaque") for line, _ in pending.values())
     return actions
-
-
-def _boundary_observed(events: list[dict], host: str) -> bool:
-    """Require the host's opening marker before grading operation order."""
-    if host == "codex":
-        return any(event.get("type") == "turn.started" for event in events)
-    return any((event.get("type"), event.get("subtype")) == ("system", "init") for event in events)
 
 
 def _grade_actions(actions: list[Action]) -> TraceVerdict:
@@ -318,7 +296,7 @@ def check_git_trace(events: list[dict], host: str, workspace: PurePosixPath) -> 
     """Grade the observed owning failure before the first witnessed source edit."""
     if host not in {"codex", "claude"} or not workspace.is_absolute() or ".." in workspace.parts:
         raise ValueError("Provide a supported host and an absolute recorded workspace path")
-    if not _boundary_observed(events, host):
+    if not boundary_observed(events, host):
         return {"failure_observed": None, "reason": "trace_start_not_observed"}
 
     try:
