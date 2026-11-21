@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Refresh coverage 7.17.3 → 7.17.4 and the locked certifi, decorator, PyYAML and
+  virtualenv dependencies in both Python baselines. See the
+  [0.11.5 maintenance receipt](docs/evidence/2026-11-21-dependency-maintenance.md).
+- Shorten starter and adopter agent instructions. Route conditional procedures
+  to their governing docs and keep the Git sync ritual under verification policy.
+- Restore the applicability guard in the adopter guidance and record the first
+  deterministic instruction-delivery cases and matched native pilot.
+- Verify the Git test-before-edit check directly from saved native JSONL traces.
+
 The bootstrap-verification correction remains in design review for proposed 0.12.0.
 
 ## 0.11.4 — November 20, 2026

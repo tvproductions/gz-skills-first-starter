@@ -1,5 +1,51 @@
 # Roadmap
 
+## Selected 0.11.5 scope — dependency maintenance, November 21, 2026
+
+Published baseline **0.11.4**, immutable source
+`75f0d83d1b7f4b073d31b06c85cdb20c6ef0cd63` → pending **0.11.5 / patch**.
+The maintainer invoked `gzs-update-dependencies` from clean main
+`ec5b2f1379c0bcfe46d8850c0b02dcf4ef297dad`. Restore the existing latest-stable
+tooling commitment in both baselines with a compatible development-tool refresh.
+The scope preserves the public adoption contract, Python families, component
+selections and routine hooks. The proposed **0.12.0** bootstrap correction
+remains separately approval-gated.
+
+Included: update coverage, certifi, decorator, PyYAML and virtualenv, verify both
+locked environments and changed-tool consumers, and reconcile starter version
+mirrors and packaged resources. Local acceptance requires repeatable locks,
+complete locked security audits and the full integration gate. Record results
+and remaining host limits in the
+[maintenance receipt](docs/evidence/2026-11-21-dependency-maintenance.md).
+Local maintenance is complete. Both exact environments, full gates and
+changed-tool controls passed. Each locked audit covered 75 packages with zero
+known vulnerabilities and zero skips. Exact-candidate hosted CI and release
+acceptance remain pending.
+Release acceptance and publication require separate authorization.
+
+The maintainer's `gzs-agent-context-diet` invocation also selects instruction
+delivery cleanup for 0.11.5. Shorten the root and generated adopter instructions,
+retain the binding requirements, and move conditional details to their owning
+policies. Preserve the helper's managed-file contract and regenerate its resource
+copy. See the [instruction delivery handoff](docs/handoffs/2026-11-18-discipline-evaluation-handoff.md#november-21-instruction-delivery-cleanup).
+
+The [instruction delivery eval](docs/evidence/2026-11-21-instruction-delivery-evals.md)
+adds project-owned evidence for the same patch. It restores the applicability
+guard and records fixed comparative cases, deterministic grading and a
+bounded native pilot. Broader reliability assessment and exact-candidate hosted
+CI remain open.
+
+The Git assertion-order check now replays the saved native traces directly.
+Keep this bounded evidence in the same patch and report the unaffected
+manual observations separately.
+
+The maintainer requested version bumps for the starter and its upstream context
+diet skill. Retain the pending starter patch for the compatible instruction
+delivery and evaluation changes. The independently versioned skill and bundle
+candidates are `gzs-agent-context-diet` 0.2.0 and `gz-skills` 0.14.0. The
+starter patch selects the published `gz-skills` v0.13.0 source. A future
+component update requires the upstream release and its own qualification.
+
 ## Current review — starter discipline evaluation, November 18, 2026
 
 Completed bounded review of gz-starter and its use/extension of SP and gz-skills against the
@@ -31,7 +77,7 @@ guidance, bind verification scope to SP's fresh-command discipline and separate
 current handoff authority from history. This compatible correction is part of
 released 0.11.4 below. No new tooling subsystem or broader comparative campaign is
 selected. The November 19 maintenance below was published as
-0.11.3; development metadata now matches 0.11.4. The separately approval-gated
+0.11.3; the current development target is 0.11.5. The separately approval-gated
 bootstrap correction/proposed 0.12.0 below remains open.
 
 ## Selected 0.11.4 scope — Codex duplicate-source repair, November 19, 2026

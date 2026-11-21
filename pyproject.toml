@@ -1,6 +1,6 @@
 [project]
 name = "gz-starter"
-version = "0.11.4"
+version = "0.11.5"
 description = "Project-scoped SP + SP-BP + gz-skills adoption scaffold"
 readme = "README.md"
 requires-python = ">=3.14,<3.15"
@@ -53,7 +53,7 @@ hygiene = [
     # Defect reproducer only; not qualified as cognitive acceptance authority.
     "complexipy==9.0.0",
     "cosmic-ray==8.9.0",
-    "coverage==7.17.3",
+    "coverage==7.17.4",
     "deptry==0.25.1",
     "detect-secrets==1.5.0",
     "import-linter==2.17",

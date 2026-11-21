@@ -1,6 +1,98 @@
 # Starter discipline evaluation — handoff, November 18, 2026
 
-## Current resume point — November 20, 2026
+## Current resume point — November 21, 2026
+
+The maintainer's `gzs-update-dependencies` invocation selected a compatible
+**0.11.5 / patch** over published **0.11.4**. Both Python baselines select
+coverage 7.17.4, certifi 2026.11.20, decorator 5.3.2, PyYAML 6.0.4 and
+virtualenv 21.15.11. See the
+[bounded roadmap scope](../../ROADMAP.md#selected-0115-scope--dependency-maintenance-november-21-2026)
+and [maintenance receipt](../evidence/2026-11-21-dependency-maintenance.md) for
+verification and remaining release gates. The bootstrap design and ADR review
+below still require separate approvals before dependent work.
+
+### November 21 instruction delivery evals
+
+The maintainer requested the fixed comparative cases and deterministic grading.
+The [eval protocol and pilot](../evidence/2026-11-21-instruction-delivery-evals.md)
+record three cases, 24 matched native trials and the boundaries of the evidence.
+The authored adopter fragment restores the applicability guard and its
+generated copy matches at 12,713 bytes and 196 lines. The earlier table below
+records the original cleanup before that correction.
+
+The case grader detected edits before failure reproduction and an omitted CI
+disclosure even though the final patches passed. Cross-case Python workflow
+violations remain explicit. The pilot supplies bounded evidence for the sampled
+hosts and instructions. Broader reliability and exact-candidate hosted CI
+remain open. Keep the eval tooling project-owned and out of routine CI.
+
+The maintainer then approved direct replay for the Git assertion-order check.
+The [raw trace replay](../evidence/2026-11-21-instruction-delivery-evals.md#direct-replay-of-the-git-ordering-check)
+reproduced all eight manual observations from the verified private trace
+inputs. Six assertions preceded the first witnessed edit and two did not.
+The original full-case verdicts remain the governing pilot record. Direct
+grading of the other observations remains open.
+
+The maintainer requested both version bumps. The starter reuses its pending
+0.11.5 patch. The upstream `gz-skills` checkout carries the behavioral check
+in `gzs-agent-context-diet` 0.2.0 within bundle candidate 0.14.0. That
+workflow uses consumer-owned cases, grader controls and matched trials when
+binding instructions change. Upstream publication and any subsequent starter
+component update are separate work. Starter catalogs continue to select the
+released `gz-skills` v0.13.0.
+
+The maintainer requested Git synchronization of both repositories. The starter
+save point keeps 0.11.5 pending. Fresh local verification on November 21 ran
+all four pre-commit checks, starter validation, all 38 engineering checker
+tests, scoped C901 and source-independent build and installed distribution
+checks with uv 0.13.9 and managed Python 3.14.10. The
+[Actions workflow](https://github.com/tvproductions/gz-starter/actions/workflows/check.yml)
+reports hosted results for the exact pushed commit.
+
+### November 21 instruction delivery cleanup
+
+The maintainer invoked `gzs-agent-context-diet` to shorten the root instructions
+and the adopter fragment. Include this compatible delivery cleanup in the
+[pending 0.11.5 scope](../../ROADMAP.md#selected-0115-scope--dependency-maintenance-november-21-2026).
+The source edit preserves the mandatory project policy and the managed-file
+conflict and preservation contract. Existing adopters receive the shorter
+fragment through the reviewed template-upgrade procedure.
+
+| Surface | Role | Before | After |
+| --- | --- | ---: | ---: |
+| `AGENTS.md` | Authored starter instructions | 22,124 bytes, 317 lines | 11,449 bytes, 181 lines |
+| `templates/AGENTS.skills-first.md` | Authored adopter fragment | 26,835 bytes, 374 lines | 12,700 bytes, 196 lines |
+| `src/skills_first_starter/resources/templates/AGENTS.skills-first.md` | Generated wheel resource | 26,835 bytes, 374 lines | 12,700 bytes, 196 lines |
+
+The two authored surfaces are 50.7% smaller by bytes. Adopter pointers resolve
+through the recorded version and source SHA. The ADR working and immutable
+source links still render for both link and local adoption. The repository has
+no explicit context-budget check. These are source measurements. Fresh model
+retrieval and sustained adherence remain unverified.
+
+| Trigger | Procedure and rule retention |
+| --- | --- |
+| Authorized Git sync | Root `#git-synchronization-ritual` routes to the [full existing ritual](../engineering/verification-policy.md#starter-git-synchronization), with its scope review, normal hooks, ordinary push, remote SHA and exact-commit CI requirements. |
+| Integration, bundle/resources or analyzer change | Root routes to the [checkout gates](../engineering/verification-policy.md#starter-checkout-gates). The package-resource generator owns its mirrors. |
+| Native install, brownfield repair, upgrade or rollback | Preserve project-only activation, user defaults and duplicate suppression in the entry points. Use [installation and repair](../adoption.md#repository-owned-installation-and-brownfield-repair) and [updates and rollback](../adoption.md#updates-and-rollback) for the host procedures. |
+| Requirements intake, planning and closeout | Retain versioning hard guards in both entry points. Follow the [version decision procedure](../versioning.md#required-version-decision-procedure) for scope, examples and mirror reconciliation. |
+| Adoption, Python-family work, release or hygiene | Retain managed Python, exact pins, locked execution, four routine checks, conditional cognitive acceptance and adopter cohesion. Consult [Astral acceptance](../engineering/astral-acceptance.md), [deeper-tool requirements](../engineering/python.md#adoptionrelease-analysis-and-on-demand-hygiene) and the [cognitive deferral](../engineering/cognitive-integration.md#starter-wide-qualification-deferral) when the corresponding work is in scope. |
+| Deployment or configuration design | The adopter fragment retains the path and settings rules, pointing to [configuration policy](../project-configuration.md) and [application foundations](../engineering/application-foundations.md) for the complete contract. |
+
+Repeated explanations, version examples and cached tool details move behind
+their owning references. Keep separate ADR approval, session-start freshness
+versus authorized maintenance, actual native discovery, and verifiable release
+scope explicit at entry. The full Git procedure retains its original steps.
+
+Local verification on November 21 used uv 0.13.9 and managed Python 3.14.10.
+All four hooks passed through `uv run --locked pre-commit run --all-files
+--verbose`, including 95 unittest tests. Resource parity, `gz-starter validate`,
+83 local references and anchors, `git diff --check`, `uv build --no-sources`
+and `uv run --locked python tools/verify_distribution.py` passed. The two lock
+hashes still match the earlier November 21 maintenance receipt. This save point
+is local and exact-candidate hosted CI remains pending.
+
+### November 20 handoff checkpoint
 
 **Handoff checkpoint — November 20, 23:22 UTC:** the maintainer requested
 “create handoff and git sync” after reviewing outstanding backlog. This request

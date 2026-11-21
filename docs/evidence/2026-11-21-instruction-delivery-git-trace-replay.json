@@ -1,0 +1,138 @@
+{
+  "date": "2026-11-21",
+  "case": "git-sync",
+  "check": "failure_observed",
+  "source_receipt": "2026-11-21-instruction-delivery-evals.json",
+  "source_receipt_sha256": "3448c51bf7ab88f19d0607e625c94ef1023b500d77a90c21d74f3c3a28eef88a",
+  "checker_sha256": "4f54fed4ec06a21e366a7dc0bca04175f23b5c4558068171828a71df94354fa6",
+  "control_sha256": "fe8c096571fcd04d259a403e3e95f8cc6766f7a3ee620f79fd119a396916fcc2",
+  "runtime": {
+    "python": "3.14.10",
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "fixture_baseline": "Each pilot fixture used the pristine tracked sources and an independently failing preflight assertion.",
+  "raw_trace_privacy": "Private JSONL. The public controls are synthetic. Receipt line numbers are one-based.",
+  "observations": [
+    {
+      "repeat": 1,
+      "host": "codex",
+      "arm": "long",
+      "trace_sha256": "77e759a92ca7f51e42dd770c9ddcd02328644204c9f819e129a4fa7f290dcf64",
+      "manual_failure_observed": true,
+      "trace_observation": {
+        "failure_observed": true,
+        "reason": "assertion_before_edit",
+        "edit_start_line": 14,
+        "edit_line": 15,
+        "assertion_line": 13
+      },
+      "case_verdict_with_trace_observation": "PASS"
+    },
+    {
+      "repeat": 1,
+      "host": "codex",
+      "arm": "short",
+      "trace_sha256": "1ecadd4ba36a45c3b37646a89540e35978c5fff7f892c0f5557391aeb59727b7",
+      "manual_failure_observed": true,
+      "trace_observation": {
+        "failure_observed": true,
+        "reason": "assertion_before_edit",
+        "edit_start_line": 21,
+        "edit_line": 22,
+        "assertion_line": 19
+      },
+      "case_verdict_with_trace_observation": "PASS"
+    },
+    {
+      "repeat": 1,
+      "host": "claude",
+      "arm": "long",
+      "trace_sha256": "af7ebc12967e9ee5c06c5ae6ef4f394c972d5057af5a78915cbaa5d8a401b745",
+      "manual_failure_observed": false,
+      "trace_observation": {
+        "failure_observed": false,
+        "reason": "edit_before_assertion",
+        "edit_start_line": 12,
+        "edit_line": 13,
+        "assertion_line": null
+      },
+      "case_verdict_with_trace_observation": "FAIL"
+    },
+    {
+      "repeat": 1,
+      "host": "claude",
+      "arm": "short",
+      "trace_sha256": "0cdbd59c344d84ef88315a4587497eedfbc735aa64c046b4c660c509f32da932",
+      "manual_failure_observed": true,
+      "trace_observation": {
+        "failure_observed": true,
+        "reason": "assertion_before_edit",
+        "edit_start_line": 22,
+        "edit_line": 23,
+        "assertion_line": 20
+      },
+      "case_verdict_with_trace_observation": "PASS"
+    },
+    {
+      "repeat": 2,
+      "host": "codex",
+      "arm": "long",
+      "trace_sha256": "63e1ebfe65ec81b561ba3cb47d4465178029edbac6c8dc59d976eded2dbde35c",
+      "manual_failure_observed": true,
+      "trace_observation": {
+        "failure_observed": true,
+        "reason": "assertion_before_edit",
+        "edit_start_line": 16,
+        "edit_line": 17,
+        "assertion_line": 15
+      },
+      "case_verdict_with_trace_observation": "UNVERIFIED"
+    },
+    {
+      "repeat": 2,
+      "host": "codex",
+      "arm": "short",
+      "trace_sha256": "198c3ef53b9a8ea9cc930a75bb7629bcea7420f8dea68eb79f105590f709fcf3",
+      "manual_failure_observed": true,
+      "trace_observation": {
+        "failure_observed": true,
+        "reason": "assertion_before_edit",
+        "edit_start_line": 29,
+        "edit_line": 30,
+        "assertion_line": 27
+      },
+      "case_verdict_with_trace_observation": "PASS"
+    },
+    {
+      "repeat": 2,
+      "host": "claude",
+      "arm": "long",
+      "trace_sha256": "c2cf370d2e30dff73c0a9978015a83506240c52521adaf89fdccdca38b92ef21",
+      "manual_failure_observed": true,
+      "trace_observation": {
+        "failure_observed": true,
+        "reason": "assertion_before_edit",
+        "edit_start_line": 15,
+        "edit_line": 16,
+        "assertion_line": 14
+      },
+      "case_verdict_with_trace_observation": "FAIL"
+    },
+    {
+      "repeat": 2,
+      "host": "claude",
+      "arm": "short",
+      "trace_sha256": "21a3c186304dc564191dfee9943fde2bf96cad9e8ae17fc55c4de187ed5c3a52",
+      "manual_failure_observed": false,
+      "trace_observation": {
+        "failure_observed": false,
+        "reason": "edit_before_assertion",
+        "edit_start_line": 13,
+        "edit_line": 14,
+        "assertion_line": null
+      },
+      "case_verdict_with_trace_observation": "FAIL"
+    }
+  ]
+}

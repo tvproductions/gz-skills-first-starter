@@ -1,374 +1,196 @@
 # Skills-first development stack
 
-Accept **GZ Starter**, **starter** and **starter template** as shorthand for the adopted
-`gz-starter` template. Resolve these references through this project's
-`.skills-first/bundle.lock.json` and adoption context; do not require the user to
-repeat the full repository name. Route requests such as "update the starter" or
-"check the starter template" to the template-update workflow below, preserving
-the requested update or review mode. Ask for clarification only when the context
-leaves the referenced template ambiguous. Preserve canonical repository, package,
-command and skill identifiers in provenance and executable instructions.
+Read the project's `AGENTS.md` and linked authorities first. Preserve its
+domain rules, decisions, verification commands and app architecture. These
+starter requirements are mandatory. Execute the owning workflow and checks,
+record evidence, and report unmet requirements and policy-approved exceptions.
+Preserve failing results. Verify installed revisions and discovery separately
+from configuration.
 
-**MANDATORY: dependency maintenance MUST complete migration to the most current
-stable versions of every in-scope dependency/tool, including newer families.**
-A bare `gzs-update-dependencies` invocation uses update mode, overriding its
-older portable review-first defaults. Do not stop at recommendations or an offer to
-apply. Review-only requires an explicit check, assessment or no-changes request.
-This requirement applies to every adopter in both lanes; preserve the approved
-Python family, product contracts, thresholds and demonstrated compatibility
-exceptions under the reviewed starter's
+**Resolve starter references from the source, version and exact SHA in
+`.skills-first/bundle.lock.json`.** Read the named `docs/` sections in that
+reviewed starter checkout, or use a project-owned reconciliation with recorded
+provenance. If the governing source is unavailable, report the gap and leave
+dependent decisions unresolved. Recognize **GZ Starter**, **starter** and
+**starter template** as shorthand for `gz-starter`. Preserve canonical IDs in
+commands and provenance. Route “update the starter” or “check the starter
+template” through `update-gz-template` or `docs/updating.md` in the corresponding
+update or review mode. Clarify only if the reference is ambiguous.
+
+**Dependency maintenance MUST complete migration to the latest stable versions
+of every in-scope dependency and tool, including new families.** Bare
+`gzs-update-dependencies` is update mode. Review-only requires an explicit check,
+assessment or no-changes request. Preserve the approved Python families,
+product contracts, thresholds and evidenced exceptions in
 `docs/baseline-policy.md#dependency-maintenance-means-completed-migration`.
+At session start, do one bounded freshness check against official sources using
+applicable recent dated evidence, flag stale or unavailable results, and migrate
+only in separately authorized maintenance. Follow
+`docs/engineering/verification-policy.md#session-start-freshness-is-a-check`.
 
-Follow the [identified architectural decision policy]({{ADR_POLICY_WORKING_SOURCE}})
-during design, execution and review in both lite and heavy lanes. Preserve its
-[immutable canonical source]({{ADR_POLICY_CANONICAL_URL}}); source version/full SHA,
-original content hash and link/local selection are recorded in
-`.skills-first/bundle.lock.json`. If a local policy copy is selected, use that
-working copy, preserve project adaptations and surface applicable source conflicts.
-Project instructions must identify the project's existing ADR collection; retain
-suitable identities/history. Reuse applicable approved decisions. Obtain separate
-explicit human approval of the exact new/replacement ADR edition before dependent
-implementation; continue independent authorized work. Keep decisions self-contained
-with approval evidence embedded or durably referenced. General spec/plan/test/release
-approval is not architectural approval. Use the exact selected gz-skills portable
-procedure/template only when its owning delivery and discovery are verified;
-the selected gz-skills 0.13.0 supplies `gzs-architectural-decisions` and its
-template. Verify actual discovery and source applicability; report missing
-sources/evidence instead of claiming qualification. Heavy mode uses existing
-supported Backplane records; add no ledger or approval service. With Backplane
-disabled, keep existing project planning/review/handoff tools in either lane.
+## Work and verify
 
-These instructions are mandatory adoption requirements. Agents MUST execute the
-prescribed workflow and checks, preserve project authorities, and record evidence
-before claiming completion. Agents MUST NOT replace requirements with convenient
-defaults, skip failed checks, invent acceptance evidence, or treat configuration
-as proof of installation. An unmet requirement remains explicitly incomplete.
-Record an evidenced, owned exception where policy permits one; do not grant
-yourself an exemption. Use the starter's commands and native host procedure.
+**Starter is the outer loop, SP is the inner loop, and gz-skills is supplemental.**
+Starter frames objective, authorized scope, requirements and completion. Use
+SP's `using-superpowers` for development within those boundaries, gz-skills
+`gzs-router` for distinct supplemental engineering needs, and project-owned
+skills for project operations. Confirm actual plugin discovery before invoking
+upstream workflows. Read
+`docs/architecture.md#outer-loop-inner-loop-and-supplemental-disciplines`.
+The starter owns only `update-gz-template`, its helper, configuration, provenance
+and policy. Keep generic workflows and skills upstream.
 
-This adopted template currently supports Python projects only, in both lite and
-full/heavy lanes. Other languages, likely including Go, are future work requiring
-their own reviewed and released baseline; upstream skill portability is not
-evidence of template support for another language.
+Use direct `git` and `gh` commands. Use Python for substantive processing through
+`uv run --locked python`, honoring the exact managed pin and supported uv.
+Follow SP verification-before-completion and
+`docs/engineering/verification-policy.md`. Run each selected command in full,
+freshly, for changed behavior and affected consumers. Keep full checks for
+broad/uncertain changes, verification or dependency/workspace changes, and
+integration/release checkpoints. Keep affected/focused hook checks and full
+checks runnable. Add tests for meaningful defects at the owning seam. Review
+diff and references for documentation-only changes and use relevant changed-file,
+existing test and invented rendered checks for bounded presentation changes.
+Cite dated, input-matched historical evidence as such. Repeat affected checks
+when inputs or risk change and record scope and limits.
 
-Use direct `gh` commands for GitHub operations and direct `git` commands for
-repository operations. Do not wrap routine CLI calls in Python. Use Python when
-substantive processing is actually needed, through the prescribed uv-managed
-environment. Run that Python with `uv run --locked python`, honoring the project's
-exact interpreter pin and required uv version.
+## Adoption, decisions and native scope
 
-For the uv executable, declare a verified minimum supported version without an
-upper bound rather than an exact requirement. The starter's current minimum is
-uv 0.13.5; adopters select their own evidenced minimum. Record CI's exact tested
-version separately and allow local/hosted uv versions satisfying the minimum.
-Record the actual executable/version and verify affected behavior; a newer uv
-minor is not itself a reason to reject a run. Preserve locked execution, exact
-Python selections and project-owned package/build-backend locks. Compatibility
-with an older uv does not establish its freshness or require a per-run exception.
+This starter supports Python only, in both lite and heavy lanes. At adoption,
+select an explicit lane through the pinned gz-skills setup workflow. Missing
+or null selection leaves adoption incomplete. Both lanes require the same
+applicable Python baseline, SemVer, major-release PRDs and adoption/release
+analysis. Follow `docs/adoption-0.5.md` for greenfield adoption, brownfield
+first adoption, structural backport or upgrades. Backplane owns requirements tracking, labeling,
+release/backlog monitoring, handoffs and lane definitions. Read
+https://github.com/tvproductions/superpowers-backplane/blob/main/docs/superpowers-backplane/modes.md
+when selecting a lane. Heavy targets SP, Backplane and gz-skills. Keep Backplane
+disabled pending readiness and explicit adoption, report that gap, and preserve
+existing planning and handoff authority without creating a ledger or gzkit
+lifecycle.
 
-Install and enable this stack at repository/project scope. Do not install or
-register its plugins or marketplace globally or at user scope. Use project-owned
-native configuration and explicit project-scope installation where supported;
-do not run unscoped install commands that change user defaults. Native clients
-may store downloaded files in a shared user cache; cache location does not grant
-user-wide activation. If the host cannot preserve repository scope, report the
-limitation instead of falling back to a global/user installation.
-Existing global/user installations MAY remain. The project MUST own the selected
-versions, activation and command behavior through repository configuration.
-Project overrides MUST suppress duplicate inherited sources locally; do not
-uninstall global copies or rewrite user settings to make the project work.
-For brownfield repair, preview and apply the reviewed starter's
-`skills-first-starter localize --project <root> --host <codex|claude|opencode>
---starter-ref <FULL_STARTER_SHA>` with `uv run --locked`; add `--apply` after
-review. The command repairs project activation without changing adoption records
-or global installations. Use `configure --host` for full adoption, not scope repair.
-Keep plugin installation, version updates and enablement separate. Record and
-preserve project enablement and user defaults during updates. In Codex CLI
-0.166.0, `plugin add` unconditionally enables the plugin user-wide, even from
-a project with a local marketplace. Do not use it as a project install, update
-or reinstall command. Verify actual installed revisions and unchanged activation
-scope after native resolution; report unsupported updates as pending.
-On OpenCode 2.2.0, agents MUST use the reviewed starter's
-`skills-first-starter run-opencode --project <root> -- <native arguments>` through
-its locked uv environment. The scoped launcher reconciles configuration and uses
-a private server; plain native startup can let an inherited duplicate ID beat
-the project pin. Global copies remain installed. Do not bypass the launcher and
-claim local precedence without fresh native evidence on the actual host version.
+During design, execution and review in either lane, follow the
+[identified ADR policy]({{ADR_POLICY_WORKING_SOURCE}}). Preserve its
+[immutable canonical source]({{ADR_POLICY_CANONICAL_URL}}) and the version, full
+SHA, content hash and link/local choice in `.skills-first/bundle.lock.json`.
+Honor the selected working copy, preserve local adaptations and report source
+conflicts. Identify and retain the project's existing ADR collection and reuse
+approved entries. Obtain separate explicit human approval of the exact new or
+replacement edition before dependent implementation. Continue independent
+authorized work. Keep approval evidence and edition history with the ADR.
+General spec, plan, test or release approval does not approve an ADR. Use the
+selected gz-skills `gzs-architectural-decisions` procedure only after verifying
+its source and actual discovery. Follow `docs/adoption.md#architectural-decision-policy-access`
+during ADR policy adoption or reconciliation.
 
-Maximal Astral alignment is required for Python projects under this baseline.
-Read `docs/engineering/astral-alignment.md` in the reviewed starter checkout.
-Complete `docs/engineering/astral-acceptance.md` there, using its worked migrations.
-Adopt every applicable Astral recommendation; record evidenced departures with
-an owner and revisit condition. Verify effective uv/Ruff/ty configuration,
-interpreter/tool provenance, selected exact environments, published dependency
-metadata and source-independent builds (`uv build --no-sources`). Locked runs
-alone do not prove exact contents or executable origin. Verify clean installed
-behavior and keep configuration/Python acceptance/native discovery results separate.
-Use `src/<package>/`, a declared build backend (uv_build for pure Python),
-installed-package imports, application entry points and py.typed for typed
-libraries. Centralize Python metadata and uv/Ruff/ty configuration in
-pyproject.toml; use standard dependency-groups, a committed uv.lock and exact
-.python-version, ignored .venv, and locked uv execution shared by hooks and CI.
-Use Cargo-style uv workspaces for compatible interconnected packages: one root
-lock/environment, explicit member dependencies and editable workspace sources.
-Record project-root versus non-project coordinator semantics; select members or
-all packages explicitly, and independently verify built members' dependencies.
-Verify artifacts outside
-the checkout. Adopters must refactor nonconforming layout/configuration during
-full baseline adoption. Preserve behavior, data and authorities while migrating;
-configuration preservation is not a permanent exemption. Record constrained
-exceptions with evidence, an owner and revisit condition. Configuration-only
-requests report remaining refactoring instead of silently performing it.
+Install and activate only at repository/project scope. Keep installation,
+version updates and activation separate. Preserve user defaults and installs,
+suppress inherited duplicates in project config, and report unsupported scope
+without broadening activation. A shared cache grants no activation authority.
+Before adoption, brownfield repair or updates, follow
+`docs/adoption.md#repository-owned-installation-and-brownfield-repair` and
+`docs/adoption.md#updates-and-rollback`. Preview, review and apply `localize` for
+activation repair. Use `configure --host` for full adoption. Verify installed
+revisions and enablement separately, including the outside-project control.
+Codex CLI 0.166.0 `plugin add` enables user-wide. Do not use it for project
+installation, updates or reinstalls. For OpenCode 2.2.0 project
+commands, use the reviewed starter's `uv run --locked gz-starter run-opencode
+--project <root> -- <native arguments>`. Read `docs/adoption.md#opencode` for its
+scope and actual discovery checks.
 
-In a central uv workspace, the root `pyproject.toml` owns shared tool settings,
-workspace membership and dependency groups; one root `uv.lock` and `.venv` serve
-the members. Member `pyproject.toml` files own package metadata and explicit
-dependency edges. Do not create per-member locks/environments or competing
-`uv.toml`, `ruff.toml`, `.ruff.toml` or `ty.toml` configurations. Reconcile settings
-into the root `pyproject.toml`. Deliberately independent host/runtime projects
-need an explicit documented boundary rather than accidental workspace splitting.
+## Python baseline and configuration
 
-Apply `docs/engineering/verification-policy.md` from the reviewed starter source.
-Follow SP's verification-before-completion discipline with this project-specific
-scope. Execute each selected command completely and freshly, inspect its real
-results and exit status, then make the corresponding completion claim.
-Select checks from the diff's behavior, owning package and affected consumers.
-Documentation-only work needs review, not code tests. Small reversible layout,
-markup or wording changes use changed-file checks, relevant existing tests and
-invented rendered review where applicable. Full gates belong to broad/uncertain
-changes, verification/dependency/workspace changes and integration/release
-checkpoints; do not run every workspace suite at every local commit.
-Project hooks must support affected/focused checks and keep full checks directly
-runnable. Carry forward applicable existing plans; use stronger evidence and the
-owning workflow's review/test discipline for consequential behavior or changed
-delivery boundaries. Add tests for a plausible defect and observable result;
-reuse owning oracles and avoid ceremonial/duplicate tests. Cite earlier results
-with their date and exact inputs as historical evidence for unchanged areas;
-they do not establish a fresh execution. Repeat affected checks when inputs/risk
-change. Record scope and limits briefly in existing project records.
+Use uv-managed Python N-1 (currently 3.14.x) and the 3.12.x XPPython3 host
+exception. Verify the latest compatible patch in the approved family against
+official sources at setup/adoption, release preparation and maintenance. Pin it
+exactly in `.python-version` and CI. Test the embedded runtime separately.
+Follow `docs/baseline-policy.md#allowed-python-families`. Keep uv compatibility
+minimum-only, record CI's exact tested uv separately, and let supported callers
+use their actual version with recorded provenance. Keep exact package/backend
+locks and the Python pin independent of the uv executable floor. Follow
+`docs/baseline-policy.md#uv-executable-compatibility`.
 
-At work-session start, perform a bounded dependency/tool/component freshness
-check against official sources, reusing applicable recent dated evidence. Flag
-stale/unavailable results without rewriting pins, locks, environments or native
-plugin state. Startup is freshness-only; migrate in a separately authorized
-maintenance pass under the completed-migration binding. Do not let startup
-checking turn every feature task into dependency migration or repeated scans.
+For Python work read `docs/engineering/python.md`. Meet
+`docs/engineering/astral-alignment.md` and complete
+`docs/engineering/astral-acceptance.md` at adoption and affected reconciliation,
+using its worked migrations. Use `src/` packaging, uv_build for pure Python,
+installed imports, entry points for apps and `py.typed` for typed libraries.
+Centralize shared settings in root `pyproject.toml`, commit `uv.lock` and ignore
+`.venv`. For multi-package work, apply
+`docs/engineering/astral-alignment.md#workspaces` before changing workspace
+structure. Use one root lock/environment and explicit member edges. Require an
+explicit boundary for independent host/runtime environments. Reconcile
+nonconforming layout and settings while preserving behavior, data and authorities.
+Configuration-only work reports remaining refactoring. Verify effective
+configuration, tool/runtime provenance, exact environments, and source-independent
+builds and clean installed behavior. Record configuration, Python acceptance
+and native discovery separately. Evidenced departures need an owner and revisit.
 
-Apply the reviewed starter's docs/project-configuration.md and
-docs/engineering/application-foundations.md in both lanes, following ADR-0002.
-Every adopter MUST identify its deployment unit, configuration owner/location,
-schema, loading/override behavior, permissions and upgrade preservation, including
-the consuming application/host for libraries and plugins. Use settings.json for
-operator-managed runtime settings, separate from pyproject packaging/tool settings.
-Resolve one selected file and validated values at initialization; domain logic
-receives values. Reject supplied/resolved paths containing spaces before content
-access or changes. Preserve data and existing settings during reviewed migration.
-Offer actionable architectural warnings, record informed human departures once
-in existing authority and respect them without repeat questioning. Existing
-mandatory requirements and approved ADRs retain authority. Verify actual consumer
-behavior; configuration alone is not acceptance. All 15 naming/layout topics
-are guidance; the broader Ruff/ty patch and quota remain deferred.
+At adoption and when defining or changing a product's deployment or
+configuration boundary, apply ADR-0002, `docs/project-configuration.md` and
+`docs/engineering/application-foundations.md` in both lanes. Identify the
+deployment unit, configuration owner/location, schema, selection/overrides,
+permissions, upgrade preservation and any consuming application/host. Use
+`settings.json` for operator-managed runtime settings, keep packaging/tool
+settings in `pyproject.toml` and pass validated values to domain code. Reject
+supplied or resolved paths containing spaces before reading content or writing.
+Preserve data and settings during migration and verify actual consumer behavior.
+For architectural warnings or naming/layout advice, read
+`docs/engineering/application-foundations.md#warnings-and-informed-departures`
+and `docs/engineering/naming-and-layout.md`. Record informed departures once,
+preserving mandatory requirements and approved ADRs.
 
-Read project AGENTS.md and linked authorities first. This project records sources
-in `.skills-first/bundle.lock.json`. The starter owns only the narrow
-`update-gz-template` skill; it supplies stack configuration, provenance and project
-policy. Use that project skill, or `docs/updating.md` in the reviewed starter,
-for canonical template-update review and migration. Generic maintenance remains
-with gz-skills; this is not a second dependency updater.
-Its guidance highlights the emphasis when using gz-skills: dependency freshness,
-current Python practices, portability and obedience to adopted project policy.
-For project operations, use project-owned skills. For feature work, use the
-installed SP `using-superpowers` workflow. **Starter is the outer loop, SP is the
-inner loop, and gz-skills is supplemental.** Within existing project authority,
-the starter frames the objective, authorized scope, requirements and completion
-conditions, selects the work and assesses overall fulfillment. SP carries out
-development within that context. Use gz-skills `gzs-router` for a distinct
-supplemental engineering need, including scoped maintenance or audits. Enhance
-SP with project context and requirements; keep its workflow intact. Verify actual
-discovery before claiming either plugin is available.
-Superpowers Backplane remains pinned for
-future adoption but is disabled by default because readiness is incomplete.
-Use existing project backlog and handoff practices in the meantime.
-
-Release planning applies to this adopting project's own versions as well as
-the starter. **PRDs guide major releases; selected work and requirements drive
-minor releases; fixes drive patch releases.** Before implementation planning,
-identify the release scope served by the work. In the existing backlog, roadmap
-or release authority, record the last published version/tag/revision (or evidence
-of no prior release), proposed next version, governing PRD/requirements/fixes,
-included completed and remaining work, deferred work, compatibility impact and
-acceptance gates. Reconcile completed changes into this record before closeout.
-Missing scope or version-decision evidence blocks release-preparation acceptance.
-Do not silently shrink an approved release, count commits/tasks as version bumps,
-or put the entire future backlog into one release. Multiple changes in a selected
-release share its pending version; classify the complete scope since publication.
-Maintain metadata/runtime mirrors, affected lock metadata and changelog together
-when selecting that pending version. Keep scope decisions explicit even when
-publication is not authorized. An initial unpublished `0.1.0` may contain its
-selected first-release scope; review scope growth rather than using "unreleased"
-to defer release accounting indefinitely. Preserve existing release gates.
-At requirements intake, planning and change closeout, derive the target from the
-published baseline and the highest required increment across the pending scope.
-Reset lower components: `1.4.2 -> 1.5.0` for new compatible requirements,
-`1.4.2 -> 1.4.3` for fixes, `1.4.2 -> 2.0.0` for a breaking major with its new
-PRD; during 0.x, new requirements drive `0.4.2 -> 0.5.0` and fixes `0.4.3`.
-Reuse an adequate pending target instead of bumping once per task. Identify the
-existing commitment a patch corrects; a "fix" label cannot hide new requirements.
-Select and reconcile routine version changes within authorized work without
-asking the maintainer to choose the number. Ask only for unresolved product
-scope decisions. Require a finite first-release outcome and gate; assign future
-requirements to later minor bundles. Report baseline -> target, governing source,
-compatibility, version agreement and publication state. Missing scope, required
-PRD or version evidence blocks the applicable planning/closeout claim, not just
-publication. Follow `docs/versioning.md#required-version-decision-procedure` in
-the reviewed starter. A selected version neither proves readiness nor authorizes
-publication.
-A bare scaffold may retain `0.0.0` only as an unpublished placeholder.
-As soon as any original implementation, tests, documentation or configuration
-is added, set the initial project version to **0.1.0**. Do not release
-project-owned work as `0.0.0`. Align package metadata, runtime version output
-and release records before accepting adoption. Correct an unpublished `0.0.0`
-project that already contains original work to `0.1.0`.
-The first substantive release is the first versioned commitment to the project's
-public contract. Declare that contract and release it as `0.1.0`; it may evolve
-under the required 0.x rules without claiming 1.0 stability.
-Preserve existing published versions and tags; never reset or rewrite release
-history. Use MAJOR.MINOR.PATCH for the project's public contract: after 1.0,
-incompatible changes require major, compatible additions or public deprecations
-minor, and compatible fixes patch. During 0.x, additions and changes requiring
-reconciliation increment minor; compatible fixes increment patch. Define the
-public API/CLI/data/configuration surface and document compatibility impact.
-Every major release, including 1.0.0, always requires a newly
-written PRD for that major. Keep and reference it in project-owned release
-authorities. Minor releases bundle related changes through the existing backlog;
-SP-BP is intended to assist once ready and explicitly adopted. Patch releases
-remain compatible fixes and clarifications. Preserve compatibility rules and
-independent app/template/plugin versions. Read the reviewed starter's
-`docs/baseline-policy.md` and `docs/versioning.md`; this rule does not authorize
-publication or enable deferred Backplane.
-
-Project AGENTS.md, domain authorities and verification commands remain binding.
-Keep project-owned operational skills, supporting domain code, and records
-separate. Confirm actual discovery before invoking upstream entry skills;
-configuration does not prove loading. Preserve independently versioned upstream
-sources and avoid duplicate plugin/copied-skill discovery.
-
-Backplane owns requirements tracking, labeling, backlog/release monitoring,
-handoffs and lite/heavy mode definitions. Read its mode authority at
-https://github.com/tvproductions/superpowers-backplane/blob/main/docs/superpowers-backplane/modes.md;
-do not define a replacement lifecycle in this template or its helper. The
-starter remains the shared engineering and release policy alignment source;
-see `docs/versioning.md#ecosystem-policy-authority-and-consistency` there.
-Explicitly select lite or heavy through the pinned gz-skills setup workflow;
-missing/null selection means adoption is incomplete. Both lanes require the
-same applicable Python baseline, SemVer/major-release PRDs and adoption/release
-analysis. Heavy retains SP + Backplane + gz-skills as its intended design;
-report deferred Backplane readiness separately and keep it disabled until ready
-and explicitly activated. The helper never selects a profile or certifies
-conformance. Follow `docs/adoption-0.5.md` in the reviewed starter for greenfield
-adoption and brownfield first-adoption/upgrade paths. No gzkit lifecycle is
-introduced. For structural backporting, updates and verification, use the reviewed starter at
-https://github.com/tvproductions/gz-starter. Existing project instructions
-and app architecture are preserved until specific changes are authorized.
-
-For projects adopting the starter's Python baseline, use the latest stable
-release allowed by `docs/baseline-policy.md` at the recorded starter revision;
-compare newer published policy during maintenance. It defines allowed ranges
-and exception reasons separately from this checkout's tested execution pins.
-Require the latest stable baseline tools across tool families. Review new stable
-families and verify compatibility; an old range or exact pin is not a freshness
-exemption. Required stale/unknown freshness blocks adoption and release acceptance.
-The adopter owns that decision even when gz-skills performs the review. Retained
-older tools need an explicit evidenced exception, owner and dated revisit and
-remain conditional/noncurrent. Check official releases at setup/adoption, before
-each release and scoped maintenance; pin package selections and record the tested
-uv version separately from its minimum compatibility requirement. Python's
-family follows the user-directed N-1 rule: one stable minor behind, currently
-3.14.x for ordinary projects. XPPython3-bound code retains its supported 3.12.x
-host exception. This runtime policy does not exempt old tool families. Verify the latest
-stable host-compatible patch from official sources at setup/adoption
-and scoped maintenance, then pin that exact patch for local execution and CI.
-An already-installed version or a `3.14` selector does not prove freshness.
-The starter's current exact patch is a reproducibility baseline, not a permanent
-adopter requirement. XPPython3 controls its embedded interpreter; inspect and test
-that runtime separately, recording host limitations and revisit conditions.
-Keep tools pinned/locked after verification; review newer tool-family
-compatibility within the authorized migration and preserve Python-family policy.
-Record any compatibility exception with evidence and a revisit condition,
-including the documented XPPython3 host exception. Preserve project dependencies
-and authorities, report adoption gaps, and follow the reviewed starter's Python
-engineering policy at `docs/engineering/python.md` in the reviewed starter
-checkout. Keep Ruff check/format, ty and unittest (never pytest) as routine checks
-through uv and pre-commit; execute applicable deeper analysis at adoption and
-release acceptance, plus on demand, outside routine hooks and routine CI.
-Retain evidence and reviewed findings; required FAIL/UNKNOWN/stale results block
-strict acceptance. Accepted exceptions are conditional, never 100% conformance.
-Report missing
-tool installation or enforcement as a gap. Adopters choose starter updates,
-independent upstream updates or both, and own update timing and verification.
-The starter permits scheduled scans and reviewed update PRs covering standard
-and X-Plane/XPPython3 baselines separately; see
-`docs/baseline-policy.md#scheduled-dependency-scanning` in the reviewed starter
-checkout. No adopter scanning service or schedule is imposed. Automatic merge,
-release publication and native plugin installation require separate authority.
-
-The reviewed Python policy's on-demand tools form the adopter minimum standard,
-independent of the starter helper's needs. Include project-pinned `cohesion` for
-class cohesion analysis; verify its standalone CLI on the selected runtime and
-representative invented classes. Record scopes, scores and reviewed findings;
-record not-applicable scopes with reasons and report missing installation or
-compatibility evidence as gaps. Preserve project-specific thresholds and keep
-cohesion outside routine hooks and routine CI. Complexipy remains a defect
-reproducer, not cognitive acceptance authority. Apply the starter-wide cognitive
-qualification deferral in the reviewed starter's
+Keep routine hooks limited to locked Ruff check/format, ty and unittest through
+pre-commit. Never use pytest. Run applicable deeper analyses, including C901,
+at adoption, release acceptance and on demand outside routine hooks/CI. Follow
+`docs/engineering/python.md#adoptionrelease-analysis-and-on-demand-hygiene` for
+the adopter minimum and `docs/engineering/python.md#adopter-class-cohesion-requirement`
+for project-owned cohesion pins, runtime proofs and reporting. A required
+missing, failed or stale result blocks strict acceptance. Apply
 `docs/engineering/cognitive-integration.md#starter-wide-qualification-deferral`.
-Record DEFERRED / measurement UNKNOWN, retain ceiling 15 and eventual independent
-qualification, and do not block adoption/release progression solely on missing
-shared-engine delivery. No separate adopter waiver is required for that gap.
-Report conditional acceptance, never strict cognitive or full strict conformance;
-preserve known findings and every other required check. Reconcile existing
-project authority explicitly. The starter maintainer owns this deferral; revisit
-at release preparation and shared-candidate delivery. A separately maintained,
-gzkit-derived Python package with eventual PyPI/uv distribution is planned, not
-installed or qualified. End the deferral only after the actual released candidate
-is pinned, independently qualified and measured on the consumer's runtime/scope.
-See the reviewed starter's
-`docs/engineering/python.md` for the full selected tool set and interpretation.
+Record **DEFERRED / measurement UNKNOWN**, retain ceiling 15 and all other checks,
+and report conditional acceptance. Missing shared-engine delivery alone neither
+blocks progress nor requires an adopter waiver. Revisit at release preparation
+and candidate delivery. End the deferral only after independent qualification
+and measurement for the actual consumer. Keep Complexipy for defect reproduction.
 
-Keep code current with its selected Python family, not just its interpreter pin.
-gz-skills owns runtime discovery; require its workflows to honor this project's
-adopted version-range and engineering policy, report missing/conflicting evidence
-and validate host-bound behavior separately. This template supplies policy, not
-an upstream discovery procedure.
-gz-skills supplies no competing family/tool/package standard for this project.
-Read the recorded adopted authority; if it is unavailable, keep dependent
-decisions unresolved instead of treating a stored pin or workflow default as policy.
-At adoption, runtime-family changes, feature design, code review and scoped
-maintenance, assess relevant idioms, stdlib advances and deprecations using
-versioned official documentation. Record benefits, risks and adopt/defer decisions;
-apply useful changes within authorized scope. Use SP and gz-skills workflows with
-the reviewed starter's `docs/engineering/python.md` and version opportunity guide.
-XPPython3-bound code must stay within 3.12/host capabilities. The pinned gz-skills
-Pythonic-pattern skills cover pattern simplification and `gzs-cross-platform-python`
-covers OS seams. Read `docs/gz-skills-python.md` in the reviewed starter for the
-verified mapping; those workflows do not establish a complete version audit.
-Report missing workflow coverage rather than inventing a starter skill or claiming
-that a current runtime proves current code.
+At adoption, Python-family changes, design, review and scoped maintenance, use
+versioned official documentation and
+`docs/engineering/python.md#version-aware-design` to assess idioms, stdlib changes
+and deprecations. Record concrete benefits, risks and adopt/defer decisions.
+For pattern and OS-seam work, use `docs/gz-skills-python.md` to find the selected
+gz-skills workflows, including `gzs-cross-platform-python`. Preserve the bound
+runtime policy, report missing or conflicting evidence, and verify the actual
+host separately.
+
+## Version and maintenance decisions
+
+At requirements intake, planning and change closeout, execute
+`docs/versioning.md#required-version-decision-procedure`. PRDs guide majors,
+selected work and requirements drive minors, and compatible fixes drive patches.
+Every major, including 1.0.0, requires a newly written PRD. Keep the existing
+release-scope record and classify the complete pending scope. Derive routine
+bumps, reuse a valid target and require a finite initial release. Keep metadata,
+runtime, lock and changelog mirrors aligned. Missing required PRD, scope or
+version evidence blocks the applicable claim. Report baseline → target,
+governing work, compatibility, mirror agreement and publication state. Reserve
+`0.0.0` for an unpublished bare scaffold. Set `0.1.0` as soon as original
+implementation, tests, docs or configuration is added. Preserve published
+versions and tags. Keep app, starter and upstream component versions independent.
+Use `docs/versioning.md#classify-compatibility-within-the-selected-scope` for
+increment rules and `docs/versioning.md#adopter-provenance-and-upgrades` when
+reconciling an older lock or upgrading the starter. Use
+`docs/versioning.md#ecosystem-policy-authority-and-consistency` for companion
+policy alignment.
 
 Before setup/adoption, release preparation, scoped upgrades or quarterly
-maintenance, read the reviewed starter's
-`docs/adoption.md#maintaining-the-adopted-stack` and
+maintenance, use `docs/adoption.md#maintaining-the-adopted-stack` and
 `docs/baseline-policy.md#dependency-maintenance-means-completed-migration`.
-Apply the mandatory maintenance contract at the top of this file. Use
-`gzs-update-dependencies` for updates and `gzs-dependency-risk-audit` for risk
-assessments; preserve project choices and keep generic workflows upstream-owned.
-Those authorities require independent starter/component freshness review, exact
-provenance, policy-change review, rollback, scoped migration, native preservation
-and actual discovery evidence. Keep deferred SP-BP disabled until explicit adoption.
-
-Track the adopted starter's own version and exact SHA in its bundle lock,
-independently of app and upstream plugin versions. Compare reviewed template
-releases and their changelog using the starter's `docs/versioning.md` policy.
-A version label is not publication or readiness proof. Reconcile older
-unversioned records without inventing historical provenance or overwriting
-project changes.
+Compare official releases across families, verify compatibility, preserve
+project choices, and record exact provenance, rollout/rollback and discovery
+evidence. Required stale or unknown freshness blocks adoption and release
+acceptance. Keep retained older tools conditional with evidence, owner and
+dated revisit. Use `gzs-update-dependencies` for maintenance and
+`gzs-dependency-risk-audit` for risk review. For optional separate standard and
+X-Plane scans or reviewed update PRs, follow
+`docs/baseline-policy.md#scheduled-dependency-scanning`. Automatic merging,
+publication and native installation require separate authority.

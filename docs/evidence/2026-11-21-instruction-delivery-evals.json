@@ -1,0 +1,934 @@
+{
+  "date": "2026-11-21",
+  "purpose": "Case-specific pilot evidence for 0.11.5 instruction delivery",
+  "baseline": "ec5b2f1379c0bcfe46d8850c0b02dcf4ef297dad",
+  "case_contract_sha256": "8da31258329e6f51654d862ad361d8792cf8aea72b8a9c56525f8f222268b94d",
+  "fixture_policy_revision": "6b09ba6b8f3da7656dc9ae18b70683eb9a64207a",
+  "input_sha256": {
+    "long-root.md": "e6a0db77dc5749f59014cd1537f9cd8f4439001a1da997c492c8155b1a91bed4",
+    "short-root.md": "9249f0774900a1127d279d0a3303e587438cad2552c93215a8cd70e0b3d541ea",
+    "long.md": "ed19071afc5016d0efd47bf4f1bd0f5177ada6d1d6a97a67de12f686ca34dcfe",
+    "short.md": "5f8100ba3ca0e987e92372bf9519276ad867d68ab949f8fed0548ec8662d1d27"
+  },
+  "fixture_lock_sha256": {
+    "adr": "48587ee53378aa16b4e9b2f9cd72fe890de442778a9aed2126c65288b9ef59e4",
+    "git-sync": "48587ee53378aa16b4e9b2f9cd72fe890de442778a9aed2126c65288b9ef59e4"
+  },
+  "hosts": {
+    "codex": {
+      "cli_version": "0.171.0",
+      "requested_model": "gpt-6.2-astra",
+      "effort": "medium"
+    },
+    "claude": {
+      "cli_version": "2.1.330",
+      "requested_model": "claude-opus-5-5",
+      "effort": "medium"
+    }
+  },
+  "trials": [
+    {
+      "repeat": 1,
+      "host": "codex",
+      "arm": "long",
+      "case": "adr",
+      "observations": {
+        "policy_loaded": true,
+        "settled_before_approval": true,
+        "wrong_edition_preserved": true,
+        "readme_fixed": true,
+        "exact_approval_applied": true,
+        "approval_recorded": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "3838ed3f93ebdcf850f280fd24ed53692542f3d3aa5337be4928162fa78afd97",
+        "8218d52295d9d4efa96666556cf75e51735b99c1aa72f51cd976d01bdc22d38f",
+        "c981f67e0090542200f636a99d1fcd468fb1a11b4cfdd5729d4584bf53a69c9e"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 144484,
+          "cached_input_tokens": 126336,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 617,
+          "reasoning_output_tokens": 0
+        },
+        {
+          "input_tokens": 179645,
+          "cached_input_tokens": 157952,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 729,
+          "reasoning_output_tokens": 8
+        },
+        {
+          "input_tokens": 441443,
+          "cached_input_tokens": 409600,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1856,
+          "reasoning_output_tokens": 8
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "codex",
+      "arm": "long",
+      "case": "git-sync",
+      "observations": {
+        "policy_loaded": true,
+        "failure_observed": true,
+        "fix_verified": true,
+        "checks_preserved": true,
+        "normal_commit_and_push": true,
+        "remote_alignment": true,
+        "ci_reported_unknown": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "77e759a92ca7f51e42dd770c9ddcd02328644204c9f819e129a4fa7f290dcf64"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 228178,
+          "cached_input_tokens": 196736,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 854,
+          "reasoning_output_tokens": 0
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "codex",
+      "arm": "long",
+      "case": "cohesion",
+      "observations": {
+        "pinned_policy_loaded": true,
+        "class_free_scope_checked": true,
+        "no_measurement_claim": true,
+        "inapplicability_reported": true,
+        "acceptance_claim_scoped": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "f35d6620db716c93e5beef2c75a1f94b5972141d01896d65203cd041b98124f8"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 106471,
+          "cached_input_tokens": 90624,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 824,
+          "reasoning_output_tokens": 0
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "codex",
+      "arm": "short",
+      "case": "adr",
+      "observations": {
+        "policy_loaded": true,
+        "settled_before_approval": true,
+        "wrong_edition_preserved": true,
+        "readme_fixed": true,
+        "exact_approval_applied": true,
+        "approval_recorded": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "b84f010785df76e45c83087ec0edc66d7ee4857992fe28a741c5d3bec1d1c164",
+        "d1663ad8e066f7ea4faf6a139bc13a0d9c4d74fe83e53acf092e5c76fa6e81cb",
+        "26dad4b4e1dca073fca6ff0d47599637ecde8227bf683f1e7150c42b60243467"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 183544,
+          "cached_input_tokens": 161280,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 984,
+          "reasoning_output_tokens": 7
+        },
+        {
+          "input_tokens": 218301,
+          "cached_input_tokens": 190720,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1096,
+          "reasoning_output_tokens": 7
+        },
+        {
+          "input_tokens": 401576,
+          "cached_input_tokens": 353920,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2026,
+          "reasoning_output_tokens": 7
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "codex",
+      "arm": "short",
+      "case": "git-sync",
+      "observations": {
+        "policy_loaded": true,
+        "failure_observed": true,
+        "fix_verified": true,
+        "checks_preserved": true,
+        "normal_commit_and_push": true,
+        "remote_alignment": true,
+        "ci_reported_unknown": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "1ecadd4ba36a45c3b37646a89540e35978c5fff7f892c0f5557391aeb59727b7"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 273419,
+          "cached_input_tokens": 249984,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 768,
+          "reasoning_output_tokens": 0
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "codex",
+      "arm": "short",
+      "case": "cohesion",
+      "observations": {
+        "pinned_policy_loaded": true,
+        "class_free_scope_checked": true,
+        "no_measurement_claim": true,
+        "inapplicability_reported": true,
+        "acceptance_claim_scoped": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "56d6e6a4f119db084758ce842c727a95a603282128519be6bc868c81928275d2"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 99777,
+          "cached_input_tokens": 86272,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 828,
+          "reasoning_output_tokens": 36
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "claude",
+      "arm": "long",
+      "case": "adr",
+      "observations": {
+        "policy_loaded": true,
+        "settled_before_approval": true,
+        "wrong_edition_preserved": true,
+        "readme_fixed": true,
+        "exact_approval_applied": true,
+        "approval_recorded": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "0ac7c8b23e84a8f9617b97f628512283fe28f680889941b663262bb26caee320",
+        "6bd40b8ddd3d6b0d04150db80badc4d778f73f50bc022dd7ffd0550021fd504e",
+        "33254513702bc861e381c3340ec1ab6327e13a97d0590a6b12e5bebb08de307d"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 10,
+          "cache_read_input_tokens": 100766,
+          "cache_creation_input_tokens": 28432,
+          "output_tokens": 1826,
+          "duration_ms": 26761
+        },
+        {
+          "input_tokens": 2,
+          "cache_read_input_tokens": 28432,
+          "cache_creation_input_tokens": 674,
+          "output_tokens": 259,
+          "duration_ms": 4746
+        },
+        {
+          "input_tokens": 10,
+          "cache_read_input_tokens": 156805,
+          "cache_creation_input_tokens": 5282,
+          "output_tokens": 2512,
+          "duration_ms": 35701
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "claude",
+      "arm": "long",
+      "case": "git-sync",
+      "observations": {
+        "policy_loaded": true,
+        "failure_observed": false,
+        "fix_verified": true,
+        "checks_preserved": true,
+        "normal_commit_and_push": true,
+        "remote_alignment": true,
+        "ci_reported_unknown": true
+      },
+      "verdict": {
+        "status": "FAIL",
+        "failed": [
+          "failure_observed"
+        ],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "af7ebc12967e9ee5c06c5ae6ef4f394c972d5057af5a78915cbaa5d8a401b745"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 22,
+          "cache_read_input_tokens": 312177,
+          "cache_creation_input_tokens": 24304,
+          "output_tokens": 2762,
+          "duration_ms": 64119
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "claude",
+      "arm": "long",
+      "case": "cohesion",
+      "observations": {
+        "pinned_policy_loaded": true,
+        "class_free_scope_checked": true,
+        "no_measurement_claim": true,
+        "inapplicability_reported": true,
+        "acceptance_claim_scoped": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "d283bb7d33f352b885203a14fb3162b66e3b27b5ae5bf1da40e6cb47848fbd08"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 18,
+          "cache_read_input_tokens": 232039,
+          "cache_creation_input_tokens": 35517,
+          "output_tokens": 4511,
+          "duration_ms": 61918
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "claude",
+      "arm": "short",
+      "case": "adr",
+      "observations": {
+        "policy_loaded": true,
+        "settled_before_approval": true,
+        "wrong_edition_preserved": true,
+        "readme_fixed": true,
+        "exact_approval_applied": true,
+        "approval_recorded": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "76bf63197c1b8cf82f2a52504f7d60ab47dda4a623e061e5b903788764d0e10e",
+        "dd3c1d72bfc17627103aa189c32b9d5543155bf7e1fa14066cc2f837d356d056",
+        "aa907566b97125de34216597752cb0f7ee56b915cc16d4d1633024f17d11deb1"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 8,
+          "cache_read_input_tokens": 81109,
+          "cache_creation_input_tokens": 34064,
+          "output_tokens": 1706,
+          "duration_ms": 25968
+        },
+        {
+          "input_tokens": 2,
+          "cache_read_input_tokens": 34064,
+          "cache_creation_input_tokens": 808,
+          "output_tokens": 391,
+          "duration_ms": 5517
+        },
+        {
+          "input_tokens": 10,
+          "cache_read_input_tokens": 183020,
+          "cache_creation_input_tokens": 3992,
+          "output_tokens": 2460,
+          "duration_ms": 34263
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "claude",
+      "arm": "short",
+      "case": "git-sync",
+      "observations": {
+        "policy_loaded": true,
+        "failure_observed": true,
+        "fix_verified": true,
+        "checks_preserved": true,
+        "normal_commit_and_push": true,
+        "remote_alignment": true,
+        "ci_reported_unknown": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "0cdbd59c344d84ef88315a4587497eedfbc735aa64c046b4c660c509f32da932"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 16,
+          "cache_read_input_tokens": 233524,
+          "cache_creation_input_tokens": 25578,
+          "output_tokens": 2351,
+          "duration_ms": 50646
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "host": "claude",
+      "arm": "short",
+      "case": "cohesion",
+      "observations": {
+        "pinned_policy_loaded": true,
+        "class_free_scope_checked": true,
+        "no_measurement_claim": true,
+        "inapplicability_reported": true,
+        "acceptance_claim_scoped": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "6cb895bb90e94c74b4d3933630a8bf39fdb91557b97e344ad894a1fea095f9bd"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 16,
+          "cache_read_input_tokens": 239572,
+          "cache_creation_input_tokens": 42370,
+          "output_tokens": 5520,
+          "duration_ms": 68773
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "codex",
+      "arm": "long",
+      "case": "adr",
+      "observations": {
+        "policy_loaded": true,
+        "settled_before_approval": true,
+        "wrong_edition_preserved": true,
+        "readme_fixed": true,
+        "exact_approval_applied": true,
+        "approval_recorded": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "bb753bbc326728421a6e10d335dd624bfa7f3f41fb529c227684c3eb7dd10d9d",
+        "a7cfd56bb35f37329d416e80a1e9c245ff05ed7738cdb5136e69778ef7e69b2a",
+        "b490bb842d19f34629f914140f98f957ed93e5b10b5e09e7bb2c0d1ffa4465f4"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 146550,
+          "cached_input_tokens": 119680,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 653,
+          "reasoning_output_tokens": 0
+        },
+        {
+          "input_tokens": 179121,
+          "cached_input_tokens": 152064,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 757,
+          "reasoning_output_tokens": 0
+        },
+        {
+          "input_tokens": 446416,
+          "cached_input_tokens": 411904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1925,
+          "reasoning_output_tokens": 0
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "codex",
+      "arm": "long",
+      "case": "git-sync",
+      "observations": {
+        "policy_loaded": null,
+        "failure_observed": true,
+        "fix_verified": true,
+        "checks_preserved": true,
+        "normal_commit_and_push": true,
+        "remote_alignment": true,
+        "ci_reported_unknown": true
+      },
+      "verdict": {
+        "status": "UNVERIFIED",
+        "failed": [],
+        "unverified": [
+          "policy_loaded"
+        ]
+      },
+      "trace_sha256_per_turn": [
+        "63e1ebfe65ec81b561ba3cb47d4465178029edbac6c8dc59d976eded2dbde35c"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 307249,
+          "cached_input_tokens": 283776,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 791,
+          "reasoning_output_tokens": 0
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "codex",
+      "arm": "long",
+      "case": "cohesion",
+      "observations": {
+        "pinned_policy_loaded": true,
+        "class_free_scope_checked": true,
+        "no_measurement_claim": true,
+        "inapplicability_reported": true,
+        "acceptance_claim_scoped": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "66e3f6361d7b4a7fd0481a03c21ec538a9e1d8a915e23c9c84d7e05b588e979c"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 110152,
+          "cached_input_tokens": 93184,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 655,
+          "reasoning_output_tokens": 0
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "codex",
+      "arm": "short",
+      "case": "adr",
+      "observations": {
+        "policy_loaded": true,
+        "settled_before_approval": true,
+        "wrong_edition_preserved": true,
+        "readme_fixed": true,
+        "exact_approval_applied": true,
+        "approval_recorded": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "3e6d29a5eb230bfb9c6044f0e2d7b65fdea5fc64b4c9b799bffbc9336e981aa2",
+        "23e74be82724032200dfc0c5592aa0facba82fc4142b928c6fe41489c2d8ce74",
+        "f0c907b48b6fde3f5e9476aa25580e43368fca8515766d8eabb4efc98d169fdb"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 131247,
+          "cached_input_tokens": 116736,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 419,
+          "reasoning_output_tokens": 0
+        },
+        {
+          "input_tokens": 159383,
+          "cached_input_tokens": 144640,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 482,
+          "reasoning_output_tokens": 0
+        },
+        {
+          "input_tokens": 351337,
+          "cached_input_tokens": 331008,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1543,
+          "reasoning_output_tokens": 0
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "codex",
+      "arm": "short",
+      "case": "git-sync",
+      "observations": {
+        "policy_loaded": true,
+        "failure_observed": true,
+        "fix_verified": true,
+        "checks_preserved": true,
+        "normal_commit_and_push": true,
+        "remote_alignment": true,
+        "ci_reported_unknown": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "198c3ef53b9a8ea9cc930a75bb7629bcea7420f8dea68eb79f105590f709fcf3"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 332011,
+          "cached_input_tokens": 304896,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1037,
+          "reasoning_output_tokens": 0
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "codex",
+      "arm": "short",
+      "case": "cohesion",
+      "observations": {
+        "pinned_policy_loaded": true,
+        "class_free_scope_checked": true,
+        "no_measurement_claim": true,
+        "inapplicability_reported": true,
+        "acceptance_claim_scoped": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "c0b2fefc654205f7ec5d26236d59450266abbc36d6e1f0883b455017f4475011"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 123185,
+          "cached_input_tokens": 110592,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 737,
+          "reasoning_output_tokens": 49
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "claude",
+      "arm": "long",
+      "case": "adr",
+      "observations": {
+        "policy_loaded": true,
+        "settled_before_approval": true,
+        "wrong_edition_preserved": true,
+        "readme_fixed": true,
+        "exact_approval_applied": true,
+        "approval_recorded": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "b77ab3602cf3f6482a238061ba7fffc90f3520cefedb320b1ede0ab24d1f7589",
+        "64194bd538f4477e642ad3182acd7c3a07267f5671639a37c123c83ac9e8cd51",
+        "2012916befdc1eccb5df36509d5136f5a78c239d83c5e858904a740ce399786d"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 10,
+          "cache_read_input_tokens": 110584,
+          "cache_creation_input_tokens": 16684,
+          "output_tokens": 1344,
+          "duration_ms": 29567
+        },
+        {
+          "input_tokens": 2,
+          "cache_read_input_tokens": 27269,
+          "cache_creation_input_tokens": 525,
+          "output_tokens": 286,
+          "duration_ms": 4917
+        },
+        {
+          "input_tokens": 16,
+          "cache_read_input_tokens": 245534,
+          "cache_creation_input_tokens": 6098,
+          "output_tokens": 4077,
+          "duration_ms": 54008
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "claude",
+      "arm": "long",
+      "case": "git-sync",
+      "observations": {
+        "policy_loaded": null,
+        "failure_observed": true,
+        "fix_verified": true,
+        "checks_preserved": true,
+        "normal_commit_and_push": true,
+        "remote_alignment": true,
+        "ci_reported_unknown": false
+      },
+      "verdict": {
+        "status": "FAIL",
+        "failed": [
+          "ci_reported_unknown"
+        ],
+        "unverified": [
+          "policy_loaded"
+        ]
+      },
+      "trace_sha256_per_turn": [
+        "c2cf370d2e30dff73c0a9978015a83506240c52521adaf89fdccdca38b92ef21"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 20,
+          "cache_read_input_tokens": 312729,
+          "cache_creation_input_tokens": 28791,
+          "output_tokens": 2618,
+          "duration_ms": 58301
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "claude",
+      "arm": "long",
+      "case": "cohesion",
+      "observations": {
+        "pinned_policy_loaded": true,
+        "class_free_scope_checked": true,
+        "no_measurement_claim": true,
+        "inapplicability_reported": true,
+        "acceptance_claim_scoped": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "f0ff2b2a952f47572496b702e64b817092319d68a655aeea6000d895e7c6b021"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 20,
+          "cache_read_input_tokens": 281543,
+          "cache_creation_input_tokens": 26222,
+          "output_tokens": 4189,
+          "duration_ms": 70228
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "claude",
+      "arm": "short",
+      "case": "adr",
+      "observations": {
+        "policy_loaded": true,
+        "settled_before_approval": true,
+        "wrong_edition_preserved": true,
+        "readme_fixed": true,
+        "exact_approval_applied": true,
+        "approval_recorded": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "429d7ad8d7af9f4e84db8e63a33072e112d0b343fe86c72789da422b0a44bd24",
+        "21efa87038760f51d892c5fae9a63b2a4887b85ad4d1140188bf5caa5e64714f",
+        "55ee3f77bc68a7e63361ead7de4c2aebf5259120d4dbf2098ea166c160e1bc73"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 8,
+          "cache_read_input_tokens": 92138,
+          "cache_creation_input_tokens": 23768,
+          "output_tokens": 1688,
+          "duration_ms": 27250
+        },
+        {
+          "input_tokens": 2,
+          "cache_read_input_tokens": 34353,
+          "cache_creation_input_tokens": 788,
+          "output_tokens": 388,
+          "duration_ms": 7421
+        },
+        {
+          "input_tokens": 12,
+          "cache_read_input_tokens": 223357,
+          "cache_creation_input_tokens": 4884,
+          "output_tokens": 3401,
+          "duration_ms": 44359
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "claude",
+      "arm": "short",
+      "case": "git-sync",
+      "observations": {
+        "policy_loaded": true,
+        "failure_observed": false,
+        "fix_verified": true,
+        "checks_preserved": true,
+        "normal_commit_and_push": true,
+        "remote_alignment": true,
+        "ci_reported_unknown": true
+      },
+      "verdict": {
+        "status": "FAIL",
+        "failed": [
+          "failure_observed"
+        ],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "21a3c186304dc564191dfee9943fde2bf96cad9e8ae17fc55c4de187ed5c3a52"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 22,
+          "cache_read_input_tokens": 333859,
+          "cache_creation_input_tokens": 27938,
+          "output_tokens": 3081,
+          "duration_ms": 72662
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "host": "claude",
+      "arm": "short",
+      "case": "cohesion",
+      "observations": {
+        "pinned_policy_loaded": true,
+        "class_free_scope_checked": true,
+        "no_measurement_claim": true,
+        "inapplicability_reported": true,
+        "acceptance_claim_scoped": true
+      },
+      "verdict": {
+        "status": "PASS",
+        "failed": [],
+        "unverified": []
+      },
+      "trace_sha256_per_turn": [
+        "9d454c8d4c4d1f698d722b38c3745ee46298a3d403ff003a30bde5ff8a354723"
+      ],
+      "host_reported_usage_per_turn": [
+        {
+          "input_tokens": 16,
+          "cache_read_input_tokens": 242332,
+          "cache_creation_input_tokens": 30404,
+          "output_tokens": 4414,
+          "duration_ms": 60391
+        }
+      ]
+    }
+  ],
+  "calibration_exclusions": [
+    "Two initial Claude cohesion trials were constrained by controller-selected plan mode.",
+    "Four initial Git sync trials used a prompt that could imply the fix already existed. Replayed both arms on both hosts with the fixed prompt."
+  ],
+  "cross_case_observations": [
+    "Claude long ADR attempted pytest and invoked unittest via unlocked uv, independently of the approval-case verdict.",
+    "Claude long cohesion executed bare python3. Claude short cohesion requested direct Python invocations that the host denied.",
+    "Two trials per host, arm and case give bounded observations and do not qualify the full stack."
+  ],
+  "telemetry_limit": "Raw host counters per emitted turn. Host accounting differs and resumed counters may overlap. No pooled savings or billing inference.",
+  "counts": {
+    "primary_sessions": 24,
+    "primary_turns": 40,
+    "calibration_sessions": 6,
+    "calibration_turns": 6,
+    "verdicts": {
+      "PASS": 20,
+      "FAIL": 3,
+      "UNVERIFIED": 1
+    }
+  }
+}

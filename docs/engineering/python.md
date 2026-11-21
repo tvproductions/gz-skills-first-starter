@@ -367,8 +367,8 @@ baseline or broken tool execution is not a successful mutation assessment.
 Its [official tutorial](https://cosmic-ray.readthedocs.io/en/latest/tutorials/intro/index.html)
 documents a configurable unittest command. Selection does not prove Python 3.14
 compatibility: verify a pinned release with a small synthetic unittest fixture
-before adopting it. The starter now pins Cosmic Ray 8.7.0 in `hygiene`, selected
-from the 8.x release family. Its [Windows/Python 3.14.8 proof](../evidence/2026-10-18-cosmic-ray.md)
+before adopting it. Use the owning manifest for the current `hygiene` pin.
+The [Cosmic Ray 8.7.0 Windows/Python 3.14.8 proof](../evidence/2026-10-18-cosmic-ray.md)
 uses invented standalone fixtures, not application code or a mutation-score gate.
 This verifies that bounded workflow, not full Python 3.14 grammar, every platform
 or adopter compatibility. The baseline CLI returns zero for a test-command launch
