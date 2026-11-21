@@ -43,6 +43,42 @@ def score_trial(
     return {"status": status, "failed": failed, "unverified": unverified}
 
 
+def prepare_fixture(case: str, destination: Path) -> None:
+    """Write a disposable case after checking every output path."""
+    data = json.loads(FIXTURES.read_text(encoding="utf-8"))
+    files = data[case]["files"]
+    relative_paths = [PurePosixPath(name) for name in files]
+    if not files or any(
+        not path.parts
+        or path.is_absolute()
+        or ".." in path.parts
+        or "\\" in path.as_posix()
+        or ":" in path.as_posix()
+        for path in relative_paths
+    ):
+        raise ValueError("Fixture must contain only relative file paths")
+    destination.mkdir()
+    for name, content in files.items():
+        target = destination / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(content, encoding="utf-8", newline="\n")
+
+
+def grade_trace(path: Path, host: str, workspace: PurePosixPath) -> int:
+    """Read the native events and report the assertion-order verdict."""
+    events = [
+        json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()
+    ]
+    if not all(isinstance(event, dict) for event in events):
+        raise ValueError("Trace must contain JSON objects")
+    result = check_git_trace(events, host, workspace)
+    status, code = {True: ("PASS", 0), False: ("FAIL", 1), None: ("UNVERIFIED", 3)}[
+        result["failure_observed"]
+    ]
+    print(json.dumps({"case": "git-sync", "status": status, **result}, indent=2))
+    return code
+
+
 def main() -> int:
     """Prepare or grade one case without launching an agent."""
     cases = load_cases(FIXTURES)
@@ -59,38 +95,10 @@ def main() -> int:
         if args.action == "trace":
             if args.case != "git-sync" or args.host is None or args.workspace is None:
                 parser.error("trace requires git-sync, --host and --workspace")
-            events = [
-                json.loads(line)
-                for line in args.path.read_text(encoding="utf-8").splitlines()
-                if line.strip()
-            ]
-            if not all(isinstance(event, dict) for event in events):
-                raise ValueError("Trace must contain JSON objects")
-            result = check_git_trace(events, args.host, args.workspace)
-            status, code = {True: ("PASS", 0), False: ("FAIL", 1), None: ("UNVERIFIED", 3)}[
-                result["failure_observed"]
-            ]
-            print(json.dumps({"case": args.case, "status": status, **result}, indent=2))
-            return code
+            return grade_trace(args.path, args.host, args.workspace)
 
         if args.action == "prepare":
-            data = json.loads(FIXTURES.read_text(encoding="utf-8"))
-            files = data[args.case]["files"]
-            relative_paths = [PurePosixPath(name) for name in files]
-            if not files or any(
-                not path.parts
-                or path.is_absolute()
-                or ".." in path.parts
-                or "\\" in path.as_posix()
-                or ":" in path.as_posix()
-                for path in relative_paths
-            ):
-                raise ValueError("Fixture must contain only relative file paths")
-            args.path.mkdir()
-            for name, content in files.items():
-                target = args.path / name
-                target.parent.mkdir(parents=True, exist_ok=True)
-                target.write_text(content, encoding="utf-8", newline="\n")
+            prepare_fixture(args.case, args.path)
             return 0
 
         evidence = json.loads(args.path.read_text(encoding="utf-8"))

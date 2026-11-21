@@ -1,5 +1,10 @@
 # GZ Starter
 
+Release **0.11.5** delivers shorter agent instructions, fixed instruction
+delivery evals, and the gz-skills 0.14.0 component update. See the
+[release receipt](docs/evidence/2026-11-21-0.11.5-release.md) for verification
+and the limits of the behavioral evidence.
+
 Release **0.11.4** fixes duplicate Superpowers discovery, clarifies the starter/
 SP/gz-skills composition and simplifies instruction delivery. It refreshes Ruff,
 platformdirs and the starter's setup-uv CI action. See the
@@ -328,7 +333,7 @@ those exact full commit SHAs, not moving branches.
 |---|---|---|
 | [Superpowers](https://github.com/obra/superpowers) | v7.0.2 | Feature design, plans, implementation, review |
 | [Superpowers Backplane](https://github.com/tvproductions/superpowers-backplane) | v0.3.0; disabled by default | GitHub-backed backlog and handoff continuity |
-| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.13.0 | Portable engineering disciplines |
+| [gz-skills](https://github.com/tvproductions/gz-skills) | v0.14.0 | Portable engineering disciplines |
 | Your app | Project-owned | Operational workflows, domain rules, code, evidence |
 
 The November 15 maintenance pass selects the current stable releases above;

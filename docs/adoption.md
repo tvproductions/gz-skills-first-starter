@@ -39,7 +39,7 @@ older unversioned locks require reviewed reconciliation. See
 Review existing `AGENTS.md`, skill discovery surfaces, plugin configuration,
 and gzkit ownership. Existing project authorities remain in place. A conflict
 is a request for reconciliation, not permission to remove an existing install.
-The starter does not select a gz-skills profile. The pinned gz-skills v0.13.0
+The starter does not select a gz-skills profile. The pinned gz-skills
 supplies `gzs-project-setup`; invoking it and choosing lite/heavy remain separate
 explicit adopter decisions required before completed adoption. Neither absent
 nor null selection is a completed lane. Preserve starter Python policy over
@@ -415,7 +415,7 @@ Route authorized dependency/tool updates through gz-skills'
 `gzs-update-dependencies` and dependency-risk reviews through
 `gzs-dependency-risk-audit`, subject to project scope and authorities. The source
 inventory and native adoption requirements below are the starter's binding to
-those portable workflows. The pinned gz-skills v0.13.0 maintenance skill supplies
+those portable workflows. The pinned gz-skills maintenance skill supplies
 freshness-only reporting and template/plugin inventory. Review mode leaves pins
 and environments unchanged. This starter adds no competing command and does not
 select a lite/heavy profile or invoke setup as part of a bundle update.

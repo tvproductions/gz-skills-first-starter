@@ -33,13 +33,13 @@ inputs. Six assertions preceded the first witnessed edit and two did not.
 The original full-case verdicts remain the governing pilot record. Direct
 grading of the other observations remains open.
 
-The maintainer requested both version bumps. The starter reuses its pending
-0.11.5 patch. The upstream `gz-skills` checkout carries the behavioral check
-in `gzs-agent-context-diet` 0.2.0 within bundle candidate 0.14.0. That
-workflow uses consumer-owned cases, grader controls and matched trials when
-binding instructions change. Upstream publication and any subsequent starter
-component update are separate work. Starter catalogs continue to select the
-released `gz-skills` v0.13.0.
+The maintainer requested both version bumps, then requested starter publication
+with released `gz-skills` 0.14.0. The starter reuses its 0.11.5 patch. The
+component release carries the behavioral check in `gzs-agent-context-diet`
+0.2.0. That workflow uses consumer-owned cases, grader controls and matched
+trials when binding instructions change. The
+[starter release receipt](../evidence/2026-11-21-0.11.5-release.md) records the
+exact selected combination and its verification.
 
 The maintainer requested Git synchronization of both repositories. The starter
 save point keeps 0.11.5 pending. Fresh local verification on November 21 ran

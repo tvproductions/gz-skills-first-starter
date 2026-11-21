@@ -7,17 +7,20 @@ fits the task, confirm discovery, and preserve project scope and authorities.
 This guide reinforces and highlights those upstream behaviors for adopters;
 it is not another skill or an implementation of their discovery/workflow logic.
 
-## Current selection: v0.13.0
+## Current selection: v0.14.0
 
-The 0.10.0 bundle and both catalogs select released gz-skills v0.13.0 at
-`0bdab63fc503c6b36e2dd487932689b4e555e41a`, checked November 15, 2026.
+The 0.11.5 bundle and both catalogs select released gz-skills v0.14.0 at
+`0cbd2359c64b473d6c109e1296118f2475057fbc`, checked November 21, 2026.
 It supplies 21 skills, including `gzs-architectural-decisions` 0.1.0 and its
 self-contained template. Router 0.7.0 exposes that procedure; dependency update
 0.5.0 preserves explicit scoped maintenance and review-only requests.
 The starter's [ADR policy](engineering/architectural-decisions.md) supplies project
 requirements. Portable procedures stay language/tool agnostic; Python choices
 remain project-owned. See [exact-source qualification](evidence/2026-11-15-adr-combination.md).
-Selection, native discovery and observed model behavior are distinct evidence.
+The context-diet skill 0.2.0 adds behavioral eval guidance. The
+[0.11.5 release receipt](evidence/2026-11-21-0.11.5-release.md) covers the
+affected component update. Selection, native discovery and observed model
+behavior have separate evidence.
 Historical receipts below retain their original version/platform scope.
 
 ## Verified coverage in v0.7.0
@@ -84,7 +87,7 @@ is distinct from fresh-session workflow execution and combined stack readiness.
 The release adds no comprehensive version-audit skill and preserves existing
 workflow scope and authorization boundaries. Adopter updates remain explicit.
 
-Authoritative selected [Python workflow instructions](https://github.com/tvproductions/gz-skills/tree/0bdab63fc503c6b36e2dd487932689b4e555e41a/skills)
+Authoritative selected [Python workflow instructions](https://github.com/tvproductions/gz-skills/tree/0cbd2359c64b473d6c109e1296118f2475057fbc/skills)
 remain upstream-owned; this template supplies emphasis and policy bindings.
 
 ## Historical v0.6.0 inspection evidence

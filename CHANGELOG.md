@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.11.5 — November 21, 2026
+
 - Refresh coverage 7.17.3 → 7.17.4 and the locked certifi, decorator, PyYAML and
   virtualenv dependencies in both Python baselines. See the
   [0.11.5 maintenance receipt](docs/evidence/2026-11-21-dependency-maintenance.md).
@@ -10,6 +12,13 @@
 - Restore the applicability guard in the adopter guidance and record the first
   deterministic instruction-delivery cases and matched native pilot.
 - Verify the Git test-before-edit check directly from saved native JSONL traces.
+- Pin gz-skills 0.14.0 across shipped catalogs and project-owned development
+  bindings. It includes context-diet 0.2.0 and its behavioral eval procedure.
+  Preserve the existing adoption contract and activation choices.
+- Bring the new eval utilities within the Lizard ceiling while keeping their
+  verdicts and CLI contract. The
+  [release receipt](docs/evidence/2026-11-21-0.11.5-release.md) records the
+  native install checks, replay and remaining behavioral limits.
 
 The bootstrap-verification correction remains in design review for proposed 0.12.0.
 

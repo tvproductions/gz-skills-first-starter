@@ -149,6 +149,7 @@ def _can_attribute_test_output(commands: list[list[str]], test: list[str]) -> bo
 
 
 def _command_effect(command: object, output: object, workspace: PurePosixPath) -> Effect:
+    """Attribute a failure only to the fixture's owning unittest command."""
     if not isinstance(command, str):
         return "opaque"
     try:
@@ -176,6 +177,7 @@ def _command_effect(command: object, output: object, workspace: PurePosixPath) -
 
 
 def _file_effect(path: object, workspace: PurePosixPath) -> Effect:
+    """Recognize source edits only within the recorded fixture workspace."""
     if not isinstance(path, str) or "\\" in path:
         return "opaque"
     candidate = PurePosixPath(path)
@@ -193,6 +195,7 @@ def _file_effect(path: object, workspace: PurePosixPath) -> Effect:
 
 
 def _codex_effect(start: dict, result: dict, workspace: PurePosixPath) -> Effect:
+    """Check that the completed operation matches its Codex start record."""
     kind = start["type"]
     if result.get("type") != kind:
         return "opaque"
@@ -211,6 +214,7 @@ def _codex_effect(start: dict, result: dict, workspace: PurePosixPath) -> Effect
 
 
 def _claude_effect(start: dict, result: dict, workspace: PurePosixPath) -> Effect:
+    """Classify a Claude tool after matching its result to the request."""
     operation = start.get("name")
     if operation in PASSIVE_CLAUDE:
         return "irrelevant"
@@ -224,6 +228,7 @@ def _claude_effect(start: dict, result: dict, workspace: PurePosixPath) -> Effec
 
 
 def _codex_records(event: dict) -> Iterator[tuple[str, bool, dict]]:
+    """Yield Codex operation IDs, start flags, and payloads."""
     phase = event.get("type")
     if phase in {"item.started", "item.completed"}:
         item = event["item"]
@@ -232,6 +237,7 @@ def _codex_records(event: dict) -> Iterator[tuple[str, bool, dict]]:
 
 
 def _claude_records(event: dict) -> Iterator[tuple[str, bool, dict]]:
+    """Yield Claude tool requests and results with their reported paths."""
     phase = event.get("type")
     message = event.get("message")
     if phase not in {"assistant", "user"} or not isinstance(message, dict):
@@ -249,6 +255,7 @@ def _claude_records(event: dict) -> Iterator[tuple[str, bool, dict]]:
 
 
 def _actions(events: list[dict], host: str, workspace: PurePosixPath) -> list[Action]:
+    """Pair trace events into intervals and preserve opaque operations."""
     records = _codex_records if host == "codex" else _claude_records
     effect = _codex_effect if host == "codex" else _claude_effect
     pending: dict[str, tuple[int, dict]] = {}
@@ -271,22 +278,14 @@ def _actions(events: list[dict], host: str, workspace: PurePosixPath) -> list[Ac
 
 
 def _boundary_observed(events: list[dict], host: str) -> bool:
+    """Require the host's opening marker before grading operation order."""
     if host == "codex":
         return any(event.get("type") == "turn.started" for event in events)
     return any((event.get("type"), event.get("subtype")) == ("system", "init") for event in events)
 
 
-def check_git_trace(events: list[dict], host: str, workspace: PurePosixPath) -> TraceVerdict:
-    """Grade the observed owning failure before the first witnessed source edit."""
-    if host not in {"codex", "claude"} or not workspace.is_absolute() or ".." in workspace.parts:
-        raise ValueError("Provide a supported host and an absolute recorded workspace path")
-    if not _boundary_observed(events, host):
-        return {"failure_observed": None, "reason": "trace_start_not_observed"}
-
-    try:
-        actions = _actions(events, host, workspace)
-    except AttributeError, KeyError, TypeError:
-        return {"failure_observed": None, "reason": "trace_schema_unrecognized"}
+def _grade_actions(actions: list[Action]) -> TraceVerdict:
+    """Decide whether the first witnessed edit followed a proven failure."""
     edit = min(
         (a for a in actions if a.effect == "source_edit"), key=lambda a: a.start, default=None
     )
@@ -313,3 +312,17 @@ def check_git_trace(events: list[dict], host: str, workspace: PurePosixPath) -> 
     elif red is not None and red.end <= edit.end:
         verdict.update(failure_observed=None, reason="overlapping_actions")
     return verdict
+
+
+def check_git_trace(events: list[dict], host: str, workspace: PurePosixPath) -> TraceVerdict:
+    """Grade the observed owning failure before the first witnessed source edit."""
+    if host not in {"codex", "claude"} or not workspace.is_absolute() or ".." in workspace.parts:
+        raise ValueError("Provide a supported host and an absolute recorded workspace path")
+    if not _boundary_observed(events, host):
+        return {"failure_observed": None, "reason": "trace_start_not_observed"}
+
+    try:
+        actions = _actions(events, host, workspace)
+    except AttributeError, KeyError, TypeError:
+        return {"failure_observed": None, "reason": "trace_schema_unrecognized"}
+    return _grade_actions(actions)
