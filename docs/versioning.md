@@ -1,11 +1,14 @@
 # Template versioning
 
-Pending **0.11.6 / patch** corrects the project-owned eval's handling of the
-existing locked Python requirement. The
+Current published release **0.11.6 / patch** at immutable source
+`6a44715f5fc40048c9767497a313a279dfc3a12a` corrects the project-owned eval's
+handling of the existing locked Python requirement. The
 [bounded scope](../ROADMAP.md#selected-0116-scope--locked-python-eval-correction-november-21-2026)
-records the governing defect and acceptance.
+records the governing defect. The
+[release receipt](evidence/2026-11-21-0.11.6-release.md) records exact-source CI,
+the annotated remote tag and archive verification.
 
-Current published release **0.11.5 / patch** at immutable source
+Release **0.11.5 / patch** at immutable source
 `0d3be366bc3048ed123d36dd6af93ad4d8850b80` restores latest-stable development-tool selections
 in both Python baselines after the November 21 maintenance invocation. It also
 covers the compatible instruction delivery cleanup and

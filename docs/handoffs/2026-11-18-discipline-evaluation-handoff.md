@@ -19,9 +19,10 @@ observations reproduced. The digest-indexed receipt is public. Raw traces
 are private local fixtures, so assume a new checkout has only the receipt
 and synthetic controls. Keep the checker out of routine CI.
 
-For publication, finish the starter checkout gates, sync `main`, verify both
-CI jobs on the exact release commit and verify the immutable tag and GitHub
-archive. After that, the next advised work is the read-only
+Published 0.11.6 from `6a44715f5fc40048c9767497a313a279dfc3a12a` after both
+[exact-source CI jobs](https://github.com/tvproductions/gz-starter/actions/runs/44939599865)
+passed. The release receipt records the local gates and verified tag and
+GitHub source archive. The next advised work is the read-only
 [bootstrap design review](2026-11-17-bootstrap-verification-handoff.md#resume-point-and-authority).
 Review the automatic transition from pre-runtime checks to mandatory real
 tests and the Windows and macOS evidence. Stop before dependent
@@ -46,7 +47,7 @@ below still require separate approvals before dependent work.
 
 The post-release intent audit found two ADR trials that honored the approval
 gate and checked fixture state by calling the virtual-environment interpreter
-directly. The pending 0.11.6 patch adds the shared
+directly. The 0.11.6 patch adds the shared
 [locked Python workflow check](../evidence/2026-11-21-instruction-delivery-evals.md#locked-python-workflow-replay).
 The replay found seven workflow failures across the prior pilot and fresh
 audit. The earlier task and Git-order verdicts reproduced. Other workflow
